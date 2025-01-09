@@ -11,6 +11,7 @@
     <None Include="..\..\Source\PartyJungleEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +30,12 @@
     <Filter Include="Source\PartyJungle">
       <UniqueIdentifier>{47178167-FE3E-34DF-8BAD-F2C083E3502D}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minion.cpp">
+      <Filter>Source\PartyJungle</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minion.h">
+      <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
     <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs">
       <Filter>Source\PartyJungle</Filter>
     </None>
@@ -36,6 +43,12 @@
       <Filter>Source\PartyJungle</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\PartyJungle.h">
+      <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Square.cpp">
+      <Filter>Source\PartyJungle</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Square.h">
       <Filter>Source\PartyJungle</Filter>
     </ClInclude>
   </ItemGroup>
