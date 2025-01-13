@@ -40,7 +40,7 @@ public:
 	ASquare* GetNextSquare();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
-	float TotalLerpTime = 2.0f;
+	float TotalLerpTime = 0.5f;
 
 protected:
 	virtual void BeginPlay() override;

@@ -38,6 +38,8 @@ ASquare* AMinion::GetNextSquare()
 void AMinion::BeginPlay()
 {
 	Super::BeginPlay();
+
+	SetMinionsMovements(6);
 	
 }
 
@@ -50,6 +52,8 @@ void AMinion::HandleMovement(float _deltaTime)
         float LerpAlpha = FMath::Clamp(CurrentLerpTime / TotalLerpTime, 0.0f, MAX_TIME_MOVEMENT);
 
         FVector NewPosition = FMath::Lerp(StartPosition, TargetPosition, LerpAlpha);
+		NewPosition.Z = GetActorLocation().Z;
+
         SetActorLocation(NewPosition);
 
         if (LerpAlpha >= MAX_TIME_MOVEMENT) 
