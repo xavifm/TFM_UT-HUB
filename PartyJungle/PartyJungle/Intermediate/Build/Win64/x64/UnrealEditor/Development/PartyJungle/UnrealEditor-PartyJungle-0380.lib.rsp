@@ -1,0 +1,17 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-PartyJungle-0380.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\Minion.gen.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\PartyJungle.init.gen.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\Square.gen.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\PartyJungle.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\Square.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\Minion.cpp.obj"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\Default.rc2.res"
+/OUT:"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\Development\PartyJungle\UnrealEditor-PartyJungle-0380.lib"
