@@ -9,6 +9,9 @@ AMinion::AMinion()
 
 void AMinion::SetMinionsMovements(int _movements)
 {
+	if (_movements <= 0)
+		return;
+
 	Movements = _movements;
 	CurrentSquare = GetNextSquare();
 	MoveToSquare(CurrentSquare);
@@ -38,8 +41,6 @@ ASquare* AMinion::GetNextSquare()
 void AMinion::BeginPlay()
 {
 	Super::BeginPlay();
-
-	SetMinionsMovements(6);
 	
 }
 

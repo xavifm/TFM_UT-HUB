@@ -12,6 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\Temp.txt" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -30,10 +31,10 @@
     <Filter Include="Source\PartyJungle">
       <UniqueIdentifier>{47178167-FE3E-34DF-8BAD-F2C083E3502D}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\PartyJungle\Minion.cpp">
+    <ClCompile Include="..\..\Source\PartyJungle\Dice.cpp">
       <Filter>Source\PartyJungle</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\PartyJungle\Minion.h">
+    <ClInclude Include="..\..\Source\PartyJungle\Dice.h">
       <Filter>Source\PartyJungle</Filter>
     </ClInclude>
     <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs">
@@ -45,11 +46,35 @@
     <ClInclude Include="..\..\Source\PartyJungle\PartyJungle.h">
       <Filter>Source\PartyJungle</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\PartyJungle\Square.cpp">
-      <Filter>Source\PartyJungle</Filter>
+    <Filter Include="Source\PartyJungle\Map">
+      <UniqueIdentifier>{22BA07C5-A984-3C77-9B50-65011CA36B2F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\Square.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\PartyJungle\Square.h">
-      <Filter>Source\PartyJungle</Filter>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\Square.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player">
+      <UniqueIdentifier>{4BB96A41-B63B-386F-AD66-5BD0AA7EBA3C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\Player\Minion">
+      <UniqueIdentifier>{F816DA62-5E9F-33A4-930F-1B0578DD1BEF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Minion\Minion.cpp">
+      <Filter>Source\PartyJungle\Player\Minion</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Minion\Minion.h">
+      <Filter>Source\PartyJungle\Player\Minion</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\UI">
+      <UniqueIdentifier>{01B54EC1-76B7-386C-A03C-0A78D03089D3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.cpp">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
