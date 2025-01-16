@@ -31,12 +31,6 @@
     <Filter Include="Source\PartyJungle">
       <UniqueIdentifier>{47178167-FE3E-34DF-8BAD-F2C083E3502D}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\PartyJungle\Dice.cpp">
-      <Filter>Source\PartyJungle</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\PartyJungle\Dice.h">
-      <Filter>Source\PartyJungle</Filter>
-    </ClInclude>
     <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs">
       <Filter>Source\PartyJungle</Filter>
     </None>
@@ -45,6 +39,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\PartyJungle.h">
       <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Dice">
+      <UniqueIdentifier>{41C4BB2F-9E5D-38AE-A62B-C919F260E601}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Dice\Dice.cpp">
+      <Filter>Source\PartyJungle\Dice</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Dice\Dice.h">
+      <Filter>Source\PartyJungle\Dice</Filter>
     </ClInclude>
     <Filter Include="Source\PartyJungle\Map">
       <UniqueIdentifier>{22BA07C5-A984-3C77-9B50-65011CA36B2F}</UniqueIdentifier>
@@ -58,6 +61,15 @@
     <Filter Include="Source\PartyJungle\Player">
       <UniqueIdentifier>{4BB96A41-B63B-386F-AD66-5BD0AA7EBA3C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\PartyJungle\Player\Map">
+      <UniqueIdentifier>{1A0638E6-E4D0-39EE-BC65-43C1B7DE7A9A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.cpp">
+      <Filter>Source\PartyJungle\Player\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.h">
+      <Filter>Source\PartyJungle\Player\Map</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Player\Minion">
       <UniqueIdentifier>{F816DA62-5E9F-33A4-930F-1B0578DD1BEF}</UniqueIdentifier>
     </Filter>
