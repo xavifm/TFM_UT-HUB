@@ -52,6 +52,12 @@
     <Filter Include="Source\PartyJungle\Map">
       <UniqueIdentifier>{22BA07C5-A984-3C77-9B50-65011CA36B2F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\MapDatabase.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\MapDatabase.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PartyJungle\Map\Square.cpp">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClCompile>
