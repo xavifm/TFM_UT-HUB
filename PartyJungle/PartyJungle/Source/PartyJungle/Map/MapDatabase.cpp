@@ -22,11 +22,19 @@ TArray<AMinion*> AMapDatabase::GetAllMinions()
 
 AMinion* AMapDatabase::GetMinion(int _team, int _index)
 {
-	if(MinionsSortedByTeams.Contains(_team) && MinionsSortedByTeams[_team][_index])
-		return MinionsSortedByTeams[_team][_index];
+	if (MinionsSortedByTeams.Contains(_team))
+	{
+		auto& teamMinions = MinionsSortedByTeams[_team];
+
+		if (_index >= 0 && _index < teamMinions.Num())
+		{
+			return teamMinions[_index];
+		}
+	}
 
 	return nullptr;
 }
+
 
 void AMapDatabase::BeginPlay()
 {

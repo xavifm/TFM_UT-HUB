@@ -1,10 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include <PartyJungle/Map/MapDatabase.h>
+#include <EnhancedInputComponent.h>
+#include "InputMappingContext.h"
+#include "InputAction.h"
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -18,16 +19,26 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	void Tick(float DeltaTime);
+
 public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TSubclassOf<UUserWidget> MenuWidgetClass;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* FocusAnotherMinionAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputMappingContext* InputMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
+	float CameraSpeed = 5;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion On Camera")
 	AMinion* CurrentMinion;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	AMapDatabase* MapDb;
-
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	int CurrentMinionPos;
@@ -43,7 +54,7 @@ public:
 	void SwitchCameraTeam(int _direction);
 
 	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
-	void FocusNextMinion(int _direction);
+	void FocusNextMinion(const FInputActionValue& _value);
 
 private:
 	const int MAX_MINION_NUMBER = 4;

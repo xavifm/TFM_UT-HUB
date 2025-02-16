@@ -1,5 +1,6 @@
-#include "Blueprint/UserWidget.h"
 #include "./MapMenuCamera.h"
+#include "Blueprint/UserWidget.h"
+#include <EnhancedInputSubsystems.h>
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -12,12 +13,43 @@ void AMapMenuCamera::BeginPlay()
 	Super::BeginPlay();
     ShowMenuWidget();
 	
+    if (APlayerController* PC = Cast<APlayerController>(GetController()))
+    {
+        if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+        {
+            Subsystem->AddMappingContext(InputMappingContext, 0);
+        }
+    }
+
 }
+
+void AMapMenuCamera::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+
+    if (CurrentMinion)
+    {
+        FVector CameraLocation = GetActorLocation();
+        FVector MinionLocation = CurrentMinion->GetActorLocation();
+
+        FVector TargetLocation = MinionLocation;
+        TargetLocation.X = MinionLocation.X - 450;
+        TargetLocation.Z = CameraLocation.Z;
+
+        FVector NewLocation = FMath::VInterpTo(CameraLocation, TargetLocation, DeltaTime, 5.0f);
+        SetActorLocation(NewLocation);
+    }
+}
+
 
 void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+    if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+    {
+        EnhancedInput->BindAction(FocusAnotherMinionAction, ETriggerEvent::Started, this, &AMapMenuCamera::FocusNextMinion);
+    }
 }
 
 void AMapMenuCamera::ShowMenuWidget()
@@ -44,9 +76,11 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
 }
 
-void AMapMenuCamera::FocusNextMinion(int _direction)
+void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
 {
-    CurrentMinionPos += _direction;
+    int direction = _value.GetMagnitude();
+
+    CurrentMinionPos += direction;
 
     if (CurrentMinionPos >= MAX_MINION_NUMBER)
         CurrentMinionPos = 0;

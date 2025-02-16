@@ -6,12 +6,16 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "PartyJungle/Player/Map/MapMenuCamera.h"
+#include "EnhancedInput/Public/InputActionValue.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMapMenuCamera() {}
 
 // Begin Cross Module References
 COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_APawn();
+ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
+ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
+ENHANCEDINPUT_API UScriptStruct* Z_Construct_UScriptStruct_FInputActionValue();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
@@ -25,24 +29,27 @@ struct Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics
 {
 	struct MapMenuCamera_eventFocusNextMinion_Parms
 	{
-		int32 _direction;
+		FInputActionValue _value;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Camera Navigation" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp__value_MetaData[] = {
+		{ "NativeConst", "" },
+	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FStructPropertyParams NewProp__value;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventFocusNextMinion_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::NewProp__value = { "_value", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventFocusNextMinion_Parms, _value), Z_Construct_UScriptStruct_FInputActionValue, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp__value_MetaData), NewProp__value_MetaData) }; // 494646648
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::NewProp__direction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::NewProp__value,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "FocusNextMinion", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::MapMenuCamera_eventFocusNextMinion_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "FocusNextMinion", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::MapMenuCamera_eventFocusNextMinion_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics::MapMenuCamera_eventFocusNextMinion_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion()
 {
@@ -55,10 +62,10 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion()
 }
 DEFINE_FUNCTION(AMapMenuCamera::execFocusNextMinion)
 {
-	P_GET_PROPERTY(FIntProperty,Z_Param__direction);
+	P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out__value);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->FocusNextMinion(Z_Param__direction);
+	P_THIS->FocusNextMinion(Z_Param_Out__value);
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function FocusNextMinion
@@ -133,6 +140,18 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ "Category", "UI" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FocusAnotherMinionAction_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputMappingContext_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraSpeed_MetaData[] = {
+		{ "Category", "Camera Parameters" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentMinion_MetaData[] = {
 		{ "Category", "Minion On Camera" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
@@ -151,6 +170,9 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_MenuWidgetClass;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FocusAnotherMinionAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContext;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_CameraSpeed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentMinion;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapDb;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentMinionPos;
@@ -158,7 +180,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 1095760799
+		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2380509819
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCameraTeam, "SwitchCameraTeam" }, // 3067496298
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -168,12 +190,18 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MenuWidgetClass = { "MenuWidgetClass", nullptr, (EPropertyFlags)0x0014000000000005, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MenuWidgetClass), Z_Construct_UClass_UClass, Z_Construct_UClass_UUserWidget_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MenuWidgetClass_MetaData), NewProp_MenuWidgetClass_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_FocusAnotherMinionAction = { "FocusAnotherMinionAction", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, FocusAnotherMinionAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FocusAnotherMinionAction_MetaData), NewProp_FocusAnotherMinionAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_InputMappingContext = { "InputMappingContext", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, InputMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputMappingContext_MetaData), NewProp_InputMappingContext_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed = { "CameraSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CameraSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraSpeed_MetaData), NewProp_CameraSpeed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion = { "CurrentMinion", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinion_MetaData), NewProp_CurrentMinion_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapDb = { "MapDb", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MapDb), Z_Construct_UClass_AMapDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapDb_MetaData), NewProp_MapDb_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionPos = { "CurrentMinionPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinionPos), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinionPos_MetaData), NewProp_CurrentMinionPos_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionTeam = { "CurrentMinionTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinionTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinionTeam_MetaData), NewProp_CurrentMinionTeam_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuCamera_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MenuWidgetClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_FocusAnotherMinionAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_InputMappingContext,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapDb,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionPos,
@@ -220,10 +248,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3152459620U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3970550423U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_2171727219(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1969719457(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
