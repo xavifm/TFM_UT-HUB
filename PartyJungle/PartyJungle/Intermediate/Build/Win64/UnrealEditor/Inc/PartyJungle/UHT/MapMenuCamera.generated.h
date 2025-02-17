@@ -15,12 +15,12 @@ struct FInputActionValue;
 #endif
 #define PARTYJUNGLE_MapMenuCamera_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execFocusNextMinion); \
 	DECLARE_FUNCTION(execSwitchCameraTeam);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMapMenuCamera(); \
 	friend struct Z_Construct_UClass_AMapMenuCamera_Statics; \
@@ -29,7 +29,7 @@ public: \
 	DECLARE_SERIALIZER(AMapMenuCamera)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMapMenuCamera(AMapMenuCamera&&); \
@@ -41,13 +41,13 @@ public: \
 	NO_API virtual ~AMapMenuCamera();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_11_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_12_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_14_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

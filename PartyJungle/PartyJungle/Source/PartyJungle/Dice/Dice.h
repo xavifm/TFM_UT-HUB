@@ -18,4 +18,7 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Displacement")
+	void SwitchDicePosition(FVector NewPosition);
+
 };

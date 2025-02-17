@@ -12,6 +12,8 @@ void AMapMenuCamera::BeginPlay()
 {
 	Super::BeginPlay();
     ShowMenuWidget();
+
+    UpdateDicePosition();
 	
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
@@ -74,6 +76,8 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+
+    UpdateDicePosition();
 }
 
 void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
@@ -88,6 +92,18 @@ void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
         CurrentMinionPos = MAX_MINION_NUMBER - 1;
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, CurrentMinionPos);
+
+    UpdateDicePosition();
 }
 
+void AMapMenuCamera::UpdateDicePosition()
+{
+    if (CurrentMinion)
+    {
+        FVector NewDicePosition = CurrentMinion->GetActorLocation();
+        NewDicePosition.Z += DICE_HEIGHT_OFFSET;
+
+        Dice->SwitchDicePosition(NewDicePosition);
+    }
+}
 

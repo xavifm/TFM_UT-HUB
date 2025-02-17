@@ -6,6 +6,7 @@
 #include <EnhancedInputComponent.h>
 #include "InputMappingContext.h"
 #include "InputAction.h"
+#include <PartyJungle/Dice/Dice.h>
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -46,6 +47,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	int CurrentMinionTeam;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
+	ADice* Dice;
+
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void ShowMenuWidget();
@@ -56,7 +60,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
 	void FocusNextMinion(const FInputActionValue& _value);
 
+	void UpdateDicePosition();
+
 private:
 	const int MAX_MINION_NUMBER = 4;
 	const int MAX_TEAM_NUMBER = 4;
+	const float DICE_HEIGHT_OFFSET = 140;
 };
