@@ -14,6 +14,8 @@ void AMapMenuCamera::BeginPlay()
     ShowMenuWidget();
 
     UpdateDicePosition();
+
+    Dice->ShowDice();
 	
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
@@ -51,6 +53,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
         EnhancedInput->BindAction(FocusAnotherMinionAction, ETriggerEvent::Started, this, &AMapMenuCamera::FocusNextMinion);
+        EnhancedInput->BindAction(RollTheDiceAction, ETriggerEvent::Started, this, &AMapMenuCamera::RollTheDice);
     }
 }
 
@@ -82,6 +85,9 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
 void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
 {
+    if (!InputEnabled)
+        return;
+
     int direction = _value.GetMagnitude();
 
     CurrentMinionPos += direction;
@@ -96,6 +102,29 @@ void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
     UpdateDicePosition();
 }
 
+void AMapMenuCamera::RollTheDice()
+{
+    if (!InputEnabled)
+        return;
+
+    InputEnabled = false;
+
+    if (Dice && CurrentMinion)
+    {
+        int movements = Dice->RollTheDice();
+
+        Dice->ShowDiceFeedbackNumber(movements);
+
+        FTimerHandle TimerHandle;
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, movements]()
+        {
+            Dice->HideDice();
+            CurrentMinion->SetMinionsMovements(movements);
+        }, Dice->DiceFeedbackTime, false);
+    }
+}
+
+
 void AMapMenuCamera::UpdateDicePosition()
 {
     if (CurrentMinion)
@@ -106,4 +135,5 @@ void AMapMenuCamera::UpdateDicePosition()
         Dice->SwitchDicePosition(NewDicePosition);
     }
 }
+
 

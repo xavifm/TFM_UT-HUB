@@ -18,3 +18,8 @@ void ADice::Tick(float DeltaTime)
 
 }
 
+int ADice::RollTheDice()
+{
+	return FMath::RandRange(1, 10);
+}
+

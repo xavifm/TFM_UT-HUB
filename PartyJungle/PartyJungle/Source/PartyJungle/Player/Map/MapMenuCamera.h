@@ -30,6 +30,9 @@ public:
 	UInputAction* FocusAnotherMinionAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* RollTheDiceAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
@@ -60,10 +63,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
 	void FocusNextMinion(const FInputActionValue& _value);
 
-	void UpdateDicePosition();
+	void RollTheDice();
+
 
 private:
 	const int MAX_MINION_NUMBER = 4;
 	const int MAX_TEAM_NUMBER = 4;
 	const float DICE_HEIGHT_OFFSET = 140;
+
+	void UpdateDicePosition();
+	bool InputEnabled = true;
 };

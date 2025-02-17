@@ -14,6 +14,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_Dice_generated_h
 
+#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execRollTheDice);
+
+
 #define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
 private: \
@@ -40,6 +44,7 @@ public: \
 #define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_ENHANCED_CONSTRUCTORS \
