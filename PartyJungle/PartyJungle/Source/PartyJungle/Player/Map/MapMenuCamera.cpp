@@ -42,6 +42,8 @@ void AMapMenuCamera::Tick(float DeltaTime)
 
         FVector NewLocation = FMath::VInterpTo(CameraLocation, TargetLocation, DeltaTime, 5.0f);
         SetActorLocation(NewLocation);
+
+        UpdateDicePosition(false);
     }
 }
 
@@ -118,21 +120,21 @@ void AMapMenuCamera::RollTheDice()
         FTimerHandle TimerHandle;
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, movements]()
         {
-            Dice->HideDice();
+            CurrentMinion->DiceReference = Dice;
             CurrentMinion->SetMinionsMovements(movements);
         }, Dice->DiceFeedbackTime, false);
     }
 }
 
 
-void AMapMenuCamera::UpdateDicePosition()
+void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
 {
     if (CurrentMinion)
     {
         FVector NewDicePosition = CurrentMinion->GetActorLocation();
         NewDicePosition.Z += DICE_HEIGHT_OFFSET;
 
-        Dice->SwitchDicePosition(NewDicePosition);
+        Dice->SwitchDicePosition(NewDicePosition, _resizeDice);
     }
 }
 

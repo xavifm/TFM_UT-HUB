@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeMinion() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_ADice_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare_NoRegister();
@@ -173,13 +174,7 @@ struct Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Minion Actions" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"Minion Properties\")\n//UMinionInventory* Inventory;\n" },
-#endif
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = \"Minion Properties\")\nUMinionInventory* Inventory;" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__movements;
@@ -243,6 +238,10 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ "Category", "Minion Properties" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DiceReference_MetaData[] = {
+		{ "Category", "Dice References" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TotalLerpTime_MetaData[] = {
 		{ "Category", "Minion Properties" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
@@ -256,6 +255,7 @@ struct Z_Construct_UClass_AMinion_Statics
 	static const UECodeGen_Private::FBytePropertyParams NewProp_Team_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Team;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentSquare;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_DiceReference;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_TotalLerpTime;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Movements;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -263,7 +263,7 @@ struct Z_Construct_UClass_AMinion_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMinion_GetNextSquare, "GetNextSquare" }, // 1662612968
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
-		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 4008956176
+		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 2380628122
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -274,12 +274,14 @@ struct Z_Construct_UClass_AMinion_Statics
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Team_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Team), Z_Construct_UEnum_PartyJungle_ETeam, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) }; // 4119591115
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_CurrentSquare = { "CurrentSquare", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, CurrentSquare), Z_Construct_UClass_ASquare_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentSquare_MetaData), NewProp_CurrentSquare_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference = { "DiceReference", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, DiceReference), Z_Construct_UClass_ADice_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DiceReference_MetaData), NewProp_DiceReference_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime = { "TotalLerpTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, TotalLerpTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TotalLerpTime_MetaData), NewProp_TotalLerpTime_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Movements = { "Movements", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Movements), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Movements_MetaData), NewProp_Movements_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinion_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Team_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Team,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_CurrentSquare,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Movements,
 };
@@ -327,10 +329,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Mi
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 1830842319U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 1493759021U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1996908473(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1395844532(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));

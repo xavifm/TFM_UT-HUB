@@ -71,6 +71,6 @@ private:
 	const int MAX_TEAM_NUMBER = 4;
 	const float DICE_HEIGHT_OFFSET = 140;
 
-	void UpdateDicePosition();
+	void UpdateDicePosition(bool _resizeDice = true);
 	bool InputEnabled = true;
 };

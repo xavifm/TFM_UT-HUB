@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <PartyJungle/Dice/Dice.h>
 #include "Minion.generated.h"
 
 UENUM(BlueprintType)
@@ -27,8 +28,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
 	ASquare* CurrentSquare;
 
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
-	//UMinionInventory* Inventory;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice References")
+	ADice* DiceReference;
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void SetMinionsMovements(int _movements);

@@ -19,7 +19,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Displacement")
-	void SwitchDicePosition(FVector NewPosition);
+	void SwitchDicePosition(FVector NewPosition, bool ResizeDice);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Feedback")
 	void ShowDiceFeedbackNumber(int Number);

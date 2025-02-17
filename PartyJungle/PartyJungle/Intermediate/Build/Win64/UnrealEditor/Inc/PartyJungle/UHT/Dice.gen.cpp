@@ -161,12 +161,14 @@ UFunction* Z_Construct_UFunction_ADice_ShowDiceFeedbackNumber()
 struct Dice_eventSwitchDicePosition_Parms
 {
 	FVector NewPosition;
+	bool ResizeDice;
 };
 static FName NAME_ADice_SwitchDicePosition = FName(TEXT("SwitchDicePosition"));
-void ADice::SwitchDicePosition(FVector NewPosition)
+void ADice::SwitchDicePosition(FVector NewPosition, bool ResizeDice)
 {
 	Dice_eventSwitchDicePosition_Parms Parms;
 	Parms.NewPosition=NewPosition;
+	Parms.ResizeDice=ResizeDice ? true : false;
 	ProcessEvent(FindFunctionChecked(NAME_ADice_SwitchDicePosition),&Parms);
 }
 struct Z_Construct_UFunction_ADice_SwitchDicePosition_Statics
@@ -178,12 +180,20 @@ struct Z_Construct_UFunction_ADice_SwitchDicePosition_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStructPropertyParams NewProp_NewPosition;
+	static void NewProp_ResizeDice_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ResizeDice;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_NewPosition = { "NewPosition", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Dice_eventSwitchDicePosition_Parms, NewPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_ResizeDice_SetBit(void* Obj)
+{
+	((Dice_eventSwitchDicePosition_Parms*)Obj)->ResizeDice = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_ResizeDice = { "ResizeDice", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Dice_eventSwitchDicePosition_Parms), &Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_ResizeDice_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_NewPosition,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_ResizeDice,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ADice, nullptr, "SwitchDicePosition", nullptr, nullptr, Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers), sizeof(Dice_eventSwitchDicePosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams) };
@@ -233,7 +243,7 @@ struct Z_Construct_UClass_ADice_Statics
 		{ &Z_Construct_UFunction_ADice_RollTheDice, "RollTheDice" }, // 3358396767
 		{ &Z_Construct_UFunction_ADice_ShowDice, "ShowDice" }, // 1294399678
 		{ &Z_Construct_UFunction_ADice_ShowDiceFeedbackNumber, "ShowDiceFeedbackNumber" }, // 2693848387
-		{ &Z_Construct_UFunction_ADice_SwitchDicePosition, "SwitchDicePosition" }, // 1479629512
+		{ &Z_Construct_UFunction_ADice_SwitchDicePosition, "SwitchDicePosition" }, // 1943532241
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -286,10 +296,10 @@ ADice::~ADice() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 67221597U) },
+		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 1586457441U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_3596618535(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_3135689078(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
