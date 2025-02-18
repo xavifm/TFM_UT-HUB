@@ -55,7 +55,7 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	void ShowMenuWidget();
+	void SwitchMenuWidget(bool _enabled);
 
 	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
 	void SwitchCameraTeam(int _direction);
@@ -72,5 +72,9 @@ private:
 	const float DICE_HEIGHT_OFFSET = 140;
 
 	void UpdateDicePosition(bool _resizeDice = true);
+	void RestoreTurnLogic();
 	bool InputEnabled = true;
+	bool RollingDice = false;
+
+	UUserWidget* MenuWidget;
 };

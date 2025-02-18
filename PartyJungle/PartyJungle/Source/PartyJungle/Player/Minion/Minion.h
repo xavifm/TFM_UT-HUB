@@ -35,6 +35,9 @@ public:
 	void SetMinionsMovements(int _movements);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
+	int GetMinionsMovements();
+
+	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void MoveToSquare(ASquare* TargetSquare);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")

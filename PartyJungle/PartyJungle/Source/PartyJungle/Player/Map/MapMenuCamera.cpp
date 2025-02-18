@@ -11,7 +11,7 @@ AMapMenuCamera::AMapMenuCamera()
 void AMapMenuCamera::BeginPlay()
 {
 	Super::BeginPlay();
-    ShowMenuWidget();
+    SwitchMenuWidget(true);
 
     UpdateDicePosition();
 
@@ -43,10 +43,14 @@ void AMapMenuCamera::Tick(float DeltaTime)
         FVector NewLocation = FMath::VInterpTo(CameraLocation, TargetLocation, DeltaTime, 5.0f);
         SetActorLocation(NewLocation);
 
+        if (!RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
+        {
+            RestoreTurnLogic();
+        }
+
         UpdateDicePosition(false);
     }
 }
-
 
 void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -59,14 +63,21 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     }
 }
 
-void AMapMenuCamera::ShowMenuWidget()
+void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 {
     if (MenuWidgetClass)
     {
-        UUserWidget* MenuWidget = CreateWidget<UUserWidget>(GetWorld(), MenuWidgetClass);
+        if(!MenuWidget)
+            MenuWidget = CreateWidget<UUserWidget>(GetWorld(), MenuWidgetClass);
+        
         if (MenuWidget)
         {
-            MenuWidget->AddToViewport();
+            if(_enabled && !MenuWidget->IsInViewport())
+                MenuWidget->AddToViewport();
+            else if(!_enabled && MenuWidget->IsInViewport())
+                MenuWidget->RemoveFromViewport();
+
+            MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
         }
     }
 }
@@ -110,6 +121,7 @@ void AMapMenuCamera::RollTheDice()
         return;
 
     InputEnabled = false;
+    RollingDice = true;
 
     if (Dice && CurrentMinion)
     {
@@ -122,6 +134,8 @@ void AMapMenuCamera::RollTheDice()
         {
             CurrentMinion->DiceReference = Dice;
             CurrentMinion->SetMinionsMovements(movements);
+            RollingDice = false;
+            SwitchMenuWidget(false);
         }, Dice->DiceFeedbackTime, false);
     }
 }
@@ -138,4 +152,10 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
     }
 }
 
+void AMapMenuCamera::RestoreTurnLogic()
+{
+    SwitchMenuWidget(true);
+    Dice->ShowDice();
+    InputEnabled = true;
+}
 

@@ -18,6 +18,11 @@ void AMinion::SetMinionsMovements(int _movements)
 	MoveToSquare(CurrentSquare);
 }
 
+int AMinion::GetMinionsMovements()
+{
+	return Movements;
+}
+
 void AMinion::MoveToSquare(ASquare* TargetSquare)
 {
 	if (TargetSquare == nullptr) return;
@@ -62,8 +67,11 @@ void AMinion::HandleMovement(float _deltaTime)
 		{
             isMoving = false;
 
-			if(Movements == 1)
+			if(Movements == 1) 
+			{
 				DiceReference->HideDice();
+				Movements = 0;
+			}
 
 			if (Movements > 0)
 				SetMinionsMovements(Movements - 1);
