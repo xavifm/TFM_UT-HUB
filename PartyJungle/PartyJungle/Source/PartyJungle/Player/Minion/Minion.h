@@ -68,5 +68,6 @@ private:
 	FVector TargetPosition;
 
 	const float MAX_TIME_MOVEMENT = 1.0f;
+	const float MINION_SEPARATION_DISTANCE = 50.0f;
 
 };

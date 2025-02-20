@@ -34,9 +34,8 @@ void AMinion::MoveToSquare(ASquare* TargetSquare)
 
 	const TArray<AMinion*>& MinionsInSquare = CurrentSquare->MinionsList;
 	int32 NumMinions = MinionsInSquare.Num();
-	float SeparationDistance = 50.0f;
 
-	FVector Offset = CalculateSeparationOffset(MinionsInSquare, NumMinions, SeparationDistance);
+	FVector Offset = CalculateSeparationOffset(MinionsInSquare, NumMinions, MINION_SEPARATION_DISTANCE);
 
 	TargetPosition += Offset;
 
