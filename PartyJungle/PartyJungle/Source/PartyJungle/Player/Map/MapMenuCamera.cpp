@@ -67,17 +67,18 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 {
     if (MenuWidgetClass)
     {
-        if(!MenuWidget)
+        if(!MenuWidget) 
+        {
             MenuWidget = CreateWidget<UUserWidget>(GetWorld(), MenuWidgetClass);
+            MenuWidget->AddToViewport();
+        }
         
         if (MenuWidget)
         {
-            if(_enabled && !MenuWidget->IsInViewport())
-                MenuWidget->AddToViewport();
+            if(_enabled)
+                MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
             else if(!_enabled && MenuWidget->IsInViewport())
-                MenuWidget->RemoveFromViewport();
-
-            MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
+                MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Hidden : ESlateVisibility::Collapsed);
         }
     }
 }

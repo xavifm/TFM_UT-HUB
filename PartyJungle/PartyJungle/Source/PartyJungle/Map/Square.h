@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <PartyJungle/Player/Minion/Minion.h>
 #include "Square.generated.h"
 
 UENUM(BlueprintType)
@@ -24,12 +25,18 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	USceneComponent* Center;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Minions List")
+	TArray<AMinion*> MinionsList;
+
 	ASquare();
 
 	ASquare* GetNextNode(int _pathIndex = 0);
 
 	void OpenChooseMenu();
 	void CloseChooseMenu(int _pathIndex);
+	void AddMinion(AMinion* _minion);
+	void RemoveMinion(AMinion* _minion);
+
 	ASquare* GetNextSquare();
 
 	//virtual void ExecuteEvent(AMinion* _minion);

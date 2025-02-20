@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeSquare() {}
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare_NoRegister();
 PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_ESquareType();
@@ -100,6 +101,10 @@ struct Z_Construct_UClass_ASquare_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Map/Square.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinionsList_MetaData[] = {
+		{ "Category", "Minions List" },
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ConnectedNodes_MetaData[] = {
 		{ "Category", "SquareNodesProperties" },
 		{ "ModuleRelativePath", "Map/Square.h" },
@@ -107,6 +112,8 @@ struct Z_Construct_UClass_ASquare_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Money;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Center;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinionsList_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinionsList;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ConnectedNodes_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ConnectedNodes;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -118,11 +125,15 @@ struct Z_Construct_UClass_ASquare_Statics
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_Money = { "Money", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, Money), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Money_MetaData), NewProp_Money_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, Center), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Center_MetaData), NewProp_Center_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList_Inner = { "MinionsList", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList = { "MinionsList", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, MinionsList), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinionsList_MetaData), NewProp_MinionsList_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_ConnectedNodes_Inner = { "ConnectedNodes", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASquare_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_ConnectedNodes = { "ConnectedNodes", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, ConnectedNodes), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ConnectedNodes_MetaData), NewProp_ConnectedNodes_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquare_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_Money,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_Center,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_ConnectedNodes_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_ConnectedNodes,
 };
@@ -170,10 +181,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Sta
 		{ ESquareType_StaticEnum, TEXT("ESquareType"), &Z_Registration_Info_UEnum_ESquareType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2154578961U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 3731948958U) },
+		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2699536732U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_3171800679(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_540626866(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo));

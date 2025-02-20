@@ -14,7 +14,9 @@ void AMinion::SetMinionsMovements(int _movements)
 
 	Movements = _movements;
 	DiceReference->ShowDiceFeedbackNumber(Movements);
+	CurrentSquare->RemoveMinion(this);
 	CurrentSquare = GetNextSquare();
+	CurrentSquare->AddMinion(this);
 	MoveToSquare(CurrentSquare);
 }
 
@@ -30,8 +32,36 @@ void AMinion::MoveToSquare(ASquare* TargetSquare)
 	StartPosition = GetActorLocation();
 	TargetPosition = TargetSquare->GetActorLocation();
 
+	const TArray<AMinion*>& MinionsInSquare = CurrentSquare->MinionsList;
+	int32 NumMinions = MinionsInSquare.Num();
+	float SeparationDistance = 50.0f;
+
+	FVector Offset = CalculateSeparationOffset(MinionsInSquare, NumMinions, SeparationDistance);
+
+	TargetPosition += Offset;
+
 	CurrentLerpTime = 0.0f;
 	isMoving = true;
+}
+
+FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int32 NumMinions, float SeparationDistance) const
+{
+	FVector Offset = FVector::ZeroVector;
+
+	if (NumMinions > 1)
+	{
+		int32 MinionIndex = MinionsInSquare.Find(const_cast<AMinion*>(this));
+		if (MinionIndex == INDEX_NONE) MinionIndex = NumMinions - 1;
+
+		float AngleStep = 360.0f / NumMinions;
+		float Angle = AngleStep * MinionIndex;
+
+		Offset.X = FMath::Cos(FMath::DegreesToRadians(Angle)) * SeparationDistance;
+		Offset.Y = FMath::Sin(FMath::DegreesToRadians(Angle)) * SeparationDistance;
+	}
+
+
+	return Offset;
 }
 
 ASquare* AMinion::GetNextSquare()
@@ -70,6 +100,7 @@ void AMinion::HandleMovement(float _deltaTime)
 			if(Movements == 1) 
 			{
 				DiceReference->HideDice();
+				CurrentSquare;
 				Movements = 0;
 			}
 

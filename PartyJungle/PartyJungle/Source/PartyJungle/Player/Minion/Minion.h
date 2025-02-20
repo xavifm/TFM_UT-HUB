@@ -40,6 +40,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void MoveToSquare(ASquare* TargetSquare);
 
+	FVector CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int32 NumMinions, float SeparationDistance) const;
+
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	ASquare* GetNextSquare();
 

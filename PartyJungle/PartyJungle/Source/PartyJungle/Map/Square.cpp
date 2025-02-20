@@ -20,6 +20,19 @@ void ASquare::CloseChooseMenu(int _pathIndex)
 {
 }
 
+void ASquare::AddMinion(AMinion* _minion)
+{
+	if (_minion && !MinionsList.Contains(_minion))
+		MinionsList.Add(_minion);
+}
+
+void ASquare::RemoveMinion(AMinion* _minion)
+{
+	if (_minion && MinionsList.Contains(_minion))
+		MinionsList.Remove(_minion);
+}
+
+
 ASquare* ASquare::GetNextSquare()
 {
 	if(ConnectedNodes.Num() > 0)
