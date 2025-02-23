@@ -43,7 +43,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
         FVector NewLocation = FMath::VInterpTo(CameraLocation, TargetLocation, DeltaTime, 5.0f);
         SetActorLocation(NewLocation);
 
-        if (!RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
+        if (!InputEnabled && !RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
         {
             RestoreTurnLogic();
         }
@@ -155,6 +155,7 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
 
 void AMapMenuCamera::RestoreTurnLogic()
 {
+    SwitchCameraTeam(1);
     SwitchMenuWidget(true);
     Dice->ShowDice();
     InputEnabled = true;

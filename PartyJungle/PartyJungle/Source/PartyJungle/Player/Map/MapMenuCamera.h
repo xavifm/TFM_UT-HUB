@@ -68,7 +68,7 @@ public:
 
 private:
 	const int MAX_MINION_NUMBER = 4;
-	const int MAX_TEAM_NUMBER = 4;
+	const int MAX_TEAM_NUMBER = 2;
 	const float DICE_HEIGHT_OFFSET = 140;
 
 	void UpdateDicePosition(bool _resizeDice = true);
