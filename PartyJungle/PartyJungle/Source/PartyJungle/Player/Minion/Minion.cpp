@@ -7,17 +7,25 @@ AMinion::AMinion()
 
 }
 
-void AMinion::SetMinionsMovements(int _movements)
+void AMinion::SetMinionsMovements(int _movements, bool _continuation)
 {
 	if (_movements <= 0)
 		return;
 
 	Movements = _movements;
 	DiceReference->ShowDiceFeedbackNumber(Movements);
-	CurrentSquare->RemoveMinion(this);
-	CurrentSquare = GetNextSquare();
-	CurrentSquare->AddMinion(this);
-	MoveToSquare(CurrentSquare);
+
+	if(!_continuation) 
+	{
+		CurrentSquare->RemoveMinion(this);
+		CurrentSquare = GetNextSquare();
+	}
+
+	if(CurrentSquare) 
+	{
+		CurrentSquare->AddMinion(this);
+		MoveToSquare(CurrentSquare);	
+	}
 }
 
 int AMinion::GetMinionsMovements()
@@ -77,6 +85,8 @@ void AMinion::BeginPlay()
 {
 	Super::BeginPlay();
 
+	if(CurrentSquare)
+		CurrentSquare->AddMinion(this);
 }
 
 void AMinion::HandleMovement(float _deltaTime) 

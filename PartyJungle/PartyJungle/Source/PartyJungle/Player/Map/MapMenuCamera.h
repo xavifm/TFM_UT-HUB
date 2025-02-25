@@ -7,6 +7,7 @@
 #include "InputMappingContext.h"
 #include "InputAction.h"
 #include <PartyJungle/Dice/Dice.h>
+#include <PartyJungle/Map/SquareOptional.h>
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -55,15 +56,21 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void HandleLeftRightInput(const FInputActionValue& _value);
+
+	void HandleConfirmInput();
+
 	void SwitchMenuWidget(bool _enabled);
 
-	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
-	void SwitchCameraTeam(int _direction);
+	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
 
-	UFUNCTION(BlueprintCallable, Category = "Camera Navigation")
-	void FocusNextMinion(const FInputActionValue& _value);
+	void SwitchCameraTeam(int _direction);
+	void FocusNextMinion(int _direction);
 
 	void RollTheDice();
+
+	void ChangeSelectedPath(int _direction);
+	void ConfirmPathSelection();
 
 
 private:
@@ -75,6 +82,10 @@ private:
 	void RestoreTurnLogic();
 	bool InputEnabled = true;
 	bool RollingDice = false;
+	bool SelectingPath = false;
+
+	int SelectedPathIndex = 0;
+	TArray<ASquareOptional*> AvailablePaths;
 
 	UUserWidget* MenuWidget;
 };

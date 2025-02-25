@@ -31,6 +31,9 @@
     <Filter Include="Source\PartyJungle">
       <UniqueIdentifier>{47178167-FE3E-34DF-8BAD-F2C083E3502D}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\PartyJungle\Dice.h">
+      <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
     <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs">
       <Filter>Source\PartyJungle</Filter>
     </None>
@@ -62,6 +65,12 @@
       <Filter>Source\PartyJungle\Map</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Map\Square.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareOptional.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClInclude>
     <Filter Include="Source\PartyJungle\Player">

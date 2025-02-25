@@ -258,6 +258,7 @@
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
+    <ClInclude Include="..\..\Source\PartyJungle\Dice.h"/>
     <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs"/>
     <ClCompile Include="..\..\Source\PartyJungle\PartyJungle.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -275,6 +276,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Map\Square.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareOptional.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

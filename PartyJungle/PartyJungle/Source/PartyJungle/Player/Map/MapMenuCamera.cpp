@@ -58,10 +58,29 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
-        EnhancedInput->BindAction(FocusAnotherMinionAction, ETriggerEvent::Started, this, &AMapMenuCamera::FocusNextMinion);
-        EnhancedInput->BindAction(RollTheDiceAction, ETriggerEvent::Started, this, &AMapMenuCamera::RollTheDice);
+        EnhancedInput->BindAction(FocusAnotherMinionAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
+        EnhancedInput->BindAction(RollTheDiceAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
     }
 }
+
+void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
+{
+    int direction = _value.GetMagnitude();
+
+    if (SelectingPath)
+        ChangeSelectedPath(direction);
+    else
+        FocusNextMinion(direction);
+}
+
+void AMapMenuCamera::HandleConfirmInput()
+{
+    if (SelectingPath)
+        ConfirmPathSelection();
+    else
+        RollTheDice();
+}
+
 
 void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 {
@@ -83,6 +102,31 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
     }
 }
 
+void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths)
+{
+    SelectingPath = _enabled;
+
+    if(_paths.Num() > 0)
+        AvailablePaths = _paths;
+
+    for (ASquareOptional* Path : AvailablePaths)
+    {
+        if (Path)
+        {
+            if(_enabled)
+                Path->EnableArrow();
+            else
+                Path->DisableArrow();
+        }
+    }
+
+    if (_enabled)
+    {
+        SelectedPathIndex = 0;       
+        AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+    }
+}
+
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
     CurrentMinionTeam += _direction;
@@ -97,14 +141,12 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     UpdateDicePosition();
 }
 
-void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
+void AMapMenuCamera::FocusNextMinion(int _direction)
 {
     if (!InputEnabled)
         return;
 
-    int direction = _value.GetMagnitude();
-
-    CurrentMinionPos += direction;
+    CurrentMinionPos += _direction;
 
     if (CurrentMinionPos >= MAX_MINION_NUMBER)
         CurrentMinionPos = 0;
@@ -115,6 +157,20 @@ void AMapMenuCamera::FocusNextMinion(const FInputActionValue& _value)
 
     UpdateDicePosition();
 }
+
+void AMapMenuCamera::ConfirmPathSelection()
+{
+    if (!SelectingPath || !AvailablePaths.IsValidIndex(SelectedPathIndex))
+        return;
+
+    ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
+
+    CurrentMinion->CurrentSquare = SelectedPath;
+    CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
+
+    SwitchPathMenu(false, {});
+}
+
 
 void AMapMenuCamera::RollTheDice()
 {
@@ -140,6 +196,23 @@ void AMapMenuCamera::RollTheDice()
         }, Dice->DiceFeedbackTime, false);
     }
 }
+
+void AMapMenuCamera::ChangeSelectedPath(int _direction)
+{
+    if (!SelectingPath || AvailablePaths.Num() == 0)
+        return;
+
+    if (AvailablePaths[SelectedPathIndex])
+        AvailablePaths[SelectedPathIndex]->DisableArrowAnimation();
+
+    SelectedPathIndex += _direction;
+    if (SelectedPathIndex >= AvailablePaths.Num()) SelectedPathIndex = 0;
+    if (SelectedPathIndex < 0) SelectedPathIndex = AvailablePaths.Num() - 1;
+
+    if (AvailablePaths[SelectedPathIndex])
+        AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+}
+
 
 
 void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)

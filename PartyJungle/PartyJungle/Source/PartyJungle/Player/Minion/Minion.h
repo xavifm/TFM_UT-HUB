@@ -32,7 +32,7 @@ public:
 	ADice* DiceReference;
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
-	void SetMinionsMovements(int _movements);
+	void SetMinionsMovements(int _movements, bool _continuation = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	int GetMinionsMovements();

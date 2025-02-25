@@ -212,20 +212,30 @@ struct Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics
 	struct Minion_eventSetMinionsMovements_Parms
 	{
 		int32 _movements;
+		bool _continuation;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Minion Actions" },
+		{ "CPP_Default__continuation", "false" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__movements;
+	static void NewProp__continuation_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__continuation;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__movements = { "_movements", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventSetMinionsMovements_Parms, _movements), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__continuation_SetBit(void* Obj)
+{
+	((Minion_eventSetMinionsMovements_Parms*)Obj)->_continuation = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__continuation = { "_continuation", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Minion_eventSetMinionsMovements_Parms), &Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__continuation_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__movements,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::NewProp__continuation,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "SetMinionsMovements", nullptr, nullptr, Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::Minion_eventSetMinionsMovements_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics::Function_MetaDataParams) };
@@ -242,9 +252,10 @@ UFunction* Z_Construct_UFunction_AMinion_SetMinionsMovements()
 DEFINE_FUNCTION(AMinion::execSetMinionsMovements)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__movements);
+	P_GET_UBOOL(Z_Param__continuation);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->SetMinionsMovements(Z_Param__movements);
+	P_THIS->SetMinionsMovements(Z_Param__movements,Z_Param__continuation);
 	P_NATIVE_END;
 }
 // End Class AMinion Function SetMinionsMovements
@@ -307,7 +318,7 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_GetMinionsMovements, "GetMinionsMovements" }, // 1153191699
 		{ &Z_Construct_UFunction_AMinion_GetNextSquare, "GetNextSquare" }, // 1662612968
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
-		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 2380628122
+		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 3651061638
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -373,10 +384,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Mi
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 2802409220U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 1426005957U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_143445888(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_501504385(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
