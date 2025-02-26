@@ -58,8 +58,8 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
-        EnhancedInput->BindAction(FocusAnotherMinionAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
-        EnhancedInput->BindAction(RollTheDiceAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
+        EnhancedInput->BindAction(AxisxAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
+        EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
     }
 }
 
@@ -115,8 +115,11 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
         {
             if(_enabled)
                 Path->EnableArrow();
-            else
+            else 
+            {
+                Path->DisableArrowAnimation();
                 Path->DisableArrow();
+            }
         }
     }
 

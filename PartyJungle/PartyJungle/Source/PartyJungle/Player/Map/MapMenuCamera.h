@@ -28,10 +28,10 @@ public:
 	TSubclassOf<UUserWidget> MenuWidgetClass;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
-	UInputAction* FocusAnotherMinionAction;
+	UInputAction* AxisxAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
-	UInputAction* RollTheDiceAction;
+	UInputAction* KeyaAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
