@@ -3,24 +3,32 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "../Minion/Minion.h"
+#include "PartyJungle/Player/Scores/ScoreDatabase.h"
+#include "PartyJungle/Map/MapDatabase.h"
 #include "PlayerMapUI.generated.h"
 
 UCLASS()
 class PARTYJUNGLE_API UPlayerMapUI : public UUserWidget
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
+
+private:
+    UPROPERTY()
+    AScoreDatabase* ScoresDb;
+
+    UPROPERTY()
+    AMapDatabase* MapDb;
 
 public:
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb);
 
-	UFUNCTION(BlueprintCallable, Category = "Click Logic")
-	void RollAction(int _movements);
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void UpdateUIScore(AScoreDatabase* ScoresList);
 
-	UFUNCTION(BlueprintCallable, Category = "Minion Movement")
-	void AssignMinionMovements(AMinion* _targetMinion, int _movements);
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    void UpdateCoins(int Team, int Quantity);
 
-	void InitializeMinionList();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minions List")
-	TArray<AMinion*> MinionsList;
-	
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    void UpdateCrowns(int Team, int Quantity);
 };

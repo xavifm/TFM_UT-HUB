@@ -3,33 +3,20 @@
 #include "Kismet/GameplayStatics.h"
 #include "./PlayerMapUI.h"
 
-
-void UPlayerMapUI::RollAction(int _movements)
+void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 {
-	InitializeMinionList();
-
-	AssignMinionMovements(MinionsList[0], _movements);
-}
-
-void UPlayerMapUI::AssignMinionMovements(AMinion* _targetMinion, int _movements)
-{
-	if (_targetMinion)
-		_targetMinion->SetMinionsMovements(_movements);
-}
-
-void UPlayerMapUI::InitializeMinionList()
-{
-	if (MinionsList.Num() <= 0)
+	if (ScoresDb) 
 	{
-		TArray<AActor*> FoundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMinion::StaticClass(), FoundActors);
+		ScoresDb->UpdateTotalCoins(Team, Quantity);
+		UpdateUIScore(ScoresDb);
+	}
+}
 
-		for (AActor* Actor : FoundActors)
-		{
-			if (AMinion* Minion = Cast<AMinion>(Actor))
-			{
-				MinionsList.Add(Minion);
-			}
-		}
+void UPlayerMapUI::UpdateCrowns(int Team, int Quantity)
+{
+	if (ScoresDb)
+	{
+		ScoresDb->UpdateCrowns(Team, Quantity);
+		UpdateUIScore(ScoresDb);
 	}
 }
