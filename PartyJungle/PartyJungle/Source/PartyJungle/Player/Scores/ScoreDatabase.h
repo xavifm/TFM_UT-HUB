@@ -1,0 +1,40 @@
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "./ScoreDto.h"
+#include "ScoreDatabase.generated.h"
+
+UCLASS()
+class PARTYJUNGLE_API AScoreDatabase : public AActor
+{
+	GENERATED_BODY()
+	
+public:	
+	AScoreDatabase();
+
+    UFUNCTION(BlueprintCallable, Category = "Score")
+    TArray<FScoreDto> GetScoreList() const;
+
+    UFUNCTION(BlueprintCallable, Category = "Score")
+    FScoreDto GetScore(int PlayerID) const;
+
+    UFUNCTION(BlueprintCallable, Category = "Score")
+    void UpdateGlobalPositions();
+
+    UFUNCTION(BlueprintCallable, Category = "Score")
+    void UpdateTotalCoins(int PlayerID, int Quantity);
+
+    UFUNCTION(BlueprintCallable, Category = "Score")
+    void UpdateCrowns(int PlayerID, int Quantity);
+
+protected:
+	virtual void BeginPlay() override;
+
+    void InitializeScores();
+
+private:
+    TMap<int, FScoreDto*> Scores;
+
+    const int MAX_TEAMS_NUMBER = 4;
+};

@@ -94,6 +94,21 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\Minion\Minion.h">
       <Filter>Source\PartyJungle\Player\Minion</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Scores">
+      <UniqueIdentifier>{638EA71E-C438-3868-A657-8FF9DA3C4CF2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\ScoreDatabase.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\ScoreDatabase.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\ScoreDto.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\ScoreDto.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Player\UI">
       <UniqueIdentifier>{01B54EC1-76B7-386C-A03C-0A78D03089D3}</UniqueIdentifier>
     </Filter>
