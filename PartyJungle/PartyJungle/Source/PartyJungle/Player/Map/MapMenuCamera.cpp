@@ -90,6 +90,9 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
         {
             MenuWidget = CreateWidget<UUserWidget>(GetWorld(), MenuWidgetClass);
             MenuWidget->AddToViewport();
+
+            MapUI = (UPlayerMapUI*) MenuWidget;
+            MapUI->SwitchTurnUI(CurrentMinionTeam);
         }
         
         if (MenuWidget)
@@ -140,6 +143,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+    MapUI->SwitchTurnUI(CurrentMinionTeam);
 
     UpdateDicePosition();
 }

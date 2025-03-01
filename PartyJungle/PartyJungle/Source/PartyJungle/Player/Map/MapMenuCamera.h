@@ -8,6 +8,7 @@
 #include "InputAction.h"
 #include <PartyJungle/Dice/Dice.h>
 #include <PartyJungle/Map/SquareOptional.h>
+#include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -86,6 +87,7 @@ private:
 
 	int SelectedPathIndex = 0;
 	TArray<ASquareOptional*> AvailablePaths;
+	UPlayerMapUI* MapUI;
 
 	UUserWidget* MenuWidget;
 };
