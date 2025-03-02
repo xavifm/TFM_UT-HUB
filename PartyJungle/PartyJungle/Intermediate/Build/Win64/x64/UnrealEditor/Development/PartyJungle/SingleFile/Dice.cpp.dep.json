@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice.cpp",
+        "Source": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice\\dice.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
             "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\shareddefinitions.unrealed.project.valapi.cpp20.h",
-            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice\\dice.h",
             "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\core\\public\\coreminimal.h",
             "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\core\\public\\coretypes.h",
             "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\core\\public\\hal\\platform.h",
