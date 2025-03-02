@@ -39,5 +39,5 @@ public:
 
 private:
 	const int RANDOM_NUMBER_MIN = 1;
-	const int RANDOM_NUMBER_MAX = 10;
+	const int RANDOM_NUMBER_MAX = 6;
 };
