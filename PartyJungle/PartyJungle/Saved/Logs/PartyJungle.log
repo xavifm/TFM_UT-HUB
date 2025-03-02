@@ -1419,3 +1419,8 @@ _MatTransl_3B7A55D3409170328211A060FC2E3BB1E263C720_BBD650804D314CE7A44ADF9BB4F3
 [2025.03.02-19.02.38:789][201]LogPython: Display: Object '/Engine/PythonTypes.set_bone_reference_pose' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
 [2025.03.02-19.02.38:789][201]LogPython: Display: Object '/Engine/PythonTypes.import_ik_rig_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
 [2025.03.02-19.02.38:789][201]LogPython: Display: Object '/Engine/PythonTypes.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.03.02-19.02.45:135][201]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2025.03.02-19.02.49:890][201]LogExit: Editor shut down
+[2025.03.02-19.02.49:957][201]LogExit: Transaction tracking system shut down
+[2025.03.02-19.03.09:259][201]LogExit: Object subsystem successfully closed.
+[2025.03.02-19.03.09:547][201]LogShaderCompilers: Display: Shaders left to compile 0
