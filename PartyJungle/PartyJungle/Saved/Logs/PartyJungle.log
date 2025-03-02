@@ -1424,3 +1424,8 @@ _MatTransl_3B7A55D3409170328211A060FC2E3BB1E263C720_BBD650804D314CE7A44ADF9BB4F3
 [2025.03.02-19.02.49:957][201]LogExit: Transaction tracking system shut down
 [2025.03.02-19.03.09:259][201]LogExit: Object subsystem successfully closed.
 [2025.03.02-19.03.09:547][201]LogShaderCompilers: Display: Shaders left to compile 0
+[2025.03.02-19.03.25:215][201]MemoryProfiler: Shutdown
+[2025.03.02-19.03.25:220][201]NetworkingProfiler: Shutdown
+[2025.03.02-19.03.25:220][201]LoadingProfiler: Shutdown
+[2025.03.02-19.03.25:283][201]TimingProfiler: Shutdown
+[2025.03.02-19.03.29:797][201]LogOpenImageDenoise: OIDN shutting down
