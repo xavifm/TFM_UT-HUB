@@ -1,4 +1,5 @@
 /I "."
+/I "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Private"
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT"
 /I "Runtime\Engine\Classes"
 /I "Runtime\Engine\Public"
@@ -283,6 +284,7 @@
 /I "Editor\AnimationEditMode\Public"
 /I "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\UnrealEditor\Inc\PartyJungle\UHT"
 /I "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Source"
+/I "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Public"
 /I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
 /I "..\Plugins\EnhancedInput\Source"
 /I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
