@@ -10,45 +10,43 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeScoreDto() {}
 
 // Begin Cross Module References
-PARTYJUNGLE_API UScriptStruct* Z_Construct_UScriptStruct_FScoreDto();
+COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UScoreDto();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UScoreDto_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
-// Begin ScriptStruct FScoreDto
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_ScoreDto;
-class UScriptStruct* FScoreDto::StaticStruct()
+// Begin Class UScoreDto
+void UScoreDto::StaticRegisterNativesUScoreDto()
 {
-	if (!Z_Registration_Info_UScriptStruct_ScoreDto.OuterSingleton)
-	{
-		Z_Registration_Info_UScriptStruct_ScoreDto.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FScoreDto, (UObject*)Z_Construct_UPackage__Script_PartyJungle(), TEXT("ScoreDto"));
-	}
-	return Z_Registration_Info_UScriptStruct_ScoreDto.OuterSingleton;
 }
-template<> PARTYJUNGLE_API UScriptStruct* StaticStruct<FScoreDto>()
+IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UScoreDto);
+UClass* Z_Construct_UClass_UScoreDto_NoRegister()
 {
-	return FScoreDto::StaticStruct();
+	return UScoreDto::StaticClass();
 }
-struct Z_Construct_UScriptStruct_FScoreDto_Statics
+struct Z_Construct_UClass_UScoreDto_Statics
 {
 #if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+		{ "IncludePath", "Player/Scores/ScoreDto.h" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDto.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Team_MetaData[] = {
-		{ "Category", "ScoreDto" },
+		{ "Category", "Score" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDto.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GlobalPosition_MetaData[] = {
-		{ "Category", "ScoreDto" },
+		{ "Category", "Score" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDto.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TotalCoins_MetaData[] = {
-		{ "Category", "ScoreDto" },
+		{ "Category", "Score" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDto.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_StoredCrowns_MetaData[] = {
-		{ "Category", "ScoreDto" },
+		{ "Category", "Score" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDto.h" },
 	};
 #endif // WITH_METADATA
@@ -57,56 +55,69 @@ struct Z_Construct_UScriptStruct_FScoreDto_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_TotalCoins;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_StoredCrowns;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static void* NewStructOps()
-	{
-		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FScoreDto>();
-	}
-	static const UECodeGen_Private::FStructParams StructParams;
+	static UObject* (*const DependentSingletons[])();
+	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
+		TCppClassTypeTraits<UScoreDto>::IsAbstract,
+	};
+	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FScoreDto, Team), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_GlobalPosition = { "GlobalPosition", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FScoreDto, GlobalPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GlobalPosition_MetaData), NewProp_GlobalPosition_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_TotalCoins = { "TotalCoins", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FScoreDto, TotalCoins), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TotalCoins_MetaData), NewProp_TotalCoins_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_StoredCrowns = { "StoredCrowns", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FScoreDto, StoredCrowns), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StoredCrowns_MetaData), NewProp_StoredCrowns_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FScoreDto_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_Team,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_GlobalPosition,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_TotalCoins,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FScoreDto_Statics::NewProp_StoredCrowns,
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScoreDto_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScoreDto, Team), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScoreDto_Statics::NewProp_GlobalPosition = { "GlobalPosition", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScoreDto, GlobalPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GlobalPosition_MetaData), NewProp_GlobalPosition_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScoreDto_Statics::NewProp_TotalCoins = { "TotalCoins", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScoreDto, TotalCoins), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TotalCoins_MetaData), NewProp_TotalCoins_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UScoreDto_Statics::NewProp_StoredCrowns = { "StoredCrowns", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UScoreDto, StoredCrowns), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_StoredCrowns_MetaData), NewProp_StoredCrowns_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UScoreDto_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScoreDto_Statics::NewProp_Team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScoreDto_Statics::NewProp_GlobalPosition,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScoreDto_Statics::NewProp_TotalCoins,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UScoreDto_Statics::NewProp_StoredCrowns,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FScoreDto_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FScoreDto_Statics::StructParams = {
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UScoreDto_Statics::PropPointers) < 2048);
+UObject* (*const Z_Construct_UClass_UScoreDto_Statics::DependentSingletons[])() = {
+	(UObject* (*)())Z_Construct_UClass_UObject,
 	(UObject* (*)())Z_Construct_UPackage__Script_PartyJungle,
-	nullptr,
-	&NewStructOps,
-	"ScoreDto",
-	Z_Construct_UScriptStruct_FScoreDto_Statics::PropPointers,
-	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FScoreDto_Statics::PropPointers),
-	sizeof(FScoreDto),
-	alignof(FScoreDto),
-	RF_Public|RF_Transient|RF_MarkAsNative,
-	EStructFlags(0x00000201),
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FScoreDto_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FScoreDto_Statics::Struct_MetaDataParams)
 };
-UScriptStruct* Z_Construct_UScriptStruct_FScoreDto()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UScoreDto_Statics::DependentSingletons) < 16);
+const UECodeGen_Private::FClassParams Z_Construct_UClass_UScoreDto_Statics::ClassParams = {
+	&UScoreDto::StaticClass,
+	nullptr,
+	&StaticCppClassTypeInfo,
+	DependentSingletons,
+	nullptr,
+	Z_Construct_UClass_UScoreDto_Statics::PropPointers,
+	nullptr,
+	UE_ARRAY_COUNT(DependentSingletons),
+	0,
+	UE_ARRAY_COUNT(Z_Construct_UClass_UScoreDto_Statics::PropPointers),
+	0,
+	0x001000A0u,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UScoreDto_Statics::Class_MetaDataParams), Z_Construct_UClass_UScoreDto_Statics::Class_MetaDataParams)
+};
+UClass* Z_Construct_UClass_UScoreDto()
 {
-	if (!Z_Registration_Info_UScriptStruct_ScoreDto.InnerSingleton)
+	if (!Z_Registration_Info_UClass_UScoreDto.OuterSingleton)
 	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_ScoreDto.InnerSingleton, Z_Construct_UScriptStruct_FScoreDto_Statics::StructParams);
+		UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_UScoreDto.OuterSingleton, Z_Construct_UClass_UScoreDto_Statics::ClassParams);
 	}
-	return Z_Registration_Info_UScriptStruct_ScoreDto.InnerSingleton;
+	return Z_Registration_Info_UClass_UScoreDto.OuterSingleton;
 }
-// End ScriptStruct FScoreDto
+template<> PARTYJUNGLE_API UClass* StaticClass<UScoreDto>()
+{
+	return UScoreDto::StaticClass();
+}
+DEFINE_VTABLE_PTR_HELPER_CTOR(UScoreDto);
+UScoreDto::~UScoreDto() {}
+// End Class UScoreDto
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics
 {
-	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FScoreDto::StaticStruct, Z_Construct_UScriptStruct_FScoreDto_Statics::NewStructOps, TEXT("ScoreDto"), &Z_Registration_Info_UScriptStruct_ScoreDto, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FScoreDto), 112499376U) },
+	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
+		{ Z_Construct_UClass_UScoreDto, UScoreDto::StaticClass, TEXT("UScoreDto"), &Z_Registration_Info_UClass_UScoreDto, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UScoreDto), 4293330468U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_439203471(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_717818728(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDto_h_Statics::ScriptStructInfo),
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
