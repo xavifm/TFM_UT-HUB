@@ -13,13 +13,11 @@ class PARTYJUNGLE_API UPlayerMapUI : public UUserWidget
     GENERATED_BODY()
 
 private:
-    UPROPERTY()
-    AScoreDatabase* ScoresDb;
-
-    UPROPERTY()
-    AMapDatabase* MapDb;
 
 public:
+    UPROPERTY(VisibleAnywhere)
+    AScoreDatabase* ScoresDb;
+
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb);
 
