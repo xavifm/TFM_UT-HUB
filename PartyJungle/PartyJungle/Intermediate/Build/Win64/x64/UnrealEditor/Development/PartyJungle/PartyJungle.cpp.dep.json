@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\partyjungle.cpp",
+        "Source": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\partyjungle.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
-            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\partyjungle.h"
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\partyjungle.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
