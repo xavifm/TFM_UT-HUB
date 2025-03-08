@@ -34,6 +34,7 @@ protected:
     void InitializeScores();
 
 private:
+    UPROPERTY()
     TMap<int, UScoreDto*> Scores;
 
     const int MAX_TEAMS_NUMBER = 4;

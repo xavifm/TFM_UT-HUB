@@ -13,12 +13,12 @@ TMap<int, UScoreDto*> AScoreDatabase::GetScoreList() const
 
 UScoreDto* AScoreDatabase::GetScore(int PlayerID) const
 {
-	UScoreDto* ScoreQuery = nullptr;
+	UScoreDto* defaultScore = nullptr;
 
 	if (Scores.Contains(PlayerID))
-		ScoreQuery = Scores[PlayerID];
+		return Scores[PlayerID];
 
-	return ScoreQuery;
+	return defaultScore;
 }
 
 void AScoreDatabase::UpdateGlobalPositions()
