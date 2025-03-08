@@ -19,6 +19,7 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
@@ -68,6 +69,10 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ "Category", "Camera Navigation" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ScoreDb_MetaData[] = {
+		{ "Category", "Score Reference" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentMinionPos_MetaData[] = {
 		{ "Category", "Camera Navigation" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
@@ -88,6 +93,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CameraSpeed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentMinion;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapDb;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ScoreDb;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentMinionPos;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentMinionTeam;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Dice;
@@ -105,6 +111,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed = { "CameraSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CameraSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraSpeed_MetaData), NewProp_CameraSpeed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion = { "CurrentMinion", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinion_MetaData), NewProp_CurrentMinion_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapDb = { "MapDb", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MapDb), Z_Construct_UClass_AMapDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapDb_MetaData), NewProp_MapDb_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ScoreDb = { "ScoreDb", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, ScoreDb), Z_Construct_UClass_AScoreDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoreDb_MetaData), NewProp_ScoreDb_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionPos = { "CurrentMinionPos", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinionPos), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinionPos_MetaData), NewProp_CurrentMinionPos_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionTeam = { "CurrentMinionTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinionTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinionTeam_MetaData), NewProp_CurrentMinionTeam_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_Dice = { "Dice", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, Dice), Z_Construct_UClass_ADice_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Dice_MetaData), NewProp_Dice_MetaData) };
@@ -116,6 +123,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapDb,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ScoreDb,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionPos,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_Dice,
@@ -161,10 +169,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 8118375U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3334366123U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1973003722(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_212886305(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

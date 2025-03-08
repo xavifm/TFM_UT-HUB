@@ -8,16 +8,16 @@
 UCLASS()
 class PARTYJUNGLE_API AScoreDatabase : public AActor
 {
-	GENERATED_BODY()
+	GENERATED_BODY(Blueprintable)
 	
 public:	
 	AScoreDatabase();
 
     UFUNCTION(BlueprintCallable, Category = "Score")
-    TArray<FScoreDto> GetScoreList() const;
+    TMap<int, UScoreDto*> GetScoreList() const;
 
     UFUNCTION(BlueprintCallable, Category = "Score")
-    FScoreDto GetScore(int PlayerID) const;
+    UScoreDto* GetScore(int PlayerID) const;
 
     UFUNCTION(BlueprintCallable, Category = "Score")
     void UpdateGlobalPositions();
@@ -34,7 +34,8 @@ protected:
     void InitializeScores();
 
 private:
-    TMap<int, FScoreDto*> Scores;
+    UPROPERTY()
+    TMap<int, UScoreDto*> Scores;
 
     const int MAX_TEAMS_NUMBER = 4;
 };

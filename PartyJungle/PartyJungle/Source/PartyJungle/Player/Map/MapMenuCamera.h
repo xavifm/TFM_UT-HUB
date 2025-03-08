@@ -46,6 +46,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	AMapDatabase* MapDb;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Score Reference")
+	AScoreDatabase* ScoreDb;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	int CurrentMinionPos;
 

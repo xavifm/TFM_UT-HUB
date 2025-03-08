@@ -45,6 +45,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
 
         if (!InputEnabled && !RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
         {
+            MapUI->UpdateCoins(CurrentMinionTeam, 10);
             RestoreTurnLogic();
         }
 
@@ -93,6 +94,9 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 
             MapUI = (UPlayerMapUI*) MenuWidget;
             MapUI->SwitchTurnUI(CurrentMinionTeam);
+
+            if (ScoreDb)
+                MapUI->ScoresDb = ScoreDb;
         }
         
         if (MenuWidget)

@@ -6,14 +6,19 @@ AScoreDatabase::AScoreDatabase()
 
 }
 
-TArray<FScoreDto> AScoreDatabase::GetScoreList() const
+TMap<int, UScoreDto*> AScoreDatabase::GetScoreList() const
 {
-	return TArray<FScoreDto>();
+	return Scores;
 }
 
-FScoreDto AScoreDatabase::GetScore(int PlayerID) const
+UScoreDto* AScoreDatabase::GetScore(int PlayerID) const
 {
-	return *Scores[PlayerID];
+	UScoreDto* defaultScore = nullptr;
+
+	if (Scores.Contains(PlayerID))
+		return Scores[PlayerID];
+
+	return defaultScore;
 }
 
 void AScoreDatabase::UpdateGlobalPositions()
@@ -41,7 +46,12 @@ void AScoreDatabase::InitializeScores()
 {
 	for (int team = 0; team < MAX_TEAMS_NUMBER; team++)
 	{
-		Scores[team] = new FScoreDto();
-		Scores[team]->Team = team;
+		UScoreDto* newScore = NewObject<UScoreDto>(this);
+
+		if (newScore)
+		{
+			newScore->Team = team;
+			Scores.Add(team, newScore);
+		}
 	}
 }
