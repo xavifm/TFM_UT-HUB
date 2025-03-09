@@ -260,6 +260,90 @@ DEFINE_FUNCTION(AMinion::execSetMinionsMovements)
 }
 // End Class AMinion Function SetMinionsMovements
 
+// Begin Class AMinion Function ShowMinionCoinsFeedback
+struct Minion_eventShowMinionCoinsFeedback_Parms
+{
+	int32 _quantity;
+};
+static FName NAME_AMinion_ShowMinionCoinsFeedback = FName(TEXT("ShowMinionCoinsFeedback"));
+void AMinion::ShowMinionCoinsFeedback(int32 _quantity)
+{
+	Minion_eventShowMinionCoinsFeedback_Parms Parms;
+	Parms._quantity=_quantity;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_ShowMinionCoinsFeedback),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Feedback" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventShowMinionCoinsFeedback_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::NewProp__quantity,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "ShowMinionCoinsFeedback", nullptr, nullptr, Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::PropPointers), sizeof(Minion_eventShowMinionCoinsFeedback_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventShowMinionCoinsFeedback_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function ShowMinionCoinsFeedback
+
+// Begin Class AMinion Function ShowMinionCrownsFeedback
+struct Minion_eventShowMinionCrownsFeedback_Parms
+{
+	int32 _quantity;
+};
+static FName NAME_AMinion_ShowMinionCrownsFeedback = FName(TEXT("ShowMinionCrownsFeedback"));
+void AMinion::ShowMinionCrownsFeedback(int32 _quantity)
+{
+	Minion_eventShowMinionCrownsFeedback_Parms Parms;
+	Parms._quantity=_quantity;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_ShowMinionCrownsFeedback),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Feedback" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventShowMinionCrownsFeedback_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::NewProp__quantity,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "ShowMinionCrownsFeedback", nullptr, nullptr, Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::PropPointers), sizeof(Minion_eventShowMinionCrownsFeedback_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventShowMinionCrownsFeedback_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function ShowMinionCrownsFeedback
+
 // Begin Class AMinion Function UpdateCoins
 struct Z_Construct_UFunction_AMinion_UpdateCoins_Statics
 {
@@ -407,6 +491,8 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_GetNextSquare, "GetNextSquare" }, // 1662612968
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
 		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 3651061638
+		{ &Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback, "ShowMinionCoinsFeedback" }, // 3394016713
+		{ &Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback, "ShowMinionCrownsFeedback" }, // 269617942
 		{ &Z_Construct_UFunction_AMinion_UpdateCoins, "UpdateCoins" }, // 3805948012
 		{ &Z_Construct_UFunction_AMinion_UpdateCrowns, "UpdateCrowns" }, // 2814760434
 	};
@@ -474,10 +560,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Mi
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 4019855935U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 2967213608U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_3195396973(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_802047405(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));

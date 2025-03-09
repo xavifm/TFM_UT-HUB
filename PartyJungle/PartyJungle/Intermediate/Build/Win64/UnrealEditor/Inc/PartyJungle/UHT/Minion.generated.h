@@ -24,6 +24,7 @@ class ASquare;
 	DECLARE_FUNCTION(execSetMinionsMovements);
 
 
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinion(); \
@@ -50,6 +51,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_ENHANCED_CONSTRUCTORS \
 private: \

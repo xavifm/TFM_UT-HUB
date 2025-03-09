@@ -51,6 +51,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	ASquare* GetNextSquare();
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
+	void ShowMinionCoinsFeedback(int _quantity);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
+	void ShowMinionCrownsFeedback(int _quantity);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
 	float TotalLerpTime = 0.5f;
 

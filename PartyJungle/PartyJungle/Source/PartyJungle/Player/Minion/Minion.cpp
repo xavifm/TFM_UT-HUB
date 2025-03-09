@@ -75,12 +75,16 @@ void AMinion::UpdateCoins(int _quantity)
 {
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
+
+	ShowMinionCoinsFeedback(_quantity);
 }
 
 void AMinion::UpdateCrowns(int _quantity)
 {
 	Crowns += _quantity;
 	Crowns = FMath::Clamp(Coins, 0, MAX_MINION_CROWNS);
+
+	ShowMinionCrownsFeedback(_quantity);
 }
 
 ASquare* AMinion::GetNextSquare()
