@@ -71,6 +71,18 @@ FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int
 	return Offset;
 }
 
+void AMinion::UpdateCoins(int _quantity)
+{
+	Coins += _quantity;
+	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
+}
+
+void AMinion::UpdateCrowns(int _quantity)
+{
+	Crowns += _quantity;
+	Crowns = FMath::Clamp(Coins, 0, MAX_MINION_CROWNS);
+}
+
 ASquare* AMinion::GetNextSquare()
 {
 	ASquare* squareQuery = nullptr;

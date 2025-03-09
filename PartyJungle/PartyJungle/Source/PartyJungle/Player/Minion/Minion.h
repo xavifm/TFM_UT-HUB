@@ -43,6 +43,12 @@ public:
 	FVector CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int32 NumMinions, float SeparationDistance) const;
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
+	void UpdateCoins(int _quantity);
+
+	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
+	void UpdateCrowns(int _quantity);
+
+	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	ASquare* GetNextSquare();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
@@ -50,7 +56,6 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int32 Movements;
@@ -64,10 +69,14 @@ private:
 	bool isMoving = false;
 	float CurrentLerpTime = 0.0f;
 
+	int Coins;
+	int Crowns;
+
 	FVector StartPosition;
 	FVector TargetPosition;
 
 	const float MAX_TIME_MOVEMENT = 1.0f;
 	const float MINION_SEPARATION_DISTANCE = 50.0f;
-
+	const int MAX_MINION_COINS = 50;
+	const int MAX_MINION_CROWNS = 5;
 };

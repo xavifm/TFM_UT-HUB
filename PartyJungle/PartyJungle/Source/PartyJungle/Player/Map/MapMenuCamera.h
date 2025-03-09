@@ -83,6 +83,7 @@ private:
 	const float DICE_HEIGHT_OFFSET = 140;
 
 	void UpdateDicePosition(bool _resizeDice = true);
+	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);
 	void RestoreTurnLogic();
 	bool InputEnabled = true;
 	bool RollingDice = false;

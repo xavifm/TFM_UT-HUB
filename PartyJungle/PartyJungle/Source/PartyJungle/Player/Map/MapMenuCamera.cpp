@@ -45,7 +45,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
 
         if (!InputEnabled && !RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
         {
-            MapUI->UpdateCoins(CurrentMinionTeam, 10);
+            UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
             RestoreTurnLogic();
         }
 
@@ -235,6 +235,15 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
 
         Dice->SwitchDicePosition(NewDicePosition, _resizeDice);
     }
+}
+
+void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns) 
+{
+    if (_coins == 0 && _crowns == 0)
+        return;
+
+    MapUI->UpdateCoins(CurrentMinionTeam, _coins);
+    CurrentMinion->UpdateCoins(_coins);
 }
 
 void AMapMenuCamera::RestoreTurnLogic()

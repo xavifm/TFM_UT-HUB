@@ -5,6 +5,9 @@
 
 void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 {
+	if (Quantity == 0)
+		return;
+
 	if (ScoresDb) 
 	{
 		ScoresDb->UpdateTotalCoins(Team, Quantity);
@@ -14,6 +17,9 @@ void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 
 void UPlayerMapUI::UpdateCrowns(int Team, int Quantity)
 {
+	if (Quantity == 0)
+		return;
+
 	if (ScoresDb)
 	{
 		ScoresDb->UpdateCrowns(Team, Quantity);
