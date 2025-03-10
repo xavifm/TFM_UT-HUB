@@ -43,7 +43,7 @@ public:
 	FVector CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int32 NumMinions, float SeparationDistance) const;
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
-	void UpdateCoins(int _quantity);
+	int UpdateCoins(int _quantity);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void UpdateCrowns(int _quantity);

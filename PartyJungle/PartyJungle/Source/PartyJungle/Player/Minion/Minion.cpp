@@ -71,13 +71,17 @@ FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int
 	return Offset;
 }
 
-void AMinion::UpdateCoins(int _quantity)
+int AMinion::UpdateCoins(int _quantity)
 {
+	int previousCoins = Coins;
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
 
 	ShowMinionCoinsFeedback(_quantity);
+
+	return Coins - previousCoins;
 }
+
 
 void AMinion::UpdateCrowns(int _quantity)
 {

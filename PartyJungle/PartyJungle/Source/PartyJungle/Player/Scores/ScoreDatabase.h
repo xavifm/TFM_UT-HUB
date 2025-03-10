@@ -38,4 +38,6 @@ private:
     TMap<int, UScoreDto*> Scores;
 
     const int MAX_TEAMS_NUMBER = 4;
+    const float MAX_PLAYER_COINS = 999999;
+    const float MAX_PLAYER_CROWNS = 999999;
 };

@@ -81,6 +81,7 @@ private:
 	const int MAX_MINION_NUMBER = 3;
 	const int MAX_TEAM_NUMBER = 2;
 	const float DICE_HEIGHT_OFFSET = 140;
+	const float TIME_BEFORE_RESTORING_ROUND = 2;
 
 	void UpdateDicePosition(bool _resizeDice = true);
 	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);
@@ -88,6 +89,7 @@ private:
 	bool InputEnabled = true;
 	bool RollingDice = false;
 	bool SelectingPath = false;
+	bool TimedActionExecuted = false;
 
 	int SelectedPathIndex = 0;
 	TArray<ASquareOptional*> AvailablePaths;

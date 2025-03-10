@@ -27,6 +27,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchLegendVisibility(bool IsVisible);
+
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);
 

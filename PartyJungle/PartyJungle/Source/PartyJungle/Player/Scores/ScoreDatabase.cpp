@@ -28,11 +28,13 @@ void AScoreDatabase::UpdateGlobalPositions()
 void AScoreDatabase::UpdateTotalCoins(int PlayerID, int Quantity)
 {
 	Scores[PlayerID]->TotalCoins += Quantity;
+	Scores[PlayerID]->TotalCoins = FMath::Clamp(Scores[PlayerID]->TotalCoins, 0, MAX_PLAYER_COINS);
 }
 
 void AScoreDatabase::UpdateCrowns(int PlayerID, int Quantity)
 {
 	Scores[PlayerID]->StoredCrowns += Quantity;
+	Scores[PlayerID]->StoredCrowns = FMath::Clamp(Scores[PlayerID]->StoredCrowns, 0, MAX_PLAYER_CROWNS);
 }
 
 void AScoreDatabase::BeginPlay()

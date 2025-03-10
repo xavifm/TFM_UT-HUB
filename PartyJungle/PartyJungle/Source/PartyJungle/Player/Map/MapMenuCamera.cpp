@@ -45,8 +45,15 @@ void AMapMenuCamera::Tick(float DeltaTime)
 
         if (!InputEnabled && !RollingDice && CurrentMinion->GetMinionsMovements() <= 0)
         {
-            UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
-            RestoreTurnLogic();
+            if(!TimedActionExecuted) 
+            {
+                MapUI->SwitchLegendVisibility(false);
+                UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
+
+                FTimerHandle timerHandle;
+                GetWorld()->GetTimerManager().SetTimer(timerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
+                TimedActionExecuted = true;
+            }
         }
 
         UpdateDicePosition(false);
@@ -203,7 +210,6 @@ void AMapMenuCamera::RollTheDice()
             CurrentMinion->DiceReference = Dice;
             CurrentMinion->SetMinionsMovements(movements);
             RollingDice = false;
-            SwitchMenuWidget(false);
         }, Dice->DiceFeedbackTime, false);
     }
 }
@@ -242,15 +248,16 @@ void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns)
     if (_coins == 0 && _crowns == 0)
         return;
 
-    MapUI->UpdateCoins(CurrentMinionTeam, _coins);
-    CurrentMinion->UpdateCoins(_coins);
+    int updatedCoins = CurrentMinion->UpdateCoins(_coins);
+    MapUI->UpdateCoins(CurrentMinionTeam, updatedCoins);
 }
 
 void AMapMenuCamera::RestoreTurnLogic()
 {
     SwitchCameraTeam(1);
-    SwitchMenuWidget(true);
+    MapUI->SwitchLegendVisibility(true);
     Dice->ShowDice();
     InputEnabled = true;
+    TimedActionExecuted = false;
 }
 
