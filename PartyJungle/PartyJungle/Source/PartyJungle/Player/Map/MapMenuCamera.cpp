@@ -120,27 +120,29 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
 {
     SelectingPath = _enabled;
 
-    if(_paths.Num() > 0)
+    if (!_paths.IsEmpty())
         AvailablePaths = _paths;
 
     for (ASquareOptional* Path : AvailablePaths)
     {
-        if (Path)
+        if (!Path) continue;
+
+        if (_enabled)
+            Path->EnableArrow();
+        else
         {
-            if(_enabled)
-                Path->EnableArrow();
-            else 
-            {
-                Path->DisableArrowAnimation();
-                Path->DisableArrow();
-            }
+            Path->DisableArrowAnimation();
+            Path->DisableArrow();
         }
     }
 
-    if (_enabled)
+    if (_enabled && !AvailablePaths.IsEmpty())
     {
-        SelectedPathIndex = 0;       
-        AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+        SelectedPathIndex = 0;
+        ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
+
+        if (SelectedPath)
+            SelectedPath->EnableArrowAnimation();
     }
 }
 
@@ -183,6 +185,9 @@ void AMapMenuCamera::ConfirmPathSelection()
 
     ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
 
+    if (SelectedPath->MirrorSquare)
+        SelectedPath = SelectedPath->MirrorReference;
+
     CurrentMinion->CurrentSquare = SelectedPath;
     CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
 
@@ -219,18 +224,18 @@ void AMapMenuCamera::ChangeSelectedPath(int _direction)
     if (!SelectingPath || AvailablePaths.Num() == 0)
         return;
 
-    if (AvailablePaths[SelectedPathIndex])
+    if(AvailablePaths[SelectedPathIndex]) 
+    {
         AvailablePaths[SelectedPathIndex]->DisableArrowAnimation();
 
-    SelectedPathIndex += _direction;
-    if (SelectedPathIndex >= AvailablePaths.Num()) SelectedPathIndex = 0;
-    if (SelectedPathIndex < 0) SelectedPathIndex = AvailablePaths.Num() - 1;
+        SelectedPathIndex += _direction;
+        if (SelectedPathIndex >= AvailablePaths.Num()) SelectedPathIndex = 0;
+        if (SelectedPathIndex < 0) SelectedPathIndex = AvailablePaths.Num() - 1;
 
-    if (AvailablePaths[SelectedPathIndex])
-        AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+        if (AvailablePaths[SelectedPathIndex]) 
+            AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+    }
 }
-
-
 
 void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
 {

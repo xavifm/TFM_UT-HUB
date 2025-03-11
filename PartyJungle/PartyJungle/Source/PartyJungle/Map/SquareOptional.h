@@ -28,4 +28,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Connection")
 	AMapMenuCamera* Camera;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Optional Square Parameters")
+	bool MirrorSquare = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Optional Square Parameters")
+	ASquareOptional* MirrorReference;
 };
