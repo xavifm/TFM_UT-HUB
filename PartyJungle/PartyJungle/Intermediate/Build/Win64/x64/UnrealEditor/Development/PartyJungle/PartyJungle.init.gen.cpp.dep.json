@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\partyjungle.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

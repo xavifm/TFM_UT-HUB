@@ -15,7 +15,7 @@ class ASquare;
 #endif
 #define PARTYJUNGLE_Minion_generated_h
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetNextSquare); \
 	DECLARE_FUNCTION(execUpdateCrowns); \
 	DECLARE_FUNCTION(execUpdateCoins); \
@@ -24,8 +24,8 @@ class ASquare;
 	DECLARE_FUNCTION(execSetMinionsMovements);
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinion(); \
 	friend struct Z_Construct_UClass_AMinion_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AMinion)
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMinion(AMinion&&); \
@@ -46,14 +46,14 @@ public: \
 	NO_API virtual ~AMinion();
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_17_PROLOG
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_17_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_CALLBACK_WRAPPERS \
+	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -61,7 +61,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class AMinion>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h
+#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h
 
 
 #define FOREACH_ENUM_ETEAM(op) \

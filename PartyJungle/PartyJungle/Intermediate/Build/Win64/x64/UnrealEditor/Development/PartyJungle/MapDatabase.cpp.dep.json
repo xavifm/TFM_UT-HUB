@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\map\\mapdatabase.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\map\\mapdatabase.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\minion\\minion.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice\\dice.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\dice.generated.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minion.generated.h",
+            "c:\\users\\joelr\\onedrive\\escriptori\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\mapdatabase.generated.h",
+            "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
+            "d:\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
+            "d:\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
