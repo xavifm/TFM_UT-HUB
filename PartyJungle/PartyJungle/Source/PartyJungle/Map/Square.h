@@ -5,6 +5,8 @@
 #include <PartyJungle/Player/Minion/Minion.h>
 #include "Square.generated.h"
 
+class AMapMenuCamera;
+
 UENUM(BlueprintType)
 enum class ESquareType : uint8
 {
@@ -27,6 +29,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Minions List")
 	TArray<AMinion*> MinionsList;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Connection")
+	AMapMenuCamera* Camera;
 
 	ASquare();
 

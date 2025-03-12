@@ -68,6 +68,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     {
         EnhancedInput->BindAction(AxisxAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
         EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
+        EnhancedInput->BindAction(KeybAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleBackInput);
     }
 }
 
@@ -89,6 +90,31 @@ void AMapMenuCamera::HandleConfirmInput()
         RollTheDice();
 }
 
+void AMapMenuCamera::HandleBackInput() 
+{
+    if (DuelUI)
+        CloseChallengeMenu();
+}
+
+void AMapMenuCamera::CloseChallengeMenu() 
+{
+    SwitchChallengeUI(false);
+    CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements());
+}
+
+void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
+{
+    SwitchChallengeUI(true);
+}
+
+void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
+{
+    DuelUI = _visibility;
+    MapUI->SwitchChallengeVisibility(_visibility);
+
+    if (_visibility)
+        MapUI->SwitchLegendVisibility(false);
+}
 
 void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 {
@@ -101,6 +127,7 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 
             MapUI = (UPlayerMapUI*) MenuWidget;
             MapUI->SwitchTurnUI(CurrentMinionTeam);
+            MapUI->SwitchChallengeVisibility(false);
 
             if (ScoreDb)
                 MapUI->ScoresDb = ScoreDb;

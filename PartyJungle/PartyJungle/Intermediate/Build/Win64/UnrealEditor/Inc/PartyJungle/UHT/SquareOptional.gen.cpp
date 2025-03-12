@@ -10,7 +10,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSquareOptional() {}
 
 // Begin Cross Module References
-PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareOptional();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareOptional_NoRegister();
@@ -145,10 +144,6 @@ struct Z_Construct_UClass_ASquareOptional_Statics
 		{ "IncludePath", "Map/SquareOptional.h" },
 		{ "ModuleRelativePath", "Map/SquareOptional.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[] = {
-		{ "Category", "Camera Connection" },
-		{ "ModuleRelativePath", "Map/SquareOptional.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MirrorSquare_MetaData[] = {
 		{ "Category", "Optional Square Parameters" },
 		{ "ModuleRelativePath", "Map/SquareOptional.h" },
@@ -158,7 +153,6 @@ struct Z_Construct_UClass_ASquareOptional_Statics
 		{ "ModuleRelativePath", "Map/SquareOptional.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
 	static void NewProp_MirrorSquare_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_MirrorSquare;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MirrorReference;
@@ -176,7 +170,6 @@ struct Z_Construct_UClass_ASquareOptional_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareOptional_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareOptional, Camera), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Camera_MetaData), NewProp_Camera_MetaData) };
 void Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorSquare_SetBit(void* Obj)
 {
 	((ASquareOptional*)Obj)->MirrorSquare = 1;
@@ -184,7 +177,6 @@ void Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorSquare_SetBit(voi
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorSquare = { "MirrorSquare", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASquareOptional), &Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorSquare_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MirrorSquare_MetaData), NewProp_MirrorSquare_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorReference = { "MirrorReference", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareOptional, MirrorReference), Z_Construct_UClass_ASquareOptional_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MirrorReference_MetaData), NewProp_MirrorReference_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquareOptional_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareOptional_Statics::NewProp_Camera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorSquare,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareOptional_Statics::NewProp_MirrorReference,
 };
@@ -230,10 +222,10 @@ ASquareOptional::~ASquareOptional() {}
 struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 3875732529U) },
+		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 1290674771U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_301341445(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_3087891990(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

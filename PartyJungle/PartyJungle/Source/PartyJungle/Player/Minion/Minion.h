@@ -72,6 +72,8 @@ public:
 private:
 	void HandleMovement(float _deltaTime);
 
+	AMinion* SearchMinionToChallenge();
+
 	bool isMoving = false;
 	float CurrentLerpTime = 0.0f;
 

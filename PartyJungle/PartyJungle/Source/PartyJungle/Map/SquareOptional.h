@@ -4,8 +4,6 @@
 #include "./Square.h"
 #include "SquareOptional.generated.h"
 
-class AMapMenuCamera;
-
 UCLASS()
 class PARTYJUNGLE_API ASquareOptional : public ASquare
 {
@@ -24,9 +22,6 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Arrow Functions")
 	void DisableArrowAnimation();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Connection")
-	AMapMenuCamera* Camera;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Optional Square Parameters")
 	bool MirrorSquare = false;

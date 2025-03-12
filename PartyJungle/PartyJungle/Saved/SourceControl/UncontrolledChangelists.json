@@ -162,7 +162,11 @@
 				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Squares/GreenSpawn.uasset",
 				"C:/Program Files/Epic Games/UE_5.4/Engine/Content/BasicShapes/Cylinder.uasset",
 				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/6/4W/GDAFI29YXQCJRJS9EYZDDE.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/IF/VMTU8D7HO4KSMPZSWP8TC0.uasset"
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/IF/VMTU8D7HO4KSMPZSWP8TC0.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Inputs/KeyB.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Inputs/MapCameraInput.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Map/PlayerCameraBlueprint.uasset"
 			]
 		}
 	]

@@ -1,4 +1,5 @@
 #include "Minion.h"
+#include <PartyJungle/Player/Map/MapMenuCamera.h>
 #include "../../Map/Square.h"
 
 AMinion::AMinion()
@@ -133,10 +134,35 @@ void AMinion::HandleMovement(float _deltaTime)
 				Movements = 0;
 			}
 
+			AMinion* minionQuery = SearchMinionToChallenge();
+			if (CurrentSquare->Camera && minionQuery) 
+			{
+				CurrentSquare->Camera->OpenChallengeMenu(this, minionQuery);
+				return;
+			}
+
 			if (Movements > 0)
 				SetMinionsMovements(Movements - 1);
 		}
     }
+}
+
+AMinion* AMinion::SearchMinionToChallenge()
+{
+	AMinion* minionQuery = nullptr;
+
+	if (!CurrentSquare || CurrentSquare->MinionsList.Num() != 2)
+		return minionQuery;
+
+	for (AMinion* Minion : CurrentSquare->MinionsList)
+	{
+		if (Minion && Minion->Team != Team)
+		{
+			minionQuery = Minion;
+		}
+	}
+
+	return minionQuery;
 }
 
 void AMinion::Tick(float DeltaTime)

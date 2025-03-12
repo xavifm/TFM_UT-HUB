@@ -35,6 +35,9 @@ public:
 	UInputAction* KeyaAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* KeybAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
@@ -64,6 +67,14 @@ public:
 
 	void HandleConfirmInput();
 
+	void HandleBackInput();
+
+	void CloseChallengeMenu();
+
+	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);
+
+	void SwitchChallengeUI(bool _visibility);
+
 	void SwitchMenuWidget(bool _enabled);
 
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
@@ -89,6 +100,7 @@ private:
 	bool InputEnabled = true;
 	bool RollingDice = false;
 	bool SelectingPath = false;
+	bool DuelUI = false;
 	bool TimedActionExecuted = false;
 
 	int SelectedPathIndex = 0;
