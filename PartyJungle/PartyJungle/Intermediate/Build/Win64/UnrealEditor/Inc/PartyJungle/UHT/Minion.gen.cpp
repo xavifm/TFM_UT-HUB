@@ -79,6 +79,90 @@ UEnum* Z_Construct_UEnum_PartyJungle_ETeam()
 }
 // End Enum ETeam
 
+// Begin Class AMinion Function GetCoins
+struct Z_Construct_UFunction_AMinion_GetCoins_Statics
+{
+	struct Minion_eventGetCoins_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Inventory" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_GetCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventGetCoins_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_GetCoins_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_GetCoins_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCoins_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_GetCoins_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "GetCoins", nullptr, nullptr, Z_Construct_UFunction_AMinion_GetCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinion_GetCoins_Statics::Minion_eventGetCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_GetCoins_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMinion_GetCoins_Statics::Minion_eventGetCoins_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_GetCoins()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_GetCoins_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinion::execGetCoins)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetCoins();
+	P_NATIVE_END;
+}
+// End Class AMinion Function GetCoins
+
+// Begin Class AMinion Function GetCrowns
+struct Z_Construct_UFunction_AMinion_GetCrowns_Statics
+{
+	struct Minion_eventGetCrowns_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Inventory" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_GetCrowns_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventGetCrowns_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_GetCrowns_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_GetCrowns_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCrowns_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_GetCrowns_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "GetCrowns", nullptr, nullptr, Z_Construct_UFunction_AMinion_GetCrowns_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCrowns_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinion_GetCrowns_Statics::Minion_eventGetCrowns_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_GetCrowns_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_GetCrowns_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMinion_GetCrowns_Statics::Minion_eventGetCrowns_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_GetCrowns()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_GetCrowns_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinion::execGetCrowns)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetCrowns();
+	P_NATIVE_END;
+}
+// End Class AMinion Function GetCrowns
+
 // Begin Class AMinion Function GetMinionsMovements
 struct Z_Construct_UFunction_AMinion_GetMinionsMovements_Statics
 {
@@ -439,6 +523,8 @@ void AMinion::StaticRegisterNativesAMinion()
 {
 	UClass* Class = AMinion::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "GetCoins", &AMinion::execGetCoins },
+		{ "GetCrowns", &AMinion::execGetCrowns },
 		{ "GetMinionsMovements", &AMinion::execGetMinionsMovements },
 		{ "GetNextSquare", &AMinion::execGetNextSquare },
 		{ "MoveToSquare", &AMinion::execMoveToSquare },
@@ -491,6 +577,8 @@ struct Z_Construct_UClass_AMinion_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMinion_GetCoins, "GetCoins" }, // 1317834461
+		{ &Z_Construct_UFunction_AMinion_GetCrowns, "GetCrowns" }, // 1614513224
 		{ &Z_Construct_UFunction_AMinion_GetMinionsMovements, "GetMinionsMovements" }, // 1153191699
 		{ &Z_Construct_UFunction_AMinion_GetNextSquare, "GetNextSquare" }, // 1662612968
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
@@ -564,10 +652,10 @@ struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_Par
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 920505936U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3148572866U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_984594210(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1875818508(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));

@@ -9,6 +9,7 @@
 #include <PartyJungle/Dice/Dice.h>
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
+#include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -61,6 +62,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
 	ADice* Dice;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Challenge System")
+	AChallengeInformation* ChallengeInformation;
+
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void HandleLeftRightInput(const FInputActionValue& _value);
@@ -72,6 +76,8 @@ public:
 	void CloseChallengeMenu();
 
 	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);
+
+	void RefreshChallengeInfo(int _direction);
 
 	void SwitchChallengeUI(bool _visibility);
 

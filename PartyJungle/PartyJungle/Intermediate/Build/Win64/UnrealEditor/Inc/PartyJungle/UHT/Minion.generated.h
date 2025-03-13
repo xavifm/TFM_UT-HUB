@@ -17,6 +17,8 @@ class ASquare;
 
 #define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetNextSquare); \
+	DECLARE_FUNCTION(execGetCrowns); \
+	DECLARE_FUNCTION(execGetCoins); \
 	DECLARE_FUNCTION(execUpdateCrowns); \
 	DECLARE_FUNCTION(execUpdateCoins); \
 	DECLARE_FUNCTION(execMoveToSquare); \

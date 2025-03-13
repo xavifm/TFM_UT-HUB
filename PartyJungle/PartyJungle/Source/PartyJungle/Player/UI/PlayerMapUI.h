@@ -33,6 +33,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchChallengeVisibility(bool IsVisible);
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2);
+
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);
 

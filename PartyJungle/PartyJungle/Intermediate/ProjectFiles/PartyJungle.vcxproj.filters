@@ -43,6 +43,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\PartyJungle.h">
       <Filter>Source\PartyJungle</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Challenge">
+      <UniqueIdentifier>{6C8EE5CF-93A6-3E9A-9CF8-CAAD1048982F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeInformation.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeInformation.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Dice">
       <UniqueIdentifier>{41C4BB2F-9E5D-38AE-A62B-C919F260E601}</UniqueIdentifier>
     </Filter>

@@ -92,6 +92,16 @@ void AMinion::UpdateCrowns(int _quantity)
 	ShowMinionCrownsFeedback(_quantity);
 }
 
+int AMinion::GetCoins()
+{
+	return Coins;
+}
+
+int AMinion::GetCrowns()
+{
+	return Crowns;
+}
+
 ASquare* AMinion::GetNextSquare()
 {
 	ASquare* squareQuery = nullptr;

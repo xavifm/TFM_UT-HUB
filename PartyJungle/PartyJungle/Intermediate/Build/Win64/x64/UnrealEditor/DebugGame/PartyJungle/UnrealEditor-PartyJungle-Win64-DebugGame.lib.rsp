@@ -7,6 +7,7 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.obj"
+"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\ChallengeInformation.gen.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Dice.gen.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\MapDatabase.gen.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\MapMenuCamera.gen.cpp.obj"
@@ -18,6 +19,7 @@
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Square.gen.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\SquareOptional.gen.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\PartyJungle.cpp.obj"
+"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\ChallengeInformation.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Dice.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\MapDatabase.cpp.obj"
 "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Square.cpp.obj"

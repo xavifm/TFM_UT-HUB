@@ -99,12 +99,41 @@ void AMapMenuCamera::HandleBackInput()
 void AMapMenuCamera::CloseChallengeMenu() 
 {
     SwitchChallengeUI(false);
-    CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements());
+
+    int currentMinionMovements = CurrentMinion->GetMinionsMovements();
+
+    CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
+    if (currentMinionMovements <= 0)
+        MapUI->SwitchLegendVisibility(true);
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
 {
     SwitchChallengeUI(true);
+
+    if(ChallengeInformation) 
+    {
+        ChallengeInformation->SetUpDuelInfo(_challenger, _victim);
+        RefreshChallengeInfo(0);
+    }
+}
+
+void AMapMenuCamera::RefreshChallengeInfo(int _direction) 
+{
+    if (!ChallengeInformation)
+        return;
+
+    ChallengeInformation->SwitchDuelType(_direction);
+
+    int attackerCoins = ChallengeInformation->GetBetCoinsQuantity(0);
+    int victimCoins = ChallengeInformation->GetBetCoinsQuantity(1);
+
+    int attackerCrowns = ChallengeInformation->GetBetCrownsQuantity(0);
+    int victimCrowns = ChallengeInformation->GetBetCrownsQuantity(1);
+
+    MapUI->UpdateDuelScreenInfo(attackerCoins, victimCoins, attackerCrowns, victimCrowns);
+
 }
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 

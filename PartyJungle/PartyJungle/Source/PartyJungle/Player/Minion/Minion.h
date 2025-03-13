@@ -48,6 +48,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void UpdateCrowns(int _quantity);
 
+	UFUNCTION(BlueprintCallable, Category = "Minion Inventory")
+	int GetCoins();
+
+	UFUNCTION(BlueprintCallable, Category = "Minion Inventory")
+	int GetCrowns();
+
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	ASquare* GetNextSquare();
 
