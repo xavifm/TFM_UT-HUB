@@ -36,6 +36,9 @@ public:
 	void SetUpDuelInfo(AMinion* _attacker, AMinion* _victim);
 
 	UFUNCTION(BlueprintCallable)
+	EDuelType GetDuelType();
+
+	UFUNCTION(BlueprintCallable)
 	EDuelType SwitchDuelType(int _direction);
 
 	UFUNCTION(BlueprintCallable)

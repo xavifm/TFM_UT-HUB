@@ -79,6 +79,8 @@ public:
 
 	void RefreshChallengeInfo(int _direction);
 
+	void FinishDuel(int _winner);
+
 	void SwitchChallengeUI(bool _visibility);
 
 	void SwitchMenuWidget(bool _enabled);
@@ -99,6 +101,7 @@ private:
 	const int MAX_TEAM_NUMBER = 2;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
+	const float TIME_BEFORE_FINISH_DUEL = 2;
 
 	void UpdateDicePosition(bool _resizeDice = true);
 	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);

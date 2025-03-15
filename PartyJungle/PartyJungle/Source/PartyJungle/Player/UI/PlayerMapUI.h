@@ -4,6 +4,7 @@
 #include "Blueprint/UserWidget.h"
 #include "../Minion/Minion.h"
 #include "PartyJungle/Player/Scores/ScoreDatabase.h"
+#include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "PartyJungle/Map/MapDatabase.h"
 #include "PlayerMapUI.generated.h"
 
@@ -34,7 +35,7 @@ public:
     void SwitchChallengeVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
-    void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2);
+    void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2, EDuelType _duelType);
 
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);

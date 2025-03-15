@@ -14,6 +14,7 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UPlayerMapUI();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UPlayerMapUI_NoRegister();
+PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EDuelType();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
@@ -304,15 +305,17 @@ struct PlayerMapUI_eventUpdateDuelScreenInfo_Parms
 	int32 _coins2;
 	int32 _crowns1;
 	int32 _crowns2;
+	EDuelType _duelType;
 };
 static FName NAME_UPlayerMapUI_UpdateDuelScreenInfo = FName(TEXT("UpdateDuelScreenInfo"));
-void UPlayerMapUI::UpdateDuelScreenInfo(int32 _coins1, int32 _coins2, int32 _crowns1, int32 _crowns2)
+void UPlayerMapUI::UpdateDuelScreenInfo(int32 _coins1, int32 _coins2, int32 _crowns1, int32 _crowns2, EDuelType _duelType)
 {
 	PlayerMapUI_eventUpdateDuelScreenInfo_Parms Parms;
 	Parms._coins1=_coins1;
 	Parms._coins2=_coins2;
 	Parms._crowns1=_crowns1;
 	Parms._crowns2=_crowns2;
+	Parms._duelType=_duelType;
 	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_UpdateDuelScreenInfo),&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics
@@ -327,6 +330,8 @@ struct Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp__coins2;
 	static const UECodeGen_Private::FIntPropertyParams NewProp__crowns1;
 	static const UECodeGen_Private::FIntPropertyParams NewProp__crowns2;
+	static const UECodeGen_Private::FBytePropertyParams NewProp__duelType_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp__duelType;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
@@ -334,11 +339,15 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_U
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__coins2 = { "_coins2", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateDuelScreenInfo_Parms, _coins2), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__crowns1 = { "_crowns1", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateDuelScreenInfo_Parms, _crowns1), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__crowns2 = { "_crowns2", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateDuelScreenInfo_Parms, _crowns2), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__duelType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__duelType = { "_duelType", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateDuelScreenInfo_Parms, _duelType), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 645572092
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__coins1,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__coins2,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__crowns1,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__crowns2,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__duelType_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__duelType,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateDuelScreenInfo", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateDuelScreenInfo_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams) };
@@ -433,7 +442,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI, "SwitchTurnUI" }, // 1496968856
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2892537950
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns, "UpdateCrowns" }, // 1731745352
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 2383473125
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 407157461
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore, "UpdateUIScore" }, // 1456132318
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -485,14 +494,14 @@ UPlayerMapUI::~UPlayerMapUI() {}
 // End Class UPlayerMapUI
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 4131042632U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 3273615332U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_776690316(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_1959448221(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

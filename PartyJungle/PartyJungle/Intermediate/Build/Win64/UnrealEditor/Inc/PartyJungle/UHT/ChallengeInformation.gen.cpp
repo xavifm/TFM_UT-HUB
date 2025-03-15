@@ -167,6 +167,50 @@ DEFINE_FUNCTION(AChallengeInformation::execGetBetCrownsQuantity)
 }
 // End Class AChallengeInformation Function GetBetCrownsQuantity
 
+// Begin Class AChallengeInformation Function GetDuelType
+struct Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics
+{
+	struct ChallengeInformation_eventGetDuelType_Parms
+	{
+		EDuelType ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FBytePropertyParams NewProp_ReturnValue_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetDuelType_Parms, ReturnValue), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 645572092
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "GetDuelType", nullptr, nullptr, Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::PropPointers), sizeof(Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::ChallengeInformation_eventGetDuelType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::ChallengeInformation_eventGetDuelType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AChallengeInformation_GetDuelType()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execGetDuelType)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(EDuelType*)Z_Param__Result=P_THIS->GetDuelType();
+	P_NATIVE_END;
+}
+// End Class AChallengeInformation Function GetDuelType
+
 // Begin Class AChallengeInformation Function SetUpDuelInfo
 struct Z_Construct_UFunction_AChallengeInformation_SetUpDuelInfo_Statics
 {
@@ -270,6 +314,7 @@ void AChallengeInformation::StaticRegisterNativesAChallengeInformation()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "GetBetCoinsQuantity", &AChallengeInformation::execGetBetCoinsQuantity },
 		{ "GetBetCrownsQuantity", &AChallengeInformation::execGetBetCrownsQuantity },
+		{ "GetDuelType", &AChallengeInformation::execGetDuelType },
 		{ "SetUpDuelInfo", &AChallengeInformation::execSetUpDuelInfo },
 		{ "SwitchDuelType", &AChallengeInformation::execSwitchDuelType },
 	};
@@ -307,6 +352,7 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCoinsQuantity, "GetBetCoinsQuantity" }, // 1459322506
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCrownsQuantity, "GetBetCrownsQuantity" }, // 1564543288
+		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 60473840
 		{ &Z_Construct_UFunction_AChallengeInformation_SetUpDuelInfo, "SetUpDuelInfo" }, // 2261140091
 		{ &Z_Construct_UFunction_AChallengeInformation_SwitchDuelType, "SwitchDuelType" }, // 1507141103
 	};
@@ -360,18 +406,18 @@ AChallengeInformation::~AChallengeInformation() {}
 // End Class AChallengeInformation
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 645572092U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2913917664U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2856059780U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_963588925(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_1337153065(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

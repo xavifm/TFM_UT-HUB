@@ -10,6 +10,12 @@ void AChallengeInformation::SetUpDuelInfo(AMinion* _attacker, AMinion* _victim)
 {
     Attacker = _attacker;
     Victim = _victim;
+    DuelType = EDuelType::ALL_IN_COINS;
+}
+
+EDuelType AChallengeInformation::GetDuelType()
+{
+    return DuelType;
 }
 
 EDuelType AChallengeInformation::SwitchDuelType(int _direction)

@@ -76,6 +76,12 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (DuelUI)
+    {
+        RefreshChallengeInfo(direction);
+        return;
+    }
+
     if (SelectingPath)
         ChangeSelectedPath(direction);
     else
@@ -84,6 +90,13 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (DuelUI)
+    {
+        int winner = (std::rand() % 2) + 1;
+        FinishDuel(winner);
+        return;
+    }
+
     if (SelectingPath)
         ConfirmPathSelection();
     else
@@ -132,9 +145,44 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction)
     int attackerCrowns = ChallengeInformation->GetBetCrownsQuantity(0);
     int victimCrowns = ChallengeInformation->GetBetCrownsQuantity(1);
 
-    MapUI->UpdateDuelScreenInfo(attackerCoins, victimCoins, attackerCrowns, victimCrowns);
+    MapUI->UpdateDuelScreenInfo(attackerCoins, victimCoins, attackerCrowns, victimCrowns, ChallengeInformation->GetDuelType());
 
 }
+
+void AMapMenuCamera::FinishDuel(int _winner)
+{
+    int winnerIndex = (_winner == 1) ? 0 : 1;
+    int loserIndex = (_winner == 1) ? 1 : 0;
+
+    int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
+    int loserCoins = -winnerCoins;
+
+    int winnerCrowns = ChallengeInformation->GetBetCrownsQuantity(loserIndex);
+    int loserCrowns = -winnerCrowns;
+
+    auto* Winner = (_winner == 1) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
+    auto* Loser = (_winner == 1) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
+
+    Winner->UpdateCoins(winnerCoins);
+    Loser->UpdateCoins(loserCoins);
+
+    Winner->UpdateCrowns(winnerCrowns);
+    Loser->UpdateCrowns(loserCrowns);
+
+    MapUI->UpdateCoins(static_cast<int>(Winner->Team), winnerCoins);
+    MapUI->UpdateCrowns(static_cast<int>(Winner->Team), winnerCrowns);
+
+    MapUI->UpdateCoins(static_cast<int>(Loser->Team), loserCoins);
+    MapUI->UpdateCrowns(static_cast<int>(Loser->Team), loserCrowns);
+
+    SwitchChallengeUI(false);
+
+    FTimerHandle timerHandle;
+    GetWorld()->GetTimerManager().SetTimer(timerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
+}
+
+
+
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
 {
