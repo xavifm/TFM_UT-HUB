@@ -118,7 +118,7 @@ void AMapMenuCamera::CloseChallengeMenu()
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
     if (currentMinionMovements <= 0)
-        MapUI->SwitchLegendVisibility(true);
+        RestoreTurnLogic();
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
@@ -189,8 +189,11 @@ void AMapMenuCamera::SwitchChallengeUI(bool _visibility)
     DuelUI = _visibility;
     MapUI->SwitchChallengeVisibility(_visibility);
 
-    if (_visibility)
+    if (_visibility) 
+    {
+        Dice->HideDice();
         MapUI->SwitchLegendVisibility(false);
+    }
 }
 
 void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
@@ -363,6 +366,9 @@ void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns)
 
 void AMapMenuCamera::RestoreTurnLogic()
 {
+    if (DuelUI)
+        return;
+
     SwitchCameraTeam(1);
     MapUI->SwitchLegendVisibility(true);
     Dice->ShowDice();
