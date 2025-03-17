@@ -8,6 +8,9 @@
 /**
  * 
  */
+
+class AMapMenuCamera;
+
 UCLASS()
 class PARTYJUNGLE_API UMinigameDataGameInstance : public UGameInstance
 {
@@ -26,6 +29,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AMinion* Victim;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AMapMenuCamera* MapMenuCamera;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool Challenge;

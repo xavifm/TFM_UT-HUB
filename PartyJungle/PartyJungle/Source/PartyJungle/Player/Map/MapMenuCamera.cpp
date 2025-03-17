@@ -2,6 +2,7 @@
 #include "Blueprint/UserWidget.h"
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
+#include "EngineUtils.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 AMapMenuCamera::AMapMenuCamera()
@@ -114,6 +115,7 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
     if (GameInstance)
     {
         GameInstance->Teams = { 0, 1, 2, 3 };
+        GameInstance->MapMenuCamera = this;
 
         if (_minionsPlaying.Num() > 0)
         {
@@ -141,11 +143,40 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
     switch(_minigame) 
     {
         case 1:
-            sceneName = "MinigameOne";
+            sceneName = FName(TEXT("/Game/Scenes/Minigames/MinigameOne"));
     }
 
-    UGameplayStatics::LoadStreamLevel(this, sceneName, true, true, FLatentActionInfo());
+    if(sceneName != "") 
+        SwitchMainScene(false, sceneName);
 }
+
+void AMapMenuCamera::SwitchMainScene(bool _enabled, FName _otherScene)
+{
+    UWorld* World = GetWorld();
+    if (!World) return;
+
+    if (_otherScene != "")
+        SavedMinigameScene = _otherScene;
+
+    for (TActorIterator<AActor> ActorItr(World); ActorItr; ++ActorItr)
+    {
+        AActor* Actor = *ActorItr;
+        if (Actor && Actor->GetLevel()->IsPersistentLevel())
+        {
+            Actor->SetActorHiddenInGame(!_enabled);
+            Actor->SetActorEnableCollision(_enabled);
+            Actor->SetActorTickEnabled(_enabled);
+        }
+    }
+
+    if(_enabled)
+        UGameplayStatics::UnloadStreamLevel(this, SavedMinigameScene, FLatentActionInfo(), true);
+    else
+        UGameplayStatics::LoadStreamLevel(this, SavedMinigameScene, true, true, FLatentActionInfo());
+
+    SwitchMenuWidget(_enabled);
+}
+
 
 void AMapMenuCamera::HandleBackInput() 
 {

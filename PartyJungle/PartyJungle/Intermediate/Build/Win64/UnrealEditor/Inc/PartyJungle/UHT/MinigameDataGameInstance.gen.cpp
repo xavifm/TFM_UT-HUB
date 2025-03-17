@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeMinigameDataGameInstance() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_UGameInstance();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDataGameInstance();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDataGameInstance_NoRegister();
@@ -30,9 +31,6 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * \n */" },
-#endif
 		{ "IncludePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 	};
@@ -55,6 +53,10 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Victim_MetaData[] = {
+		{ "Category", "MinigameDataGameInstance" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapMenuCamera_MetaData[] = {
 		{ "Category", "MinigameDataGameInstance" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 	};
@@ -92,6 +94,7 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 	static const UECodeGen_Private::FMapPropertyParams NewProp_PlayingMinions;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Attacker;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Victim;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapMenuCamera;
 	static void NewProp_Challenge_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_Challenge;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_WinnerTeams_Inner;
@@ -116,6 +119,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMinigameDataGame
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_PlayingMinions = { "PlayingMinions", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, PlayingMinions), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayingMinions_MetaData), NewProp_PlayingMinions_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Attacker = { "Attacker", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, Attacker), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Attacker_MetaData), NewProp_Attacker_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Victim = { "Victim", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, Victim), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Victim_MetaData), NewProp_Victim_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_MapMenuCamera = { "MapMenuCamera", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, MapMenuCamera), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapMenuCamera_MetaData), NewProp_MapMenuCamera_MetaData) };
 void Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Challenge_SetBit(void* Obj)
 {
 	((UMinigameDataGameInstance*)Obj)->Challenge = 1;
@@ -140,6 +144,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMinigame
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_PlayingMinions,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Attacker,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Victim,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_MapMenuCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Challenge,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_WinnerTeams_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_WinnerTeams,
@@ -191,10 +196,10 @@ UMinigameDataGameInstance::~UMinigameDataGameInstance() {}
 struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 2746864085U) },
+		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 1835211480U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_108781356(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_1567196458(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

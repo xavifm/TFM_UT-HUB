@@ -139,5 +139,14 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h">
       <Filter>Source\PartyJungle\Player\UI</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Testing">
+      <UniqueIdentifier>{5B19AB45-C52F-35BC-923A-47A19B708CFA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.cpp">
+      <Filter>Source\PartyJungle\Testing</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.h">
+      <Filter>Source\PartyJungle\Testing</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

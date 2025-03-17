@@ -65,6 +65,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Challenge System")
 	AChallengeInformation* ChallengeInformation;
 
+	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
+	void SwitchMainScene(bool _enabled, FName _otherScene = "");
+
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void HandleLeftRightInput(const FInputActionValue& _value);
@@ -72,6 +75,7 @@ public:
 	void HandleConfirmInput();
 
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
+
 
 	void HandleBackInput();
 
@@ -117,6 +121,7 @@ private:
 	int SelectedPathIndex = 0;
 	TArray<ASquareOptional*> AvailablePaths;
 	UPlayerMapUI* MapUI;
+	FName SavedMinigameScene;
 
 	UUserWidget* MenuWidget;
 };
