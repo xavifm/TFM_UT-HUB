@@ -1,6 +1,8 @@
 #include "./MapMenuCamera.h"
 #include "Blueprint/UserWidget.h"
 #include <EnhancedInputSubsystems.h>
+#include <Kismet/GameplayStatics.h>
+#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -92,8 +94,10 @@ void AMapMenuCamera::HandleConfirmInput()
 {
     if (DuelUI)
     {
-        int winner = (std::rand() % 2) + 1;
-        FinishDuel(winner);
+        //int winner = (std::rand() % 2) + 1;
+        //FinishDuel(winner);
+        StartMinigame(true, 1, TArray<AMinion*>());
+
         return;
     }
 
@@ -101,6 +105,46 @@ void AMapMenuCamera::HandleConfirmInput()
         ConfirmPathSelection();
     else
         RollTheDice();
+}
+
+void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying) 
+{
+    UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+
+    if (GameInstance)
+    {
+        GameInstance->Teams = { 0, 1, 2, 3 };
+
+        if (_minionsPlaying.Num() > 0)
+        {
+            for (AMinion* _minion : _minionsPlaying)
+            {
+                if (_minion) 
+                {
+                    int32 teamId = static_cast<int32>(_minion->Team);
+                    GameInstance->PlayingMinions.Add(teamId, _minion);
+                }
+            }
+        }
+
+
+        if(_duel) 
+        {
+            GameInstance->Attacker = ChallengeInformation->Attacker;
+            GameInstance->Victim = ChallengeInformation->Victim;
+            GameInstance->Challenge = true;       
+        }
+    }
+
+    FName sceneName = "";
+
+    switch(_minigame) 
+    {
+        case 1:
+            sceneName = "MinigameOne";
+    }
+
+    UGameplayStatics::LoadStreamLevel(this, sceneName, true, true, FLatentActionInfo());
 }
 
 void AMapMenuCamera::HandleBackInput() 

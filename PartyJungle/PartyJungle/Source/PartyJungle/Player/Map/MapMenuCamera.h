@@ -71,6 +71,8 @@ public:
 
 	void HandleConfirmInput();
 
+	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
+
 	void HandleBackInput();
 
 	void CloseChallengeMenu();

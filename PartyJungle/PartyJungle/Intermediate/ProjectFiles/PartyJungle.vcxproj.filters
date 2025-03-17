@@ -82,6 +82,18 @@
     <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Minigame">
+      <UniqueIdentifier>{0F4131EC-4BBB-3742-8CAF-A034BEC7C3D3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\Minigame\CrossInfo">
+      <UniqueIdentifier>{39EC6F96-D33B-3E8C-94B0-33A9AF86E4A6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.cpp">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.h">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Player">
       <UniqueIdentifier>{4BB96A41-B63B-386F-AD66-5BD0AA7EBA3C}</UniqueIdentifier>
     </Filter>
