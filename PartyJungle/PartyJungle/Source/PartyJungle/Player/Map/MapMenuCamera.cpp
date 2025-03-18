@@ -1,6 +1,5 @@
 #include "./MapMenuCamera.h"
 #include "Blueprint/UserWidget.h"
-#include "Camera/CameraActor.h"
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
 #include "EngineUtils.h"
@@ -20,6 +19,11 @@ void AMapMenuCamera::BeginPlay()
     UpdateDicePosition();
 
     Dice->ShowDice();
+
+    TArray<UCameraComponent*> CameraComponents;
+    GetComponents<UCameraComponent>(CameraComponents);
+    CameraAttached = CameraComponents[0];
+
 	
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
@@ -173,32 +177,17 @@ void AMapMenuCamera::SwitchMainScene(bool _enabled, FName _otherScene)
     if(_enabled) 
     {
         UGameplayStatics::UnloadStreamLevel(this, SavedMinigameScene, FLatentActionInfo(), true);
-        ActivateCameraByIndex(0);
+        if(CameraAttached)
+            CameraAttached->Deactivate();
     }
     else 
     {
         UGameplayStatics::LoadStreamLevel(this, SavedMinigameScene, true, true, FLatentActionInfo());
-        ActivateCameraByIndex(1);
+        if(CameraAttached)
+            CameraAttached->Activate();
     }
 
     SwitchMenuWidget(_enabled);
-}
-
-void AMapMenuCamera::ActivateCameraByIndex(int _cameraIndex)
-{
-    APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
-    if (!PlayerController) return;
-
-    TArray<AActor*> Cameras;
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), Cameras);
-
-    if (Cameras.Num() == 0) return;
-
-    if (_cameraIndex < 0 || _cameraIndex >= Cameras.Num()) return;
-
-    ACameraActor* SelectedCamera = Cast<ACameraActor>(Cameras[_cameraIndex]);
-    if (SelectedCamera)
-        PlayerController->SetViewTargetWithBlend(SelectedCamera, 0.5f);
 }
 
 void AMapMenuCamera::HandleBackInput() 

@@ -10,6 +10,8 @@
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
+#include "Camera/CameraComponent.h"
+
 #include "MapMenuCamera.generated.h"
 
 UCLASS()
@@ -68,8 +70,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(bool _enabled, FName _otherScene = "");
 
-	void ActivateCameraByIndex(int _cameraIndex);
-
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void HandleLeftRightInput(const FInputActionValue& _value);
@@ -77,7 +77,6 @@ public:
 	void HandleConfirmInput();
 
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
-
 
 	void HandleBackInput();
 
@@ -126,4 +125,5 @@ private:
 	FName SavedMinigameScene;
 
 	UUserWidget* MenuWidget;
+	UCameraComponent* CameraAttached;
 };

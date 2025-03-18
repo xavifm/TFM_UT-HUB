@@ -7,6 +7,17 @@ AAirCannon::AAirCannon()
 
 }
 
+void AAirCannon::BeginPlay()
+{
+    if (APlayerController* PC = Cast<APlayerController>(GetController()))
+    {
+        if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+        {
+            Subsystem->AddMappingContext(InputMappingContext, 0);
+        }
+    }
+}
+
 void AAirCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);

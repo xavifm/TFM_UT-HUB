@@ -6,6 +6,7 @@
 #include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 #include <PartyJungle/Player/Minion/Minion.h>
 #include <EnhancedInputComponent.h>
+#include <EnhancedInputSubsystems.h>
 #include "AirCannon.generated.h"
 
 UCLASS()
@@ -16,8 +17,10 @@ class PARTYJUNGLE_API AAirCannon : public APawn
 public:
     AAirCannon();
 
+
 protected:
-    virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+    virtual void BeginPlay() override;
+    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
     UPROPERTY()
@@ -28,6 +31,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     AActor* ProjectileReference;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+    UInputMappingContext* InputMappingContext;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
     UInputAction* KeyaAction;
