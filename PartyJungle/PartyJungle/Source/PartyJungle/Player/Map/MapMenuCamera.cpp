@@ -1,5 +1,6 @@
 #include "./MapMenuCamera.h"
 #include "Blueprint/UserWidget.h"
+#include "Camera/CameraActor.h"
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
 #include "EngineUtils.h"
@@ -169,14 +170,36 @@ void AMapMenuCamera::SwitchMainScene(bool _enabled, FName _otherScene)
         }
     }
 
-    if(_enabled)
+    if(_enabled) 
+    {
         UGameplayStatics::UnloadStreamLevel(this, SavedMinigameScene, FLatentActionInfo(), true);
-    else
+        ActivateCameraByIndex(0);
+    }
+    else 
+    {
         UGameplayStatics::LoadStreamLevel(this, SavedMinigameScene, true, true, FLatentActionInfo());
+        ActivateCameraByIndex(1);
+    }
 
     SwitchMenuWidget(_enabled);
 }
 
+void AMapMenuCamera::ActivateCameraByIndex(int _cameraIndex)
+{
+    APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+    if (!PlayerController) return;
+
+    TArray<AActor*> Cameras;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), Cameras);
+
+    if (Cameras.Num() == 0) return;
+
+    if (_cameraIndex < 0 || _cameraIndex >= Cameras.Num()) return;
+
+    ACameraActor* SelectedCamera = Cast<ACameraActor>(Cameras[_cameraIndex]);
+    if (SelectedCamera)
+        PlayerController->SetViewTargetWithBlend(SelectedCamera, 0.5f);
+}
 
 void AMapMenuCamera::HandleBackInput() 
 {

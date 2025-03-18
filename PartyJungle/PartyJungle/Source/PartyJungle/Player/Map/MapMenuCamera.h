@@ -68,6 +68,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(bool _enabled, FName _otherScene = "");
 
+	void ActivateCameraByIndex(int _cameraIndex);
+
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void HandleLeftRightInput(const FInputActionValue& _value);
