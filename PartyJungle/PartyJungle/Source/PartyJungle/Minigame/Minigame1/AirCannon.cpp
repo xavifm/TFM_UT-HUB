@@ -1,19 +1,53 @@
 #include "./AirCannon.h"
 #include "TimerManager.h"
+#include "EnhancedInputSubsystems.h"
+#include "EnhancedInputComponent.h"
+#include <Kismet/GameplayStatics.h>
 
 AAirCannon::AAirCannon()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
 }
 
 void AAirCannon::BeginPlay()
 {
-    if (APlayerController* PC = Cast<APlayerController>(GetController()))
+    Super::BeginPlay();
+
+    FTimerHandle TickForceTimer;
+    GetWorld()->GetTimerManager().SetTimer(
+        TickForceTimer,
+        this,
+        &AAirCannon::CheckForMinigameEnd,
+        TICK_UPDATE_TIME,
+        true
+    );
+
+    APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    if (PC)
     {
-        if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+        UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer());
+        if (Subsystem)
         {
-            Subsystem->AddMappingContext(InputMappingContext, 0);
+            if (!Subsystem->HasMappingContext(InputMappingContext))
+            {
+                Subsystem->AddMappingContext(InputMappingContext, 0);
+            }
+        }
+    }
+
+    ProjectileReference->SetActorHiddenInGame(true);
+}
+
+
+void AAirCannon::CheckForMinigameEnd()
+{
+    if(!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
+    {
+        if (ProjectilePhysics->ComponentVelocity.Z <= 0)
+        {
+            CannonFinished = true;
+            MinigameLogic->SetTeamReady(CannonTeam);
         }
     }
 }
@@ -25,6 +59,7 @@ void AAirCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
         EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AAirCannon::IncrementUpForce);
+        EnhancedInput->bBlockInput = false;
     }
 }
 
@@ -41,11 +76,12 @@ void AAirCannon::ShootCannon()
 {
     if (ProjectileReference)
     {
-        UPrimitiveComponent* ProjectilePhysics = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
+        ProjectileReference->SetActorHiddenInGame(false);
+        ProjectilePhysics = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
         if (ProjectilePhysics)
         {
             ProjectilePhysics->SetSimulatePhysics(true);
-            FVector LaunchForce = FVector(0.0f, 0.0f, UpForce * 20.0f);
+            FVector LaunchForce = FVector(0.0f, 0.0f, UpForce * AIR_CANNON_MULIPLIER);
             ProjectilePhysics->AddImpulse(LaunchForce, NAME_None, true);
         }
     }

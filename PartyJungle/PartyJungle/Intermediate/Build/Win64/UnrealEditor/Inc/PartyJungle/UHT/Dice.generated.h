@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_Dice_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRollTheDice);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesADice(); \
 	friend struct Z_Construct_UClass_ADice_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(ADice)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_ENHANCED_CONSTRUCTORS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ADice(ADice&&); \
@@ -40,14 +40,14 @@ public: \
 	NO_API virtual ~ADice();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_7_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_GENERATED_BODY \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_7_PROLOG
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS \
-	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_ENHANCED_CONSTRUCTORS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_CALLBACK_WRAPPERS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_INCLASS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,7 +55,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class ADice>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Dice_Dice_h
+#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

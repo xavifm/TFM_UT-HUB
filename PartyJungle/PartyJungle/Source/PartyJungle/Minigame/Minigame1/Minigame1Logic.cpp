@@ -1,5 +1,4 @@
 #include "./Minigame1Logic.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 AMinigame1Logic::AMinigame1Logic()
 {
@@ -7,8 +6,6 @@ AMinigame1Logic::AMinigame1Logic()
 
 void AMinigame1Logic::SetupAirCannonsInfo()
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
-
 	if(GameInstance->Challenge)
 	{
 		for (size_t i = 0; i < AirCannons.Num(); i++)
@@ -20,6 +17,8 @@ void AMinigame1Logic::SetupAirCannonsInfo()
 
 			if (AirCannons[i]->MinionReference)
 				AirCannons[i]->CannonTeam = static_cast<int>(AirCannons[i]->MinionReference->Team);
+
+			AirCannons[i]->MinigameLogic = this;
 		}
 	}
 }

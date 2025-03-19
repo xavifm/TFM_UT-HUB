@@ -3,15 +3,13 @@
 	"changelists": [
 		{
 			"guid": "00000000000000000000000000000000",
-			"description": "Default Uncontrolled Changelist",
+			"description": "Lista de cambios no controlados predeterminada",
 			"files": [
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/PartyMapV.umap",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/Minigames/MinigameOne.umap",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/Decoration/MinigameFloor.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Projectile.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Minigame1Logic.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/CameraMinigame.uasset"
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/Minigames/MinigameOne.umap",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/CameraMinigame.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Projectile.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/PartyMapV.umap"
 			]
 		}
 	]

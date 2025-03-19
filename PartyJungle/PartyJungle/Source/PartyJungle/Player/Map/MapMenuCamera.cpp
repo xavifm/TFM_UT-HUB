@@ -32,7 +32,6 @@ void AMapMenuCamera::BeginPlay()
             Subsystem->AddMappingContext(InputMappingContext, 0);
         }
     }
-
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
@@ -77,6 +76,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(AxisxAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
         EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
         EnhancedInput->BindAction(KeybAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleBackInput);
+        EnhancedInput->bBlockInput = false;
     }
 }
 
@@ -98,6 +98,8 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    SwitchMainScene(false, "/Game/Scenes/Minigames/MinigameOne");
+
     if (DuelUI)
     {
         //int winner = (std::rand() % 2) + 1;
@@ -176,12 +178,14 @@ void AMapMenuCamera::SwitchMainScene(bool _enabled, FName _otherScene)
 
     if(_enabled) 
     {
+        GetController()->Possess(this);
         UGameplayStatics::UnloadStreamLevel(this, SavedMinigameScene, FLatentActionInfo(), true);
         if(CameraAttached)
             CameraAttached->Deactivate();
     }
     else 
     {
+        GetController()->UnPossess();
         UGameplayStatics::LoadStreamLevel(this, SavedMinigameScene, true, true, FLatentActionInfo());
         if(CameraAttached)
             CameraAttached->Activate();

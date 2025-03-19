@@ -21,6 +21,7 @@ public:
 protected:
     virtual void BeginPlay() override;
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    void CheckForMinigameEnd();
 
 public:
     UPROPERTY()
@@ -29,8 +30,14 @@ public:
     UPROPERTY()
     AMinion* MinionReference;
 
+    UPROPERTY()
+    AMinigameLogic* MinigameLogic;
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     AActor* ProjectileReference;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPrimitiveComponent* ProjectilePhysics;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
     UInputMappingContext* InputMappingContext;
@@ -47,7 +54,7 @@ public:
     UPROPERTY()
     int UpForce;
 
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void IncrementUpForce();
 
     UFUNCTION()
@@ -58,5 +65,9 @@ public:
 
     UFUNCTION()
     void FinishCannonCharge();
+
+private:
+    const float AIR_CANNON_MULIPLIER = 100;
+    const float TICK_UPDATE_TIME = 0.1f;
 };
 

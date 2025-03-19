@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include "MinigameLogic.generated.h"
 
 UCLASS()
@@ -16,6 +17,9 @@ protected:
     virtual void BeginPlay() override;
 
 public:
+
+    UPROPERTY()
+    UMinigameDataGameInstance* GameInstance;
 
     UPROPERTY()
     TMap<int, int> TeamMinigameScores;
@@ -43,5 +47,11 @@ public:
 
     UFUNCTION()
     virtual void FinishMinigame(int _winner, bool _draw);
+
+    UFUNCTION()
+    void SetTeamReady(int _team);
+
+private:
+    void InitializeMinigameInfoForDuel();
 };
 
