@@ -11,6 +11,7 @@
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "Camera/CameraComponent.h"
+#include <PartyJungle/World/WorldManager.h>
 
 #include "MapMenuCamera.generated.h"
 
@@ -67,8 +68,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Challenge System")
 	AChallengeInformation* ChallengeInformation;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map Manager")
+	AWorldManager* WorldSceneManager;
+
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
-	void SwitchMainScene(bool _enabled, FName _otherScene = "");
+	void SwitchMainScene(int _minigameIndex = -1);
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -122,7 +126,6 @@ private:
 	int SelectedPathIndex = 0;
 	TArray<ASquareOptional*> AvailablePaths;
 	UPlayerMapUI* MapUI;
-	FName SavedMinigameScene;
 
 	UUserWidget* MenuWidget;
 	UCameraComponent* CameraAttached;

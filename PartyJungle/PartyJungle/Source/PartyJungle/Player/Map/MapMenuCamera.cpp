@@ -14,17 +14,23 @@ AMapMenuCamera::AMapMenuCamera()
 void AMapMenuCamera::BeginPlay()
 {
 	Super::BeginPlay();
+
     SwitchMenuWidget(true);
-
     UpdateDicePosition();
-
     Dice->ShowDice();
 
-    TArray<UCameraComponent*> CameraComponents;
-    GetComponents<UCameraComponent>(CameraComponents);
-    CameraAttached = CameraComponents[0];
 
-	
+    if(WorldSceneManager) 
+    {
+        TArray<UCameraComponent*> CameraComponents;
+        GetComponents<UCameraComponent>(CameraComponents);
+        WorldSceneManager->Cameras = CameraComponents;
+        CameraAttached = WorldSceneManager->GetCameraByIndex(0);
+        TArray<AActor*> foundCameras;
+        UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), foundCameras);
+        WorldSceneManager->AsssignCameraActors(foundCameras);
+    }
+
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
@@ -98,13 +104,14 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
-    SwitchMainScene(false, "/Game/Scenes/Minigames/MinigameOne");
+    SwitchMainScene();
+    SwitchMainScene(0);
 
     if (DuelUI)
     {
         //int winner = (std::rand() % 2) + 1;
         //FinishDuel(winner);
-        StartMinigame(true, 1, TArray<AMinion*>());
+        StartMinigame(true, 0, TArray<AMinion*>());
 
         return;
     }
@@ -144,54 +151,26 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
             GameInstance->Challenge = true;       
         }
     }
-
-    FName sceneName = "";
-
-    switch(_minigame) 
-    {
-        case 1:
-            sceneName = FName(TEXT("/Game/Scenes/Minigames/MinigameOne"));
-    }
-
-    if(sceneName != "") 
-        SwitchMainScene(false, sceneName);
+    
+    SwitchMainScene(_minigame);
 }
 
-void AMapMenuCamera::SwitchMainScene(bool _enabled, FName _otherScene)
+void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 {
-    UWorld* World = GetWorld();
-    if (!World) return;
+    if (!WorldSceneManager)
+        return;
 
-    if (_otherScene != "")
-        SavedMinigameScene = _otherScene;
+    bool isMinigameActive = (_sceneIndex >= 0);
 
-    for (TActorIterator<AActor> ActorItr(World); ActorItr; ++ActorItr)
-    {
-        AActor* Actor = *ActorItr;
-        if (Actor && Actor->GetLevel()->IsPersistentLevel())
-        {
-            Actor->SetActorHiddenInGame(!_enabled);
-            Actor->SetActorEnableCollision(_enabled);
-            Actor->SetActorTickEnabled(_enabled);
-        }
-    }
+    WorldSceneManager->UnloadEntireWorld();
+    WorldSceneManager->LoadPortion(_sceneIndex);
 
-    if(_enabled) 
-    {
-        GetController()->Possess(this);
-        UGameplayStatics::UnloadStreamLevel(this, SavedMinigameScene, FLatentActionInfo(), true);
-        if(CameraAttached)
-            CameraAttached->Deactivate();
-    }
-    else 
-    {
-        GetController()->UnPossess();
-        UGameplayStatics::LoadStreamLevel(this, SavedMinigameScene, true, true, FLatentActionInfo());
-        if(CameraAttached)
-            CameraAttached->Activate();
-    }
+    if (CameraAttached)
+        isMinigameActive ? CameraAttached->Deactivate() : CameraAttached->Activate();
 
-    SwitchMenuWidget(_enabled);
+    //càmeres per possess enlloc de activar o desactivar, netejar aquest mess
+
+    SwitchMenuWidget(!isMinigameActive);
 }
 
 void AMapMenuCamera::HandleBackInput() 

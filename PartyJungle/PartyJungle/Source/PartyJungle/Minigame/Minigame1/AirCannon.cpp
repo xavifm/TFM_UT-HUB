@@ -93,6 +93,13 @@ void AAirCannon::StartCannonCharge(float _time)
 
     FTimerHandle timerHandle;
 
+    APlayerController* Player1Controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    if (Player1Controller) 
+    {
+        Player1Controller->bAutoManageActiveCameraTarget = false;
+        Player1Controller->Possess(this);
+    }
+
     GetWorld()->GetTimerManager().SetTimer(
         timerHandle,
         this,

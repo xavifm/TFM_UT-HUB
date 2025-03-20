@@ -3,13 +3,37 @@
 	"changelists": [
 		{
 			"guid": "00000000000000000000000000000000",
-			"description": "Lista de cambios no controlados predeterminada",
+			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/Minigames/MinigameOne.umap",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/CameraMinigame.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Projectile.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/PartyMapV.umap"
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalObjects__/Scenes/PartyMapV/E/GS/HH94QZBGXIJQ612C92CGW8.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/8/7Q/HBZQQIOXJ7I4I9UH9HMEUS.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/3/3V/6KXJBNQLBQV87Q84AUSFMJ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/7/6A/4M907A8K3MRH8Y0R90QWPH.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/C/EY/LPZDVS9VCHVAKL7MBCHFU8.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/3/FO/NXURXX7M9WQSNPFYTZ04WV.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/9/R1/2OWZ29JU89RTBXOOSXJ4ZV.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMapV/4/42/ZUULO05D0DB4DTCX8Y0VYZ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalObjects__/Scenes/PartyMap/0/AJ/4T6FV9ZATKBYJO4GOV9F8Q.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/FO/LJK97GE7Q1RHVJAAXX7PMQ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/4/X1/D3E4LOH7JTJDLV4TIVYRMQ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/BM/TKTALSC61QGUNBQEE69XJC.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/7/T4/OVYI659IYMP0K4WW742DKZ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/D/CB/0W2ORH3BJJVEH9NJS8DPY9.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/BL/QKJTKR1XQAZAX5YB8I66VE.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalObjects__/Scenes/PartyMap/6/O1/RB7US8GO0QTDPAO41KCHV4.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/6/QY/391QQ497HRU09HU5TK2090.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/World/WorldManager.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/IF/VMTU8D7HO4KSMPZSWP8TC0.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/CamMinigame.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/ACameraMinigame.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/CameraMinigame.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Minigame0Pawn.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/7/KK/HUSIL93CXKQEJSZGBADC5L.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/GS/K58PH9OI1XQ8FTLDYI3NNU.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/51/9Z11503P1YXLCDO5T76FR2.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/IO/ZXELH1UYR2CS938IV7KHOP.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/C/JR/V0L0IY0UZGIIOUR6LMPL1V.uasset"
 			]
 		}
 	]

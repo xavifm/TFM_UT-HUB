@@ -169,5 +169,14 @@
     <ClInclude Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.h">
       <Filter>Source\PartyJungle\Testing</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\World">
+      <UniqueIdentifier>{68B6808E-4E0F-3738-ADCC-B48B8E31A968}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\World\WorldManager.cpp">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\World\WorldManager.h">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PartyJungleModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beb00f29e01e9cc64e27cdcc26ed40237611f482")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5dc02f561aaea3edf0674e31760f1a74eacfb828")]
 [assembly: System.Reflection.AssemblyProductAttribute("PartyJungleModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PartyJungleModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

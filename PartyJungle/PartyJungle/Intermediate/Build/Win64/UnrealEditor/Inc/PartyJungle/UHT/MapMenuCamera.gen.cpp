@@ -21,6 +21,7 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AWorldManager_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
@@ -30,31 +31,22 @@ struct Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics
 {
 	struct MapMenuCamera_eventSwitchMainScene_Parms
 	{
-		bool _enabled;
-		FName _otherScene;
+		int32 _minigameIndex;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Scene Toggle" },
-		{ "CPP_Default__otherScene", "" },
+		{ "CPP_Default__minigameIndex", "-1" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
 #endif // WITH_METADATA
-	static void NewProp__enabled_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp__enabled;
-	static const UECodeGen_Private::FNamePropertyParams NewProp__otherScene;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__minigameIndex;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-void Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__enabled_SetBit(void* Obj)
-{
-	((MapMenuCamera_eventSwitchMainScene_Parms*)Obj)->_enabled = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__enabled = { "_enabled", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSwitchMainScene_Parms), &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__enabled_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__otherScene = { "_otherScene", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchMainScene_Parms, _otherScene), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__minigameIndex = { "_minigameIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchMainScene_Parms, _minigameIndex), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__enabled,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__otherScene,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__minigameIndex,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchMainScene", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::MapMenuCamera_eventSwitchMainScene_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::Function_MetaDataParams) };
@@ -70,11 +62,10 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene()
 }
 DEFINE_FUNCTION(AMapMenuCamera::execSwitchMainScene)
 {
-	P_GET_UBOOL(Z_Param__enabled);
-	P_GET_PROPERTY(FNameProperty,Z_Param__otherScene);
+	P_GET_PROPERTY(FIntProperty,Z_Param__minigameIndex);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->SwitchMainScene(Z_Param__enabled,Z_Param__otherScene);
+	P_THIS->SwitchMainScene(Z_Param__minigameIndex);
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function SwitchMainScene
@@ -153,6 +144,10 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ "Category", "Challenge System" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WorldSceneManager_MetaData[] = {
+		{ "Category", "Map Manager" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FClassPropertyParams NewProp_MenuWidgetClass;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AxisxAction;
@@ -167,10 +162,11 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentMinionTeam;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Dice;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengeInformation;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldSceneManager;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 2851853414
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 2042623275
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -191,6 +187,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_St
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionTeam = { "CurrentMinionTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinionTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinionTeam_MetaData), NewProp_CurrentMinionTeam_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_Dice = { "Dice", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, Dice), Z_Construct_UClass_ADice_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Dice_MetaData), NewProp_Dice_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ChallengeInformation = { "ChallengeInformation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, ChallengeInformation), Z_Construct_UClass_AChallengeInformation_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeInformation_MetaData), NewProp_ChallengeInformation_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_WorldSceneManager = { "WorldSceneManager", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, WorldSceneManager), Z_Construct_UClass_AWorldManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WorldSceneManager_MetaData), NewProp_WorldSceneManager_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuCamera_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MenuWidgetClass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AxisxAction,
@@ -205,6 +202,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinionTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_Dice,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ChallengeInformation,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_WorldSceneManager,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMapMenuCamera_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMapMenuCamera_Statics::DependentSingletons[])() = {
@@ -244,14 +242,14 @@ AMapMenuCamera::~AMapMenuCamera() {}
 // End Class AMapMenuCamera
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 607340217U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3884449261U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1413343582(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1474650319(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
