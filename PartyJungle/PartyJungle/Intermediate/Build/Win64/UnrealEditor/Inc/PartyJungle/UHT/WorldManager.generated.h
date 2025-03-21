@@ -11,7 +11,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class ACameraActor;
-class UCameraComponent;
 #ifdef PARTYJUNGLE_WorldManager_generated_h
 #error "WorldManager.generated.h already included, missing '#pragma once' in WorldManager.h"
 #endif
@@ -21,9 +20,9 @@ class UCameraComponent;
 	DECLARE_FUNCTION(execLoadPortion); \
 	DECLARE_FUNCTION(execUnloadEntireWorld); \
 	DECLARE_FUNCTION(execGetMinigameCameraByIndex); \
-	DECLARE_FUNCTION(execGetCameraByIndex); \
 	DECLARE_FUNCTION(execGetLevelByIndex); \
-	DECLARE_FUNCTION(execAsssignCameraActors);
+	DECLARE_FUNCTION(execAsssignCameraActors); \
+	DECLARE_FUNCTION(execInitializeCameras);
 
 
 #define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_12_INCLASS_NO_PURE_DECLS \

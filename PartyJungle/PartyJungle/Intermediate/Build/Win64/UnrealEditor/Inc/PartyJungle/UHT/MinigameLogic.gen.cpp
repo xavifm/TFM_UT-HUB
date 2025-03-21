@@ -17,6 +17,35 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDataGameInstance_NoRegister(
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class AMinigameLogic Function BeginMinigame
+struct Z_Construct_UFunction_AMinigameLogic_BeginMinigame_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_BeginMinigame_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "BeginMinigame", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_BeginMinigame_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_BeginMinigame_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMinigameLogic_BeginMinigame()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_BeginMinigame_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinigameLogic::execBeginMinigame)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->BeginMinigame();
+	P_NATIVE_END;
+}
+// End Class AMinigameLogic Function BeginMinigame
+
 // Begin Class AMinigameLogic Function CalculateWinner
 struct Z_Construct_UFunction_AMinigameLogic_CalculateWinner_Statics
 {
@@ -302,6 +331,7 @@ void AMinigameLogic::StaticRegisterNativesAMinigameLogic()
 {
 	UClass* Class = AMinigameLogic::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "BeginMinigame", &AMinigameLogic::execBeginMinigame },
 		{ "CalculateWinner", &AMinigameLogic::execCalculateWinner },
 		{ "CheckIfTheMinigameHasFinished", &AMinigameLogic::execCheckIfTheMinigameHasFinished },
 		{ "FinishMinigame", &AMinigameLogic::execFinishMinigame },
@@ -353,6 +383,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMinigameLogic_BeginMinigame, "BeginMinigame" }, // 1516632387
 		{ &Z_Construct_UFunction_AMinigameLogic_CalculateWinner, "CalculateWinner" }, // 3909443429
 		{ &Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished, "CheckIfTheMinigameHasFinished" }, // 3258483724
 		{ &Z_Construct_UFunction_AMinigameLogic_FinishMinigame, "FinishMinigame" }, // 2253415474
@@ -431,10 +462,10 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 3027085136U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 1370621341U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_3507310745(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_2218522212(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -89,11 +89,13 @@ void AAirCannon::ShootCannon()
 
 void AAirCannon::StartCannonCharge(float _time)
 {
+    if (!MinionReference)
+        return;
+
     CannonCharging = true;
 
     FTimerHandle timerHandle;
-
-    APlayerController* Player1Controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    APlayerController* Player1Controller = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
     if (Player1Controller) 
     {
         Player1Controller->bAutoManageActiveCameraTarget = false;

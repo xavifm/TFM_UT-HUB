@@ -21,19 +21,22 @@ public:
 	TArray<AActor*> Minigame0Actors;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	TArray<UCameraComponent*> Cameras;
+	UCameraComponent* MapCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	AActor* MapCameraActor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	TArray<ACameraActor*> CameraActors;
+
+	UFUNCTION(BlueprintCallable, Category = "World_Functions")
+	void InitializeCameras();
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void AsssignCameraActors(TArray<AActor*> _actors);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	TArray<AActor*> GetLevelByIndex(int _index);
-
-	UFUNCTION(BlueprintCallable, Category = "World_Functions")
-	UCameraComponent* GetCameraByIndex(int _index);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	ACameraActor* GetMinigameCameraByIndex(int _index);
@@ -43,4 +46,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void LoadPortion(int _index);
+
+private:
+	bool IsInitialized = false;
 };

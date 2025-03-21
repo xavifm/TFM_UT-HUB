@@ -6,10 +6,8 @@ AMinigameLogic::AMinigameLogic()
 
 }
 
-void AMinigameLogic::BeginPlay()
+void AMinigameLogic::BeginMinigame()
 {
-	Super::BeginPlay();
-
 	GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
 
 	if(GameInstance) 

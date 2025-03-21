@@ -20,7 +20,15 @@
             "d:\\unreal\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
             "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
             "d:\\unreal\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
-            "d:\\unreal\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h"
+            "d:\\unreal\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\crossinfo\\minigamelogic.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\crossinfo\\minigamedatagameinstance.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\minion\\minion.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\dice\\dice.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\dice.generated.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minion.generated.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamedatagameinstance.generated.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamelogic.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

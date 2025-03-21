@@ -128,5 +128,4 @@ private:
 	UPlayerMapUI* MapUI;
 
 	UUserWidget* MenuWidget;
-	UCameraComponent* CameraAttached;
 };

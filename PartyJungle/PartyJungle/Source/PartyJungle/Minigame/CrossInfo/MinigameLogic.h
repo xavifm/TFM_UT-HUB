@@ -13,11 +13,7 @@ class PARTYJUNGLE_API AMinigameLogic : public AActor
 public:
     AMinigameLogic();
 
-protected:
-    virtual void BeginPlay() override;
-
 public:
-
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
@@ -50,6 +46,9 @@ public:
 
     UFUNCTION()
     void SetTeamReady(int _team);
+
+    UFUNCTION()
+    void BeginMinigame();
 
 private:
     void InitializeMinigameInfoForDuel();

@@ -19,18 +19,6 @@ void AMapMenuCamera::BeginPlay()
     UpdateDicePosition();
     Dice->ShowDice();
 
-
-    if(WorldSceneManager) 
-    {
-        TArray<UCameraComponent*> CameraComponents;
-        GetComponents<UCameraComponent>(CameraComponents);
-        WorldSceneManager->Cameras = CameraComponents;
-        CameraAttached = WorldSceneManager->GetCameraByIndex(0);
-        TArray<AActor*> foundCameras;
-        UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), foundCameras);
-        WorldSceneManager->AsssignCameraActors(foundCameras);
-    }
-
     if (APlayerController* PC = Cast<APlayerController>(GetController()))
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
@@ -38,6 +26,8 @@ void AMapMenuCamera::BeginPlay()
             Subsystem->AddMappingContext(InputMappingContext, 0);
         }
     }
+
+    SwitchMainScene();
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
@@ -105,7 +95,6 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 void AMapMenuCamera::HandleConfirmInput()
 {
     SwitchMainScene();
-    SwitchMainScene(0);
 
     if (DuelUI)
     {
@@ -164,11 +153,6 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
-
-    if (CameraAttached)
-        isMinigameActive ? CameraAttached->Deactivate() : CameraAttached->Activate();
-
-    //càmeres per possess enlloc de activar o desactivar, netejar aquest mess
 
     SwitchMenuWidget(!isMinigameActive);
 }

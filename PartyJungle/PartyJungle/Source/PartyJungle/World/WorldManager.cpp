@@ -1,14 +1,15 @@
 #include "./WorldManager.h"
 #include <Kismet/GameplayStatics.h>
+#include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 
 AWorldManager::AWorldManager()
 {
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-TArray<AActor*> AWorldManager::GetLevelByIndex(int32 Index)
+TArray<AActor*> AWorldManager::GetLevelByIndex(int _index)
 {
-	switch (Index)
+	switch (_index)
 	{
 	case -1:
 		return BoardActors;
@@ -17,6 +18,23 @@ TArray<AActor*> AWorldManager::GetLevelByIndex(int32 Index)
 	default:
 		return TArray<AActor*>();
 	}
+}
+
+void AWorldManager::InitializeCameras() 
+{
+	if (IsInitialized || !MapCameraActor)
+		return;
+
+	TArray<UCameraComponent*> cameraComponents;
+
+	MapCameraActor->GetComponents<UCameraComponent>(cameraComponents);
+	MapCamera = cameraComponents[0];
+
+	TArray<AActor*> foundCameras;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), foundCameras);
+	AsssignCameraActors(foundCameras);
+
+	IsInitialized = true;
 }
 
 void AWorldManager::AsssignCameraActors(TArray<AActor*> _actors)
@@ -31,16 +49,6 @@ void AWorldManager::AsssignCameraActors(TArray<AActor*> _actors)
 	}
 }
 
-UCameraComponent* AWorldManager::GetCameraByIndex(int _index)
-{
-	if (Cameras.IsValidIndex(_index))
-	{
-		return Cameras[_index];
-	}
-
-	return nullptr;
-}
-
 ACameraActor* AWorldManager::GetMinigameCameraByIndex(int _index)
 {
 	if (CameraActors.IsValidIndex(_index))
@@ -53,6 +61,8 @@ ACameraActor* AWorldManager::GetMinigameCameraByIndex(int _index)
 
 void AWorldManager::UnloadEntireWorld()
 {
+	InitializeCameras();
+
 	for (int i = 0; i < 10; i++)
 	{
 		TArray<AActor*> ActorsToUnload = GetLevelByIndex(i);
@@ -67,9 +77,8 @@ void AWorldManager::UnloadEntireWorld()
 			}
 		}
 
-		UCameraComponent* cameraComponent = GetCameraByIndex(0);
-		if (cameraComponent)
-			cameraComponent->Deactivate();
+		if (MapCamera)
+			MapCamera->Deactivate();
 
 		ACameraActor* cameraActor = GetMinigameCameraByIndex(i);
 		if (cameraActor)
@@ -92,17 +101,19 @@ void AWorldManager::LoadPortion(int _index)
 			Actor->SetActorHiddenInGame(false);
 			Actor->SetActorEnableCollision(true);
 			Actor->SetActorTickEnabled(true);
+
+			AMinigameLogic* Minigame = Cast<AMinigameLogic>(Actor);
+
+			if (Minigame)
+				Minigame->BeginMinigame();
 		}
+
 	}
 
-	if(_index == -1) 
+	if (_index == -1 && MapCamera)
 	{
-		UCameraComponent* cameraComponent = GetCameraByIndex(0);
-		if (cameraComponent) 
-		{
-			PC->SetViewTargetWithBlend(cameraComponent->GetAttachParentActor(), 0.0f);
-			cameraComponent->Activate();
-		}
+		MapCamera->Activate();
+		PC->SetViewTargetWithBlend(MapCamera->GetAttachParentActor(), 0.0f);
 	}
 
 	ACameraActor* cameraActor = GetMinigameCameraByIndex(_index);
