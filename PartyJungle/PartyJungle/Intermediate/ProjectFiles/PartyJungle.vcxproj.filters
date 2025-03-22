@@ -109,6 +109,12 @@
     <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame1\AirCannon.h">
       <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame1\Minigame1Logic.cpp">
       <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
     </ClCompile>

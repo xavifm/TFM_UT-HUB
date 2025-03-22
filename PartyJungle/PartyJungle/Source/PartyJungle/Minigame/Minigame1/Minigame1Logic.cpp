@@ -38,7 +38,11 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 	);
 }
 
-
+void AMinigame1Logic::SetTeamScore(int _team, int _score)
+{
+	Super::SetTeamScore(_team, _score);
+	SetCameraTarget();
+}
 
 void AMinigame1Logic::StartCannonsCharge(float _time)
 {
@@ -46,5 +50,31 @@ void AMinigame1Logic::StartCannonsCharge(float _time)
 	{
 		if (AirCannons[i])
 			AirCannons[i]->StartCannonCharge(_time);
+	}
+}
+
+void AMinigame1Logic::SetCameraTarget()
+{
+	int HighestTeam = -1;
+	int HighestScore = TNumericLimits<int>::Min();
+
+	for (const auto& Elem : TeamMinigameScores)
+	{
+		if (Elem.Value > HighestScore)
+		{
+			HighestScore = Elem.Value;
+			HighestTeam = Elem.Key;
+		}
+	}
+
+	if (HighestTeam == -1 || !MinigameCamera) return;
+
+	for (AAirCannon* Cannon : AirCannons)
+	{
+		if (Cannon && Cannon->CannonTeam == HighestTeam && Cannon->ProjectileReference)
+		{
+			MinigameCamera->SetCameraTarget(Cannon->ProjectileReference);
+			break;
+		}
 	}
 }

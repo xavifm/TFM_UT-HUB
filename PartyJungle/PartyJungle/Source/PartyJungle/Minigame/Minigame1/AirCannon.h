@@ -3,10 +3,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/Actor.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 #include <PartyJungle/Player/Minion/Minion.h>
 #include <EnhancedInputComponent.h>
 #include <EnhancedInputSubsystems.h>
+#include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 #include "AirCannon.generated.h"
 
 UCLASS()
@@ -69,5 +69,7 @@ public:
 private:
     const float AIR_CANNON_MULIPLIER = 100;
     const float TICK_UPDATE_TIME = 0.1f;
+
+    FTimerHandle TimerHandle;
 };
 

@@ -14,12 +14,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_Minigame1Logic_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execStartCannonsCharge); \
-	DECLARE_FUNCTION(execSetupAirCannonsInfo);
+	DECLARE_FUNCTION(execSetupAirCannonsInfo); \
+	DECLARE_FUNCTION(execSetCameraTarget);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigame1Logic(); \
 	friend struct Z_Construct_UClass_AMinigame1Logic_Statics; \
@@ -28,7 +29,7 @@ public: \
 	DECLARE_SERIALIZER(AMinigame1Logic)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMinigame1Logic(AMinigame1Logic&&); \
@@ -40,13 +41,13 @@ public: \
 	NO_API virtual ~AMinigame1Logic();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_8_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_9_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_11_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

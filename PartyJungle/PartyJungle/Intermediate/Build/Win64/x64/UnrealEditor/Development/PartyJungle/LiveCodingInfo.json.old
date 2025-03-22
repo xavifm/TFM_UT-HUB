@@ -18,6 +18,7 @@
 			"ScoreDto.gen.cpp.obj",
 			"Square.gen.cpp.obj",
 			"SquareOptional.gen.cpp.obj",
+			"WorldManager.gen.cpp.obj",
 			"ChallengeInformation.cpp.obj",
 			"Dice.cpp.obj",
 			"MapDatabase.cpp.obj",
@@ -33,7 +34,8 @@
 			"ScoreDatabase.cpp.obj",
 			"ScoreDto.cpp.obj",
 			"PlayerMapUI.cpp.obj",
-			"ReturnToPartyMapScene.cpp.obj"
+			"ReturnToPartyMapScene.cpp.obj",
+			"WorldManager.cpp.obj"
 		]
 	}
 }

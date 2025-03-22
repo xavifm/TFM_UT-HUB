@@ -36,13 +36,16 @@ public:
     virtual bool CheckIfTheMinigameHasFinished();
 
     UFUNCTION()
-    int CalculateWinner(bool _isChallenge);
+    int CalculateWinner();
 
     UFUNCTION()
     virtual void ShowWinnerScene(int _endMinigameTime, int _winner);
 
     UFUNCTION()
-    virtual void FinishMinigame(int _winner, bool _draw);
+    virtual void FinishMinigame(int _winner);
+
+    UFUNCTION()
+    virtual void SetTeamScore(int _team, int _score);
 
     UFUNCTION()
     void SetTeamReady(int _team);

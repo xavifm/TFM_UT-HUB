@@ -3,6 +3,7 @@
 	{
 		"Module.PartyJungle.cpp.obj": [
 			"AirCannon.gen.cpp.obj",
+			"CannonMinigameCamera.gen.cpp.obj",
 			"ChallengeInformation.gen.cpp.obj",
 			"Dice.gen.cpp.obj",
 			"MapDatabase.gen.cpp.obj",
@@ -27,6 +28,7 @@
 			"MinigameDataGameInstance.cpp.obj",
 			"MinigameLogic.cpp.obj",
 			"AirCannon.cpp.obj",
+			"CannonMinigameCamera.cpp.obj",
 			"Minigame1Logic.cpp.obj",
 			"PartyJungle.cpp.obj",
 			"MapMenuCamera.cpp.obj",

@@ -39,25 +39,63 @@ void AMinigameLogic::StartMinigame(int _startTime)
 
 bool AMinigameLogic::CheckIfTheMinigameHasFinished()
 {
-	return true;
+	bool query = true;
+
+	for (const TPair<int, bool>& Elem : TeamsReady)
+	{
+		if (!Elem.Value)
+			query = false;
+	}
+
+	return query;
 }
 
-int AMinigameLogic::CalculateWinner(bool _isChallenge)
+
+int AMinigameLogic::CalculateWinner()
 {
-	return 0;
+	int WinningTeamIndex = -1;
+	int MaxScore = TNumericLimits<int>::Min();
+
+	for (const TPair<int, int>& Elem : TeamMinigameScores)
+	{
+		if (Elem.Value > MaxScore)
+		{
+			MaxScore = Elem.Value;
+			WinningTeamIndex = Elem.Key;
+		}
+	}
+
+	return WinningTeamIndex;
 }
+
 
 void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, int _winner)
 {
 
 }
 
-void AMinigameLogic::FinishMinigame(int _winner, bool _draw)
+void AMinigameLogic::FinishMinigame(int _winner)
 {
 
+}
+
+void AMinigameLogic::SetTeamScore(int _team, int _score)
+{
+	if (!TeamsReady.Contains(_team) || !TeamMinigameScores.Contains(_team))
+		return;
+
+	TeamMinigameScores[_team] = _score;
 }
 
 void AMinigameLogic::SetTeamReady(int _team)
 {
+	if (!TeamsReady.Contains(_team) || !TeamMinigameScores.Contains(_team))
+		return;
+
+	TeamsReady[_team] = true;
+
+	if (CheckIfTheMinigameHasFinished())
+		FinishMinigame(CalculateWinner());
 }
+
 

@@ -74,6 +74,8 @@ void AAirCannon::IncrementUpForce()
 
 void AAirCannon::ShootCannon()
 {
+    MinigameLogic->SetTeamScore(CannonTeam, UpForce);
+
     if (ProjectileReference)
     {
         ProjectileReference->SetActorHiddenInGame(false);
@@ -94,7 +96,6 @@ void AAirCannon::StartCannonCharge(float _time)
 
     CannonCharging = true;
 
-    FTimerHandle timerHandle;
     APlayerController* Player1Controller = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
     if (Player1Controller) 
     {
@@ -103,7 +104,7 @@ void AAirCannon::StartCannonCharge(float _time)
     }
 
     GetWorld()->GetTimerManager().SetTimer(
-        timerHandle,
+        TimerHandle,
         this,
         &AAirCannon::FinishCannonCharge,
         _time,
@@ -114,6 +115,7 @@ void AAirCannon::StartCannonCharge(float _time)
 void AAirCannon::FinishCannonCharge()
 {
     CannonCharging = false;
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     ShootCannon();
 }
 

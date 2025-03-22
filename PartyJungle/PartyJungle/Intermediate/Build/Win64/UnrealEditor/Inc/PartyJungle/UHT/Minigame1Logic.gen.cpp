@@ -11,11 +11,42 @@ void EmptyLinkFunctionForGeneratedCodeMinigame1Logic() {}
 
 // Begin Cross Module References
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AAirCannon_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_ACannonMinigameCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigame1Logic();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigame1Logic_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameLogic();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
+
+// Begin Class AMinigame1Logic Function SetCameraTarget
+struct Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Cannons_functions" },
+		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigame1Logic, nullptr, "SetCameraTarget", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinigame1Logic::execSetCameraTarget)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetCameraTarget();
+	P_NATIVE_END;
+}
+// End Class AMinigame1Logic Function SetCameraTarget
 
 // Begin Class AMinigame1Logic Function SetupAirCannonsInfo
 struct Z_Construct_UFunction_AMinigame1Logic_SetupAirCannonsInfo_Statics
@@ -95,6 +126,7 @@ void AMinigame1Logic::StaticRegisterNativesAMinigame1Logic()
 {
 	UClass* Class = AMinigame1Logic::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "SetCameraTarget", &AMinigame1Logic::execSetCameraTarget },
 		{ "SetupAirCannonsInfo", &AMinigame1Logic::execSetupAirCannonsInfo },
 		{ "StartCannonsCharge", &AMinigame1Logic::execStartCannonsCharge },
 	};
@@ -112,6 +144,10 @@ struct Z_Construct_UClass_AMinigame1Logic_Statics
 		{ "IncludePath", "Minigame/Minigame1/Minigame1Logic.h" },
 		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameCamera_MetaData[] = {
+		{ "Category", "Cannons" },
+		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AirCannons_MetaData[] = {
 		{ "Category", "Cannons" },
 		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
@@ -121,12 +157,14 @@ struct Z_Construct_UClass_AMinigame1Logic_Statics
 		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigameCamera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AirCannons_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_AirCannons;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CannonChargeTime;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget, "SetCameraTarget" }, // 539778052
 		{ &Z_Construct_UFunction_AMinigame1Logic_SetupAirCannonsInfo, "SetupAirCannonsInfo" }, // 3347501747
 		{ &Z_Construct_UFunction_AMinigame1Logic_StartCannonsCharge, "StartCannonsCharge" }, // 756080028
 	};
@@ -136,10 +174,12 @@ struct Z_Construct_UClass_AMinigame1Logic_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_MinigameCamera = { "MinigameCamera", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigame1Logic, MinigameCamera), Z_Construct_UClass_ACannonMinigameCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameCamera_MetaData), NewProp_MinigameCamera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_AirCannons_Inner = { "AirCannons", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AAirCannon_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_AirCannons = { "AirCannons", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigame1Logic, AirCannons), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AirCannons_MetaData), NewProp_AirCannons_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_CannonChargeTime = { "CannonChargeTime", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigame1Logic, CannonChargeTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CannonChargeTime_MetaData), NewProp_CannonChargeTime_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinigame1Logic_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_MinigameCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_AirCannons_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_AirCannons,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigame1Logic_Statics::NewProp_CannonChargeTime,
@@ -185,10 +225,10 @@ AMinigame1Logic::~AMinigame1Logic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 642618228U) },
+		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 2657862473U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_2121378251(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_2156644073(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
