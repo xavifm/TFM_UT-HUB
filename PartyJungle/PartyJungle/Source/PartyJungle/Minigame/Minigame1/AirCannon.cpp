@@ -14,15 +14,6 @@ void AAirCannon::BeginPlay()
 {
     Super::BeginPlay();
 
-    FTimerHandle TickForceTimer;
-    GetWorld()->GetTimerManager().SetTimer(
-        TickForceTimer,
-        this,
-        &AAirCannon::CheckForMinigameEnd,
-        TICK_UPDATE_TIME,
-        true
-    );
-
     APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
     if (PC)
     {
@@ -40,9 +31,11 @@ void AAirCannon::BeginPlay()
 }
 
 
-void AAirCannon::CheckForMinigameEnd()
+void AAirCannon::Tick(float DeltaTime)
 {
-    if(!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
+    Super::Tick(DeltaTime);
+
+    if (!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
     {
         if (ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
         {
@@ -112,14 +105,16 @@ void AAirCannon::StartCannonCharge(float _time)
         PlayerController->Possess(this);
     }
 
-    GetWorld()->GetTimerManager().SetTimerForNextTick([this, _time]() {
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, _time]() {
         FinishCannonCharge();
-        });
+    }, _time, false);
 }
 
 void AAirCannon::FinishCannonCharge()
 {
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     CannonCharging = false;
+
     ShootCannon();
 }
 

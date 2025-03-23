@@ -48,10 +48,9 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 
 	SetupAirCannonsInfo();
 
-	GetWorld()->GetTimerManager().SetTimerForNextTick([this, _startTime]() {
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, _startTime]() {
 		StartCannonsCharge(_startTime);
-	});
-
+	}, _startTime, false);
 }
 
 void AMinigame1Logic::FinishMinigame(int _winner)
@@ -69,6 +68,8 @@ void AMinigame1Logic::SetTeamScore(int _team, int _score)
 
 void AMinigame1Logic::StartCannonsCharge(float _time)
 {
+	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+
 	for (int32 i = 0; i < AirCannons.Num(); i++)
 	{
 		if (AirCannons[i])

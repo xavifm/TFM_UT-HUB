@@ -37,4 +37,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Cannons_functions")
 	void StartCannonsCharge(float _time);
+
+private:
+	FTimerHandle TimerHandle;
 };

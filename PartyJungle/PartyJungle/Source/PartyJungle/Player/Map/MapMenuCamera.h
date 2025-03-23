@@ -150,6 +150,7 @@ private:
 	bool SelectingPath = false;
 	bool DuelUI = false;
 	bool TimedActionExecuted = false;
+	bool IsMinigameActive = false;
 
 	int SelectedPathIndex = 0;
 
@@ -161,4 +162,6 @@ private:
 
 	UPROPERTY()
 	UUserWidget* MenuWidget;
+
+	FTimerHandle TimerHandle;
 };

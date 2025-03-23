@@ -20,8 +20,9 @@ public:
 
 protected:
     virtual void BeginPlay() override;
+    void Tick(float DeltaTime);
+
     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-    void CheckForMinigameEnd();
 
 public:
     UPROPERTY()
@@ -76,5 +77,7 @@ private:
     const float AIR_CANNON_MULIPLIER = 100;
     const float TICK_UPDATE_TIME = 0.1f;
     const float BULLET_RESPAWN_OFFSET = 150;
+
+    FTimerHandle TimerHandle;
 };
 

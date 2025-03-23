@@ -54,8 +54,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
                 MapUI->SwitchLegendVisibility(false);
                 UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
 
-                FTimerHandle timerHandle;
-                GetWorld()->GetTimerManager().SetTimer(timerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
+                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
                 TimedActionExecuted = true;
             }
         }
@@ -81,6 +80,9 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (IsMinigameActive)
+        return;
+
     if (DuelUI)
     {
         RefreshChallengeInfo(direction);
@@ -95,6 +97,9 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (IsMinigameActive)
+        return;
+
     if (DuelUI)
     {
         StartMinigame(true, 0, TArray<AMinion*>());
@@ -145,15 +150,15 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
     if (!WorldSceneManager)
         return;
 
-    bool isMinigameActive = (_sceneIndex >= 0);
+    IsMinigameActive = (_sceneIndex >= 0);
 
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
 
-    if (!isMinigameActive)
+    if (!IsMinigameActive)
         SwitchController();
 
-    SwitchMenuWidget(!isMinigameActive);
+    SwitchMenuWidget(!IsMinigameActive);
 }
 
 void AMapMenuCamera::SwitchController() 
@@ -170,20 +175,25 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
+    if (IsMinigameActive)
+        return;
+
     if (DuelUI)
         CloseChallengeMenu();
 }
 
 void AMapMenuCamera::CloseChallengeMenu() 
 {
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+
     SwitchChallengeUI(false);
 
     int currentMinionMovements = CurrentMinion->GetMinionsMovements();
 
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
-    //if (currentMinionMovements <= 0)
-    //    RestoreTurnLogic();
+    if (currentMinionMovements <= 0)
+        RestoreTurnLogic();
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
@@ -216,8 +226,8 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction)
 
 void AMapMenuCamera::FinishDuel(int _winner)
 {
-    int winnerIndex = (_winner == 1) ? 0 : 1;
-    int loserIndex = (_winner == 1) ? 1 : 0;
+    int winnerIndex = (_winner == 0) ? 0 : 1;
+    int loserIndex = (_winner == 0) ? 1 : 0;
 
     int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
     int loserCoins = -winnerCoins;
@@ -225,8 +235,8 @@ void AMapMenuCamera::FinishDuel(int _winner)
     int winnerCrowns = ChallengeInformation->GetBetCrownsQuantity(loserIndex);
     int loserCrowns = -winnerCrowns;
 
-    auto* Winner = (_winner == 1) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
-    auto* Loser = (_winner == 1) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
+    auto* Winner = (_winner == 0) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
+    auto* Loser = (_winner == 0) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
 
     Winner->UpdateCoins(winnerCoins);
     Loser->UpdateCoins(loserCoins);
@@ -242,8 +252,7 @@ void AMapMenuCamera::FinishDuel(int _winner)
 
     SwitchChallengeUI(false);
 
-    FTimerHandle timerHandle;
-    GetWorld()->GetTimerManager().SetTimer(timerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
 }
 
 
@@ -381,12 +390,12 @@ void AMapMenuCamera::RollTheDice()
 
         Dice->ShowDiceFeedbackNumber(movements);
 
-        FTimerHandle TimerHandle;
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, movements]()
         {
             CurrentMinion->DiceReference = Dice;
             CurrentMinion->SetMinionsMovements(movements);
             RollingDice = false;
+            GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
         }, Dice->DiceFeedbackTime, false);
     }
 }
@@ -431,6 +440,8 @@ void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns)
 
 void AMapMenuCamera::RestoreTurnLogic()
 {
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+
     if (DuelUI)
         return;
 
