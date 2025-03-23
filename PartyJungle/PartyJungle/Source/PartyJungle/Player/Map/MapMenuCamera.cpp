@@ -24,6 +24,7 @@ void AMapMenuCamera::BeginPlay()
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
         {
             Subsystem->AddMappingContext(InputMappingContext, 0);
+            Subsystem->AddMappingContext(InputMappingContext, 1);
         }
     }
 
@@ -94,14 +95,9 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
-    SwitchMainScene();
-
     if (DuelUI)
     {
-        //int winner = (std::rand() % 2) + 1;
-        //FinishDuel(winner);
         StartMinigame(true, 0, TArray<AMinion*>());
-
         return;
     }
 
@@ -154,7 +150,22 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
 
+    if (!isMinigameActive)
+        SwitchController();
+
     SwitchMenuWidget(!isMinigameActive);
+}
+
+void AMapMenuCamera::SwitchController() 
+{
+    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    if(PlayerController) 
+    {
+        PlayerController->bAutoManageActiveCameraTarget = true;
+        PlayerController->UnPossess();
+        PlayerController->Possess(this);
+        EnableInput(PlayerController);
+    }
 }
 
 void AMapMenuCamera::HandleBackInput() 
@@ -171,8 +182,8 @@ void AMapMenuCamera::CloseChallengeMenu()
 
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
-    if (currentMinionMovements <= 0)
-        RestoreTurnLogic();
+    //if (currentMinionMovements <= 0)
+    //    RestoreTurnLogic();
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
@@ -424,6 +435,7 @@ void AMapMenuCamera::RestoreTurnLogic()
         return;
 
     SwitchCameraTeam(1);
+    SwitchController();
     MapUI->SwitchLegendVisibility(true);
     Dice->ShowDice();
     InputEnabled = true;

@@ -74,36 +74,58 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(int _minigameIndex = -1);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchController();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleLeftRightInput(const FInputActionValue& _value);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleConfirmInput();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleBackInput();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void CloseChallengeMenu();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RefreshChallengeInfo(int _direction);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FinishDuel(int _winner);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FocusNextMinion(int _direction);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RollTheDice();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ChangeSelectedPath(int _direction);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ConfirmPathSelection();
 
 
@@ -114,9 +136,15 @@ private:
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
 	const float TIME_BEFORE_FINISH_DUEL = 2;
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RestoreTurnLogic();
+
 	bool InputEnabled = true;
 	bool RollingDice = false;
 	bool SelectingPath = false;
@@ -124,8 +152,13 @@ private:
 	bool TimedActionExecuted = false;
 
 	int SelectedPathIndex = 0;
+
+	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;
+	
+	UPROPERTY()
 	UPlayerMapUI* MapUI;
 
+	UPROPERTY()
 	UUserWidget* MenuWidget;
 };

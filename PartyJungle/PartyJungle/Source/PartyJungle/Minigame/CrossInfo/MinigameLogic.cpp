@@ -1,4 +1,5 @@
 #include "./MinigameLogic.h"
+#include <PartyJungle/Player/Map/MapMenuCamera.h>
 
 AMinigameLogic::AMinigameLogic()
 {
@@ -12,6 +13,7 @@ void AMinigameLogic::BeginMinigame()
 
 	if(GameInstance) 
 	{
+		ResetMinigameScene();
 		InitializeMinigameInfoForDuel();
 		StartMinigame(StartTime);
 	}
@@ -30,6 +32,13 @@ void AMinigameLogic::InitializeMinigameInfoForDuel()
 
 	TeamMinigameScores.Add(attackerTeam, 0);
 	TeamMinigameScores.Add(victimTeam, 0);
+}
+
+void AMinigameLogic::ResetMinigameScene()
+{
+	TeamsReady.Empty();
+	TeamMinigameScores.Empty();
+	MinigameFinished = false;
 }
 
 void AMinigameLogic::StartMinigame(int _startTime)
@@ -76,7 +85,24 @@ void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, int _winner)
 
 void AMinigameLogic::FinishMinigame(int _winner)
 {
+	if (MinigameFinished)
+		return;
 
+	MinigameFinished = true;
+
+	AMapMenuCamera* mapMenuCamera = GameInstance->MapMenuCamera;
+
+	mapMenuCamera->SwitchMainScene();
+
+	if(GameInstance->Challenge) 
+	{
+		int attackerTeam = static_cast<int>(GameInstance->Attacker->Team);
+		int victimTeam = static_cast<int>(GameInstance->Victim->Team);
+
+		int winnerTeam = (_winner == attackerTeam) ? 0 : 1;
+
+		mapMenuCamera->FinishDuel(winnerTeam);
+	}
 }
 
 void AMinigameLogic::SetTeamScore(int _team, int _score)

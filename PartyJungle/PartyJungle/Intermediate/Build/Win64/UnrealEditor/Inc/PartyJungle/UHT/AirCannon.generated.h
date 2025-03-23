@@ -18,7 +18,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execFinishCannonCharge); \
 	DECLARE_FUNCTION(execStartCannonCharge); \
 	DECLARE_FUNCTION(execShootCannon); \
-	DECLARE_FUNCTION(execIncrementUpForce);
+	DECLARE_FUNCTION(execIncrementUpForce); \
+	DECLARE_FUNCTION(execResetProjectilePosition);
 
 
 #define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_INCLASS_NO_PURE_DECLS \

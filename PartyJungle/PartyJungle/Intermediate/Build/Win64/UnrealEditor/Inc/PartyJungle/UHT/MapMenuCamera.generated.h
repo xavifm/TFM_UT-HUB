@@ -9,12 +9,37 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AMinion;
+class ASquareOptional;
+class UInputComponent;
+struct FInputActionValue;
 #ifdef PARTYJUNGLE_MapMenuCamera_generated_h
 #error "MapMenuCamera.generated.h already included, missing '#pragma once' in MapMenuCamera.h"
 #endif
 #define PARTYJUNGLE_MapMenuCamera_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execRestoreTurnLogic); \
+	DECLARE_FUNCTION(execUpdateMinionEconomy); \
+	DECLARE_FUNCTION(execUpdateDicePosition); \
+	DECLARE_FUNCTION(execConfirmPathSelection); \
+	DECLARE_FUNCTION(execChangeSelectedPath); \
+	DECLARE_FUNCTION(execRollTheDice); \
+	DECLARE_FUNCTION(execFocusNextMinion); \
+	DECLARE_FUNCTION(execSwitchCameraTeam); \
+	DECLARE_FUNCTION(execSwitchPathMenu); \
+	DECLARE_FUNCTION(execSwitchMenuWidget); \
+	DECLARE_FUNCTION(execSwitchChallengeUI); \
+	DECLARE_FUNCTION(execFinishDuel); \
+	DECLARE_FUNCTION(execRefreshChallengeInfo); \
+	DECLARE_FUNCTION(execOpenChallengeMenu); \
+	DECLARE_FUNCTION(execCloseChallengeMenu); \
+	DECLARE_FUNCTION(execHandleBackInput); \
+	DECLARE_FUNCTION(execStartMinigame); \
+	DECLARE_FUNCTION(execHandleConfirmInput); \
+	DECLARE_FUNCTION(execHandleLeftRightInput); \
+	DECLARE_FUNCTION(execSetupPlayerInputComponent); \
+	DECLARE_FUNCTION(execSwitchController); \
 	DECLARE_FUNCTION(execSwitchMainScene);
 
 

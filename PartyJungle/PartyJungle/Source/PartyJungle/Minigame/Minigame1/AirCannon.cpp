@@ -44,7 +44,7 @@ void AAirCannon::CheckForMinigameEnd()
 {
     if(!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
     {
-        if (ProjectilePhysics->ComponentVelocity.Z <= 0)
+        if (ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
         {
             CannonFinished = true;
             MinigameLogic->SetTeamReady(CannonTeam);
@@ -63,6 +63,12 @@ void AAirCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
     }
 }
 
+void AAirCannon::ResetProjectilePosition()
+{
+    FVector newPosition = GetActorLocation() + FVector(0, 0, BULLET_RESPAWN_OFFSET);
+    ProjectileReference->SetActorRelativeLocation(newPosition);
+}
+
 void AAirCannon::IncrementUpForce()
 {
     if (!CannonCharging || CannonFinished)
@@ -75,6 +81,9 @@ void AAirCannon::IncrementUpForce()
 void AAirCannon::ShootCannon()
 {
     MinigameLogic->SetTeamScore(CannonTeam, UpForce);
+
+    if(UpForce <= 5)
+        MinigameLogic->SetTeamReady(CannonTeam);
 
     if (ProjectileReference)
     {
@@ -96,26 +105,21 @@ void AAirCannon::StartCannonCharge(float _time)
 
     CannonCharging = true;
 
-    APlayerController* Player1Controller = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
-    if (Player1Controller) 
+    PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
+    if (PlayerController) 
     {
-        Player1Controller->bAutoManageActiveCameraTarget = false;
-        Player1Controller->Possess(this);
+        PlayerController->bAutoManageActiveCameraTarget = false;
+        PlayerController->Possess(this);
     }
 
-    GetWorld()->GetTimerManager().SetTimer(
-        TimerHandle,
-        this,
-        &AAirCannon::FinishCannonCharge,
-        _time,
-        false
-    );
+    GetWorld()->GetTimerManager().SetTimerForNextTick([this, _time]() {
+        FinishCannonCharge();
+        });
 }
 
 void AAirCannon::FinishCannonCharge()
 {
     CannonCharging = false;
-    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     ShootCannon();
 }
 

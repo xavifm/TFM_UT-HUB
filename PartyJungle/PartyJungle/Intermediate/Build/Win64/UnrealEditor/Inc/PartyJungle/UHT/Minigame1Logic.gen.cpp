@@ -23,7 +23,7 @@ struct Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "Cannons_functions" },
+		{ "Category", "Minigame_functions" },
 		{ "ModuleRelativePath", "Minigame/Minigame1/Minigame1Logic.h" },
 	};
 #endif // WITH_METADATA
@@ -164,7 +164,7 @@ struct Z_Construct_UClass_AMinigame1Logic_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget, "SetCameraTarget" }, // 539778052
+		{ &Z_Construct_UFunction_AMinigame1Logic_SetCameraTarget, "SetCameraTarget" }, // 2391071322
 		{ &Z_Construct_UFunction_AMinigame1Logic_SetupAirCannonsInfo, "SetupAirCannonsInfo" }, // 3347501747
 		{ &Z_Construct_UFunction_AMinigame1Logic_StartCannonsCharge, "StartCannonsCharge" }, // 756080028
 	};
@@ -225,10 +225,10 @@ AMinigame1Logic::~AMinigame1Logic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 2657862473U) },
+		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 3384046056U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_2156644073(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_258128065(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -23,19 +23,42 @@ void AMinigame1Logic::SetupAirCannonsInfo()
 	}
 }
 
+void AMinigame1Logic::ResetMinigameScene() 
+{
+	Super::ResetMinigameScene();
+
+	for (int i = 0; i < AirCannons.Num(); i++)
+	{
+		AirCannons[i]->CannonFinished = false;
+		AirCannons[i]->CannonCharging = false;
+		AirCannons[i]->UpForce = 0;
+
+		if (AirCannons[i]->ProjectilePhysics) 
+		{
+			AirCannons[i]->ProjectilePhysics->SetSimulatePhysics(false);
+			AirCannons[i]->ProjectilePhysics = nullptr;
+			AirCannons[i]->ResetProjectilePosition();
+		}
+	}
+}
+
 void AMinigame1Logic::StartMinigame(int _startTime)
 {
 	Super::StartMinigame(_startTime);
 
 	SetupAirCannonsInfo();
 
-	FTimerHandle TimerHandle;
-	GetWorld()->GetTimerManager().SetTimer(
-		TimerHandle,
-		[this, _startTime]() { StartCannonsCharge(_startTime); },
-		_startTime,
-		false
-	);
+	GetWorld()->GetTimerManager().SetTimerForNextTick([this, _startTime]() {
+		StartCannonsCharge(_startTime);
+	});
+
+}
+
+void AMinigame1Logic::FinishMinigame(int _winner)
+{
+	Super::FinishMinigame(_winner);
+	MinigameCamera->SetCameraTarget(nullptr);
+
 }
 
 void AMinigame1Logic::SetTeamScore(int _team, int _score)

@@ -222,10 +222,10 @@ ASquareOptional::~ASquareOptional() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 1290674771U) },
+		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 2932036246U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_3087891990(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_2501684506(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

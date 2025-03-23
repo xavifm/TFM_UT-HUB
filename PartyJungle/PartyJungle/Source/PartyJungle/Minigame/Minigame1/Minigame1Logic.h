@@ -14,10 +14,15 @@ class PARTYJUNGLE_API AMinigame1Logic : public AMinigameLogic
 public:
 	AMinigame1Logic();
 
-	UFUNCTION(BlueprintCallable, Category = "Cannons_functions")
+	UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
 	void SetCameraTarget();
 
 protected:
+	void StartMinigame(int _startTime) override;
+	void FinishMinigame(int _winner) override;
+	void SetTeamScore(int _team, int _score) override;
+	void ResetMinigameScene() override;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannons")
 	ACannonMinigameCamera* MinigameCamera;
 
@@ -26,10 +31,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannons_parameters")
 	float CannonChargeTime;
-
-	void StartMinigame(int _startTime) override;
-
-	void SetTeamScore(int _team, int _score) override;
 
 	UFUNCTION(BlueprintCallable, Category = "Cannons_functions")
 	void SetupAirCannonsInfo();

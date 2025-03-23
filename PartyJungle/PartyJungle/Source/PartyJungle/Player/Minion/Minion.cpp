@@ -18,8 +18,12 @@ void AMinion::SetMinionsMovements(int _movements, bool _continuation)
 
 	if(!_continuation) 
 	{
-		CurrentSquare->RemoveMinion(this);
+		if(IsValid(CurrentSquare))
+			CurrentSquare->RemoveMinion(this);
+
 		CurrentSquare = GetNextSquare();
+		if(CurrentSquare)
+			UE_LOG(LogTemp, Warning, TEXT("CurrentSquare: %s"), *CurrentSquare->GetName());
 	}
 
 	if(CurrentSquare) 
@@ -140,12 +144,11 @@ void AMinion::HandleMovement(float _deltaTime)
 			if(Movements == 1) 
 			{
 				DiceReference->HideDice();
-				CurrentSquare;
 				Movements = 0;
 			}
 
 			AMinion* minionQuery = SearchMinionToChallenge();
-			if (CurrentSquare->Camera && minionQuery) 
+			if (CurrentSquare && CurrentSquare->Camera && minionQuery)
 			{
 				CurrentSquare->Camera->OpenChallengeMenu(this, minionQuery);
 				return;

@@ -33,6 +33,9 @@ public:
     UPROPERTY()
     AMinigameLogic* MinigameLogic;
 
+    UPROPERTY()
+    APlayerController* PlayerController;
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     AActor* ProjectileReference;
 
@@ -55,6 +58,9 @@ public:
     int UpForce;
 
     UFUNCTION(BlueprintCallable)
+    void ResetProjectilePosition();
+
+    UFUNCTION(BlueprintCallable)
     void IncrementUpForce();
 
     UFUNCTION()
@@ -69,7 +75,6 @@ public:
 private:
     const float AIR_CANNON_MULIPLIER = 100;
     const float TICK_UPDATE_TIME = 0.1f;
-
-    FTimerHandle TimerHandle;
+    const float BULLET_RESPAWN_OFFSET = 150;
 };
 

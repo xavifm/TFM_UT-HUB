@@ -37,11 +37,16 @@ public:
 
 	ASquare* GetNextNode(int _pathIndex = 0);
 
+	UFUNCTION()
 	void OpenChooseMenu();
+	UFUNCTION()
 	void CloseChooseMenu(int _pathIndex);
+	UFUNCTION()
 	void AddMinion(AMinion* _minion);
+	UFUNCTION()
 	void RemoveMinion(AMinion* _minion);
 
+	UFUNCTION()
 	ASquare* GetNextSquare();
 
 	//virtual void ExecuteEvent(AMinion* _minion);

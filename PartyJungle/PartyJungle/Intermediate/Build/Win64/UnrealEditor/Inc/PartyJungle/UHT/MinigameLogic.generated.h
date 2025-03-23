@@ -15,6 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define PARTYJUNGLE_MinigameLogic_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execResetMinigameScene); \
 	DECLARE_FUNCTION(execBeginMinigame); \
 	DECLARE_FUNCTION(execSetTeamReady); \
 	DECLARE_FUNCTION(execSetTeamScore); \

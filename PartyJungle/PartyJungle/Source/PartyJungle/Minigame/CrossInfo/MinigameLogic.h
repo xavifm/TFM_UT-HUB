@@ -13,7 +13,6 @@ class PARTYJUNGLE_API AMinigameLogic : public AActor
 public:
     AMinigameLogic();
 
-public:
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
@@ -53,7 +52,13 @@ public:
     UFUNCTION()
     void BeginMinigame();
 
+protected:
+    UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
+    virtual void ResetMinigameScene();
+
 private:
     void InitializeMinigameInfoForDuel();
+
+    bool MinigameFinished;
 };
 

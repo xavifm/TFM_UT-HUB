@@ -9,10 +9,20 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AMinion;
+class ASquare;
 #ifdef PARTYJUNGLE_Square_generated_h
 #error "Square.generated.h already included, missing '#pragma once' in Square.h"
 #endif
 #define PARTYJUNGLE_Square_generated_h
+
+#define FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetNextSquare); \
+	DECLARE_FUNCTION(execRemoveMinion); \
+	DECLARE_FUNCTION(execAddMinion); \
+	DECLARE_FUNCTION(execCloseChooseMenu); \
+	DECLARE_FUNCTION(execOpenChooseMenu);
+
 
 #define FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_INCLASS_NO_PURE_DECLS \
 private: \
@@ -39,6 +49,7 @@ public: \
 #define FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_ENHANCED_CONSTRUCTORS \
 private: \
