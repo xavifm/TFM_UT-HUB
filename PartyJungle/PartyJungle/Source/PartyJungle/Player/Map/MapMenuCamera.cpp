@@ -19,12 +19,24 @@ void AMapMenuCamera::BeginPlay()
     UpdateDicePosition();
     Dice->ShowDice();
 
-    if (APlayerController* PC = Cast<APlayerController>(GetController()))
+    UGameplayStatics::CreatePlayer(GetWorld(), 1, true);
+
+    UWorld* World = GetWorld();
+    if (World)
     {
-        if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+        UGameInstance* GameInstance = World->GetGameInstance();
+        if (GameInstance)
         {
-            Subsystem->AddMappingContext(InputMappingContext, 0);
-            Subsystem->AddMappingContext(InputMappingContext, 1);
+            const TArray<ULocalPlayer*>& LocalPlayers = GameInstance->GetLocalPlayers();
+            for (ULocalPlayer* LocalPlayer : LocalPlayers)
+            {
+                if (LocalPlayer)
+                {
+                    UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
+                    if (Subsystem)
+                        Subsystem->AddMappingContext(InputMappingContext, 0);
+                }
+            }
         }
     }
 
@@ -163,14 +175,20 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
 void AMapMenuCamera::SwitchController() 
 {
-    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), CurrentMinionTeam);
+    APlayerController* PlayerController0 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+
+
     if(PlayerController) 
     {
-        PlayerController->bAutoManageActiveCameraTarget = true;
+        PlayerController->bAutoManageActiveCameraTarget = false;
         PlayerController->UnPossess();
         PlayerController->Possess(this);
         EnableInput(PlayerController);
     }
+
+    if(PlayerController0)
+        PlayerController0->SetViewTargetWithBlend(WorldSceneManager->MapCameraActor, 0.f);
 }
 
 void AMapMenuCamera::HandleBackInput() 
