@@ -12,6 +12,9 @@ class PARTYJUNGLE_API ACannonMinigameCamera : public APawn
 public:
 	ACannonMinigameCamera();
 	
-	UFUNCTION(BlueprintImplementableEvent, Category = "Cannon Functions")
+	UFUNCTION(BlueprintImplementableEvent, Category = "Camera Functions")
 	void SetCameraTarget(AActor* _reference);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Camera Functions")
+	void ResetCameraPosition();
 };

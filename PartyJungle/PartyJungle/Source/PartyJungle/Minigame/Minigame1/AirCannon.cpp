@@ -39,6 +39,7 @@ void AAirCannon::Tick(float DeltaTime)
     {
         if (ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
         {
+            UE_LOG(LogTemp, Warning, TEXT("Velocitat actual Z: %f"), ProjectilePhysics->GetPhysicsLinearVelocity().Z);
             CannonFinished = true;
             MinigameLogic->SetTeamReady(CannonTeam);
         }
@@ -59,7 +60,15 @@ void AAirCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 void AAirCannon::ResetProjectilePosition()
 {
     FVector newPosition = GetActorLocation() + FVector(0, 0, BULLET_RESPAWN_OFFSET);
-    ProjectileReference->SetActorRelativeLocation(newPosition);
+    ProjectileReference->SetActorLocation(newPosition);
+    FVector zeroVector = FVector(0, 0, 0);
+
+    UPrimitiveComponent* rootComp = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
+    if (!rootComp) return;
+
+    rootComp->SetSimulatePhysics(false);
+    rootComp->SetAllPhysicsLinearVelocity(FVector::ZeroVector);
+    rootComp->SetAllPhysicsAngularVelocityInDegrees(FVector::ZeroVector);
 }
 
 void AAirCannon::IncrementUpForce()

@@ -17,6 +17,34 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_ACannonMinigameCamera_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class ACannonMinigameCamera Function ResetCameraPosition
+static FName NAME_ACannonMinigameCamera_ResetCameraPosition = FName(TEXT("ResetCameraPosition"));
+void ACannonMinigameCamera::ResetCameraPosition()
+{
+	ProcessEvent(FindFunctionChecked(NAME_ACannonMinigameCamera_ResetCameraPosition),NULL);
+}
+struct Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Camera Functions" },
+		{ "ModuleRelativePath", "Minigame/Minigame1/CannonMinigameCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACannonMinigameCamera, nullptr, "ResetCameraPosition", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class ACannonMinigameCamera Function ResetCameraPosition
+
 // Begin Class ACannonMinigameCamera Function SetCameraTarget
 struct CannonMinigameCamera_eventSetCameraTarget_Parms
 {
@@ -33,7 +61,7 @@ struct Z_Construct_UFunction_ACannonMinigameCamera_SetCameraTarget_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "Cannon Functions" },
+		{ "Category", "Camera Functions" },
 		{ "ModuleRelativePath", "Minigame/Minigame1/CannonMinigameCamera.h" },
 	};
 #endif // WITH_METADATA
@@ -79,7 +107,8 @@ struct Z_Construct_UClass_ACannonMinigameCamera_Statics
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACannonMinigameCamera_SetCameraTarget, "SetCameraTarget" }, // 3121922658
+		{ &Z_Construct_UFunction_ACannonMinigameCamera_ResetCameraPosition, "ResetCameraPosition" }, // 586635729
+		{ &Z_Construct_UFunction_ACannonMinigameCamera_SetCameraTarget, "SetCameraTarget" }, // 3840930399
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -127,10 +156,10 @@ ACannonMinigameCamera::~ACannonMinigameCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_CannonMinigameCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACannonMinigameCamera, ACannonMinigameCamera::StaticClass, TEXT("ACannonMinigameCamera"), &Z_Registration_Info_UClass_ACannonMinigameCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonMinigameCamera), 1942909618U) },
+		{ Z_Construct_UClass_ACannonMinigameCamera, ACannonMinigameCamera::StaticClass, TEXT("ACannonMinigameCamera"), &Z_Registration_Info_UClass_ACannonMinigameCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannonMinigameCamera), 3508306916U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_CannonMinigameCamera_h_1907913830(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_CannonMinigameCamera_h_362393708(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_CannonMinigameCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_CannonMinigameCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

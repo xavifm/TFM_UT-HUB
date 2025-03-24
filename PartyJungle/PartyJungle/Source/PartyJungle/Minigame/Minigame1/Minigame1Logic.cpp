@@ -27,18 +27,15 @@ void AMinigame1Logic::ResetMinigameScene()
 {
 	Super::ResetMinigameScene();
 
+	if (MinigameCamera)
+		MinigameCamera->ResetCameraPosition();
+
 	for (int i = 0; i < AirCannons.Num(); i++)
 	{
 		AirCannons[i]->CannonFinished = false;
 		AirCannons[i]->CannonCharging = false;
 		AirCannons[i]->UpForce = 0;
-
-		if (AirCannons[i]->ProjectilePhysics) 
-		{
-			AirCannons[i]->ProjectilePhysics->SetSimulatePhysics(false);
-			AirCannons[i]->ProjectilePhysics = nullptr;
-			AirCannons[i]->ResetProjectilePosition();
-		}
+		AirCannons[i]->ResetProjectilePosition();
 	}
 }
 
@@ -56,6 +53,7 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 void AMinigame1Logic::FinishMinigame(int _winner)
 {
 	Super::FinishMinigame(_winner);
+	ResetMinigameScene();
 	MinigameCamera->SetCameraTarget(nullptr);
 
 }

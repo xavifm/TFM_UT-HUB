@@ -188,7 +188,7 @@ void AMapMenuCamera::CloseChallengeMenu()
 
     SwitchChallengeUI(false);
 
-    int currentMinionMovements = CurrentMinion->GetMinionsMovements();
+    int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
 
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
