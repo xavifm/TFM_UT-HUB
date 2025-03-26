@@ -63,6 +63,8 @@ void AAirCannon::ResetProjectilePosition()
     ProjectileReference->SetActorLocation(newPosition);
     FVector zeroVector = FVector(0, 0, 0);
 
+    ProjectileReference->SetActorTickEnabled(false);
+
     UPrimitiveComponent* rootComp = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
     if (!rootComp) return;
 

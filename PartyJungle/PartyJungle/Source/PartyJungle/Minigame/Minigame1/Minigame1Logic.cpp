@@ -19,6 +19,14 @@ void AMinigame1Logic::SetupAirCannonsInfo()
 				AirCannons[i]->CannonTeam = static_cast<int>(AirCannons[i]->MinionReference->Team);
 
 			AirCannons[i]->MinigameLogic = this;
+
+			AActor* projectileReference = AirCannons[i]->ProjectileReference;
+
+			if (projectileReference) 
+			{
+				projectileReference->SetActorTickEnabled(true);
+				projectileReference->SetActorHiddenInGame(true);
+			}
 		}
 	}
 }
