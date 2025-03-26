@@ -27,7 +27,8 @@ void AAirCannon::BeginPlay()
         }
     }
 
-    ProjectileReference->SetActorHiddenInGame(true);
+    if(ProjectileReference)
+        ProjectileReference->SetActorHiddenInGame(true);
 }
 
 
