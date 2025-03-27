@@ -63,8 +63,8 @@ template<> PARTYJUNGLE_API UClass* StaticClass<class AChallengeInformation>();
 
 
 #define FOREACH_ENUM_EDUELTYPE(op) \
-	op(EDuelType::ALL_IN_COINS) \
 	op(EDuelType::HALF_COINS) \
+	op(EDuelType::ALL_IN_COINS) \
 	op(EDuelType::ALL_IN_VS_ST) 
 
 enum class EDuelType : uint8;

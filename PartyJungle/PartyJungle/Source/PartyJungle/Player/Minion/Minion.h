@@ -93,4 +93,5 @@ private:
 	const float MINION_SEPARATION_DISTANCE = 50.0f;
 	const int MAX_MINION_COINS = 50;
 	const int MAX_MINION_CROWNS = 5;
+	const int MINIMUM_BET_REQUIREMENT = 5;
 };

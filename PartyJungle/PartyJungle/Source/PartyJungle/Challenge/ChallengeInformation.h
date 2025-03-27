@@ -8,8 +8,8 @@
 UENUM(BlueprintType)
 enum class EDuelType : uint8
 {
-	ALL_IN_COINS UMETA(DisplayName = "All In Coins"),
 	HALF_COINS UMETA(DisplayName = "Half Coins"),
+	ALL_IN_COINS UMETA(DisplayName = "All In Coins"),
 	ALL_IN_VS_ST UMETA(DisplayName = "All In Vs St")
 };
 
@@ -49,5 +49,8 @@ public:
 
 private:
 	EDuelType DuelType;
+
+	const float MIN_HALF_BET = 5;
+	const float MIN_FULL_BET = 10;
 };
 

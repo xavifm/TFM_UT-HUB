@@ -10,7 +10,7 @@ void AChallengeInformation::SetUpDuelInfo(AMinion* _attacker, AMinion* _victim)
 {
     Attacker = _attacker;
     Victim = _victim;
-    DuelType = EDuelType::ALL_IN_COINS;
+    DuelType = EDuelType::HALF_COINS;
 }
 
 EDuelType AChallengeInformation::GetDuelType()
@@ -24,18 +24,35 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction)
         return DuelType;
 
     int DuelTypeInt = static_cast<int>(DuelType);
-    int EnumMin = static_cast<int>(EDuelType::ALL_IN_COINS);
+    int EnumMin = static_cast<int>(EDuelType::HALF_COINS);
     int EnumMax = static_cast<int>(EDuelType::ALL_IN_VS_ST);
 
     DuelTypeInt += _direction;
 
-    if (DuelTypeInt > EnumMax)
-        DuelTypeInt = EnumMin;
-    else if (DuelTypeInt < EnumMin)
-        DuelTypeInt = EnumMax;
+    if (DuelTypeInt > EnumMax || DuelTypeInt < EnumMin)
+        return DuelType;
 
-    DuelType = static_cast<EDuelType>(DuelTypeInt);
+    EDuelType duelType = static_cast<EDuelType>(DuelTypeInt);
+    int attackerCoins = Attacker->GetCoins();
+    int attackerCrowns = Attacker->GetCrowns();
+    
+    int victimCoins = Victim->GetCoins();
+    int victimCrowns = Victim->GetCrowns();
 
+    int minCoins = 0;
+
+    switch (duelType)
+    {
+        case EDuelType::HALF_COINS:      minCoins = MIN_HALF_BET;  break;
+        case EDuelType::ALL_IN_COINS:    minCoins = MIN_FULL_BET; break;
+        case EDuelType::ALL_IN_VS_ST:    if (victimCrowns <= 0) return DuelType; minCoins = MIN_FULL_BET;
+            break;
+    }
+
+    if (minCoins > 0 && (attackerCoins < minCoins || victimCoins < minCoins))
+        return DuelType;
+
+    DuelType = duelType;
     return DuelType;
 }
 

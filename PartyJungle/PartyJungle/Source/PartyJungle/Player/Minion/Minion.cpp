@@ -164,14 +164,15 @@ AMinion* AMinion::SearchMinionToChallenge()
 {
 	AMinion* minionQuery = nullptr;
 
-	if (!CurrentSquare || CurrentSquare->MinionsList.Num() != 2)
+	if (!CurrentSquare || CurrentSquare->MinionsList.Num() != 2 || GetCoins() < MINIMUM_BET_REQUIREMENT)
 		return minionQuery;
 
 	for (AMinion* Minion : CurrentSquare->MinionsList)
 	{
 		if (Minion && Minion->Team != Team)
 		{
-			minionQuery = Minion;
+			if(Minion->GetCoins() >= MINIMUM_BET_REQUIREMENT) 
+				minionQuery = Minion;
 		}
 	}
 
