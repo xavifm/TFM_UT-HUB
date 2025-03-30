@@ -51,6 +51,7 @@ void AMinion::MoveToSquare(ASquare* TargetSquare)
 	FVector Offset = CalculateSeparationOffset(MinionsInSquare, NumMinions, MINION_SEPARATION_DISTANCE);
 
 	TargetPosition += Offset;
+	TargetPosition.Z += VERTICAL_OFFSET_DISTANCE;
 
 	CurrentLerpTime = 0.0f;
 	isMoving = true;
@@ -131,9 +132,7 @@ void AMinion::HandleMovement(float _deltaTime)
         CurrentLerpTime += _deltaTime;
 
         float LerpAlpha = FMath::Clamp(CurrentLerpTime / TotalLerpTime, 0.0f, MAX_TIME_MOVEMENT);
-
         FVector NewPosition = FMath::Lerp(StartPosition, TargetPosition, LerpAlpha);
-		NewPosition.Z = GetActorLocation().Z;
 
         SetActorLocation(NewPosition);
 
