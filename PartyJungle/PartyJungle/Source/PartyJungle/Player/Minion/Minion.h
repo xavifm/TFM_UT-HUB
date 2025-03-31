@@ -92,6 +92,7 @@ private:
 	const float MAX_TIME_MOVEMENT = 1.0f;
 	const float MINION_SEPARATION_DISTANCE = 50.0f;
 	const float VERTICAL_OFFSET_DISTANCE = 50;
+	const float JUMP_HEIGHT = 100;
 	const int MAX_MINION_COINS = 50;
 	const int MAX_MINION_CROWNS = 5;
 	const int MINIMUM_BET_REQUIREMENT = 5;

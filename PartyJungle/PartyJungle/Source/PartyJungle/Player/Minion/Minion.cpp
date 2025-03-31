@@ -133,6 +133,9 @@ void AMinion::HandleMovement(float _deltaTime)
 
         float LerpAlpha = FMath::Clamp(CurrentLerpTime / TotalLerpTime, 0.0f, MAX_TIME_MOVEMENT);
         FVector NewPosition = FMath::Lerp(StartPosition, TargetPosition, LerpAlpha);
+		float Arc = 4.0f * JUMP_HEIGHT * LerpAlpha * (1.0f - LerpAlpha);
+
+		NewPosition.Z += Arc;
 
         SetActorLocation(NewPosition);
 
