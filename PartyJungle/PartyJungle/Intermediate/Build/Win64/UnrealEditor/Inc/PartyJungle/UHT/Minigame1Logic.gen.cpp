@@ -225,10 +225,10 @@ AMinigame1Logic::~AMinigame1Logic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 3384046056U) },
+		{ Z_Construct_UClass_AMinigame1Logic, AMinigame1Logic::StaticClass, TEXT("AMinigame1Logic"), &Z_Registration_Info_UClass_AMinigame1Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame1Logic), 1203199699U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_258128065(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_125942389(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_Minigame1Logic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

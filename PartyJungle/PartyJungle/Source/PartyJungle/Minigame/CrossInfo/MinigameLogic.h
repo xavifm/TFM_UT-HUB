@@ -32,7 +32,7 @@ public:
     virtual void StartMinigame(int _startTime);
 
     UFUNCTION()
-    virtual bool CheckIfTheMinigameHasFinished();
+    bool CheckIfTheMinigameHasFinished();
 
     UFUNCTION()
     int CalculateWinner();

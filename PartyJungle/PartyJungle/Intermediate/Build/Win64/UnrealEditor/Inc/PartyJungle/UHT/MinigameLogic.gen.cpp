@@ -113,7 +113,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinig
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "CheckIfTheMinigameHasFinished", nullptr, nullptr, Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::MinigameLogic_eventCheckIfTheMinigameHasFinished_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020400, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "CheckIfTheMinigameHasFinished", nullptr, nullptr, Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::MinigameLogic_eventCheckIfTheMinigameHasFinished_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished_Statics::MinigameLogic_eventCheckIfTheMinigameHasFinished_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished()
 {
@@ -444,7 +444,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMinigameLogic_BeginMinigame, "BeginMinigame" }, // 1516632387
 		{ &Z_Construct_UFunction_AMinigameLogic_CalculateWinner, "CalculateWinner" }, // 2388139539
-		{ &Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished, "CheckIfTheMinigameHasFinished" }, // 3258483724
+		{ &Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished, "CheckIfTheMinigameHasFinished" }, // 2027633980
 		{ &Z_Construct_UFunction_AMinigameLogic_FinishMinigame, "FinishMinigame" }, // 900183795
 		{ &Z_Construct_UFunction_AMinigameLogic_ResetMinigameScene, "ResetMinigameScene" }, // 792237633
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamReady, "SetTeamReady" }, // 3883338738
@@ -523,10 +523,10 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 146235203U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 1109540041U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_1497813545(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_3203378557(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
