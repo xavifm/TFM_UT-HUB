@@ -65,6 +65,36 @@ DEFINE_FUNCTION(AWorldManager::execAsssignCameraActors)
 }
 // End Class AWorldManager Function AsssignCameraActors
 
+// Begin Class AWorldManager Function EnableStarAtRandomLocation
+struct Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "World_Functions" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "EnableStarAtRandomLocation", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AWorldManager::execEnableStarAtRandomLocation)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->EnableStarAtRandomLocation();
+	P_NATIVE_END;
+}
+// End Class AWorldManager Function EnableStarAtRandomLocation
+
 // Begin Class AWorldManager Function GetLevelByIndex
 struct Z_Construct_UFunction_AWorldManager_GetLevelByIndex_Statics
 {
@@ -271,6 +301,7 @@ void AWorldManager::StaticRegisterNativesAWorldManager()
 	UClass* Class = AWorldManager::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AsssignCameraActors", &AWorldManager::execAsssignCameraActors },
+		{ "EnableStarAtRandomLocation", &AWorldManager::execEnableStarAtRandomLocation },
 		{ "GetLevelByIndex", &AWorldManager::execGetLevelByIndex },
 		{ "GetMinigameCameraByIndex", &AWorldManager::execGetMinigameCameraByIndex },
 		{ "InitializeCameras", &AWorldManager::execInitializeCameras },
@@ -325,6 +356,7 @@ struct Z_Construct_UClass_AWorldManager_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AWorldManager_AsssignCameraActors, "AsssignCameraActors" }, // 1213140263
+		{ &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation, "EnableStarAtRandomLocation" }, // 637869928
 		{ &Z_Construct_UFunction_AWorldManager_GetLevelByIndex, "GetLevelByIndex" }, // 3758234899
 		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex, "GetMinigameCameraByIndex" }, // 171011354
 		{ &Z_Construct_UFunction_AWorldManager_InitializeCameras, "InitializeCameras" }, // 2653240201
@@ -396,10 +428,10 @@ AWorldManager::~AWorldManager() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 4027273262U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 1325455259U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_740292430(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_4123213688(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

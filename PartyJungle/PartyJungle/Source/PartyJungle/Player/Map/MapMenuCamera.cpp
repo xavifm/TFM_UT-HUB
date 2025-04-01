@@ -118,6 +118,18 @@ void AMapMenuCamera::HandleConfirmInput()
         return;
     }
 
+    if (BuyCrownsUI)
+    {
+        BuyCrowns(1);
+        return;
+    }
+
+    if(StoreCrownsUI) 
+    {
+        StoreCrowns(1);
+        return;
+    }
+
     if (SelectingPath)
         ConfirmPathSelection();
     else
@@ -196,6 +208,18 @@ void AMapMenuCamera::HandleBackInput()
     if (IsMinigameActive)
         return;
 
+    if (BuyCrownsUI)
+    {
+        SwitchCrownsShop(false);
+        return;
+    }
+
+    if (StoreCrownsUI)
+    {
+        SwitchStoreCrownsUI(false);
+        return;
+    }
+
     if (DuelUI)
         CloseChallengeMenu();
 }
@@ -273,8 +297,23 @@ void AMapMenuCamera::FinishDuel(int _winner)
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
 }
 
+void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
+{
+    StoreCrownsUI = _visibility;
+    MapUI->SwitchCrownSavePlaceVisibility(_visibility);
 
+    if (_visibility)
+        MapUI->SwitchLegendVisibility(false);
+}
 
+void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
+{
+    BuyCrownsUI = _visibility;
+    MapUI->SwitchCrownStoreVisibility(_visibility);
+
+    if(_visibility)
+        MapUI->SwitchLegendVisibility(false);
+}
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
 {
@@ -391,6 +430,27 @@ void AMapMenuCamera::ConfirmPathSelection()
     CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
 
     SwitchPathMenu(false, {});
+}
+
+void AMapMenuCamera::StoreCrowns(int _quantity)
+{
+    if (!CurrentMinion || !WorldSceneManager)
+        return;
+
+    CurrentMinion->UpdateCrowns(-_quantity);
+    MapUI->UpdateCrowns(CurrentMinionTeam, _quantity);
+    
+    WorldSceneManager->EnableStarAtRandomLocation();
+    SwitchStoreCrownsUI(false);
+}
+
+void AMapMenuCamera::BuyCrowns(int _quantity)
+{
+    if (!CurrentMinion)
+        return;
+
+    CurrentMinion->UpdateCrowns(_quantity);
+    SwitchCrownsShop(false);
 }
 
 

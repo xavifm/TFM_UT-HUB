@@ -17,6 +17,7 @@ class ACameraActor;
 #define PARTYJUNGLE_WorldManager_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execEnableStarAtRandomLocation); \
 	DECLARE_FUNCTION(execLoadPortion); \
 	DECLARE_FUNCTION(execUnloadEntireWorld); \
 	DECLARE_FUNCTION(execGetMinigameCameraByIndex); \

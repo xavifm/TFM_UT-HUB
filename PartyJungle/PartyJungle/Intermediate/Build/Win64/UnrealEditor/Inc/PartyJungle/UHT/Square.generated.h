@@ -21,7 +21,8 @@ class ASquare;
 	DECLARE_FUNCTION(execRemoveMinion); \
 	DECLARE_FUNCTION(execAddMinion); \
 	DECLARE_FUNCTION(execCloseChooseMenu); \
-	DECLARE_FUNCTION(execOpenChooseMenu);
+	DECLARE_FUNCTION(execOpenChooseMenu); \
+	DECLARE_FUNCTION(execGetNextNode);
 
 
 #define FID_PartyJungle_Source_PartyJungle_Map_Square_h_21_INCLASS_NO_PURE_DECLS \

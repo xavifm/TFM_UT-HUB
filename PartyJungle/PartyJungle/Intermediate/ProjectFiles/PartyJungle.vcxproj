@@ -255,6 +255,7 @@
     <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Temp.txt"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
     <None Include="..\..\Config\DefaultInput.ini"/>
@@ -284,6 +285,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareStar.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareStar.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

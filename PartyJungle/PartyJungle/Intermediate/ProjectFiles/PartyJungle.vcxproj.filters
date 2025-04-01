@@ -19,6 +19,9 @@
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
@@ -80,6 +83,12 @@
       <Filter>Source\PartyJungle\Map</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareStar.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareStar.h">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClInclude>
     <Filter Include="Source\PartyJungle\Minigame">

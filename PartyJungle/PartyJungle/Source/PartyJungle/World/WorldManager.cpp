@@ -123,3 +123,8 @@ void AWorldManager::LoadPortion(int _index)
 		PC->SetViewTargetWithBlend(cameraActor, 0.0f);
 	}
 }
+
+void AWorldManager::EnableStarAtRandomLocation()
+{
+
+}

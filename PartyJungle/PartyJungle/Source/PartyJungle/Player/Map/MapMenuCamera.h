@@ -105,6 +105,12 @@ public:
 	void FinishDuel(int _winner);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchStoreCrownsUI(bool _visibility);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchCrownsShop(bool _visibility);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -128,6 +134,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ConfirmPathSelection();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StoreCrowns(int _quantity);
+
+	void BuyCrowns(int _quantity);
+
 
 private:
 	const int MAX_MINION_NUMBER = 3;
@@ -149,6 +160,8 @@ private:
 	bool RollingDice = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
+	bool BuyCrownsUI = false;
+	bool StoreCrownsUI = false;
 	bool TimedActionExecuted = false;
 	bool IsMinigameActive = false;
 

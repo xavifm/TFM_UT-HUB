@@ -47,6 +47,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void LoadPortion(int _index);
 
+	UFUNCTION(BlueprintCallable, Category = "World_Functions")
+	void EnableStarAtRandomLocation();
+
 private:
 	bool IsInitialized = false;
 };

@@ -22,6 +22,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
+	DECLARE_FUNCTION(execStoreCrowns); \
 	DECLARE_FUNCTION(execConfirmPathSelection); \
 	DECLARE_FUNCTION(execChangeSelectedPath); \
 	DECLARE_FUNCTION(execRollTheDice); \
@@ -30,6 +31,8 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchPathMenu); \
 	DECLARE_FUNCTION(execSwitchMenuWidget); \
 	DECLARE_FUNCTION(execSwitchChallengeUI); \
+	DECLARE_FUNCTION(execSwitchCrownsShop); \
+	DECLARE_FUNCTION(execSwitchStoreCrownsUI); \
 	DECLARE_FUNCTION(execFinishDuel); \
 	DECLARE_FUNCTION(execRefreshChallengeInfo); \
 	DECLARE_FUNCTION(execOpenChallengeMenu); \
