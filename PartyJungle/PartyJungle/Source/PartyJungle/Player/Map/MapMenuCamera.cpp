@@ -304,6 +304,15 @@ void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
 
     if (_visibility)
         MapUI->SwitchLegendVisibility(false);
+    else
+    {
+        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+
+        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
+        if (currentMinionMovements <= 0)
+            RestoreTurnLogic();
+    }
 }
 
 void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
@@ -313,6 +322,15 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
 
     if(_visibility)
         MapUI->SwitchLegendVisibility(false);
+    else 
+    {
+        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+
+        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
+        if (currentMinionMovements <= 0)
+            RestoreTurnLogic();
+    }
 }
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
