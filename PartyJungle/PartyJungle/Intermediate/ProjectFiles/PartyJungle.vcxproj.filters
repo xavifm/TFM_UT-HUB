@@ -79,6 +79,12 @@
     <ClInclude Include="..\..\Source\PartyJungle\Map\Square.h">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareKeepCrowns.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareKeepCrowns.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PartyJungle\Map\SquareOptional.cpp">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClCompile>
