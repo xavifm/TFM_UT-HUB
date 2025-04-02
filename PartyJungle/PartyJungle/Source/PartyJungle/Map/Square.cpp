@@ -62,7 +62,7 @@ ASquare* ASquare::GetNextSquare()
 
 bool ASquare::ExecuteEvent(AMinion* _minion)
 {
-	return true;
+	return false;
 }
 
 void ASquare::ResetSquare()

@@ -22,6 +22,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
+	DECLARE_FUNCTION(execBuyCrowns); \
 	DECLARE_FUNCTION(execStoreCrowns); \
 	DECLARE_FUNCTION(execConfirmPathSelection); \
 	DECLARE_FUNCTION(execChangeSelectedPath); \

@@ -137,6 +137,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StoreCrowns(int _quantity);
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void BuyCrowns(int _quantity);
 
 
@@ -146,6 +147,7 @@ private:
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
 	const float TIME_BEFORE_FINISH_DUEL = 2;
+	const int CROWN_PRICE = 20;
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);

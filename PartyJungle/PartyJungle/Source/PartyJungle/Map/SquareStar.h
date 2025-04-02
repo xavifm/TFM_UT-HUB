@@ -19,7 +19,13 @@ public:
 	UFUNCTION()
 	void SwitchStar(bool _enabled);
 
+protected:
+	UFUNCTION(BlueprintImplementableEvent, Category = "Square Functions")
+	void SwitchStarVisibility(bool _visibility);
+
 private:
 	UPROPERTY()
 	bool ShopEnabled;
+
+	const float MIN_BUY_COINS = 20;
 };

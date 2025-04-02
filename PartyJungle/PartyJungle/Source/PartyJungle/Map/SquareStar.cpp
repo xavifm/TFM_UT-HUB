@@ -2,7 +2,7 @@
 
 bool ASquareStar::ExecuteEvent(AMinion* _minion)
 {
-	if (!ShopEnabled || !_minion || _minion->GetCoins() < 20)
+	if (!ShopEnabled || !_minion || _minion->GetCoins() < MIN_BUY_COINS)
 		return false;
 
 	MapMenuCameraRef->SwitchCrownsShop(true);
@@ -13,4 +13,5 @@ bool ASquareStar::ExecuteEvent(AMinion* _minion)
 void ASquareStar::SwitchStar(bool _enabled)
 {
 	ShopEnabled = _enabled;
+	SwitchStarVisibility(_enabled);
 }

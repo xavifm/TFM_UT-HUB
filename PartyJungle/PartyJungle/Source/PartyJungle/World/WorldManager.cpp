@@ -1,5 +1,6 @@
 #include "./WorldManager.h"
 #include <Kismet/GameplayStatics.h>
+#include <PartyJungle/Map/SquareStar.h>
 #include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 
 AWorldManager::AWorldManager()
@@ -126,5 +127,17 @@ void AWorldManager::LoadPortion(int _index)
 
 void AWorldManager::EnableStarAtRandomLocation()
 {
+	if (MapCrowns.Num() > 0)
+	{
+		int32 RandomIndex = FMath::RandRange(0, MapCrowns.Num() - 1);
+		MapCrowns[RandomIndex]->SwitchStar(true);
+	}
+}
 
+void AWorldManager::DisableAllStars() 
+{
+	for (ASquareStar* Star : MapCrowns)
+	{
+		Star->SwitchStar(false);
+	}
 }

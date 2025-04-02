@@ -83,7 +83,10 @@ private:
 	bool isMoving = false;
 	float CurrentLerpTime = 0.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int Coins;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int Crowns;
 
 	FVector StartPosition;

@@ -64,6 +64,53 @@ DEFINE_FUNCTION(ASquareStar::execSwitchStar)
 }
 // End Class ASquareStar Function SwitchStar
 
+// Begin Class ASquareStar Function SwitchStarVisibility
+struct SquareStar_eventSwitchStarVisibility_Parms
+{
+	bool _visibility;
+};
+static FName NAME_ASquareStar_SwitchStarVisibility = FName(TEXT("SwitchStarVisibility"));
+void ASquareStar::SwitchStarVisibility(bool _visibility)
+{
+	SquareStar_eventSwitchStarVisibility_Parms Parms;
+	Parms._visibility=_visibility ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_ASquareStar_SwitchStarVisibility),&Parms);
+}
+struct Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Square Functions" },
+		{ "ModuleRelativePath", "Map/SquareStar.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visibility_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visibility;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::NewProp__visibility_SetBit(void* Obj)
+{
+	((SquareStar_eventSwitchStarVisibility_Parms*)Obj)->_visibility = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::NewProp__visibility = { "_visibility", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(SquareStar_eventSwitchStarVisibility_Parms), &Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::NewProp__visibility_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::NewProp__visibility,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASquareStar, nullptr, "SwitchStarVisibility", nullptr, nullptr, Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::PropPointers), sizeof(SquareStar_eventSwitchStarVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::Function_MetaDataParams) };
+static_assert(sizeof(SquareStar_eventSwitchStarVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASquareStar_SwitchStarVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquareStar_SwitchStarVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class ASquareStar Function SwitchStarVisibility
+
 // Begin Class ASquareStar
 void ASquareStar::StaticRegisterNativesASquareStar()
 {
@@ -100,6 +147,7 @@ struct Z_Construct_UClass_ASquareStar_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASquareStar_SwitchStar, "SwitchStar" }, // 3717536805
+		{ &Z_Construct_UFunction_ASquareStar_SwitchStarVisibility, "SwitchStarVisibility" }, // 803960374
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -159,10 +207,10 @@ ASquareStar::~ASquareStar() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareStar, ASquareStar::StaticClass, TEXT("ASquareStar"), &Z_Registration_Info_UClass_ASquareStar, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareStar), 3934336368U) },
+		{ Z_Construct_UClass_ASquareStar, ASquareStar::StaticClass, TEXT("ASquareStar"), &Z_Registration_Info_UClass_ASquareStar, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareStar), 4043335253U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_2239968231(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_1790888858(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

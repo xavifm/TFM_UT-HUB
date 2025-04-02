@@ -19,6 +19,12 @@ void AMapMenuCamera::BeginPlay()
     UpdateDicePosition();
     Dice->ShowDice();
 
+    if(WorldSceneManager) 
+    {
+        WorldSceneManager->DisableAllStars();
+        WorldSceneManager->EnableStarAtRandomLocation();
+    }
+
     UGameplayStatics::CreatePlayer(GetWorld(), 1, true);
 
     UWorld* World = GetWorld();
@@ -156,7 +162,6 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
                 }
             }
         }
-
 
         if(_duel) 
         {
@@ -324,6 +329,7 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
         MapUI->SwitchLegendVisibility(false);
     else 
     {
+        WorldSceneManager->DisableAllStars();
         int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
 
         CurrentMinion->SetMinionsMovements(currentMinionMovements);
@@ -467,6 +473,7 @@ void AMapMenuCamera::BuyCrowns(int _quantity)
     if (!CurrentMinion)
         return;
 
+    CurrentMinion->UpdateCoins(-CROWN_PRICE);
     CurrentMinion->UpdateCrowns(_quantity);
     SwitchCrownsShop(false);
 }

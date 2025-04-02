@@ -6,6 +6,8 @@
 #include "Camera/CameraComponent.h"
 #include "WorldManager.generated.h"
 
+class ASquareStar;
+
 UCLASS()
 class PARTYJUNGLE_API AWorldManager : public AActor
 {
@@ -29,6 +31,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	TArray<ACameraActor*> CameraActors;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Crowns")
+	TArray<ASquareStar*> MapCrowns;
+
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void InitializeCameras();
 
@@ -49,6 +54,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void EnableStarAtRandomLocation();
+
+	UFUNCTION(BlueprintCallable, Category = "World_Functions")
+	void DisableAllStars();
 
 private:
 	bool IsInitialized = false;

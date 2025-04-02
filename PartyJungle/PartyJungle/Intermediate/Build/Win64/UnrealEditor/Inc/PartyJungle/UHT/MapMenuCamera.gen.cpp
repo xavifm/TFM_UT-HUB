@@ -31,6 +31,49 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class AMapMenuCamera Function BuyCrowns
+struct Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics
+{
+	struct MapMenuCamera_eventBuyCrowns_Parms
+	{
+		int32 _quantity;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventBuyCrowns_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::NewProp__quantity,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "BuyCrowns", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::MapMenuCamera_eventBuyCrowns_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::MapMenuCamera_eventBuyCrowns_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_BuyCrowns()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_BuyCrowns_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execBuyCrowns)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__quantity);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->BuyCrowns(Z_Param__quantity);
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function BuyCrowns
+
 // Begin Class AMapMenuCamera Function ChangeSelectedPath
 struct Z_Construct_UFunction_AMapMenuCamera_ChangeSelectedPath_Statics
 {
@@ -1096,6 +1139,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 {
 	UClass* Class = AMapMenuCamera::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "BuyCrowns", &AMapMenuCamera::execBuyCrowns },
 		{ "ChangeSelectedPath", &AMapMenuCamera::execChangeSelectedPath },
 		{ "CloseChallengeMenu", &AMapMenuCamera::execCloseChallengeMenu },
 		{ "ConfirmPathSelection", &AMapMenuCamera::execConfirmPathSelection },
@@ -1226,6 +1270,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMapMenuCamera_BuyCrowns, "BuyCrowns" }, // 1642173731
 		{ &Z_Construct_UFunction_AMapMenuCamera_ChangeSelectedPath, "ChangeSelectedPath" }, // 390084385
 		{ &Z_Construct_UFunction_AMapMenuCamera_CloseChallengeMenu, "CloseChallengeMenu" }, // 1119505372
 		{ &Z_Construct_UFunction_AMapMenuCamera_ConfirmPathSelection, "ConfirmPathSelection" }, // 2747763901
@@ -1337,10 +1382,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 284875939U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3377371683U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_163301280(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_998299186(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

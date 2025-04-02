@@ -18,6 +18,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execSwitchStar);
 
 
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASquareStar(); \
@@ -46,6 +47,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_ENHANCED_CONSTRUCTORS \
 private: \
