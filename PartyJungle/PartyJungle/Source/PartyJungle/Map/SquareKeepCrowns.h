@@ -16,9 +16,6 @@ class PARTYJUNGLE_API ASquareKeepCrowns : public ASquare
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SquareProperties")
 	int Team;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SquareProperties")
-	AMapMenuCamera* MapMenuCameraRef;
 
 	virtual bool ExecuteEvent(AMinion* _minion) override;
 };

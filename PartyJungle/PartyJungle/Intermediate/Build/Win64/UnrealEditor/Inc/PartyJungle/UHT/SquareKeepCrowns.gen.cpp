@@ -10,7 +10,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSquareKeepCrowns() {}
 
 // Begin Cross Module References
-PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareKeepCrowns();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareKeepCrowns_NoRegister();
@@ -40,13 +39,8 @@ struct Z_Construct_UClass_ASquareKeepCrowns_Statics
 		{ "Category", "SquareProperties" },
 		{ "ModuleRelativePath", "Map/SquareKeepCrowns.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapMenuCameraRef_MetaData[] = {
-		{ "Category", "SquareProperties" },
-		{ "ModuleRelativePath", "Map/SquareKeepCrowns.h" },
-	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Team;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapMenuCameraRef;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -55,10 +49,8 @@ struct Z_Construct_UClass_ASquareKeepCrowns_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASquareKeepCrowns_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareKeepCrowns, Team), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareKeepCrowns_Statics::NewProp_MapMenuCameraRef = { "MapMenuCameraRef", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareKeepCrowns, MapMenuCameraRef), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapMenuCameraRef_MetaData), NewProp_MapMenuCameraRef_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquareKeepCrowns_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareKeepCrowns_Statics::NewProp_Team,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareKeepCrowns_Statics::NewProp_MapMenuCameraRef,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASquareKeepCrowns_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASquareKeepCrowns_Statics::DependentSingletons[])() = {
@@ -102,10 +94,10 @@ ASquareKeepCrowns::~ASquareKeepCrowns() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareKeepCrowns, ASquareKeepCrowns::StaticClass, TEXT("ASquareKeepCrowns"), &Z_Registration_Info_UClass_ASquareKeepCrowns, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareKeepCrowns), 3442305776U) },
+		{ Z_Construct_UClass_ASquareKeepCrowns, ASquareKeepCrowns::StaticClass, TEXT("ASquareKeepCrowns"), &Z_Registration_Info_UClass_ASquareKeepCrowns, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareKeepCrowns), 3376400615U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_79507362(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_3885595321(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

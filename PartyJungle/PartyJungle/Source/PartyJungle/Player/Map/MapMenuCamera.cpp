@@ -470,7 +470,7 @@ void AMapMenuCamera::StoreCrowns(int _quantity)
 
 void AMapMenuCamera::BuyCrowns(int _quantity)
 {
-    if (!CurrentMinion)
+    if (!CurrentMinion || CurrentMinion->GetCoins() < (CROWN_PRICE * _quantity))
         return;
 
     CurrentMinion->UpdateCoins(-CROWN_PRICE);

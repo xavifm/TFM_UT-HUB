@@ -10,7 +10,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSquareStar() {}
 
 // Begin Cross Module References
-PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareStar();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareStar_NoRegister();
@@ -132,15 +131,10 @@ struct Z_Construct_UClass_ASquareStar_Statics
 		{ "IncludePath", "Map/SquareStar.h" },
 		{ "ModuleRelativePath", "Map/SquareStar.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapMenuCameraRef_MetaData[] = {
-		{ "Category", "SquareProperties" },
-		{ "ModuleRelativePath", "Map/SquareStar.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShopEnabled_MetaData[] = {
 		{ "ModuleRelativePath", "Map/SquareStar.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapMenuCameraRef;
 	static void NewProp_ShopEnabled_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_ShopEnabled;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -155,14 +149,12 @@ struct Z_Construct_UClass_ASquareStar_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareStar_Statics::NewProp_MapMenuCameraRef = { "MapMenuCameraRef", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareStar, MapMenuCameraRef), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapMenuCameraRef_MetaData), NewProp_MapMenuCameraRef_MetaData) };
 void Z_Construct_UClass_ASquareStar_Statics::NewProp_ShopEnabled_SetBit(void* Obj)
 {
 	((ASquareStar*)Obj)->ShopEnabled = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASquareStar_Statics::NewProp_ShopEnabled = { "ShopEnabled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASquareStar), &Z_Construct_UClass_ASquareStar_Statics::NewProp_ShopEnabled_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShopEnabled_MetaData), NewProp_ShopEnabled_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquareStar_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareStar_Statics::NewProp_MapMenuCameraRef,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareStar_Statics::NewProp_ShopEnabled,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASquareStar_Statics::PropPointers) < 2048);
@@ -207,10 +199,10 @@ ASquareStar::~ASquareStar() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareStar, ASquareStar::StaticClass, TEXT("ASquareStar"), &Z_Registration_Info_UClass_ASquareStar, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareStar), 4043335253U) },
+		{ Z_Construct_UClass_ASquareStar, ASquareStar::StaticClass, TEXT("ASquareStar"), &Z_Registration_Info_UClass_ASquareStar, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareStar), 4184689297U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_1790888858(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_6714774(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

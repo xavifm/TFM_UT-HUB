@@ -11,9 +11,6 @@ class PARTYJUNGLE_API ASquareStar : public ASquare
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SquareProperties")
-	AMapMenuCamera* MapMenuCameraRef;
-
 	virtual bool ExecuteEvent(AMinion* _minion) override;
 
 	UFUNCTION()
