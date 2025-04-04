@@ -155,7 +155,7 @@ private:
 	void UpdateDicePosition(bool _resizeDice = true);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);
+	void UpdateMinionEconomy(int _coins = 0);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RestoreTurnLogic();

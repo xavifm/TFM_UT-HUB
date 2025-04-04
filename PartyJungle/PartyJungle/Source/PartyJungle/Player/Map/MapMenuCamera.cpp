@@ -329,9 +329,7 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
         MapUI->SwitchLegendVisibility(false);
     else 
     {
-        WorldSceneManager->DisableAllStars();
         int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
-
         CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
         if (currentMinionMovements <= 0)
@@ -480,6 +478,8 @@ void AMapMenuCamera::BuyCrowns(int _quantity)
 
     CurrentMinion->UpdateCoins(-CROWN_PRICE);
     CurrentMinion->UpdateCrowns(_quantity);
+    WorldSceneManager->DisableAllStars();
+
     SwitchCrownsShop(false);
 }
 
@@ -538,9 +538,9 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
     }
 }
 
-void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns) 
+void AMapMenuCamera::UpdateMinionEconomy(int _coins) 
 {
-    if (_coins == 0 && _crowns == 0)
+    if (_coins == 0)
         return;
 
     int updatedCoins = CurrentMinion->UpdateCoins(_coins);
