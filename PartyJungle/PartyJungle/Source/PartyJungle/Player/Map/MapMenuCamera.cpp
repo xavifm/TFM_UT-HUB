@@ -363,6 +363,8 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
             MapUI = (UPlayerMapUI*) MenuWidget;
             MapUI->SwitchTurnUI(CurrentMinionTeam);
             MapUI->SwitchChallengeVisibility(false);
+            MapUI->SwitchCrownStoreVisibility(false);
+            MapUI->SwitchCrownSavePlaceVisibility(false);
 
             if (ScoreDb)
                 MapUI->ScoresDb = ScoreDb;
