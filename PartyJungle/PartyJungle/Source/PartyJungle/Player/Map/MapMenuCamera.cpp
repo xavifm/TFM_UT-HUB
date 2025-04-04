@@ -417,6 +417,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     else if (CurrentMinionTeam <= 0)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
+    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
     MapUI->SwitchTurnUI(CurrentMinionTeam);
 
@@ -434,6 +435,8 @@ void AMapMenuCamera::FocusNextMinion(int _direction)
         CurrentMinionPos = 0;
     else if (CurrentMinionPos <= 0)
         CurrentMinionPos = MAX_MINION_NUMBER - 1;
+
+    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, CurrentMinionPos);
 
@@ -529,6 +532,7 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
         NewDicePosition.Z += DICE_HEIGHT_OFFSET;
 
         Dice->SwitchDicePosition(NewDicePosition, _resizeDice);
+        CurrentMinion->MoveCrownVerticalAxis(CROWN_MAX_OFFSET);
     }
 }
 

@@ -66,6 +66,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
 	void SwitchCrownVisibility(bool _enabled);
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
+	void MoveCrownVerticalAxis(float _position);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
 	float TotalLerpTime = 0.5f;
 
