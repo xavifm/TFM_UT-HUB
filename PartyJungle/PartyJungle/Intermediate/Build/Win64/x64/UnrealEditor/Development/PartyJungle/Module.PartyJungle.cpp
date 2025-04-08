@@ -12,6 +12,7 @@
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/PartyJungle.init.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/PlayerMapUI.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/ReturnToPartyMapScene.gen.cpp"
+#include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/RoundsManager.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/ScoreDatabase.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/ScoreDto.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/Square.gen.cpp"

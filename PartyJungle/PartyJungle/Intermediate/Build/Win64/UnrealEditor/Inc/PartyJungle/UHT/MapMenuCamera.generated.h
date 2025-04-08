@@ -18,7 +18,7 @@ struct FInputActionValue;
 #endif
 #define PARTYJUNGLE_MapMenuCamera_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
@@ -47,7 +47,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchMainScene);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMapMenuCamera(); \
 	friend struct Z_Construct_UClass_AMapMenuCamera_Statics; \
@@ -56,7 +56,7 @@ public: \
 	DECLARE_SERIALIZER(AMapMenuCamera)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMapMenuCamera(AMapMenuCamera&&); \
@@ -68,13 +68,13 @@ public: \
 	NO_API virtual ~AMapMenuCamera();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_18_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_19_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_21_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

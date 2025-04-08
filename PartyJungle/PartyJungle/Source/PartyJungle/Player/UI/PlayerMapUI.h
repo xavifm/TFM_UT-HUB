@@ -29,6 +29,9 @@ public:
     void SwitchTurnUI(int Team);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void ShowRoundFeedback(int Round, float Time = 1);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")

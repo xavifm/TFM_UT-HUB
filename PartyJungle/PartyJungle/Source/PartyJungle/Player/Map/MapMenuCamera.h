@@ -10,6 +10,7 @@
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
+#include "PartyJungle/Rounds/RoundsManager.h"
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/World/WorldManager.h>
 
@@ -64,6 +65,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
 	ADice* Dice;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rounds System")
+	ARoundsManager* RoundsSystem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Challenge System")
 	AChallengeInformation* ChallengeInformation;

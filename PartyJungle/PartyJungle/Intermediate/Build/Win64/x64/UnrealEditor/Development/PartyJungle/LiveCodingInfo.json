@@ -15,6 +15,7 @@
 			"PartyJungle.init.gen.cpp.obj",
 			"PlayerMapUI.gen.cpp.obj",
 			"ReturnToPartyMapScene.gen.cpp.obj",
+			"RoundsManager.gen.cpp.obj",
 			"ScoreDatabase.gen.cpp.obj",
 			"ScoreDto.gen.cpp.obj",
 			"Square.gen.cpp.obj",
@@ -40,6 +41,7 @@
 			"ScoreDatabase.cpp.obj",
 			"ScoreDto.cpp.obj",
 			"PlayerMapUI.cpp.obj",
+			"RoundsManager.cpp.obj",
 			"ReturnToPartyMapScene.cpp.obj",
 			"WorldManager.cpp.obj"
 		]

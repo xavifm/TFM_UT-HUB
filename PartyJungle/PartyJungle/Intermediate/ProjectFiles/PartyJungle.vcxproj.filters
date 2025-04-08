@@ -181,6 +181,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h">
       <Filter>Source\PartyJungle\Player\UI</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Rounds">
+      <UniqueIdentifier>{FA46A15A-72F5-390D-A4A4-26BA497FE1A5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Rounds\RoundsManager.cpp">
+      <Filter>Source\PartyJungle\Rounds</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Rounds\RoundsManager.h">
+      <Filter>Source\PartyJungle\Rounds</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Testing">
       <UniqueIdentifier>{5B19AB45-C52F-35BC-923A-47A19B708CFA}</UniqueIdentifier>
     </Filter>

@@ -366,6 +366,9 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 
             if (ScoreDb)
                 MapUI->ScoresDb = ScoreDb;
+
+            if(RoundsSystem)
+                RoundsSystem->AssignMapUI(MapUI);
         }
         
         if (MenuWidget)
@@ -416,6 +419,9 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         CurrentMinionTeam = 0;
     else if (CurrentMinionTeam <= 0)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
+
+    if (CurrentMinionTeam == 0 && RoundsSystem)
+        RoundsSystem->HandleEndRound();
 
     CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
