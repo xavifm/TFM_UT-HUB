@@ -66,52 +66,54 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeUI()
 }
 // End Class UPlayerMapUI Function InitializeUI
 
-// Begin Class UPlayerMapUI Function ShowRoundFeedback
-struct PlayerMapUI_eventShowRoundFeedback_Parms
+// Begin Class UPlayerMapUI Function ShowTextInScreen
+struct PlayerMapUI_eventShowTextInScreen_Parms
 {
-	int32 Round;
+	FString Text;
 	float Time;
 };
-static FName NAME_UPlayerMapUI_ShowRoundFeedback = FName(TEXT("ShowRoundFeedback"));
-void UPlayerMapUI::ShowRoundFeedback(int32 Round, float Time)
+static FName NAME_UPlayerMapUI_ShowTextInScreen = FName(TEXT("ShowTextInScreen"));
+void UPlayerMapUI::ShowTextInScreen(const FString& Text, float Time)
 {
-	PlayerMapUI_eventShowRoundFeedback_Parms Parms;
-	Parms.Round=Round;
+	PlayerMapUI_eventShowTextInScreen_Parms Parms;
+	Parms.Text=Text;
 	Parms.Time=Time;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_ShowRoundFeedback),&Parms);
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_ShowTextInScreen),&Parms);
 }
-struct Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics
+struct Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "UI" },
 		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Text_MetaData[] = {
+		{ "NativeConst", "" },
+	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_Round;
+	static const UECodeGen_Private::FStrPropertyParams NewProp_Text;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Time;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::NewProp_Round = { "Round", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowRoundFeedback_Parms, Round), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowRoundFeedback_Parms, Time), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::NewProp_Round,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::NewProp_Time,
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Text = { "Text", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowTextInScreen_Parms, Text), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Text_MetaData), NewProp_Text_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowTextInScreen_Parms, Time), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Text,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Time,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ShowRoundFeedback", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::PropPointers), sizeof(PlayerMapUI_eventShowRoundFeedback_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::Function_MetaDataParams) };
-static_assert(sizeof(PlayerMapUI_eventShowRoundFeedback_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ShowTextInScreen", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers), sizeof(PlayerMapUI_eventShowTextInScreen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventShowTextInScreen_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function ShowRoundFeedback
+// End Class UPlayerMapUI Function ShowTextInScreen
 
 // Begin Class UPlayerMapUI Function SwitchChallengeVisibility
 struct PlayerMapUI_eventSwitchChallengeVisibility_Parms
@@ -578,7 +580,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2434387993
-		{ &Z_Construct_UFunction_UPlayerMapUI_ShowRoundFeedback, "ShowRoundFeedback" }, // 3787971365
+		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 4239389834
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility, "SwitchCrownSavePlaceVisibility" }, // 2494523184
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility, "SwitchCrownStoreVisibility" }, // 472051550
@@ -641,10 +643,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 505078580U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 855508705U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_2124290735(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_580144569(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

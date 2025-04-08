@@ -560,9 +560,9 @@ void AMapMenuCamera::RestoreTurnLogic()
     if (DuelUI)
         return;
 
+    MapUI->SwitchLegendVisibility(true);
     SwitchCameraTeam(1);
     SwitchController();
-    MapUI->SwitchLegendVisibility(true);
     Dice->ShowDice();
     InputEnabled = true;
     TimedActionExecuted = false;

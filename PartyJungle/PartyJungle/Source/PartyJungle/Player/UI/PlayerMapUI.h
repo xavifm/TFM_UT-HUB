@@ -28,8 +28,8 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
 
-    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
-    void ShowRoundFeedback(int Round, float Time = 1);
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowTextInScreen(const FString& Text, float Time);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);
