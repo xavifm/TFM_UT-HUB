@@ -72,8 +72,11 @@ void AMapMenuCamera::Tick(float DeltaTime)
                 MapUI->SwitchLegendVisibility(false);
                 UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
 
-                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
-                TimedActionExecuted = true;
+                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI) 
+                {
+                    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
+                    TimedActionExecuted = true;
+                }
             }
         }
 
@@ -240,7 +243,7 @@ void AMapMenuCamera::CloseChallengeMenu()
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
     if (currentMinionMovements <= 0)
-        RestoreTurnLogic();
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
@@ -316,7 +319,7 @@ void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
         CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
         if (currentMinionMovements <= 0)
-            RestoreTurnLogic();
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
     }
 }
 
@@ -333,7 +336,7 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
         CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
         if (currentMinionMovements <= 0)
-            RestoreTurnLogic();
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
     }
 }
 
