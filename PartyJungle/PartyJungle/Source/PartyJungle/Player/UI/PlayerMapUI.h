@@ -28,11 +28,20 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowTextInScreen(const FString& Text, float Time);
+
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchChallengeVisibility(bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchCrownStoreVisibility(bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchCrownSavePlaceVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2, EDuelType _duelType);

@@ -35,6 +35,7 @@ public:
 
 	ASquare();
 
+	UFUNCTION()
 	ASquare* GetNextNode(int _pathIndex = 0);
 
 	UFUNCTION()
@@ -49,7 +50,7 @@ public:
 	UFUNCTION()
 	ASquare* GetNextSquare();
 
-	//virtual void ExecuteEvent(AMinion* _minion);
+	virtual bool ExecuteEvent(AMinion* _minion);
 
 	void ResetSquare();
 

@@ -247,6 +247,48 @@ DEFINE_FUNCTION(AMinion::execGetNextSquare)
 }
 // End Class AMinion Function GetNextSquare
 
+// Begin Class AMinion Function MoveCrownVerticalAxis
+struct Minion_eventMoveCrownVerticalAxis_Parms
+{
+	float _position;
+};
+static FName NAME_AMinion_MoveCrownVerticalAxis = FName(TEXT("MoveCrownVerticalAxis"));
+void AMinion::MoveCrownVerticalAxis(float _position)
+{
+	Minion_eventMoveCrownVerticalAxis_Parms Parms;
+	Parms._position=_position;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_MoveCrownVerticalAxis),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Feedback" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__position;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventMoveCrownVerticalAxis_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::NewProp__position,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "MoveCrownVerticalAxis", nullptr, nullptr, Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::PropPointers), sizeof(Minion_eventMoveCrownVerticalAxis_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventMoveCrownVerticalAxis_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function MoveCrownVerticalAxis
+
 // Begin Class AMinion Function MoveToSquare
 struct Z_Construct_UFunction_AMinion_MoveToSquare_Statics
 {
@@ -428,6 +470,53 @@ UFunction* Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback()
 }
 // End Class AMinion Function ShowMinionCrownsFeedback
 
+// Begin Class AMinion Function SwitchCrownVisibility
+struct Minion_eventSwitchCrownVisibility_Parms
+{
+	bool _enabled;
+};
+static FName NAME_AMinion_SwitchCrownVisibility = FName(TEXT("SwitchCrownVisibility"));
+void AMinion::SwitchCrownVisibility(bool _enabled)
+{
+	Minion_eventSwitchCrownVisibility_Parms Parms;
+	Parms._enabled=_enabled ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_SwitchCrownVisibility),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Feedback" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__enabled_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__enabled;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::NewProp__enabled_SetBit(void* Obj)
+{
+	((Minion_eventSwitchCrownVisibility_Parms*)Obj)->_enabled = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::NewProp__enabled = { "_enabled", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Minion_eventSwitchCrownVisibility_Parms), &Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::NewProp__enabled_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::NewProp__enabled,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "SwitchCrownVisibility", nullptr, nullptr, Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::PropPointers), sizeof(Minion_eventSwitchCrownVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventSwitchCrownVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_SwitchCrownVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_SwitchCrownVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function SwitchCrownVisibility
+
 // Begin Class AMinion Function UpdateCoins
 struct Z_Construct_UFunction_AMinion_UpdateCoins_Statics
 {
@@ -567,6 +656,16 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ "Category", "Minion Properties" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Coins_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Minion Properties" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Crowns_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Minion Properties" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_Team_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Team;
@@ -574,6 +673,8 @@ struct Z_Construct_UClass_AMinion_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DiceReference;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_TotalLerpTime;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Movements;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Coins;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Crowns;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -581,10 +682,12 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_GetCrowns, "GetCrowns" }, // 1614513224
 		{ &Z_Construct_UFunction_AMinion_GetMinionsMovements, "GetMinionsMovements" }, // 1153191699
 		{ &Z_Construct_UFunction_AMinion_GetNextSquare, "GetNextSquare" }, // 1662612968
+		{ &Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis, "MoveCrownVerticalAxis" }, // 2619196112
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
 		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 3651061638
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback, "ShowMinionCoinsFeedback" }, // 3394016713
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback, "ShowMinionCrownsFeedback" }, // 269617942
+		{ &Z_Construct_UFunction_AMinion_SwitchCrownVisibility, "SwitchCrownVisibility" }, // 520029745
 		{ &Z_Construct_UFunction_AMinion_UpdateCoins, "UpdateCoins" }, // 1695578554
 		{ &Z_Construct_UFunction_AMinion_UpdateCrowns, "UpdateCrowns" }, // 2814760434
 	};
@@ -600,6 +703,8 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Static
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference = { "DiceReference", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, DiceReference), Z_Construct_UClass_ADice_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DiceReference_MetaData), NewProp_DiceReference_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime = { "TotalLerpTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, TotalLerpTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TotalLerpTime_MetaData), NewProp_TotalLerpTime_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Movements = { "Movements", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Movements), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Movements_MetaData), NewProp_Movements_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Coins = { "Coins", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Coins), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Coins_MetaData), NewProp_Coins_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Crowns = { "Crowns", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Crowns), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Crowns_MetaData), NewProp_Crowns_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinion_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Team_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Team,
@@ -607,6 +712,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinion_S
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Movements,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Coins,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Crowns,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMinion_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMinion_Statics::DependentSingletons[])() = {
@@ -652,10 +759,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Mi
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3148572866U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3689421147U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1875818508(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2278864311(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));

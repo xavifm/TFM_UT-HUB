@@ -92,9 +92,12 @@ int AMinion::UpdateCoins(int _quantity)
 void AMinion::UpdateCrowns(int _quantity)
 {
 	Crowns += _quantity;
-	Crowns = FMath::Clamp(Coins, 0, MAX_MINION_CROWNS);
+	Crowns = FMath::Clamp(Crowns, 0, MAX_MINION_CROWNS);
 
 	ShowMinionCrownsFeedback(_quantity);
+
+	bool enableCrown = (Crowns > 0);
+	SwitchCrownVisibility(enableCrown);
 }
 
 int AMinion::GetCoins()
@@ -148,6 +151,10 @@ void AMinion::HandleMovement(float _deltaTime)
 				DiceReference->HideDice();
 				Movements = 0;
 			}
+
+			bool eventExecuted = CurrentSquare->ExecuteEvent(this);
+			if (eventExecuted)
+				return;
 
 			AMinion* minionQuery = SearchMinionToChallenge();
 			if (CurrentSquare && CurrentSquare->Camera && minionQuery)

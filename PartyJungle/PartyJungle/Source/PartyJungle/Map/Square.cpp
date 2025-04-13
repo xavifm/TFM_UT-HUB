@@ -60,6 +60,11 @@ ASquare* ASquare::GetNextSquare()
 	return nullptr;
 }
 
+bool ASquare::ExecuteEvent(AMinion* _minion)
+{
+	return false;
+}
+
 void ASquare::ResetSquare()
 {
 }

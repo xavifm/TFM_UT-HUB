@@ -19,6 +19,12 @@ void AMapMenuCamera::BeginPlay()
     UpdateDicePosition();
     Dice->ShowDice();
 
+    if(WorldSceneManager) 
+    {
+        WorldSceneManager->DisableAllStars();
+        WorldSceneManager->EnableStarAtRandomLocation();
+    }
+
     UGameplayStatics::CreatePlayer(GetWorld(), 1, true);
 
     UWorld* World = GetWorld();
@@ -66,8 +72,11 @@ void AMapMenuCamera::Tick(float DeltaTime)
                 MapUI->SwitchLegendVisibility(false);
                 UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
 
-                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
-                TimedActionExecuted = true;
+                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI) 
+                {
+                    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);     
+                    TimedActionExecuted = true;
+                }
             }
         }
 
@@ -118,6 +127,18 @@ void AMapMenuCamera::HandleConfirmInput()
         return;
     }
 
+    if (BuyCrownsUI)
+    {
+        BuyCrowns(1);
+        return;
+    }
+
+    if(StoreCrownsUI) 
+    {
+        StoreCrowns(1);
+        return;
+    }
+
     if (SelectingPath)
         ConfirmPathSelection();
     else
@@ -144,7 +165,6 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
                 }
             }
         }
-
 
         if(_duel) 
         {
@@ -196,6 +216,18 @@ void AMapMenuCamera::HandleBackInput()
     if (IsMinigameActive)
         return;
 
+    if (BuyCrownsUI)
+    {
+        SwitchCrownsShop(false);
+        return;
+    }
+
+    if (StoreCrownsUI)
+    {
+        SwitchStoreCrownsUI(false);
+        return;
+    }
+
     if (DuelUI)
         CloseChallengeMenu();
 }
@@ -211,7 +243,7 @@ void AMapMenuCamera::CloseChallengeMenu()
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
     if (currentMinionMovements <= 0)
-        RestoreTurnLogic();
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
@@ -273,8 +305,40 @@ void AMapMenuCamera::FinishDuel(int _winner)
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
 }
 
+void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
+{
+    StoreCrownsUI = _visibility;
+    MapUI->SwitchCrownSavePlaceVisibility(_visibility);
 
+    if (_visibility)
+        MapUI->SwitchLegendVisibility(false);
+    else
+    {
+        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
 
+        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
+        if (currentMinionMovements <= 0)
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
+    }
+}
+
+void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
+{
+    BuyCrownsUI = _visibility;
+    MapUI->SwitchCrownStoreVisibility(_visibility);
+
+    if(_visibility)
+        MapUI->SwitchLegendVisibility(false);
+    else 
+    {
+        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
+        if (currentMinionMovements <= 0)
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogic, TIME_BEFORE_RESTORING_ROUND, false);
+    }
+}
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
 {
@@ -300,9 +364,14 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
             MapUI = (UPlayerMapUI*) MenuWidget;
             MapUI->SwitchTurnUI(CurrentMinionTeam);
             MapUI->SwitchChallengeVisibility(false);
+            MapUI->SwitchCrownStoreVisibility(false);
+            MapUI->SwitchCrownSavePlaceVisibility(false);
 
             if (ScoreDb)
                 MapUI->ScoresDb = ScoreDb;
+
+            if(RoundsSystem)
+                RoundsSystem->AssignMapUI(MapUI);
         }
         
         if (MenuWidget)
@@ -354,6 +423,15 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     else if (CurrentMinionTeam <= 0)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
+    if (CurrentMinionTeam == 0 && RoundsSystem)
+        RoundsSystem->HandleEndRound();
+    else if (MapUI) 
+    {
+        FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
+        MapUI->ShowTextInScreen(Message, 1.0f);
+    }
+
+    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
     MapUI->SwitchTurnUI(CurrentMinionTeam);
 
@@ -371,6 +449,8 @@ void AMapMenuCamera::FocusNextMinion(int _direction)
         CurrentMinionPos = 0;
     else if (CurrentMinionPos <= 0)
         CurrentMinionPos = MAX_MINION_NUMBER - 1;
+
+    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, CurrentMinionPos);
 
@@ -391,6 +471,30 @@ void AMapMenuCamera::ConfirmPathSelection()
     CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
 
     SwitchPathMenu(false, {});
+}
+
+void AMapMenuCamera::StoreCrowns(int _quantity)
+{
+    if (!CurrentMinion || !WorldSceneManager)
+        return;
+
+    CurrentMinion->UpdateCrowns(-_quantity);
+    MapUI->UpdateCrowns(CurrentMinionTeam, _quantity);
+    
+    WorldSceneManager->EnableStarAtRandomLocation();
+    SwitchStoreCrownsUI(false);
+}
+
+void AMapMenuCamera::BuyCrowns(int _quantity)
+{
+    if (!CurrentMinion || CurrentMinion->GetCoins() < (CROWN_PRICE * _quantity))
+        return;
+
+    CurrentMinion->UpdateCoins(-CROWN_PRICE);
+    CurrentMinion->UpdateCrowns(_quantity);
+    WorldSceneManager->DisableAllStars();
+
+    SwitchCrownsShop(false);
 }
 
 
@@ -444,12 +548,13 @@ void AMapMenuCamera::UpdateDicePosition(bool _resizeDice)
         NewDicePosition.Z += DICE_HEIGHT_OFFSET;
 
         Dice->SwitchDicePosition(NewDicePosition, _resizeDice);
+        CurrentMinion->MoveCrownVerticalAxis(CROWN_MAX_OFFSET);
     }
 }
 
-void AMapMenuCamera::UpdateMinionEconomy(int _coins, int _crowns) 
+void AMapMenuCamera::UpdateMinionEconomy(int _coins) 
 {
-    if (_coins == 0 && _crowns == 0)
+    if (_coins == 0)
         return;
 
     int updatedCoins = CurrentMinion->UpdateCoins(_coins);
@@ -463,9 +568,9 @@ void AMapMenuCamera::RestoreTurnLogic()
     if (DuelUI)
         return;
 
+    MapUI->SwitchLegendVisibility(true);
     SwitchCameraTeam(1);
     SwitchController();
-    MapUI->SwitchLegendVisibility(true);
     Dice->ShowDice();
     InputEnabled = true;
     TimedActionExecuted = false;

@@ -161,6 +161,52 @@ DEFINE_FUNCTION(ASquare::execCloseChooseMenu)
 }
 // End Class ASquare Function CloseChooseMenu
 
+// Begin Class ASquare Function GetNextNode
+struct Z_Construct_UFunction_ASquare_GetNextNode_Statics
+{
+	struct Square_eventGetNextNode_Parms
+	{
+		int32 _pathIndex;
+		ASquare* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__pathIndex;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASquare_GetNextNode_Statics::NewProp__pathIndex = { "_pathIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Square_eventGetNextNode_Parms, _pathIndex), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASquare_GetNextNode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Square_eventGetNextNode_Parms, ReturnValue), Z_Construct_UClass_ASquare_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASquare_GetNextNode_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_GetNextNode_Statics::NewProp__pathIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_GetNextNode_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_GetNextNode_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquare_GetNextNode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASquare, nullptr, "GetNextNode", nullptr, nullptr, Z_Construct_UFunction_ASquare_GetNextNode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_GetNextNode_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASquare_GetNextNode_Statics::Square_eventGetNextNode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_GetNextNode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquare_GetNextNode_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASquare_GetNextNode_Statics::Square_eventGetNextNode_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASquare_GetNextNode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquare_GetNextNode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASquare::execGetNextNode)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__pathIndex);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(ASquare**)Z_Param__Result=P_THIS->GetNextNode(Z_Param__pathIndex);
+	P_NATIVE_END;
+}
+// End Class ASquare Function GetNextNode
+
 // Begin Class ASquare Function GetNextSquare
 struct Z_Construct_UFunction_ASquare_GetNextSquare_Statics
 {
@@ -280,6 +326,7 @@ void ASquare::StaticRegisterNativesASquare()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AddMinion", &ASquare::execAddMinion },
 		{ "CloseChooseMenu", &ASquare::execCloseChooseMenu },
+		{ "GetNextNode", &ASquare::execGetNextNode },
 		{ "GetNextSquare", &ASquare::execGetNextSquare },
 		{ "OpenChooseMenu", &ASquare::execOpenChooseMenu },
 		{ "RemoveMinion", &ASquare::execRemoveMinion },
@@ -332,6 +379,7 @@ struct Z_Construct_UClass_ASquare_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASquare_AddMinion, "AddMinion" }, // 4072108050
 		{ &Z_Construct_UFunction_ASquare_CloseChooseMenu, "CloseChooseMenu" }, // 335921899
+		{ &Z_Construct_UFunction_ASquare_GetNextNode, "GetNextNode" }, // 1046565618
 		{ &Z_Construct_UFunction_ASquare_GetNextSquare, "GetNextSquare" }, // 3809473293
 		{ &Z_Construct_UFunction_ASquare_OpenChooseMenu, "OpenChooseMenu" }, // 3763124425
 		{ &Z_Construct_UFunction_ASquare_RemoveMinion, "RemoveMinion" }, // 706248460
@@ -402,10 +450,10 @@ struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Sta
 		{ ESquareType_StaticEnum, TEXT("ESquareType"), &Z_Registration_Info_UEnum_ESquareType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2154578961U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2679799221U) },
+		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2937984941U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_2956338285(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_1529817194(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo));

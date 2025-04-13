@@ -10,6 +10,7 @@
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
+#include "PartyJungle/Rounds/RoundsManager.h"
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/World/WorldManager.h>
 
@@ -65,6 +66,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
 	ADice* Dice;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rounds System")
+	ARoundsManager* RoundsSystem;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Challenge System")
 	AChallengeInformation* ChallengeInformation;
 
@@ -105,6 +109,12 @@ public:
 	void FinishDuel(int _winner);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchStoreCrownsUI(bool _visibility);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchCrownsShop(bool _visibility);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -128,6 +138,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ConfirmPathSelection();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StoreCrowns(int _quantity);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void BuyCrowns(int _quantity);
+
 
 private:
 	const int MAX_MINION_NUMBER = 3;
@@ -135,12 +151,15 @@ private:
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
 	const float TIME_BEFORE_FINISH_DUEL = 2;
+	const float CROWN_MAX_OFFSET = 233.969262f;
+	const float CROWN_MIN_OFFSET = 130;
+	const int CROWN_PRICE = 20;
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void UpdateMinionEconomy(int _coins = 0, int _crowns = 0);
+	void UpdateMinionEconomy(int _coins = 0);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RestoreTurnLogic();
@@ -149,6 +168,8 @@ private:
 	bool RollingDice = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
+	bool BuyCrownsUI = false;
+	bool StoreCrownsUI = false;
 	bool TimedActionExecuted = false;
 	bool IsMinigameActive = false;
 

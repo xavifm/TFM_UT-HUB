@@ -63,6 +63,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
 	void ShowMinionCrownsFeedback(int _quantity);
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
+	void SwitchCrownVisibility(bool _enabled);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
+	void MoveCrownVerticalAxis(float _position);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
 	float TotalLerpTime = 0.5f;
 
@@ -83,7 +89,10 @@ private:
 	bool isMoving = false;
 	float CurrentLerpTime = 0.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int Coins;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int Crowns;
 
 	FVector StartPosition;

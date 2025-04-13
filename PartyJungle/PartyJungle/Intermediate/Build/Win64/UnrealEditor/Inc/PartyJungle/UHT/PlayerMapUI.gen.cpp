@@ -66,6 +66,55 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeUI()
 }
 // End Class UPlayerMapUI Function InitializeUI
 
+// Begin Class UPlayerMapUI Function ShowTextInScreen
+struct PlayerMapUI_eventShowTextInScreen_Parms
+{
+	FString Text;
+	float Time;
+};
+static FName NAME_UPlayerMapUI_ShowTextInScreen = FName(TEXT("ShowTextInScreen"));
+void UPlayerMapUI::ShowTextInScreen(const FString& Text, float Time)
+{
+	PlayerMapUI_eventShowTextInScreen_Parms Parms;
+	Parms.Text=Text;
+	Parms.Time=Time;
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_ShowTextInScreen),&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Text_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStrPropertyParams NewProp_Text;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Time;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Text = { "Text", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowTextInScreen_Parms, Text), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Text_MetaData), NewProp_Text_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventShowTextInScreen_Parms, Time), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Text,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Time,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ShowTextInScreen", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers), sizeof(PlayerMapUI_eventShowTextInScreen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventShowTextInScreen_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function ShowTextInScreen
+
 // Begin Class UPlayerMapUI Function SwitchChallengeVisibility
 struct PlayerMapUI_eventSwitchChallengeVisibility_Parms
 {
@@ -112,6 +161,100 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility()
 	return ReturnFunction;
 }
 // End Class UPlayerMapUI Function SwitchChallengeVisibility
+
+// Begin Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility
+struct PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms
+{
+	bool IsVisible;
+};
+static FName NAME_UPlayerMapUI_SwitchCrownSavePlaceVisibility = FName(TEXT("SwitchCrownSavePlaceVisibility"));
+void UPlayerMapUI::SwitchCrownSavePlaceVisibility(bool IsVisible)
+{
+	PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms Parms;
+	Parms.IsVisible=IsVisible ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownSavePlaceVisibility),&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_IsVisible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsVisible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
+{
+	((PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms*)Obj)->IsVisible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::NewProp_IsVisible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownSavePlaceVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility
+
+// Begin Class UPlayerMapUI Function SwitchCrownStoreVisibility
+struct PlayerMapUI_eventSwitchCrownStoreVisibility_Parms
+{
+	bool IsVisible;
+};
+static FName NAME_UPlayerMapUI_SwitchCrownStoreVisibility = FName(TEXT("SwitchCrownStoreVisibility"));
+void UPlayerMapUI::SwitchCrownStoreVisibility(bool IsVisible)
+{
+	PlayerMapUI_eventSwitchCrownStoreVisibility_Parms Parms;
+	Parms.IsVisible=IsVisible ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownStoreVisibility),&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_IsVisible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsVisible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
+{
+	((PlayerMapUI_eventSwitchCrownStoreVisibility_Parms*)Obj)->IsVisible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::NewProp_IsVisible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownStoreVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function SwitchCrownStoreVisibility
 
 // Begin Class UPlayerMapUI Function SwitchLegendVisibility
 struct PlayerMapUI_eventSwitchLegendVisibility_Parms
@@ -437,7 +580,10 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2434387993
+		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 4239389834
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility, "SwitchCrownSavePlaceVisibility" }, // 2494523184
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility, "SwitchCrownStoreVisibility" }, // 472051550
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility, "SwitchLegendVisibility" }, // 2221352643
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI, "SwitchTurnUI" }, // 1496968856
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2892537950
@@ -497,10 +643,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1036435377U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 855508705U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_3578026829(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_580144569(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
