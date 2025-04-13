@@ -19,6 +19,9 @@
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
