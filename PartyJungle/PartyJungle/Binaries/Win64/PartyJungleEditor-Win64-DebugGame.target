@@ -43,6 +43,7 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenColorIO_2_3.dll",
+			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenImageDenoise.dll",

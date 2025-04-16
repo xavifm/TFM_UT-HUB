@@ -423,9 +423,13 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     else if (CurrentMinionTeam <= 0)
         CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
-    if (CurrentMinionTeam == 0 && RoundsSystem)
+    if (CurrentMinionTeam == 0 && RoundsSystem) 
+    {
         RoundsSystem->HandleEndRound();
-    else if (MapUI) 
+    }
+    if (MapUI && 
+        ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
+        || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
     {
         FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
         MapUI->ShowTextInScreen(Message, 1.0f);

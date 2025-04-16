@@ -38,9 +38,20 @@ void ARoundsManager::StartNextRound()
 		return;
 
 	CurrentRound++;
-	int RoundShown = MaxRounds - CurrentRound;
-	FString FeedbackText = FString::Printf(TEXT("%d turns left"), RoundShown);
-	MapUI->ShowTextInScreen(FeedbackText, 1.0f);
+
+	int RoundShown = GetRoundsLeft();
+	FString FeedbackText;
+
+	if(RoundShown <= MIN_ROUNDS_ANNOUNCED)
+	{
+		FeedbackText = FString::Printf(TEXT("%d turns left"), RoundShown);
+		MapUI->ShowTextInScreen(FeedbackText, 1.0f);
+	}
+}
+
+int ARoundsManager::GetRoundsLeft()
+{
+	return MaxRounds - CurrentRound;
 }
 
 void ARoundsManager::FinishGame()

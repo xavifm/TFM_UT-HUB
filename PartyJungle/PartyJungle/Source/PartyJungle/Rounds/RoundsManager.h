@@ -23,6 +23,9 @@ public:
 	void StartNextRound();
 
 	UFUNCTION()
+	int GetRoundsLeft();
+
+	UFUNCTION()
 	void FinishGame();
 
 	UFUNCTION()
@@ -30,6 +33,8 @@ public:
 
 	UFUNCTION()
 	void AssignMapUI(UPlayerMapUI* _mapUI);
+
+	const int MIN_ROUNDS_ANNOUNCED = 3;
 
 protected:
 	virtual void BeginPlay() override;
