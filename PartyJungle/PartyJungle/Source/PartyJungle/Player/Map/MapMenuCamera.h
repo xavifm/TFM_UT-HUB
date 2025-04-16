@@ -151,7 +151,7 @@ private:
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
 	const float TIME_BEFORE_FINISH_DUEL = 2;
-	const float CROWN_MAX_OFFSET = 233.969262f;
+	const float CROWN_MAX_OFFSET = 253.969262f;
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
 
