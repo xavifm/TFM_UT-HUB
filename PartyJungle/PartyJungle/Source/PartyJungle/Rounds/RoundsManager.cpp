@@ -45,7 +45,7 @@ void ARoundsManager::StartNextRound()
 	if(RoundShown <= MIN_ROUNDS_ANNOUNCED)
 	{
 		FeedbackText = FString::Printf(TEXT("%d turns left"), RoundShown);
-		MapUI->ShowTextInScreen(FeedbackText, 1.0f);
+		MapUI->ShowTextInScreen(FeedbackText, -1);
 	}
 }
 

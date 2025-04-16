@@ -221,6 +221,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execFinishDuel)
 }
 // End Class AMapMenuCamera Function FinishDuel
 
+// Begin Class AMapMenuCamera Function FinishFadeTransition
+struct Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "FinishFadeTransition", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execFinishFadeTransition)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->FinishFadeTransition();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function FinishFadeTransition
+
 // Begin Class AMapMenuCamera Function FocusNextMinion
 struct Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion_Statics
 {
@@ -491,6 +521,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execRestoreTurnLogic)
 }
 // End Class AMapMenuCamera Function RestoreTurnLogic
 
+// Begin Class AMapMenuCamera Function RestoreTurnLogicWithAnimation
+struct Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "RestoreTurnLogicWithAnimation", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execRestoreTurnLogicWithAnimation)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->RestoreTurnLogicWithAnimation();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function RestoreTurnLogicWithAnimation
+
 // Begin Class AMapMenuCamera Function RollTheDice
 struct Z_Construct_UFunction_AMapMenuCamera_RollTheDice_Statics
 {
@@ -567,6 +627,49 @@ DEFINE_FUNCTION(AMapMenuCamera::execSetupPlayerInputComponent)
 }
 // End Class AMapMenuCamera Function SetupPlayerInputComponent
 
+// Begin Class AMapMenuCamera Function StartFadeTransition
+struct Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics
+{
+	struct MapMenuCamera_eventStartFadeTransition_Parms
+	{
+		float _time;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__time;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::NewProp__time = { "_time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStartFadeTransition_Parms, _time), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::NewProp__time,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "StartFadeTransition", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::MapMenuCamera_eventStartFadeTransition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::MapMenuCamera_eventStartFadeTransition_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execStartFadeTransition)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param__time);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartFadeTransition(Z_Param__time);
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function StartFadeTransition
+
 // Begin Class AMapMenuCamera Function StartMinigame
 struct Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics
 {
@@ -627,6 +730,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execStartMinigame)
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function StartMinigame
+
+// Begin Class AMapMenuCamera Function StartPlayerTurn
+struct Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "StartPlayerTurn", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execStartPlayerTurn)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartPlayerTurn();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function StartPlayerTurn
 
 // Begin Class AMapMenuCamera Function StoreCrowns
 struct Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics
@@ -1139,6 +1272,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "CloseChallengeMenu", &AMapMenuCamera::execCloseChallengeMenu },
 		{ "ConfirmPathSelection", &AMapMenuCamera::execConfirmPathSelection },
 		{ "FinishDuel", &AMapMenuCamera::execFinishDuel },
+		{ "FinishFadeTransition", &AMapMenuCamera::execFinishFadeTransition },
 		{ "FocusNextMinion", &AMapMenuCamera::execFocusNextMinion },
 		{ "HandleBackInput", &AMapMenuCamera::execHandleBackInput },
 		{ "HandleConfirmInput", &AMapMenuCamera::execHandleConfirmInput },
@@ -1146,9 +1280,12 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "OpenChallengeMenu", &AMapMenuCamera::execOpenChallengeMenu },
 		{ "RefreshChallengeInfo", &AMapMenuCamera::execRefreshChallengeInfo },
 		{ "RestoreTurnLogic", &AMapMenuCamera::execRestoreTurnLogic },
+		{ "RestoreTurnLogicWithAnimation", &AMapMenuCamera::execRestoreTurnLogicWithAnimation },
 		{ "RollTheDice", &AMapMenuCamera::execRollTheDice },
 		{ "SetupPlayerInputComponent", &AMapMenuCamera::execSetupPlayerInputComponent },
+		{ "StartFadeTransition", &AMapMenuCamera::execStartFadeTransition },
 		{ "StartMinigame", &AMapMenuCamera::execStartMinigame },
+		{ "StartPlayerTurn", &AMapMenuCamera::execStartPlayerTurn },
 		{ "StoreCrowns", &AMapMenuCamera::execStoreCrowns },
 		{ "SwitchCameraTeam", &AMapMenuCamera::execSwitchCameraTeam },
 		{ "SwitchChallengeUI", &AMapMenuCamera::execSwitchChallengeUI },
@@ -1275,6 +1412,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_CloseChallengeMenu, "CloseChallengeMenu" }, // 1119505372
 		{ &Z_Construct_UFunction_AMapMenuCamera_ConfirmPathSelection, "ConfirmPathSelection" }, // 2747763901
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishDuel, "FinishDuel" }, // 2725032225
+		{ &Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition, "FinishFadeTransition" }, // 1488510937
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2936244957
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 229676118
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleConfirmInput, "HandleConfirmInput" }, // 55423153
@@ -1282,9 +1420,12 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu, "OpenChallengeMenu" }, // 1674312757
 		{ &Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo, "RefreshChallengeInfo" }, // 879373997
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic, "RestoreTurnLogic" }, // 110122867
+		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation, "RestoreTurnLogicWithAnimation" }, // 1942751108
 		{ &Z_Construct_UFunction_AMapMenuCamera_RollTheDice, "RollTheDice" }, // 197272818
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetupPlayerInputComponent, "SetupPlayerInputComponent" }, // 476219084
+		{ &Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition, "StartFadeTransition" }, // 1843602768
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartMinigame, "StartMinigame" }, // 414702047
+		{ &Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn, "StartPlayerTurn" }, // 106327857
 		{ &Z_Construct_UFunction_AMapMenuCamera_StoreCrowns, "StoreCrowns" }, // 1192048640
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCameraTeam, "SwitchCameraTeam" }, // 3251726099
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeUI, "SwitchChallengeUI" }, // 384721050
@@ -1384,10 +1525,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3229534841U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 4197807517U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_2310984240(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1419764147(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

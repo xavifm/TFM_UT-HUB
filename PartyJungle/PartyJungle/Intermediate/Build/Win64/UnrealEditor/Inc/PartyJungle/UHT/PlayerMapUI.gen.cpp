@@ -19,6 +19,33 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class UPlayerMapUI Function HideInScreenText
+static FName NAME_UPlayerMapUI_HideInScreenText = FName(TEXT("HideInScreenText"));
+void UPlayerMapUI::HideInScreenText()
+{
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_HideInScreenText),NULL);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "HideInScreenText", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UPlayerMapUI_HideInScreenText()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function HideInScreenText
+
 // Begin Class UPlayerMapUI Function InitializeUI
 struct PlayerMapUI_eventInitializeUI_Parms
 {
@@ -579,6 +606,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_UPlayerMapUI_HideInScreenText, "HideInScreenText" }, // 455371258
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2434387993
 		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 4239389834
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
@@ -643,10 +671,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 855508705U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1491176087U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_580144569(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_2472624121(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

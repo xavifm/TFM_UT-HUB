@@ -31,6 +31,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ShowTextInScreen(const FString& Text, float Time);
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void HideInScreenText();
+
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);
 
