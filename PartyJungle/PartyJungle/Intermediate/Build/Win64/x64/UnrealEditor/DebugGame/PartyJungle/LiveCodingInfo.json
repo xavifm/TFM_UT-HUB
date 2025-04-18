@@ -3,6 +3,7 @@
 	{
 		"Module.PartyJungle.cpp.obj": [
 			"AirCannon.gen.cpp.obj",
+			"AudioManager.gen.cpp.obj",
 			"CannonMinigameCamera.gen.cpp.obj",
 			"ChallengeInformation.gen.cpp.obj",
 			"Dice.gen.cpp.obj",
@@ -42,6 +43,7 @@
 			"ScoreDto.cpp.obj",
 			"PlayerMapUI.cpp.obj",
 			"RoundsManager.cpp.obj",
+			"AudioManager.cpp.obj",
 			"ReturnToPartyMapScene.cpp.obj",
 			"WorldManager.cpp.obj"
 		]

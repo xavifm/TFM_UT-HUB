@@ -190,6 +190,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\Rounds\RoundsManager.h">
       <Filter>Source\PartyJungle\Rounds</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\SoundManager">
+      <UniqueIdentifier>{5236F0E6-3EA1-377F-821B-107B88823D18}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\SoundManager\AudioManager.cpp">
+      <Filter>Source\PartyJungle\SoundManager</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\SoundManager\AudioManager.h">
+      <Filter>Source\PartyJungle\SoundManager</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Testing">
       <UniqueIdentifier>{5B19AB45-C52F-35BC-923A-47A19B708CFA}</UniqueIdentifier>
     </Filter>
