@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame1\\cannonminigamecamera.cpp",
+        "Source": "c:\\users\\xavi\\documents\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame1\\cannonminigamecamera.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
+        "PCH": "c:\\users\\xavi\\documents\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\partyjungle\\definitions.partyjungle.h",
-            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame1\\cannonminigamecamera.h",
-            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\cannonminigamecamera.generated.h"
+            "c:\\users\\xavi\\documents\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\xavi\\documents\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame1\\cannonminigamecamera.h",
+            "c:\\users\\xavi\\documents\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\cannonminigamecamera.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

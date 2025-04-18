@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_MinigameLogic_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execResetMinigameScene); \
 	DECLARE_FUNCTION(execBeginMinigame); \
 	DECLARE_FUNCTION(execSetTeamReady); \
@@ -26,7 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execStartMinigame);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigameLogic(); \
 	friend struct Z_Construct_UClass_AMinigameLogic_Statics; \
@@ -35,7 +35,7 @@ public: \
 	DECLARE_SERIALIZER(AMinigameLogic)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMinigameLogic(AMinigameLogic&&); \
@@ -47,13 +47,13 @@ public: \
 	NO_API virtual ~AMinigameLogic();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_8_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_GENERATED_BODY \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_8_PROLOG
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_ENHANCED_CONSTRUCTORS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -61,7 +61,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class AMinigameLogic>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h
+#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
