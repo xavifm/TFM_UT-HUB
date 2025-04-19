@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <PartyJungle/Dice/Dice.h>
+#include <PartyJungle/SoundManager/AudioManager.h>
 #include "Minion.generated.h"
 
 UENUM(BlueprintType)
@@ -30,6 +31,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice References")
 	ADice* DiceReference;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice References")
+	AAudioManager* AudioManager;
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void SetMinionsMovements(int _movements, bool _continuation = false);
@@ -102,6 +106,8 @@ private:
 	const float MINION_SEPARATION_DISTANCE = 50.0f;
 	const float VERTICAL_OFFSET_DISTANCE = 50;
 	const float JUMP_HEIGHT = 100;
+	const float JUMP_EFFECT_VOLUME = 0.1f;
+	const FString JUMP_EFFECT_SOUND = "JumpSFX";
 	const int MAX_MINION_COINS = 50;
 	const int MAX_MINION_CROWNS = 5;
 	const int MINIMUM_BET_REQUIREMENT = 5;

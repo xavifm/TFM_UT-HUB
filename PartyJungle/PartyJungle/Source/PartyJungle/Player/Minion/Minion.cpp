@@ -54,6 +54,10 @@ void AMinion::MoveToSquare(ASquare* TargetSquare)
 	TargetPosition.Z += VERTICAL_OFFSET_DISTANCE;
 
 	CurrentLerpTime = 0.0f;
+
+	if (AudioManager)
+		AudioManager->PlaySFX(JUMP_EFFECT_SOUND, JUMP_EFFECT_VOLUME, true);
+
 	isMoving = true;
 }
 

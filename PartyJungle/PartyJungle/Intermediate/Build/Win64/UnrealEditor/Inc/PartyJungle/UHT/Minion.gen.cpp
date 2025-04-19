@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeMinion() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AAudioManager_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ADice_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
@@ -647,6 +648,10 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ "Category", "Dice References" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AudioManager_MetaData[] = {
+		{ "Category", "Dice References" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TotalLerpTime_MetaData[] = {
 		{ "Category", "Minion Properties" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
@@ -671,6 +676,7 @@ struct Z_Construct_UClass_AMinion_Statics
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_Team;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentSquare;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DiceReference;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioManager;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_TotalLerpTime;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Movements;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Coins;
@@ -701,6 +707,7 @@ const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinion_Statics:
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Team), Z_Construct_UEnum_PartyJungle_ETeam, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Team_MetaData), NewProp_Team_MetaData) }; // 4119591115
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_CurrentSquare = { "CurrentSquare", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, CurrentSquare), Z_Construct_UClass_ASquare_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentSquare_MetaData), NewProp_CurrentSquare_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference = { "DiceReference", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, DiceReference), Z_Construct_UClass_ADice_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DiceReference_MetaData), NewProp_DiceReference_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_AudioManager = { "AudioManager", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, AudioManager), Z_Construct_UClass_AAudioManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AudioManager_MetaData), NewProp_AudioManager_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime = { "TotalLerpTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, TotalLerpTime), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TotalLerpTime_MetaData), NewProp_TotalLerpTime_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Movements = { "Movements", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Movements), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Movements_MetaData), NewProp_Movements_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinion_Statics::NewProp_Coins = { "Coins", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinion, Coins), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Coins_MetaData), NewProp_Coins_MetaData) };
@@ -710,6 +717,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinion_S
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Team,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_CurrentSquare,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_DiceReference,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_AudioManager,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_TotalLerpTime,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Movements,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinion_Statics::NewProp_Coins,
@@ -759,10 +767,10 @@ struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_Par
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3689421147U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3883865828U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2278864311(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2636814537(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));

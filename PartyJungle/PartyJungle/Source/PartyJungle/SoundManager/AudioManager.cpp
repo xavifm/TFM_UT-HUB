@@ -12,28 +12,37 @@ AAudioManager::AAudioManager()
     SFXPlayer->SetupAttachment(RootComponent);
 }
 
-void AAudioManager::PlaySong(const FString& Sound)
+void AAudioManager::PlaySong(const FString& Sound, float Volume, bool loop)
 {
-    FTrack trackQuery = GetAudioTrack(Sound);
-    if (trackQuery.SoundTrack != nullptr)
+    USoundBase* trackQuery = GetAudioTrack(Sound);
+    if (trackQuery)
     {
-        MusicPlayer->SetSound(trackQuery.SoundTrack);
+        MusicPlayer->SetSound(trackQuery);
+        MusicPlayer->SetVolumeMultiplier(Volume);
         MusicPlayer->Play();
     }
 }
 
-void AAudioManager::PlaySFX(const FString& Sound)
+void AAudioManager::PlaySFX(const FString& Sound, float Volume, bool RandomPitch)
 {
-    FTrack trackQuery = GetAudioTrack(Sound);
-    if (trackQuery.SoundTrack != nullptr)
+    USoundBase* trackQuery = GetAudioTrack(Sound);
+    if (trackQuery)
     {
-        SFXPlayer->SetSound(trackQuery.SoundTrack);
+        SFXPlayer->SetSound(trackQuery);
+        SFXPlayer->SetVolumeMultiplier(Volume);
+
+        int pitch = 1;
+
+        if(RandomPitch)
+            pitch = FMath::RandRange(0.75, 1.2);
+
+        SFXPlayer->SetPitchMultiplier(pitch);
         SFXPlayer->Play();
     }
 }
 
-FTrack AAudioManager::GetAudioTrack(const FString& TrackName)
+USoundBase* AAudioManager::GetAudioTrack(const FString& TrackName)
 {
-    return Tracks.Contains(TrackName) ? Tracks[TrackName] : FTrack();
+    return Tracks.Contains(TrackName) ? Tracks[TrackName] : nullptr;
 }
 

@@ -7,20 +7,6 @@
 #include "Sound/SoundBase.h"   
 #include "AudioManager.generated.h"
 
-USTRUCT(BlueprintType)
-struct FTrack
-{
-	GENERATED_BODY()
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	FString TrackName;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	USoundBase* SoundTrack;
-
-	FTrack() : TrackName(""), SoundTrack(nullptr) {}
-};
-
 UCLASS()
 class PARTYJUNGLE_API AAudioManager : public AActor
 {
@@ -30,18 +16,18 @@ public:
 	AAudioManager();
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	void PlaySong(const FString& Sound);
+	void PlaySong(const FString& Sound, float Volume = 1, bool loop = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	void PlaySFX(const FString& Sound);
+	void PlaySFX(const FString& Sound, float Volume = 1, bool RandomPitch = false);
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
-	TMap<FString, FTrack> Tracks;
+	TMap<FString, USoundBase*> Tracks;
 
 private:
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	FTrack GetAudioTrack(const FString& TrackName);
+	USoundBase* GetAudioTrack(const FString& TrackName);
 
 	UPROPERTY(VisibleAnywhere, Category = "Audio")
 	UAudioComponent* MusicPlayer;

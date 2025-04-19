@@ -15,78 +15,8 @@ ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AAudioManager();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AAudioManager_NoRegister();
-PARTYJUNGLE_API UScriptStruct* Z_Construct_UScriptStruct_FTrack();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
-
-// Begin ScriptStruct FTrack
-static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_Track;
-class UScriptStruct* FTrack::StaticStruct()
-{
-	if (!Z_Registration_Info_UScriptStruct_Track.OuterSingleton)
-	{
-		Z_Registration_Info_UScriptStruct_Track.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FTrack, (UObject*)Z_Construct_UPackage__Script_PartyJungle(), TEXT("Track"));
-	}
-	return Z_Registration_Info_UScriptStruct_Track.OuterSingleton;
-}
-template<> PARTYJUNGLE_API UScriptStruct* StaticStruct<FTrack>()
-{
-	return FTrack::StaticStruct();
-}
-struct Z_Construct_UScriptStruct_FTrack_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[] = {
-		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TrackName_MetaData[] = {
-		{ "Category", "Audio" },
-		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SoundTrack_MetaData[] = {
-		{ "Category", "Audio" },
-		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FStrPropertyParams NewProp_TrackName;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_SoundTrack;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static void* NewStructOps()
-	{
-		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FTrack>();
-	}
-	static const UECodeGen_Private::FStructParams StructParams;
-};
-const UECodeGen_Private::FStrPropertyParams Z_Construct_UScriptStruct_FTrack_Statics::NewProp_TrackName = { "TrackName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FTrack, TrackName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrackName_MetaData), NewProp_TrackName_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FTrack_Statics::NewProp_SoundTrack = { "SoundTrack", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FTrack, SoundTrack), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SoundTrack_MetaData), NewProp_SoundTrack_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FTrack_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTrack_Statics::NewProp_TrackName,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FTrack_Statics::NewProp_SoundTrack,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTrack_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FTrack_Statics::StructParams = {
-	(UObject* (*)())Z_Construct_UPackage__Script_PartyJungle,
-	nullptr,
-	&NewStructOps,
-	"Track",
-	Z_Construct_UScriptStruct_FTrack_Statics::PropPointers,
-	UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTrack_Statics::PropPointers),
-	sizeof(FTrack),
-	alignof(FTrack),
-	RF_Public|RF_Transient|RF_MarkAsNative,
-	EStructFlags(0x00000001),
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FTrack_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FTrack_Statics::Struct_MetaDataParams)
-};
-UScriptStruct* Z_Construct_UScriptStruct_FTrack()
-{
-	if (!Z_Registration_Info_UScriptStruct_Track.InnerSingleton)
-	{
-		UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_Track.InnerSingleton, Z_Construct_UScriptStruct_FTrack_Statics::StructParams);
-	}
-	return Z_Registration_Info_UScriptStruct_Track.InnerSingleton;
-}
-// End ScriptStruct FTrack
 
 // Begin Class AAudioManager Function GetAudioTrack
 struct Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics
@@ -94,7 +24,7 @@ struct Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics
 	struct AudioManager_eventGetAudioTrack_Parms
 	{
 		FString TrackName;
-		FTrack ReturnValue;
+		USoundBase* ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -106,12 +36,12 @@ struct Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_TrackName;
-	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::NewProp_TrackName = { "TrackName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventGetAudioTrack_Parms, TrackName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TrackName_MetaData), NewProp_TrackName_MetaData) };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventGetAudioTrack_Parms, ReturnValue), Z_Construct_UScriptStruct_FTrack, METADATA_PARAMS(0, nullptr) }; // 1605646905
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventGetAudioTrack_Parms, ReturnValue), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::NewProp_TrackName,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_GetAudioTrack_Statics::NewProp_ReturnValue,
@@ -133,7 +63,7 @@ DEFINE_FUNCTION(AAudioManager::execGetAudioTrack)
 	P_GET_PROPERTY(FStrProperty,Z_Param_TrackName);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(FTrack*)Z_Param__Result=P_THIS->GetAudioTrack(Z_Param_TrackName);
+	*(USoundBase**)Z_Param__Result=P_THIS->GetAudioTrack(Z_Param_TrackName);
 	P_NATIVE_END;
 }
 // End Class AAudioManager Function GetAudioTrack
@@ -144,10 +74,14 @@ struct Z_Construct_UFunction_AAudioManager_PlaySFX_Statics
 	struct AudioManager_eventPlaySFX_Parms
 	{
 		FString Sound;
+		float Volume;
+		bool RandomPitch;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Audio" },
+		{ "CPP_Default_RandomPitch", "false" },
+		{ "CPP_Default_Volume", "1.000000" },
 		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Sound_MetaData[] = {
@@ -155,12 +89,23 @@ struct Z_Construct_UFunction_AAudioManager_PlaySFX_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Sound;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Volume;
+	static void NewProp_RandomPitch_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_RandomPitch;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventPlaySFX_Parms, Sound), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Sound_MetaData), NewProp_Sound_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_Volume = { "Volume", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventPlaySFX_Parms, Volume), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_RandomPitch_SetBit(void* Obj)
+{
+	((AudioManager_eventPlaySFX_Parms*)Obj)->RandomPitch = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_RandomPitch = { "RandomPitch", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AudioManager_eventPlaySFX_Parms), &Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_RandomPitch_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_Sound,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_Volume,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::NewProp_RandomPitch,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "PlaySFX", nullptr, nullptr, Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::AudioManager_eventPlaySFX_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_PlaySFX_Statics::Function_MetaDataParams) };
@@ -177,9 +122,11 @@ UFunction* Z_Construct_UFunction_AAudioManager_PlaySFX()
 DEFINE_FUNCTION(AAudioManager::execPlaySFX)
 {
 	P_GET_PROPERTY(FStrProperty,Z_Param_Sound);
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Volume);
+	P_GET_UBOOL(Z_Param_RandomPitch);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->PlaySFX(Z_Param_Sound);
+	P_THIS->PlaySFX(Z_Param_Sound,Z_Param_Volume,Z_Param_RandomPitch);
 	P_NATIVE_END;
 }
 // End Class AAudioManager Function PlaySFX
@@ -190,10 +137,14 @@ struct Z_Construct_UFunction_AAudioManager_PlaySong_Statics
 	struct AudioManager_eventPlaySong_Parms
 	{
 		FString Sound;
+		float Volume;
+		bool loop;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Audio" },
+		{ "CPP_Default_loop", "false" },
+		{ "CPP_Default_Volume", "1.000000" },
 		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Sound_MetaData[] = {
@@ -201,12 +152,23 @@ struct Z_Construct_UFunction_AAudioManager_PlaySong_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Sound;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Volume;
+	static void NewProp_loop_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_loop;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventPlaySong_Parms, Sound), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Sound_MetaData), NewProp_Sound_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_Volume = { "Volume", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventPlaySong_Parms, Volume), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_loop_SetBit(void* Obj)
+{
+	((AudioManager_eventPlaySong_Parms*)Obj)->loop = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_loop = { "loop", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AudioManager_eventPlaySong_Parms), &Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_loop_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAudioManager_PlaySong_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_Sound,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_Volume,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_PlaySong_Statics::NewProp_loop,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySong_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_PlaySong_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "PlaySong", nullptr, nullptr, Z_Construct_UFunction_AAudioManager_PlaySong_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySong_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAudioManager_PlaySong_Statics::AudioManager_eventPlaySong_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_PlaySong_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_PlaySong_Statics::Function_MetaDataParams) };
@@ -223,9 +185,11 @@ UFunction* Z_Construct_UFunction_AAudioManager_PlaySong()
 DEFINE_FUNCTION(AAudioManager::execPlaySong)
 {
 	P_GET_PROPERTY(FStrProperty,Z_Param_Sound);
+	P_GET_PROPERTY(FFloatProperty,Z_Param_Volume);
+	P_GET_UBOOL(Z_Param_loop);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->PlaySong(Z_Param_Sound);
+	P_THIS->PlaySong(Z_Param_Sound,Z_Param_Volume,Z_Param_loop);
 	P_NATIVE_END;
 }
 // End Class AAudioManager Function PlaySong
@@ -268,7 +232,7 @@ struct Z_Construct_UClass_AAudioManager_Statics
 		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FStructPropertyParams NewProp_Tracks_ValueProp;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Tracks_ValueProp;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_Tracks_Key_KeyProp;
 	static const UECodeGen_Private::FMapPropertyParams NewProp_Tracks;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MusicPlayer;
@@ -276,9 +240,9 @@ struct Z_Construct_UClass_AAudioManager_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AAudioManager_GetAudioTrack, "GetAudioTrack" }, // 1803736919
-		{ &Z_Construct_UFunction_AAudioManager_PlaySFX, "PlaySFX" }, // 3852610837
-		{ &Z_Construct_UFunction_AAudioManager_PlaySong, "PlaySong" }, // 3095961149
+		{ &Z_Construct_UFunction_AAudioManager_GetAudioTrack, "GetAudioTrack" }, // 1392250555
+		{ &Z_Construct_UFunction_AAudioManager_PlaySFX, "PlaySFX" }, // 2292026030
+		{ &Z_Construct_UFunction_AAudioManager_PlaySong, "PlaySong" }, // 1383138438
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -286,9 +250,9 @@ struct Z_Construct_UClass_AAudioManager_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_Tracks_ValueProp = { "Tracks", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FTrack, METADATA_PARAMS(0, nullptr) }; // 1605646905
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_Tracks_ValueProp = { "Tracks", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_Tracks_Key_KeyProp = { "Tracks_Key", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_Tracks = { "Tracks", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAudioManager, Tracks), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Tracks_MetaData), NewProp_Tracks_MetaData) }; // 1605646905
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_Tracks = { "Tracks", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAudioManager, Tracks), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Tracks_MetaData), NewProp_Tracks_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_MusicPlayer = { "MusicPlayer", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAudioManager, MusicPlayer), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MusicPlayer_MetaData), NewProp_MusicPlayer_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAudioManager_Statics::NewProp_SFXPlayer = { "SFXPlayer", nullptr, (EPropertyFlags)0x00400000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAudioManager, SFXPlayer), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SFXPlayer_MetaData), NewProp_SFXPlayer_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAudioManager_Statics::PropPointers[] = {
@@ -338,16 +302,13 @@ AAudioManager::~AAudioManager() {}
 // Begin Registration
 struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics
 {
-	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
-		{ FTrack::StaticStruct, Z_Construct_UScriptStruct_FTrack_Statics::NewStructOps, TEXT("Track"), &Z_Registration_Info_UScriptStruct_Track, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FTrack), 1605646905U) },
-	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 3352056119U) },
+		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 3356116525U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_2184050806(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_3179426379(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ScriptStructInfo),
+	nullptr, 0,
 	nullptr, 0);
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
