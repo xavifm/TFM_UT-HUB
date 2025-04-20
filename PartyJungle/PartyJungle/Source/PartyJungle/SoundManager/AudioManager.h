@@ -21,6 +21,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Audio")
 	void PlaySFX(const FString& Sound, float Volume = 1, bool RandomPitch = false);
 
+	UFUNCTION(BlueprintCallable, Category = "Audio")
+	void StopSFX();
+
+	UFUNCTION(BlueprintCallable, Category = "Audio")
+	void StopSong();
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
 	TMap<FString, USoundBase*> Tracks;

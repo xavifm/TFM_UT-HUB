@@ -17,6 +17,8 @@ class USoundBase;
 
 #define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetAudioTrack); \
+	DECLARE_FUNCTION(execStopSong); \
+	DECLARE_FUNCTION(execStopSFX); \
 	DECLARE_FUNCTION(execPlaySFX); \
 	DECLARE_FUNCTION(execPlaySong);
 

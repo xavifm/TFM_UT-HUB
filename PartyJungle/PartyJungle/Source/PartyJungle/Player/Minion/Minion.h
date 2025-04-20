@@ -109,6 +109,9 @@ private:
 	const float JUMP_EFFECT_VOLUME = 0.1f;
 	const FString JUMP_EFFECT_SOUND = "JumpSFX";
 	const int MAX_MINION_COINS = 50;
+	const float COINS_EFFECT_VOLUME = 0.2f;
+	const FString COINS_EFFECT_SOUND = "CoinsSFX";
+	const FString LOOSE_COINS_EFFECT_SOUND = "LooseCoinsSFX";
 	const int MAX_MINION_CROWNS = 5;
 	const int MINIMUM_BET_REQUIREMENT = 5;
 };

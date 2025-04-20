@@ -194,6 +194,66 @@ DEFINE_FUNCTION(AAudioManager::execPlaySong)
 }
 // End Class AAudioManager Function PlaySong
 
+// Begin Class AAudioManager Function StopSFX
+struct Z_Construct_UFunction_AAudioManager_StopSFX_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_StopSFX_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "StopSFX", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_StopSFX_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_StopSFX_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AAudioManager_StopSFX()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAudioManager_StopSFX_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAudioManager::execStopSFX)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StopSFX();
+	P_NATIVE_END;
+}
+// End Class AAudioManager Function StopSFX
+
+// Begin Class AAudioManager Function StopSong
+struct Z_Construct_UFunction_AAudioManager_StopSong_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_StopSong_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "StopSong", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_StopSong_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_StopSong_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AAudioManager_StopSong()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAudioManager_StopSong_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAudioManager::execStopSong)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StopSong();
+	P_NATIVE_END;
+}
+// End Class AAudioManager Function StopSong
+
 // Begin Class AAudioManager
 void AAudioManager::StaticRegisterNativesAAudioManager()
 {
@@ -202,6 +262,8 @@ void AAudioManager::StaticRegisterNativesAAudioManager()
 		{ "GetAudioTrack", &AAudioManager::execGetAudioTrack },
 		{ "PlaySFX", &AAudioManager::execPlaySFX },
 		{ "PlaySong", &AAudioManager::execPlaySong },
+		{ "StopSFX", &AAudioManager::execStopSFX },
+		{ "StopSong", &AAudioManager::execStopSong },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -243,6 +305,8 @@ struct Z_Construct_UClass_AAudioManager_Statics
 		{ &Z_Construct_UFunction_AAudioManager_GetAudioTrack, "GetAudioTrack" }, // 1392250555
 		{ &Z_Construct_UFunction_AAudioManager_PlaySFX, "PlaySFX" }, // 2292026030
 		{ &Z_Construct_UFunction_AAudioManager_PlaySong, "PlaySong" }, // 1383138438
+		{ &Z_Construct_UFunction_AAudioManager_StopSFX, "StopSFX" }, // 2526160140
+		{ &Z_Construct_UFunction_AAudioManager_StopSong, "StopSong" }, // 2117561834
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -303,10 +367,10 @@ AAudioManager::~AAudioManager() {}
 struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 3356116525U) },
+		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 874750314U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_3179426379(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_1413184438(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

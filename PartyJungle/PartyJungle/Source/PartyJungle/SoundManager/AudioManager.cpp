@@ -41,6 +41,17 @@ void AAudioManager::PlaySFX(const FString& Sound, float Volume, bool RandomPitch
     }
 }
 
+void AAudioManager::StopSFX()
+{
+    SFXPlayer->Stop();
+}
+
+void AAudioManager::StopSong() 
+{
+    MusicPlayer->Stop();
+}
+
+
 USoundBase* AAudioManager::GetAudioTrack(const FString& TrackName)
 {
     return Tracks.Contains(TrackName) ? Tracks[TrackName] : nullptr;

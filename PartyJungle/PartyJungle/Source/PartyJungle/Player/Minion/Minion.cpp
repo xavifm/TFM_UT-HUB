@@ -87,6 +87,9 @@ int AMinion::UpdateCoins(int _quantity)
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
 
+	if (AudioManager)
+		_quantity > 0 ? AudioManager->PlaySFX(COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME) : AudioManager->PlaySFX(LOOSE_COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME);
+
 	ShowMinionCoinsFeedback(_quantity);
 
 	return Coins - previousCoins;
