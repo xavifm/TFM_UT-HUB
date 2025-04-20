@@ -254,9 +254,13 @@ void AMapMenuCamera::CloseChallengeMenu()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
+    int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+    CurrentMinion->SetMinionsMovements(currentMinionMovements);
+
     SwitchChallengeUI(false);
 
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
+    if(currentMinionMovements <= 0)
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
 }
 
 void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
