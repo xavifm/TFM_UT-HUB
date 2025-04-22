@@ -81,14 +81,14 @@ FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int
 	return Offset;
 }
 
-int AMinion::UpdateCoins(int _quantity)
+int AMinion::UpdateCoins(int _quantity, bool _audio)
 {
 	int previousCoins = Coins;
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
 
-	if (AudioManager)
-		_quantity > 0 ? AudioManager->PlaySFX(COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME) : AudioManager->PlaySFX(LOOSE_COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME);
+	if (_audio && AudioManager)
+		_quantity > 0 ? AudioManager->PlaySFX(COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME) : AudioManager->PlaySFX(LOOSE_COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME * 3);
 
 	ShowMinionCoinsFeedback(_quantity);
 

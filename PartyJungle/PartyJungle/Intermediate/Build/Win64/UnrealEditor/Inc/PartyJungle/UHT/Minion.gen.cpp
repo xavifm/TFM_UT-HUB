@@ -524,23 +524,33 @@ struct Z_Construct_UFunction_AMinion_UpdateCoins_Statics
 	struct Minion_eventUpdateCoins_Parms
 	{
 		int32 _quantity;
+		bool _audio;
 		int32 ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Minion Actions" },
+		{ "CPP_Default__audio", "true" },
 		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static void NewProp__audio_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__audio;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventUpdateCoins_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__audio_SetBit(void* Obj)
+{
+	((Minion_eventUpdateCoins_Parms*)Obj)->_audio = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__audio = { "_audio", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Minion_eventUpdateCoins_Parms), &Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__audio_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventUpdateCoins_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_UpdateCoins_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__quantity,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp__audio,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_UpdateCoins_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_UpdateCoins_Statics::PropPointers) < 2048);
@@ -558,9 +568,10 @@ UFunction* Z_Construct_UFunction_AMinion_UpdateCoins()
 DEFINE_FUNCTION(AMinion::execUpdateCoins)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__quantity);
+	P_GET_UBOOL(Z_Param__audio);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(int32*)Z_Param__Result=P_THIS->UpdateCoins(Z_Param__quantity);
+	*(int32*)Z_Param__Result=P_THIS->UpdateCoins(Z_Param__quantity,Z_Param__audio);
 	P_NATIVE_END;
 }
 // End Class AMinion Function UpdateCoins
@@ -694,7 +705,7 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback, "ShowMinionCoinsFeedback" }, // 3394016713
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback, "ShowMinionCrownsFeedback" }, // 269617942
 		{ &Z_Construct_UFunction_AMinion_SwitchCrownVisibility, "SwitchCrownVisibility" }, // 520029745
-		{ &Z_Construct_UFunction_AMinion_UpdateCoins, "UpdateCoins" }, // 1695578554
+		{ &Z_Construct_UFunction_AMinion_UpdateCoins, "UpdateCoins" }, // 786947757
 		{ &Z_Construct_UFunction_AMinion_UpdateCrowns, "UpdateCrowns" }, // 2814760434
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -761,18 +772,18 @@ AMinion::~AMinion() {}
 // End Class AMinion
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 3883865828U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 461503614U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2636814537(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1579102505(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

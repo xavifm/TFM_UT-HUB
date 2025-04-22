@@ -305,8 +305,11 @@ void AMapMenuCamera::FinishDuel(int _winner)
     auto* Winner = (_winner == 0) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
     auto* Loser = (_winner == 0) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
 
-    Winner->UpdateCoins(winnerCoins);
-    Loser->UpdateCoins(loserCoins);
+    bool WinnerPlaySound = (Winner == ChallengeInformation->Attacker) ? true : false;
+    bool LoserPlaySound = (Loser == ChallengeInformation->Attacker) ? true : false;
+
+    Winner->UpdateCoins(winnerCoins, WinnerPlaySound);
+    Loser->UpdateCoins(loserCoins, LoserPlaySound);
 
     Winner->UpdateCrowns(winnerCrowns);
     Loser->UpdateCrowns(loserCrowns);
@@ -506,7 +509,7 @@ void AMapMenuCamera::BuyCrowns(int _quantity)
     if (!CurrentMinion || CurrentMinion->GetCoins() < (CROWN_PRICE * _quantity))
         return;
 
-    CurrentMinion->UpdateCoins(-CROWN_PRICE);
+    CurrentMinion->UpdateCoins(-CROWN_PRICE, false);
     CurrentMinion->UpdateCrowns(_quantity);
     WorldSceneManager->DisableAllStars();
 
