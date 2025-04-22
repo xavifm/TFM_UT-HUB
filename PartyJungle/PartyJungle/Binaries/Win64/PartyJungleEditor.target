@@ -3600,6 +3600,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/ue5-toon-shader-plugin-master/ToonShader.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
 			"Type": "NonUFS"
 		},
@@ -26779,6 +26783,7 @@
 		"TemplateSequence",
 		"TextureFormatOodle",
 		"ToolPresets",
+		"ToonShader",
 		"TraceDataFilters",
 		"TraceUtilities",
 		"UObjectPlugin",
