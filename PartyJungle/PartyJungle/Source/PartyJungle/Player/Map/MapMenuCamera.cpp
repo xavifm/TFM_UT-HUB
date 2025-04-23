@@ -320,6 +320,8 @@ void AMapMenuCamera::FinishDuel(int _winner)
     MapUI->UpdateCoins(static_cast<int>(Loser->Team), loserCoins);
     MapUI->UpdateCrowns(static_cast<int>(Loser->Team), loserCrowns);
 
+    ChallengeInformation->SaveDuelToRegistry(_winner, winnerCoins, winnerCrowns);
+
     SwitchChallengeUI(false);
 
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);

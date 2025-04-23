@@ -11,6 +11,24 @@ TMap<int, UScoreDto*> AScoreDatabase::GetScoreList() const
 	return Scores;
 }
 
+void AScoreDatabase::AddTransactionToRegistry(int Team, int Coins, int Crowns)
+{
+	UTransactionDto* registry = NewObject<UTransactionDto>();
+
+	if (!registry)
+		return;
+
+	registry->Team = Team;
+	registry->Coins = Coins;
+	registry->Crowns = Crowns;
+
+	TransactionsRegistry.Add(registry);
+}
+
+void AScoreDatabase::SendTransactionsAndScoresToInstance()
+{
+}
+
 UScoreDto* AScoreDatabase::GetScore(int PlayerID) const
 {
 	UScoreDto* defaultScore = nullptr;

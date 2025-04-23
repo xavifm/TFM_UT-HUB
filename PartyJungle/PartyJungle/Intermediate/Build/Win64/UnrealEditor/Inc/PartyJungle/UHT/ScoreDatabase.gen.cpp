@@ -14,8 +14,62 @@ ENGINE_API UClass* Z_Construct_UClass_AActor();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UScoreDto_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UTransactionDto_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
+
+// Begin Class AScoreDatabase Function AddTransactionToRegistry
+struct Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics
+{
+	struct ScoreDatabase_eventAddTransactionToRegistry_Parms
+	{
+		int32 _team;
+		int32 _coins;
+		int32 _crowns;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Registry" },
+		{ "ModuleRelativePath", "Player/Scores/ScoreDatabase.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__coins;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__crowns;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoreDatabase_eventAddTransactionToRegistry_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__coins = { "_coins", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoreDatabase_eventAddTransactionToRegistry_Parms, _coins), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__crowns = { "_crowns", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoreDatabase_eventAddTransactionToRegistry_Parms, _crowns), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__coins,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::NewProp__crowns,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AScoreDatabase, nullptr, "AddTransactionToRegistry", nullptr, nullptr, Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::PropPointers), sizeof(Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::ScoreDatabase_eventAddTransactionToRegistry_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::ScoreDatabase_eventAddTransactionToRegistry_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AScoreDatabase::execAddTransactionToRegistry)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__team);
+	P_GET_PROPERTY(FIntProperty,Z_Param__coins);
+	P_GET_PROPERTY(FIntProperty,Z_Param__crowns);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->AddTransactionToRegistry(Z_Param__team,Z_Param__coins,Z_Param__crowns);
+	P_NATIVE_END;
+}
+// End Class AScoreDatabase Function AddTransactionToRegistry
 
 // Begin Class AScoreDatabase Function GetScore
 struct Z_Construct_UFunction_AScoreDatabase_GetScore_Statics
@@ -111,6 +165,36 @@ DEFINE_FUNCTION(AScoreDatabase::execGetScoreList)
 	P_NATIVE_END;
 }
 // End Class AScoreDatabase Function GetScoreList
+
+// Begin Class AScoreDatabase Function SendTransactionsAndScoresToInstance
+struct Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Registry" },
+		{ "ModuleRelativePath", "Player/Scores/ScoreDatabase.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AScoreDatabase, nullptr, "SendTransactionsAndScoresToInstance", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance_Statics::Function_MetaDataParams), Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AScoreDatabase::execSendTransactionsAndScoresToInstance)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SendTransactionsAndScoresToInstance();
+	P_NATIVE_END;
+}
+// End Class AScoreDatabase Function SendTransactionsAndScoresToInstance
 
 // Begin Class AScoreDatabase Function UpdateCrowns
 struct Z_Construct_UFunction_AScoreDatabase_UpdateCrowns_Statics
@@ -243,8 +327,10 @@ void AScoreDatabase::StaticRegisterNativesAScoreDatabase()
 {
 	UClass* Class = AScoreDatabase::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "AddTransactionToRegistry", &AScoreDatabase::execAddTransactionToRegistry },
 		{ "GetScore", &AScoreDatabase::execGetScore },
 		{ "GetScoreList", &AScoreDatabase::execGetScoreList },
+		{ "SendTransactionsAndScoresToInstance", &AScoreDatabase::execSendTransactionsAndScoresToInstance },
 		{ "UpdateCrowns", &AScoreDatabase::execUpdateCrowns },
 		{ "UpdateGlobalPositions", &AScoreDatabase::execUpdateGlobalPositions },
 		{ "UpdateTotalCoins", &AScoreDatabase::execUpdateTotalCoins },
@@ -263,18 +349,26 @@ struct Z_Construct_UClass_AScoreDatabase_Statics
 		{ "IncludePath", "Player/Scores/ScoreDatabase.h" },
 		{ "ModuleRelativePath", "Player/Scores/ScoreDatabase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TransactionsRegistry_MetaData[] = {
+		{ "Category", "Registry" },
+		{ "ModuleRelativePath", "Player/Scores/ScoreDatabase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Scores_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Scores/ScoreDatabase.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TransactionsRegistry_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_TransactionsRegistry;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scores_ValueProp;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Scores_Key_KeyProp;
 	static const UECodeGen_Private::FMapPropertyParams NewProp_Scores;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AScoreDatabase_AddTransactionToRegistry, "AddTransactionToRegistry" }, // 2170190105
 		{ &Z_Construct_UFunction_AScoreDatabase_GetScore, "GetScore" }, // 3601885371
 		{ &Z_Construct_UFunction_AScoreDatabase_GetScoreList, "GetScoreList" }, // 3515459381
+		{ &Z_Construct_UFunction_AScoreDatabase_SendTransactionsAndScoresToInstance, "SendTransactionsAndScoresToInstance" }, // 720576968
 		{ &Z_Construct_UFunction_AScoreDatabase_UpdateCrowns, "UpdateCrowns" }, // 1180231647
 		{ &Z_Construct_UFunction_AScoreDatabase_UpdateGlobalPositions, "UpdateGlobalPositions" }, // 1910635123
 		{ &Z_Construct_UFunction_AScoreDatabase_UpdateTotalCoins, "UpdateTotalCoins" }, // 404980849
@@ -285,10 +379,14 @@ struct Z_Construct_UClass_AScoreDatabase_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AScoreDatabase_Statics::NewProp_TransactionsRegistry_Inner = { "TransactionsRegistry", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UTransactionDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AScoreDatabase_Statics::NewProp_TransactionsRegistry = { "TransactionsRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AScoreDatabase, TransactionsRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransactionsRegistry_MetaData), NewProp_TransactionsRegistry_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores_ValueProp = { "Scores", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UScoreDto_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores_Key_KeyProp = { "Scores_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores = { "Scores", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AScoreDatabase, Scores), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scores_MetaData), NewProp_Scores_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AScoreDatabase_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoreDatabase_Statics::NewProp_TransactionsRegistry_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoreDatabase_Statics::NewProp_TransactionsRegistry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores_Key_KeyProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoreDatabase_Statics::NewProp_Scores,
@@ -334,10 +432,10 @@ AScoreDatabase::~AScoreDatabase() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AScoreDatabase, AScoreDatabase::StaticClass, TEXT("AScoreDatabase"), &Z_Registration_Info_UClass_AScoreDatabase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoreDatabase), 3358825488U) },
+		{ Z_Construct_UClass_AScoreDatabase, AScoreDatabase::StaticClass, TEXT("AScoreDatabase"), &Z_Registration_Info_UClass_AScoreDatabase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoreDatabase), 3265299534U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_3811545788(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_557127925(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

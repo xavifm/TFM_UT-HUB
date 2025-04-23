@@ -49,6 +49,18 @@
     <Filter Include="Source\PartyJungle\Challenge">
       <UniqueIdentifier>{6C8EE5CF-93A6-3E9A-9CF8-CAAD1048982F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeDatabase.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeDatabase.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeDto.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeDto.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeInformation.cpp">
       <Filter>Source\PartyJungle\Challenge</Filter>
     </ClCompile>
@@ -172,6 +184,12 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\ScoreDto.h">
       <Filter>Source\PartyJungle\Player\Scores</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\TransactionDto.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\TransactionDto.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Player\UI">
       <UniqueIdentifier>{01B54EC1-76B7-386C-A03C-0A78D03089D3}</UniqueIdentifier>
     </Filter>
@@ -217,5 +235,23 @@
     <ClInclude Include="..\..\Source\PartyJungle\World\WorldManager.h">
       <Filter>Source\PartyJungle\World</Filter>
     </ClInclude>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\ue5-toon-shader-plugin-master">
+      <UniqueIdentifier>{FBD89515-01D3-36F3-BFC9-F4B9060C7DBA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\ToonShader.uplugin">
+      <Filter>Plugins\ue5-toon-shader-plugin-master</Filter>
+    </None>
+    <Filter Include="Plugins\ue5-toon-shader-plugin-master\Resources">
+      <UniqueIdentifier>{4FBC9D7A-3474-3FF5-93CA-E858C8A9AC7C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\Resources\Icon128.png">
+      <Filter>Plugins\ue5-toon-shader-plugin-master\Resources</Filter>
+    </None>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\Resources\Icon512.png">
+      <Filter>Plugins\ue5-toon-shader-plugin-master\Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -13,6 +13,18 @@ void AChallengeInformation::SetUpDuelInfo(AMinion* _attacker, AMinion* _victim)
     DuelType = EDuelType::HALF_COINS;
 }
 
+void AChallengeInformation::SaveDuelToRegistry(int _winner, int _coins, int _crowns)
+{
+    if (ChallengeRegistry) 
+    {
+        int attackerTeam = static_cast<int>(Attacker->Team);
+        int victimTeam = static_cast<int>(Victim->Team);
+        int duel = static_cast<int>(DuelType);
+
+        ChallengeRegistry->RegisterDuel(attackerTeam, victimTeam, _winner, duel, _coins, _crowns);
+    }
+}
+
 EDuelType AChallengeInformation::GetDuelType()
 {
     return DuelType;

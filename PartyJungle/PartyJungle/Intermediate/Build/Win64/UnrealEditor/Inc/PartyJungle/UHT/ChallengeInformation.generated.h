@@ -16,15 +16,16 @@ enum class EDuelType : uint8;
 #endif
 #define PARTYJUNGLE_ChallengeInformation_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetBetCrownsQuantity); \
 	DECLARE_FUNCTION(execGetBetCoinsQuantity); \
 	DECLARE_FUNCTION(execSwitchDuelType); \
 	DECLARE_FUNCTION(execGetDuelType); \
+	DECLARE_FUNCTION(execSaveDuelToRegistry); \
 	DECLARE_FUNCTION(execSetUpDuelInfo);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAChallengeInformation(); \
 	friend struct Z_Construct_UClass_AChallengeInformation_Statics; \
@@ -33,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AChallengeInformation)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AChallengeInformation(AChallengeInformation&&); \
@@ -45,13 +46,13 @@ public: \
 	NO_API virtual ~AChallengeInformation();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_16_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_19_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
