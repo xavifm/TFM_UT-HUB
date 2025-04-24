@@ -606,6 +606,9 @@ void AMapMenuCamera::FinishFadeTransition()
     //temporal
     RestoreTurnLogic();
 
+    if (RoundsSystem && RoundsSystem->GameFinished)
+        return;
+
     if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
     {
         if (PC->PlayerCameraManager)

@@ -36,6 +36,9 @@ public:
 
 	const int MIN_ROUNDS_ANNOUNCED = 3;
 
+	UPROPERTY(EditAnywhere, Category = "Rounds")
+	bool GameFinished;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -48,4 +51,13 @@ private:
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;
+
+	UPROPERTY(EditAnywhere, Category = "ScoresDB")
+	AScoreDatabase* ScoresDB;
+
+	UPROPERTY(EditAnywhere, Category = "ChallengeDB")
+	AChallengeDatabase* ChallengeDB;
+
+	FTimerHandle TimerHandle;
+	const FString END_GAME_SCENE_NAME = "EndGameScene";
 };

@@ -1,4 +1,5 @@
 #include "./ChallengeDatabase.h"
+#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 void AChallengeDatabase::RegisterDuel(int32 Attacker, int32 Victim, int32 Winner, int32 BetStyle, int32 Coins, int32 Crowns)
 {
@@ -19,5 +20,10 @@ void AChallengeDatabase::RegisterDuel(int32 Attacker, int32 Victim, int32 Winner
 
 void AChallengeDatabase::SendRegistryToInstance()
 {
+    UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
 
+    if (GameInstance)
+    {
+        GameInstance->ChallengesRegistry = ChallengesRegistry;
+    }
 }

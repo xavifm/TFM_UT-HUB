@@ -1,4 +1,5 @@
 #include "./ScoreDatabase.h"
+#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 AScoreDatabase::AScoreDatabase()
 {
@@ -27,6 +28,13 @@ void AScoreDatabase::AddTransactionToRegistry(int Team, int Coins, int Crowns)
 
 void AScoreDatabase::SendTransactionsAndScoresToInstance()
 {
+	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+
+	if (GameInstance)
+	{
+		GameInstance->Scores = Scores;
+		GameInstance->TransactionsRegistry = TransactionsRegistry;
+	}
 }
 
 UScoreDto* AScoreDatabase::GetScore(int PlayerID) const

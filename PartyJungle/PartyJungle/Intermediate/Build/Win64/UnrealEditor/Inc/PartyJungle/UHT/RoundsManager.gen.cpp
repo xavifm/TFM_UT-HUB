@@ -11,8 +11,10 @@ void EmptyLinkFunctionForGeneratedCodeRoundsManager() {}
 
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ARoundsManager();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ARoundsManager_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UPlayerMapUI_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
@@ -305,6 +307,10 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 		{ "IncludePath", "Rounds/RoundsManager.h" },
 		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GameFinished_MetaData[] = {
+		{ "Category", "Rounds" },
+		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentRound_MetaData[] = {
 		{ "Category", "Rounds" },
 		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
@@ -317,10 +323,22 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ScoresDB_MetaData[] = {
+		{ "Category", "ScoresDB" },
+		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChallengeDB_MetaData[] = {
+		{ "Category", "ChallengeDB" },
+		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
+	};
 #endif // WITH_METADATA
+	static void NewProp_GameFinished_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_GameFinished;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentRound;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxRounds;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapUI;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ScoresDB;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengeDB;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -338,13 +356,23 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+void Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished_SetBit(void* Obj)
+{
+	((ARoundsManager*)Obj)->GameFinished = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished = { "GameFinished", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ARoundsManager), &Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameFinished_MetaData), NewProp_GameFinished_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_CurrentRound = { "CurrentRound", nullptr, (EPropertyFlags)0x0040000000020001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, CurrentRound), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentRound_MetaData), NewProp_CurrentRound_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_MaxRounds = { "MaxRounds", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, MaxRounds), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxRounds_MetaData), NewProp_MaxRounds_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_MapUI = { "MapUI", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, MapUI), Z_Construct_UClass_UPlayerMapUI_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapUI_MetaData), NewProp_MapUI_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_ScoresDB = { "ScoresDB", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, ScoresDB), Z_Construct_UClass_AScoreDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoresDB_MetaData), NewProp_ScoresDB_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_ChallengeDB = { "ChallengeDB", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, ChallengeDB), Z_Construct_UClass_AChallengeDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeDB_MetaData), NewProp_ChallengeDB_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARoundsManager_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_CurrentRound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_MaxRounds,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_MapUI,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_ScoresDB,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_ChallengeDB,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ARoundsManager_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ARoundsManager_Statics::DependentSingletons[])() = {
@@ -387,10 +415,10 @@ ARoundsManager::~ARoundsManager() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARoundsManager, ARoundsManager::StaticClass, TEXT("ARoundsManager"), &Z_Registration_Info_UClass_ARoundsManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoundsManager), 4231302317U) },
+		{ Z_Construct_UClass_ARoundsManager, ARoundsManager::StaticClass, TEXT("ARoundsManager"), &Z_Registration_Info_UClass_ARoundsManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoundsManager), 1972353304U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_592932475(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_875239726(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
