@@ -53,6 +53,9 @@ void ARoundsManager::StartNextRound()
 			FeedbackText = FString::Printf(TEXT("Last Round!"));
 
 		MapUI->ShowTextInScreen(FeedbackText, -1);
+
+		if (AudioManager)
+			AudioManager->PlaySFX(LAST_ROUNDS_SFX, LAST_ROUNDS_SFX_VOLUME);
 	}
 }
 

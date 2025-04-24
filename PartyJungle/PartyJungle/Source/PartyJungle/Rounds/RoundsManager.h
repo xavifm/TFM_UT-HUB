@@ -39,6 +39,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Rounds")
 	bool GameFinished;
 
+	UPROPERTY(EditAnywhere, Category = "Rounds Audio")
+	AAudioManager* AudioManager;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -60,4 +63,8 @@ private:
 
 	FTimerHandle TimerHandle;
 	const FString END_GAME_SCENE_NAME = "EndGameScene";
+
+	const FString LAST_ROUNDS_SFX = "LastRoundsSFX";
+
+	const float LAST_ROUNDS_SFX_VOLUME = 0.5f;
 };
