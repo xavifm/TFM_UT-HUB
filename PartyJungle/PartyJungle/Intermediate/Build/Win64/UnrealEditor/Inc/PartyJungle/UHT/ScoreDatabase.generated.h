@@ -9,7 +9,6 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
- class UScoreDto;
 class UScoreDto;
 #ifdef PARTYJUNGLE_ScoreDatabase_generated_h
 #error "ScoreDatabase.generated.h already included, missing '#pragma once' in ScoreDatabase.h"
@@ -23,7 +22,7 @@ class UScoreDto;
 	DECLARE_FUNCTION(execGetScore); \
 	DECLARE_FUNCTION(execSendTransactionsAndScoresToInstance); \
 	DECLARE_FUNCTION(execAddTransactionToRegistry); \
-	DECLARE_FUNCTION(execGetScoreList);
+	DECLARE_FUNCTION(execGetScoresArray);
 
 
 #define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_INCLASS_NO_PURE_DECLS \

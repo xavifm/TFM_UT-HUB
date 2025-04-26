@@ -19,6 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execCompensationCrown); \
 	DECLARE_FUNCTION(execGetWorstDuelingTeam); \
 	DECLARE_FUNCTION(execGetBestDuelingTeam); \
+	DECLARE_FUNCTION(execAddCrownToTeam); \
 	DECLARE_FUNCTION(execInitializeInfo);
 
 

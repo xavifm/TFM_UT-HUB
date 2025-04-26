@@ -23,22 +23,118 @@ void AScoresCalculator::InitializeInfo()
 	}
 }
 
+void AScoresCalculator::AddCrownToTeam(int _team) 
+{
+    if (!Scores[_team])
+        return;
+
+    Scores[_team]->StoredCrowns += 1;
+}
+
 int AScoresCalculator::GetBestDuelingTeam()
 {
-	return 0;
+    if (ChallengesRegistry.Num() <= 0)
+        return -1;
+
+    TMap<int, int> TeamWins;
+
+    for (UChallengeDto* Challenge : ChallengesRegistry)
+    {
+        if (Challenge && Challenge->WinnerTeam != 0)
+        {
+            TeamWins.FindOrAdd(Challenge->WinnerTeam)++;
+        }
+    }
+
+    int BestTeam = -1;
+    int MaxWins = -1;
+    for (auto& Elem : TeamWins)
+    {
+        if (Elem.Value > MaxWins)
+        {
+            MaxWins = Elem.Value;
+            BestTeam = Elem.Key;
+        }
+    }
+
+    AddCrownToTeam(BestTeam);
+
+    return BestTeam;
 }
 
 int AScoresCalculator::GetWorstDuelingTeam()
 {
-	return 0;
+    if (ChallengesRegistry.Num() <= 0)
+        return -1;
+
+    TMap<int, int> TeamLosses;
+
+    for (UChallengeDto* Challenge : ChallengesRegistry)
+    {
+        if (Challenge)
+        {
+            int LoserTeam = (Challenge->WinnerTeam == Challenge->AttackerTeam) ? Challenge->VictimTeam : Challenge->AttackerTeam;
+            TeamLosses.FindOrAdd(LoserTeam)++;
+        }
+    }
+
+    int WorstTeam = -1;
+    int MaxLosses = -1;
+    for (auto& Elem : TeamLosses)
+    {
+        if (Elem.Value > MaxLosses)
+        {
+            MaxLosses = Elem.Value;
+            WorstTeam = Elem.Key;
+        }
+    }
+
+    AddCrownToTeam(WorstTeam);
+
+    return WorstTeam;
 }
 
 int AScoresCalculator::CompensationCrown()
 {
-	return 0;
+    if (ChallengesRegistry.Num() <= 0 || TransactionsRegistry.Num() <= 0 || Scores.Num() <= 0)
+        return -1;
+
+    int MinCrowns = INT32_MAX;
+    int TeamWithLeastCrowns = -1;
+
+    for (auto& Elem : Scores)
+    {
+        if (Elem->StoredCrowns < MinCrowns)
+        {
+            MinCrowns = Elem->StoredCrowns;
+            TeamWithLeastCrowns = Elem->Team;
+        }
+    }
+
+    AddCrownToTeam(TeamWithLeastCrowns);
+
+    return TeamWithLeastCrowns;
 }
 
 int AScoresCalculator::GetWinnerTeam()
 {
-	return 0;
+    if (Scores.Num() <= 0)
+        return -1;
+
+    int WinnerTeam = -1;
+    int MaxCrowns = -1;
+    int MaxCoins = -1;
+
+    for (auto& Elem : Scores)
+    {
+        if (Elem->StoredCrowns > MaxCrowns ||
+            (Elem->StoredCrowns == MaxCrowns && Elem->TotalCoins > MaxCoins))
+        {
+            MaxCrowns = Elem->StoredCrowns;
+            MaxCoins = Elem->TotalCoins;
+            WinnerTeam = Elem->Team;
+        }
+    }
+
+    return WinnerTeam;
 }

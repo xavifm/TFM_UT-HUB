@@ -20,7 +20,7 @@ protected:
 
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    TMap<int32, UScoreDto*> Scores;
+    TArray<UScoreDto*> Scores;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<UTransactionDto*> TransactionsRegistry;
@@ -30,6 +30,9 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void InitializeInfo();
+
+    UFUNCTION(BlueprintCallable)
+    void AddCrownToTeam(int _team);
 
     UFUNCTION(BlueprintCallable)
     int GetBestDuelingTeam();

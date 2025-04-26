@@ -15,7 +15,7 @@ public:
 	AScoreDatabase();
 
     UFUNCTION(BlueprintCallable, Category = "Score")
-    TMap<int, UScoreDto*> GetScoreList() const;
+    TArray<UScoreDto*> GetScoresArray() const;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
     TArray<UTransactionDto*> TransactionsRegistry;
@@ -45,7 +45,7 @@ protected:
 
 private:
     UPROPERTY()
-    TMap<int, UScoreDto*> Scores;
+    TArray<UScoreDto*> Scores;
 
     const int MAX_TEAMS_NUMBER = 4;
     const float MAX_PLAYER_COINS = 999999;

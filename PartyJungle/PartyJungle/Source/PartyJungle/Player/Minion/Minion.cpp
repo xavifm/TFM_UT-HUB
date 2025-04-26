@@ -101,7 +101,8 @@ void AMinion::UpdateCrowns(int _quantity)
 	Crowns += _quantity;
 	Crowns = FMath::Clamp(Crowns, 0, MAX_MINION_CROWNS);
 
-	ShowMinionCrownsFeedback(_quantity);
+	//temporary commented
+	//ShowMinionCrownsFeedback(_quantity);
 
 	bool enableCrown = (Crowns > 0);
 	SwitchCrownVisibility(enableCrown);
