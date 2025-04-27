@@ -623,8 +623,11 @@ void AMapMenuCamera::UpdateMinionEconomy(int _coins)
     if (_coins == 0)
         return;
 
+    int currentCoins = CurrentMinion->GetCoins();
     int updatedCoins = CurrentMinion->UpdateCoins(_coins);
-    MapUI->UpdateCoins(CurrentMinionTeam, updatedCoins);
+
+    if(currentCoins != updatedCoins)
+        MapUI->UpdateCoins(CurrentMinionTeam, updatedCoins);
 }
 
 void AMapMenuCamera::StartPlayerTurn()

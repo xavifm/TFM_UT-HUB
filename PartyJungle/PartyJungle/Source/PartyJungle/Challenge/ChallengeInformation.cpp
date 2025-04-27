@@ -32,9 +32,6 @@ EDuelType AChallengeInformation::GetDuelType()
 
 EDuelType AChallengeInformation::SwitchDuelType(int _direction)
 {
-    if (_direction == 0)
-        return DuelType;
-
     int DuelTypeInt = static_cast<int>(DuelType);
     int EnumMin = static_cast<int>(EDuelType::HALF_COINS);
     int EnumMax = static_cast<int>(EDuelType::ALL_IN_VS_ST);
@@ -53,6 +50,9 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction)
 
     int minCoins = 0;
 
+    if (victimCrowns > 0)
+        duelType = EDuelType::ALL_IN_VS_ST;
+
     switch (duelType)
     {
         case EDuelType::HALF_COINS:      minCoins = MIN_HALF_BET;  break;
@@ -65,6 +65,7 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction)
         return DuelType;
 
     DuelType = duelType;
+
     return DuelType;
 }
 

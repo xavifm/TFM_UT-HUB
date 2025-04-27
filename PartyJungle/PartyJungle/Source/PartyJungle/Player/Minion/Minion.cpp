@@ -83,6 +83,9 @@ FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int
 
 int AMinion::UpdateCoins(int _quantity, bool _audio)
 {
+	if(_quantity > 0 && Coins >= MAX_MINION_COINS)
+		return Coins;
+
 	int previousCoins = Coins;
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);

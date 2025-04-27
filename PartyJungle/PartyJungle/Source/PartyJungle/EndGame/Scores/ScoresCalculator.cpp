@@ -25,10 +25,17 @@ void AScoresCalculator::InitializeInfo()
 
 void AScoresCalculator::AddCrownToTeam(int _team) 
 {
-    if (_team == -1 || !Scores[_team])
+    if (_team == -1 || Scores.Num() <= 0)
         return;
 
-    Scores[_team]->StoredCrowns += 1;
+    for (auto& Elem : Scores)
+    {
+        if (Elem && Elem->Team == _team) 
+        {
+            Elem->StoredCrowns++;
+            break;
+        }
+    }
 }
 
 int AScoresCalculator::GetBestDuelingTeam()
@@ -40,10 +47,8 @@ int AScoresCalculator::GetBestDuelingTeam()
 
     for (UChallengeDto* Challenge : ChallengesRegistry)
     {
-        if (Challenge && Challenge->WinnerTeam != 0)
-        {
+        if (Challenge)
             TeamWins.FindOrAdd(Challenge->WinnerTeam)++;
-        }
     }
 
     int BestTeam = -1;
