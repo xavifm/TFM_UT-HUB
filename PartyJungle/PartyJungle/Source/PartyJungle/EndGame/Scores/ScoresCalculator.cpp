@@ -25,7 +25,7 @@ void AScoresCalculator::InitializeInfo()
 
 void AScoresCalculator::AddCrownToTeam(int _team) 
 {
-    if (!Scores[_team])
+    if (_team == -1 || !Scores[_team])
         return;
 
     Scores[_team]->StoredCrowns += 1;
@@ -93,6 +93,29 @@ int AScoresCalculator::GetWorstDuelingTeam()
 
     return WorstTeam;
 }
+
+int AScoresCalculator::GetTeamWithHigherCoins()
+{
+    if (Scores.Num() <= 0)
+        return -1;
+
+    int BestTeam = -1;
+    int MaxCoins = -1;
+
+    for (auto& Elem : Scores)
+    {
+        if (Elem && Elem->TotalCoins > MaxCoins)
+        {
+            MaxCoins = Elem->TotalCoins;
+            BestTeam = Elem->Team;
+        }
+    }
+
+    AddCrownToTeam(BestTeam);
+
+    return BestTeam;
+}
+
 
 int AScoresCalculator::CompensationCrown()
 {

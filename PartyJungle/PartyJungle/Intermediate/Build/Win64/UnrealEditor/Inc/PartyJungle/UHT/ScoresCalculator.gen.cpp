@@ -143,6 +143,47 @@ DEFINE_FUNCTION(AScoresCalculator::execGetBestDuelingTeam)
 }
 // End Class AScoresCalculator Function GetBestDuelingTeam
 
+// Begin Class AScoresCalculator Function GetTeamWithHigherCoins
+struct Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics
+{
+	struct ScoresCalculator_eventGetTeamWithHigherCoins_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EndGame/Scores/ScoresCalculator.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoresCalculator_eventGetTeamWithHigherCoins_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AScoresCalculator, nullptr, "GetTeamWithHigherCoins", nullptr, nullptr, Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::ScoresCalculator_eventGetTeamWithHigherCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::ScoresCalculator_eventGetTeamWithHigherCoins_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AScoresCalculator::execGetTeamWithHigherCoins)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetTeamWithHigherCoins();
+	P_NATIVE_END;
+}
+// End Class AScoresCalculator Function GetTeamWithHigherCoins
+
 // Begin Class AScoresCalculator Function GetWinnerTeam
 struct Z_Construct_UFunction_AScoresCalculator_GetWinnerTeam_Statics
 {
@@ -262,6 +303,7 @@ void AScoresCalculator::StaticRegisterNativesAScoresCalculator()
 		{ "AddCrownToTeam", &AScoresCalculator::execAddCrownToTeam },
 		{ "CompensationCrown", &AScoresCalculator::execCompensationCrown },
 		{ "GetBestDuelingTeam", &AScoresCalculator::execGetBestDuelingTeam },
+		{ "GetTeamWithHigherCoins", &AScoresCalculator::execGetTeamWithHigherCoins },
 		{ "GetWinnerTeam", &AScoresCalculator::execGetWinnerTeam },
 		{ "GetWorstDuelingTeam", &AScoresCalculator::execGetWorstDuelingTeam },
 		{ "InitializeInfo", &AScoresCalculator::execInitializeInfo },
@@ -305,6 +347,7 @@ struct Z_Construct_UClass_AScoresCalculator_Statics
 		{ &Z_Construct_UFunction_AScoresCalculator_AddCrownToTeam, "AddCrownToTeam" }, // 4267701548
 		{ &Z_Construct_UFunction_AScoresCalculator_CompensationCrown, "CompensationCrown" }, // 2676698787
 		{ &Z_Construct_UFunction_AScoresCalculator_GetBestDuelingTeam, "GetBestDuelingTeam" }, // 2885734977
+		{ &Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins, "GetTeamWithHigherCoins" }, // 2999692219
 		{ &Z_Construct_UFunction_AScoresCalculator_GetWinnerTeam, "GetWinnerTeam" }, // 2207523300
 		{ &Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam, "GetWorstDuelingTeam" }, // 975867790
 		{ &Z_Construct_UFunction_AScoresCalculator_InitializeInfo, "InitializeInfo" }, // 2978383654
@@ -370,10 +413,10 @@ AScoresCalculator::~AScoresCalculator() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AScoresCalculator, AScoresCalculator::StaticClass, TEXT("AScoresCalculator"), &Z_Registration_Info_UClass_AScoresCalculator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoresCalculator), 848108438U) },
+		{ Z_Construct_UClass_AScoresCalculator, AScoresCalculator::StaticClass, TEXT("AScoresCalculator"), &Z_Registration_Info_UClass_AScoresCalculator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoresCalculator), 1700273411U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_1339583003(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_2473356701(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

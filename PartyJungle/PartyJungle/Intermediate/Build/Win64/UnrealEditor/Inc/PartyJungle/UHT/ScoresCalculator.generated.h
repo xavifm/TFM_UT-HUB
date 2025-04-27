@@ -17,6 +17,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetWinnerTeam); \
 	DECLARE_FUNCTION(execCompensationCrown); \
+	DECLARE_FUNCTION(execGetTeamWithHigherCoins); \
 	DECLARE_FUNCTION(execGetWorstDuelingTeam); \
 	DECLARE_FUNCTION(execGetBestDuelingTeam); \
 	DECLARE_FUNCTION(execAddCrownToTeam); \

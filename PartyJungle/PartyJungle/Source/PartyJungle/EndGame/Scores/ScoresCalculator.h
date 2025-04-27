@@ -41,6 +41,9 @@ public:
     int GetWorstDuelingTeam();
 
     UFUNCTION(BlueprintCallable)
+    int GetTeamWithHigherCoins();
+
+    UFUNCTION(BlueprintCallable)
     int CompensationCrown();
 
     UFUNCTION(BlueprintCallable)
