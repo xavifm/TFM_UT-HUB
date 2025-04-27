@@ -148,10 +148,11 @@ public:
 private:
 	const int MAX_MINION_NUMBER = 3;
 	const int MAX_TEAM_NUMBER = 2;
+	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
 	const float TIME_BEFORE_FINISH_DUEL = 2;
-	const float CROWN_MAX_OFFSET = 233.969262f;
+	const float CROWN_MAX_OFFSET = 253.969262f;
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
 
@@ -159,7 +160,19 @@ private:
 	void UpdateDicePosition(bool _resizeDice = true);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void RestoreTurnLogicWithAnimation();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StartFadeTransition(float _time);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void FinishFadeTransition();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateMinionEconomy(int _coins = 0);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StartPlayerTurn();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RestoreTurnLogic();
@@ -168,6 +181,7 @@ private:
 	bool RollingDice = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
+	bool StartTurnUI = false;
 	bool BuyCrownsUI = false;
 	bool StoreCrownsUI = false;
 	bool TimedActionExecuted = false;

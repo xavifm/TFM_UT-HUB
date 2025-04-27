@@ -9,22 +9,23 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
- class UScoreDto;
 class UScoreDto;
 #ifdef PARTYJUNGLE_ScoreDatabase_generated_h
 #error "ScoreDatabase.generated.h already included, missing '#pragma once' in ScoreDatabase.h"
 #endif
 #define PARTYJUNGLE_ScoreDatabase_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execUpdateCrowns); \
 	DECLARE_FUNCTION(execUpdateTotalCoins); \
 	DECLARE_FUNCTION(execUpdateGlobalPositions); \
 	DECLARE_FUNCTION(execGetScore); \
-	DECLARE_FUNCTION(execGetScoreList);
+	DECLARE_FUNCTION(execSendTransactionsAndScoresToInstance); \
+	DECLARE_FUNCTION(execAddTransactionToRegistry); \
+	DECLARE_FUNCTION(execGetScoresArray);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAScoreDatabase(); \
 	friend struct Z_Construct_UClass_AScoreDatabase_Statics; \
@@ -33,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AScoreDatabase)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AScoreDatabase(AScoreDatabase&&); \
@@ -45,13 +46,13 @@ public: \
 	NO_API virtual ~AScoreDatabase();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_8_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_9_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_11_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Scores_ScoreDatabase_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

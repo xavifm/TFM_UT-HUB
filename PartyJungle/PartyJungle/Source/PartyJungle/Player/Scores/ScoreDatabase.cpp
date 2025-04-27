@@ -1,4 +1,5 @@
 #include "./ScoreDatabase.h"
+#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 
 AScoreDatabase::AScoreDatabase()
 {
@@ -6,19 +7,45 @@ AScoreDatabase::AScoreDatabase()
 
 }
 
-TMap<int, UScoreDto*> AScoreDatabase::GetScoreList() const
+TArray<UScoreDto*> AScoreDatabase::GetScoresArray() const
 {
 	return Scores;
 }
 
+void AScoreDatabase::AddTransactionToRegistry(int Team, int Coins, int Crowns)
+{
+	UTransactionDto* registry = NewObject<UTransactionDto>();
+
+	if (!registry)
+		return;
+
+	registry->Team = Team;
+	registry->Coins = Coins;
+	registry->Crowns = Crowns;
+
+	TransactionsRegistry.Add(registry);
+}
+
+void AScoreDatabase::SendTransactionsAndScoresToInstance()
+{
+	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+
+	if (GameInstance)
+	{
+		GameInstance->Scores = Scores;
+		GameInstance->TransactionsRegistry = TransactionsRegistry;
+	}
+}
+
 UScoreDto* AScoreDatabase::GetScore(int PlayerID) const
 {
-	UScoreDto* defaultScore = nullptr;
+	for (UScoreDto* Score : Scores)
+	{
+		if (Score && Score->Team == PlayerID)
+			return Score;
+	}
 
-	if (Scores.Contains(PlayerID))
-		return Scores[PlayerID];
-
-	return defaultScore;
+	return nullptr;
 }
 
 void AScoreDatabase::UpdateGlobalPositions()
@@ -46,14 +73,19 @@ void AScoreDatabase::BeginPlay()
 
 void AScoreDatabase::InitializeScores()
 {
+	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+
+	if (!GameInstance)
+		return;
+
 	for (int team = 0; team < MAX_TEAMS_NUMBER; team++)
 	{
-		UScoreDto* newScore = NewObject<UScoreDto>(this);
+		UScoreDto* newScore = NewObject<UScoreDto>(GameInstance);
 
 		if (newScore)
 		{
 			newScore->Team = team;
-			Scores.Add(team, newScore);
+			Scores.Add(newScore);
 		}
 	}
 }

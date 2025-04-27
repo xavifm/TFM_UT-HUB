@@ -23,6 +23,9 @@ public:
 	void StartNextRound();
 
 	UFUNCTION()
+	int GetRoundsLeft();
+
+	UFUNCTION()
 	void FinishGame();
 
 	UFUNCTION()
@@ -30,6 +33,14 @@ public:
 
 	UFUNCTION()
 	void AssignMapUI(UPlayerMapUI* _mapUI);
+
+	const int MIN_ROUNDS_ANNOUNCED = 3;
+
+	UPROPERTY(EditAnywhere, Category = "Rounds")
+	bool GameFinished;
+
+	UPROPERTY(EditAnywhere, Category = "Rounds Audio")
+	AAudioManager* AudioManager;
 
 protected:
 	virtual void BeginPlay() override;
@@ -43,4 +54,17 @@ private:
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;
+
+	UPROPERTY(EditAnywhere, Category = "ScoresDB")
+	AScoreDatabase* ScoresDB;
+
+	UPROPERTY(EditAnywhere, Category = "ChallengeDB")
+	AChallengeDatabase* ChallengeDB;
+
+	FTimerHandle TimerHandle;
+	const FString END_GAME_SCENE_NAME = "EndGameScene";
+
+	const FString LAST_ROUNDS_SFX = "LastRoundsSFX";
+
+	const float LAST_ROUNDS_SFX_VOLUME = 0.5f;
 };

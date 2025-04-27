@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "./ScoreDto.h"
+#include "TransactionDto.h"
 #include "ScoreDatabase.generated.h"
 
 UCLASS()
@@ -14,7 +15,16 @@ public:
 	AScoreDatabase();
 
     UFUNCTION(BlueprintCallable, Category = "Score")
-    TMap<int, UScoreDto*> GetScoreList() const;
+    TArray<UScoreDto*> GetScoresArray() const;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
+    TArray<UTransactionDto*> TransactionsRegistry;
+
+    UFUNCTION(BlueprintCallable, Category = "Registry")
+    void AddTransactionToRegistry(int _team, int _coins, int _crowns);
+
+    UFUNCTION(BlueprintCallable, Category = "Registry")
+    void SendTransactionsAndScoresToInstance();
 
     UFUNCTION(BlueprintCallable, Category = "Score")
     UScoreDto* GetScore(int PlayerID) const;
@@ -35,7 +45,7 @@ protected:
 
 private:
     UPROPERTY()
-    TMap<int, UScoreDto*> Scores;
+    TArray<UScoreDto*> Scores;
 
     const int MAX_TEAMS_NUMBER = 4;
     const float MAX_PLAYER_COINS = 999999;

@@ -13,8 +13,11 @@ void EmptyLinkFunctionForGeneratedCodeMinigameDataGameInstance() {}
 ENGINE_API UClass* Z_Construct_UClass_UGameInstance();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UChallengeDto_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDataGameInstance();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDataGameInstance_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UScoreDto_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UTransactionDto_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
@@ -32,6 +35,24 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 		{ "IncludePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Scores_Inner_MetaData[] = {
+		{ "Category", "Scores" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Scores_MetaData[] = {
+		{ "Category", "Scores" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_TransactionsRegistry_MetaData[] = {
+		{ "Category", "MinigameDataGameInstance" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChallengesRegistry_MetaData[] = {
+		{ "Category", "MinigameDataGameInstance" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Teams_MetaData[] = {
@@ -87,6 +108,12 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scores_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_Scores;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_TransactionsRegistry_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_TransactionsRegistry;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengesRegistry_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_ChallengesRegistry;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Teams_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_Teams;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayingMinions_ValueProp;
@@ -112,6 +139,12 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Scores_Inner = { "Scores", nullptr, (EPropertyFlags)0x0002000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UScoreDto_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scores_Inner_MetaData), NewProp_Scores_Inner_MetaData) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Scores = { "Scores", nullptr, (EPropertyFlags)0x001000800000000d, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, Scores), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Scores_MetaData), NewProp_Scores_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_TransactionsRegistry_Inner = { "TransactionsRegistry", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UTransactionDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_TransactionsRegistry = { "TransactionsRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, TransactionsRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransactionsRegistry_MetaData), NewProp_TransactionsRegistry_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_ChallengesRegistry_Inner = { "ChallengesRegistry", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UChallengeDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_ChallengesRegistry = { "ChallengesRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, ChallengesRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengesRegistry_MetaData), NewProp_ChallengesRegistry_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Teams_Inner = { "Teams", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Teams = { "Teams", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, Teams), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Teams_MetaData), NewProp_Teams_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_PlayingMinions_ValueProp = { "PlayingMinions", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
@@ -137,6 +170,12 @@ void Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Draw_SetBit(v
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Draw = { "Draw", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UMinigameDataGameInstance), &Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Draw_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Draw_MetaData), NewProp_Draw_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_ChallengeWinner = { "ChallengeWinner", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UMinigameDataGameInstance, ChallengeWinner), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeWinner_MetaData), NewProp_ChallengeWinner_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMinigameDataGameInstance_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Scores_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Scores,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_TransactionsRegistry_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_TransactionsRegistry,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_ChallengesRegistry_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_ChallengesRegistry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Teams_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_Teams,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMinigameDataGameInstance_Statics::NewProp_PlayingMinions_ValueProp,
@@ -196,10 +235,10 @@ UMinigameDataGameInstance::~UMinigameDataGameInstance() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 1835211480U) },
+		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 1546231476U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_1567196458(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_889553946(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

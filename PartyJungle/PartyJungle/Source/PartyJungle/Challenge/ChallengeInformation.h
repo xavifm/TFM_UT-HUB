@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "../Player/Minion/Minion.h"
+#include "ChallengeDatabase.h"
 #include "ChallengeInformation.generated.h"
 
 UENUM(BlueprintType)
@@ -22,8 +23,8 @@ public:
 	AChallengeInformation();
 
 public:
-	//UPROPERTY()
-	//class UChallengeDatabase* ChallengeRegistry;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
+	class AChallengeDatabase* ChallengeRegistry;
 
 	UPROPERTY()
 	class AMinion* Attacker;
@@ -34,6 +35,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void SetUpDuelInfo(AMinion* _attacker, AMinion* _victim);
+
+	UFUNCTION(BlueprintCallable)
+	void SaveDuelToRegistry(int _winner, int _coins, int _crowns);
 
 	UFUNCTION(BlueprintCallable)
 	EDuelType GetDuelType();

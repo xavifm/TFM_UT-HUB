@@ -54,6 +54,10 @@ void AMinion::MoveToSquare(ASquare* TargetSquare)
 	TargetPosition.Z += VERTICAL_OFFSET_DISTANCE;
 
 	CurrentLerpTime = 0.0f;
+
+	if (AudioManager)
+		AudioManager->PlaySFX(JUMP_EFFECT_SOUND, JUMP_EFFECT_VOLUME, true);
+
 	isMoving = true;
 }
 
@@ -77,11 +81,17 @@ FVector AMinion::CalculateSeparationOffset(TArray<AMinion*> MinionsInSquare, int
 	return Offset;
 }
 
-int AMinion::UpdateCoins(int _quantity)
+int AMinion::UpdateCoins(int _quantity, bool _audio)
 {
+	if(_quantity > 0 && Coins >= MAX_MINION_COINS)
+		return Coins;
+
 	int previousCoins = Coins;
 	Coins += _quantity;
 	Coins = FMath::Clamp(Coins, 0, MAX_MINION_COINS);
+
+	if (_audio && AudioManager)
+		_quantity > 0 ? AudioManager->PlaySFX(COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME) : AudioManager->PlaySFX(LOOSE_COINS_EFFECT_SOUND, COINS_EFFECT_VOLUME * 3);
 
 	ShowMinionCoinsFeedback(_quantity);
 
@@ -94,7 +104,8 @@ void AMinion::UpdateCrowns(int _quantity)
 	Crowns += _quantity;
 	Crowns = FMath::Clamp(Crowns, 0, MAX_MINION_CROWNS);
 
-	ShowMinionCrownsFeedback(_quantity);
+	//temporary commented
+	//ShowMinionCrownsFeedback(_quantity);
 
 	bool enableCrown = (Crowns > 0);
 	SwitchCrownVisibility(enableCrown);

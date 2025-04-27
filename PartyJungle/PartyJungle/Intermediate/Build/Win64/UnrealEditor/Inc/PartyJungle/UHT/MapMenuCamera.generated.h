@@ -20,7 +20,11 @@ struct FInputActionValue;
 
 #define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
+	DECLARE_FUNCTION(execStartPlayerTurn); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
+	DECLARE_FUNCTION(execFinishFadeTransition); \
+	DECLARE_FUNCTION(execStartFadeTransition); \
+	DECLARE_FUNCTION(execRestoreTurnLogicWithAnimation); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
 	DECLARE_FUNCTION(execBuyCrowns); \
 	DECLARE_FUNCTION(execStoreCrowns); \

@@ -19,6 +19,7 @@ class UPlayerMapUI;
 	DECLARE_FUNCTION(execAssignMapUI); \
 	DECLARE_FUNCTION(execStartEndRoundMinigame); \
 	DECLARE_FUNCTION(execFinishGame); \
+	DECLARE_FUNCTION(execGetRoundsLeft); \
 	DECLARE_FUNCTION(execStartNextRound); \
 	DECLARE_FUNCTION(execHandleEndRound); \
 	DECLARE_FUNCTION(execGetCurrentRound);
