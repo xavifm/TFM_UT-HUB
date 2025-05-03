@@ -1,25 +1,33 @@
 #include "./EndGameUI.h"
 
-TArray<UScoreDto*> UEndGameUI::GetPlayerScores()
+void UEndGameUI::InitializeRegistry()
 {
-    if (!ScoresCalculator)
-        return TArray<UScoreDto*>();
-
-    return ScoresCalculator->Scores;
+    StartScoreList();
+    StartTransactionRegistry();
+    StartChallengeList();
 }
 
-TArray<UTransactionDto*> UEndGameUI::GetTransactionRegistry()
+void UEndGameUI::StartScoreList()
 {
     if (!ScoresCalculator)
-        return TArray<UTransactionDto*>();
-
-    return ScoresCalculator->TransactionsRegistry;
+        return;
 }
 
-TArray<UChallengeDto*> UEndGameUI::GetChallengesRegistry()
+void UEndGameUI::StartTransactionRegistry()
 {
     if (!ScoresCalculator)
-        return ScoresCalculator->ChallengesRegistry;
+        return;
+}
 
-    return TArray<UChallengeDto*>();
+void UEndGameUI::StartChallengeList()
+{
+    if (!ScoresCalculator)
+        return;
+
+    TArray<UChallengeDto*> Challenges = ScoresCalculator->ChallengesRegistry;
+
+    for (UChallengeDto* Challenge : Challenges)
+    {
+        AddChallengeToList(Challenge);
+    }
 }

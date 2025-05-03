@@ -18,11 +18,13 @@ class UTransactionDto;
 #define PARTYJUNGLE_EndGameUI_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execGetChallengesRegistry); \
-	DECLARE_FUNCTION(execGetTransactionRegistry); \
-	DECLARE_FUNCTION(execGetPlayerScores);
+	DECLARE_FUNCTION(execStartChallengeList); \
+	DECLARE_FUNCTION(execStartTransactionRegistry); \
+	DECLARE_FUNCTION(execStartScoreList); \
+	DECLARE_FUNCTION(execInitializeRegistry);
 
 
+#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUEndGameUI(); \
@@ -51,6 +53,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_ENHANCED_CONSTRUCTORS \
 private: \

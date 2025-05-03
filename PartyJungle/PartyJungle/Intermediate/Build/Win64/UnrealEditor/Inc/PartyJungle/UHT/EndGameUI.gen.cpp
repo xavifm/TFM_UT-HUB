@@ -20,146 +20,287 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
-// Begin Class UEndGameUI Function GetChallengesRegistry
-struct Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics
+// Begin Class UEndGameUI Function AddChallengeToList
+struct EndGameUI_eventAddChallengeToList_Parms
 {
-	struct EndGameUI_eventGetChallengesRegistry_Parms
-	{
-		TArray<UChallengeDto*> ReturnValue;
-	};
+	UChallengeDto* _challenge;
+	bool _debug;
+};
+static FName NAME_UEndGameUI_AddChallengeToList = FName(TEXT("AddChallengeToList"));
+void UEndGameUI::AddChallengeToList(UChallengeDto* _challenge, bool _debug)
+{
+	EndGameUI_eventAddChallengeToList_Parms Parms;
+	Parms._challenge=_challenge;
+	Parms._debug=_debug ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_AddChallengeToList),&Parms);
+}
+struct Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics
+{
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "CPP_Default__debug", "false" },
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__challenge;
+	static void NewProp__debug_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__debug;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UChallengeDto_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventGetChallengesRegistry_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::NewProp_ReturnValue_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::NewProp_ReturnValue,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__challenge = { "_challenge", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventAddChallengeToList_Parms, _challenge), Z_Construct_UClass_UChallengeDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__debug_SetBit(void* Obj)
+{
+	((EndGameUI_eventAddChallengeToList_Parms*)Obj)->_debug = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__debug = { "_debug", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventAddChallengeToList_Parms), &Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__debug_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__challenge,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::NewProp__debug,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "GetChallengesRegistry", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::PropPointers), sizeof(Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::EndGameUI_eventGetChallengesRegistry_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::EndGameUI_eventGetChallengesRegistry_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "AddChallengeToList", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::PropPointers), sizeof(EndGameUI_eventAddChallengeToList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::Function_MetaDataParams) };
+static_assert(sizeof(EndGameUI_eventAddChallengeToList_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UEndGameUI_AddChallengeToList()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_AddChallengeToList_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(UEndGameUI::execGetChallengesRegistry)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	*(TArray<UChallengeDto*>*)Z_Param__Result=P_THIS->GetChallengesRegistry();
-	P_NATIVE_END;
-}
-// End Class UEndGameUI Function GetChallengesRegistry
+// End Class UEndGameUI Function AddChallengeToList
 
-// Begin Class UEndGameUI Function GetPlayerScores
-struct Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics
+// Begin Class UEndGameUI Function AddScoreToList
+struct EndGameUI_eventAddScoreToList_Parms
 {
-	struct EndGameUI_eventGetPlayerScores_Parms
-	{
-		TArray<UScoreDto*> ReturnValue;
-	};
+	UScoreDto* _score;
+	bool _debug;
+};
+static FName NAME_UEndGameUI_AddScoreToList = FName(TEXT("AddScoreToList"));
+void UEndGameUI::AddScoreToList(UScoreDto* _score, bool _debug)
+{
+	EndGameUI_eventAddScoreToList_Parms Parms;
+	Parms._score=_score;
+	Parms._debug=_debug ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_AddScoreToList),&Parms);
+}
+struct Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics
+{
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "CPP_Default__debug", "false" },
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__score;
+	static void NewProp__debug_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__debug;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UScoreDto_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventGetPlayerScores_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::NewProp_ReturnValue_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::NewProp_ReturnValue,
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__score = { "_score", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventAddScoreToList_Parms, _score), Z_Construct_UClass_UScoreDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug_SetBit(void* Obj)
+{
+	((EndGameUI_eventAddScoreToList_Parms*)Obj)->_debug = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug = { "_debug", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventAddScoreToList_Parms), &Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__score,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "GetPlayerScores", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::PropPointers), sizeof(Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::EndGameUI_eventGetPlayerScores_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::EndGameUI_eventGetPlayerScores_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UEndGameUI_GetPlayerScores()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "AddScoreToList", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers), sizeof(EndGameUI_eventAddScoreToList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::Function_MetaDataParams) };
+static_assert(sizeof(EndGameUI_eventAddScoreToList_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UEndGameUI_AddScoreToList()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_GetPlayerScores_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(UEndGameUI::execGetPlayerScores)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	*(TArray<UScoreDto*>*)Z_Param__Result=P_THIS->GetPlayerScores();
-	P_NATIVE_END;
-}
-// End Class UEndGameUI Function GetPlayerScores
+// End Class UEndGameUI Function AddScoreToList
 
-// Begin Class UEndGameUI Function GetTransactionRegistry
-struct Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics
+// Begin Class UEndGameUI Function AddTransactionToList
+struct EndGameUI_eventAddTransactionToList_Parms
 {
-	struct EndGameUI_eventGetTransactionRegistry_Parms
-	{
-		TArray<UTransactionDto*> ReturnValue;
+	UTransactionDto* _transaction;
+	bool _debug;
+};
+static FName NAME_UEndGameUI_AddTransactionToList = FName(TEXT("AddTransactionToList"));
+void UEndGameUI::AddTransactionToList(UTransactionDto* _transaction, bool _debug)
+{
+	EndGameUI_eventAddTransactionToList_Parms Parms;
+	Parms._transaction=_transaction;
+	Parms._debug=_debug ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_AddTransactionToList),&Parms);
+}
+struct Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "CPP_Default__debug", "false" },
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__transaction;
+	static void NewProp__debug_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__debug;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__transaction = { "_transaction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventAddTransactionToList_Parms, _transaction), Z_Construct_UClass_UTransactionDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__debug_SetBit(void* Obj)
+{
+	((EndGameUI_eventAddTransactionToList_Parms*)Obj)->_debug = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__debug = { "_debug", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventAddTransactionToList_Parms), &Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__debug_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__transaction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::NewProp__debug,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "AddTransactionToList", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::PropPointers), sizeof(EndGameUI_eventAddTransactionToList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::Function_MetaDataParams) };
+static_assert(sizeof(EndGameUI_eventAddTransactionToList_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UEndGameUI_AddTransactionToList()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_AddTransactionToList_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UEndGameUI Function AddTransactionToList
+
+// Begin Class UEndGameUI Function InitializeRegistry
+struct Z_Construct_UFunction_UEndGameUI_InitializeRegistry_Statics
+{
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UTransactionDto_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventGetTransactionRegistry_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::NewProp_ReturnValue_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::NewProp_ReturnValue,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "GetTransactionRegistry", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::PropPointers), sizeof(Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::EndGameUI_eventGetTransactionRegistry_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::EndGameUI_eventGetTransactionRegistry_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry()
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_InitializeRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "InitializeRegistry", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_InitializeRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_InitializeRegistry_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UEndGameUI_InitializeRegistry()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_InitializeRegistry_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(UEndGameUI::execGetTransactionRegistry)
+DEFINE_FUNCTION(UEndGameUI::execInitializeRegistry)
 {
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(TArray<UTransactionDto*>*)Z_Param__Result=P_THIS->GetTransactionRegistry();
+	P_THIS->InitializeRegistry();
 	P_NATIVE_END;
 }
-// End Class UEndGameUI Function GetTransactionRegistry
+// End Class UEndGameUI Function InitializeRegistry
+
+// Begin Class UEndGameUI Function StartChallengeList
+struct Z_Construct_UFunction_UEndGameUI_StartChallengeList_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_StartChallengeList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "StartChallengeList", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_StartChallengeList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_StartChallengeList_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UEndGameUI_StartChallengeList()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_StartChallengeList_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UEndGameUI::execStartChallengeList)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartChallengeList();
+	P_NATIVE_END;
+}
+// End Class UEndGameUI Function StartChallengeList
+
+// Begin Class UEndGameUI Function StartScoreList
+struct Z_Construct_UFunction_UEndGameUI_StartScoreList_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_StartScoreList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "StartScoreList", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_StartScoreList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_StartScoreList_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UEndGameUI_StartScoreList()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_StartScoreList_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UEndGameUI::execStartScoreList)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartScoreList();
+	P_NATIVE_END;
+}
+// End Class UEndGameUI Function StartScoreList
+
+// Begin Class UEndGameUI Function StartTransactionRegistry
+struct Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "StartTransactionRegistry", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UEndGameUI::execStartTransactionRegistry)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartTransactionRegistry();
+	P_NATIVE_END;
+}
+// End Class UEndGameUI Function StartTransactionRegistry
 
 // Begin Class UEndGameUI
 void UEndGameUI::StaticRegisterNativesUEndGameUI()
 {
 	UClass* Class = UEndGameUI::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
-		{ "GetChallengesRegistry", &UEndGameUI::execGetChallengesRegistry },
-		{ "GetPlayerScores", &UEndGameUI::execGetPlayerScores },
-		{ "GetTransactionRegistry", &UEndGameUI::execGetTransactionRegistry },
+		{ "InitializeRegistry", &UEndGameUI::execInitializeRegistry },
+		{ "StartChallengeList", &UEndGameUI::execStartChallengeList },
+		{ "StartScoreList", &UEndGameUI::execStartScoreList },
+		{ "StartTransactionRegistry", &UEndGameUI::execStartTransactionRegistry },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -176,6 +317,7 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ScoresCalculator_MetaData[] = {
+		{ "Category", "EndGameUI" },
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 #endif // WITH_METADATA
@@ -183,9 +325,13 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UEndGameUI_GetChallengesRegistry, "GetChallengesRegistry" }, // 2913592136
-		{ &Z_Construct_UFunction_UEndGameUI_GetPlayerScores, "GetPlayerScores" }, // 2756946855
-		{ &Z_Construct_UFunction_UEndGameUI_GetTransactionRegistry, "GetTransactionRegistry" }, // 3319097543
+		{ &Z_Construct_UFunction_UEndGameUI_AddChallengeToList, "AddChallengeToList" }, // 6522153
+		{ &Z_Construct_UFunction_UEndGameUI_AddScoreToList, "AddScoreToList" }, // 2849937285
+		{ &Z_Construct_UFunction_UEndGameUI_AddTransactionToList, "AddTransactionToList" }, // 761842817
+		{ &Z_Construct_UFunction_UEndGameUI_InitializeRegistry, "InitializeRegistry" }, // 2522627936
+		{ &Z_Construct_UFunction_UEndGameUI_StartChallengeList, "StartChallengeList" }, // 1670011517
+		{ &Z_Construct_UFunction_UEndGameUI_StartScoreList, "StartScoreList" }, // 3743202272
+		{ &Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry, "StartTransactionRegistry" }, // 249701410
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -193,7 +339,7 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UEndGameUI_Statics::NewProp_ScoresCalculator = { "ScoresCalculator", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEndGameUI, ScoresCalculator), Z_Construct_UClass_AScoresCalculator_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoresCalculator_MetaData), NewProp_ScoresCalculator_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UEndGameUI_Statics::NewProp_ScoresCalculator = { "ScoresCalculator", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UEndGameUI, ScoresCalculator), Z_Construct_UClass_AScoresCalculator_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoresCalculator_MetaData), NewProp_ScoresCalculator_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UEndGameUI_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UEndGameUI_Statics::NewProp_ScoresCalculator,
 };
@@ -239,10 +385,10 @@ UEndGameUI::~UEndGameUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 393097877U) },
+		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2245318684U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_1735205614(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_2289425651(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

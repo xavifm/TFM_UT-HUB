@@ -13,16 +13,31 @@ class PARTYJUNGLE_API UEndGameUI : public UUserWidget
 {
 	GENERATED_BODY()
 
-	UPROPERTY()
+public:
+	UPROPERTY(BlueprintReadWrite)
 	AScoresCalculator* ScoresCalculator;
 
-	UFUNCTION()
-	TArray<UScoreDto*> GetPlayerScores();
+	UFUNCTION(BlueprintCallable)
+	void InitializeRegistry();
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AddScoreToList(UScoreDto* _score, bool _debug = false);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AddChallengeToList(UChallengeDto* _challenge, bool _debug = false);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void AddTransactionToList(UTransactionDto* _transaction, bool _debug = false);
+
+
+private:
 
 	UFUNCTION()
-	TArray<UTransactionDto*> GetTransactionRegistry();
+	void StartScoreList();
 
 	UFUNCTION()
-	TArray<UChallengeDto*> GetChallengesRegistry();
-	
+	void StartTransactionRegistry();
+
+	UFUNCTION()
+	void StartChallengeList();
 };

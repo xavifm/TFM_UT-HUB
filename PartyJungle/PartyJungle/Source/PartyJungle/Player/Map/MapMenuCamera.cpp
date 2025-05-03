@@ -314,13 +314,16 @@ void AMapMenuCamera::FinishDuel(int _winner)
     Winner->UpdateCrowns(winnerCrowns);
     Loser->UpdateCrowns(loserCrowns);
 
-    MapUI->UpdateCoins(static_cast<int>(Winner->Team), winnerCoins);
-    MapUI->UpdateCrowns(static_cast<int>(Winner->Team), winnerCrowns);
+    int WinnerTeam = static_cast<int>(Winner->Team);
+    int LoserTeam = static_cast<int>(Loser->Team);
 
-    MapUI->UpdateCoins(static_cast<int>(Loser->Team), loserCoins);
-    MapUI->UpdateCrowns(static_cast<int>(Loser->Team), loserCrowns);
+    MapUI->UpdateCoins(WinnerTeam, winnerCoins);
+    MapUI->UpdateCrowns(WinnerTeam, winnerCrowns);
 
-    ChallengeInformation->SaveDuelToRegistry(_winner, winnerCoins, winnerCrowns);
+    MapUI->UpdateCoins(LoserTeam, loserCoins);
+    MapUI->UpdateCrowns(LoserTeam, loserCrowns);
+
+    ChallengeInformation->SaveDuelToRegistry(WinnerTeam, winnerCoins, winnerCrowns);
 
     SwitchChallengeUI(false);
 
