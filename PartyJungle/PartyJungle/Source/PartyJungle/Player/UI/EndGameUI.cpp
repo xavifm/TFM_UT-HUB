@@ -11,6 +11,13 @@ void UEndGameUI::StartScoreList()
 {
     if (!ScoresCalculator)
         return;
+
+    TArray<UScoreDto*> Scores = ScoresCalculator->Scores;
+
+    for (UScoreDto* Score : Scores)
+    {
+        AddScoreToList(Score);
+    }
 }
 
 void UEndGameUI::StartTransactionRegistry()
