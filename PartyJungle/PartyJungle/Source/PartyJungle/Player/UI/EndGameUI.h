@@ -36,8 +36,5 @@ private:
 	void StartScoreList();
 
 	UFUNCTION()
-	void StartTransactionRegistry();
-
-	UFUNCTION()
 	void StartChallengeList();
 };

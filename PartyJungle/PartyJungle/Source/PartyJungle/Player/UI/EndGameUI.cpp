@@ -20,12 +20,6 @@ void UEndGameUI::StartScoreList()
     }
 }
 
-void UEndGameUI::StartTransactionRegistry()
-{
-    if (!ScoresCalculator)
-        return;
-}
-
 void UEndGameUI::StartChallengeList()
 {
     if (!ScoresCalculator)

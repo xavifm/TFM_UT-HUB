@@ -263,35 +263,6 @@ DEFINE_FUNCTION(UEndGameUI::execStartScoreList)
 }
 // End Class UEndGameUI Function StartScoreList
 
-// Begin Class UEndGameUI Function StartTransactionRegistry
-struct Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "StartTransactionRegistry", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::Function_MetaDataParams) };
-UFunction* Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(UEndGameUI::execStartTransactionRegistry)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->StartTransactionRegistry();
-	P_NATIVE_END;
-}
-// End Class UEndGameUI Function StartTransactionRegistry
-
 // Begin Class UEndGameUI
 void UEndGameUI::StaticRegisterNativesUEndGameUI()
 {
@@ -300,7 +271,6 @@ void UEndGameUI::StaticRegisterNativesUEndGameUI()
 		{ "InitializeRegistry", &UEndGameUI::execInitializeRegistry },
 		{ "StartChallengeList", &UEndGameUI::execStartChallengeList },
 		{ "StartScoreList", &UEndGameUI::execStartScoreList },
-		{ "StartTransactionRegistry", &UEndGameUI::execStartTransactionRegistry },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -331,7 +301,6 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 		{ &Z_Construct_UFunction_UEndGameUI_InitializeRegistry, "InitializeRegistry" }, // 2522627936
 		{ &Z_Construct_UFunction_UEndGameUI_StartChallengeList, "StartChallengeList" }, // 1670011517
 		{ &Z_Construct_UFunction_UEndGameUI_StartScoreList, "StartScoreList" }, // 3743202272
-		{ &Z_Construct_UFunction_UEndGameUI_StartTransactionRegistry, "StartTransactionRegistry" }, // 249701410
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -385,10 +354,10 @@ UEndGameUI::~UEndGameUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2245318684U) },
+		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2296411427U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_2289425651(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_1017388034(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -19,7 +19,6 @@ class UTransactionDto;
 
 #define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execStartChallengeList); \
-	DECLARE_FUNCTION(execStartTransactionRegistry); \
 	DECLARE_FUNCTION(execStartScoreList); \
 	DECLARE_FUNCTION(execInitializeRegistry);
 
