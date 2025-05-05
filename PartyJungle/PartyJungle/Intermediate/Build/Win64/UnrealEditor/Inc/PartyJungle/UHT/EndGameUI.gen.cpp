@@ -76,39 +76,38 @@ UFunction* Z_Construct_UFunction_UEndGameUI_AddChallengeToList()
 struct EndGameUI_eventAddScoreToList_Parms
 {
 	UScoreDto* _score;
-	bool _debug;
+	bool _winner;
 };
 static FName NAME_UEndGameUI_AddScoreToList = FName(TEXT("AddScoreToList"));
-void UEndGameUI::AddScoreToList(UScoreDto* _score, bool _debug)
+void UEndGameUI::AddScoreToList(UScoreDto* _score, bool _winner)
 {
 	EndGameUI_eventAddScoreToList_Parms Parms;
 	Parms._score=_score;
-	Parms._debug=_debug ? true : false;
+	Parms._winner=_winner ? true : false;
 	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_AddScoreToList),&Parms);
 }
 struct Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "CPP_Default__debug", "false" },
 		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp__score;
-	static void NewProp__debug_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp__debug;
+	static void NewProp__winner_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__winner;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__score = { "_score", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventAddScoreToList_Parms, _score), Z_Construct_UClass_UScoreDto_NoRegister, METADATA_PARAMS(0, nullptr) };
-void Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug_SetBit(void* Obj)
+void Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__winner_SetBit(void* Obj)
 {
-	((EndGameUI_eventAddScoreToList_Parms*)Obj)->_debug = 1;
+	((EndGameUI_eventAddScoreToList_Parms*)Obj)->_winner = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug = { "_debug", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventAddScoreToList_Parms), &Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__winner = { "_winner", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventAddScoreToList_Parms), &Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__winner_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__score,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__debug,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::NewProp__winner,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "AddScoreToList", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::PropPointers), sizeof(EndGameUI_eventAddScoreToList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_AddScoreToList_Statics::Function_MetaDataParams) };
@@ -383,7 +382,7 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_UEndGameUI_AddChallengeToList, "AddChallengeToList" }, // 6522153
-		{ &Z_Construct_UFunction_UEndGameUI_AddScoreToList, "AddScoreToList" }, // 2849937285
+		{ &Z_Construct_UFunction_UEndGameUI_AddScoreToList, "AddScoreToList" }, // 1484011949
 		{ &Z_Construct_UFunction_UEndGameUI_AddTransactionToList, "AddTransactionToList" }, // 761842817
 		{ &Z_Construct_UFunction_UEndGameUI_InitializeRegistry, "InitializeRegistry" }, // 2522627936
 		{ &Z_Construct_UFunction_UEndGameUI_StartChallengeList, "StartChallengeList" }, // 1670011517
@@ -443,10 +442,10 @@ UEndGameUI::~UEndGameUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2979307402U) },
+		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 588565662U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_3826671155(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_393491970(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

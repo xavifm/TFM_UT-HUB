@@ -12,10 +12,12 @@ void UEndGameUI::StartScoreList()
         return;
 
     TArray<UScoreDto*> Scores = ScoresCalculator->Scores;
+    int winnerTeam = ScoresCalculator->GetWinnerTeam();
 
     for (UScoreDto* Score : Scores)
     {
-        AddScoreToList(Score);
+        bool winner = Score->Team == winnerTeam;
+        AddScoreToList(Score, winner);
     }
 }
 

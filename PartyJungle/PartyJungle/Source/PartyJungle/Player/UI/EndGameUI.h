@@ -27,7 +27,7 @@ public:
 	void SwitchScoreType(int _direction);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void AddScoreToList(UScoreDto* _score, bool _debug = false);
+	void AddScoreToList(UScoreDto* _score, bool _winner);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void AddChallengeToList(UChallengeDto* _challenge, bool _debug = false);
