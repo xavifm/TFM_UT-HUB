@@ -21,6 +21,12 @@ public:
 	void InitializeRegistry();
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SwitchScoreList(bool _enabled);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void SwitchScoreType(int _direction);
+
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void AddScoreToList(UScoreDto* _score, bool _debug = false);
 
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

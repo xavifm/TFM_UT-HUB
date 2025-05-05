@@ -3,7 +3,6 @@
 void UEndGameUI::InitializeRegistry()
 {
     StartScoreList();
-    StartTransactionRegistry();
     StartChallengeList();
 }
 

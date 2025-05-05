@@ -263,6 +263,93 @@ DEFINE_FUNCTION(UEndGameUI::execStartScoreList)
 }
 // End Class UEndGameUI Function StartScoreList
 
+// Begin Class UEndGameUI Function SwitchScoreList
+struct EndGameUI_eventSwitchScoreList_Parms
+{
+	bool _enabled;
+};
+static FName NAME_UEndGameUI_SwitchScoreList = FName(TEXT("SwitchScoreList"));
+void UEndGameUI::SwitchScoreList(bool _enabled)
+{
+	EndGameUI_eventSwitchScoreList_Parms Parms;
+	Parms._enabled=_enabled ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_SwitchScoreList),&Parms);
+}
+struct Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__enabled_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__enabled;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::NewProp__enabled_SetBit(void* Obj)
+{
+	((EndGameUI_eventSwitchScoreList_Parms*)Obj)->_enabled = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::NewProp__enabled = { "_enabled", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(EndGameUI_eventSwitchScoreList_Parms), &Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::NewProp__enabled_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::NewProp__enabled,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "SwitchScoreList", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::PropPointers), sizeof(EndGameUI_eventSwitchScoreList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::Function_MetaDataParams) };
+static_assert(sizeof(EndGameUI_eventSwitchScoreList_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UEndGameUI_SwitchScoreList()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_SwitchScoreList_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UEndGameUI Function SwitchScoreList
+
+// Begin Class UEndGameUI Function SwitchScoreType
+struct EndGameUI_eventSwitchScoreType_Parms
+{
+	int32 _direction;
+};
+static FName NAME_UEndGameUI_SwitchScoreType = FName(TEXT("SwitchScoreType"));
+void UEndGameUI::SwitchScoreType(int32 _direction)
+{
+	EndGameUI_eventSwitchScoreType_Parms Parms;
+	Parms._direction=_direction;
+	ProcessEvent(FindFunctionChecked(NAME_UEndGameUI_SwitchScoreType),&Parms);
+}
+struct Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/EndGameUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(EndGameUI_eventSwitchScoreType_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::NewProp__direction,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEndGameUI, nullptr, "SwitchScoreType", nullptr, nullptr, Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::PropPointers), sizeof(EndGameUI_eventSwitchScoreType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::Function_MetaDataParams), Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(EndGameUI_eventSwitchScoreType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UEndGameUI_SwitchScoreType()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEndGameUI_SwitchScoreType_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UEndGameUI Function SwitchScoreType
+
 // Begin Class UEndGameUI
 void UEndGameUI::StaticRegisterNativesUEndGameUI()
 {
@@ -301,6 +388,8 @@ struct Z_Construct_UClass_UEndGameUI_Statics
 		{ &Z_Construct_UFunction_UEndGameUI_InitializeRegistry, "InitializeRegistry" }, // 2522627936
 		{ &Z_Construct_UFunction_UEndGameUI_StartChallengeList, "StartChallengeList" }, // 1670011517
 		{ &Z_Construct_UFunction_UEndGameUI_StartScoreList, "StartScoreList" }, // 3743202272
+		{ &Z_Construct_UFunction_UEndGameUI_SwitchScoreList, "SwitchScoreList" }, // 2840389915
+		{ &Z_Construct_UFunction_UEndGameUI_SwitchScoreType, "SwitchScoreType" }, // 4087231466
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -354,10 +443,10 @@ UEndGameUI::~UEndGameUI() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2296411427U) },
+		{ Z_Construct_UClass_UEndGameUI, UEndGameUI::StaticClass, TEXT("UEndGameUI"), &Z_Registration_Info_UClass_UEndGameUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEndGameUI), 2979307402U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_1017388034(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_3826671155(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -281,6 +281,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Dice\Dice.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\EndGame\Scores\ScoresCalculator.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

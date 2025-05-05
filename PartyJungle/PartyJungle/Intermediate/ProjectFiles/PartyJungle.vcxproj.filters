@@ -79,6 +79,15 @@
     <Filter Include="Source\PartyJungle\EndGame">
       <UniqueIdentifier>{59C6EAEF-CD37-3709-9B78-46CD43738070}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\PartyJungle\EndGame\Camera">
+      <UniqueIdentifier>{5546BD4E-71DA-3F25-BA6C-2FB7AC59C30C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.cpp">
+      <Filter>Source\PartyJungle\EndGame\Camera</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.h">
+      <Filter>Source\PartyJungle\EndGame\Camera</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\EndGame\Scores">
       <UniqueIdentifier>{82C0A0C1-F649-31F2-8590-E9B27D905456}</UniqueIdentifier>
     </Filter>
