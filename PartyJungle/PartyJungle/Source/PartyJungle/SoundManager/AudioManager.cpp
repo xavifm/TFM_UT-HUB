@@ -12,6 +12,16 @@ AAudioManager::AAudioManager()
     SFXPlayer->SetupAttachment(RootComponent);
 }
 
+void AAudioManager::SetSFXVolume(float _volume)
+{
+    SFXPlayer->SetVolumeMultiplier(_volume);
+}
+
+void AAudioManager::SetSongVolume(float _volume)
+{
+    MusicPlayer->SetVolumeMultiplier(_volume);
+}
+
 void AAudioManager::PlaySong(const FString& Sound, float Volume, bool loop)
 {
     USoundBase* trackQuery = GetAudioTrack(Sound);

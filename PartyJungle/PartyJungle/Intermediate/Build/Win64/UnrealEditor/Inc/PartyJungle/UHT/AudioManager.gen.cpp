@@ -194,6 +194,92 @@ DEFINE_FUNCTION(AAudioManager::execPlaySong)
 }
 // End Class AAudioManager Function PlaySong
 
+// Begin Class AAudioManager Function SetSFXVolume
+struct Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics
+{
+	struct AudioManager_eventSetSFXVolume_Parms
+	{
+		float _volume;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__volume;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::NewProp__volume = { "_volume", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventSetSFXVolume_Parms, _volume), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::NewProp__volume,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "SetSFXVolume", nullptr, nullptr, Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::AudioManager_eventSetSFXVolume_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::AudioManager_eventSetSFXVolume_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAudioManager_SetSFXVolume()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAudioManager_SetSFXVolume_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAudioManager::execSetSFXVolume)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param__volume);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetSFXVolume(Z_Param__volume);
+	P_NATIVE_END;
+}
+// End Class AAudioManager Function SetSFXVolume
+
+// Begin Class AAudioManager Function SetSongVolume
+struct Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics
+{
+	struct AudioManager_eventSetSongVolume_Parms
+	{
+		float _volume;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "SoundManager/AudioManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__volume;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::NewProp__volume = { "_volume", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AudioManager_eventSetSongVolume_Parms, _volume), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::NewProp__volume,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAudioManager, nullptr, "SetSongVolume", nullptr, nullptr, Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::AudioManager_eventSetSongVolume_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::AudioManager_eventSetSongVolume_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAudioManager_SetSongVolume()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAudioManager_SetSongVolume_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAudioManager::execSetSongVolume)
+{
+	P_GET_PROPERTY(FFloatProperty,Z_Param__volume);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SetSongVolume(Z_Param__volume);
+	P_NATIVE_END;
+}
+// End Class AAudioManager Function SetSongVolume
+
 // Begin Class AAudioManager Function StopSFX
 struct Z_Construct_UFunction_AAudioManager_StopSFX_Statics
 {
@@ -262,6 +348,8 @@ void AAudioManager::StaticRegisterNativesAAudioManager()
 		{ "GetAudioTrack", &AAudioManager::execGetAudioTrack },
 		{ "PlaySFX", &AAudioManager::execPlaySFX },
 		{ "PlaySong", &AAudioManager::execPlaySong },
+		{ "SetSFXVolume", &AAudioManager::execSetSFXVolume },
+		{ "SetSongVolume", &AAudioManager::execSetSongVolume },
 		{ "StopSFX", &AAudioManager::execStopSFX },
 		{ "StopSong", &AAudioManager::execStopSong },
 	};
@@ -305,6 +393,8 @@ struct Z_Construct_UClass_AAudioManager_Statics
 		{ &Z_Construct_UFunction_AAudioManager_GetAudioTrack, "GetAudioTrack" }, // 1392250555
 		{ &Z_Construct_UFunction_AAudioManager_PlaySFX, "PlaySFX" }, // 2292026030
 		{ &Z_Construct_UFunction_AAudioManager_PlaySong, "PlaySong" }, // 1383138438
+		{ &Z_Construct_UFunction_AAudioManager_SetSFXVolume, "SetSFXVolume" }, // 420597930
+		{ &Z_Construct_UFunction_AAudioManager_SetSongVolume, "SetSongVolume" }, // 554889542
 		{ &Z_Construct_UFunction_AAudioManager_StopSFX, "StopSFX" }, // 2526160140
 		{ &Z_Construct_UFunction_AAudioManager_StopSong, "StopSong" }, // 2117561834
 	};
@@ -367,10 +457,10 @@ AAudioManager::~AAudioManager() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 874750314U) },
+		{ Z_Construct_UClass_AAudioManager, AAudioManager::StaticClass, TEXT("AAudioManager"), &Z_Registration_Info_UClass_AAudioManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAudioManager), 748672599U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_1413184438(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_605863715(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

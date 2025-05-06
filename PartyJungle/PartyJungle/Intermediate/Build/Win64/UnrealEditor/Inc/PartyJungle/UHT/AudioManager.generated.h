@@ -20,7 +20,9 @@ class USoundBase;
 	DECLARE_FUNCTION(execStopSong); \
 	DECLARE_FUNCTION(execStopSFX); \
 	DECLARE_FUNCTION(execPlaySFX); \
-	DECLARE_FUNCTION(execPlaySong);
+	DECLARE_FUNCTION(execPlaySong); \
+	DECLARE_FUNCTION(execSetSongVolume); \
+	DECLARE_FUNCTION(execSetSFXVolume);
 
 
 #define FID_PartyJungle_Source_PartyJungle_SoundManager_AudioManager_h_13_INCLASS_NO_PURE_DECLS \

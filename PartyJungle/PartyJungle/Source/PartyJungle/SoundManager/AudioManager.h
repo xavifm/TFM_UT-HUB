@@ -16,6 +16,12 @@ public:
 	AAudioManager();
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
+	void SetSFXVolume(float _volume);
+
+	UFUNCTION(BlueprintCallable, Category = "Audio")
+	void SetSongVolume(float _volume);
+
+	UFUNCTION(BlueprintCallable, Category = "Audio")
 	void PlaySong(const FString& Sound, float Volume = 1, bool loop = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")

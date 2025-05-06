@@ -5,27 +5,19 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/6/UT/AWTD2BEYQ0R5WPU86B8NKO.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/Wanted_M54Mat.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Minions/Minion_T1.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Feedback/Coins/CoinsFeedback.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/SpriteSheet/Minion/minion_walking_spritesheet.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/9Z/3PZ3O76W8SMQF7ZW7E4WL8.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/EndGame/Scene/Logic/EndGameLogic.uasset",
 				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/EndGameScene.umap",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/BP_EndGameUI.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/5/6D/Q6VDLNN0MTJM5IGS9ZT0O4.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/Challenges/ChallengeElement.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/Duel_Icon.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/Scores/ScoreElement.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/23/0I4RLGG0JYJKWO6BJEGKBW.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/EndGame/Scene/Camera/EndGameCamera.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/EndGame/Scene/Assets/Stand.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/EndGame/Scene/Logic/EndGameLogic.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Sounds/Songs/Calm_Music_for_16-bit_Games_Cave_Story.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Sound/Manager/AudioManager.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Sounds/SFX/Drum_roll_sound_effect.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/F/0A/DNCZ0WXB67WQ1KJFZQN5SJ.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Feedback/Crowns/CrownsFeedback.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Sounds/SFX/Glow_Sound_Effect.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Sounds/SFX/Crown_Sound_Effect.uasset",
 				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/EndGame/Scene/Camera/EndGameCam.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/4/RH/J3TJLYELVL3D5ZRWTJ3HWE.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/Transactions/TransactionElement.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/Challenges/TransactionElement.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/EndGameUI.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/Roboto_Mat.uasset"
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/BP_EndGameUI.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Sounds/SFX/Drum_roll_effect.uasset"
 			]
 		}
 	]
