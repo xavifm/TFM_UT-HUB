@@ -34,6 +34,9 @@ public:
     UPROPERTY()
     AMinigameLogic* MinigameLogic;
 
+    UPROPERTY(EditAnywhere)
+    AAudioManager* AudioManager;
+
     UPROPERTY()
     APlayerController* PlayerController;
 
@@ -89,6 +92,8 @@ private:
     const float MAX_MINIGAME_HEIGHT = 7960;
     const float FORCE_CHECK_INTERVAL = 1.0f;
     const int MAX_PUSHES_PER_INTERVAL = 10;
+    const FString SHOOT_CANNON_SFX = "ShootCannonSFX";
+    const FString CHARGE_CANNON_SFX = "ChargeCannonSFX";
 
     FTimerHandle TimerHandle;
 

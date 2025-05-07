@@ -18,6 +18,7 @@ ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AAirCannon();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AAirCannon_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AAudioManager_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameLogic_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
@@ -340,6 +341,10 @@ struct Z_Construct_UClass_AAirCannon_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameLogic_MetaData[] = {
 		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AudioManager_MetaData[] = {
+		{ "Category", "AirCannon" },
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerController_MetaData[] = {
 		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
 	};
@@ -376,6 +381,7 @@ struct Z_Construct_UClass_AAirCannon_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CannonTeam;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinionReference;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigameLogic;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioManager;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerController;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileReference;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectilePhysics;
@@ -409,6 +415,7 @@ struct Z_Construct_UClass_AAirCannon_Statics
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonTeam = { "CannonTeam", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, CannonTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CannonTeam_MetaData), NewProp_CannonTeam_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_MinionReference = { "MinionReference", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, MinionReference), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinionReference_MetaData), NewProp_MinionReference_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_MinigameLogic = { "MinigameLogic", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, MinigameLogic), Z_Construct_UClass_AMinigameLogic_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameLogic_MetaData), NewProp_MinigameLogic_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_AudioManager = { "AudioManager", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, AudioManager), Z_Construct_UClass_AAudioManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AudioManager_MetaData), NewProp_AudioManager_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_PlayerController = { "PlayerController", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, PlayerController), Z_Construct_UClass_APlayerController_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerController_MetaData), NewProp_PlayerController_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_ProjectileReference = { "ProjectileReference", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, ProjectileReference), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectileReference_MetaData), NewProp_ProjectileReference_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_ProjectilePhysics = { "ProjectilePhysics", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, ProjectilePhysics), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ProjectilePhysics_MetaData), NewProp_ProjectilePhysics_MetaData) };
@@ -431,6 +438,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAirCanno
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_MinionReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_MinigameLogic,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_AudioManager,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_PlayerController,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_ProjectileReference,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_ProjectilePhysics,
@@ -483,10 +491,10 @@ AAirCannon::~AAirCannon() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 2459544922U) },
+		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 4222360050U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_461281698(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_3573136729(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -26,7 +26,7 @@ public:
     bool MinigameStarted;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-    float StartTime = 8;
+    float StartTime = 6.5f;
 
     UFUNCTION()
     virtual void StartMinigame(int _startTime);

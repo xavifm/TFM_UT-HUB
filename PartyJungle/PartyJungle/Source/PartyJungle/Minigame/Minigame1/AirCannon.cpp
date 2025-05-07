@@ -112,8 +112,13 @@ void AAirCannon::ShootCannon()
 {
     MinigameLogic->SetTeamScore(CannonTeam, UpForce);
 
-    if(UpForce <= 5)
+    if (UpForce <= 5)
+    {
         MinigameLogic->SetTeamReady(CannonTeam);
+        //AudioManager->PlaySFX("FumbleSFX", 0.3f, true);
+    }
+    else if (AudioManager)
+        AudioManager->PlaySFX(SHOOT_CANNON_SFX, 0.3f, true);
 
     if (ProjectileReference)
     {
@@ -134,6 +139,9 @@ void AAirCannon::StartCannonCharge(float _time)
         return;
 
     CannonCharging = true;
+
+    if(AudioManager)
+        AudioManager->PlaySFX(CHARGE_CANNON_SFX, 0.5f, true);
 
     PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
     if (PlayerController) 
