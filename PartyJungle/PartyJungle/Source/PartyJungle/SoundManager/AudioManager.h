@@ -16,7 +16,7 @@ public:
 	AAudioManager();
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	void SetSFXVolume(float _volume);
+	void SetSFXVolume(float _volume, int Channel = 0);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
 	void SetSongVolume(float _volume);
@@ -25,10 +25,10 @@ public:
 	void PlaySong(const FString& Sound, float Volume = 1, bool loop = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	void PlaySFX(const FString& Sound, float Volume = 1, bool RandomPitch = false);
+	void PlaySFX(const FString& Sound, float Volume = 1, bool RandomPitch = false, int Channel = 0);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
-	void StopSFX();
+	void StopSFX(int Channel = 0);
 
 	UFUNCTION(BlueprintCallable, Category = "Audio")
 	void StopSong();
@@ -45,5 +45,7 @@ private:
 	UAudioComponent* MusicPlayer;
 
 	UPROPERTY(VisibleAnywhere, Category = "Audio")
-	UAudioComponent* SFXPlayer;
+	TArray<UAudioComponent*> SFXPlayer;
+
+	const int MAX_SFX_CHANNELS = 5;
 };

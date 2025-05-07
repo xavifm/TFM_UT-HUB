@@ -4,17 +4,26 @@ AAudioManager::AAudioManager()
 {
     PrimaryActorTick.bCanEverTick = false;
 
-    MusicPlayer = CreateDefaultSubobject<UAudioComponent>(TEXT("MusicPlayer"));
-    SFXPlayer = CreateDefaultSubobject<UAudioComponent>(TEXT("SFXPlayer"));
-
     RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+
+    MusicPlayer = CreateDefaultSubobject<UAudioComponent>(TEXT("MusicPlayer"));
     MusicPlayer->SetupAttachment(RootComponent);
-    SFXPlayer->SetupAttachment(RootComponent);
+
+    for (int i = 0; i < MAX_SFX_CHANNELS; ++i)
+    {
+        FString ComponentName = FString::Printf(TEXT("SFXPlayer_%d"), i);
+        UAudioComponent* NewSFX = CreateDefaultSubobject<UAudioComponent>(*ComponentName);
+        NewSFX->SetupAttachment(RootComponent);
+        SFXPlayer.Add(NewSFX);
+    }
 }
 
-void AAudioManager::SetSFXVolume(float _volume)
+void AAudioManager::SetSFXVolume(float _volume, int Channel)
 {
-    SFXPlayer->SetVolumeMultiplier(_volume);
+    if (!SFXPlayer.IsValidIndex(Channel))
+        return;
+
+    SFXPlayer[Channel]->SetVolumeMultiplier(_volume);
 }
 
 void AAudioManager::SetSongVolume(float _volume)
@@ -33,27 +42,34 @@ void AAudioManager::PlaySong(const FString& Sound, float Volume, bool loop)
     }
 }
 
-void AAudioManager::PlaySFX(const FString& Sound, float Volume, bool RandomPitch)
+void AAudioManager::PlaySFX(const FString& Sound, float Volume, bool RandomPitch, int Channel)
 {
     USoundBase* trackQuery = GetAudioTrack(Sound);
+
+    if (!SFXPlayer.IsValidIndex(Channel))
+        return;
+
     if (trackQuery)
     {
-        SFXPlayer->SetSound(trackQuery);
-        SFXPlayer->SetVolumeMultiplier(Volume);
+        SFXPlayer[Channel]->SetSound(trackQuery);
+        SFXPlayer[Channel]->SetVolumeMultiplier(Volume);
 
         int pitch = 1;
 
         if(RandomPitch)
             pitch = FMath::RandRange(0.75, 1.2);
 
-        SFXPlayer->SetPitchMultiplier(pitch);
-        SFXPlayer->Play();
+        SFXPlayer[Channel]->SetPitchMultiplier(pitch);
+        SFXPlayer[Channel]->Play();
     }
 }
 
-void AAudioManager::StopSFX()
+void AAudioManager::StopSFX(int Channel)
 {
-    SFXPlayer->Stop();
+    if (!SFXPlayer.IsValidIndex(Channel))
+        return;
+
+    SFXPlayer[Channel]->Stop();
 }
 
 void AAudioManager::StopSong() 
