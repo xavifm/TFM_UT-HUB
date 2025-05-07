@@ -38,9 +38,15 @@ void AAirCannon::Tick(float DeltaTime)
 
     if (!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
     {
+        if(ProjectileReference->GetActorLocation().Z >= MAX_MINIGAME_HEIGHT) 
+        {
+            FVector downVector = FVector(0, 0, -20);
+            ProjectilePhysics->SetPhysicsLinearVelocity(downVector);
+            MinigameLogic->SetTeamScore(CannonTeam, -10);
+        }
+
         if (ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
         {
-            UE_LOG(LogTemp, Warning, TEXT("Velocitat actual Z: %f"), ProjectilePhysics->GetPhysicsLinearVelocity().Z);
             CannonFinished = true;
             MinigameLogic->SetTeamReady(CannonTeam);
         }
@@ -62,7 +68,6 @@ void AAirCannon::ResetProjectilePosition()
 {
     FVector newPosition = GetActorLocation() + FVector(0, 0, BULLET_RESPAWN_OFFSET);
     ProjectileReference->SetActorLocation(newPosition);
-    FVector zeroVector = FVector(0, 0, 0);
 
     ProjectileReference->SetActorTickEnabled(false);
 

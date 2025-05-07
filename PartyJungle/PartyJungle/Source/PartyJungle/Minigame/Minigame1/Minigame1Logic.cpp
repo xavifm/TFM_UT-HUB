@@ -61,7 +61,6 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 void AMinigame1Logic::FinishMinigame(int _winner)
 {
 	Super::FinishMinigame(_winner);
-	ResetMinigameScene();
 	MinigameCamera->SetCameraTarget(nullptr);
 
 }

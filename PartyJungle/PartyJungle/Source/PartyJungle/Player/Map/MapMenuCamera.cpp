@@ -374,10 +374,6 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
             MenuWidget->AddToViewport();
 
             MapUI = (UPlayerMapUI*) MenuWidget;
-            MapUI->SwitchTurnUI(CurrentMinionTeam);
-            MapUI->SwitchChallengeVisibility(false);
-            MapUI->SwitchCrownStoreVisibility(false);
-            MapUI->SwitchCrownSavePlaceVisibility(false);
 
             if (ScoreDb)
                 MapUI->ScoresDb = ScoreDb;
@@ -388,10 +384,11 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
         
         if (MenuWidget)
         {
-            if(_enabled)
-                MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Visible : ESlateVisibility::Collapsed);
-            else if(!_enabled && MenuWidget->IsInViewport())
-                MenuWidget->SetVisibility(_enabled ? ESlateVisibility::Hidden : ESlateVisibility::Collapsed);
+            MapUI->SwitchTurnUI(CurrentMinionTeam);
+            MapUI->SwitchChallengeVisibility(false);
+            MapUI->SwitchCrownStoreVisibility(false);
+            MapUI->SwitchCrownSavePlaceVisibility(false);
+            MapUI->SwitchScoresVisibility(_enabled);
         }
     }
 }

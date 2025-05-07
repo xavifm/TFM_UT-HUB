@@ -28,11 +28,14 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
 
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void ShowTextInScreen(const FString& Text, float Time);
 
     UFUNCTION(BlueprintImplementableEvent)
     void HideInScreenText();
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchScoresVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);

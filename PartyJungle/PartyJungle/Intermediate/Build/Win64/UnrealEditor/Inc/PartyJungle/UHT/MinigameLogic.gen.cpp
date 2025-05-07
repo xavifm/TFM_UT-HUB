@@ -133,6 +133,35 @@ DEFINE_FUNCTION(AMinigameLogic::execCheckIfTheMinigameHasFinished)
 }
 // End Class AMinigameLogic Function CheckIfTheMinigameHasFinished
 
+// Begin Class AMinigameLogic Function DelayedSceneSwitch
+struct Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "DelayedSceneSwitch", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinigameLogic::execDelayedSceneSwitch)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DelayedSceneSwitch();
+	P_NATIVE_END;
+}
+// End Class AMinigameLogic Function DelayedSceneSwitch
+
 // Begin Class AMinigameLogic Function FinishMinigame
 struct Z_Construct_UFunction_AMinigameLogic_FinishMinigame_Statics
 {
@@ -294,6 +323,47 @@ DEFINE_FUNCTION(AMinigameLogic::execSetTeamScore)
 }
 // End Class AMinigameLogic Function SetTeamScore
 
+// Begin Class AMinigameLogic Function ShowEndScreenSequence
+struct MinigameLogic_eventShowEndScreenSequence_Parms
+{
+	int32 _winner;
+};
+static FName NAME_AMinigameLogic_ShowEndScreenSequence = FName(TEXT("ShowEndScreenSequence"));
+void AMinigameLogic::ShowEndScreenSequence(int32 _winner)
+{
+	MinigameLogic_eventShowEndScreenSequence_Parms Parms;
+	Parms._winner=_winner;
+	ProcessEvent(FindFunctionChecked(NAME_AMinigameLogic_ShowEndScreenSequence),&Parms);
+}
+struct Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__winner;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::NewProp__winner = { "_winner", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MinigameLogic_eventShowEndScreenSequence_Parms, _winner), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::NewProp__winner,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "ShowEndScreenSequence", nullptr, nullptr, Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::PropPointers), sizeof(MinigameLogic_eventShowEndScreenSequence_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::Function_MetaDataParams) };
+static_assert(sizeof(MinigameLogic_eventShowEndScreenSequence_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinigameLogic Function ShowEndScreenSequence
+
 // Begin Class AMinigameLogic Function ShowWinnerScene
 struct Z_Construct_UFunction_AMinigameLogic_ShowWinnerScene_Statics
 {
@@ -391,6 +461,7 @@ void AMinigameLogic::StaticRegisterNativesAMinigameLogic()
 		{ "BeginMinigame", &AMinigameLogic::execBeginMinigame },
 		{ "CalculateWinner", &AMinigameLogic::execCalculateWinner },
 		{ "CheckIfTheMinigameHasFinished", &AMinigameLogic::execCheckIfTheMinigameHasFinished },
+		{ "DelayedSceneSwitch", &AMinigameLogic::execDelayedSceneSwitch },
 		{ "FinishMinigame", &AMinigameLogic::execFinishMinigame },
 		{ "ResetMinigameScene", &AMinigameLogic::execResetMinigameScene },
 		{ "SetTeamReady", &AMinigameLogic::execSetTeamReady },
@@ -445,10 +516,12 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ &Z_Construct_UFunction_AMinigameLogic_BeginMinigame, "BeginMinigame" }, // 1516632387
 		{ &Z_Construct_UFunction_AMinigameLogic_CalculateWinner, "CalculateWinner" }, // 2388139539
 		{ &Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished, "CheckIfTheMinigameHasFinished" }, // 2027633980
+		{ &Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch, "DelayedSceneSwitch" }, // 3013641833
 		{ &Z_Construct_UFunction_AMinigameLogic_FinishMinigame, "FinishMinigame" }, // 900183795
 		{ &Z_Construct_UFunction_AMinigameLogic_ResetMinigameScene, "ResetMinigameScene" }, // 792237633
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamReady, "SetTeamReady" }, // 3883338738
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamScore, "SetTeamScore" }, // 1557479705
+		{ &Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence, "ShowEndScreenSequence" }, // 3057030748
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowWinnerScene, "ShowWinnerScene" }, // 3930965678
 		{ &Z_Construct_UFunction_AMinigameLogic_StartMinigame, "StartMinigame" }, // 2472552975
 	};
@@ -523,10 +596,10 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 1109540041U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 3873605296U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_3203378557(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_3784845873(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

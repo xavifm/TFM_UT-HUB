@@ -80,7 +80,9 @@ int AMinigameLogic::CalculateWinner()
 
 void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, int _winner)
 {
-
+	Winner = _winner;
+	ShowEndScreenSequence(_winner);
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMinigameLogic::DelayedSceneSwitch, _endMinigameTime, false);
 }
 
 void AMinigameLogic::FinishMinigame(int _winner)
@@ -89,21 +91,31 @@ void AMinigameLogic::FinishMinigame(int _winner)
 		return;
 
 	MinigameFinished = true;
+	ShowWinnerScene(SWITCH_SCENE_TIMER, _winner);
+}
+
+void AMinigameLogic::DelayedSceneSwitch()
+{
+	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+	ResetMinigameScene();
 
 	AMapMenuCamera* mapMenuCamera = GameInstance->MapMenuCamera;
 
-	mapMenuCamera->SwitchMainScene();
-
-	if(GameInstance->Challenge) 
+	if (mapMenuCamera)
 	{
-		int attackerTeam = static_cast<int>(GameInstance->Attacker->Team);
-		int victimTeam = static_cast<int>(GameInstance->Victim->Team);
+		mapMenuCamera->SwitchMainScene();
 
-		int winnerTeam = (_winner == attackerTeam) ? 0 : 1;
+		if (GameInstance->Challenge)
+		{
+			int attackerTeam = static_cast<int>(GameInstance->Attacker->Team);
+			int victimTeam = static_cast<int>(GameInstance->Victim->Team);
+			int winnerTeam = (Winner == attackerTeam) ? 0 : 1;
 
-		mapMenuCamera->FinishDuel(winnerTeam);
+			mapMenuCamera->FinishDuel(winnerTeam);
+		}
 	}
 }
+
 
 void AMinigameLogic::SetTeamScore(int _team, int _score)
 {

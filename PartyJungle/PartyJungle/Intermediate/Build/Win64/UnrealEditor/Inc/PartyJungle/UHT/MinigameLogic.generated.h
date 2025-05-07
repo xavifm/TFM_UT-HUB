@@ -19,6 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execBeginMinigame); \
 	DECLARE_FUNCTION(execSetTeamReady); \
 	DECLARE_FUNCTION(execSetTeamScore); \
+	DECLARE_FUNCTION(execDelayedSceneSwitch); \
 	DECLARE_FUNCTION(execFinishMinigame); \
 	DECLARE_FUNCTION(execShowWinnerScene); \
 	DECLARE_FUNCTION(execCalculateWinner); \
@@ -26,6 +27,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execStartMinigame);
 
 
+#define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigameLogic(); \
@@ -52,6 +54,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_ENHANCED_CONSTRUCTORS \
 private: \

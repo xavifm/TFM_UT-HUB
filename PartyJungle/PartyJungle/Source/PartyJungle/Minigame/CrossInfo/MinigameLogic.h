@@ -43,6 +43,12 @@ public:
     UFUNCTION()
     virtual void FinishMinigame(int _winner);
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowEndScreenSequence(int _winner);
+
+    UFUNCTION()
+    void DelayedSceneSwitch();
+
     UFUNCTION()
     virtual void SetTeamScore(int _team, int _score);
 
@@ -59,6 +65,10 @@ protected:
 private:
     void InitializeMinigameInfoForDuel();
 
+    int Winner;
     bool MinigameFinished;
+    FTimerHandle TimerHandle;
+
+    const int SWITCH_SCENE_TIMER = 11.0f;
 };
 
