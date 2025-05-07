@@ -364,6 +364,33 @@ UFunction* Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence()
 }
 // End Class AMinigameLogic Function ShowEndScreenSequence
 
+// Begin Class AMinigameLogic Function ShowStartScreenSequence
+static FName NAME_AMinigameLogic_ShowStartScreenSequence = FName(TEXT("ShowStartScreenSequence"));
+void AMinigameLogic::ShowStartScreenSequence()
+{
+	ProcessEvent(FindFunctionChecked(NAME_AMinigameLogic_ShowStartScreenSequence),NULL);
+}
+struct Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "ShowStartScreenSequence", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinigameLogic Function ShowStartScreenSequence
+
 // Begin Class AMinigameLogic Function ShowWinnerScene
 struct Z_Construct_UFunction_AMinigameLogic_ShowWinnerScene_Statics
 {
@@ -522,6 +549,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamReady, "SetTeamReady" }, // 3883338738
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamScore, "SetTeamScore" }, // 1557479705
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence, "ShowEndScreenSequence" }, // 3057030748
+		{ &Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence, "ShowStartScreenSequence" }, // 2534190685
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowWinnerScene, "ShowWinnerScene" }, // 3930965678
 		{ &Z_Construct_UFunction_AMinigameLogic_StartMinigame, "StartMinigame" }, // 2472552975
 	};
@@ -596,10 +624,10 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 3873605296U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 2395008950U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_3784845873(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_637829027(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

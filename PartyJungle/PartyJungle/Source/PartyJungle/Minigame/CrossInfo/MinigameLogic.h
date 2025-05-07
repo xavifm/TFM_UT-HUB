@@ -26,10 +26,13 @@ public:
     bool MinigameStarted;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Parameters")
-    float StartTime = 5;
+    float StartTime = 8;
 
     UFUNCTION()
     virtual void StartMinigame(int _startTime);
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowStartScreenSequence();
 
     UFUNCTION()
     bool CheckIfTheMinigameHasFinished();

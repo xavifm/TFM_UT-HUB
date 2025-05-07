@@ -64,6 +64,15 @@ public:
     UFUNCTION(BlueprintCallable)
     void IncrementUpForce();
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void SetForceBarStrength(float _force);
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void SetTickleStrengthCannon(float _force);
+
+    UFUNCTION()
+    float CalculateCurrentPushStrength();
+
     UFUNCTION()
     void ShootCannon();
 
@@ -78,7 +87,12 @@ private:
     const float TICK_UPDATE_TIME = 0.1f;
     const float BULLET_RESPAWN_OFFSET = 150;
     const float MAX_MINIGAME_HEIGHT = 7960;
+    const float FORCE_CHECK_INTERVAL = 1.0f;
+    const int MAX_PUSHES_PER_INTERVAL = 10;
 
     FTimerHandle TimerHandle;
+
+    UPROPERTY()
+    TArray<float> PushTimestamps;
 };
 

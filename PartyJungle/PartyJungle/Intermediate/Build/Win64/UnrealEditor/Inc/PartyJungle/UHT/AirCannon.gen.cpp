@@ -23,6 +23,47 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class AAirCannon Function CalculateCurrentPushStrength
+struct Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics
+{
+	struct AirCannon_eventCalculateCurrentPushStrength_Parms
+	{
+		float ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AirCannon_eventCalculateCurrentPushStrength_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAirCannon, nullptr, "CalculateCurrentPushStrength", nullptr, nullptr, Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::PropPointers), sizeof(Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::AirCannon_eventCalculateCurrentPushStrength_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::AirCannon_eventCalculateCurrentPushStrength_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AAirCannon::execCalculateCurrentPushStrength)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(float*)Z_Param__Result=P_THIS->CalculateCurrentPushStrength();
+	P_NATIVE_END;
+}
+// End Class AAirCannon Function CalculateCurrentPushStrength
+
 // Begin Class AAirCannon Function FinishCannonCharge
 struct Z_Construct_UFunction_AAirCannon_FinishCannonCharge_Statics
 {
@@ -110,6 +151,88 @@ DEFINE_FUNCTION(AAirCannon::execResetProjectilePosition)
 }
 // End Class AAirCannon Function ResetProjectilePosition
 
+// Begin Class AAirCannon Function SetForceBarStrength
+struct AirCannon_eventSetForceBarStrength_Parms
+{
+	float _force;
+};
+static FName NAME_AAirCannon_SetForceBarStrength = FName(TEXT("SetForceBarStrength"));
+void AAirCannon::SetForceBarStrength(float _force)
+{
+	AirCannon_eventSetForceBarStrength_Parms Parms;
+	Parms._force=_force;
+	ProcessEvent(FindFunctionChecked(NAME_AAirCannon_SetForceBarStrength),&Parms);
+}
+struct Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__force;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::NewProp__force = { "_force", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AirCannon_eventSetForceBarStrength_Parms, _force), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::NewProp__force,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAirCannon, nullptr, "SetForceBarStrength", nullptr, nullptr, Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers), sizeof(AirCannon_eventSetForceBarStrength_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::Function_MetaDataParams) };
+static_assert(sizeof(AirCannon_eventSetForceBarStrength_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAirCannon_SetForceBarStrength()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AAirCannon Function SetForceBarStrength
+
+// Begin Class AAirCannon Function SetTickleStrengthCannon
+struct AirCannon_eventSetTickleStrengthCannon_Parms
+{
+	float _force;
+};
+static FName NAME_AAirCannon_SetTickleStrengthCannon = FName(TEXT("SetTickleStrengthCannon"));
+void AAirCannon::SetTickleStrengthCannon(float _force)
+{
+	AirCannon_eventSetTickleStrengthCannon_Parms Parms;
+	Parms._force=_force;
+	ProcessEvent(FindFunctionChecked(NAME_AAirCannon_SetTickleStrengthCannon),&Parms);
+}
+struct Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__force;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::NewProp__force = { "_force", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AirCannon_eventSetTickleStrengthCannon_Parms, _force), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::NewProp__force,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AAirCannon, nullptr, "SetTickleStrengthCannon", nullptr, nullptr, Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::PropPointers), sizeof(AirCannon_eventSetTickleStrengthCannon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::Function_MetaDataParams) };
+static_assert(sizeof(AirCannon_eventSetTickleStrengthCannon_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AAirCannon Function SetTickleStrengthCannon
+
 // Begin Class AAirCannon Function ShootCannon
 struct Z_Construct_UFunction_AAirCannon_ShootCannon_Statics
 {
@@ -186,6 +309,7 @@ void AAirCannon::StaticRegisterNativesAAirCannon()
 {
 	UClass* Class = AAirCannon::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "CalculateCurrentPushStrength", &AAirCannon::execCalculateCurrentPushStrength },
 		{ "FinishCannonCharge", &AAirCannon::execFinishCannonCharge },
 		{ "IncrementUpForce", &AAirCannon::execIncrementUpForce },
 		{ "ResetProjectilePosition", &AAirCannon::execResetProjectilePosition },
@@ -245,6 +369,9 @@ struct Z_Construct_UClass_AAirCannon_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UpForce_MetaData[] = {
 		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PushTimestamps_MetaData[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CannonTeam;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinionReference;
@@ -259,12 +386,17 @@ struct Z_Construct_UClass_AAirCannon_Statics
 	static void NewProp_CannonCharging_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_CannonCharging;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_UpForce;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_PushTimestamps_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_PushTimestamps;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AAirCannon_CalculateCurrentPushStrength, "CalculateCurrentPushStrength" }, // 4050000169
 		{ &Z_Construct_UFunction_AAirCannon_FinishCannonCharge, "FinishCannonCharge" }, // 209865113
 		{ &Z_Construct_UFunction_AAirCannon_IncrementUpForce, "IncrementUpForce" }, // 960392935
 		{ &Z_Construct_UFunction_AAirCannon_ResetProjectilePosition, "ResetProjectilePosition" }, // 1534674162
+		{ &Z_Construct_UFunction_AAirCannon_SetForceBarStrength, "SetForceBarStrength" }, // 2679235018
+		{ &Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon, "SetTickleStrengthCannon" }, // 1216262549
 		{ &Z_Construct_UFunction_AAirCannon_ShootCannon, "ShootCannon" }, // 2884160260
 		{ &Z_Construct_UFunction_AAirCannon_StartCannonCharge, "StartCannonCharge" }, // 4131551427
 	};
@@ -293,6 +425,8 @@ void Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonCharging_SetBit(void* 
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonCharging = { "CannonCharging", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AAirCannon), &Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonCharging_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CannonCharging_MetaData), NewProp_CannonCharging_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_UpForce = { "UpForce", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, UpForce), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UpForce_MetaData), NewProp_UpForce_MetaData) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_PushTimestamps_Inner = { "PushTimestamps", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAirCannon_Statics::NewProp_PushTimestamps = { "PushTimestamps", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AAirCannon, PushTimestamps), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PushTimestamps_MetaData), NewProp_PushTimestamps_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAirCannon_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_MinionReference,
@@ -305,6 +439,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAirCanno
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonFinished,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_CannonCharging,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_UpForce,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_PushTimestamps_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAirCannon_Statics::NewProp_PushTimestamps,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AAirCannon_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AAirCannon_Statics::DependentSingletons[])() = {
@@ -347,10 +483,10 @@ AAirCannon::~AAirCannon() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 1175726660U) },
+		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 2459544922U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_2149498591(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_461281698(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

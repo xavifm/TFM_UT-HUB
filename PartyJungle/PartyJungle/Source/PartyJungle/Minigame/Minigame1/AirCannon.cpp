@@ -36,6 +36,10 @@ void AAirCannon::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
+    float pushStrengh = CalculateCurrentPushStrength();
+    SetForceBarStrength(pushStrengh);
+    SetTickleStrengthCannon(pushStrengh);
+
     if (!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
     {
         if(ProjectileReference->GetActorLocation().Z >= MAX_MINIGAME_HEIGHT) 
@@ -85,6 +89,22 @@ void AAirCannon::IncrementUpForce()
         return;
 
     UpForce++;
+    PushTimestamps.Add(GetWorld()->GetTimeSeconds());
+}
+
+
+float AAirCannon::CalculateCurrentPushStrength()
+{
+    float CurrentTime = GetWorld()->GetTimeSeconds();
+    float Interval = FORCE_CHECK_INTERVAL;
+
+    PushTimestamps.RemoveAll([CurrentTime, Interval](float Time) {
+        return CurrentTime - Time > Interval;
+        });
+
+    float Strength = FMath::Clamp((float)PushTimestamps.Num() / (float)MAX_PUSHES_PER_INTERVAL, 0.0f, 1.0f);
+
+    return Strength;
 }
 
 

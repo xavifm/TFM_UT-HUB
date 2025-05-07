@@ -18,10 +18,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execFinishCannonCharge); \
 	DECLARE_FUNCTION(execStartCannonCharge); \
 	DECLARE_FUNCTION(execShootCannon); \
+	DECLARE_FUNCTION(execCalculateCurrentPushStrength); \
 	DECLARE_FUNCTION(execIncrementUpForce); \
 	DECLARE_FUNCTION(execResetProjectilePosition);
 
 
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAAirCannon(); \
@@ -48,6 +50,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h_15_ENHANCED_CONSTRUCTORS \
 private: \

@@ -43,7 +43,7 @@ void AMinigameLogic::ResetMinigameScene()
 
 void AMinigameLogic::StartMinigame(int _startTime)
 {
-
+	ShowStartScreenSequence();
 }
 
 bool AMinigameLogic::CheckIfTheMinigameHasFinished()
