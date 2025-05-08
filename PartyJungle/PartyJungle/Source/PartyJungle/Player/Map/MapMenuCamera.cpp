@@ -453,12 +453,15 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     }
 
     CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
+    CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
     MapUI->SwitchTurnUI(CurrentMinionTeam);
 
     FVector MinionLocation = CurrentMinion->GetActorLocation();
     MinionLocation.X = MinionLocation.X - 450;
     MinionLocation.Z = GetActorLocation().Z;
+
+    CurrentMinion->SetMinionAnimation(EMinionState::WALK);
 
     SetActorLocation(MinionLocation);
 
@@ -480,8 +483,10 @@ void AMapMenuCamera::FocusNextMinion(int _direction)
         CurrentMinionPos = MAX_MINION_NUMBER - 1;
 
     CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
+    CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, CurrentMinionPos);
+    CurrentMinion->SetMinionAnimation(EMinionState::WALK);
 
     UpdateDicePosition();
 }

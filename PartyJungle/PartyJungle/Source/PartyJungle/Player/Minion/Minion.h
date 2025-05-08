@@ -15,6 +15,13 @@ enum class ETeam : uint8
 	TEAM_FOUR UMETA(DisplayName = "Team Four")
 };
 
+UENUM(BlueprintType)
+enum class EMinionState : uint8
+{
+	IDLE UMETA(DisplayName = "Idle"),
+	WALK UMETA(DisplayName = "Walk"),
+};
+
 UCLASS()
 class PARTYJUNGLE_API AMinion : public AActor
 {
@@ -34,6 +41,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice References")
 	AAudioManager* AudioManager;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Actions")
+	void SetMinionAnimation(EMinionState _animation);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	void SetMinionsMovements(int _movements, bool _continuation = false);

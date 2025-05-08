@@ -135,6 +135,8 @@ void AMinion::BeginPlay()
 {
 	Super::BeginPlay();
 
+	SetMinionAnimation(EMinionState::IDLE);
+
 	if(CurrentSquare)
 		CurrentSquare->AddMinion(this);
 }
