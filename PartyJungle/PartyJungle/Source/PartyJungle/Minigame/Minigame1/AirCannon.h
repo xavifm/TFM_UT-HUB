@@ -94,6 +94,7 @@ private:
     const int MAX_PUSHES_PER_INTERVAL = 10;
     const FString SHOOT_CANNON_SFX = "ShootCannonSFX";
     const FString CHARGE_CANNON_SFX = "ChargeCannonSFX";
+    const FString CHARGE_FORCE_CANNON_SFX = "ChargeForceCannonSFX";
 
     FTimerHandle TimerHandle;
 

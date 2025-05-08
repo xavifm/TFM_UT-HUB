@@ -90,6 +90,9 @@ void AAirCannon::IncrementUpForce()
 
     UpForce++;
     PushTimestamps.Add(GetWorld()->GetTimeSeconds());
+
+    if (AudioManager)
+        AudioManager->PlaySFX(CHARGE_FORCE_CANNON_SFX, 0.5f, true, CannonTeam);
 }
 
 

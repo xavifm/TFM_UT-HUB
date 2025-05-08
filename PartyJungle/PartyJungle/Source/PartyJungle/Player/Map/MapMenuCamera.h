@@ -186,6 +186,7 @@ private:
 	bool StoreCrownsUI = false;
 	bool TimedActionExecuted = false;
 	bool IsMinigameActive = false;
+	bool LoadingMap = false;
 
 	int SelectedPathIndex = 0;
 

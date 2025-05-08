@@ -70,10 +70,10 @@ void AMapMenuCamera::Tick(float DeltaTime)
             if(!TimedActionExecuted) 
             {
                 MapUI->SwitchLegendVisibility(false);
-                UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
 
                 if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI) 
                 {
+                    UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
                     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
                     TimedActionExecuted = true;
                 }
@@ -196,8 +196,17 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
     IsMinigameActive = (_sceneIndex >= 0);
 
+    //Dirty code!
+    if(DuelUI && IsMinigameActive)
+    {
+        LoadingMap = true;
+        StartFadeTransition(0.1f);
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);  
+    }
+
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
+
 
     if (!IsMinigameActive)
         SwitchController();
@@ -209,7 +218,6 @@ void AMapMenuCamera::SwitchController()
 {
     APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
     APlayerController* PlayerController0 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-
 
     if(PlayerController) 
     {
@@ -603,8 +611,10 @@ void AMapMenuCamera::FinishFadeTransition()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
-    //temporal
-    RestoreTurnLogic();
+    if(!LoadingMap)
+        RestoreTurnLogic();
+
+    LoadingMap = false;
 
     if (RoundsSystem && RoundsSystem->GameFinished)
         return;
