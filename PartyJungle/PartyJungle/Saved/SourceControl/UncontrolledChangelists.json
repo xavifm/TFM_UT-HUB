@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/EndGame/BP_EndGameUI.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/BL/QKJTKR1XQAZAX5YB8I66VE.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Minigame1Logic.uasset"
+			]
+		}
+	]
+}

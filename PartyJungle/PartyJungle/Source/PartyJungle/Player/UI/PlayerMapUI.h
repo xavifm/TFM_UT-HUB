@@ -52,6 +52,13 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2, EDuelType _duelType);
 
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SwitchMinigame1UIVisibility(bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void UpdateM1SliderBarValues(int _index, float _value);
+
+
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);
 
