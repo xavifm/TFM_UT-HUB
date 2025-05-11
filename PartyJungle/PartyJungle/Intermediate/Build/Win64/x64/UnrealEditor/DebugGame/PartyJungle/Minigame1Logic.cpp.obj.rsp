@@ -1,11 +1,11 @@
-"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Minigame\Minigame1\Minigame1Logic.cpp"
-/FI"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
-/FI"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Definitions.PartyJungle.h"
-/Yu"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
-/Fp"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.pch"
-/Fo"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Minigame1Logic.cpp.obj"
-/sourceDependencies "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Minigame1Logic.cpp.dep.json"
-@"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\PartyJungle.Shared.rsp"
+"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Minigame\Minigame1\Minigame1Logic.cpp"
+/FI"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
+/FI"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Definitions.PartyJungle.h"
+/Yu"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
+/Fp"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.pch"
+/Fo"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Minigame1Logic.cpp.obj"
+/sourceDependencies "C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Minigame1Logic.cpp.dep.json"
+@"C:\Users\joelr\OneDrive\Escriptori\Unreal Projects\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\PartyJungle.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
