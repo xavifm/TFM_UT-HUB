@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\playfabapi\\playfabapi.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\playfabapi\\playfabapi.h",
+            "c:\\users\\sdasd\\documents\\github\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\playfabapi.generated.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\httpmodule.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttprequest.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpbase.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\http.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpresponse.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\platformhttp.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\windows\\windowsplatformhttp.h",
+            "d:\\unreal\\ue_5.4\\engine\\source\\runtime\\online\\http\\public\\genericplatform\\genericplatformhttp.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

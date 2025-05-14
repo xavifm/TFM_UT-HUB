@@ -356,6 +356,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\PlayFabAPI\PlayFabAPI.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\PlayFabAPI\PlayFabAPI.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Rounds\RoundsManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

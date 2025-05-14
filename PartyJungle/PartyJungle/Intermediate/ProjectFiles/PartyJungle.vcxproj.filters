@@ -225,6 +225,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h">
       <Filter>Source\PartyJungle\Player\UI</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\PlayFabAPI">
+      <UniqueIdentifier>{BDEF018D-401D-304A-B704-CFD98A78DED4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\PlayFabAPI\PlayFabAPI.cpp">
+      <Filter>Source\PartyJungle\PlayFabAPI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\PlayFabAPI\PlayFabAPI.h">
+      <Filter>Source\PartyJungle\PlayFabAPI</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Rounds">
       <UniqueIdentifier>{FA46A15A-72F5-390D-A4A4-26BA497FE1A5}</UniqueIdentifier>
     </Filter>

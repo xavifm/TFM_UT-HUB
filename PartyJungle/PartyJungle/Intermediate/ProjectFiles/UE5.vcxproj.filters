@@ -11851,6 +11851,18 @@
     <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\MetaXR\Shaders\Private\ScreenPSEnvironmentDepthMinMax.usf">
       <Filter>Plugins\Marketplace\MetaXR\Shaders\Private</Filter>
     </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK">
+      <UniqueIdentifier>{F6ADB75C-FAE1-3B5B-95DC-1BA007292B37}</UniqueIdentifier>
+    </Filter>
+    <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\PlayFab.uplugin">
+      <Filter>Plugins\Marketplace\PlayFabSDK</Filter>
+    </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Resources">
+      <UniqueIdentifier>{D50B404A-8E8D-39CF-8895-3757CC1D2A23}</UniqueIdentifier>
+    </Filter>
+    <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Resources\Icon128.png">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Resources</Filter>
+    </None>
     <Filter Include="Plugins\Marketplace\VisualStudioTools">
       <UniqueIdentifier>{47BD3FFE-620A-35F3-A960-189499883643}</UniqueIdentifier>
     </Filter>
@@ -175267,6 +175279,774 @@
     <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\MetaXR\Source\Thirdparty\OpenXR\OpenXRHeaders.build.cs">
       <Filter>Plugins\Marketplace\MetaXR\Source\Thirdparty\OpenXR</Filter>
     </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source">
+      <UniqueIdentifier>{99881B1A-3CE7-3207-8B58-03188FC4A09B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon">
+      <UniqueIdentifier>{E34BD52F-4CD8-3D97-8DB7-092F9F7210DA}</UniqueIdentifier>
+    </Filter>
+    <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\PlayFabCommon.Build.cs">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon</Filter>
+    </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private">
+      <UniqueIdentifier>{722EC652-F3B9-376C-B583-D214D909B667}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private\PlayFabCommmonUtils.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private\PlayFabCommon.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private\PlayFabCommonSettings.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private\PlayFabRuntimeSettings.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public">
+      <UniqueIdentifier>{D1BAF2FE-474D-3D35-BF53-F21B9D52394E}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public\PlayFabAuthenticationContext.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public\PlayFabCommon.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public\PlayFabCommonSettings.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public\PlayFabCommonUtils.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public\PlayFabRuntimeSettings.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCommon\Public</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp">
+      <UniqueIdentifier>{692F9B76-8BC8-3B5B-BCA9-481B3520F7C3}</UniqueIdentifier>
+    </Filter>
+    <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\PlayFabCpp.Build.cs">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp</Filter>
+    </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private">
+      <UniqueIdentifier>{D3E553B9-96EA-3D90-9B93-0A7A2EFA72CF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\PlayFab.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core">
+      <UniqueIdentifier>{454D0FAF-C150-3F42-B3BD-6DED36B0017E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAddonAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAddonDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAddonInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAdminAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAdminDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAdminInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAuthenticationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAuthenticationDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabAuthenticationInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabClientAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabClientDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabClientInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabCloudScriptAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabCloudScriptDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabCloudScriptInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabCppBaseModel.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabDataAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabDataDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabDataInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEconomyAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEconomyDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEconomyInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEventsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEventsDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabEventsInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabExperimentationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabExperimentationDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabExperimentationInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabGroupsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabGroupsDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabGroupsInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabInsightsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabInsightsDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabInsightsInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabJsonHelpers.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLeaderboardsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLeaderboardsDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLeaderboardsInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLocalizationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLocalizationDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabLocalizationInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabMultiplayerAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabMultiplayerDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabMultiplayerInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProfilesAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProfilesDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProfilesInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProgressionAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProgressionDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabProgressionInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabResultHandler.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabServerAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabServerDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabServerInstanceAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core\PlayFabSettings.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Private\Core</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public">
+      <UniqueIdentifier>{DA78FE87-C85B-3F87-826E-A5EAC8B18538}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\PlayFab.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core">
+      <UniqueIdentifier>{F447621A-5200-3969-B078-28078DDDEB2A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAddonAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAddonDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAddonInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAdminAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAdminDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAdminInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAPISettings.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAuthenticationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAuthenticationDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabAuthenticationInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabClientAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabClientDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabClientInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabCloudScriptAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabCloudScriptDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabCloudScriptInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabCppBaseModel.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabDataAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabDataDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabDataInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEconomyAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEconomyDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEconomyInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabError.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEventsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEventsDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabEventsInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabExperimentationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabExperimentationDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabExperimentationInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabGroupsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabGroupsDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabGroupsInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabInsightsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabInsightsDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabInsightsInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabJsonHelpers.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLeaderboardsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLeaderboardsDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLeaderboardsInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLocalizationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLocalizationDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabLocalizationInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabMultiplayerAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabMultiplayerDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabMultiplayerInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProfilesAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProfilesDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProfilesInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProgressionAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProgressionDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabProgressionInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabResultHandler.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabServerAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabServerDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabServerInstanceAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core\PlayFabSettings.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFabCpp\Public\Core</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFab">
+      <UniqueIdentifier>{4C66C3B4-D7D3-347D-8002-97F1081B79BE}</UniqueIdentifier>
+    </Filter>
+    <None Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\PlayFab.Build.cs">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab</Filter>
+    </None>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes">
+      <UniqueIdentifier>{09901C37-7644-3554-83E5-F3F4D93CA364}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAddonAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAddonModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAddonModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAdminAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAdminModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAdminModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAuthenticationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAuthenticationModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabAuthenticationModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabBaseModel.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabClientAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabClientModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabClientModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabCloudScriptAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabCloudScriptModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabCloudScriptModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabDataAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabDataModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabDataModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEconomyAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEconomyModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEconomyModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEnums.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEventsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEventsModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabEventsModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabExperimentationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabExperimentationModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabExperimentationModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabGroupsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabGroupsModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabGroupsModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabInsightsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabInsightsModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabInsightsModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabJsonObject.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabJsonValue.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLeaderboardsAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLeaderboardsModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLeaderboardsModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLocalizationAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLocalizationModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLocalizationModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabLoginResultCommon.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabMultiplayerAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabMultiplayerModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabMultiplayerModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProfilesAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProfilesModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProfilesModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProgressionAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProgressionModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabProgressionModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabRequestCommon.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabResultCommon.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabServerAPI.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabServerModelDecoder.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabServerModels.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes\PlayFabUtilities.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Classes</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private">
+      <UniqueIdentifier>{8CB8EE1D-2EF6-3FDA-B44F-50CA1CDAAF62}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFab.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAddonAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAddonModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAddonModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAdminAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAdminModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAdminModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAuthenticationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAuthenticationModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabAuthenticationModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabBaseModel.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabClientAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabClientModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabClientModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabCloudScriptAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabCloudScriptModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabCloudScriptModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabDataAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabDataModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabDataModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEconomyAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEconomyModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEconomyModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEventsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEventsModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabEventsModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabExperimentationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabExperimentationModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabExperimentationModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabGroupsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabGroupsModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabGroupsModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabInsightsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabInsightsModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabInsightsModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabJsonObject.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabJsonValue.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLeaderboardsAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLeaderboardsModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLeaderboardsModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLocalizationAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLocalizationModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabLocalizationModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabMultiplayerAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabMultiplayerModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabMultiplayerModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabPrivate.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClInclude>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProfilesAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProfilesModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProfilesModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProgressionAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProgressionModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabProgressionModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabServerAPI.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabServerModelDecoder.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabServerModels.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private\PlayFabUtilities.cpp">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Public">
+      <UniqueIdentifier>{F08DAC19-2B48-39BA-A301-ECB5D1317C3A}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="D:\Unreal\UE_5.4\Engine\Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Public\IPlayFab.h">
+      <Filter>Plugins\Marketplace\PlayFabSDK\Source\PlayFab\Public</Filter>
+    </ClInclude>
     <Filter Include="Plugins\Marketplace\VisualStudioTools\Source">
       <UniqueIdentifier>{1DA3E372-41B8-3C56-B433-F15A09B3AC5D}</UniqueIdentifier>
     </Filter>
