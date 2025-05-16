@@ -15,6 +15,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define PARTYJUNGLE_PlayFabAPI_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetDisplayScore); \
+	DECLARE_FUNCTION(execGetDisplayName); \
+	DECLARE_FUNCTION(execSendScoreToPlayFab); \
+	DECLARE_FUNCTION(execLoginUser); \
 	DECLARE_FUNCTION(execRegisterUser);
 
 

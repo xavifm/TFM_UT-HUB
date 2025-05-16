@@ -1,7 +1,7 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.PartyJungle.cpp.obj": [
+		"Module.PartyJungle.1.cpp.obj": [
 			"AirCannon.gen.cpp.obj",
 			"AudioManager.gen.cpp.obj",
 			"CannonMinigameCamera.gen.cpp.obj",
@@ -16,7 +16,9 @@
 			"Minigame1Logic.gen.cpp.obj",
 			"MinigameDataGameInstance.gen.cpp.obj",
 			"MinigameLogic.gen.cpp.obj",
-			"Minion.gen.cpp.obj",
+			"Minion.gen.cpp.obj"
+		],
+		"Module.PartyJungle.2.cpp.obj": [
 			"PartyJungle.init.gen.cpp.obj",
 			"PlayerMapUI.gen.cpp.obj",
 			"PlayFabAPI.gen.cpp.obj",

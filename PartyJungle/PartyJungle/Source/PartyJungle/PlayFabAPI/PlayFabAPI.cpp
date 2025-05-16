@@ -26,13 +26,7 @@ void APlayFabAPI::BeginPlay()
         LoginUser("C4BF3", "jugador@testDefinitivoporfa.com", "ContraMuyMuyMuySegura");
 }
 
-void APlayFabAPI::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-
-void APlayFabAPI::RegisterUser(const FString& TitleId, const FString& Username, const FString& Password, const FString& Email, const FString& DisplayName, const FString& RequireBothUsernameAndEmail)
+void APlayFabAPI::RegisterUser(const FString& TitleId, const FString& Username, const FString& Password, const FString& Email, const FString& DisName, const FString& RequireBothUsernameAndEmail)
 {
     FString URL = TEXT("https://") + TitleId + TEXT(".playfabapi.com/Client/RegisterPlayFabUser");
 
@@ -117,9 +111,8 @@ void APlayFabAPI::LoginUser(const FString& TitleId, const FString& Email, const 
                         if ((*DataObject)->TryGetStringField(TEXT("SessionTicket"), RetrievedSessionTicket))
                         {
                             SessionTicket = RetrievedSessionTicket;
+                            LoggedIn = true;
                             UE_LOG(LogTemp, Log, TEXT("SessionTicket saved: %s"), *SessionTicket);
-
-                            SendScoreToPlayFab(1234, StoredTitleId);
                         }
                     }
                 }
@@ -134,9 +127,12 @@ void APlayFabAPI::LoginUser(const FString& TitleId, const FString& Email, const 
 }
 
 
-void APlayFabAPI::GetUserAccountInfo(const FString& InSessionTicket, const FString& TitleId)
+void APlayFabAPI::GetUserAccountInfo()
 {
-    FString URL = TEXT("https://") + TitleId + TEXT(".playfabapi.com/Client/GetAccountInfo");
+    if (!LoggedIn)
+        return;
+
+    FString URL = TEXT("https://") + StoredTitleId + TEXT(".playfabapi.com/Client/GetAccountInfo");
 
     FHttpModule& HttpModule = FHttpModule::Get();
     TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = HttpModule.CreateRequest();
@@ -144,7 +140,7 @@ void APlayFabAPI::GetUserAccountInfo(const FString& InSessionTicket, const FStri
     Request->SetURL(URL);
     Request->SetVerb("POST");
     Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
-    Request->SetHeader(TEXT("X-Authorization"), InSessionTicket);
+    Request->SetHeader(TEXT("X-Authorization"), SessionTicket);
 
     FString Body = TEXT("{}");
     Request->SetContentAsString(Body);
@@ -169,11 +165,59 @@ void APlayFabAPI::GetUserAccountInfo(const FString& InSessionTicket, const FStri
                 const TSharedPtr<FJsonObject>* DataObject;
                 if (JsonObject->TryGetObjectField(TEXT("data"), DataObject))
                 {
-                    FString DisplayName = (*(*DataObject)->GetObjectField("Info")->GetObjectField("TitleInfo")).GetStringField("DisplayName");
+                    DisplayName = (*(*DataObject)->GetObjectField("Info")->GetObjectField("TitleInfo")).GetStringField("DisplayName");
+                }
+            }
+        });
 
-                    if (FabUI)
+    Request->ProcessRequest();
+}
+
+void APlayFabAPI::GetUserScoreFromPlayFab()
+{
+    if (!LoggedIn)
+        return;
+
+    FString URL = FString::Printf(TEXT("https://%s.playfabapi.com/Client/GetUserData"), *StoredTitleId);
+
+    TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = FHttpModule::Get().CreateRequest();
+    Request->SetURL(URL);
+    Request->SetVerb(TEXT("POST"));
+    Request->SetHeader(TEXT("Content-Type"), TEXT("application/json"));
+    Request->SetHeader(TEXT("X-Authorization"), SessionTicket);
+
+    Request->SetContentAsString(TEXT("{}"));
+
+    Request->OnProcessRequestComplete().BindLambda(
+        [this](FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful)
+        {
+            if (!bWasSuccessful || !Response.IsValid())
+            {
+                UE_LOG(LogTemp, Error, TEXT("Failed to get user data."));
+                return;
+            }
+
+            const FString ResponseContent = Response->GetContentAsString();
+            UE_LOG(LogTemp, Log, TEXT("User Data Response: %s"), *ResponseContent);
+
+            TSharedPtr<FJsonObject> JsonObject;
+            TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(ResponseContent);
+
+            if (FJsonSerializer::Deserialize(Reader, JsonObject) && JsonObject.IsValid())
+            {
+                const TSharedPtr<FJsonObject>* DataObject;
+                if (JsonObject->TryGetObjectField(TEXT("data"), DataObject))
+                {
+                    const TSharedPtr<FJsonObject>* UserData;
+                    if ((*DataObject)->TryGetObjectField(TEXT("Data"), UserData))
                     {
-                        //FabUI->UpdateUserName(DisplayName);
+                        const TSharedPtr<FJsonObject>* ScoreObject;
+                        if ((*UserData)->TryGetObjectField(TEXT("GameScore"), ScoreObject))
+                        {
+                            FString ScoreValue = (*ScoreObject)->GetStringField(TEXT("Value"));
+                            UE_LOG(LogTemp, Log, TEXT("GameScore: %s"), *ScoreValue);
+                            DisplayScore = FCString::Atoi(*ScoreValue);
+                        }
                     }
                 }
             }
@@ -182,9 +226,12 @@ void APlayFabAPI::GetUserAccountInfo(const FString& InSessionTicket, const FStri
     Request->ProcessRequest();
 }
 
-void APlayFabAPI::SendScoreToPlayFab(int32 Score, FString TitleId)
+void APlayFabAPI::SendScoreToPlayFab(int32 Score)
 {
-    FString URL = FString::Printf(TEXT("https://%s.playfabapi.com/Client/UpdateUserData"), *TitleId);
+    if (!LoggedIn)
+        return;
+
+    FString URL = FString::Printf(TEXT("https://%s.playfabapi.com/Client/UpdateUserData"), *StoredTitleId);
 
     TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = FHttpModule::Get().CreateRequest();
 
@@ -216,6 +263,36 @@ void APlayFabAPI::SendScoreToPlayFab(int32 Score, FString TitleId)
         });
 
     Request->ProcessRequest();
+}
+
+FString APlayFabAPI::GetDisplayName()
+{
+    FString nameQuery = "Not Logged In!";
+
+    if(LoggedIn) 
+    {
+        if (DisplayName == "")
+            GetUserAccountInfo();
+
+        nameQuery = DisplayName;
+    }
+   
+    return nameQuery;
+}
+
+int APlayFabAPI::GetDisplayScore()
+{
+    int scoreQuery = -1;
+
+    if (LoggedIn)
+    {
+        if (DisplayScore == -1)
+            GetUserScoreFromPlayFab();
+
+        scoreQuery = DisplayScore;
+    }
+
+    return scoreQuery;
 }
 
 
