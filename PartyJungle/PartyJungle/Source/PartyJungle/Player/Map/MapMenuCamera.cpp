@@ -15,7 +15,13 @@ void AMapMenuCamera::BeginPlay()
 {
 	Super::BeginPlay();
 
+
+
     SwitchMenuWidget(true);
+
+    if(PlayFabAPI && MapUI) 
+        MapUI->PlayFabAPI = PlayFabAPI;
+
     UpdateDicePosition();
     Dice->ShowDice();
 
@@ -396,7 +402,8 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
             MapUI->SwitchChallengeVisibility(false);
             MapUI->SwitchCrownStoreVisibility(false);
             MapUI->SwitchCrownSavePlaceVisibility(false);
-            MapUI->SwitchScoresVisibility(_enabled);
+            MapUI->SwitchScoresVisibility(!_enabled);
+            MapUI->SwitchLegendVisibility(_enabled);
         }
     }
 }

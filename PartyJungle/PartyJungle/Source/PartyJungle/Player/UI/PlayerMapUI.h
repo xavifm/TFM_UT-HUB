@@ -6,6 +6,7 @@
 #include "PartyJungle/Player/Scores/ScoreDatabase.h"
 #include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "PartyJungle/Map/MapDatabase.h"
+#include <PartyJungle/PlayFabAPI/PlayFabAPI.h>
 #include "PlayerMapUI.generated.h"
 
 UCLASS()
@@ -18,6 +19,9 @@ private:
 public:
     UPROPERTY(VisibleAnywhere)
     AScoreDatabase* ScoresDb;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    APlayFabAPI* PlayFabAPI;
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb);

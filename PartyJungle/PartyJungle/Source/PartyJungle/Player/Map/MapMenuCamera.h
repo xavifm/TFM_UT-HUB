@@ -7,6 +7,7 @@
 #include "InputMappingContext.h"
 #include "InputAction.h"
 #include <PartyJungle/Dice/Dice.h>
+#include <PartyJungle/PlayFabAPI/PlayFabAPI.h>
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
@@ -32,6 +33,9 @@ protected:
 public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TSubclassOf<UUserWidget> MenuWidgetClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	APlayFabAPI* PlayFabAPI;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* AxisxAction;

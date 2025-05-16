@@ -23,7 +23,7 @@ void APlayFabAPI::BeginPlay()
         //             "JugadorDeCPlusPlus",
         //             "false");
 
-        LoginUser("C4BF3", "jugador@testDefinitivoporfa.com", "ContraMuyMuyMuySegura");
+        //LoginUser("C4BF3", "jugador@testDefinitivoporfa.com", "ContraMuyMuyMuySegura");
 }
 
 void APlayFabAPI::RegisterUser(const FString& TitleId, const FString& Username, const FString& Password, const FString& Email, const FString& DisName, const FString& RequireBothUsernameAndEmail)
