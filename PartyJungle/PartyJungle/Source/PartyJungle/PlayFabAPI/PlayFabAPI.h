@@ -21,15 +21,17 @@ protected:
 public:	
 	UFUNCTION(BlueprintCallable)
 	void RegisterUser(const FString& TitleId, const FString& Username, const FString& Password, const FString& Email, const FString& DisName, const FString& RequireBothUsernameAndEmail);
+	
 	UFUNCTION(BlueprintCallable)
 	void LoginUser(const FString& TitleId, const FString& Email, const FString& Password);
+	
 	UFUNCTION(BlueprintCallable)
 	void SendScoreToPlayFab(int32 Score);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	FString GetDisplayName();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	int GetDisplayScore();
 
 private:

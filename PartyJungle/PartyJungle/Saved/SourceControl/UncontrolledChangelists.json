@@ -3,13 +3,10 @@
 	"changelists": [
 		{
 			"guid": "00000000000000000000000000000000",
-			"description": "Default Uncontrolled Changelist",
+			"description": "Lista de cambios no controlados predeterminada",
 			"files": [
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/API-PlayFab/Playfab-API.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/5/2Q/LGVOKLEGBOZ4S3HG41Z37Q.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/IF/VMTU8D7HO4KSMPZSWP8TC0.uasset",
-				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/API-PlayFab/API.uasset"
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Map/PlayerCameraBlueprint.uasset"
 			]
 		}
 	]

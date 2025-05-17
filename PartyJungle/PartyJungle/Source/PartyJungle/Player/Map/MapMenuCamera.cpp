@@ -15,12 +15,17 @@ void AMapMenuCamera::BeginPlay()
 {
 	Super::BeginPlay();
 
-
-
     SwitchMenuWidget(true);
 
     if(PlayFabAPI && MapUI) 
         MapUI->PlayFabAPI = PlayFabAPI;
+
+    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+    FInputModeUIOnly InputMode;
+    InputMode.SetWidgetToFocus(MapUI->TakeWidget());
+    PlayerController->SetShowMouseCursor(true);
+    InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+    PlayerController->SetInputMode(InputMode);
 
     UpdateDicePosition();
     Dice->ShowDice();

@@ -38,7 +38,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayF
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayFabAPI, nullptr, "GetDisplayName", nullptr, nullptr, Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PropPointers), sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PlayFabAPI_eventGetDisplayName_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::Function_MetaDataParams), Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayFabAPI, nullptr, "GetDisplayName", nullptr, nullptr, Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PropPointers), sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PlayFabAPI_eventGetDisplayName_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::Function_MetaDataParams), Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayName_Statics::PlayFabAPI_eventGetDisplayName_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_APlayFabAPI_GetDisplayName()
 {
@@ -79,7 +79,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayF
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayFabAPI, nullptr, "GetDisplayScore", nullptr, nullptr, Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PropPointers), sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PlayFabAPI_eventGetDisplayScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayFabAPI, nullptr, "GetDisplayScore", nullptr, nullptr, Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PropPointers), sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PlayFabAPI_eventGetDisplayScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::Function_MetaDataParams) };
 static_assert(sizeof(Z_Construct_UFunction_APlayFabAPI_GetDisplayScore_Statics::PlayFabAPI_eventGetDisplayScore_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_APlayFabAPI_GetDisplayScore()
 {
@@ -322,8 +322,8 @@ struct Z_Construct_UClass_APlayFabAPI_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_APlayFabAPI_GetDisplayName, "GetDisplayName" }, // 1731660813
-		{ &Z_Construct_UFunction_APlayFabAPI_GetDisplayScore, "GetDisplayScore" }, // 2259112767
+		{ &Z_Construct_UFunction_APlayFabAPI_GetDisplayName, "GetDisplayName" }, // 1227285399
+		{ &Z_Construct_UFunction_APlayFabAPI_GetDisplayScore, "GetDisplayScore" }, // 1286159512
 		{ &Z_Construct_UFunction_APlayFabAPI_LoginUser, "LoginUser" }, // 4160491164
 		{ &Z_Construct_UFunction_APlayFabAPI_RegisterUser, "RegisterUser" }, // 3834369853
 		{ &Z_Construct_UFunction_APlayFabAPI_SendScoreToPlayFab, "SendScoreToPlayFab" }, // 2124804004
@@ -376,14 +376,14 @@ APlayFabAPI::~APlayFabAPI() {}
 // End Class APlayFabAPI
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APlayFabAPI, APlayFabAPI::StaticClass, TEXT("APlayFabAPI"), &Z_Registration_Info_UClass_APlayFabAPI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayFabAPI), 1549016673U) },
+		{ Z_Construct_UClass_APlayFabAPI, APlayFabAPI::StaticClass, TEXT("APlayFabAPI"), &Z_Registration_Info_UClass_APlayFabAPI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayFabAPI), 1133063936U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_1428467379(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_3592945402(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_PlayFabAPI_PlayFabAPI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

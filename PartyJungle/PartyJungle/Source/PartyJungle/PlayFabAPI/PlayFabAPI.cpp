@@ -39,7 +39,7 @@ void APlayFabAPI::RegisterUser(const FString& TitleId, const FString& Username, 
 
     FString JsonBody = FString::Printf(
         TEXT("{\"TitleId\":\"%s\",\"Username\":\"%s\",\"Password\":\"%s\",\"Email\":\"%s\",\"DisplayName\":\"%s\",\"RequireBothUsernameAndEmail\":%s}"),
-        *TitleId, *Username, *Password, *Email, *DisplayName, *RequireBothUsernameAndEmail
+        *TitleId, *Username, *Password, *Email, *DisName, *RequireBothUsernameAndEmail
     );
 
     pRequest->SetContentAsString(JsonBody);
@@ -112,6 +112,8 @@ void APlayFabAPI::LoginUser(const FString& TitleId, const FString& Email, const 
                         {
                             SessionTicket = RetrievedSessionTicket;
                             LoggedIn = true;
+                            SendScoreToPlayFab(100);
+
                             UE_LOG(LogTemp, Log, TEXT("SessionTicket saved: %s"), *SessionTicket);
                         }
                     }
@@ -125,7 +127,6 @@ void APlayFabAPI::LoginUser(const FString& TitleId, const FString& Email, const 
 
     pRequest->ProcessRequest();
 }
-
 
 void APlayFabAPI::GetUserAccountInfo()
 {
@@ -160,13 +161,44 @@ void APlayFabAPI::GetUserAccountInfo()
             TSharedPtr<FJsonObject> JsonObject;
             TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(ResponseContent);
 
-            if (FJsonSerializer::Deserialize(Reader, JsonObject) && JsonObject.IsValid())
+            if (!FJsonSerializer::Deserialize(Reader, JsonObject) || !JsonObject.IsValid())
             {
-                const TSharedPtr<FJsonObject>* DataObject;
-                if (JsonObject->TryGetObjectField(TEXT("data"), DataObject))
-                {
-                    DisplayName = (*(*DataObject)->GetObjectField("Info")->GetObjectField("TitleInfo")).GetStringField("DisplayName");
-                }
+                UE_LOG(LogTemp, Error, TEXT("Failed to parse JSON response"));
+                return;
+            }
+
+            if (!JsonObject->HasTypedField<EJson::Object>(TEXT("data")))
+            {
+                UE_LOG(LogTemp, Error, TEXT("No 'data' field in JSON"));
+                return;
+            }
+
+            TSharedPtr<FJsonObject> DataObject = JsonObject->GetObjectField(TEXT("data"));
+
+            if (!DataObject->HasTypedField<EJson::Object>(TEXT("AccountInfo")))
+            {
+                UE_LOG(LogTemp, Error, TEXT("No 'AccountInfo' field in 'data'"));
+                return;
+            }
+
+            TSharedPtr<FJsonObject> AccountInfoObject = DataObject->GetObjectField(TEXT("AccountInfo"));
+
+            if (!AccountInfoObject->HasTypedField<EJson::Object>(TEXT("TitleInfo")))
+            {
+                UE_LOG(LogTemp, Error, TEXT("No 'TitleInfo' field in 'AccountInfo'"));
+                return;
+            }
+
+            TSharedPtr<FJsonObject> TitleInfoObject = AccountInfoObject->GetObjectField(TEXT("TitleInfo"));
+
+            if (TitleInfoObject->HasTypedField<EJson::String>(TEXT("DisplayName")))
+            {
+                DisplayName = TitleInfoObject->GetStringField(TEXT("DisplayName"));
+                UE_LOG(LogTemp, Log, TEXT("DisplayName: %s"), *DisplayName);
+            }
+            else
+            {
+                UE_LOG(LogTemp, Warning, TEXT("DisplayName not found in TitleInfo"));
             }
         });
 
