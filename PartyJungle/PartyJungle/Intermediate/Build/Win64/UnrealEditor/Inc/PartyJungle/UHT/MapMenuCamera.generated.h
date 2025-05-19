@@ -21,6 +21,7 @@ struct FInputActionValue;
 #define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execStartPlayerTurn); \
+	DECLARE_FUNCTION(execUpdateMinionEconomyWithReference); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execFinishFadeTransition); \
 	DECLARE_FUNCTION(execStartFadeTransition); \

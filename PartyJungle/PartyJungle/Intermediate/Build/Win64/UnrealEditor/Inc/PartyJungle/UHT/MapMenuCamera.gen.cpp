@@ -1369,6 +1369,54 @@ DEFINE_FUNCTION(AMapMenuCamera::execUpdateMinionEconomy)
 }
 // End Class AMapMenuCamera Function UpdateMinionEconomy
 
+// Begin Class AMapMenuCamera Function UpdateMinionEconomyWithReference
+struct Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics
+{
+	struct MapMenuCamera_eventUpdateMinionEconomyWithReference_Parms
+	{
+		AMinion* _minion;
+		int32 _coins;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__minion;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__coins;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::NewProp__minion = { "_minion", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventUpdateMinionEconomyWithReference_Parms, _minion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::NewProp__coins = { "_coins", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventUpdateMinionEconomyWithReference_Parms, _coins), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::NewProp__minion,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::NewProp__coins,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "UpdateMinionEconomyWithReference", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::MapMenuCamera_eventUpdateMinionEconomyWithReference_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::MapMenuCamera_eventUpdateMinionEconomyWithReference_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execUpdateMinionEconomyWithReference)
+{
+	P_GET_OBJECT(AMinion,Z_Param__minion);
+	P_GET_PROPERTY(FIntProperty,Z_Param__coins);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->UpdateMinionEconomyWithReference(Z_Param__minion,Z_Param__coins);
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function UpdateMinionEconomyWithReference
+
 // Begin Class AMapMenuCamera
 void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 {
@@ -1406,6 +1454,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "SwitchStoreCrownsUI", &AMapMenuCamera::execSwitchStoreCrownsUI },
 		{ "UpdateDicePosition", &AMapMenuCamera::execUpdateDicePosition },
 		{ "UpdateMinionEconomy", &AMapMenuCamera::execUpdateMinionEconomy },
+		{ "UpdateMinionEconomyWithReference", &AMapMenuCamera::execUpdateMinionEconomyWithReference },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -1554,6 +1603,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView, "SwitchToFullMapView" }, // 2399728959
 		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateDicePosition, "UpdateDicePosition" }, // 1066126508
 		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomy, "UpdateMinionEconomy" }, // 3992167828
+		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomyWithReference, "UpdateMinionEconomyWithReference" }, // 3462310005
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -1644,10 +1694,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1773675976U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1251484046U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_2665303093(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1168237830(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

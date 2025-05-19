@@ -94,13 +94,13 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+	bool isMoving = false;
 
 private:
 	void HandleMovement(float _deltaTime);
 
 	AMinion* SearchMinionToChallenge();
 
-	bool isMoving = false;
 	float CurrentLerpTime = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))

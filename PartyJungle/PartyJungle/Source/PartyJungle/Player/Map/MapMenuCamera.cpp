@@ -61,7 +61,11 @@ void AMapMenuCamera::Tick(float DeltaTime)
 
         FVector TargetLocation = MinionLocation;
         TargetLocation.X = MinionLocation.X - 450;
-        TargetLocation.Z = CameraLocation.Z;
+
+        if(!CurrentMinion->isMoving) 
+            SavedCameraHeight = MinionLocation.Z + CAMERA_HEIGHT_OFFSET;
+        
+        TargetLocation.Z = SavedCameraHeight;
 
         FVector NewLocation = FMath::VInterpTo(CameraLocation, TargetLocation, DeltaTime, 5.0f);
         SetActorLocation(NewLocation);
@@ -103,7 +107,7 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
-    if (IsMinigameActive || FullMapView)
+    if (IsMinigameActive)
         return;
 
     if (StartTurnUI)
@@ -161,7 +165,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if (!InputEnabled || StartTurnUI || IsMinigameActive || DuelUI || BuyCrownsUI || StoreCrownsUI)
+    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelUI || BuyCrownsUI || StoreCrownsUI)
         return;
 
     SwitchFullMapVision();
@@ -664,6 +668,18 @@ void AMapMenuCamera::UpdateMinionEconomy(int _coins)
 
     if(currentCoins != updatedCoins)
         MapUI->UpdateCoins(CurrentMinionTeam, updatedCoins);
+}
+
+void AMapMenuCamera::UpdateMinionEconomyWithReference(AMinion* _minion, int _coins)
+{
+    if (_coins == 0)
+        return;
+
+    int currentCoins = _minion->GetCoins();
+    int updatedCoins = _minion->UpdateCoins(_coins);
+
+    if (currentCoins != updatedCoins)
+        MapUI->UpdateCoins(static_cast<int32>(_minion->Team), updatedCoins);
 }
 
 void AMapMenuCamera::StartPlayerTurn()

@@ -167,6 +167,7 @@ private:
 	const float CROWN_MAX_OFFSET = 253.969262f;
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
+	const int CAMERA_HEIGHT_OFFSET = 600;
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);
@@ -182,6 +183,9 @@ private:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateMinionEconomy(int _coins = 0);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void UpdateMinionEconomyWithReference(AMinion* _minion, int _coins);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StartPlayerTurn();
@@ -202,6 +206,7 @@ private:
 	bool FullMapView = false;
 
 	int SelectedPathIndex = 0;
+	int SavedCameraHeight = 770;
 
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;

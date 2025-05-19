@@ -38,6 +38,6 @@ public:
 
 
 private:
-	const int RANDOM_NUMBER_MIN = 1;
-	const int RANDOM_NUMBER_MAX = 6;
+	const int RANDOM_NUMBER_MIN = 4;
+	const int RANDOM_NUMBER_MAX = 12;
 };
