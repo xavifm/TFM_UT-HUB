@@ -16,6 +16,7 @@ void AMapMenuCamera::BeginPlay()
 	Super::BeginPlay();
 
     SwitchMenuWidget(true);
+    SwitchToFullMapView(false);
     UpdateDicePosition();
     Dice->ShowDice();
 
@@ -93,6 +94,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(AxisxAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleLeftRightInput);
         EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
         EnhancedInput->BindAction(KeybAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleBackInput);
+        EnhancedInput->BindAction(KeywiAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleYInput);
         EnhancedInput->bBlockInput = false;
     }
 }
@@ -101,7 +103,7 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
-    if (IsMinigameActive)
+    if (IsMinigameActive || FullMapView)
         return;
 
     if (StartTurnUI)
@@ -124,7 +126,7 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
-    if (IsMinigameActive)
+    if (IsMinigameActive || FullMapView)
         return;
 
     if (StartTurnUI) 
@@ -155,6 +157,25 @@ void AMapMenuCamera::HandleConfirmInput()
         ConfirmPathSelection();
     else
         RollTheDice();
+}
+
+void AMapMenuCamera::HandleYInput() 
+{
+    if (!InputEnabled || StartTurnUI || IsMinigameActive || DuelUI || BuyCrownsUI || StoreCrownsUI)
+        return;
+
+    SwitchFullMapVision();
+}
+
+void AMapMenuCamera::SwitchFullMapVision() 
+{
+    FullMapView = !FullMapView;
+
+    if(MapUI)
+        MapUI->SwitchLegendVisibility(!FullMapView);
+
+    SwitchMenuWidget(!FullMapView);
+    SwitchToFullMapView(FullMapView);
 }
 
 void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying) 

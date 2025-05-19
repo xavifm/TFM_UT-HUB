@@ -43,6 +43,9 @@ public:
 	UInputAction* KeybAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* KeywiAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
@@ -91,6 +94,12 @@ public:
 	void HandleConfirmInput();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void HandleYInput();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchFullMapVision();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -120,6 +129,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void SwitchToFullMapView(bool _enabled);
+
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
 
@@ -147,7 +159,7 @@ public:
 
 private:
 	const int MAX_MINION_NUMBER = 3;
-	const int MAX_TEAM_NUMBER = 2;
+	const int MAX_TEAM_NUMBER = 4;
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
@@ -187,6 +199,7 @@ private:
 	bool TimedActionExecuted = false;
 	bool IsMinigameActive = false;
 	bool LoadingMap = false;
+	bool FullMapView = false;
 
 	int SelectedPathIndex = 0;
 

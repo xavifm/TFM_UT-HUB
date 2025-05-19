@@ -17,14 +17,14 @@ class UTransactionDto;
 #endif
 #define PARTYJUNGLE_EndGameUI_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execStartChallengeList); \
 	DECLARE_FUNCTION(execStartScoreList); \
 	DECLARE_FUNCTION(execInitializeRegistry);
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUEndGameUI(); \
 	friend struct Z_Construct_UClass_UEndGameUI_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(UEndGameUI)
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UEndGameUI(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -47,14 +47,14 @@ public: \
 	NO_API virtual ~UEndGameUI();
 
 
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_11_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_GENERATED_BODY \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_11_PROLOG
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS \
-	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_CALLBACK_WRAPPERS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -62,7 +62,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class UEndGameUI>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h
+#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_EndGameUI_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

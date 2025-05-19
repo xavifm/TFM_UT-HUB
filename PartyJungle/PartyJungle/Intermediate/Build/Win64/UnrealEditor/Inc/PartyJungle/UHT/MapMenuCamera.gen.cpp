@@ -400,6 +400,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execHandleLeftRightInput)
 }
 // End Class AMapMenuCamera Function HandleLeftRightInput
 
+// Begin Class AMapMenuCamera Function HandleYInput
+struct Z_Construct_UFunction_AMapMenuCamera_HandleYInput_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_HandleYInput_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "HandleYInput", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_HandleYInput_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_HandleYInput_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_HandleYInput()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_HandleYInput_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execHandleYInput)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HandleYInput();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function HandleYInput
+
 // Begin Class AMapMenuCamera Function OpenChallengeMenu
 struct Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics
 {
@@ -973,6 +1003,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execSwitchCrownsShop)
 }
 // End Class AMapMenuCamera Function SwitchCrownsShop
 
+// Begin Class AMapMenuCamera Function SwitchFullMapVision
+struct Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchFullMapVision", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execSwitchFullMapVision)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchFullMapVision();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function SwitchFullMapVision
+
 // Begin Class AMapMenuCamera Function SwitchMainScene
 struct Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics
 {
@@ -1169,6 +1229,53 @@ DEFINE_FUNCTION(AMapMenuCamera::execSwitchStoreCrownsUI)
 }
 // End Class AMapMenuCamera Function SwitchStoreCrownsUI
 
+// Begin Class AMapMenuCamera Function SwitchToFullMapView
+struct MapMenuCamera_eventSwitchToFullMapView_Parms
+{
+	bool _enabled;
+};
+static FName NAME_AMapMenuCamera_SwitchToFullMapView = FName(TEXT("SwitchToFullMapView"));
+void AMapMenuCamera::SwitchToFullMapView(bool _enabled)
+{
+	MapMenuCamera_eventSwitchToFullMapView_Parms Parms;
+	Parms._enabled=_enabled ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_AMapMenuCamera_SwitchToFullMapView),&Parms);
+}
+struct Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__enabled_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__enabled;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::NewProp__enabled_SetBit(void* Obj)
+{
+	((MapMenuCamera_eventSwitchToFullMapView_Parms*)Obj)->_enabled = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::NewProp__enabled = { "_enabled", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSwitchToFullMapView_Parms), &Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::NewProp__enabled_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::NewProp__enabled,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchToFullMapView", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::PropPointers), sizeof(MapMenuCamera_eventSwitchToFullMapView_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::Function_MetaDataParams) };
+static_assert(sizeof(MapMenuCamera_eventSwitchToFullMapView_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMapMenuCamera Function SwitchToFullMapView
+
 // Begin Class AMapMenuCamera Function UpdateDicePosition
 struct Z_Construct_UFunction_AMapMenuCamera_UpdateDicePosition_Statics
 {
@@ -1277,6 +1384,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "HandleBackInput", &AMapMenuCamera::execHandleBackInput },
 		{ "HandleConfirmInput", &AMapMenuCamera::execHandleConfirmInput },
 		{ "HandleLeftRightInput", &AMapMenuCamera::execHandleLeftRightInput },
+		{ "HandleYInput", &AMapMenuCamera::execHandleYInput },
 		{ "OpenChallengeMenu", &AMapMenuCamera::execOpenChallengeMenu },
 		{ "RefreshChallengeInfo", &AMapMenuCamera::execRefreshChallengeInfo },
 		{ "RestoreTurnLogic", &AMapMenuCamera::execRestoreTurnLogic },
@@ -1291,6 +1399,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "SwitchChallengeUI", &AMapMenuCamera::execSwitchChallengeUI },
 		{ "SwitchController", &AMapMenuCamera::execSwitchController },
 		{ "SwitchCrownsShop", &AMapMenuCamera::execSwitchCrownsShop },
+		{ "SwitchFullMapVision", &AMapMenuCamera::execSwitchFullMapVision },
 		{ "SwitchMainScene", &AMapMenuCamera::execSwitchMainScene },
 		{ "SwitchMenuWidget", &AMapMenuCamera::execSwitchMenuWidget },
 		{ "SwitchPathMenu", &AMapMenuCamera::execSwitchPathMenu },
@@ -1326,6 +1435,10 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KeybAction_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_KeywiAction_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
@@ -1389,6 +1502,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AxisxAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_KeyaAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_KeybAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_KeywiAction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContext;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_CameraSpeed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentMinion;
@@ -1417,6 +1531,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 229676118
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleConfirmInput, "HandleConfirmInput" }, // 55423153
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleLeftRightInput, "HandleLeftRightInput" }, // 1471737810
+		{ &Z_Construct_UFunction_AMapMenuCamera_HandleYInput, "HandleYInput" }, // 2037511607
 		{ &Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu, "OpenChallengeMenu" }, // 1674312757
 		{ &Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo, "RefreshChallengeInfo" }, // 879373997
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic, "RestoreTurnLogic" }, // 110122867
@@ -1431,10 +1546,12 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeUI, "SwitchChallengeUI" }, // 384721050
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchController, "SwitchController" }, // 443897426
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCrownsShop, "SwitchCrownsShop" }, // 1885612681
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision, "SwitchFullMapVision" }, // 6727237
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 2042623275
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMenuWidget, "SwitchMenuWidget" }, // 1711073329
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchPathMenu, "SwitchPathMenu" }, // 193039075
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchStoreCrownsUI, "SwitchStoreCrownsUI" }, // 4188990515
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView, "SwitchToFullMapView" }, // 2399728959
 		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateDicePosition, "UpdateDicePosition" }, // 1066126508
 		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateMinionEconomy, "UpdateMinionEconomy" }, // 3992167828
 	};
@@ -1448,6 +1565,7 @@ const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMapMenuCamera_
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AxisxAction = { "AxisxAction", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, AxisxAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AxisxAction_MetaData), NewProp_AxisxAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeyaAction = { "KeyaAction", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, KeyaAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KeyaAction_MetaData), NewProp_KeyaAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeybAction = { "KeybAction", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, KeybAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KeybAction_MetaData), NewProp_KeybAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeywiAction = { "KeywiAction", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, KeywiAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_KeywiAction_MetaData), NewProp_KeywiAction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_InputMappingContext = { "InputMappingContext", nullptr, (EPropertyFlags)0x0010000000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, InputMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputMappingContext_MetaData), NewProp_InputMappingContext_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed = { "CameraSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CameraSpeed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraSpeed_MetaData), NewProp_CameraSpeed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion = { "CurrentMinion", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, CurrentMinion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMinion_MetaData), NewProp_CurrentMinion_MetaData) };
@@ -1468,6 +1586,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AxisxAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeyaAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeybAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_KeywiAction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_InputMappingContext,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CameraSpeed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_CurrentMinion,
@@ -1522,14 +1641,14 @@ AMapMenuCamera::~AMapMenuCamera() {}
 // End Class AMapMenuCamera
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 4197807517U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1773675976U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1419764147(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_2665303093(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
