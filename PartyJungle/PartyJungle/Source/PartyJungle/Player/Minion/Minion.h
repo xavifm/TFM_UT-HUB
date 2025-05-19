@@ -42,6 +42,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice References")
 	AAudioManager* AudioManager;
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion UI")
+	void SetMinionCoinsSize(float _size);
+
 	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Actions")
 	void SetMinionAnimation(EMinionState _animation);
 

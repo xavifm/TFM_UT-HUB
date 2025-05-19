@@ -433,6 +433,48 @@ UFunction* Z_Construct_UFunction_AMinion_SetMinionAnimation()
 }
 // End Class AMinion Function SetMinionAnimation
 
+// Begin Class AMinion Function SetMinionCoinsSize
+struct Minion_eventSetMinionCoinsSize_Parms
+{
+	float _size;
+};
+static FName NAME_AMinion_SetMinionCoinsSize = FName(TEXT("SetMinionCoinsSize"));
+void AMinion::SetMinionCoinsSize(float _size)
+{
+	Minion_eventSetMinionCoinsSize_Parms Parms;
+	Parms._size=_size;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_SetMinionCoinsSize),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion UI" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__size;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::NewProp__size = { "_size", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Minion_eventSetMinionCoinsSize_Parms, _size), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::NewProp__size,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "SetMinionCoinsSize", nullptr, nullptr, Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::PropPointers), sizeof(Minion_eventSetMinionCoinsSize_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventSetMinionCoinsSize_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_SetMinionCoinsSize()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_SetMinionCoinsSize_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function SetMinionCoinsSize
+
 // Begin Class AMinion Function SetMinionsMovements
 struct Z_Construct_UFunction_AMinion_SetMinionsMovements_Statics
 {
@@ -802,6 +844,7 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_MoveCrownVerticalAxis, "MoveCrownVerticalAxis" }, // 2619196112
 		{ &Z_Construct_UFunction_AMinion_MoveToSquare, "MoveToSquare" }, // 472228771
 		{ &Z_Construct_UFunction_AMinion_SetMinionAnimation, "SetMinionAnimation" }, // 1599224176
+		{ &Z_Construct_UFunction_AMinion_SetMinionCoinsSize, "SetMinionCoinsSize" }, // 952483810
 		{ &Z_Construct_UFunction_AMinion_SetMinionsMovements, "SetMinionsMovements" }, // 3651061638
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback, "ShowMinionCoinsFeedback" }, // 3394016713
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback, "ShowMinionCrownsFeedback" }, // 269617942
@@ -880,10 +923,10 @@ struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_Par
 		{ EMinionState_StaticEnum, TEXT("EMinionState"), &Z_Registration_Info_UEnum_EMinionState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4150101641U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 1097926224U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 2586252864U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2786039440(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1249567018(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
