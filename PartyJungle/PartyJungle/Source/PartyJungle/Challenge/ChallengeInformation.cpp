@@ -61,7 +61,7 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction)
             break;
     }
 
-    if (minCoins > 0 && (attackerCoins < minCoins || victimCoins < minCoins))
+    if (minCoins > 0 && (attackerCoins < minCoins || (victimCoins < minCoins && duelType != EDuelType::ALL_IN_VS_ST)))
         return DuelType;
 
     DuelType = duelType;
