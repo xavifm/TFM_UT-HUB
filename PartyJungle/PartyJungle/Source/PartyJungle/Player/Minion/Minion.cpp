@@ -193,7 +193,7 @@ AMinion* AMinion::SearchMinionToChallenge()
 	{
 		if (Minion && Minion->Team != Team)
 		{
-			if(Minion->GetCoins() >= MINIMUM_BET_REQUIREMENT) 
+			if(Minion->GetCoins() >= MINIMUM_BET_REQUIREMENT || Minion->GetCrowns() > 0)
 				minionQuery = Minion;
 		}
 	}

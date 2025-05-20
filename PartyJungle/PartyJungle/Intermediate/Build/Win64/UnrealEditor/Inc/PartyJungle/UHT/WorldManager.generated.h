@@ -16,7 +16,7 @@ class ACameraActor;
 #endif
 #define PARTYJUNGLE_WorldManager_generated_h
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execDisableAllStars); \
 	DECLARE_FUNCTION(execEnableStarAtRandomLocation); \
 	DECLARE_FUNCTION(execLoadPortion); \
@@ -27,7 +27,7 @@ class ACameraActor;
 	DECLARE_FUNCTION(execInitializeCameras);
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWorldManager(); \
 	friend struct Z_Construct_UClass_AWorldManager_Statics; \
@@ -36,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(AWorldManager)
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AWorldManager(AWorldManager&&); \
@@ -48,13 +48,13 @@ public: \
 	NO_API virtual ~AWorldManager();
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_11_PROLOG
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_11_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -62,7 +62,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class AWorldManager>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h
+#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_World_WorldManager_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
