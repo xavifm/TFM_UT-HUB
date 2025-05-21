@@ -133,7 +133,7 @@ public:
 	void SwitchToFullMapView(bool _enabled);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
+	void SwitchPathMenu(bool _enabled, TArray<ASquare*> _paths);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
@@ -209,7 +209,7 @@ private:
 	int SavedCameraHeight = 770;
 
 	UPROPERTY()
-	TArray<ASquareOptional*> AvailablePaths;
+	TArray<ASquare*> AvailablePaths;
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;

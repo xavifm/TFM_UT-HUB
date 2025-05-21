@@ -10,7 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AMinion;
-class ASquareOptional;
+class ASquare;
 class UInputComponent;
 struct FInputActionValue;
 #ifdef PARTYJUNGLE_MapMenuCamera_generated_h

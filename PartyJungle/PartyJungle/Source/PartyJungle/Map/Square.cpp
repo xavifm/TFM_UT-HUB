@@ -1,5 +1,6 @@
 #include "Square.h"
 #include "SquareOptional.h"
+#include "SquareKeepCrowns.h"
 #include <PartyJungle/Player/Map/MapMenuCamera.h>
 
 ASquare::ASquare()
@@ -16,14 +17,19 @@ ASquare* ASquare::GetNextNode(int _pathIndex)
 
 void ASquare::OpenChooseMenu()
 {
-	TArray<ASquareOptional*> paths;
+	TArray<ASquare*> paths;
 
 	for (ASquare* square : ConnectedNodes) 
 	{
+		ASquareKeepCrowns* keepCrownsOptionalSquare = (ASquareKeepCrowns*) square;
 		ASquareOptional* squareQuery = (ASquareOptional*) square;
 
 		if (squareQuery)
 			paths.Add(squareQuery);
+
+		if (keepCrownsOptionalSquare != NULL)
+			paths.Add(keepCrownsOptionalSquare);
+
 	}
 
 	if (paths.Num() > 0 && paths[0]->Camera)

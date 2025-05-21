@@ -18,4 +18,16 @@ public:
 	int Team;
 
 	virtual bool ExecuteEvent(AMinion* _minion) override;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Arrow Functions")
+	void EnableArrow();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Arrow Functions")
+	void DisableArrow();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Arrow Functions")
+	void EnableArrowAnimation();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Arrow Functions")
+	void DisableArrowAnimation();
 };

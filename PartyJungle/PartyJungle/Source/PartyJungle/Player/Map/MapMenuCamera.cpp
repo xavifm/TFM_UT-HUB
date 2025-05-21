@@ -4,6 +4,7 @@
 #include <Kismet/GameplayStatics.h>
 #include "EngineUtils.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+#include <PartyJungle/Map/SquareKeepCrowns.h>
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -426,33 +427,58 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
     }
 }
 
-void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths)
+void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquare*> _paths)
 {
     SelectingPath = _enabled;
 
     if (!_paths.IsEmpty())
         AvailablePaths = _paths;
 
-    for (ASquareOptional* Path : AvailablePaths)
+    for (ASquare* Path : AvailablePaths)
     {
         if (!Path) continue;
 
+        ASquareOptional* auxPath = (ASquareOptional*)Path;
+
+        if (!auxPath) continue;
+
         if (_enabled)
-            Path->EnableArrow();
+            auxPath->EnableArrow();
         else
         {
-            Path->DisableArrowAnimation();
-            Path->DisableArrow();
+            auxPath->DisableArrowAnimation();
+            auxPath->DisableArrow();
+        }
+    }
+
+    for (ASquare* Path : AvailablePaths)
+    {
+        if (!Path) continue;
+
+        ASquareKeepCrowns* auxPath = (ASquareKeepCrowns*)Path;
+
+        if (!auxPath) continue;
+
+        if (_enabled)
+            auxPath->EnableArrow();
+        else
+        {
+            auxPath->DisableArrowAnimation();
+            auxPath->DisableArrow();
         }
     }
 
     if (_enabled && !AvailablePaths.IsEmpty())
     {
         SelectedPathIndex = 0;
-        ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
+        ASquareOptional* SelectedPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
+        ASquareKeepCrowns* SelectedPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
 
         if (SelectedPath)
             SelectedPath->EnableArrowAnimation();
+
+        if (SelectedPath2)
+            SelectedPath2->EnableArrowAnimation();
     }
 }
 
@@ -521,12 +547,18 @@ void AMapMenuCamera::ConfirmPathSelection()
     if (!SelectingPath || !AvailablePaths.IsValidIndex(SelectedPathIndex))
         return;
 
-    ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
+    ASquareOptional* SelectedPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
+    ASquareKeepCrowns* SelectedPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
 
     if (SelectedPath->MirrorSquare)
         SelectedPath = SelectedPath->MirrorReference;
 
-    CurrentMinion->CurrentSquare = SelectedPath;
+    if (SelectedPath)
+        CurrentMinion->CurrentSquare = SelectedPath;
+
+    if (SelectedPath2)
+        CurrentMinion->CurrentSquare = SelectedPath2;
+
     CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
 
     SwitchPathMenu(false, {});
@@ -588,14 +620,32 @@ void AMapMenuCamera::ChangeSelectedPath(int _direction)
 
     if(AvailablePaths[SelectedPathIndex]) 
     {
-        AvailablePaths[SelectedPathIndex]->DisableArrowAnimation();
+        ASquareOptional* AuxPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
+
+        if (AuxPath)
+            AuxPath->DisableArrowAnimation();
+
+        ASquareKeepCrowns* AuxPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
+
+        if (AuxPath2)
+            AuxPath2->DisableArrowAnimation();
+
 
         SelectedPathIndex += _direction;
         if (SelectedPathIndex >= AvailablePaths.Num()) SelectedPathIndex = 0;
         if (SelectedPathIndex < 0) SelectedPathIndex = AvailablePaths.Num() - 1;
 
-        if (AvailablePaths[SelectedPathIndex]) 
-            AvailablePaths[SelectedPathIndex]->EnableArrowAnimation();
+        ASquareOptional* AuxPath3 = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
+
+        ASquareKeepCrowns* AuxPath4 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
+
+        if (AuxPath3)
+            AuxPath3->EnableArrowAnimation();
+
+        if (AuxPath4)
+            AuxPath4->EnableArrowAnimation();
+
+        //TO DO: Si us plau, s'haurà d'arreglar aquest desproposit
     }
 }
 
