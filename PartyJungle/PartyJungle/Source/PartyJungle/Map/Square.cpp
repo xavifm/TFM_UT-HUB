@@ -17,19 +17,14 @@ ASquare* ASquare::GetNextNode(int _pathIndex)
 
 void ASquare::OpenChooseMenu()
 {
-	TArray<ASquare*> paths;
+	TArray<ASquareOptional*> paths;
 
 	for (ASquare* square : ConnectedNodes) 
 	{
-		ASquareKeepCrowns* keepCrownsOptionalSquare = (ASquareKeepCrowns*) square;
 		ASquareOptional* squareQuery = (ASquareOptional*) square;
 
 		if (squareQuery)
 			paths.Add(squareQuery);
-
-		if (keepCrownsOptionalSquare != NULL)
-			paths.Add(keepCrownsOptionalSquare);
-
 	}
 
 	if (paths.Num() > 0 && paths[0]->Camera)

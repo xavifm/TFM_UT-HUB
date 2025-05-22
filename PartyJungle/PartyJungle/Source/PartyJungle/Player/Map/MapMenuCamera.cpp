@@ -427,58 +427,33 @@ void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
     }
 }
 
-void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquare*> _paths)
+void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths)
 {
     SelectingPath = _enabled;
 
     if (!_paths.IsEmpty())
         AvailablePaths = _paths;
 
-    for (ASquare* Path : AvailablePaths)
+    for (ASquareOptional* Path : AvailablePaths)
     {
         if (!Path) continue;
 
-        ASquareOptional* auxPath = (ASquareOptional*)Path;
-
-        if (!auxPath) continue;
-
         if (_enabled)
-            auxPath->EnableArrow();
+            Path->EnableArrow();
         else
         {
-            auxPath->DisableArrowAnimation();
-            auxPath->DisableArrow();
-        }
-    }
-
-    for (ASquare* Path : AvailablePaths)
-    {
-        if (!Path) continue;
-
-        ASquareKeepCrowns* auxPath = (ASquareKeepCrowns*)Path;
-
-        if (!auxPath) continue;
-
-        if (_enabled)
-            auxPath->EnableArrow();
-        else
-        {
-            auxPath->DisableArrowAnimation();
-            auxPath->DisableArrow();
+            Path->DisableArrowAnimation();
+            Path->DisableArrow();
         }
     }
 
     if (_enabled && !AvailablePaths.IsEmpty())
     {
         SelectedPathIndex = 0;
-        ASquareOptional* SelectedPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
-        ASquareKeepCrowns* SelectedPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
+        ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
 
         if (SelectedPath)
             SelectedPath->EnableArrowAnimation();
-
-        if (SelectedPath2)
-            SelectedPath2->EnableArrowAnimation();
     }
 }
 
@@ -547,17 +522,13 @@ void AMapMenuCamera::ConfirmPathSelection()
     if (!SelectingPath || !AvailablePaths.IsValidIndex(SelectedPathIndex))
         return;
 
-    ASquareOptional* SelectedPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
-    ASquareKeepCrowns* SelectedPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
+    ASquareOptional* SelectedPath = AvailablePaths[SelectedPathIndex];
 
     if (SelectedPath->MirrorSquare)
         SelectedPath = SelectedPath->MirrorReference;
 
     if (SelectedPath)
         CurrentMinion->CurrentSquare = SelectedPath;
-
-    if (SelectedPath2)
-        CurrentMinion->CurrentSquare = SelectedPath2;
 
     CurrentMinion->SetMinionsMovements(CurrentMinion->GetMinionsMovements(), true);
 
@@ -618,34 +589,17 @@ void AMapMenuCamera::ChangeSelectedPath(int _direction)
     if (!SelectingPath || AvailablePaths.Num() == 0)
         return;
 
-    if(AvailablePaths[SelectedPathIndex]) 
+    if (AvailablePaths[SelectedPathIndex])
     {
-        ASquareOptional* AuxPath = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
-
-        if (AuxPath)
-            AuxPath->DisableArrowAnimation();
-
-        ASquareKeepCrowns* AuxPath2 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
-
-        if (AuxPath2)
-            AuxPath2->DisableArrowAnimation();
-
+        ASquareOptional* AuxPath = AvailablePaths[SelectedPathIndex];
+        AuxPath->DisableArrowAnimation();
 
         SelectedPathIndex += _direction;
         if (SelectedPathIndex >= AvailablePaths.Num()) SelectedPathIndex = 0;
         if (SelectedPathIndex < 0) SelectedPathIndex = AvailablePaths.Num() - 1;
 
-        ASquareOptional* AuxPath3 = (ASquareOptional*)AvailablePaths[SelectedPathIndex];
-
-        ASquareKeepCrowns* AuxPath4 = (ASquareKeepCrowns*)AvailablePaths[SelectedPathIndex];
-
-        if (AuxPath3)
-            AuxPath3->EnableArrowAnimation();
-
-        if (AuxPath4)
-            AuxPath4->EnableArrowAnimation();
-
-        //TO DO: Si us plau, s'haurà d'arreglar aquest desproposit
+        ASquareOptional* NewSelectedPath = AvailablePaths[SelectedPathIndex];
+        NewSelectedPath->EnableArrowAnimation();
     }
 }
 

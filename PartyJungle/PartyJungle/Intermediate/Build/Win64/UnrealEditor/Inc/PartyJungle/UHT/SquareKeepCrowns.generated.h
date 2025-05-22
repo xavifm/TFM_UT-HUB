@@ -14,13 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_SquareKeepCrowns_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_CALLBACK_WRAPPERS
 #define FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASquareKeepCrowns(); \
 	friend struct Z_Construct_UClass_ASquareKeepCrowns_Statics; \
 public: \
-	DECLARE_CLASS(ASquareKeepCrowns, ASquare, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/PartyJungle"), NO_API) \
+	DECLARE_CLASS(ASquareKeepCrowns, ASquareOptional, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/PartyJungle"), NO_API) \
 	DECLARE_SERIALIZER(ASquareKeepCrowns)
 
 
@@ -42,7 +41,6 @@ public: \
 #define FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_CALLBACK_WRAPPERS \
 	FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_INCLASS_NO_PURE_DECLS \
 	FID_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_14_ENHANCED_CONSTRUCTORS \
 private: \
