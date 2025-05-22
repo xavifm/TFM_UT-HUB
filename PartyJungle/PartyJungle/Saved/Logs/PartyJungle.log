@@ -96041,3 +96041,38 @@ SquareOptional7
 [2025.05.22-16.58.44:061][551]LogAnalytics: Display: [UEEditor.Rocket.Release] Destroying ET Analytics provider
 [2025.05.22-16.58.44:061][551]LogAnalytics: Display: [UEEditor.Rocket.Release] Ended ET Analytics provider session
 [2025.05.22-16.58.44:062][551]LogAnalytics: Display: [UEEditor.Rocket.Release] Destroyed ET Analytics provider
+[2025.05.22-16.58.48:437][551]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2025.05.22-16.58.48:437][551]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2025.05.22-16.58.48:437][551]LogAudio: Display: Audio Device unregistered from world 'PartyMap'.
+[2025.05.22-16.58.48:512][551]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.
+[2025.05.22-16.58.48:551][551]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.05.22-16.58.49:951][551]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.05.22-16.58.52:672][551]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1
+[2025.05.22-16.58.52:672][551]LogAudio: Display: Audio Device Manager Shutdown
+[2025.05.22-16.58.53:025][551]LogWindowsTextInputMethodSystem: Activated input method: Espanyol (Espanya, alfabet internacional) - (Keyboard).
+[2025.05.22-16.58.57:694][551]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2025.05.22-16.58.57:694][551]LogSlate: Slate User Destroyed.  User Index 1, Is Virtual User: 0
+[2025.05.22-16.59.00:175][551]LogExit: Preparing to exit.
+[2025.05.22-16.59.42:270][551]LogUObjectHash: Compacting FUObjectHashTables data took 214.78ms
+[2025.05.22-16.59.43:578][551]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.46:497][551]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.54:909][551]LogPython: Display: Object '/Engine/PythonTypes.add_null_above_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:532][551]LogPython: Display: Object '/Engine/PythonTypes.align_translation_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:571][551]LogPython: Display: Object '/Engine/PythonTypes.align_translation_all' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.align_translation_x' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.align_translation_y' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.align_translation_z' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.align_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.align_scale' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:666][551]LogPython: Display: Object '/Engine/PythonTypes.search_replace_name_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:667][551]LogPython: Display: Object '/Engine/PythonTypes.search_replace_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.do_rename_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.55:745][551]LogPython: Display: Object '/Engine/PythonTypes.do_rename_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.56:065][551]LogPython: Display: Object '/Engine/PythonTypes.set_bone_reference_pose' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.56:285][551]LogPython: Display: Object '/Engine/PythonTypes.import_ik_rig_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-16.59.56:285][551]LogPython: Display: Object '/Engine/PythonTypes.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.22-17.01.28:157][551]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
