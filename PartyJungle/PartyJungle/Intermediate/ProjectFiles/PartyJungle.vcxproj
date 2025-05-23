@@ -332,6 +332,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Player\Minion\Minion.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

@@ -180,6 +180,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.h">
       <Filter>Source\PartyJungle\Player\Map</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Menu">
+      <UniqueIdentifier>{0DA55D55-B89B-38C9-8796-D4CB9E875511}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.cpp">
+      <Filter>Source\PartyJungle\Player\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.h">
+      <Filter>Source\PartyJungle\Player\Menu</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Player\Minion">
       <UniqueIdentifier>{F816DA62-5E9F-33A4-930F-1B0578DD1BEF}</UniqueIdentifier>
     </Filter>

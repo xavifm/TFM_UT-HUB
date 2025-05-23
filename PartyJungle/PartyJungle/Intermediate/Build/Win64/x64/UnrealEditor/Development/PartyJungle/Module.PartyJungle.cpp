@@ -8,6 +8,7 @@
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/Dice.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/EndGameCamera.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/EndGameUI.gen.cpp"
+#include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/MainMenuInput.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/MapDatabase.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/MapMenuCamera.gen.cpp"
 #include "C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/Minigame1Logic.gen.cpp"
