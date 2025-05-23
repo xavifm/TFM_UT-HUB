@@ -2567,3 +2567,8 @@ Would you like to open the Output Log to see more details?
 [2025.05.23-13.21.26:979][536]LogPython: Display: Object '/Engine/PythonTypes.set_bone_reference_pose' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
 [2025.05.23-13.21.27:007][536]LogPython: Display: Object '/Engine/PythonTypes.import_ik_rig_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
 [2025.05.23-13.21.27:007][536]LogPython: Display: Object '/Engine/PythonTypes.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.05.23-13.21.39:433][536]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2025.05.23-13.21.53:612][536]LogExit: Editor shut down
+[2025.05.23-13.21.53:687][536]LogExit: Transaction tracking system shut down
+[2025.05.23-13.22.26:278][536]LogExit: Object subsystem successfully closed.
+[2025.05.23-13.22.26:514][536]LogShaderCompilers: Display: Shaders left to compile 0
