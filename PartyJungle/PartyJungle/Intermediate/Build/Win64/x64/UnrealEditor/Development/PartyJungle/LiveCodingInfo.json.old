@@ -1,7 +1,7 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.PartyJungle.cpp.obj": [
+		"Module.PartyJungle.1.cpp.obj": [
 			"AirCannon.gen.cpp.obj",
 			"AudioManager.gen.cpp.obj",
 			"CannonMinigameCamera.gen.cpp.obj",
@@ -11,11 +11,14 @@
 			"Dice.gen.cpp.obj",
 			"EndGameCamera.gen.cpp.obj",
 			"EndGameUI.gen.cpp.obj",
+			"MainMenuInput.gen.cpp.obj",
 			"MapDatabase.gen.cpp.obj",
 			"MapMenuCamera.gen.cpp.obj",
 			"Minigame1Logic.gen.cpp.obj",
 			"MinigameDataGameInstance.gen.cpp.obj",
-			"MinigameLogic.gen.cpp.obj",
+			"MinigameLogic.gen.cpp.obj"
+		],
+		"Module.PartyJungle.2.cpp.obj": [
 			"Minion.gen.cpp.obj",
 			"PartyJungle.init.gen.cpp.obj",
 			"PlayerMapUI.gen.cpp.obj",
@@ -48,6 +51,7 @@
 			"Minigame1Logic.cpp.obj",
 			"PartyJungle.cpp.obj",
 			"MapMenuCamera.cpp.obj",
+			"MainMenuInput.cpp.obj",
 			"Minion.cpp.obj",
 			"ScoreDatabase.cpp.obj",
 			"ScoreDto.cpp.obj",

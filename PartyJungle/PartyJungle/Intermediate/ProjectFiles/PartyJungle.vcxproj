@@ -308,6 +308,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Map\SquareStar.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Menu\BoardMenu.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Menu\BoardMenu.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

@@ -129,6 +129,15 @@
     <ClInclude Include="..\..\Source\PartyJungle\Map\SquareStar.h">
       <Filter>Source\PartyJungle\Map</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\Menu">
+      <UniqueIdentifier>{D19D2CB6-EF82-3769-9DD5-647B5A7AD18E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Menu\BoardMenu.cpp">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Menu\BoardMenu.h">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Minigame">
       <UniqueIdentifier>{0F4131EC-4BBB-3742-8CAF-A034BEC7C3D3}</UniqueIdentifier>
     </Filter>
