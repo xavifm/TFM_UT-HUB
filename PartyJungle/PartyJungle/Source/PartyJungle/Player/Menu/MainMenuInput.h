@@ -32,8 +32,11 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
 	void HandleLeftRightInput(const FInputActionValue& _value);
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
+	UFUNCTION(Category = "Functions")
 	void HandleUpDownInput(const FInputActionValue& _value);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
+	void HandleVerticalAxis(int _direction);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
 	void HandleConfirmInput();

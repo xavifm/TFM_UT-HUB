@@ -151,19 +151,12 @@ UFunction* Z_Construct_UFunction_AMainMenuInput_HandleStartInput()
 // End Class AMainMenuInput Function HandleStartInput
 
 // Begin Class AMainMenuInput Function HandleUpDownInput
-struct MainMenuInput_eventHandleUpDownInput_Parms
-{
-	FInputActionValue _value;
-};
-static FName NAME_AMainMenuInput_HandleUpDownInput = FName(TEXT("HandleUpDownInput"));
-void AMainMenuInput::HandleUpDownInput(FInputActionValue const& _value)
-{
-	MainMenuInput_eventHandleUpDownInput_Parms Parms;
-	Parms._value=_value;
-	ProcessEvent(FindFunctionChecked(NAME_AMainMenuInput_HandleUpDownInput),&Parms);
-}
 struct Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics
 {
+	struct MainMenuInput_eventHandleUpDownInput_Parms
+	{
+		FInputActionValue _value;
+	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Functions" },
@@ -182,8 +175,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainM
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::NewProp__value,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainMenuInput, nullptr, "HandleUpDownInput", nullptr, nullptr, Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::PropPointers), sizeof(MainMenuInput_eventHandleUpDownInput_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C420800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::Function_MetaDataParams) };
-static_assert(sizeof(MainMenuInput_eventHandleUpDownInput_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainMenuInput, nullptr, "HandleUpDownInput", nullptr, nullptr, Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::MainMenuInput_eventHandleUpDownInput_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput_Statics::MainMenuInput_eventHandleUpDownInput_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -193,7 +186,57 @@ UFunction* Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput()
 	}
 	return ReturnFunction;
 }
+DEFINE_FUNCTION(AMainMenuInput::execHandleUpDownInput)
+{
+	P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out__value);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HandleUpDownInput(Z_Param_Out__value);
+	P_NATIVE_END;
+}
 // End Class AMainMenuInput Function HandleUpDownInput
+
+// Begin Class AMainMenuInput Function HandleVerticalAxis
+struct MainMenuInput_eventHandleVerticalAxis_Parms
+{
+	int32 _direction;
+};
+static FName NAME_AMainMenuInput_HandleVerticalAxis = FName(TEXT("HandleVerticalAxis"));
+void AMainMenuInput::HandleVerticalAxis(int32 _direction)
+{
+	MainMenuInput_eventHandleVerticalAxis_Parms Parms;
+	Parms._direction=_direction;
+	ProcessEvent(FindFunctionChecked(NAME_AMainMenuInput_HandleVerticalAxis),&Parms);
+}
+struct Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Menu/MainMenuInput.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainMenuInput_eventHandleVerticalAxis_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::NewProp__direction,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainMenuInput, nullptr, "HandleVerticalAxis", nullptr, nullptr, Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::PropPointers), sizeof(MainMenuInput_eventHandleVerticalAxis_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::Function_MetaDataParams) };
+static_assert(sizeof(MainMenuInput_eventHandleVerticalAxis_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMainMenuInput Function HandleVerticalAxis
 
 // Begin Class AMainMenuInput Function SetupPlayerInputComponent
 struct Z_Construct_UFunction_AMainMenuInput_SetupPlayerInputComponent_Statics
@@ -246,6 +289,7 @@ void AMainMenuInput::StaticRegisterNativesAMainMenuInput()
 {
 	UClass* Class = AMainMenuInput::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "HandleUpDownInput", &AMainMenuInput::execHandleUpDownInput },
 		{ "SetupPlayerInputComponent", &AMainMenuInput::execSetupPlayerInputComponent },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -301,7 +345,8 @@ struct Z_Construct_UClass_AMainMenuInput_Statics
 		{ &Z_Construct_UFunction_AMainMenuInput_HandleConfirmInput, "HandleConfirmInput" }, // 1175730126
 		{ &Z_Construct_UFunction_AMainMenuInput_HandleLeftRightInput, "HandleLeftRightInput" }, // 817492223
 		{ &Z_Construct_UFunction_AMainMenuInput_HandleStartInput, "HandleStartInput" }, // 2516706654
-		{ &Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput, "HandleUpDownInput" }, // 2786741344
+		{ &Z_Construct_UFunction_AMainMenuInput_HandleUpDownInput, "HandleUpDownInput" }, // 4087086638
+		{ &Z_Construct_UFunction_AMainMenuInput_HandleVerticalAxis, "HandleVerticalAxis" }, // 4004200537
 		{ &Z_Construct_UFunction_AMainMenuInput_SetupPlayerInputComponent, "SetupPlayerInputComponent" }, // 3340433544
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -362,14 +407,14 @@ AMainMenuInput::~AMainMenuInput() {}
 // End Class AMainMenuInput
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainMenuInput, AMainMenuInput::StaticClass, TEXT("AMainMenuInput"), &Z_Registration_Info_UClass_AMainMenuInput, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainMenuInput), 1561690715U) },
+		{ Z_Construct_UClass_AMainMenuInput, AMainMenuInput::StaticClass, TEXT("AMainMenuInput"), &Z_Registration_Info_UClass_AMainMenuInput, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainMenuInput), 4273099620U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_2704875830(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_3433260877(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

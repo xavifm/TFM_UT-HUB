@@ -33,6 +33,13 @@ void AMainMenuInput::BeginPlay()
     }
 }
 
+void AMainMenuInput::HandleUpDownInput(const FInputActionValue& _value)
+{
+    int direction = _value.GetMagnitude();
+
+    HandleVerticalAxis(direction);
+}
+
 void AMainMenuInput::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);

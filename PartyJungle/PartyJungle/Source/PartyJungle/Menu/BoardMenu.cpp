@@ -6,15 +6,15 @@ ABoardMenu::ABoardMenu()
 
 }
 
-void ABoardMenu::BeginPlay()
+void ABoardMenu::SwitchMenuPosition(int _direction)
 {
-	Super::BeginPlay();
-	
-}
+	CurrentMenuPosition += -_direction;
 
-void ABoardMenu::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+	if (CurrentMenuPosition < 0)
+		CurrentMenuPosition = 0;
+	if (CurrentMenuPosition > MAX_MENU_POSITIONS)
+		CurrentMenuPosition = MAX_MENU_POSITIONS;
 
+	SwitchBoardVisibleOption(CurrentMenuPosition);
 }
 

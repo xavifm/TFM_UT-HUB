@@ -12,10 +12,20 @@ class PARTYJUNGLE_API ABoardMenu : public AActor
 public:
 	ABoardMenu();
 
-protected:
-	virtual void BeginPlay() override;
+	UFUNCTION(BlueprintCallable)
+	void SwitchMenuPosition(int _direction);
 
-public:
-	virtual void Tick(float DeltaTime) override;
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void PerformMenuAction(int CurrentBoardPosition);
+
+protected:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SwitchBoardVisibleOption(int _position);
+
+private:
+	UPROPERTY();
+	int CurrentMenuPosition = 0;
+
+	const int MAX_MENU_POSITIONS = 3;
 
 };

@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_ScoresCalculator_generated_h
 
-#define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetWinnerTeam); \
 	DECLARE_FUNCTION(execCompensationCrown); \
 	DECLARE_FUNCTION(execGetTeamWithHigherCoins); \
@@ -24,7 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execInitializeInfo);
 
 
-#define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAScoresCalculator(); \
 	friend struct Z_Construct_UClass_AScoresCalculator_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(AScoresCalculator)
 
 
-#define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AScoresCalculator(AScoresCalculator&&); \
@@ -45,13 +45,13 @@ public: \
 	NO_API virtual ~AScoresCalculator();
 
 
-#define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_10_PROLOG
-#define FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_GENERATED_BODY \
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_10_PROLOG
+#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
-	FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -59,7 +59,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class AScoresCalculator>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h
+#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
