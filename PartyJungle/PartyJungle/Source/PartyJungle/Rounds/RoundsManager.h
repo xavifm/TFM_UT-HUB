@@ -42,6 +42,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Rounds Audio")
 	AAudioManager* AudioManager;
 
+	UPROPERTY(EditAnywhere, Category = "Rounds")
+	int MaxRounds;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -49,8 +52,6 @@ private:
 	UPROPERTY(VisibleAnywhere, Category = "Rounds")
 	int CurrentRound;
 
-	UPROPERTY(EditAnywhere, Category = "Rounds")
-	int MaxRounds;
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;

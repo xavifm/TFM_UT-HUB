@@ -33,6 +33,21 @@ void AMapMenuCamera::BeginPlay()
     if (World)
     {
         UGameInstance* GameInstance = World->GetGameInstance();
+        UMinigameDataGameInstance* DataGameInstance = Cast<UMinigameDataGameInstance>(GameInstance);
+
+        if (GameInstance)
+        {
+            MAX_TEAM_NUMBER = DataGameInstance->PlayersInBoard;
+            RoundsSystem->MaxRounds = DataGameInstance->RoundsInBoard;
+        }
+
+        if (WorldSceneManager)
+        {
+            WorldSceneManager->DisableAllStars();
+            WorldSceneManager->EnableStarAtRandomLocation();
+        }
+
+
         if (GameInstance)
         {
             const TArray<ULocalPlayer*>& LocalPlayers = GameInstance->GetLocalPlayers();

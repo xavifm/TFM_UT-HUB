@@ -159,7 +159,7 @@ public:
 
 private:
 	const int MAX_MINION_NUMBER = 3;
-	const int MAX_TEAM_NUMBER = 4;
+	int MAX_TEAM_NUMBER = 4;
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;

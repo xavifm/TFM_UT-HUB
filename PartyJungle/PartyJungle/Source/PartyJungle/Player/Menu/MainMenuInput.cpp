@@ -27,6 +27,7 @@ void AMainMenuInput::BeginPlay()
                     UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
                     if (Subsystem)
                         Subsystem->AddMappingContext(InputMappingContext, 0);
+                    break;
                 }
             }
         }

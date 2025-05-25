@@ -15,6 +15,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define PARTYJUNGLE_BoardMenu_generated_h
 
 #define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetCurrentMenuPosition); \
+	DECLARE_FUNCTION(execStartGame); \
+	DECLARE_FUNCTION(execPerformPartyAction); \
+	DECLARE_FUNCTION(execSwitchPartyValues); \
+	DECLARE_FUNCTION(execSwitchPartyMenuPosition); \
 	DECLARE_FUNCTION(execSwitchMenuPosition);
 
 

@@ -60,4 +60,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int32 ChallengeWinner;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 PlayersInBoard;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	int32 RoundsInBoard;
 };
