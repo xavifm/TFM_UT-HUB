@@ -40,20 +40,28 @@ void AWorldManager::InitializeCameras()
 
 void AWorldManager::AsssignCameraActors(TArray<AActor*> _actors)
 {
-	bool bIsEditor = GIsEditor && !IsRunningGame();
+	bool firstIteration = false;
 
-	int32 StartIndex = bIsEditor ? 1 : 0;
+#if WITH_EDITOR
+	firstIteration = true;
+#endif
 
-	for (int32 i = StartIndex; i < _actors.Num(); ++i)
+	for (AActor* Actor : _actors)
 	{
-		ACameraActor* CameraActor = Cast<ACameraActor>(_actors[i]);
+		if (!firstIteration)
+		{
+			firstIteration = true;
+			continue;
+		}
+
+
+		ACameraActor* CameraActor = Cast<ACameraActor>(Actor);
 		if (CameraActor)
 		{
 			CameraActors.Add(CameraActor);
 		}
 	}
 }
-
 
 ACameraActor* AWorldManager::GetMinigameCameraByIndex(int _index)
 {
