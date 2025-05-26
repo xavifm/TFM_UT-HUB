@@ -294,6 +294,50 @@ DEFINE_FUNCTION(AMapMenuCamera::execFocusNextMinion)
 }
 // End Class AMapMenuCamera Function FocusNextMinion
 
+// Begin Class AMapMenuCamera Function GetMapUI
+struct Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics
+{
+	struct MapMenuCamera_eventGetMapUI_Parms
+	{
+		UPlayerMapUI* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventGetMapUI_Parms, ReturnValue), Z_Construct_UClass_UPlayerMapUI_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "GetMapUI", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::MapMenuCamera_eventGetMapUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::MapMenuCamera_eventGetMapUI_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_GetMapUI()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execGetMapUI)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(UPlayerMapUI**)Z_Param__Result=P_THIS->GetMapUI();
+	P_NATIVE_END;
+}
+// End Class AMapMenuCamera Function GetMapUI
+
 // Begin Class AMapMenuCamera Function HandleBackInput
 struct Z_Construct_UFunction_AMapMenuCamera_HandleBackInput_Statics
 {
@@ -1429,6 +1473,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "FinishDuel", &AMapMenuCamera::execFinishDuel },
 		{ "FinishFadeTransition", &AMapMenuCamera::execFinishFadeTransition },
 		{ "FocusNextMinion", &AMapMenuCamera::execFocusNextMinion },
+		{ "GetMapUI", &AMapMenuCamera::execGetMapUI },
 		{ "HandleBackInput", &AMapMenuCamera::execHandleBackInput },
 		{ "HandleConfirmInput", &AMapMenuCamera::execHandleConfirmInput },
 		{ "HandleLeftRightInput", &AMapMenuCamera::execHandleLeftRightInput },
@@ -1535,6 +1580,9 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ "Category", "Map Manager" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MAX_TEAM_NUMBER_MetaData[] = {
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AvailablePaths_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
@@ -1563,6 +1611,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_RoundsSystem;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengeInformation;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldSceneManager;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_MAX_TEAM_NUMBER;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AvailablePaths_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_AvailablePaths;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapUI;
@@ -1577,6 +1626,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishDuel, "FinishDuel" }, // 2725032225
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition, "FinishFadeTransition" }, // 1488510937
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2936244957
+		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 3189438312
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 229676118
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleConfirmInput, "HandleConfirmInput" }, // 55423153
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleLeftRightInput, "HandleLeftRightInput" }, // 1471737810
@@ -1627,6 +1677,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_RoundsSystem = { "RoundsSystem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, RoundsSystem), Z_Construct_UClass_ARoundsManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RoundsSystem_MetaData), NewProp_RoundsSystem_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ChallengeInformation = { "ChallengeInformation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, ChallengeInformation), Z_Construct_UClass_AChallengeInformation_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeInformation_MetaData), NewProp_ChallengeInformation_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_WorldSceneManager = { "WorldSceneManager", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, WorldSceneManager), Z_Construct_UClass_AWorldManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WorldSceneManager_MetaData), NewProp_WorldSceneManager_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MAX_TEAM_NUMBER = { "MAX_TEAM_NUMBER", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MAX_TEAM_NUMBER), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MAX_TEAM_NUMBER_MetaData), NewProp_MAX_TEAM_NUMBER_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AvailablePaths_Inner = { "AvailablePaths", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASquareOptional_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AvailablePaths = { "AvailablePaths", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, AvailablePaths), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AvailablePaths_MetaData), NewProp_AvailablePaths_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapUI = { "MapUI", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MapUI), Z_Construct_UClass_UPlayerMapUI_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapUI_MetaData), NewProp_MapUI_MetaData) };
@@ -1648,6 +1699,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_RoundsSystem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ChallengeInformation,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_WorldSceneManager,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MAX_TEAM_NUMBER,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AvailablePaths_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_AvailablePaths,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MapUI,
@@ -1691,14 +1743,14 @@ AMapMenuCamera::~AMapMenuCamera() {}
 // End Class AMapMenuCamera
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1251484046U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1047705840U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_1168237830(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_299702354(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

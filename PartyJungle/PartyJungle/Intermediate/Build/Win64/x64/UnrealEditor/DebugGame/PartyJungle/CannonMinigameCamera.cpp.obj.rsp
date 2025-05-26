@@ -1,11 +1,11 @@
-"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.cpp"
-/FI"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
-/FI"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Definitions.PartyJungle.h"
-/Yu"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
-/Fp"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.pch"
-/Fo"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\CannonMinigameCamera.cpp.obj"
-/sourceDependencies "C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\CannonMinigameCamera.cpp.dep.json"
-@"C:\Users\xavi\Documents\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\PartyJungle.Shared.rsp"
+"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.cpp"
+/FI"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
+/FI"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\Definitions.PartyJungle.h"
+/Yu"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h"
+/Fp"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\PartyJungleEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.Project.NonOptimized.ValApi.Cpp20.h.pch"
+/Fo"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\CannonMinigameCamera.cpp.obj"
+/sourceDependencies "C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\CannonMinigameCamera.cpp.dep.json"
+@"C:\Users\sdasd\Documents\GitHub\TFM_UT-HUB\PartyJungle\PartyJungle\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\PartyJungle\PartyJungle.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

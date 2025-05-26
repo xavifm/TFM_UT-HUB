@@ -571,6 +571,11 @@ void AMapMenuCamera::BuyCrowns(int _quantity)
     SwitchCrownsShop(false);
 }
 
+UPlayerMapUI* AMapMenuCamera::GetMapUI()
+{
+    return MapUI;
+}
+
 
 void AMapMenuCamera::RollTheDice()
 {

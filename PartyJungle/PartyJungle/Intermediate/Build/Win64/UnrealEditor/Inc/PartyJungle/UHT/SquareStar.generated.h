@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PARTYJUNGLE_SquareStar_generated_h
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSwitchStar);
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASquareStar(); \
 	friend struct Z_Construct_UClass_ASquareStar_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(ASquareStar)
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASquareStar(); \
 private: \
@@ -42,14 +42,14 @@ public: \
 	NO_API virtual ~ASquareStar();
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_8_PROLOG
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_8_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_CALLBACK_WRAPPERS \
+	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -57,7 +57,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class ASquareStar>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareStar_h
+#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Map_SquareStar_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

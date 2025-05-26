@@ -407,14 +407,14 @@ AMainMenuInput::~AMainMenuInput() {}
 // End Class AMainMenuInput
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AMainMenuInput, AMainMenuInput::StaticClass, TEXT("AMainMenuInput"), &Z_Registration_Info_UClass_AMainMenuInput, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainMenuInput), 4273099620U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_3433260877(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_3433260877(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Menu_MainMenuInput_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

@@ -135,6 +135,35 @@ UEnum* Z_Construct_UEnum_PartyJungle_EMinionState()
 }
 // End Enum EMinionState
 
+// Begin Class AMinion Function DelayedPlayerCheck
+struct Z_Construct_UFunction_AMinion_DelayedPlayerCheck_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_DelayedPlayerCheck_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "DelayedPlayerCheck", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_DelayedPlayerCheck_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_DelayedPlayerCheck_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AMinion_DelayedPlayerCheck()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_DelayedPlayerCheck_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinion::execDelayedPlayerCheck)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->DelayedPlayerCheck();
+	P_NATIVE_END;
+}
+// End Class AMinion Function DelayedPlayerCheck
+
 // Begin Class AMinion Function GetCoins
 struct Z_Construct_UFunction_AMinion_GetCoins_Statics
 {
@@ -660,6 +689,53 @@ UFunction* Z_Construct_UFunction_AMinion_SwitchCrownVisibility()
 }
 // End Class AMinion Function SwitchCrownVisibility
 
+// Begin Class AMinion Function SwitchMinionVisibility
+struct Minion_eventSwitchMinionVisibility_Parms
+{
+	bool _visible;
+};
+static FName NAME_AMinion_SwitchMinionVisibility = FName(TEXT("SwitchMinionVisibility"));
+void AMinion::SwitchMinionVisibility(bool _visible)
+{
+	Minion_eventSwitchMinionVisibility_Parms Parms;
+	Parms._visible=_visible ? true : false;
+	ProcessEvent(FindFunctionChecked(NAME_AMinion_SwitchMinionVisibility),&Parms);
+}
+struct Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Minion Functions" },
+		{ "ModuleRelativePath", "Player/Minion/Minion.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::NewProp__visible_SetBit(void* Obj)
+{
+	((Minion_eventSwitchMinionVisibility_Parms*)Obj)->_visible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::NewProp__visible = { "_visible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Minion_eventSwitchMinionVisibility_Parms), &Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::NewProp__visible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::NewProp__visible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMinion, nullptr, "SwitchMinionVisibility", nullptr, nullptr, Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::PropPointers), sizeof(Minion_eventSwitchMinionVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Minion_eventSwitchMinionVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinion_SwitchMinionVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinion_SwitchMinionVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class AMinion Function SwitchMinionVisibility
+
 // Begin Class AMinion Function UpdateCoins
 struct Z_Construct_UFunction_AMinion_UpdateCoins_Statics
 {
@@ -766,6 +842,7 @@ void AMinion::StaticRegisterNativesAMinion()
 {
 	UClass* Class = AMinion::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "DelayedPlayerCheck", &AMinion::execDelayedPlayerCheck },
 		{ "GetCoins", &AMinion::execGetCoins },
 		{ "GetCrowns", &AMinion::execGetCrowns },
 		{ "GetMinionsMovements", &AMinion::execGetMinionsMovements },
@@ -837,6 +914,7 @@ struct Z_Construct_UClass_AMinion_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMinion_DelayedPlayerCheck, "DelayedPlayerCheck" }, // 895792898
 		{ &Z_Construct_UFunction_AMinion_GetCoins, "GetCoins" }, // 1317834461
 		{ &Z_Construct_UFunction_AMinion_GetCrowns, "GetCrowns" }, // 1614513224
 		{ &Z_Construct_UFunction_AMinion_GetMinionsMovements, "GetMinionsMovements" }, // 1153191699
@@ -849,6 +927,7 @@ struct Z_Construct_UClass_AMinion_Statics
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCoinsFeedback, "ShowMinionCoinsFeedback" }, // 3394016713
 		{ &Z_Construct_UFunction_AMinion_ShowMinionCrownsFeedback, "ShowMinionCrownsFeedback" }, // 269617942
 		{ &Z_Construct_UFunction_AMinion_SwitchCrownVisibility, "SwitchCrownVisibility" }, // 520029745
+		{ &Z_Construct_UFunction_AMinion_SwitchMinionVisibility, "SwitchMinionVisibility" }, // 1382871428
 		{ &Z_Construct_UFunction_AMinion_UpdateCoins, "UpdateCoins" }, // 786947757
 		{ &Z_Construct_UFunction_AMinion_UpdateCrowns, "UpdateCrowns" }, // 2814760434
 	};
@@ -916,19 +995,19 @@ AMinion::~AMinion() {}
 // End Class AMinion
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ ETeam_StaticEnum, TEXT("ETeam"), &Z_Registration_Info_UEnum_ETeam, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4119591115U) },
 		{ EMinionState_StaticEnum, TEXT("EMinionState"), &Z_Registration_Info_UEnum_EMinionState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4150101641U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 2586252864U) },
+		{ Z_Construct_UClass_AMinion, AMinion::StaticClass, TEXT("AMinion"), &Z_Registration_Info_UClass_AMinion, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinion), 511117060U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_1249567018(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_2837901883(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_Minion_Minion_h_Statics::EnumInfo));
 // End Registration
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

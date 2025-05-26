@@ -13,11 +13,12 @@
 			"EndGameCamera.gen.cpp.obj",
 			"EndGameUI.gen.cpp.obj",
 			"MainMenuInput.gen.cpp.obj",
+			"MainMenuWidget.gen.cpp.obj",
 			"MapDatabase.gen.cpp.obj",
-			"MapMenuCamera.gen.cpp.obj",
-			"Minigame1Logic.gen.cpp.obj"
+			"MapMenuCamera.gen.cpp.obj"
 		],
 		"Module.PartyJungle.2.cpp.obj": [
+			"Minigame1Logic.gen.cpp.obj",
 			"MinigameDataGameInstance.gen.cpp.obj",
 			"MinigameLogic.gen.cpp.obj",
 			"Minion.gen.cpp.obj",
@@ -33,10 +34,7 @@
 			"SquareOptional.gen.cpp.obj",
 			"SquareStar.gen.cpp.obj",
 			"TransactionDto.gen.cpp.obj",
-			"WorldManager.gen.cpp.obj",
-			"ChallengeDatabase.cpp.obj",
-			"ChallengeDto.cpp.obj",
-			"ChallengeInformation.cpp.obj"
+			"WorldManager.gen.cpp.obj"
 		]
 	}
 }

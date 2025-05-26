@@ -3,21 +3,25 @@
 	"changelists": [
 		{
 			"guid": "00000000000000000000000000000000",
-			"description": "Lista de cambios no controlados predeterminada",
+			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/MainMenu/C/ZT/T7TZ49897V6R5M7420TUQG.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/EraserDust-p70d.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/EraserDust-p70d_Font.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/EraserDust_Mat.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/Input/MainMenuInput.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Map/PlayerCameraBlueprint.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Inputs/MapCameraInput.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/MainMenu/3/0Z/NEX71D8A8KXW27HHD7QUXF.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/Camera/MainMenuCamera.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/BlackBoard.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/BlackBoard_Font.uasset",
-				"C:/Users/xavi/Documents/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Typography/BlackBoard_Mat.uasset"
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/MainMenuUI.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/Camera/MainMenuCamera.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/Input/MainMenuInput.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Minions/Minion_T1.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/MainMenu/C/ZT/T7TZ49897V6R5M7420TUQG.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Map/PlayerCameraBlueprint.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_TextButton.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_Settings_Slider.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_Settings_Selection.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_Settings_Keybind.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_ResetButton.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_Options.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_InGameMenu.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_HUD.uasset",
+				"C:/Users/sdasd/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Options/WBP_Button.uasset"
 			]
 		}
 	]

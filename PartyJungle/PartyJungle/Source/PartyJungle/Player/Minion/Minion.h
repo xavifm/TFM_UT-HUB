@@ -86,11 +86,17 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Minion Feedback")
 	void MoveCrownVerticalAxis(float _position);
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion Functions")
+	void SwitchMinionVisibility(bool _visible);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
 	float TotalLerpTime = 0.5f;
 
 protected:
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void DelayedPlayerCheck();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties", meta = (AllowPrivateAccess = "true"))
 	int32 Movements;
@@ -114,6 +120,8 @@ private:
 
 	FVector StartPosition;
 	FVector TargetPosition;
+
+	FTimerHandle TimerHandle;
 
 	const float MAX_TIME_MOVEMENT = 1.0f;
 	const float MINION_SEPARATION_DISTANCE = 50.0f;

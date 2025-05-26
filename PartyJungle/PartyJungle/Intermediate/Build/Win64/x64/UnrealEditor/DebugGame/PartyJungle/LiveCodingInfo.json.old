@@ -13,13 +13,14 @@
 			"EndGameCamera.gen.cpp.obj",
 			"EndGameUI.gen.cpp.obj",
 			"MainMenuInput.gen.cpp.obj",
+			"MainMenuWidget.gen.cpp.obj",
 			"MapDatabase.gen.cpp.obj",
 			"MapMenuCamera.gen.cpp.obj",
-			"Minigame1Logic.gen.cpp.obj",
-			"MinigameDataGameInstance.gen.cpp.obj",
-			"MinigameLogic.gen.cpp.obj"
+			"Minigame1Logic.gen.cpp.obj"
 		],
 		"Module.PartyJungle.2.cpp.obj": [
+			"MinigameDataGameInstance.gen.cpp.obj",
+			"MinigameLogic.gen.cpp.obj",
 			"Minion.gen.cpp.obj",
 			"PartyJungle.init.gen.cpp.obj",
 			"PlayerMapUI.gen.cpp.obj",
@@ -38,32 +39,7 @@
 			"ChallengeDto.cpp.obj",
 			"ChallengeInformation.cpp.obj",
 			"Dice.cpp.obj",
-			"EndGameCamera.cpp.obj",
-			"ScoresCalculator.cpp.obj",
-			"MapDatabase.cpp.obj",
-			"Square.cpp.obj",
-			"SquareKeepCrowns.cpp.obj",
-			"SquareOptional.cpp.obj",
-			"SquareStar.cpp.obj",
-			"BoardMenu.cpp.obj",
-			"MinigameDataGameInstance.cpp.obj",
-			"MinigameLogic.cpp.obj",
-			"AirCannon.cpp.obj",
-			"CannonMinigameCamera.cpp.obj",
-			"Minigame1Logic.cpp.obj",
-			"PartyJungle.cpp.obj",
-			"MapMenuCamera.cpp.obj",
-			"MainMenuInput.cpp.obj",
-			"Minion.cpp.obj",
-			"ScoreDatabase.cpp.obj",
-			"ScoreDto.cpp.obj",
-			"TransactionDto.cpp.obj",
-			"EndGameUI.cpp.obj",
-			"PlayerMapUI.cpp.obj",
-			"RoundsManager.cpp.obj",
-			"AudioManager.cpp.obj",
-			"ReturnToPartyMapScene.cpp.obj",
-			"WorldManager.cpp.obj"
+			"EndGameCamera.cpp.obj"
 		]
 	}
 }

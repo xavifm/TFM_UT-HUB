@@ -138,6 +138,12 @@
     <ClInclude Include="..\..\Source\PartyJungle\Menu\BoardMenu.h">
       <Filter>Source\PartyJungle\Menu</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Menu\MainMenuWidget.cpp">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Menu\MainMenuWidget.h">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Minigame">
       <UniqueIdentifier>{0F4131EC-4BBB-3742-8CAF-A034BEC7C3D3}</UniqueIdentifier>
     </Filter>

@@ -12,13 +12,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AMinion;
 class ASquareOptional;
 class UInputComponent;
+class UPlayerMapUI;
 struct FInputActionValue;
 #ifdef PARTYJUNGLE_MapMenuCamera_generated_h
 #error "MapMenuCamera.generated.h already included, missing '#pragma once' in MapMenuCamera.h"
 #endif
 #define PARTYJUNGLE_MapMenuCamera_generated_h
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execStartPlayerTurn); \
 	DECLARE_FUNCTION(execUpdateMinionEconomyWithReference); \
@@ -27,6 +28,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execStartFadeTransition); \
 	DECLARE_FUNCTION(execRestoreTurnLogicWithAnimation); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
+	DECLARE_FUNCTION(execGetMapUI); \
 	DECLARE_FUNCTION(execBuyCrowns); \
 	DECLARE_FUNCTION(execStoreCrowns); \
 	DECLARE_FUNCTION(execConfirmPathSelection); \
@@ -54,8 +56,8 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchMainScene);
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_CALLBACK_WRAPPERS
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_CALLBACK_WRAPPERS
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMapMenuCamera(); \
 	friend struct Z_Construct_UClass_AMapMenuCamera_Statics; \
@@ -64,7 +66,7 @@ public: \
 	DECLARE_SERIALIZER(AMapMenuCamera)
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	AMapMenuCamera(AMapMenuCamera&&); \
@@ -76,14 +78,14 @@ public: \
 	NO_API virtual ~AMapMenuCamera();
 
 
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_19_PROLOG
-#define FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_19_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_CALLBACK_WRAPPERS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
-	FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_CALLBACK_WRAPPERS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -91,7 +93,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> PARTYJUNGLE_API UClass* StaticClass<class AMapMenuCamera>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_xavi_Documents_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h
+#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

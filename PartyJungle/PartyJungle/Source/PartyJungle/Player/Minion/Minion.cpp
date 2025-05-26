@@ -135,10 +135,36 @@ void AMinion::BeginPlay()
 {
 	Super::BeginPlay();
 
+	GetWorld()->GetTimerManager().SetTimer(
+		TimerHandle,
+		this,
+		&AMinion::DelayedPlayerCheck,
+		0.2f,
+		false
+	);
+
 	SetMinionAnimation(EMinionState::IDLE);
 
 	if(CurrentSquare)
 		CurrentSquare->AddMinion(this);
+}
+
+void AMinion::DelayedPlayerCheck() 
+{
+	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+
+	if (CurrentSquare)
+	{
+		if (CurrentSquare->Camera)
+		{
+			int savedTeam = static_cast<int>(Team) + 1;
+			if (savedTeam > CurrentSquare->Camera->MAX_TEAM_NUMBER) 
+			{
+				SwitchMinionVisibility(false);
+				CurrentSquare->Camera->GetMapUI()->SwitchUITeamVisibility(savedTeam - 1, false);
+			}
+		}
+	}
 }
 
 void AMinion::HandleMovement(float _deltaTime) 
