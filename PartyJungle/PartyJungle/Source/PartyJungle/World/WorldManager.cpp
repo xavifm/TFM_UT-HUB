@@ -27,9 +27,13 @@ void AWorldManager::InitializeCameras()
 		return;
 
 	TArray<UCameraComponent*> cameraComponents;
+	TArray<UCameraComponent*> fullMapCameraComponents;
 
 	MapCameraActor->GetComponents<UCameraComponent>(cameraComponents);
 	MapCamera = cameraComponents[0];
+
+	FullMapCameraActor->GetComponents<UCameraComponent>(fullMapCameraComponents);
+	FullMapCamera = fullMapCameraComponents[0];
 
 	TArray<AActor*> foundCameras;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ACameraActor::StaticClass(), foundCameras);
@@ -40,13 +44,15 @@ void AWorldManager::InitializeCameras()
 
 void AWorldManager::AsssignCameraActors(TArray<AActor*> _actors)
 {
-	for (AActor* Actor : _actors)
+	bool bIsEditor = GIsEditor && !IsRunningGame();
+
+	int32 StartIndex = bIsEditor ? 1 : 0;
+
+	for (int32 i = StartIndex; i < _actors.Num(); ++i)
 	{
-		ACameraActor* CameraActor = Cast<ACameraActor>(Actor);
+		ACameraActor* CameraActor = Cast<ACameraActor>(_actors[i]);
 		if (CameraActor)
-		{
 			CameraActors.Add(CameraActor);
-		}
 	}
 }
 
@@ -81,6 +87,9 @@ void AWorldManager::UnloadEntireWorld()
 		if (MapCamera)
 			MapCamera->Deactivate();
 
+		if (FullMapCamera)
+			FullMapCamera->Deactivate();
+
 		ACameraActor* cameraActor = GetMinigameCameraByIndex(i);
 		if (cameraActor)
 			cameraActor->GetCameraComponent()->Deactivate();
@@ -111,17 +120,19 @@ void AWorldManager::LoadPortion(int _index)
 
 	}
 
-	if (_index == -1 && MapCamera)
+	if (_index == -1 && MapCamera && FullMapCamera)
 	{
 		MapCamera->Activate();
+		FullMapCamera->Activate();
 		PC->SetViewTargetWithBlend(MapCamera->GetAttachParentActor(), 0.0f);
 	}
 
 	ACameraActor* cameraActor = GetMinigameCameraByIndex(_index);
 	if (cameraActor) 
 	{
-		cameraActor->GetCameraComponent()->Activate();
-		PC->SetViewTargetWithBlend(cameraActor, 0.0f);
+		UCameraComponent* minigameCamera = cameraActor->GetCameraComponent();
+		minigameCamera->Activate();
+		PC->SetViewTargetWithBlend(minigameCamera->GetAttachParentActor(), 0.0f);
 	}
 }
 
