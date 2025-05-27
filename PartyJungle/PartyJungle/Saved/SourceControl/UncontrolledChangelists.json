@@ -1,0 +1,44 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/goth.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/bloodborne.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/fulla.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/copa.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/goth_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/fulla_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/copa_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/bloodborne_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Minions/Minion_T1.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/fulla_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/copa_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/bb_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/Materials/bat_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/4/3K/C2IDE72FPID45ZNBI748OX.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/5/31/6ZCZY1RIE35C8PWR04AF7J.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/9Z/3PZ3O76W8SMQF7ZW7E4WL8.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/9B/RN8MFAAE4L5BVG9SK8P8CO.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/C/84/QCS9HS2DX76F2LSXE550TN.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/F/13/K6TOQFYUBN8LQY3MQTP97J.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/F9/MCOG97W9FZRPAA2YRID63Z.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/FL/KCQS7TLFIXTIKZSM51FDYB.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/Z0/CZ4M6QHKKKQV9VU3Z219V6.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/QT/AI5V8709DE0V1JVCBBQ8GL.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/2/VZ/ME1NZAW5UECERFVD5RI58E.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/FD/8751L3369P9QTVXWAICVJG.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/bb.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Hats/bat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Models/Kings/King.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/5/XX/KSU2MDSNGQ4P1RL8OSZVNE.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/3/EZ/69IMIXBMJT9U0Y03MG1GVQ.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/B/YL/R0VNHKACPOHNODG7T3L243.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/D/YB/05FYXNVZH30BP84OEAQ71N.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset"
+			]
+		}
+	]
+}
