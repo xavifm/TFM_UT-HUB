@@ -23,8 +23,14 @@ public:
 	UFUNCTION()
 	void HandleLeftRightInput(const FInputActionValue& _value);
 
+	UFUNCTION()
+	void HandleConfirmInput();
+
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void SwitchScoreDirection(int _direction);
+
+	UPROPERTY(BlueprintReadWrite)
+	bool SequenceFinished = false;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
@@ -32,4 +38,10 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* AxisxAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* ConfirmInputAction;
+
+private:
+	const FString MAIN_MENU_SCENE_NAME = "MainMenu";
 };

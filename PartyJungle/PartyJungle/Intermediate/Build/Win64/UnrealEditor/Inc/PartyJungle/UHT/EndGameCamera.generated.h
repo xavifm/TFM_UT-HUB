@@ -16,6 +16,7 @@ struct FInputActionValue;
 #define PARTYJUNGLE_EndGameCamera_generated_h
 
 #define FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execHandleConfirmInput); \
 	DECLARE_FUNCTION(execHandleLeftRightInput);
 
 

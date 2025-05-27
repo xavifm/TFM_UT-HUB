@@ -1,4 +1,6 @@
 #include "./EndGameCamera.h"
+#include "Kismet/GameplayStatics.h"
+
 
 AEndGameCamera::AEndGameCamera()
 {
@@ -36,6 +38,7 @@ void AEndGameCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
     if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
     {
         EnhancedInput->BindAction(AxisxAction, ETriggerEvent::Started, this, &AEndGameCamera::HandleLeftRightInput);
+        EnhancedInput->BindAction(ConfirmInputAction, ETriggerEvent::Started, this, &AEndGameCamera::HandleConfirmInput);
         EnhancedInput->bBlockInput = false;
     }
 }
@@ -45,5 +48,11 @@ void AEndGameCamera::HandleLeftRightInput(const FInputActionValue& _value)
     int direction = _value.GetMagnitude();
 
     SwitchScoreDirection(direction);
+}
+
+void AEndGameCamera::HandleConfirmInput()
+{
+    if(SequenceFinished) 
+        UGameplayStatics::OpenLevel(this, FName(MAIN_MENU_SCENE_NAME));
 }
 

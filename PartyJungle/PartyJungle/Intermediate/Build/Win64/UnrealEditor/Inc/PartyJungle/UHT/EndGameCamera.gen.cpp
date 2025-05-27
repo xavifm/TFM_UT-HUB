@@ -20,6 +20,35 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AEndGameCamera_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // End Cross Module References
 
+// Begin Class AEndGameCamera Function HandleConfirmInput
+struct Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEndGameCamera, nullptr, "HandleConfirmInput", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput_Statics::Function_MetaDataParams), Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AEndGameCamera::execHandleConfirmInput)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->HandleConfirmInput();
+	P_NATIVE_END;
+}
+// End Class AEndGameCamera Function HandleConfirmInput
+
 // Begin Class AEndGameCamera Function HandleLeftRightInput
 struct Z_Construct_UFunction_AEndGameCamera_HandleLeftRightInput_Statics
 {
@@ -111,6 +140,7 @@ void AEndGameCamera::StaticRegisterNativesAEndGameCamera()
 {
 	UClass* Class = AEndGameCamera::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "HandleConfirmInput", &AEndGameCamera::execHandleConfirmInput },
 		{ "HandleLeftRightInput", &AEndGameCamera::execHandleLeftRightInput },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -128,6 +158,10 @@ struct Z_Construct_UClass_AEndGameCamera_Statics
 		{ "IncludePath", "EndGame/Camera/EndGameCamera.h" },
 		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SequenceFinished_MetaData[] = {
+		{ "Category", "EndGameCamera" },
+		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InputMappingContext_MetaData[] = {
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
@@ -136,12 +170,20 @@ struct Z_Construct_UClass_AEndGameCamera_Statics
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ConfirmInputAction_MetaData[] = {
+		{ "Category", "Input" },
+		{ "ModuleRelativePath", "EndGame/Camera/EndGameCamera.h" },
+	};
 #endif // WITH_METADATA
+	static void NewProp_SequenceFinished_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_SequenceFinished;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMappingContext;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AxisxAction;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ConfirmInputAction;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AEndGameCamera_HandleConfirmInput, "HandleConfirmInput" }, // 3703536694
 		{ &Z_Construct_UFunction_AEndGameCamera_HandleLeftRightInput, "HandleLeftRightInput" }, // 963015984
 		{ &Z_Construct_UFunction_AEndGameCamera_SwitchScoreDirection, "SwitchScoreDirection" }, // 112951394
 	};
@@ -151,11 +193,19 @@ struct Z_Construct_UClass_AEndGameCamera_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+void Z_Construct_UClass_AEndGameCamera_Statics::NewProp_SequenceFinished_SetBit(void* Obj)
+{
+	((AEndGameCamera*)Obj)->SequenceFinished = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AEndGameCamera_Statics::NewProp_SequenceFinished = { "SequenceFinished", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AEndGameCamera), &Z_Construct_UClass_AEndGameCamera_Statics::NewProp_SequenceFinished_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SequenceFinished_MetaData), NewProp_SequenceFinished_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEndGameCamera_Statics::NewProp_InputMappingContext = { "InputMappingContext", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEndGameCamera, InputMappingContext), Z_Construct_UClass_UInputMappingContext_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InputMappingContext_MetaData), NewProp_InputMappingContext_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEndGameCamera_Statics::NewProp_AxisxAction = { "AxisxAction", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEndGameCamera, AxisxAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AxisxAction_MetaData), NewProp_AxisxAction_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEndGameCamera_Statics::NewProp_ConfirmInputAction = { "ConfirmInputAction", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AEndGameCamera, ConfirmInputAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ConfirmInputAction_MetaData), NewProp_ConfirmInputAction_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEndGameCamera_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEndGameCamera_Statics::NewProp_SequenceFinished,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEndGameCamera_Statics::NewProp_InputMappingContext,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEndGameCamera_Statics::NewProp_AxisxAction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEndGameCamera_Statics::NewProp_ConfirmInputAction,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEndGameCamera_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AEndGameCamera_Statics::DependentSingletons[])() = {
@@ -198,10 +248,10 @@ AEndGameCamera::~AEndGameCamera() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEndGameCamera, AEndGameCamera::StaticClass, TEXT("AEndGameCamera"), &Z_Registration_Info_UClass_AEndGameCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEndGameCamera), 2167017209U) },
+		{ Z_Construct_UClass_AEndGameCamera, AEndGameCamera::StaticClass, TEXT("AEndGameCamera"), &Z_Registration_Info_UClass_AEndGameCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEndGameCamera), 3354499733U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_3504881192(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_4172612879(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_EndGame_Camera_EndGameCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
