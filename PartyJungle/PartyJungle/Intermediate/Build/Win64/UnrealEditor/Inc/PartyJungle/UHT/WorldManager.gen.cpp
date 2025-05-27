@@ -12,7 +12,6 @@ void EmptyLinkFunctionForGeneratedCodeWorldManager() {}
 // Begin Cross Module References
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-ENGINE_API UClass* Z_Construct_UClass_ACameraActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquareStar_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AWorldManager();
@@ -182,12 +181,15 @@ struct Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics
 	struct WorldManager_eventGetMinigameCameraByIndex_Parms
 	{
 		int32 _index;
-		ACameraActor* ReturnValue;
+		UCameraComponent* ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "World_Functions" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__index;
@@ -196,7 +198,7 @@ struct Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::NewProp__index = { "_index", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventGetMinigameCameraByIndex_Parms, _index), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventGetMinigameCameraByIndex_Parms, ReturnValue), Z_Construct_UClass_ACameraActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventGetMinigameCameraByIndex_Parms, ReturnValue), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReturnValue_MetaData), NewProp_ReturnValue_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::NewProp__index,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex_Statics::NewProp_ReturnValue,
@@ -218,7 +220,7 @@ DEFINE_FUNCTION(AWorldManager::execGetMinigameCameraByIndex)
 	P_GET_PROPERTY(FIntProperty,Z_Param__index);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(ACameraActor**)Z_Param__Result=P_THIS->GetMinigameCameraByIndex(Z_Param__index);
+	*(UCameraComponent**)Z_Param__Result=P_THIS->GetMinigameCameraByIndex(Z_Param__index);
 	P_NATIVE_END;
 }
 // End Class AWorldManager Function GetMinigameCameraByIndex
@@ -362,7 +364,16 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ "Category", "World_Segment" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameCameras_MetaData[] = {
+		{ "Category", "World_Cameras" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapCamera_MetaData[] = {
+		{ "Category", "World_Cameras" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FullMapCamera_MetaData[] = {
 		{ "Category", "World_Cameras" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
@@ -371,8 +382,13 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ "Category", "World_Cameras" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_FullMapCameraActor_MetaData[] = {
+		{ "Category", "World_Cameras" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CameraActors_MetaData[] = {
 		{ "Category", "World_Cameras" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapCrowns_MetaData[] = {
@@ -384,8 +400,12 @@ struct Z_Construct_UClass_AWorldManager_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_BoardActors;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Minigame0Actors_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_Minigame0Actors;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigameCameras_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinigameCameras;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapCamera;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FullMapCamera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapCameraActor;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_FullMapCameraActor;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CameraActors_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_CameraActors;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapCrowns_Inner;
@@ -397,7 +417,7 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ &Z_Construct_UFunction_AWorldManager_DisableAllStars, "DisableAllStars" }, // 3048086110
 		{ &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation, "EnableStarAtRandomLocation" }, // 637869928
 		{ &Z_Construct_UFunction_AWorldManager_GetLevelByIndex, "GetLevelByIndex" }, // 3758234899
-		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex, "GetMinigameCameraByIndex" }, // 171011354
+		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex, "GetMinigameCameraByIndex" }, // 1620264497
 		{ &Z_Construct_UFunction_AWorldManager_InitializeCameras, "InitializeCameras" }, // 2653240201
 		{ &Z_Construct_UFunction_AWorldManager_LoadPortion, "LoadPortion" }, // 3083055893
 		{ &Z_Construct_UFunction_AWorldManager_UnloadEntireWorld, "UnloadEntireWorld" }, // 776470033
@@ -412,10 +432,14 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors = { "BoardActors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, BoardActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoardActors_MetaData), NewProp_BoardActors_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_Minigame0Actors_Inner = { "Minigame0Actors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_Minigame0Actors = { "Minigame0Actors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, Minigame0Actors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Minigame0Actors_MetaData), NewProp_Minigame0Actors_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MinigameCameras_Inner = { "MinigameCameras", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MinigameCameras = { "MinigameCameras", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MinigameCameras), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameCameras_MetaData), NewProp_MinigameCameras_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCamera = { "MapCamera", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MapCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapCamera_MetaData), NewProp_MapCamera_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCamera = { "FullMapCamera", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, FullMapCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FullMapCamera_MetaData), NewProp_FullMapCamera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCameraActor = { "MapCameraActor", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MapCameraActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapCameraActor_MetaData), NewProp_MapCameraActor_MetaData) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors_Inner = { "CameraActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ACameraActor_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors = { "CameraActors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, CameraActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraActors_MetaData), NewProp_CameraActors_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCameraActor = { "FullMapCameraActor", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, FullMapCameraActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FullMapCameraActor_MetaData), NewProp_FullMapCameraActor_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors_Inner = { "CameraActors", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors = { "CameraActors", nullptr, (EPropertyFlags)0x001000800000000d, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, CameraActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CameraActors_MetaData), NewProp_CameraActors_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCrowns_Inner = { "MapCrowns", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASquareStar_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCrowns = { "MapCrowns", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MapCrowns), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapCrowns_MetaData), NewProp_MapCrowns_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWorldManager_Statics::PropPointers[] = {
@@ -423,8 +447,12 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWorldMan
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_Minigame0Actors_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_Minigame0Actors,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MinigameCameras_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MinigameCameras,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCamera,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCameraActor,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCameraActor,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_CameraActors,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCrowns_Inner,
@@ -471,10 +499,10 @@ AWorldManager::~AWorldManager() {}
 struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 3614487424U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 770740408U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_361745948(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_1275402884(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_World_WorldManager_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

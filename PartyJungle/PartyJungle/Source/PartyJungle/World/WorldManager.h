@@ -23,13 +23,22 @@ public:
 	TArray<AActor*> Minigame0Actors;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	TArray<AActor*> MinigameCameras;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	UCameraComponent* MapCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	UCameraComponent* FullMapCamera;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	AActor* MapCameraActor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	TArray<ACameraActor*> CameraActors;
+	AActor* FullMapCameraActor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	TArray<UCameraComponent*> CameraActors;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Crowns")
 	TArray<ASquareStar*> MapCrowns;
@@ -44,7 +53,7 @@ public:
 	TArray<AActor*> GetLevelByIndex(int _index);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
-	ACameraActor* GetMinigameCameraByIndex(int _index);
+	UCameraComponent* GetMinigameCameraByIndex(int _index);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void UnloadEntireWorld();

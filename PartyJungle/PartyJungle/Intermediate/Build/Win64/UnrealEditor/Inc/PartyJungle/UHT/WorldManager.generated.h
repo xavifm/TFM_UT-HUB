@@ -10,7 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
-class ACameraActor;
+class UCameraComponent;
 #ifdef PARTYJUNGLE_WorldManager_generated_h
 #error "WorldManager.generated.h already included, missing '#pragma once' in WorldManager.h"
 #endif
