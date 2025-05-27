@@ -28,6 +28,8 @@ void AMapMenuCamera::BeginPlay()
     }
 
     UGameplayStatics::CreatePlayer(GetWorld(), 1, true);
+    UGameplayStatics::CreatePlayer(GetWorld(), 2, true);
+    UGameplayStatics::CreatePlayer(GetWorld(), 3, true);
 
     UWorld* World = GetWorld();
     if (World)
