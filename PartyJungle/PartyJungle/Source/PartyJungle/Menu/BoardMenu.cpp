@@ -34,7 +34,7 @@ void ABoardMenu::SwitchPartyMenuPosition(int _direction)
 	if (CurrentPartyMenuPosition > MAX_PLAY_MENU_POSITIONS)
 		CurrentPartyMenuPosition = MAX_PLAY_MENU_POSITIONS;
 
-	SwitchBoardPartyCurrentOption(CurrentMenuPosition);
+	SwitchBoardPartyCurrentOption(CurrentPartyMenuPosition);
 }
 
 void ABoardMenu::SwitchPartyValues(int _position)
