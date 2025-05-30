@@ -46,6 +46,9 @@ public:
 	UInputAction* KeywiAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* KeyEscAction;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
@@ -95,6 +98,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleYInput();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void HandleEscInput();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchFullMapVision();
@@ -172,6 +178,7 @@ private:
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
 	const int CAMERA_HEIGHT_OFFSET = 600;
+	const FString MAIN_MENU_SCENE = "MainMenu";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);

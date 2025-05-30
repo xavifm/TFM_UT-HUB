@@ -117,6 +117,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleConfirmInput);
         EnhancedInput->BindAction(KeybAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleBackInput);
         EnhancedInput->BindAction(KeywiAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleYInput);
+        EnhancedInput->BindAction(KeyEscAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleEscInput);
         EnhancedInput->bBlockInput = false;
     }
 }
@@ -187,6 +188,11 @@ void AMapMenuCamera::HandleYInput()
         return;
 
     SwitchFullMapVision();
+}
+
+void AMapMenuCamera::HandleEscInput() 
+{
+    UGameplayStatics::OpenLevel(this, FName(MAIN_MENU_SCENE));
 }
 
 void AMapMenuCamera::SwitchFullMapVision() 
