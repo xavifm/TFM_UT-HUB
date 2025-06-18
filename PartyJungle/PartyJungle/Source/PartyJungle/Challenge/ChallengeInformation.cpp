@@ -10,7 +10,7 @@ void AChallengeInformation::SetUpDuelInfo(AMinion* _attacker, AMinion* _victim)
 {
     Attacker = _attacker;
     Victim = _victim;
-    DuelType = EDuelType::HALF_COINS;
+    DuelType = EDuelType::ALL_IN_COINS;
 }
 
 void AChallengeInformation::SaveDuelToRegistry(int _winner, int _coins, int _crowns)
