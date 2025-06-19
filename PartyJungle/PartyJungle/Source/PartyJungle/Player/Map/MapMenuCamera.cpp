@@ -755,6 +755,7 @@ void AMapMenuCamera::RestoreTurnLogic()
     if (DuelUI)
         return;
 
+    TurnMovementIndex = 0;
     TArray<AMinion*> minions = MapDb->GetMinions(CurrentMinionTeam);
 
     for (AMinion* minion : minions)

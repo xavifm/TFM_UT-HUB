@@ -2555,3 +2555,93 @@ _MatTransl_3B7A55D3409170328211A060FC2E3BB1E263C720_BBD650804D314CE7A44ADF9BB4F3
 [2025.06.19-12.25.37:742][418]LogUObjectHash: Compacting FUObjectHashTables data took   1.18ms
 [2025.06.19-12.25.37:794][419]LogPlayLevel: Display: Destroying online subsystem :Context_23
 [2025.06.19-12.25.37:806][420]LogVulkanRHI: Warning: Failed to allocate Device Memory, Requested=91680.00Kb MemTypeIndex=1
+[2025.06.19-12.29.31:747][651]LogUObjectHash: Compacting FUObjectHashTables data took   1.30ms
+[2025.06.19-12.29.31:751][651]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Scenes/PartyMap.PartyMap
+[2025.06.19-12.29.31:751][651]Cmd: MAP LOAD FILE="../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/PartyMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=4
+[2025.06.19-12.29.31:785][651]LogWorld: UWorld::CleanupWorld for PartyMap, bSessionEnded=true, bCleanupResources=true
+[2025.06.19-12.29.31:786][651]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.06.19-12.29.31:786][651]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/PartyMap.PartyMap
+[2025.06.19-12.29.31:789][651]LogContentBundle: [PartyMap(Standalone)] Deleting container.
+[2025.06.19-12.29.31:790][651]LogWorldMetrics: [Deinitialize]
+[2025.06.19-12.29.31:790][651]LogWorldMetrics: [Clear]
+[2025.06.19-12.29.31:823][651]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.06.19-12.29.31:839][651]LogUObjectHash: Compacting FUObjectHashTables data took   1.31ms
+[2025.06.19-12.29.31:929][651]LogAudio: Display: Audio Device (ID: 1) registered with world 'PartyMap'.
+[2025.06.19-12.29.31:929][651]LogWorldMetrics: [Initialize]
+[2025.06.19-12.29.31:932][651]LogWorldPartition: ULevel::OnLevelLoaded(PartyMap)(bIsOwningWorldGameWorld=0, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=1, InitializeForGame=0)
+[2025.06.19-12.29.31:932][651]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.06.19-12.29.31:932][651]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/PartyMap.PartyMap, World Type = Editor, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 1, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.06.19-12.29.31:954][651]LogStreaming: Display: FlushAsyncLoading(695): 9 QueuedPackages, 0 AsyncPackages
+[2025.06.19-12.29.31:957][651]LogClass: Warning: Type mismatch in SFXPlayer of AudioManager_C - Previous (ObjectProperty) Current(ArrayProperty) in package: /Game/__ExternalActors__/Scenes/PartyMap/F/0A/DNCZ0WXB67WQ1KJFZQN5SJ
+[2025.06.19-12.29.32:164][651]LogContentBundle: [PartyMap(Standalone)] Creating new container.
+[2025.06.19-12.29.32:164][651]LogWorldPartition: Display: WorldPartition initialize took 232.716 ms (total: 1.22 sec)
+[2025.06.19-12.29.32:398][651]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2025.06.19-12.29.32:436][651]LogUObjectHash: Compacting FUObjectHashTables data took   1.18ms
+[2025.06.19-12.29.32:439][651]Cmd: MAP CHECKDEP NOCLEARLOG
+[2025.06.19-12.29.32:440][651]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/PartyMap.ScoreDatabase 
+[2025.06.19-12.29.32:440][651]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/PartyMap.RoundsManager 
+[2025.06.19-12.29.32:440][651]MapCheck: Error: Non-spatially loaded actor /Game/Scenes/PartyMap.RoundsManager references Spatially loaded actor /Game/Scenes/PartyMap.AudioManager 
+[2025.06.19-12.29.32:440][651]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/PartyMap.ChallengeDatabase 
+[2025.06.19-12.29.32:442][651]MapCheck: Map check complete: 1 Error(s), 3 Warning(s), took 2,681ms to complete.
+[2025.06.19-12.29.34:368][700]LogSlate: Window 'Message Log' being destroyed
+[2025.06.19-12.29.34:417][700]LogSlate: Window 'Message Log' being destroyed
+[2025.06.19-12.29.39:038][806]LogUObjectHash: Compacting FUObjectHashTables data took   1.11ms
+[2025.06.19-12.29.39:045][806]LogWorldPartition: ULevel::OnLevelLoaded(MainMenu)(bIsOwningWorldGameWorld=0, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=1, InitializeForGame=0)
+[2025.06.19-12.29.39:045][806]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.06.19-12.29.39:045][806]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/MainMenu.MainMenu, World Type = Inactive, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 1, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.06.19-12.29.39:052][806]LogStreaming: Display: FlushAsyncLoading(1020): 7 QueuedPackages, 0 AsyncPackages
+[2025.06.19-12.29.39:056][806]LogContentBundle: [MainMenu(Standalone)] Creating new container.
+[2025.06.19-12.29.39:056][806]LogWorldPartition: Display: WorldPartition initialize took 10.842 ms (total: 1.24 sec)
+[2025.06.19-12.29.39:058][806]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Scenes/MainMenu.MainMenu
+[2025.06.19-12.29.39:059][806]Cmd: MAP LOAD FILE="../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/MainMenu.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=4
+[2025.06.19-12.29.39:076][806]LogWorld: UWorld::CleanupWorld for PartyMap, bSessionEnded=true, bCleanupResources=true
+[2025.06.19-12.29.39:076][806]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.06.19-12.29.39:076][806]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/PartyMap.PartyMap
+[2025.06.19-12.29.39:080][806]LogContentBundle: [PartyMap(Standalone)] Deleting container.
+[2025.06.19-12.29.39:081][806]LogWorldMetrics: [Deinitialize]
+[2025.06.19-12.29.39:081][806]LogWorldMetrics: [Clear]
+[2025.06.19-12.29.39:105][806]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.06.19-12.29.39:117][806]LogUObjectHash: Compacting FUObjectHashTables data took   1.42ms
+[2025.06.19-12.29.39:124][806]LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+[2025.06.19-12.29.39:124][806]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.06.19-12.29.39:124][806]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/MainMenu.MainMenu
+[2025.06.19-12.29.39:169][806]LogContentBundle: [MainMenu(Standalone)] Deleting container.
+[2025.06.19-12.29.39:204][806]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2025.06.19-12.29.39:225][806]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.06.19-12.29.39:231][806]LogAudio: Display: Audio Device (ID: 1) registered with world 'MainMenu'.
+[2025.06.19-12.29.39:231][806]LogWorldMetrics: [Initialize]
+[2025.06.19-12.29.39:232][806]LogWorldPartition: ULevel::OnLevelLoaded(MainMenu)(bIsOwningWorldGameWorld=0, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=1, InitializeForGame=0)
+[2025.06.19-12.29.39:232][806]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.06.19-12.29.39:232][806]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/MainMenu.MainMenu, World Type = Editor, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 1, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.06.19-12.29.39:380][806]LogContentBundle: [MainMenu(Standalone)] Creating new container.
+[2025.06.19-12.29.39:380][806]LogWorldPartition: Display: WorldPartition initialize took 147.676 ms (total: 1.38 sec)
+[2025.06.19-12.29.39:504][806]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2025.06.19-12.29.39:537][806]LogUObjectHash: Compacting FUObjectHashTables data took   1.34ms
+[2025.06.19-12.29.39:540][806]Cmd: MAP CHECKDEP NOCLEARLOG
+[2025.06.19-12.29.39:541][806]MapCheck: Warning: Spatially loaded actor /Game/Scenes/MainMenu.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/MainMenu.ChallengeDatabase 
+[2025.06.19-12.29.39:542][806]MapCheck: Map check complete: 0 Error(s), 1 Warning(s), took 1,602ms to complete.
+[2025.06.19-12.29.40:778][823]LogCore: Error: appError called: Assertion failed: Code == CURLM_OK [File:./Developer/DerivedDataCache/Private/Http/CurlHttpClient.cpp] [Line: 562] 
+Error in curl_multi operation: Unrecoverable error in select/poll
+
+[2025.06.19-12.29.41:788][823]LogCore: === Critical error: ===
+Unhandled Exception: SIGSEGV: invalid attempt to write memory at address 0x0000000000000003
+
+[2025.06.19-12.29.41:788][823]LogCore: Assertion failed: Code == CURLM_OK [File:./Developer/DerivedDataCache/Private/Http/CurlHttpClient.cpp] [Line: 562] 
+Error in curl_multi operation: Unrecoverable error in select/poll
+0x00007a1f600f3133 libUnrealEditor-DerivedDataCache.so!UE::FCurlHttpConnectionPool::ThreadLoop() [/mnt/horde/++UE5/Sync/Engine/Source/./Developer/DerivedDataCache/Private/Http/CurlHttpClient.cpp:515]
+0x00007a1f695dbc52 libUnrealEditor-Core.so!FThreadImpl::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/Thread.cpp:66]
+0x00007a1f69596917 libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+0x00007a1f694df8df libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:187]
+0x00007a1f5ce9caa4 libc.so.6!UnknownFunction(0x9caa3)
+0x00007a1f5cf29c3c libc.so.6!UnknownFunction(0x129c3b)
+
+
+
+0x00007a1f600f3133 libUnrealEditor-DerivedDataCache.so!UE::FCurlHttpConnectionPool::ThreadLoop() [/mnt/horde/++UE5/Sync/Engine/Source/./Developer/DerivedDataCache/Private/Http/CurlHttpClient.cpp:515]
+0x00007a1f695dbc52 libUnrealEditor-Core.so!FThreadImpl::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/Thread.cpp:66]
+0x00007a1f69596917 libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+0x00007a1f694df8df libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:187]
+0x00007a1f5ce9caa4 libc.so.6!UnknownFunction(0x9caa3)
+0x00007a1f5cf29c3c libc.so.6!UnknownFunction(0x129c3b)
+
+[2025.06.19-12.29.41:800][823]LogExit: Executing StaticShutdownAfterError

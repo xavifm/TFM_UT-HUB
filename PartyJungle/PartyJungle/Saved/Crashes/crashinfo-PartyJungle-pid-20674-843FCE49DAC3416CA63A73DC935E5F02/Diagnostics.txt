@@ -1,0 +1,25 @@
+Generating report for minidump
+
+Application version 5.4.4.0
+ ... built from changelist 35576357
+
+OS version Linux 6.8.0-60-generic (network name: xavi-MS-7C52)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-DerivedDataCache.so!UE::FCurlHttpConnectionPool::ThreadLoop() [/mnt/horde/++UE5/Sync/Engine/Source/./Developer/DerivedDataCache/Private/Http/CurlHttpClient.cpp:515]
+libUnrealEditor-Core.so!FThreadImpl::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/Thread.cpp:66]
+libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:187]
+libc.so.6!UnknownFunction(0x9caa3)
+libc.so.6!UnknownFunction(0x129c3b)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
