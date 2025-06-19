@@ -307,6 +307,11 @@ void AMapMenuCamera::HandleBackInput()
 
     if (DuelUI)
         CloseChallengeMenu();
+	else
+	{
+		TurnMovementIndex = MAX_MOVEMENTS_PER_TURN;
+		RestoreTurnLogicWithAnimation();
+	}
 }
 
 void AMapMenuCamera::CloseChallengeMenu() 
