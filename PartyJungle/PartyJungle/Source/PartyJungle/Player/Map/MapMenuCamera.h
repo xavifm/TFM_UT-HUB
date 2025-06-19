@@ -151,6 +151,9 @@ public:
 	void RollTheDice();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void ExecuteMinionMovement();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ChangeSelectedPath(int _direction);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -178,6 +181,7 @@ private:
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
 	const int CAMERA_HEIGHT_OFFSET = 600;
+	const int MAX_MOVEMENTS_PER_TURN = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -206,6 +210,7 @@ private:
 
 	bool InputEnabled = true;
 	bool RollingDice = false;
+	bool ChooseMinionToMove = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
 	bool StartTurnUI = false;
@@ -218,6 +223,9 @@ private:
 
 	int SelectedPathIndex = 0;
 	int SavedCameraHeight = 770;
+
+	UPROPERTY()
+	int TurnMovementIndex;
 
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;

@@ -178,8 +178,10 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (SelectingPath)
         ConfirmPathSelection();
-    else
+    else if(!ChooseMinionToMove)
         RollTheDice();
+    else
+        ExecuteMinionMovement();
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -481,38 +483,46 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
     CurrentMinionTeam += _direction;
 
-    if (CurrentMinionTeam >= MAX_TEAM_NUMBER)
-        CurrentMinionTeam = 0;
-    else if (CurrentMinionTeam <= 0)
-        CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
+    if(_direction != 0)
+    {
+        if (CurrentMinionTeam >= MAX_TEAM_NUMBER)
+            CurrentMinionTeam = 0;
+        else if (CurrentMinionTeam <= 0)
+            CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
 
-    if (CurrentMinionTeam == 0 && RoundsSystem) 
-    {
-        RoundsSystem->HandleEndRound();
+        if (CurrentMinionTeam == 0 && RoundsSystem)
+        {
+            RoundsSystem->HandleEndRound();
+        }
+        if (MapUI &&
+            ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
+            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
+        {
+            FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
+            MapUI->ShowTextInScreen(Message, -1);
+        }
+
+        CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
+        CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
+        CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+
+        MapUI->SwitchTurnUI(CurrentMinionTeam);
+
+        FVector MinionLocation = CurrentMinion->GetActorLocation();
+        MinionLocation.X = MinionLocation.X - 450;
+        MinionLocation.Z = GetActorLocation().Z;
+
+        CurrentMinion->SetMinionAnimation(EMinionState::WALK);
+
+        SetActorLocation(MinionLocation);
     }
-    if (MapUI && 
-        ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
-        || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
+    else
     {
-        FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
+        FString Message = FString::Printf(TEXT("Second Move!"));
         MapUI->ShowTextInScreen(Message, -1);
     }
 
-    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
-    CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
-    CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
-    MapUI->SwitchTurnUI(CurrentMinionTeam);
-
-    FVector MinionLocation = CurrentMinion->GetActorLocation();
-    MinionLocation.X = MinionLocation.X - 450;
-    MinionLocation.Z = GetActorLocation().Z;
-
-    CurrentMinion->SetMinionAnimation(EMinionState::WALK);
-
-    SetActorLocation(MinionLocation);
-
     StartTurnUI = true;
-
     UpdateDicePosition();
 }
 
@@ -587,26 +597,32 @@ UPlayerMapUI* AMapMenuCamera::GetMapUI()
 
 void AMapMenuCamera::RollTheDice()
 {
-    if (!InputEnabled)
+    if (!InputEnabled || ChooseMinionToMove)
         return;
 
-    InputEnabled = false;
+    ChooseMinionToMove = true;
     RollingDice = true;
 
     if (Dice && CurrentMinion)
     {
         int movements = Dice->RollTheDice();
-
         Dice->ShowDiceFeedbackNumber(movements);
-
-        GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, movements]()
-        {
-            CurrentMinion->DiceReference = Dice;
-            CurrentMinion->SetMinionsMovements(movements);
-            RollingDice = false;
-            GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-        }, Dice->DiceFeedbackTime, false);
     }
+}
+
+void AMapMenuCamera::ExecuteMinionMovement()
+{
+    if(CurrentMinion->AlreadyMoved)
+        return;
+
+    CurrentMinion->DiceReference = Dice;
+    CurrentMinion->AlreadyMoved = true;
+    CurrentMinion->SetMinionsMovements(Dice->DiceValue);
+    RollingDice = false;
+    ChooseMinionToMove = false;
+    InputEnabled = false;
+
+    TurnMovementIndex++;
 }
 
 void AMapMenuCamera::ChangeSelectedPath(int _direction)
@@ -650,9 +666,18 @@ void AMapMenuCamera::RestoreTurnLogicWithAnimation()
     if (currentMinionMovements > 0)
         return;
 
-    StartFadeTransition(RESTORE_TURN_TRANSITION_TIME);
+    if(TurnMovementIndex >= MAX_MOVEMENTS_PER_TURN)
+    {
+        StartFadeTransition(RESTORE_TURN_TRANSITION_TIME);
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
+    }
+    else
+    {
+        InputEnabled = true;
+        TimedActionExecuted = false;
 
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
+        SwitchCameraTeam(0);
+    }
 }
 
 void AMapMenuCamera::StartFadeTransition(float _time) 
@@ -730,8 +755,17 @@ void AMapMenuCamera::RestoreTurnLogic()
     if (DuelUI)
         return;
 
+    TArray<AMinion*> minions = MapDb->GetMinions(CurrentMinionTeam);
+
+    for (AMinion* minion : minions)
+    {
+        if (minion)
+            minion->AlreadyMoved = false;
+    }
+
     SwitchCameraTeam(1);
     SwitchController();
+
     InputEnabled = true;
     TimedActionExecuted = false;
 }

@@ -104,6 +104,7 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	bool isMoving = false;
+	bool AlreadyMoved = false;
 
 private:
 	void HandleMovement(float _deltaTime);
