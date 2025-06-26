@@ -1,4 +1,5 @@
 #include "./MapDatabase.h"
+#include <PartyJungle/Player/Minion/Minion.h>
 #include <Kismet/GameplayStatics.h>
 
 AMapDatabase::AMapDatabase()

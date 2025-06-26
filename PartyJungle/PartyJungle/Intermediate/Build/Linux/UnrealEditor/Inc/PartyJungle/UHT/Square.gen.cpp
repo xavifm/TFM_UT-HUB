@@ -119,6 +119,57 @@ DEFINE_FUNCTION(ASquare::execAddMinion)
 }
 // End Class ASquare Function AddMinion
 
+// Begin Class ASquare Function CheckIfSquareIsBlocked
+struct Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics
+{
+	struct Square_eventCheckIfSquareIsBlocked_Parms
+	{
+		AMinion* _minion;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__minion;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp__minion = { "_minion", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Square_eventCheckIfSquareIsBlocked_Parms, _minion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Square_eventCheckIfSquareIsBlocked_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Square_eventCheckIfSquareIsBlocked_Parms), &Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp__minion,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASquare, nullptr, "CheckIfSquareIsBlocked", nullptr, nullptr, Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::Square_eventCheckIfSquareIsBlocked_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::Square_eventCheckIfSquareIsBlocked_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASquare::execCheckIfSquareIsBlocked)
+{
+	P_GET_OBJECT(AMinion,Z_Param__minion);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->CheckIfSquareIsBlocked(Z_Param__minion);
+	P_NATIVE_END;
+}
+// End Class ASquare Function CheckIfSquareIsBlocked
+
 // Begin Class ASquare Function CloseChooseMenu
 struct Z_Construct_UFunction_ASquare_CloseChooseMenu_Statics
 {
@@ -319,17 +370,105 @@ DEFINE_FUNCTION(ASquare::execRemoveMinion)
 }
 // End Class ASquare Function RemoveMinion
 
+// Begin Class ASquare Function ResetSquare
+struct Z_Construct_UFunction_ASquare_ResetSquare_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquare_ResetSquare_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASquare, nullptr, "ResetSquare", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_ResetSquare_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquare_ResetSquare_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_ASquare_ResetSquare()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquare_ResetSquare_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASquare::execResetSquare)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ResetSquare();
+	P_NATIVE_END;
+}
+// End Class ASquare Function ResetSquare
+
+// Begin Class ASquare Function SwitchDuelSquare
+struct Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics
+{
+	struct Square_eventSwitchDuelSquare_Parms
+	{
+		bool _toggle;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__toggle_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__toggle;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp__toggle_SetBit(void* Obj)
+{
+	((Square_eventSwitchDuelSquare_Parms*)Obj)->_toggle = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp__toggle = { "_toggle", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Square_eventSwitchDuelSquare_Parms), &Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp__toggle_SetBit, METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Square_eventSwitchDuelSquare_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Square_eventSwitchDuelSquare_Parms), &Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp__toggle,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASquare, nullptr, "SwitchDuelSquare", nullptr, nullptr, Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::Square_eventSwitchDuelSquare_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::Square_eventSwitchDuelSquare_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASquare_SwitchDuelSquare()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASquare::execSwitchDuelSquare)
+{
+	P_GET_UBOOL(Z_Param__toggle);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->SwitchDuelSquare(Z_Param__toggle);
+	P_NATIVE_END;
+}
+// End Class ASquare Function SwitchDuelSquare
+
 // Begin Class ASquare
 void ASquare::StaticRegisterNativesASquare()
 {
 	UClass* Class = ASquare::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AddMinion", &ASquare::execAddMinion },
+		{ "CheckIfSquareIsBlocked", &ASquare::execCheckIfSquareIsBlocked },
 		{ "CloseChooseMenu", &ASquare::execCloseChooseMenu },
 		{ "GetNextNode", &ASquare::execGetNextNode },
 		{ "GetNextSquare", &ASquare::execGetNextSquare },
 		{ "OpenChooseMenu", &ASquare::execOpenChooseMenu },
 		{ "RemoveMinion", &ASquare::execRemoveMinion },
+		{ "ResetSquare", &ASquare::execResetSquare },
+		{ "SwitchDuelSquare", &ASquare::execSwitchDuelSquare },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -346,6 +485,10 @@ struct Z_Construct_UClass_ASquare_Statics
 		{ "ModuleRelativePath", "Map/Square.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Money_MetaData[] = {
+		{ "Category", "SquareProperties" },
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_IsChallengeEnabled_MetaData[] = {
 		{ "Category", "SquareProperties" },
 		{ "ModuleRelativePath", "Map/Square.h" },
 	};
@@ -368,6 +511,8 @@ struct Z_Construct_UClass_ASquare_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_Money;
+	static void NewProp_IsChallengeEnabled_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsChallengeEnabled;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Center;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinionsList_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinionsList;
@@ -378,11 +523,14 @@ struct Z_Construct_UClass_ASquare_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASquare_AddMinion, "AddMinion" }, // 4072108050
+		{ &Z_Construct_UFunction_ASquare_CheckIfSquareIsBlocked, "CheckIfSquareIsBlocked" }, // 1074731130
 		{ &Z_Construct_UFunction_ASquare_CloseChooseMenu, "CloseChooseMenu" }, // 335921899
 		{ &Z_Construct_UFunction_ASquare_GetNextNode, "GetNextNode" }, // 1046565618
 		{ &Z_Construct_UFunction_ASquare_GetNextSquare, "GetNextSquare" }, // 3809473293
 		{ &Z_Construct_UFunction_ASquare_OpenChooseMenu, "OpenChooseMenu" }, // 3763124425
 		{ &Z_Construct_UFunction_ASquare_RemoveMinion, "RemoveMinion" }, // 706248460
+		{ &Z_Construct_UFunction_ASquare_ResetSquare, "ResetSquare" }, // 3579435150
+		{ &Z_Construct_UFunction_ASquare_SwitchDuelSquare, "SwitchDuelSquare" }, // 4020336275
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -391,6 +539,11 @@ struct Z_Construct_UClass_ASquare_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_Money = { "Money", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, Money), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Money_MetaData), NewProp_Money_MetaData) };
+void Z_Construct_UClass_ASquare_Statics::NewProp_IsChallengeEnabled_SetBit(void* Obj)
+{
+	((ASquare*)Obj)->IsChallengeEnabled = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_IsChallengeEnabled = { "IsChallengeEnabled", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASquare), &Z_Construct_UClass_ASquare_Statics::NewProp_IsChallengeEnabled_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_IsChallengeEnabled_MetaData), NewProp_IsChallengeEnabled_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_Center = { "Center", nullptr, (EPropertyFlags)0x00100000000a000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, Center), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Center_MetaData), NewProp_Center_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList_Inner = { "MinionsList", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList = { "MinionsList", nullptr, (EPropertyFlags)0x0010000000020005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, MinionsList), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinionsList_MetaData), NewProp_MinionsList_MetaData) };
@@ -399,6 +552,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquare_Static
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASquare_Statics::NewProp_ConnectedNodes = { "ConnectedNodes", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquare, ConnectedNodes), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ConnectedNodes_MetaData), NewProp_ConnectedNodes_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquare_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_Money,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_IsChallengeEnabled,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_Center,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquare_Statics::NewProp_MinionsList,
@@ -450,10 +604,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ ESquareType_StaticEnum, TEXT("ESquareType"), &Z_Registration_Info_UEnum_ESquareType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2154578961U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2937984941U) },
+		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 3094845411U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_1529817194(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_60626754(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_Statics::EnumInfo));

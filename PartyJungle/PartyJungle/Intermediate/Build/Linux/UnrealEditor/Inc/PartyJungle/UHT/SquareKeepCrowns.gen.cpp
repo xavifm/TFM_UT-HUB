@@ -94,10 +94,10 @@ ASquareKeepCrowns::~ASquareKeepCrowns() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareKeepCrowns, ASquareKeepCrowns::StaticClass, TEXT("ASquareKeepCrowns"), &Z_Registration_Info_UClass_ASquareKeepCrowns, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareKeepCrowns), 2542038404U) },
+		{ Z_Construct_UClass_ASquareKeepCrowns, ASquareKeepCrowns::StaticClass, TEXT("ASquareKeepCrowns"), &Z_Registration_Info_UClass_ASquareKeepCrowns, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareKeepCrowns), 2271505840U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_465511149(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_1763235615(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareKeepCrowns_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -1,0 +1,36 @@
+Generating report for minidump
+
+Application version 5.4.4.0
+ ... built from changelist 35576357
+
+OS version Linux 6.8.0-62-generic (network name: xavi-MS-7C52)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-VulkanRHI.so!VulkanRHI::VerifyVulkanResult(VkResult, char const*, char const*, unsigned int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanUtil.cpp:1136]
+libUnrealEditor-VulkanRHI.so!VulkanRHI::FFenceManager::CheckFenceState(VulkanRHI::FFence*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanMemory.cpp:4675]
+libUnrealEditor-VulkanRHI.so!FVulkanCmdBuffer::RefreshFenceStatus() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanCommandBuffer.cpp:384]
+libUnrealEditor-VulkanRHI.so!FVulkanCommandBufferManager::PrepareForNewActiveCommandBuffer() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanCommandBuffer.cpp:753]
+libUnrealEditor-VulkanRHI.so!FVulkanViewport::Present(FVulkanCommandListContext*, FVulkanCmdBuffer*, FVulkanQueue*, FVulkanQueue*, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanViewport.cpp:1065]
+libUnrealEditor-VulkanRHI.so!FVulkanCommandListContext::RHIEndDrawingViewport(FRHIViewport*, bool, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/VulkanRHI/Private/VulkanRHI.cpp:1184]
+libUnrealEditor-RHI.so!FRHICommand<FRHICommandEndDrawingViewport, FRHICommandEndDrawingViewportString2188>::ExecuteAndDestruct(FRHICommandListBase&, FRHICommandListDebugContext&) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/RHI/Public/RHICommandList.h:1295]
+libUnrealEditor-RHI.so!FRHICommandListBase::Execute(TRHIPipelineArray<IRHIComputeContext*>&, FRHICommandListBase::FPersistentState::FGPUStats*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/RHI/Private/RHICommandList.cpp:477]
+libUnrealEditor-RHI.so!UE::Core::Private::Function::TFunctionRefCaller<FRHICommandListImmediate::ExecuteAndReset(bool)::$_0, void ()>::Call(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Function.h:405]
+libUnrealEditor-Core.so!TGraphTask<TFunctionGraphTaskImpl<void (), (ESubsequentsMode::Type)0> >::ExecuteTask(TArray<FBaseGraphTask*, TSizedDefaultAllocator<32> >&, ENamedThreads::Type, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:1235]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:760]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilQuit(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:650]
+libUnrealEditor-RenderCore.so!FRHIThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/RenderCore/Private/RenderingThread.cpp:330]
+libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:187]
+libc.so.6!UnknownFunction(0x9caa3)
+libc.so.6!UnknownFunction(0x129c3b)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

@@ -109,10 +109,13 @@ public:
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StopMinionForDuel();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleBackInput();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void CloseChallengeMenu();
+	void CloseChallengeMenu(bool _duel = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);

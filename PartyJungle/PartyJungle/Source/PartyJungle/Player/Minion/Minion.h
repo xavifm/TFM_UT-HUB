@@ -110,6 +110,7 @@ private:
 	void HandleMovement(float _deltaTime);
 
 	AMinion* SearchMinionToChallenge();
+	ASquare* LastSquare;
 
 	float CurrentLerpTime = 0.0f;
 

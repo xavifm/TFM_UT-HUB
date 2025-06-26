@@ -1,0 +1,54 @@
+{
+	"ConfigurationsAndPlatforms": [
+		{
+			"Configuration": "DebugGame",
+			"Platform": "Linux",
+			"Target": "Editor"
+		},
+		{
+			"Configuration": "DebugGame",
+			"Platform": "LinuxArm64",
+			"Target": "Editor"
+		},
+		{
+			"Configuration": "DebugGame",
+			"Platform": "Linux",
+			"Target": "Program"
+		},
+		{
+			"Configuration": "DebugGame",
+			"Platform": "LinuxArm64",
+			"Target": "Program"
+		},
+		{
+			"Configuration": "Development",
+			"Platform": "Linux",
+			"Target": "Editor"
+		},
+		{
+			"Configuration": "Development",
+			"Platform": "LinuxArm64",
+			"Target": "Editor"
+		},
+		{
+			"Configuration": "Development",
+			"Platform": "Linux",
+			"Target": "Program"
+		},
+		{
+			"Configuration": "Development",
+			"Platform": "LinuxArm64",
+			"Target": "Program"
+		},
+		{
+			"Configuration": "Shipping",
+			"Platform": "Linux",
+			"Target": "Program"
+		},
+		{
+			"Configuration": "Shipping",
+			"Platform": "LinuxArm64",
+			"Target": "Program"
+		}
+	]
+}

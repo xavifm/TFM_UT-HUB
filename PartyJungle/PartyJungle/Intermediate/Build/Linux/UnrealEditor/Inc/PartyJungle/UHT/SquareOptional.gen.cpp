@@ -222,10 +222,10 @@ ASquareOptional::~ASquareOptional() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 3033128574U) },
+		{ Z_Construct_UClass_ASquareOptional, ASquareOptional::StaticClass, TEXT("ASquareOptional"), &Z_Registration_Info_UClass_ASquareOptional, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareOptional), 2073216832U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_4076142081(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_2779784607(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareOptional_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

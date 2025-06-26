@@ -16,16 +16,19 @@ class ASquare;
 #endif
 #define PARTYJUNGLE_Square_generated_h
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execResetSquare); \
 	DECLARE_FUNCTION(execGetNextSquare); \
 	DECLARE_FUNCTION(execRemoveMinion); \
 	DECLARE_FUNCTION(execAddMinion); \
 	DECLARE_FUNCTION(execCloseChooseMenu); \
 	DECLARE_FUNCTION(execOpenChooseMenu); \
+	DECLARE_FUNCTION(execSwitchDuelSquare); \
+	DECLARE_FUNCTION(execCheckIfSquareIsBlocked); \
 	DECLARE_FUNCTION(execGetNextNode);
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASquare(); \
 	friend struct Z_Construct_UClass_ASquare_Statics; \
@@ -34,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(ASquare)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASquare(ASquare&&); \
@@ -46,13 +49,13 @@ public: \
 	NO_API virtual ~ASquare();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_18_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_19_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_21_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

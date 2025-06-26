@@ -160,7 +160,8 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelUI)
     {
-        StartMinigame(true, 0, TArray<AMinion*>());
+        //StartMinigame(true, 0, TArray<AMinion*>());
+		StopMinionForDuel();
         return;
     }
 
@@ -206,6 +207,14 @@ void AMapMenuCamera::SwitchFullMapVision()
 
     SwitchMenuWidget(!FullMapView);
     SwitchToFullMapView(FullMapView);
+}
+
+void AMapMenuCamera::StopMinionForDuel()
+{
+	bool SelectMinionToChallenge = !CurrentMinion->CurrentSquare->SwitchDuelSquare(true);
+
+	if(!SelectMinionToChallenge)
+		CloseChallengeMenu(true);
 }
 
 void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying) 
@@ -310,19 +319,16 @@ void AMapMenuCamera::HandleBackInput()
         CloseChallengeMenu();
 		return;
 	}
-
-	if(!FullMapView && InputEnabled && !RollingDice)
-	{
-		TurnMovementIndex = MAX_MOVEMENTS_PER_TURN;
-		RestoreTurnLogicWithAnimation();
-	}
 }
 
-void AMapMenuCamera::CloseChallengeMenu() 
+void AMapMenuCamera::CloseChallengeMenu(bool _duel)
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
-    int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+	int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+	if(_duel)
+		currentMinionMovements = 0;
+
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
     SwitchChallengeUI(false);
@@ -392,7 +398,7 @@ void AMapMenuCamera::FinishDuel(int _winner)
 
     SwitchChallengeUI(false);
 
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
+    //GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
 }
 
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
@@ -621,7 +627,7 @@ void AMapMenuCamera::RollTheDice()
 
 void AMapMenuCamera::ExecuteMinionMovement()
 {
-    if(CurrentMinion->AlreadyMoved)
+    if(CurrentMinion->AlreadyMoved || CurrentMinion->CurrentSquare->IsChallengeEnabled)
         return;
 
     CurrentMinion->DiceReference = Dice;

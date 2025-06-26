@@ -2,8 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include <PartyJungle/Player/Minion/Minion.h>
 #include "MapDatabase.generated.h"
+
+class AMinion;
 
 UCLASS()
 class PARTYJUNGLE_API AMapDatabase : public AActor

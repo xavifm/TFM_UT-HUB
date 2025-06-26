@@ -1,0 +1,45 @@
+Generating report for minidump
+
+Application version 5.4.4.0
+ ... built from changelist 35576357
+
+OS version Linux 6.8.0-62-generic (network name: xavi-MS-7C52)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to read memory at address 0x0000000000000424"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-PartyJungle-4596.so!AMinion::SetMinionsMovements(int, bool) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Minion/Minion.cpp:23]
+libUnrealEditor-PartyJungle-4596.so!AMapMenuCamera::ExecuteMinionMovement() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:623]
+libUnrealEditor-PartyJungle-4596.so!void TEnhancedInputUnifiedDelegate<TDelegate<void (), FDefaultDelegateUserPolicy> >::Execute<>() const [/home/xavi/Documents/Unreal 4.4/Engine/Source/../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h:119]
+libUnrealEditor-EnhancedInput.so!UEnhancedPlayerInput::EvaluateInputDelegates(TArray<UInputComponent*, TSizedDefaultAllocator<32> > const&, float, bool, TArray<TTuple<FKey, FKeyState*>, TSizedDefaultAllocator<32> > const&) [/mnt/horde/++UE5/Sync/Engine/Source/./../Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedPlayerInput.cpp:630]
+libUnrealEditor-Engine.so!UPlayerInput::ProcessInputStack(TArray<UInputComponent*, TSizedDefaultAllocator<32> > const&, float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UserInterface/PlayerInput.cpp:1147]
+libUnrealEditor-Engine.so!APlayerController::ProcessPlayerInput(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PlayerController.cpp:2738]
+libUnrealEditor-Engine.so!APlayerController::TickPlayerInput(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PlayerController.cpp:5034]
+libUnrealEditor-Engine.so!APlayerController::PlayerTick(float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PlayerController.cpp:2340]
+libUnrealEditor-Engine.so!APlayerController::TickActor(float, ELevelTick, FActorTickFunction&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PlayerController.cpp:5194]
+libUnrealEditor-Engine.so!FActorTickFunction::ExecuteTick(float, ELevelTick, ENamedThreads::Type, TRefCountPtr<FGraphEvent> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:238]
+libUnrealEditor-Engine.so!FTickFunctionTask::DoTask(ENamedThreads::Type, TRefCountPtr<FGraphEvent> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:275]
+libUnrealEditor-Engine.so!TGraphTask<FTickFunctionTask>::ExecuteTask(TArray<FBaseGraphTask*, TSizedDefaultAllocator<32> >&, ENamedThreads::Type, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:1235]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:760]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilQuit(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:650]
+libUnrealEditor-Core.so!FTaskGraphCompatibilityImplementation::WaitUntilTasksComplete(TArray<TRefCountPtr<FGraphEvent>, TSizedInlineAllocator<4u, 32, TSizedDefaultAllocator<32> > > const&, ENamedThreads::Type) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:2122]
+libUnrealEditor-Engine.so!FTickTaskSequencer::ReleaseTickGroup(ETickingGroup, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:555]
+libUnrealEditor-Engine.so!FTickTaskManager::RunTickGroup(ETickingGroup, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:1582]
+libUnrealEditor-Engine.so!UWorld::Tick(ELevelTick, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/LevelTick.cpp:1499]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2013]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:547]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5915]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:182]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:269]
+libc.so.6!UnknownFunction(0x2a1c9)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start()
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
