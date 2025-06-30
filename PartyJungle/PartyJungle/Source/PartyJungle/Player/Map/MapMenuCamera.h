@@ -110,6 +110,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StopMinionForDuel();
+	void KickYourTeamDiscardableMinions();
+	void StartSelectionByTeam();
+
+	UFUNCTION()
+	void SwitchMinionToSelectForDuel(int _team, int _direction);
+
+	UFUNCTION()
+	void ConfirmMinionToDuel();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleBackInput();
@@ -223,8 +231,11 @@ private:
 	bool IsMinigameActive = false;
 	bool LoadingMap = false;
 	bool FullMapView = false;
+	bool SelectingMinion = false;
 
 	int SelectedPathIndex = 0;
+	int SelectedMinionChallengeIndex = 0;
+	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 
 	UPROPERTY()

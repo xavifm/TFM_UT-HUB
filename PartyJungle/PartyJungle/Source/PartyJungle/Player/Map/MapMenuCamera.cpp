@@ -126,6 +126,12 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (SelectingMinion)
+    {
+        SwitchMinionToSelectForDuel(MinionTeamChallengeIndex, direction);
+        return;
+    }
+
     if (IsMinigameActive)
         return;
 
@@ -151,6 +157,12 @@ void AMapMenuCamera::HandleConfirmInput()
 {
     if (IsMinigameActive || FullMapView)
         return;
+
+    if (SelectingMinion)
+    {
+        ConfirmMinionToDuel();
+        return;
+    }
 
     if (StartTurnUI) 
     {
@@ -213,8 +225,98 @@ void AMapMenuCamera::StopMinionForDuel()
 {
 	bool SelectMinionToChallenge = !CurrentMinion->CurrentSquare->SwitchDuelSquare(true);
 
-	if(!SelectMinionToChallenge)
-		CloseChallengeMenu(true);
+	if(SelectMinionToChallenge)
+	{
+	    KickYourTeamDiscardableMinions();
+	    MapUI->SwitchMinionDuelSelectionMenu(true);
+	    
+	    StartSelectionByTeam();
+	    SwitchMinionToSelectForDuel(MinionTeamChallengeIndex, 0);
+	    return;
+	}
+
+    CloseChallengeMenu(true);
+}
+
+void AMapMenuCamera::KickYourTeamDiscardableMinions()
+{
+    if (!CurrentMinion->CurrentSquare->DisposableMinionsList.Contains(CurrentMinionTeam)) return;
+    
+    TArray<AMinion*> minionsFromYourTeam = CurrentMinion->CurrentSquare->DisposableMinionsList[CurrentMinionTeam];
+
+    for (AMinion* minion : minionsFromYourTeam)
+    {
+        if (minion != CurrentMinion)
+        {
+            minion->SetMinionsMovements(1);
+            CurrentMinion->CurrentSquare->DisposableMinionsList[CurrentMinionTeam].Remove(minion);
+        }
+    }
+}
+
+void AMapMenuCamera::StartSelectionByTeam()
+{
+    SelectingMinion = true;
+    TMap<int, TArray<AMinion*>> minionList= CurrentMinion->CurrentSquare->DisposableMinionsList;
+    bool queryFound = false;
+
+    for (TPair<int, TArray<AMinion*>> Element : minionList)
+    {
+        if (queryFound)
+            break;
+        
+        for (AMinion* MinionList : Element.Value)
+        {
+            MinionTeamChallengeIndex = Element.Key;
+            SelectedMinionChallengeIndex = 0;
+            queryFound = true;
+            
+            break;
+        }
+    }
+}
+
+void AMapMenuCamera::SwitchMinionToSelectForDuel(int _team, int _direction)
+{
+    TMap<int, TArray<AMinion*>> minionList = CurrentMinion->CurrentSquare->DisposableMinionsList;
+
+    if (!minionList.Contains(_team)) return;
+
+    TArray<AMinion*>& teamMinions = minionList[_team];
+
+    AMinion* oldMinion = teamMinions[SelectedMinionChallengeIndex];
+    oldMinion->SwitchSelectArrowVisibility(false);
+
+    if (teamMinions.Num() == 0) return;
+    
+    int numMinions = teamMinions.Num();
+    SelectedMinionChallengeIndex = (SelectedMinionChallengeIndex + _direction + numMinions) % numMinions;
+
+    AMinion* newMinion = teamMinions[SelectedMinionChallengeIndex];
+    newMinion->SwitchSelectArrowVisibility(true);
+}
+
+void AMapMenuCamera::ConfirmMinionToDuel()
+{
+    TMap<int, TArray<AMinion*>> minionList = CurrentMinion->CurrentSquare->DisposableMinionsList;
+
+    if (!minionList.Contains(MinionTeamChallengeIndex)) return;
+
+    TArray<AMinion*>& teamMinions = minionList[MinionTeamChallengeIndex];
+
+    teamMinions[SelectedMinionChallengeIndex]->SwitchSelectArrowVisibility(false);
+
+    for (AMinion* minion : teamMinions)
+    {
+        if (teamMinions[SelectedMinionChallengeIndex] != minion)
+        {
+            minion->SetMinionsMovements(1);
+            CurrentMinion->CurrentSquare->DisposableMinionsList[MinionTeamChallengeIndex].Remove(minion);
+        }
+    }
+
+    SelectingMinion = false;
+    StopMinionForDuel();
 }
 
 void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying) 

@@ -60,7 +60,9 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void UpdateM1SliderBarValues(int _index, float _value);
-
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void SwitchMinionDuelSelectionMenu(bool IsVisible);
 
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);

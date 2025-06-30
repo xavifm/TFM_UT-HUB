@@ -47,6 +47,8 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execOpenChallengeMenu); \
 	DECLARE_FUNCTION(execCloseChallengeMenu); \
 	DECLARE_FUNCTION(execHandleBackInput); \
+	DECLARE_FUNCTION(execConfirmMinionToDuel); \
+	DECLARE_FUNCTION(execSwitchMinionToSelectForDuel); \
 	DECLARE_FUNCTION(execStopMinionForDuel); \
 	DECLARE_FUNCTION(execStartMinigame); \
 	DECLARE_FUNCTION(execSwitchFullMapVision); \

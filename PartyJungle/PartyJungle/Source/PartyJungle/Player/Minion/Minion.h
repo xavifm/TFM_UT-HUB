@@ -87,6 +87,9 @@ public:
 	void MoveCrownVerticalAxis(float _position);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion Functions")
+	void SwitchSelectArrowVisibility(bool _visible);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion Functions")
 	void SwitchMinionVisibility(bool _visible);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
