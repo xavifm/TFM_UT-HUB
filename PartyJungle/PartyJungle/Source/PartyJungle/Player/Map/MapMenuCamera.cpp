@@ -528,7 +528,7 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
 {
     DuelUI = _visibility;
-    MapUI->SwitchChallengeVisibility(_visibility);
+    MapUI->SwitchChallengePopupVisibility(_visibility);
 
     if (_visibility) 
     {
