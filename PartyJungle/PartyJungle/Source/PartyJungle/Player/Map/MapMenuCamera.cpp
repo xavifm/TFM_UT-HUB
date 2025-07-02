@@ -94,7 +94,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
             {
                 MapUI->SwitchLegendVisibility(false);
 
-                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI) 
+                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup) 
                 {
                     UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
                     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
@@ -173,10 +173,15 @@ void AMapMenuCamera::HandleConfirmInput()
     if (DuelUI)
     {
         //StartMinigame(true, 0, TArray<AMinion*>());
-		StopMinionForDuel();
         return;
     }
 
+    if (DuelPopup)
+    {
+        StopMinionForDuel();
+        return;
+    }
+    
     if (BuyCrownsUI)
     {
         BuyCrowns(1);
@@ -199,7 +204,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelUI || BuyCrownsUI || StoreCrownsUI)
+    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI)
         return;
 
     SwitchFullMapVision();
@@ -419,7 +424,7 @@ void AMapMenuCamera::HandleBackInput()
         return;
     }
 
-    if (DuelUI)
+    if (DuelPopup)
 	{
         CloseChallengeMenu();
 		return;
@@ -530,7 +535,7 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 
 {
-    DuelUI = _visibility;
+    DuelPopup = _visibility;
     MapUI->SwitchChallengePopupVisibility(_visibility);
 
     if (_visibility) 
@@ -892,7 +897,7 @@ void AMapMenuCamera::RestoreTurnLogic()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
-    if (DuelUI)
+    if (DuelUI || DuelPopup)
         return;
 
     TurnMovementIndex = 0;

@@ -225,6 +225,7 @@ private:
 	bool ChooseMinionToMove = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
+	bool DuelPopup = false;
 	bool StartTurnUI = false;
 	bool BuyCrownsUI = false;
 	bool StoreCrownsUI = false;
