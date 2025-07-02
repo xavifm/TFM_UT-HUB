@@ -39,6 +39,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchCameraTeam); \
 	DECLARE_FUNCTION(execSwitchPathMenu); \
 	DECLARE_FUNCTION(execSwitchMenuWidget); \
+	DECLARE_FUNCTION(execSwitchChallengeMenuUI); \
 	DECLARE_FUNCTION(execSwitchChallengeUI); \
 	DECLARE_FUNCTION(execSwitchCrownsShop); \
 	DECLARE_FUNCTION(execSwitchStoreCrownsUI); \

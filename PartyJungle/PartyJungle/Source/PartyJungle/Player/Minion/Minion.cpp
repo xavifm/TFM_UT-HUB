@@ -211,7 +211,9 @@ void AMinion::HandleMovement(float _deltaTime)
 			AMinion* minionQuery = SearchMinionToChallenge();
 			if (CurrentSquare && CurrentSquare->Camera && minionQuery)
 			{
-				CurrentSquare->Camera->OpenChallengeMenu(this, minionQuery);
+				if (!CurrentSquare->IsChallengeEnabled)
+					CurrentSquare->Camera->OpenChallengeMenu(this, minionQuery);
+				
 				return;
 			}
 
