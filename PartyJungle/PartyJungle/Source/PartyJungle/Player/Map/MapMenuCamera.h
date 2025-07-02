@@ -142,6 +142,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
+	void SwitchChallengeMenuUI(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);

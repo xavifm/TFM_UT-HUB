@@ -21,8 +21,7 @@ class PARTYJUNGLE_API AChallengeInformation : public AActor
 
 public:
 	AChallengeInformation();
-
-public:
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
 	class AChallengeDatabase* ChallengeRegistry;
 
@@ -32,6 +31,8 @@ public:
 	UPROPERTY()
 	class AMinion* Victim;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Active Duels")
+	TArray<ASquare*> SquaresWithDuelsInRound;
 	
 	UFUNCTION(BlueprintCallable)
 	void SetUpDuelInfo(AMinion* _attacker, AMinion* _victim);

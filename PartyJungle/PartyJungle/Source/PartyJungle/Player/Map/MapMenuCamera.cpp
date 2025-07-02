@@ -235,6 +235,9 @@ void AMapMenuCamera::StopMinionForDuel()
 	    return;
 	}
 
+    if (!ChallengeInformation->SquaresWithDuelsInRound.Contains(CurrentMinion->CurrentSquare))
+        ChallengeInformation->SquaresWithDuelsInRound.Add(CurrentMinion->CurrentSquare);
+    
     CloseChallengeMenu(true);
 }
 
@@ -537,6 +540,18 @@ void AMapMenuCamera::SwitchChallengeUI(bool _visibility)
     }
 }
 
+void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility) 
+{
+    DuelUI = _visibility;
+    MapUI->SwitchChallengeVisibility(_visibility);
+
+    if (_visibility) 
+    {
+        Dice->HideDice();
+        MapUI->SwitchLegendVisibility(false);
+    }
+}
+
 void AMapMenuCamera::SwitchMenuWidget(bool _enabled)
 {
     if (MenuWidgetClass)
@@ -598,6 +613,7 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
 
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
+    int oldMinionTeam = CurrentMinionTeam;
     CurrentMinionTeam += _direction;
 
     if(_direction != 0)
@@ -609,7 +625,14 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
         if (CurrentMinionTeam == 0 && RoundsSystem)
         {
-            RoundsSystem->HandleEndRound();
+            bool minigameDetected = RoundsSystem->HandleEndRound(true);
+
+            if (minigameDetected)
+            {
+                CurrentMinionTeam = oldMinionTeam;
+                SwitchChallengeMenuUI(true);
+                return;
+            }
         }
         if (MapUI &&
             ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
