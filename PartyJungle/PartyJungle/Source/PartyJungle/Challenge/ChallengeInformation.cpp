@@ -42,27 +42,27 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction)
         return DuelType;
 
     EDuelType duelType = static_cast<EDuelType>(DuelTypeInt);
-    int attackerCoins = Attacker->GetCoins();
-    int attackerCrowns = Attacker->GetCrowns();
+    //int attackerCoins = Attacker->GetCoins();
+    //int attackerCrowns = Attacker->GetCrowns();
     
-    int victimCoins = Victim->GetCoins();
-    int victimCrowns = Victim->GetCrowns();
+    //int victimCoins = Victim->GetCoins();
+    //int victimCrowns = Victim->GetCrowns();
 
     int minCoins = 0;
 
-    if (victimCrowns > 0)
-        duelType = EDuelType::ALL_IN_VS_ST;
+    //if (victimCrowns > 0)
+        //duelType = EDuelType::ALL_IN_VS_ST;
 
     switch (duelType)
     {
         case EDuelType::HALF_COINS:      minCoins = MIN_HALF_BET;  break;
         case EDuelType::ALL_IN_COINS:    minCoins = MIN_FULL_BET; break;
-        case EDuelType::ALL_IN_VS_ST:    if (victimCrowns <= 0) return DuelType; minCoins = MIN_FULL_BET;
-            break;
+        //case EDuelType::ALL_IN_VS_ST:    if (victimCrowns <= 0) return DuelType; minCoins = MIN_FULL_BET;
+            //break;
     }
 
-    if (minCoins > 0 && (attackerCoins < minCoins || (victimCoins < minCoins && duelType != EDuelType::ALL_IN_VS_ST)))
-        return DuelType;
+    //if (minCoins > 0 && (attackerCoins < minCoins || (victimCoins < minCoins && duelType != EDuelType::ALL_IN_VS_ST)))
+        //return DuelType;
 
     DuelType = duelType;
 

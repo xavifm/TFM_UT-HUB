@@ -126,10 +126,10 @@ public:
 	void CloseChallengeMenu(bool _duel = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);
+	void OpenChallengeMenu();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void RefreshChallengeInfo(int _direction);
+	void RefreshChallengeInfo(int _direction, int _team);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FinishDuel(int _winner);
@@ -144,7 +144,7 @@ public:
 	void SwitchChallengeUI(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void SwitchChallengeMenuUI(bool _visibility);
+	void SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _minions);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);

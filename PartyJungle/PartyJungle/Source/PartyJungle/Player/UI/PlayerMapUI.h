@@ -31,6 +31,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchUITeamVisibility(int Team, bool IsVisible);
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchChallengePlayerUIVisibility(int Team, bool IsVisible);   
+
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void ShowTextInScreen(const FString& Text, float Time);
 

@@ -143,7 +143,7 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (DuelUI)
     {
-        RefreshChallengeInfo(direction);
+        RefreshChallengeInfo(direction, 0);
         return;
     }
 
@@ -447,18 +447,12 @@ void AMapMenuCamera::CloseChallengeMenu(bool _duel)
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
 }
 
-void AMapMenuCamera::OpenChallengeMenu(AMinion* _challenger, AMinion* _victim) 
+void AMapMenuCamera::OpenChallengeMenu() 
 {
     SwitchChallengeUI(true);
-
-    if(ChallengeInformation) 
-    {
-        ChallengeInformation->SetUpDuelInfo(_challenger, _victim);
-        RefreshChallengeInfo(0);
-    }
 }
 
-void AMapMenuCamera::RefreshChallengeInfo(int _direction) 
+void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team) 
 {
     if (!ChallengeInformation)
         return;
@@ -545,7 +539,7 @@ void AMapMenuCamera::SwitchChallengeUI(bool _visibility)
     }
 }
 
-void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility) 
+void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _challengers) 
 {
     DuelUI = _visibility;
     MapUI->SwitchChallengeVisibility(_visibility);
@@ -554,6 +548,20 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility)
     {
         Dice->HideDice();
         MapUI->SwitchLegendVisibility(false);
+
+        if(ChallengeInformation) 
+        {
+            //ChallengeInformation->SetUpDuelInfo(_challenger, _victim);
+
+            for (int team = 0; team < MAX_TEAM_NUMBER; team++)
+                MapUI->SwitchChallengePlayerUIVisibility(team, false);
+                
+            for (AMinion* minion : _challengers)
+            {
+                RefreshChallengeInfo(0, static_cast<int>(minion->Team));
+                MapUI->SwitchChallengePlayerUIVisibility(static_cast<int>(minion->Team), _visibility);   
+            }
+        }
     }
 }
 
@@ -635,7 +643,8 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             if (minigameDetected)
             {
                 CurrentMinionTeam = oldMinionTeam;
-                SwitchChallengeMenuUI(true);
+                if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
+                SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList);
                 return;
             }
         }

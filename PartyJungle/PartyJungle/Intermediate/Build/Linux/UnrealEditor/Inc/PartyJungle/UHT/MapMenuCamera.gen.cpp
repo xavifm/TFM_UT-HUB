@@ -585,31 +585,15 @@ DEFINE_FUNCTION(AMapMenuCamera::execHandleYInput)
 // Begin Class AMapMenuCamera Function OpenChallengeMenu
 struct Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics
 {
-	struct MapMenuCamera_eventOpenChallengeMenu_Parms
-	{
-		AMinion* _challenger;
-		AMinion* _victim;
-	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Functions" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FObjectPropertyParams NewProp__challenger;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp__victim;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::NewProp__challenger = { "_challenger", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventOpenChallengeMenu_Parms, _challenger), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::NewProp__victim = { "_victim", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventOpenChallengeMenu_Parms, _victim), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::NewProp__challenger,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::NewProp__victim,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "OpenChallengeMenu", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::MapMenuCamera_eventOpenChallengeMenu_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::MapMenuCamera_eventOpenChallengeMenu_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "OpenChallengeMenu", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu_Statics::Function_MetaDataParams) };
 UFunction* Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -621,11 +605,9 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu()
 }
 DEFINE_FUNCTION(AMapMenuCamera::execOpenChallengeMenu)
 {
-	P_GET_OBJECT(AMinion,Z_Param__challenger);
-	P_GET_OBJECT(AMinion,Z_Param__victim);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->OpenChallengeMenu(Z_Param__challenger,Z_Param__victim);
+	P_THIS->OpenChallengeMenu();
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function OpenChallengeMenu
@@ -636,6 +618,7 @@ struct Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics
 	struct MapMenuCamera_eventRefreshChallengeInfo_Parms
 	{
 		int32 _direction;
+		int32 _team;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -644,12 +627,15 @@ struct Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventRefreshChallengeInfo_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventRefreshChallengeInfo_Parms, _team), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::NewProp__direction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::NewProp__team,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "RefreshChallengeInfo", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::MapMenuCamera_eventRefreshChallengeInfo_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo_Statics::Function_MetaDataParams) };
@@ -666,9 +652,10 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo()
 DEFINE_FUNCTION(AMapMenuCamera::execRefreshChallengeInfo)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__direction);
+	P_GET_PROPERTY(FIntProperty,Z_Param__team);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->RefreshChallengeInfo(Z_Param__direction);
+	P_THIS->RefreshChallengeInfo(Z_Param__direction,Z_Param__team);
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function RefreshChallengeInfo
@@ -1065,6 +1052,7 @@ struct Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics
 	struct MapMenuCamera_eventSwitchChallengeMenuUI_Parms
 	{
 		bool _visibility;
+		TArray<AMinion*> _minions;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -1074,6 +1062,8 @@ struct Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics
 #endif // WITH_METADATA
 	static void NewProp__visibility_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp__visibility;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__minions_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp__minions;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
@@ -1082,8 +1072,12 @@ void Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp
 	((MapMenuCamera_eventSwitchChallengeMenuUI_Parms*)Obj)->_visibility = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__visibility = { "_visibility", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSwitchChallengeMenuUI_Parms), &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__visibility_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__minions_Inner = { "_minions", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__minions = { "_minions", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchChallengeMenuUI_Parms, _minions), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__visibility,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__minions_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::NewProp__minions,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchChallengeMenuUI", nullptr, nullptr, Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::MapMenuCamera_eventSwitchChallengeMenuUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI_Statics::Function_MetaDataParams) };
@@ -1100,9 +1094,10 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI()
 DEFINE_FUNCTION(AMapMenuCamera::execSwitchChallengeMenuUI)
 {
 	P_GET_UBOOL(Z_Param__visibility);
+	P_GET_TARRAY(AMinion*,Z_Param__minions);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->SwitchChallengeMenuUI(Z_Param__visibility);
+	P_THIS->SwitchChallengeMenuUI(Z_Param__visibility,Z_Param__minions);
 	P_NATIVE_END;
 }
 // End Class AMapMenuCamera Function SwitchChallengeMenuUI
@@ -1882,8 +1877,8 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleEscInput, "HandleEscInput" }, // 1877541257
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleLeftRightInput, "HandleLeftRightInput" }, // 1471737810
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleYInput, "HandleYInput" }, // 2037511607
-		{ &Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu, "OpenChallengeMenu" }, // 1674312757
-		{ &Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo, "RefreshChallengeInfo" }, // 879373997
+		{ &Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu, "OpenChallengeMenu" }, // 2884204080
+		{ &Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo, "RefreshChallengeInfo" }, // 1342784383
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic, "RestoreTurnLogic" }, // 110122867
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation, "RestoreTurnLogicWithAnimation" }, // 1942751108
 		{ &Z_Construct_UFunction_AMapMenuCamera_RollTheDice, "RollTheDice" }, // 197272818
@@ -1894,7 +1889,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_StopMinionForDuel, "StopMinionForDuel" }, // 237667204
 		{ &Z_Construct_UFunction_AMapMenuCamera_StoreCrowns, "StoreCrowns" }, // 1192048640
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCameraTeam, "SwitchCameraTeam" }, // 3251726099
-		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI, "SwitchChallengeMenuUI" }, // 437121108
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI, "SwitchChallengeMenuUI" }, // 3560228905
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeUI, "SwitchChallengeUI" }, // 384721050
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchController, "SwitchController" }, // 443897426
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCrownsShop, "SwitchCrownsShop" }, // 1885612681
@@ -2004,10 +1999,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 4065717939U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 631140964U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_3370542995(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_3020357105(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
