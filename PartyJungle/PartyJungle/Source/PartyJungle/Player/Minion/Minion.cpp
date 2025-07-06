@@ -10,14 +10,16 @@ AMinion::AMinion()
 
 void AMinion::SetMinionsMovements(int _movements, bool _continuation)
 {
+	Movements = _movements;
 	if (_movements <= 0)
 		return;
 
-	Movements = _movements;
 	DiceReference->ShowDiceFeedbackNumber(Movements);
 
 	if(!_continuation) 
 	{
+		LastSquare = CurrentSquare;
+
 		if(IsValid(CurrentSquare))
 			CurrentSquare->RemoveMinion(this);
 
@@ -28,6 +30,17 @@ void AMinion::SetMinionsMovements(int _movements, bool _continuation)
 
 	if(CurrentSquare) 
 	{
+		if(CurrentSquare->IsChallengeEnabled)
+		{
+			if(CurrentSquare->CheckIfSquareIsBlocked(this))
+			{
+				CurrentSquare = LastSquare;
+				CurrentSquare->AddMinion(this);
+				SetMinionsMovements(0);
+				return;
+			}
+		}
+
 		CurrentSquare->AddMinion(this);
 		MoveToSquare(CurrentSquare);	
 	}
@@ -198,7 +211,9 @@ void AMinion::HandleMovement(float _deltaTime)
 			AMinion* minionQuery = SearchMinionToChallenge();
 			if (CurrentSquare && CurrentSquare->Camera && minionQuery)
 			{
-				CurrentSquare->Camera->OpenChallengeMenu(this, minionQuery);
+				if (!CurrentSquare->IsChallengeEnabled)
+					CurrentSquare->Camera->OpenChallengeMenu();
+				
 				return;
 			}
 
@@ -212,7 +227,7 @@ AMinion* AMinion::SearchMinionToChallenge()
 {
 	AMinion* minionQuery = nullptr;
 
-	if (!CurrentSquare || CurrentSquare->MinionsList.Num() != 2 || GetCoins() < MINIMUM_BET_REQUIREMENT)
+	if (!CurrentSquare || CurrentSquare->MinionsList.Num() < 2 || GetCoins() < MINIMUM_BET_REQUIREMENT)
 		return minionQuery;
 
 	for (AMinion* Minion : CurrentSquare->MinionsList)

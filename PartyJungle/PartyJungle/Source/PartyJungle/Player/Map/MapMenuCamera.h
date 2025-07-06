@@ -109,16 +109,27 @@ public:
 	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void StopMinionForDuel();
+	void KickYourTeamDiscardableMinions();
+	void StartSelectionByTeam();
+
+	UFUNCTION()
+	void SwitchMinionToSelectForDuel(int _team, int _direction);
+
+	UFUNCTION()
+	void ConfirmMinionToDuel();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleBackInput();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void CloseChallengeMenu();
+	void CloseChallengeMenu(bool _duel = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void OpenChallengeMenu(AMinion* _challenger, AMinion* _victim);
+	void OpenChallengeMenu();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void RefreshChallengeInfo(int _direction);
+	void RefreshChallengeInfo(int _direction, int _team);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FinishDuel(int _winner);
@@ -131,6 +142,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _minions);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);
@@ -149,6 +163,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RollTheDice();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void ExecuteMinionMovement();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ChangeSelectedPath(int _direction);
@@ -178,6 +195,7 @@ private:
 	const float CROWN_MIN_OFFSET = 130;
 	const int CROWN_PRICE = 20;
 	const int CAMERA_HEIGHT_OFFSET = 600;
+	const int MAX_MOVEMENTS_PER_TURN = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -206,8 +224,10 @@ private:
 
 	bool InputEnabled = true;
 	bool RollingDice = false;
+	bool ChooseMinionToMove = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
+	bool DuelPopup = false;
 	bool StartTurnUI = false;
 	bool BuyCrownsUI = false;
 	bool StoreCrownsUI = false;
@@ -215,9 +235,15 @@ private:
 	bool IsMinigameActive = false;
 	bool LoadingMap = false;
 	bool FullMapView = false;
+	bool SelectingMinion = false;
 
 	int SelectedPathIndex = 0;
+	int SelectedMinionChallengeIndex = 0;
+	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
+
+	UPROPERTY()
+	int TurnMovementIndex;
 
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;

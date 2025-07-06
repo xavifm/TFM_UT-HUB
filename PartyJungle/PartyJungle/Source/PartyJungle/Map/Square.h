@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <PartyJungle/Player/Minion/Minion.h>
+#include <PartyJungle/Map/MapDatabase.h>
 #include "Square.generated.h"
 
 class AMapMenuCamera;
@@ -24,6 +25,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SquareProperties")
 	int Money;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "SquareProperties")
+	bool IsChallengeEnabled;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	USceneComponent* Center;
 
@@ -39,6 +43,12 @@ public:
 	ASquare* GetNextNode(int _pathIndex = 0);
 
 	UFUNCTION()
+	bool CheckIfSquareIsBlocked(AMinion* _minion);
+
+	UFUNCTION()
+	bool SwitchDuelSquare(bool _toggle);
+
+	UFUNCTION()
 	void OpenChooseMenu();
 	UFUNCTION()
 	void CloseChooseMenu(int _pathIndex);
@@ -52,7 +62,11 @@ public:
 
 	virtual bool ExecuteEvent(AMinion* _minion);
 
+	UFUNCTION()
 	void ResetSquare();
+
+	TMap<int, TArray<AMinion*>> GetDisposableMinions();
+	TMap<int, TArray<AMinion*>> DisposableMinionsList;
 
 protected:
 	virtual void BeginPlay() override;

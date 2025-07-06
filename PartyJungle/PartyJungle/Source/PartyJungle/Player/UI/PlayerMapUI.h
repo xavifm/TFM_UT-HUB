@@ -31,6 +31,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchUITeamVisibility(int Team, bool IsVisible);
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchChallengePlayerUIVisibility(int Team, bool IsVisible);   
+
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void ShowTextInScreen(const FString& Text, float Time);
 
@@ -47,6 +50,9 @@ public:
     void SwitchChallengeVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchChallengePopupVisibility(bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchCrownStoreVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
@@ -60,7 +66,9 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void UpdateM1SliderBarValues(int _index, float _value);
-
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void SwitchMinionDuelSelectionMenu(bool IsVisible);
 
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCoins(int Team, int Quantity);

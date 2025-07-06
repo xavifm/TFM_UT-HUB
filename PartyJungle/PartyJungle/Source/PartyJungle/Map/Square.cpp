@@ -15,6 +15,59 @@ ASquare* ASquare::GetNextNode(int _pathIndex)
 	return squareQuery;
 }
 
+bool ASquare::CheckIfSquareIsBlocked(AMinion* _minion)
+{
+	bool blockedQuery = false;
+
+	for (AMinion* otherMinion : MinionsList)
+	{
+		if (otherMinion && otherMinion != _minion && otherMinion->Team == _minion->Team)
+		{
+			blockedQuery = true;
+			break;
+		}
+	}
+
+	return blockedQuery;
+}
+
+TMap<int, TArray<AMinion*>> ASquare::GetDisposableMinions()
+{
+	TMap<int, TArray<AMinion*>> OutMap;
+	TMap<int, TArray<AMinion*>> TeamToMinionsMap;
+
+	for (AMinion* Minion : MinionsList)
+	{
+		if (Minion)
+		{
+			int TeamId = static_cast<int>(Minion->Team);
+			TeamToMinionsMap.FindOrAdd(TeamId).Add(Minion);
+		}
+	}
+
+	for (const TPair<int, TArray<AMinion*>>& Pair : TeamToMinionsMap)
+	{
+		if (Pair.Value.Num() >= 2)
+			OutMap.Add(Pair.Key, Pair.Value);
+	}
+
+	return OutMap;
+}
+
+bool ASquare::SwitchDuelSquare(bool _toggle)
+{
+	bool operationDone = true;
+
+	IsChallengeEnabled = _toggle;
+
+	DisposableMinionsList = GetDisposableMinions();
+
+	if(DisposableMinionsList.Num() > 0)
+		operationDone = false;
+
+	return operationDone;
+}
+
 void ASquare::OpenChooseMenu()
 {
 	TArray<ASquareOptional*> paths;

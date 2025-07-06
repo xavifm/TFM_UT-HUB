@@ -20,6 +20,7 @@ void ADice::Tick(float DeltaTime)
 
 int ADice::RollTheDice()
 {
-	return FMath::RandRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX);
+	DiceValue = FMath::RandRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX);
+	return DiceValue;
 }
 

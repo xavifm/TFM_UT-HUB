@@ -36,8 +36,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Dice Roll")
 	int RollTheDice();
 
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Dice Value")
+	int DiceValue;
+
 
 private:
-	const int RANDOM_NUMBER_MIN = 4;
+	const int RANDOM_NUMBER_MIN = 1;
 	const int RANDOM_NUMBER_MAX = 12;
 };

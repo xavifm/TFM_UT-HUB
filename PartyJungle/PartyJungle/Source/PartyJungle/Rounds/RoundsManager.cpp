@@ -1,4 +1,5 @@
 #include "./RoundsManager.h"
+
 #include <Kismet/GameplayStatics.h>
 
 ARoundsManager::ARoundsManager()
@@ -18,12 +19,16 @@ int ARoundsManager::GetCurrentRound()
 	return CurrentRound;
 }
 
-void ARoundsManager::HandleEndRound(bool _minigame)
+bool ARoundsManager::HandleEndRound(bool _minigame)
 {
+	bool minigameQuery = false;
+	
 	if (_minigame) 
 	{
-		StartEndRoundMinigame();
-		return;
+		minigameQuery = CheckForEndRoundMinigame();
+		
+		if (minigameQuery)
+			return minigameQuery;
 	}
 
 	if (GetRoundsLeft() > 0)
@@ -33,6 +38,8 @@ void ARoundsManager::HandleEndRound(bool _minigame)
 		GameFinished = true;
 		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &ARoundsManager::FinishGame, 1, false);
 	}
+
+	return minigameQuery;
 }
 
 void ARoundsManager::StartNextRound()
@@ -77,10 +84,17 @@ void ARoundsManager::FinishGame()
 	UGameplayStatics::OpenLevel(this, FName(END_GAME_SCENE_NAME));
 }
 
-void ARoundsManager::StartEndRoundMinigame()
+bool ARoundsManager::CheckForEndRoundMinigame()
 {
-	if (!MapUI)
-		return;
+	bool minigameQuery = false;
+	
+	if (!MapUI || !ChallengeInfo)
+		return minigameQuery;
+
+	if (ChallengeInfo->SquaresWithDuelsInRound.Num() > 0)
+		minigameQuery = true;
+
+	return minigameQuery;
 }
 
 void ARoundsManager::AssignMapUI(UPlayerMapUI* _mapUI)

@@ -87,6 +87,9 @@ public:
 	void MoveCrownVerticalAxis(float _position);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion Functions")
+	void SwitchSelectArrowVisibility(bool _visible);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Minion Functions")
 	void SwitchMinionVisibility(bool _visible);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion Properties")
@@ -104,11 +107,13 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 	bool isMoving = false;
+	bool AlreadyMoved = false;
 
 private:
 	void HandleMovement(float _deltaTime);
 
 	AMinion* SearchMinionToChallenge();
+	ASquare* LastSquare;
 
 	float CurrentLerpTime = 0.0f;
 

@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
+#include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "RoundsManager.generated.h"
 
 UCLASS()
@@ -17,7 +18,7 @@ public:
 	int GetCurrentRound();
 
 	UFUNCTION()
-	void HandleEndRound(bool _minigame = false);
+	bool HandleEndRound(bool _minigame = false);
 
 	UFUNCTION()
 	void StartNextRound();
@@ -29,7 +30,7 @@ public:
 	void FinishGame();
 
 	UFUNCTION()
-	void StartEndRoundMinigame();
+	bool CheckForEndRoundMinigame();
 
 	UFUNCTION()
 	void AssignMapUI(UPlayerMapUI* _mapUI);
@@ -42,6 +43,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Rounds Audio")
 	AAudioManager* AudioManager;
 
+	UPROPERTY(EditAnywhere, Category = "Challenge Info")
+	AChallengeInformation* ChallengeInfo;
+
 	UPROPERTY(EditAnywhere, Category = "Rounds")
 	int MaxRounds;
 
@@ -51,7 +55,6 @@ protected:
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Rounds")
 	int CurrentRound;
-
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;
