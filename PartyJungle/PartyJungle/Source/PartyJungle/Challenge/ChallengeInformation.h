@@ -26,16 +26,13 @@ public:
 	class AChallengeDatabase* ChallengeRegistry;
 
 	UPROPERTY()
-	class AMinion* Attacker;
-
-	UPROPERTY()
-	class AMinion* Victim;
+	TArray<AMinion*> Minions;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Active Duels")
 	TArray<ASquare*> SquaresWithDuelsInRound;
 	
 	UFUNCTION(BlueprintCallable)
-	void SetUpDuelInfo(AMinion* _attacker, AMinion* _victim);
+	void SetUpDuelInfo(TArray<AMinion*> _minions);
 
 	UFUNCTION(BlueprintCallable)
 	void SaveDuelToRegistry(int _winner, int _coins, int _crowns);
@@ -44,13 +41,13 @@ public:
 	EDuelType GetDuelType();
 
 	UFUNCTION(BlueprintCallable)
-	EDuelType SwitchDuelType(int _direction);
+	EDuelType SwitchDuelType(int _direction, int _team);
 
 	UFUNCTION(BlueprintCallable)
-	int GetBetCoinsQuantity(int _minion);
+	int GetBetCoinsQuantity(int _team);
 
 	UFUNCTION(BlueprintCallable)
-	int GetBetCrownsQuantity(int _minion);
+	int GetBetCrownsQuantity(int _team);
 
 private:
 	EDuelType DuelType;

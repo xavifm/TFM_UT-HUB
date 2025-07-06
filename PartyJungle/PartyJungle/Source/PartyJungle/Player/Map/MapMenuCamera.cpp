@@ -350,9 +350,9 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
 
         if(_duel) 
         {
-            GameInstance->Attacker = ChallengeInformation->Attacker;
-            GameInstance->Victim = ChallengeInformation->Victim;
-            GameInstance->Challenge = true;       
+            //GameInstance->Attacker = ChallengeInformation->Attacker;
+            //GameInstance->Victim = ChallengeInformation->Victim;
+            //GameInstance->Challenge = true;       
         }
     }
     
@@ -457,15 +457,12 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
     if (!ChallengeInformation)
         return;
 
-    ChallengeInformation->SwitchDuelType(_direction);
+    ChallengeInformation->SwitchDuelType(_direction, _team);
 
-    int attackerCoins = ChallengeInformation->GetBetCoinsQuantity(0);
-    int victimCoins = ChallengeInformation->GetBetCoinsQuantity(1);
+    int Coins = ChallengeInformation->GetBetCoinsQuantity(_team);
+    int Crowns = ChallengeInformation->GetBetCrownsQuantity(_team);
 
-    int attackerCrowns = ChallengeInformation->GetBetCrownsQuantity(0);
-    int victimCrowns = ChallengeInformation->GetBetCrownsQuantity(1);
-
-    MapUI->UpdateDuelScreenInfo(attackerCoins, victimCoins, attackerCrowns, victimCrowns, ChallengeInformation->GetDuelType());
+    MapUI->UpdateDuelScreenInfo(Coins, 0, Crowns, 0, ChallengeInformation->GetDuelType());
 
 }
 
@@ -474,31 +471,31 @@ void AMapMenuCamera::FinishDuel(int _winner)
     int winnerIndex = (_winner == 0) ? 0 : 1;
     int loserIndex = (_winner == 0) ? 1 : 0;
 
-    int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
-    int loserCoins = -winnerCoins;
+    //int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
+    //int loserCoins = -winnerCoins;
 
-    int winnerCrowns = ChallengeInformation->GetBetCrownsQuantity(loserIndex);
-    int loserCrowns = -winnerCrowns;
+    //int winnerCrowns = ChallengeInformation->GetBetCrownsQuantity(loserIndex);
+    //int loserCrowns = -winnerCrowns;
 
-    auto* Winner = (_winner == 0) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
-    auto* Loser = (_winner == 0) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
+    //auto* Winner = (_winner == 0) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
+    //auto* Loser = (_winner == 0) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
 
-    bool WinnerPlaySound = (Winner == ChallengeInformation->Attacker) ? true : false;
-    bool LoserPlaySound = (Loser == ChallengeInformation->Attacker) ? true : false;
+    //bool WinnerPlaySound = (Winner == ChallengeInformation->Attacker) ? true : false;
+    //bool LoserPlaySound = (Loser == ChallengeInformation->Attacker) ? true : false;
 
-    Winner->UpdateCoins(winnerCoins, WinnerPlaySound);
-    Loser->UpdateCoins(loserCoins, LoserPlaySound);
+    //Winner->UpdateCoins(winnerCoins, WinnerPlaySound);
+    //Loser->UpdateCoins(loserCoins, LoserPlaySound);
 
-    Winner->UpdateCrowns(winnerCrowns);
-    Loser->UpdateCrowns(loserCrowns);
+    //Winner->UpdateCrowns(winnerCrowns);
+    //Loser->UpdateCrowns(loserCrowns);
 
-    int WinnerTeam = static_cast<int>(Winner->Team);
-    int LoserTeam = static_cast<int>(Loser->Team);
+    //int WinnerTeam = static_cast<int>(Winner->Team);
+    //int LoserTeam = static_cast<int>(Loser->Team);
 
-    MapUI->UpdateCoins(WinnerTeam, winnerCoins);
-    MapUI->UpdateCoins(LoserTeam, loserCoins);
+    //MapUI->UpdateCoins(WinnerTeam, winnerCoins);
+    //MapUI->UpdateCoins(LoserTeam, loserCoins);
 
-    ChallengeInformation->SaveDuelToRegistry(WinnerTeam, winnerCoins, winnerCrowns);
+    //ChallengeInformation->SaveDuelToRegistry(WinnerTeam, winnerCoins, winnerCrowns);
 
     SwitchChallengeUI(false);
 
@@ -551,7 +548,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
 
         if(ChallengeInformation) 
         {
-            //ChallengeInformation->SetUpDuelInfo(_challenger, _victim);
+            ChallengeInformation->SetUpDuelInfo(_challengers);
 
             for (int team = 0; team < MAX_TEAM_NUMBER; team++)
                 MapUI->SwitchChallengePlayerUIVisibility(team, false);
