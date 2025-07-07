@@ -83,6 +83,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(int _minigameIndex = -1);
+	void SwitchUIController();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchController();
@@ -244,7 +245,7 @@ private:
 
 	UPROPERTY()
 	int TurnMovementIndex;
-
+	
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;
 	

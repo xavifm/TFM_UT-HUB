@@ -1,5 +1,7 @@
 #include "./ChallengeInformation.h"
 
+#include "PartyJungle/Map/Square.h"
+
 AChallengeInformation::AChallengeInformation()
 {
 	PrimaryActorTick.bCanEverTick = false;
@@ -10,6 +12,24 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
 {
     Minions = _minions;
     DuelType = EDuelType::HALF_COINS;
+}
+
+int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const
+{
+    int teamQuery = -1;
+    
+    for (int TeamIndex = 0; TeamIndex < _maxTeamNumber; TeamIndex++)
+    {
+        for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
+        {
+            if (Minion && static_cast<int>(Minion->Team) == _currentTeam)
+            {
+                teamQuery = TeamIndex;
+            }
+        }
+    }
+
+    return teamQuery;
 }
 
 void AChallengeInformation::SaveDuelToRegistry(int _winner, int _coins, int _crowns)

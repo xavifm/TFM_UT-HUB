@@ -33,6 +33,7 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void SetUpDuelInfo(TArray<AMinion*> _minions);
+	int GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const;
 
 	UFUNCTION(BlueprintCallable)
 	void SaveDuelToRegistry(int _winner, int _coins, int _crowns);

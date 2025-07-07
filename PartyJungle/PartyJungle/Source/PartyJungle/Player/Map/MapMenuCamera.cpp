@@ -143,7 +143,7 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (DuelUI)
     {
-        RefreshChallengeInfo(direction, 0);
+        RefreshChallengeInfo(direction, CurrentMinionTeam);
         return;
     }
 
@@ -172,6 +172,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelUI)
     {
+        SwitchUIController();
         //StartMinigame(true, 0, TArray<AMinion*>());
         return;
     }
@@ -382,6 +383,22 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
         SwitchController();
 
     SwitchMenuWidget(!IsMinigameActive);
+}
+
+void AMapMenuCamera::SwitchUIController()
+{
+    for (int _index = 0 ; _index < MAX_TEAM_NUMBER ; _index++)
+    {
+        int controllerIndexQuery = ChallengeInformation->GetCurrentBetControllerMenuIndex(_index, MAX_TEAM_NUMBER, 0);
+
+        if (controllerIndexQuery != -1 && controllerIndexQuery > CurrentMinionTeam)
+        {
+            CurrentMinionTeam = controllerIndexQuery;
+            break;
+        }
+    }
+
+    SwitchController();
 }
 
 void AMapMenuCamera::SwitchController() 
@@ -623,7 +640,7 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
 
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
-    int oldMinionTeam = CurrentMinionTeam;
+    //int oldMinionTeam = CurrentMinionTeam;
     CurrentMinionTeam += _direction;
 
     if(_direction != 0)
@@ -639,7 +656,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
             if (minigameDetected)
             {
-                CurrentMinionTeam = oldMinionTeam;
+                //CurrentMinionTeam = oldMinionTeam;
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
                 SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList);
                 return;
