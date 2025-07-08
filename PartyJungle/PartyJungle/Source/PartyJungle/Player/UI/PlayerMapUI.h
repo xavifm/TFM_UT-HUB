@@ -59,7 +59,7 @@ public:
     void SwitchCrownSavePlaceVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
-    void UpdateDuelScreenInfo(int _coins1, int _coins2, int _crowns1, int _crowns2, EDuelType _duelType);
+    void UpdateDuelScreenInfo(int _coins, int _crowns, EDuelType _duelType, int _team);
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void SwitchMinigame1UIVisibility(bool IsVisible);

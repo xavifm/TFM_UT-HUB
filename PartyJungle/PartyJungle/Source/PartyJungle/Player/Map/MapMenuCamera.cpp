@@ -479,8 +479,7 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
     int Coins = ChallengeInformation->GetBetCoinsQuantity(_team);
     int Crowns = ChallengeInformation->GetBetCrownsQuantity(_team);
 
-    MapUI->UpdateDuelScreenInfo(Coins, 0, Crowns, 0, ChallengeInformation->GetDuelType());
-
+    MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType(), _team);
 }
 
 void AMapMenuCamera::FinishDuel(int _winner)
