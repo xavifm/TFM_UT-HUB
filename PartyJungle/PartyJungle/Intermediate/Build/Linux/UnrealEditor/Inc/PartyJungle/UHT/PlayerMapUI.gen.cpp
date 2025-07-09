@@ -382,6 +382,48 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility()
 }
 // End Class UPlayerMapUI Function SwitchCrownStoreVisibility
 
+// Begin Class UPlayerMapUI Function SwitchDuelTurnUI
+struct PlayerMapUI_eventSwitchDuelTurnUI_Parms
+{
+	int32 Team;
+};
+static FName NAME_UPlayerMapUI_SwitchDuelTurnUI = FName(TEXT("SwitchDuelTurnUI"));
+void UPlayerMapUI::SwitchDuelTurnUI(int32 Team)
+{
+	PlayerMapUI_eventSwitchDuelTurnUI_Parms Parms;
+	Parms.Team=Team;
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchDuelTurnUI),&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Team;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::NewProp_Team = { "Team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSwitchDuelTurnUI_Parms, Team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::NewProp_Team,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchDuelTurnUI", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchDuelTurnUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventSwitchDuelTurnUI_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function SwitchDuelTurnUI
+
 // Begin Class UPlayerMapUI Function SwitchLegendVisibility
 struct PlayerMapUI_eventSwitchLegendVisibility_Parms
 {
@@ -947,6 +989,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility, "SwitchCrownSavePlaceVisibility" }, // 2494523184
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility, "SwitchCrownStoreVisibility" }, // 472051550
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI, "SwitchDuelTurnUI" }, // 805746268
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility, "SwitchLegendVisibility" }, // 2221352643
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility, "SwitchMinigame1UIVisibility" }, // 3797784988
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu, "SwitchMinionDuelSelectionMenu" }, // 2333499072
@@ -1011,10 +1054,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 3014984070U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 3691191768U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_1455709561(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_3201713714(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

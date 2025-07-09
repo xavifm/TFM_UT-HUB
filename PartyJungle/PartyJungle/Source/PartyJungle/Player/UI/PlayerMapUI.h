@@ -29,6 +29,9 @@ public:
     void SwitchTurnUI(int Team);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchDuelTurnUI(int Team);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchUITeamVisibility(int Team, bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")

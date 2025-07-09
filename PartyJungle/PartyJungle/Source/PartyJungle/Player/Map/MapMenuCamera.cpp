@@ -398,6 +398,7 @@ void AMapMenuCamera::SwitchUIController()
         }
     }
 
+    MapUI->SwitchDuelTurnUI(CurrentMinionTeam);
     SwitchController();
 }
 
@@ -556,6 +557,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
 {
     DuelUI = _visibility;
     MapUI->SwitchChallengeVisibility(_visibility);
+    MapUI->SwitchDuelTurnUI(CurrentMinionTeam);
 
     if (_visibility) 
     {
