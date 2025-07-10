@@ -46,12 +46,15 @@ struct Z_Construct_UEnum_PartyJungle_EDuelType_Statics
 		{ "HALF_COINS.DisplayName", "Half Coins" },
 		{ "HALF_COINS.Name", "EDuelType::HALF_COINS" },
 		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+		{ "RESIGN.DisplayName", "Escape Vote" },
+		{ "RESIGN.Name", "EDuelType::RESIGN" },
 	};
 #endif // WITH_METADATA
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
 		{ "EDuelType::HALF_COINS", (int64)EDuelType::HALF_COINS },
 		{ "EDuelType::ALL_IN_COINS", (int64)EDuelType::ALL_IN_COINS },
 		{ "EDuelType::ALL_IN_VS_ST", (int64)EDuelType::ALL_IN_VS_ST },
+		{ "EDuelType::RESIGN", (int64)EDuelType::RESIGN },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -76,6 +79,57 @@ UEnum* Z_Construct_UEnum_PartyJungle_EDuelType()
 	return Z_Registration_Info_UEnum_EDuelType.InnerSingleton;
 }
 // End Enum EDuelType
+
+// Begin Class AChallengeInformation Function CheckIfThereAreCrownsInDuel
+struct Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics
+{
+	struct ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms
+	{
+		int32 _duelSquareIndex;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__duelSquareIndex;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp__duelSquareIndex = { "_duelSquareIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms, _duelSquareIndex), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms), &Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp__duelSquareIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "CheckIfThereAreCrownsInDuel", nullptr, nullptr, Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::PropPointers), sizeof(Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::ChallengeInformation_eventCheckIfThereAreCrownsInDuel_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execCheckIfThereAreCrownsInDuel)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__duelSquareIndex);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->CheckIfThereAreCrownsInDuel(Z_Param__duelSquareIndex);
+	P_NATIVE_END;
+}
+// End Class AChallengeInformation Function CheckIfThereAreCrownsInDuel
 
 // Begin Class AChallengeInformation Function GetBetCoinsQuantity
 struct Z_Construct_UFunction_AChallengeInformation_GetBetCoinsQuantity_Statics
@@ -187,7 +241,7 @@ struct Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetDuelType_Parms, ReturnValue), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 3354523186
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetDuelType_Parms, ReturnValue), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 2964326876
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetDuelType_Statics::NewProp_ReturnValue,
@@ -212,6 +266,62 @@ DEFINE_FUNCTION(AChallengeInformation::execGetDuelType)
 	P_NATIVE_END;
 }
 // End Class AChallengeInformation Function GetDuelType
+
+// Begin Class AChallengeInformation Function GetPotQuantity
+struct Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics
+{
+	struct ChallengeInformation_eventGetPotQuantity_Parms
+	{
+		bool _fullPot;
+		int32 _duelSquareIndex;
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__fullPot_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__fullPot;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__duelSquareIndex;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__fullPot_SetBit(void* Obj)
+{
+	((ChallengeInformation_eventGetPotQuantity_Parms*)Obj)->_fullPot = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__fullPot = { "_fullPot", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ChallengeInformation_eventGetPotQuantity_Parms), &Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__fullPot_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__duelSquareIndex = { "_duelSquareIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetPotQuantity_Parms, _duelSquareIndex), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetPotQuantity_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__fullPot,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp__duelSquareIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "GetPotQuantity", nullptr, nullptr, Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::PropPointers), sizeof(Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::ChallengeInformation_eventGetPotQuantity_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::ChallengeInformation_eventGetPotQuantity_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AChallengeInformation_GetPotQuantity()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_GetPotQuantity_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execGetPotQuantity)
+{
+	P_GET_UBOOL(Z_Param__fullPot);
+	P_GET_PROPERTY(FIntProperty,Z_Param__duelSquareIndex);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetPotQuantity(Z_Param__fullPot,Z_Param__duelSquareIndex);
+	P_NATIVE_END;
+}
+// End Class AChallengeInformation Function GetPotQuantity
 
 // Begin Class AChallengeInformation Function SaveDuelToRegistry
 struct Z_Construct_UFunction_AChallengeInformation_SaveDuelToRegistry_Statics
@@ -334,7 +444,7 @@ struct Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventSwitchDuelType_Parms, _direction), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventSwitchDuelType_Parms, _team), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventSwitchDuelType_Parms, ReturnValue), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 3354523186
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventSwitchDuelType_Parms, ReturnValue), Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 2964326876
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp__direction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_SwitchDuelType_Statics::NewProp__team,
@@ -369,9 +479,11 @@ void AChallengeInformation::StaticRegisterNativesAChallengeInformation()
 {
 	UClass* Class = AChallengeInformation::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "CheckIfThereAreCrownsInDuel", &AChallengeInformation::execCheckIfThereAreCrownsInDuel },
 		{ "GetBetCoinsQuantity", &AChallengeInformation::execGetBetCoinsQuantity },
 		{ "GetBetCrownsQuantity", &AChallengeInformation::execGetBetCrownsQuantity },
 		{ "GetDuelType", &AChallengeInformation::execGetDuelType },
+		{ "GetPotQuantity", &AChallengeInformation::execGetPotQuantity },
 		{ "SaveDuelToRegistry", &AChallengeInformation::execSaveDuelToRegistry },
 		{ "SetUpDuelInfo", &AChallengeInformation::execSetUpDuelInfo },
 		{ "SwitchDuelType", &AChallengeInformation::execSwitchDuelType },
@@ -410,12 +522,14 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel, "CheckIfThereAreCrownsInDuel" }, // 1022709994
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCoinsQuantity, "GetBetCoinsQuantity" }, // 26314052
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCrownsQuantity, "GetBetCrownsQuantity" }, // 738187293
-		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 2531921383
+		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 1765525143
+		{ &Z_Construct_UFunction_AChallengeInformation_GetPotQuantity, "GetPotQuantity" }, // 4159047984
 		{ &Z_Construct_UFunction_AChallengeInformation_SaveDuelToRegistry, "SaveDuelToRegistry" }, // 2469258987
 		{ &Z_Construct_UFunction_AChallengeInformation_SetUpDuelInfo, "SetUpDuelInfo" }, // 3217568200
-		{ &Z_Construct_UFunction_AChallengeInformation_SwitchDuelType, "SwitchDuelType" }, // 3414850257
+		{ &Z_Construct_UFunction_AChallengeInformation_SwitchDuelType, "SwitchDuelType" }, // 586581830
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -476,13 +590,13 @@ AChallengeInformation::~AChallengeInformation() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3354523186U) },
+		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2964326876U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 1370385041U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2250928425U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_1051384181(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_2114643489(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo));

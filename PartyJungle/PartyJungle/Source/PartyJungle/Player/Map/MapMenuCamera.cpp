@@ -567,6 +567,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
         if(ChallengeInformation) 
         {
             ChallengeInformation->SetUpDuelInfo(_challengers);
+            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, 0), ChallengeInformation->GetPotQuantity(true, 0));
 
             for (int team = 0; team < MAX_TEAM_NUMBER; team++)
                 MapUI->SwitchChallengePlayerUIVisibility(team, false);

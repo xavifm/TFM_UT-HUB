@@ -26,6 +26,9 @@ public:
     void UpdateUIScore(AScoreDatabase* ScoresList);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SetupUIPots(int MinPot, int MaxPot);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")

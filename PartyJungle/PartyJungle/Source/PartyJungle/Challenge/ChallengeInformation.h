@@ -11,7 +11,8 @@ enum class EDuelType : uint8
 {
 	HALF_COINS UMETA(DisplayName = "Half Coins"),
 	ALL_IN_COINS UMETA(DisplayName = "All In Coins"),
-	ALL_IN_VS_ST UMETA(DisplayName = "All In Vs St")
+	ALL_IN_VS_ST UMETA(DisplayName = "All In Vs St"),
+	RESIGN UMETA(DisplayName = "Escape Vote")
 };
 
 UCLASS()
@@ -30,6 +31,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Active Duels")
 	TArray<ASquare*> SquaresWithDuelsInRound;
+
+	
 	
 	UFUNCTION(BlueprintCallable)
 	void SetUpDuelInfo(TArray<AMinion*> _minions);
@@ -48,7 +51,13 @@ public:
 	int GetBetCoinsQuantity(int _team);
 
 	UFUNCTION(BlueprintCallable)
+	int GetPotQuantity(bool _fullPot, int _duelSquareIndex);
+
+	UFUNCTION(BlueprintCallable)
 	int GetBetCrownsQuantity(int _team);
+
+	UFUNCTION()
+	bool CheckIfThereAreCrownsInDuel(int _duelSquareIndex);
 
 private:
 	EDuelType DuelType;

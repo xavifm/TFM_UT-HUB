@@ -12,6 +12,8 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
 {
     Minions = _minions;
     DuelType = EDuelType::HALF_COINS;
+
+    
 }
 
 int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const
@@ -52,7 +54,7 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction, int _team)
 {
     int DuelTypeInt = static_cast<int>(DuelType);
     int EnumMin = static_cast<int>(EDuelType::HALF_COINS);
-    int EnumMax = static_cast<int>(EDuelType::ALL_IN_VS_ST);
+    int EnumMax = static_cast<int>(EDuelType::RESIGN);
 
     DuelTypeInt += _direction;
 
@@ -72,7 +74,9 @@ EDuelType AChallengeInformation::SwitchDuelType(int _direction, int _team)
     {
         case EDuelType::HALF_COINS:      minCoins = MIN_HALF_BET;  break;
         case EDuelType::ALL_IN_COINS:    minCoins = MIN_FULL_BET; break;
-        case EDuelType::ALL_IN_VS_ST:    if (minionCrowns <= 0) return DuelType; minCoins = MIN_FULL_BET;
+        case EDuelType::ALL_IN_VS_ST:    if (!CheckIfThereAreCrownsInDuel(0))
+            { if (_direction > 0) { duelType = EDuelType::RESIGN; minCoins = 0; } if (_direction < 0) { duelType = EDuelType::ALL_IN_COINS; minCoins = MIN_FULL_BET; } } else minCoins = MIN_FULL_BET;
+        case EDuelType::RESIGN:          minCoins = 0;
             break;
     }
 
@@ -104,6 +108,18 @@ int AChallengeInformation::GetBetCoinsQuantity(int _team)
     return 0;
 }
 
+int AChallengeInformation::GetPotQuantity(bool _fullPot, int _duelSquareIndex)
+{
+    int potQuery = 0;
+
+    for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
+        potQuery += Minion->GetCoins();
+    
+    if (!_fullPot) potQuery /= 2;
+
+    return potQuery;
+}
+
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
 {
     if (!Minions[_team]) return 0;
@@ -115,5 +131,21 @@ int AChallengeInformation::GetBetCrownsQuantity(int _team)
     }
 
     return 0;
+}
+
+bool AChallengeInformation::CheckIfThereAreCrownsInDuel(int _duelSquareIndex)
+{
+    bool crownsQuery = false;
+    
+    for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
+    {
+        if (Minion->GetCrowns() > 0)
+        {
+            crownsQuery = true;
+            break;
+        }
+    }
+
+    return crownsQuery;
 }
 
