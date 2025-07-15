@@ -250,30 +250,15 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen()
 // End Class UPlayerMapUI Function ShowTextInScreen
 
 // Begin Class UPlayerMapUI Function SpinWheel
-struct PlayerMapUI_eventSpinWheel_Parms
-{
-	int32 WheelSize;
-	int32 ReturnValue;
-
-	/** Constructor, initializes return property only **/
-	PlayerMapUI_eventSpinWheel_Parms()
-		: ReturnValue(0)
-	{
-	}
-};
-static FName NAME_UPlayerMapUI_SpinWheel = FName(TEXT("SpinWheel"));
-int32 UPlayerMapUI::SpinWheel(int32 WheelSize)
-{
-	PlayerMapUI_eventSpinWheel_Parms Parms;
-	Parms.WheelSize=WheelSize;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SpinWheel),&Parms);
-	return Parms.ReturnValue;
-}
 struct Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics
 {
+	struct PlayerMapUI_eventSpinWheel_Parms
+	{
+		int32 WheelSize;
+		int32 ReturnValue;
+	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "UI" },
 		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
 	};
 #endif // WITH_METADATA
@@ -289,8 +274,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheel", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers), sizeof(PlayerMapUI_eventSpinWheel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams) };
-static_assert(sizeof(PlayerMapUI_eventSpinWheel_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheel", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PlayerMapUI_eventSpinWheel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PlayerMapUI_eventSpinWheel_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheel()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -300,7 +285,57 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheel()
 	}
 	return ReturnFunction;
 }
+DEFINE_FUNCTION(UPlayerMapUI::execSpinWheel)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param_WheelSize);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->SpinWheel(Z_Param_WheelSize);
+	P_NATIVE_END;
+}
 // End Class UPlayerMapUI Function SpinWheel
+
+// Begin Class UPlayerMapUI Function SpinWheelEvent
+struct PlayerMapUI_eventSpinWheelEvent_Parms
+{
+	int32 WheelSize;
+};
+static FName NAME_UPlayerMapUI_SpinWheelEvent = FName(TEXT("SpinWheelEvent"));
+void UPlayerMapUI::SpinWheelEvent(int32 WheelSize)
+{
+	PlayerMapUI_eventSpinWheelEvent_Parms Parms;
+	Parms.WheelSize=WheelSize;
+	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SpinWheelEvent),&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_WheelSize;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::NewProp_WheelSize = { "WheelSize", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSpinWheelEvent_Parms, WheelSize), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::NewProp_WheelSize,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheelEvent", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers), sizeof(PlayerMapUI_eventSpinWheelEvent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams) };
+static_assert(sizeof(PlayerMapUI_eventSpinWheelEvent_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// End Class UPlayerMapUI Function SpinWheelEvent
 
 // Begin Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility
 struct PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms
@@ -1167,6 +1202,7 @@ void UPlayerMapUI::StaticRegisterNativesUPlayerMapUI()
 {
 	UClass* Class = UPlayerMapUI::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "SpinWheel", &UPlayerMapUI::execSpinWheel },
 		{ "UpdateCoins", &UPlayerMapUI::execUpdateCoins },
 		{ "UpdateCrowns", &UPlayerMapUI::execUpdateCrowns },
 	};
@@ -1188,8 +1224,13 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ "Category", "PlayerMapUI" },
 		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WheelValue_MetaData[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ScoresDb;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_WheelValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -1198,7 +1239,8 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2434387993
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetupUIPots, "SetupUIPots" }, // 251856441
 		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3002040933
-		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 222825874
+		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 3089339438
+		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent, "SpinWheelEvent" }, // 1813135563
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility, "SwitchChallengePlayerUIVisibility" }, // 4229349836
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility, "SwitchChallengePopupVisibility" }, // 268281361
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
@@ -1225,8 +1267,10 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UPlayerMapUI_Statics::NewProp_ScoresDb = { "ScoresDb", nullptr, (EPropertyFlags)0x0010000000020001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerMapUI, ScoresDb), Z_Construct_UClass_AScoreDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ScoresDb_MetaData), NewProp_ScoresDb_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UPlayerMapUI_Statics::NewProp_WheelValue = { "WheelValue", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UPlayerMapUI, WheelValue), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WheelValue_MetaData), NewProp_WheelValue_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UPlayerMapUI_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMapUI_Statics::NewProp_ScoresDb,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMapUI_Statics::NewProp_WheelValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMapUI_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UPlayerMapUI_Statics::DependentSingletons[])() = {
@@ -1270,10 +1314,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1560424029U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1616212331U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_1587490931(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_2185003883(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

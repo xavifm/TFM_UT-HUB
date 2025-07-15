@@ -29,6 +29,12 @@ void UPlayerMapUI::UpdateCrowns(int Team, int Quantity)
 	}
 }
 
+int UPlayerMapUI::SpinWheel(int WheelSize)
+{
+	SpinWheelEvent(WheelSize);
+	return WheelValue;
+}
+
 void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, EDuelType>>> PotElements)
 {
 	SavedPotElements = PotElements;
@@ -52,4 +58,5 @@ void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int,
 		SwitchChallengePlayerUIVisibility(index, false);
 	
 	SwitchRouletteVisibility(RouletteSize, true);
+	int value = SpinWheel(RouletteSize);
 }

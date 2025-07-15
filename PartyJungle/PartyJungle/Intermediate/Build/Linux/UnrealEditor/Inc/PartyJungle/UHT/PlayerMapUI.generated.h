@@ -18,6 +18,7 @@ enum class EDuelType : uint8;
 #define PARTYJUNGLE_PlayerMapUI_generated_h
 
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSpinWheel); \
 	DECLARE_FUNCTION(execUpdateCrowns); \
 	DECLARE_FUNCTION(execUpdateCoins);
 
