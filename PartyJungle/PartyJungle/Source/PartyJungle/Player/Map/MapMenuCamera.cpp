@@ -172,7 +172,12 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelUI)
     {
+        int LastTeam = CurrentMinionTeam;
+        ChallengeInformation->SafeDuelChoice();
         SwitchUIController();
+
+        if (LastTeam == CurrentMinionTeam)
+            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
         //StartMinigame(true, 0, TArray<AMinion*>());
         return;
     }

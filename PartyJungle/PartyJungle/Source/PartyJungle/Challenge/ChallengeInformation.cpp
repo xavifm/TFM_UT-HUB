@@ -13,7 +13,12 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
     Minions = _minions;
     DuelType = EDuelType::HALF_COINS;
 
-    
+    SavedDuelTypes.Empty();
+}
+
+void AChallengeInformation::SafeDuelChoice()
+{
+    SavedDuelTypes.Add(DuelType);
 }
 
 int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const
@@ -148,4 +153,29 @@ bool AChallengeInformation::CheckIfThereAreCrownsInDuel(int _duelSquareIndex)
 
     return crownsQuery;
 }
+
+TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)
+{
+    TArray<std::pair<int, std::pair<int, EDuelType>>> ParsedInfo;
+    
+    ASquare* Square = SquaresWithDuelsInRound[_duelSquareIndex];
+    if (!Square) return ParsedInfo;
+
+    int index = 0;
+
+    for (AMinion* Minion : Square->MinionsList)
+    {
+        if (!Minion) continue;
+
+        int PlayerTeam = static_cast<int>(Minion->Team);
+        EDuelType Duel = SavedDuelTypes[index];
+
+        ParsedInfo.Add(std::make_pair(index, std::make_pair(PlayerTeam, Duel)));
+
+        index++;
+    }
+
+    return ParsedInfo;
+}
+
 

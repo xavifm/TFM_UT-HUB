@@ -29,6 +29,9 @@ public:
 	UPROPERTY()
 	TArray<AMinion*> Minions;
 
+	UPROPERTY()
+	TArray<EDuelType> SavedDuelTypes;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Active Duels")
 	TArray<ASquare*> SquaresWithDuelsInRound;
 
@@ -36,6 +39,10 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	void SetUpDuelInfo(TArray<AMinion*> _minions);
+
+	UFUNCTION()
+	void SafeDuelChoice();
+	
 	int GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const;
 
 	UFUNCTION(BlueprintCallable)
@@ -58,6 +65,8 @@ public:
 
 	UFUNCTION()
 	bool CheckIfThereAreCrownsInDuel(int _duelSquareIndex);
+	
+	TArray<std::pair<int, std::pair<int, EDuelType>>> ParsePotsInfo(int _duelSquareIndex);
 
 private:
 	EDuelType DuelType;

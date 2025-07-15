@@ -24,6 +24,7 @@ enum class EDuelType : uint8;
 	DECLARE_FUNCTION(execSwitchDuelType); \
 	DECLARE_FUNCTION(execGetDuelType); \
 	DECLARE_FUNCTION(execSaveDuelToRegistry); \
+	DECLARE_FUNCTION(execSafeDuelChoice); \
 	DECLARE_FUNCTION(execSetUpDuelInfo);
 
 

@@ -323,6 +323,35 @@ DEFINE_FUNCTION(AChallengeInformation::execGetPotQuantity)
 }
 // End Class AChallengeInformation Function GetPotQuantity
 
+// Begin Class AChallengeInformation Function SafeDuelChoice
+struct Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "SafeDuelChoice", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics::Function_MetaDataParams) };
+UFunction* Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execSafeDuelChoice)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SafeDuelChoice();
+	P_NATIVE_END;
+}
+// End Class AChallengeInformation Function SafeDuelChoice
+
 // Begin Class AChallengeInformation Function SaveDuelToRegistry
 struct Z_Construct_UFunction_AChallengeInformation_SaveDuelToRegistry_Statics
 {
@@ -484,6 +513,7 @@ void AChallengeInformation::StaticRegisterNativesAChallengeInformation()
 		{ "GetBetCrownsQuantity", &AChallengeInformation::execGetBetCrownsQuantity },
 		{ "GetDuelType", &AChallengeInformation::execGetDuelType },
 		{ "GetPotQuantity", &AChallengeInformation::execGetPotQuantity },
+		{ "SafeDuelChoice", &AChallengeInformation::execSafeDuelChoice },
 		{ "SaveDuelToRegistry", &AChallengeInformation::execSaveDuelToRegistry },
 		{ "SetUpDuelInfo", &AChallengeInformation::execSetUpDuelInfo },
 		{ "SwitchDuelType", &AChallengeInformation::execSwitchDuelType },
@@ -509,6 +539,9 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Minions_MetaData[] = {
 		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SavedDuelTypes_MetaData[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SquaresWithDuelsInRound_MetaData[] = {
 		{ "Category", "Active Duels" },
 		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
@@ -517,6 +550,9 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengeRegistry;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Minions_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_Minions;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_SavedDuelTypes_Inner_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_SavedDuelTypes_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_SavedDuelTypes;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SquaresWithDuelsInRound_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SquaresWithDuelsInRound;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -527,6 +563,7 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCrownsQuantity, "GetBetCrownsQuantity" }, // 738187293
 		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 1765525143
 		{ &Z_Construct_UFunction_AChallengeInformation_GetPotQuantity, "GetPotQuantity" }, // 4159047984
+		{ &Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice, "SafeDuelChoice" }, // 3993439237
 		{ &Z_Construct_UFunction_AChallengeInformation_SaveDuelToRegistry, "SaveDuelToRegistry" }, // 2469258987
 		{ &Z_Construct_UFunction_AChallengeInformation_SetUpDuelInfo, "SetUpDuelInfo" }, // 3217568200
 		{ &Z_Construct_UFunction_AChallengeInformation_SwitchDuelType, "SwitchDuelType" }, // 586581830
@@ -540,12 +577,18 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_ChallengeRegistry = { "ChallengeRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AChallengeInformation, ChallengeRegistry), Z_Construct_UClass_AChallengeDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeRegistry_MetaData), NewProp_ChallengeRegistry_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_Minions_Inner = { "Minions", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_Minions = { "Minions", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AChallengeInformation, Minions), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Minions_MetaData), NewProp_Minions_MetaData) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes_Inner_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes_Inner = { "SavedDuelTypes", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UEnum_PartyJungle_EDuelType, METADATA_PARAMS(0, nullptr) }; // 2964326876
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes = { "SavedDuelTypes", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AChallengeInformation, SavedDuelTypes), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedDuelTypes_MetaData), NewProp_SavedDuelTypes_MetaData) }; // 2964326876
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SquaresWithDuelsInRound_Inner = { "SquaresWithDuelsInRound", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASquare_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SquaresWithDuelsInRound = { "SquaresWithDuelsInRound", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AChallengeInformation, SquaresWithDuelsInRound), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SquaresWithDuelsInRound_MetaData), NewProp_SquaresWithDuelsInRound_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AChallengeInformation_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_ChallengeRegistry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_Minions_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_Minions,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes_Inner_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SavedDuelTypes,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SquaresWithDuelsInRound_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AChallengeInformation_Statics::NewProp_SquaresWithDuelsInRound,
 };
@@ -593,10 +636,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2964326876U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2250928425U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 1145652430U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_2114643489(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_4032055632(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_Statics::EnumInfo));
