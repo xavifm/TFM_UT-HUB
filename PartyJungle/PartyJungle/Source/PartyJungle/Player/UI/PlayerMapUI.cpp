@@ -58,5 +58,4 @@ void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int,
 		SwitchChallengePlayerUIVisibility(index, false);
 	
 	SwitchRouletteVisibility(RouletteSize, true);
-	int value = SpinWheel(RouletteSize);
 }

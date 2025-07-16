@@ -177,7 +177,14 @@ void AMapMenuCamera::HandleConfirmInput()
         SwitchUIController();
 
         if (LastTeam == CurrentMinionTeam)
+        {
+            int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num();
+            int rouletteResult = 0;
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
+            rouletteResult = MapUI->SpinWheel(rouletteSize);
+            UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), rouletteResult);
+            
+        }
         //StartMinigame(true, 0, TArray<AMinion*>());
         return;
     }
