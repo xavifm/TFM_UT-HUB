@@ -6,7 +6,9 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
-				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Roulette/WBP_Style02_02Options_FortuneWheel.uasset"
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Roulette/WBP_Style02_02Options_FortuneWheel.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Roulette/WBP_Style02_03Options_FortuneWheel.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Roulette/WBP_Style02_04Options_FortuneWheel.uasset"
 			]
 		}
 	]

@@ -399,7 +399,7 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
 void AMapMenuCamera::SwitchUIController()
 {
-    for (int _index = 0 ; _index < MAX_TEAM_NUMBER ; _index++)
+    for (int _index = 0; _index < MAX_TEAM_NUMBER; _index++)
     {
         int controllerIndexQuery = ChallengeInformation->GetCurrentBetControllerMenuIndex(_index, MAX_TEAM_NUMBER, 0);
 

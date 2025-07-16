@@ -25,14 +25,12 @@ int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, in
 {
     int teamQuery = -1;
     
-    for (int TeamIndex = 0; TeamIndex < _maxTeamNumber; TeamIndex++)
+    for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
     {
-        for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
+        if (Minion && static_cast<int>(Minion->Team) == _currentTeam)
         {
-            if (Minion && static_cast<int>(Minion->Team) == _currentTeam)
-            {
-                teamQuery = TeamIndex;
-            }
+            teamQuery = _currentTeam;
+            break;
         }
     }
 
