@@ -179,10 +179,11 @@ void AMapMenuCamera::HandleConfirmInput()
         if (LastTeam == CurrentMinionTeam)
         {
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num();
-            int rouletteResult = 0;
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
-            rouletteResult = MapUI->SpinWheel(rouletteSize);
-            UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), rouletteResult);
+            RouletteResult = MapUI->SpinWheel(rouletteSize);
+            UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
+
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::SpinWheelEndSequence, ROULETTE_SPIN_TIME, false);
             
         }
         //StartMinigame(true, 0, TArray<AMinion*>());
@@ -213,6 +214,12 @@ void AMapMenuCamera::HandleConfirmInput()
         RollTheDice();
     else
         ExecuteMinionMovement();
+}
+
+void AMapMenuCamera::SpinWheelEndSequence()
+{
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+    SwitchMainScene(0);
 }
 
 void AMapMenuCamera::HandleYInput() 
