@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/PartyJungle.Build.cs",
-		"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle.Target.cs",
-		"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungleEditor.Target.cs"
+		"C:\\Users\\joelr\\OneDrive\\Escriptori\\Unreal Projects\\TFM_UT-HUB\\PartyJungle\\PartyJungle\\Source\\PartyJungle\\PartyJungle.Build.cs",
+		"C:\\Users\\joelr\\OneDrive\\Escriptori\\Unreal Projects\\TFM_UT-HUB\\PartyJungle\\PartyJungle\\Source\\PartyJungle.Target.cs",
+		"C:\\Users\\joelr\\OneDrive\\Escriptori\\Unreal Projects\\TFM_UT-HUB\\PartyJungle\\PartyJungle\\Source\\PartyJungleEditor.Target.cs"
 	],
-	"EngineVersion": "5.4.4"
+	"EngineVersion": "5.6.0"
 }
