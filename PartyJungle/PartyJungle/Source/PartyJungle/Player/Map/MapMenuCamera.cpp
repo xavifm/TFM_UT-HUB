@@ -172,7 +172,20 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelUI)
     {
+        int LastTeam = CurrentMinionTeam;
+        ChallengeInformation->SafeDuelChoice();
         SwitchUIController();
+
+        if (LastTeam == CurrentMinionTeam)
+        {
+            int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num();
+            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
+            RouletteResult = MapUI->SpinWheel(rouletteSize);
+            UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
+
+            GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::SpinWheelEndSequence, ROULETTE_SPIN_TIME, false);
+            
+        }
         //StartMinigame(true, 0, TArray<AMinion*>());
         return;
     }
@@ -201,6 +214,12 @@ void AMapMenuCamera::HandleConfirmInput()
         RollTheDice();
     else
         ExecuteMinionMovement();
+}
+
+void AMapMenuCamera::SpinWheelEndSequence()
+{
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+    SwitchMainScene(0);
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -387,7 +406,7 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
 void AMapMenuCamera::SwitchUIController()
 {
-    for (int _index = 0 ; _index < MAX_TEAM_NUMBER ; _index++)
+    for (int _index = 0; _index < MAX_TEAM_NUMBER; _index++)
     {
         int controllerIndexQuery = ChallengeInformation->GetCurrentBetControllerMenuIndex(_index, MAX_TEAM_NUMBER, 0);
 
@@ -398,6 +417,7 @@ void AMapMenuCamera::SwitchUIController()
         }
     }
 
+    MapUI->SwitchDuelTurnUI(CurrentMinionTeam);
     SwitchController();
 }
 
@@ -556,6 +576,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
 {
     DuelUI = _visibility;
     MapUI->SwitchChallengeVisibility(_visibility);
+    MapUI->SwitchDuelTurnUI(CurrentMinionTeam);
 
     if (_visibility) 
     {
@@ -565,6 +586,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
         if(ChallengeInformation) 
         {
             ChallengeInformation->SetUpDuelInfo(_challengers);
+            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, 0), ChallengeInformation->GetPotQuantity(true, 0));
 
             for (int team = 0; team < MAX_TEAM_NUMBER; team++)
                 MapUI->SwitchChallengePlayerUIVisibility(team, false);

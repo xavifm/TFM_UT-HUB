@@ -19,6 +19,11 @@ public:
     UPROPERTY(VisibleAnywhere)
     AScoreDatabase* ScoresDb;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+    int WheelValue = 0;
+
+    TArray<std::pair<int, std::pair<int, EDuelType>>> SavedPotElements;
+
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb);
 
@@ -26,7 +31,19 @@ public:
     void UpdateUIScore(AScoreDatabase* ScoresList);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SetupUIPots(int MinPot, int MaxPot);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void InitializeRouletteElement(int RouletteSize, int Position, int Player, const FString& Option);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchRouletteVisibility(int Roulette, bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchTurnUI(int Team);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchDuelTurnUI(int Team);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchUITeamVisibility(int Team, bool IsVisible);
@@ -75,4 +92,12 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCrowns(int Team, int Quantity);
+
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void SpinWheelEvent(int WheelSize);
+
+    UFUNCTION()
+    int SpinWheel(int WheelSize);
+    
+    void InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, EDuelType>>> PotElements);
 };
