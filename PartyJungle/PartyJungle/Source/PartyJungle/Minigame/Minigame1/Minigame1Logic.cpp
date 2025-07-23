@@ -6,27 +6,24 @@ AMinigame1Logic::AMinigame1Logic()
 
 void AMinigame1Logic::SetupAirCannonsInfo()
 {
-	if(GameInstance->Challenge)
+	for (size_t i = 0; i < AirCannons.Num(); i++)
 	{
-		for (size_t i = 0; i < AirCannons.Num(); i++)
+		//if (i == 0)
+			//AirCannons[i]->MinionReference = GameInstance->Attacker;
+		//if (i == 1)
+			//AirCannons[i]->MinionReference = GameInstance->Victim;
+
+		//if (AirCannons[i]->MinionReference)
+			//AirCannons[i]->CannonTeam = static_cast<int>(AirCannons[i]->MinionReference->Team);
+
+		AirCannons[i]->MinigameLogic = this;
+
+		AActor* projectileReference = AirCannons[i]->ProjectileReference;
+
+		if (projectileReference) 
 		{
-			if (i == 0)
-				AirCannons[i]->MinionReference = GameInstance->Attacker;
-			if (i == 1)
-				AirCannons[i]->MinionReference = GameInstance->Victim;
-
-			if (AirCannons[i]->MinionReference)
-				AirCannons[i]->CannonTeam = static_cast<int>(AirCannons[i]->MinionReference->Team);
-
-			AirCannons[i]->MinigameLogic = this;
-
-			AActor* projectileReference = AirCannons[i]->ProjectileReference;
-
-			if (projectileReference) 
-			{
-				projectileReference->SetActorTickEnabled(true);
-				projectileReference->SetActorHiddenInGame(true);
-			}
+			projectileReference->SetActorTickEnabled(true);
+			projectileReference->SetActorHiddenInGame(true);
 		}
 	}
 }

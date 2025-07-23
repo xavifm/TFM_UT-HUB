@@ -20,6 +20,12 @@ class PARTYJUNGLE_API UMinigameDataGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 public:
+	UPROPERTY()
+	int PlayersInBoard;
+
+	UPROPERTY()
+	int RoundsInBoard;
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Scores", Instanced)
 	TArray<UScoreDto*> Scores;
 
