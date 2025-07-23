@@ -28,42 +28,4 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<UChallengeDto*> ChallengesRegistry;
-
-	// Entry minigame info
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TArray<int32> Teams;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TMap<int32, AMinion*> PlayingMinions;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	AMinion* Attacker;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	AMinion* Victim;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	AMapMenuCamera* MapMenuCamera;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	bool Challenge;
-
-	// Exit minigame info
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TArray<int32> WinnerTeams;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TMap<int32, AMinion*> WinnerMinions;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	bool Draw;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int32 ChallengeWinner;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int32 PlayersInBoard;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	int32 RoundsInBoard;
 };

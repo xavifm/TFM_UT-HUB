@@ -21,17 +21,20 @@ void AMinigameLogic::BeginMinigame()
 
 void AMinigameLogic::InitializeMinigameInfoForDuel()
 {
-	if (!GameInstance || !GameInstance->Challenge)
-		return;
-
-	int attackerTeam = static_cast<int>(GameInstance->Attacker->Team);
-	int victimTeam = static_cast<int>(GameInstance->Victim->Team);
-
-	TeamsReady.Add(attackerTeam, false);
-	TeamsReady.Add(victimTeam, false);
-
-	TeamMinigameScores.Add(attackerTeam, 0);
-	TeamMinigameScores.Add(victimTeam, 0);
+	if (!MapMenuCamera)
+			return;
+	
+	TArray<AMinion*> minionList = MapMenuCamera->ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList;
+	PlayingMinions.Empty();
+	
+	for (AMinion* minion : minionList)
+		PlayingMinions.Add(static_cast<int>(minion->Team), minion);
+	
+	for (auto Player : PlayingMinions)
+	{
+		TeamsReady.Add(Player.Key, false);
+		TeamMinigameScores.Add(Player.Key, 0);
+	}
 }
 
 void AMinigameLogic::ResetMinigameScene()
@@ -99,20 +102,10 @@ void AMinigameLogic::DelayedSceneSwitch()
 	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 	ResetMinigameScene();
 
-	AMapMenuCamera* mapMenuCamera = GameInstance->MapMenuCamera;
-
-	if (mapMenuCamera)
+	if (MapMenuCamera)
 	{
-		mapMenuCamera->SwitchMainScene();
-
-		if (GameInstance->Challenge)
-		{
-			int attackerTeam = static_cast<int>(GameInstance->Attacker->Team);
-			int victimTeam = static_cast<int>(GameInstance->Victim->Team);
-			int winnerTeam = (Winner == attackerTeam) ? 0 : 1;
-
-			mapMenuCamera->FinishDuel(winnerTeam);
-		}
+		MapMenuCamera->SwitchMainScene();
+		MapMenuCamera->FinishDuel(Winner);
 	}
 }
 

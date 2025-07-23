@@ -16,6 +16,15 @@ public:
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    AMapMenuCamera* MapMenuCamera;
+
+    UPROPERTY()
+    TMap<int, AMinion*> PlayingMinions;
+
+    UPROPERTY()
+    TMap<int, AMinion*> WinnerMinions;
+
     UPROPERTY()
     TMap<int, int> TeamMinigameScores;
 
@@ -31,9 +40,6 @@ public:
     UFUNCTION()
     virtual void StartMinigame(int _startTime);
 
-    UFUNCTION(BlueprintImplementableEvent)
-    void ShowStartScreenSequence();
-
     UFUNCTION()
     bool CheckIfTheMinigameHasFinished();
 
@@ -46,12 +52,6 @@ public:
     UFUNCTION()
     virtual void FinishMinigame(int _winner);
 
-    UFUNCTION(BlueprintImplementableEvent)
-    void ShowEndScreenSequence(int _winner);
-
-    UFUNCTION()
-    void DelayedSceneSwitch();
-
     UFUNCTION()
     virtual void SetTeamScore(int _team, int _score);
 
@@ -60,6 +60,15 @@ public:
 
     UFUNCTION()
     void BeginMinigame();
+
+    UFUNCTION()
+    void DelayedSceneSwitch();
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowStartScreenSequence();
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowEndScreenSequence(int _winner);
 
 protected:
     UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
