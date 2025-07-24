@@ -5,7 +5,14 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
 				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/4/X1/D3E4LOH7JTJDLV4TIVYRMQ.uasset"
+=======
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/Cartell_horitzontal.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/Cartell_horitzontal_2.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/Cartell_horitzontal_3.uasset"
+>>>>>>> develop
 			]
 		}
 	]

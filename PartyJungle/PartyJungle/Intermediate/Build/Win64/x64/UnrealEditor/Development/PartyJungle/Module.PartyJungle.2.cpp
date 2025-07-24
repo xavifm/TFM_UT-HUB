@@ -11,4 +11,3 @@
 #include "C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/ScoreDto.gen.cpp"
 #include "C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/ScoresCalculator.gen.cpp"
 #include "C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/Square.gen.cpp"
-#include "C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/SquareKeepCrowns.gen.cpp"

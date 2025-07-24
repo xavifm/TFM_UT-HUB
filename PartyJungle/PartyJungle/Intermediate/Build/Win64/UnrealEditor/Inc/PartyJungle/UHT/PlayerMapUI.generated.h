@@ -22,6 +22,7 @@ enum class EDuelType : uint8;
 
 // ********** Begin Class UPlayerMapUI *************************************************************
 #define FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSpinWheel); \
 	DECLARE_FUNCTION(execUpdateCrowns); \
 	DECLARE_FUNCTION(execUpdateCoins);
 

@@ -29,10 +29,10 @@
 			"ScoreDatabase.gen.cpp.obj",
 			"ScoreDto.gen.cpp.obj",
 			"ScoresCalculator.gen.cpp.obj",
-			"Square.gen.cpp.obj",
-			"SquareKeepCrowns.gen.cpp.obj"
+			"Square.gen.cpp.obj"
 		],
 		"Module.PartyJungle.3.cpp.obj": [
+			"SquareKeepCrowns.gen.cpp.obj",
 			"SquareOptional.gen.cpp.obj",
 			"SquareStar.gen.cpp.obj",
 			"TransactionDto.gen.cpp.obj",

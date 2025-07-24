@@ -6,10 +6,12 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "PartyJungle/Player/UI/PlayerMapUI.h"
+
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
 void EmptyLinkFunctionForGeneratedCodePlayerMapUI() {}
 
-// Begin Cross Module References
+// ********** Begin Cross Module References ********************************************************
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UPlayerMapUI();
@@ -17,13 +19,14 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_UPlayerMapUI_NoRegister();
 PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EDuelType();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
-// End Cross Module References
+// ********** End Cross Module References **********************************************************
 
-// Begin Class UPlayerMapUI Function HideInScreenText
+// ********** Begin Class UPlayerMapUI Function HideInScreenText ***********************************
 static FName NAME_UPlayerMapUI_HideInScreenText = FName(TEXT("HideInScreenText"));
 void UPlayerMapUI::HideInScreenText()
 {
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_HideInScreenText),NULL);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_HideInScreenText);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics
 {
@@ -34,7 +37,7 @@ struct Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "HideInScreenText", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "HideInScreenText", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_HideInScreenText_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_UPlayerMapUI_HideInScreenText()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -44,9 +47,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_HideInScreenText()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function HideInScreenText
+// ********** End Class UPlayerMapUI Function HideInScreenText *************************************
 
-// Begin Class UPlayerMapUI Function InitializeRouletteElement
+// ********** Begin Class UPlayerMapUI Function InitializeRouletteElement **************************
 struct PlayerMapUI_eventInitializeRouletteElement_Parms
 {
 	int32 RouletteSize;
@@ -62,7 +65,8 @@ void UPlayerMapUI::InitializeRouletteElement(int32 RouletteSize, int32 Position,
 	Parms.Position=Position;
 	Parms.Player=Player;
 	Parms.Option=Option;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_InitializeRouletteElement),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_InitializeRouletteElement);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics
 {
@@ -93,7 +97,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::NewProp_Option,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "InitializeRouletteElement", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::PropPointers), sizeof(PlayerMapUI_eventInitializeRouletteElement_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "InitializeRouletteElement", Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::PropPointers), sizeof(PlayerMapUI_eventInitializeRouletteElement_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventInitializeRouletteElement_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement()
 {
@@ -104,9 +108,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function InitializeRouletteElement
+// ********** End Class UPlayerMapUI Function InitializeRouletteElement ****************************
 
-// Begin Class UPlayerMapUI Function InitializeUI
+// ********** Begin Class UPlayerMapUI Function InitializeUI ***************************************
 struct PlayerMapUI_eventInitializeUI_Parms
 {
 	AScoreDatabase* InScores;
@@ -118,7 +122,8 @@ void UPlayerMapUI::InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb)
 	PlayerMapUI_eventInitializeUI_Parms Parms;
 	Parms.InScores=InScores;
 	Parms.InMapDb=InMapDb;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_InitializeUI),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_InitializeUI);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics
 {
@@ -140,7 +145,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::NewProp_InMapDb,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "InitializeUI", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::PropPointers), sizeof(PlayerMapUI_eventInitializeUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "InitializeUI", Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::PropPointers), sizeof(PlayerMapUI_eventInitializeUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_InitializeUI_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventInitializeUI_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeUI()
 {
@@ -151,9 +156,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeUI()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function InitializeUI
+// ********** End Class UPlayerMapUI Function InitializeUI *****************************************
 
-// Begin Class UPlayerMapUI Function SetupUIPots
+// ********** Begin Class UPlayerMapUI Function SetupUIPots ****************************************
 struct PlayerMapUI_eventSetupUIPots_Parms
 {
 	int32 MinPot;
@@ -165,7 +170,8 @@ void UPlayerMapUI::SetupUIPots(int32 MinPot, int32 MaxPot)
 	PlayerMapUI_eventSetupUIPots_Parms Parms;
 	Parms.MinPot=MinPot;
 	Parms.MaxPot=MaxPot;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SetupUIPots),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SetupUIPots);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics
 {
@@ -187,7 +193,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::NewProp_MaxPot,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetupUIPots", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::PropPointers), sizeof(PlayerMapUI_eventSetupUIPots_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetupUIPots", Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::PropPointers), sizeof(PlayerMapUI_eventSetupUIPots_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetupUIPots_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSetupUIPots_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SetupUIPots()
 {
@@ -198,9 +204,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SetupUIPots()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SetupUIPots
+// ********** End Class UPlayerMapUI Function SetupUIPots ******************************************
 
-// Begin Class UPlayerMapUI Function ShowTextInScreen
+// ********** Begin Class UPlayerMapUI Function ShowTextInScreen ***********************************
 struct PlayerMapUI_eventShowTextInScreen_Parms
 {
 	FString Text;
@@ -212,7 +218,8 @@ void UPlayerMapUI::ShowTextInScreen(const FString& Text, float Time)
 	PlayerMapUI_eventShowTextInScreen_Parms Parms;
 	Parms.Text=Text;
 	Parms.Time=Time;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_ShowTextInScreen),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_ShowTextInScreen);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics
 {
@@ -236,7 +243,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::NewProp_Time,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ShowTextInScreen", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers), sizeof(PlayerMapUI_eventShowTextInScreen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ShowTextInScreen", Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::PropPointers), sizeof(PlayerMapUI_eventShowTextInScreen_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventShowTextInScreen_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen()
 {
@@ -247,9 +254,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function ShowTextInScreen
+// ********** End Class UPlayerMapUI Function ShowTextInScreen *************************************
 
-// Begin Class UPlayerMapUI Function SpinWheel
+// ********** Begin Class UPlayerMapUI Function SpinWheel ******************************************
 struct Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics
 {
 	struct PlayerMapUI_eventSpinWheel_Parms
@@ -274,7 +281,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheel", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PlayerMapUI_eventSpinWheel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheel", Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PlayerMapUI_eventSpinWheel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UPlayerMapUI_SpinWheel_Statics::PlayerMapUI_eventSpinWheel_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheel()
 {
@@ -293,9 +300,9 @@ DEFINE_FUNCTION(UPlayerMapUI::execSpinWheel)
 	*(int32*)Z_Param__Result=P_THIS->SpinWheel(Z_Param_WheelSize);
 	P_NATIVE_END;
 }
-// End Class UPlayerMapUI Function SpinWheel
+// ********** End Class UPlayerMapUI Function SpinWheel ********************************************
 
-// Begin Class UPlayerMapUI Function SpinWheelEvent
+// ********** Begin Class UPlayerMapUI Function SpinWheelEvent *************************************
 struct PlayerMapUI_eventSpinWheelEvent_Parms
 {
 	int32 WheelSize;
@@ -305,7 +312,8 @@ void UPlayerMapUI::SpinWheelEvent(int32 WheelSize)
 {
 	PlayerMapUI_eventSpinWheelEvent_Parms Parms;
 	Parms.WheelSize=WheelSize;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SpinWheelEvent),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SpinWheelEvent);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics
 {
@@ -324,7 +332,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::NewProp_WheelSize,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheelEvent", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers), sizeof(PlayerMapUI_eventSpinWheelEvent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SpinWheelEvent", Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::PropPointers), sizeof(PlayerMapUI_eventSpinWheelEvent_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSpinWheelEvent_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent()
 {
@@ -335,9 +343,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SpinWheelEvent
+// ********** End Class UPlayerMapUI Function SpinWheelEvent ***************************************
 
-// Begin Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility ******************
 struct PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms
 {
 	int32 Team;
@@ -349,7 +357,8 @@ void UPlayerMapUI::SwitchChallengePlayerUIVisibility(int32 Team, bool IsVisible)
 	PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms Parms;
 	Parms.Team=Team;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengePlayerUIVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengePlayerUIVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics
 {
@@ -376,7 +385,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengePlayerUIVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengePlayerUIVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility()
 {
@@ -387,9 +396,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility(
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility
+// ********** End Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility ********************
 
-// Begin Class UPlayerMapUI Function SwitchChallengePopupVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchChallengePopupVisibility *********************
 struct PlayerMapUI_eventSwitchChallengePopupVisibility_Parms
 {
 	bool IsVisible;
@@ -399,7 +408,8 @@ void UPlayerMapUI::SwitchChallengePopupVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchChallengePopupVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengePopupVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengePopupVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics
 {
@@ -423,7 +433,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengePopupVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengePopupVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengePopupVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengePopupVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchChallengePopupVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility()
 {
@@ -434,9 +444,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchChallengePopupVisibility
+// ********** End Class UPlayerMapUI Function SwitchChallengePopupVisibility ***********************
 
-// Begin Class UPlayerMapUI Function SwitchChallengeVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchChallengeVisibility **************************
 struct PlayerMapUI_eventSwitchChallengeVisibility_Parms
 {
 	bool IsVisible;
@@ -446,7 +456,8 @@ void UPlayerMapUI::SwitchChallengeVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchChallengeVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengeVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchChallengeVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics
 {
@@ -470,7 +481,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengeVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengeVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchChallengeVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchChallengeVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchChallengeVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility()
 {
@@ -481,9 +492,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchChallengeVisibility
+// ********** End Class UPlayerMapUI Function SwitchChallengeVisibility ****************************
 
-// Begin Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility *********************
 struct PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms
 {
 	bool IsVisible;
@@ -493,7 +504,8 @@ void UPlayerMapUI::SwitchCrownSavePlaceVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownSavePlaceVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownSavePlaceVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics
 {
@@ -517,7 +529,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownSavePlaceVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownSavePlaceVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchCrownSavePlaceVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility()
 {
@@ -528,9 +540,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility
+// ********** End Class UPlayerMapUI Function SwitchCrownSavePlaceVisibility ***********************
 
-// Begin Class UPlayerMapUI Function SwitchCrownStoreVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchCrownStoreVisibility *************************
 struct PlayerMapUI_eventSwitchCrownStoreVisibility_Parms
 {
 	bool IsVisible;
@@ -540,7 +552,8 @@ void UPlayerMapUI::SwitchCrownStoreVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchCrownStoreVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownStoreVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchCrownStoreVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics
 {
@@ -564,7 +577,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownStoreVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCrownStoreVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchCrownStoreVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility()
 {
@@ -575,9 +588,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchCrownStoreVisibility
+// ********** End Class UPlayerMapUI Function SwitchCrownStoreVisibility ***************************
 
-// Begin Class UPlayerMapUI Function SwitchDuelTurnUI
+// ********** Begin Class UPlayerMapUI Function SwitchDuelTurnUI ***********************************
 struct PlayerMapUI_eventSwitchDuelTurnUI_Parms
 {
 	int32 Team;
@@ -587,7 +600,8 @@ void UPlayerMapUI::SwitchDuelTurnUI(int32 Team)
 {
 	PlayerMapUI_eventSwitchDuelTurnUI_Parms Parms;
 	Parms.Team=Team;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchDuelTurnUI),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchDuelTurnUI);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics
 {
@@ -606,7 +620,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::NewProp_Team,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchDuelTurnUI", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchDuelTurnUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchDuelTurnUI", Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchDuelTurnUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchDuelTurnUI_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI()
 {
@@ -617,9 +631,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchDuelTurnUI
+// ********** End Class UPlayerMapUI Function SwitchDuelTurnUI *************************************
 
-// Begin Class UPlayerMapUI Function SwitchLegendVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchLegendVisibility *****************************
 struct PlayerMapUI_eventSwitchLegendVisibility_Parms
 {
 	bool IsVisible;
@@ -629,7 +643,8 @@ void UPlayerMapUI::SwitchLegendVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchLegendVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchLegendVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchLegendVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics
 {
@@ -653,7 +668,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchLegendVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchLegendVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchLegendVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchLegendVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchLegendVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility()
 {
@@ -664,9 +679,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchLegendVisibility
+// ********** End Class UPlayerMapUI Function SwitchLegendVisibility *******************************
 
-// Begin Class UPlayerMapUI Function SwitchMinigame1UIVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchMinigame1UIVisibility ************************
 struct PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms
 {
 	bool IsVisible;
@@ -676,7 +691,8 @@ void UPlayerMapUI::SwitchMinigame1UIVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinigame1UIVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinigame1UIVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics
 {
@@ -699,7 +715,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinigame1UIVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinigame1UIVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility()
 {
@@ -710,9 +726,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchMinigame1UIVisibility
+// ********** End Class UPlayerMapUI Function SwitchMinigame1UIVisibility **************************
 
-// Begin Class UPlayerMapUI Function SwitchMinionDuelSelectionMenu
+// ********** Begin Class UPlayerMapUI Function SwitchMinionDuelSelectionMenu **********************
 struct PlayerMapUI_eventSwitchMinionDuelSelectionMenu_Parms
 {
 	bool IsVisible;
@@ -722,7 +738,8 @@ void UPlayerMapUI::SwitchMinionDuelSelectionMenu(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchMinionDuelSelectionMenu_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinionDuelSelectionMenu),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinionDuelSelectionMenu);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics
 {
@@ -746,7 +763,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinionDuelSelectionMenu", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinionDuelSelectionMenu_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinionDuelSelectionMenu", Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinionDuelSelectionMenu_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchMinionDuelSelectionMenu_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu()
 {
@@ -757,9 +774,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchMinionDuelSelectionMenu
+// ********** End Class UPlayerMapUI Function SwitchMinionDuelSelectionMenu ************************
 
-// Begin Class UPlayerMapUI Function SwitchRouletteVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchRouletteVisibility ***************************
 struct PlayerMapUI_eventSwitchRouletteVisibility_Parms
 {
 	int32 Roulette;
@@ -771,7 +788,8 @@ void UPlayerMapUI::SwitchRouletteVisibility(int32 Roulette, bool IsVisible)
 	PlayerMapUI_eventSwitchRouletteVisibility_Parms Parms;
 	Parms.Roulette=Roulette;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchRouletteVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchRouletteVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics
 {
@@ -798,7 +816,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchRouletteVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchRouletteVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchRouletteVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchRouletteVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchRouletteVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility()
 {
@@ -809,9 +827,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchRouletteVisibility
+// ********** End Class UPlayerMapUI Function SwitchRouletteVisibility *****************************
 
-// Begin Class UPlayerMapUI Function SwitchScoresVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchScoresVisibility *****************************
 struct PlayerMapUI_eventSwitchScoresVisibility_Parms
 {
 	bool IsVisible;
@@ -821,7 +839,8 @@ void UPlayerMapUI::SwitchScoresVisibility(bool IsVisible)
 {
 	PlayerMapUI_eventSwitchScoresVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchScoresVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchScoresVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics
 {
@@ -845,7 +864,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchScoresVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchScoresVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchScoresVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchScoresVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchScoresVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility()
 {
@@ -856,9 +875,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchScoresVisibility
+// ********** End Class UPlayerMapUI Function SwitchScoresVisibility *******************************
 
-// Begin Class UPlayerMapUI Function SwitchTurnUI
+// ********** Begin Class UPlayerMapUI Function SwitchTurnUI ***************************************
 struct PlayerMapUI_eventSwitchTurnUI_Parms
 {
 	int32 Team;
@@ -868,7 +887,8 @@ void UPlayerMapUI::SwitchTurnUI(int32 Team)
 {
 	PlayerMapUI_eventSwitchTurnUI_Parms Parms;
 	Parms.Team=Team;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchTurnUI),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchTurnUI);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics
 {
@@ -887,7 +907,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::NewProp_Team,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchTurnUI", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchTurnUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchTurnUI", Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchTurnUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchTurnUI_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI()
 {
@@ -898,9 +918,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchTurnUI
+// ********** End Class UPlayerMapUI Function SwitchTurnUI *****************************************
 
-// Begin Class UPlayerMapUI Function SwitchUITeamVisibility
+// ********** Begin Class UPlayerMapUI Function SwitchUITeamVisibility *****************************
 struct PlayerMapUI_eventSwitchUITeamVisibility_Parms
 {
 	int32 Team;
@@ -912,7 +932,8 @@ void UPlayerMapUI::SwitchUITeamVisibility(int32 Team, bool IsVisible)
 	PlayerMapUI_eventSwitchUITeamVisibility_Parms Parms;
 	Parms.Team=Team;
 	Parms.IsVisible=IsVisible ? true : false;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_SwitchUITeamVisibility),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchUITeamVisibility);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics
 {
@@ -939,7 +960,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::NewProp_IsVisible,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchUITeamVisibility", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchUITeamVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchUITeamVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchUITeamVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventSwitchUITeamVisibility_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility()
 {
@@ -950,9 +971,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function SwitchUITeamVisibility
+// ********** End Class UPlayerMapUI Function SwitchUITeamVisibility *******************************
 
-// Begin Class UPlayerMapUI Function UpdateCoins
+// ********** Begin Class UPlayerMapUI Function UpdateCoins ****************************************
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics
 {
 	struct PlayerMapUI_eventUpdateCoins_Parms
@@ -978,7 +999,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::NewProp_Quantity,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateCoins", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PlayerMapUI_eventUpdateCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateCoins", Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PlayerMapUI_eventUpdateCoins_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics::PlayerMapUI_eventUpdateCoins_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateCoins()
 {
@@ -998,9 +1019,9 @@ DEFINE_FUNCTION(UPlayerMapUI::execUpdateCoins)
 	P_THIS->UpdateCoins(Z_Param_Team,Z_Param_Quantity);
 	P_NATIVE_END;
 }
-// End Class UPlayerMapUI Function UpdateCoins
+// ********** End Class UPlayerMapUI Function UpdateCoins ******************************************
 
-// Begin Class UPlayerMapUI Function UpdateCrowns
+// ********** Begin Class UPlayerMapUI Function UpdateCrowns ***************************************
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics
 {
 	struct PlayerMapUI_eventUpdateCrowns_Parms
@@ -1026,7 +1047,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::NewProp_Quantity,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateCrowns", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PlayerMapUI_eventUpdateCrowns_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateCrowns", Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PropPointers), sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PlayerMapUI_eventUpdateCrowns_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns_Statics::PlayerMapUI_eventUpdateCrowns_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns()
 {
@@ -1046,9 +1067,9 @@ DEFINE_FUNCTION(UPlayerMapUI::execUpdateCrowns)
 	P_THIS->UpdateCrowns(Z_Param_Team,Z_Param_Quantity);
 	P_NATIVE_END;
 }
-// End Class UPlayerMapUI Function UpdateCrowns
+// ********** End Class UPlayerMapUI Function UpdateCrowns *****************************************
 
-// Begin Class UPlayerMapUI Function UpdateDuelScreenInfo
+// ********** Begin Class UPlayerMapUI Function UpdateDuelScreenInfo *******************************
 struct PlayerMapUI_eventUpdateDuelScreenInfo_Parms
 {
 	int32 _coins;
@@ -1064,7 +1085,8 @@ void UPlayerMapUI::UpdateDuelScreenInfo(int32 _coins, int32 _crowns, EDuelType _
 	Parms._crowns=_crowns;
 	Parms._duelType=_duelType;
 	Parms._team=_team;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_UpdateDuelScreenInfo),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_UpdateDuelScreenInfo);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics
 {
@@ -1095,7 +1117,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::NewProp__team,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateDuelScreenInfo", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateDuelScreenInfo_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateDuelScreenInfo", Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateDuelScreenInfo_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventUpdateDuelScreenInfo_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo()
 {
@@ -1106,9 +1128,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function UpdateDuelScreenInfo
+// ********** End Class UPlayerMapUI Function UpdateDuelScreenInfo *********************************
 
-// Begin Class UPlayerMapUI Function UpdateM1SliderBarValues
+// ********** Begin Class UPlayerMapUI Function UpdateM1SliderBarValues ****************************
 struct PlayerMapUI_eventUpdateM1SliderBarValues_Parms
 {
 	int32 _index;
@@ -1120,7 +1142,8 @@ void UPlayerMapUI::UpdateM1SliderBarValues(int32 _index, float _value)
 	PlayerMapUI_eventUpdateM1SliderBarValues_Parms Parms;
 	Parms._index=_index;
 	Parms._value=_value;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_UpdateM1SliderBarValues),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_UpdateM1SliderBarValues);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics
 {
@@ -1142,7 +1165,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::NewProp__value,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateM1SliderBarValues", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateM1SliderBarValues_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateM1SliderBarValues", Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateM1SliderBarValues_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventUpdateM1SliderBarValues_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues()
 {
@@ -1153,9 +1176,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function UpdateM1SliderBarValues
+// ********** End Class UPlayerMapUI Function UpdateM1SliderBarValues ******************************
 
-// Begin Class UPlayerMapUI Function UpdateUIScore
+// ********** Begin Class UPlayerMapUI Function UpdateUIScore **************************************
 struct PlayerMapUI_eventUpdateUIScore_Parms
 {
 	AScoreDatabase* ScoresList;
@@ -1165,7 +1188,8 @@ void UPlayerMapUI::UpdateUIScore(AScoreDatabase* ScoresList)
 {
 	PlayerMapUI_eventUpdateUIScore_Parms Parms;
 	Parms.ScoresList=ScoresList;
-	ProcessEvent(FindFunctionChecked(NAME_UPlayerMapUI_UpdateUIScore),&Parms);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_UpdateUIScore);
+	ProcessEvent(Func,&Parms);
 }
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics
 {
@@ -1184,7 +1208,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlaye
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::NewProp_ScoresList,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateUIScore", nullptr, nullptr, Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateUIScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::Function_MetaDataParams) };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateUIScore", Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateUIScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(PlayerMapUI_eventUpdateUIScore_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore()
 {
@@ -1195,9 +1219,9 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore()
 	}
 	return ReturnFunction;
 }
-// End Class UPlayerMapUI Function UpdateUIScore
+// ********** End Class UPlayerMapUI Function UpdateUIScore ****************************************
 
-// Begin Class UPlayerMapUI
+// ********** Begin Class UPlayerMapUI *************************************************************
 void UPlayerMapUI::StaticRegisterNativesUPlayerMapUI()
 {
 	UClass* Class = UPlayerMapUI::StaticClass();
@@ -1208,10 +1232,34 @@ void UPlayerMapUI::StaticRegisterNativesUPlayerMapUI()
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
-IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UPlayerMapUI);
+FClassRegistrationInfo Z_Registration_Info_UClass_UPlayerMapUI;
+UClass* UPlayerMapUI::GetPrivateStaticClass()
+{
+	using TClass = UPlayerMapUI;
+	if (!Z_Registration_Info_UClass_UPlayerMapUI.InnerSingleton)
+	{
+		GetPrivateStaticClassBody(
+			StaticPackage(),
+			TEXT("PlayerMapUI"),
+			Z_Registration_Info_UClass_UPlayerMapUI.InnerSingleton,
+			StaticRegisterNativesUPlayerMapUI,
+			sizeof(TClass),
+			alignof(TClass),
+			TClass::StaticClassFlags,
+			TClass::StaticClassCastFlags(),
+			TClass::StaticConfigName(),
+			(UClass::ClassConstructorType)InternalConstructor<TClass>,
+			(UClass::ClassVTableHelperCtorCallerType)InternalVTableHelperCtorCaller<TClass>,
+			UOBJECT_CPPCLASS_STATICFUNCTIONS_FORCLASS(TClass),
+			&TClass::Super::StaticClass,
+			&TClass::WithinClass::StaticClass
+		);
+	}
+	return Z_Registration_Info_UClass_UPlayerMapUI.InnerSingleton;
+}
 UClass* Z_Construct_UClass_UPlayerMapUI_NoRegister()
 {
-	return UPlayerMapUI::StaticClass();
+	return UPlayerMapUI::GetPrivateStaticClass();
 }
 struct Z_Construct_UClass_UPlayerMapUI_Statics
 {
@@ -1234,31 +1282,31 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_UPlayerMapUI_HideInScreenText, "HideInScreenText" }, // 455371258
-		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement, "InitializeRouletteElement" }, // 2953603198
-		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2434387993
-		{ &Z_Construct_UFunction_UPlayerMapUI_SetupUIPots, "SetupUIPots" }, // 251856441
-		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3002040933
-		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 3089339438
-		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent, "SpinWheelEvent" }, // 1813135563
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility, "SwitchChallengePlayerUIVisibility" }, // 4229349836
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility, "SwitchChallengePopupVisibility" }, // 268281361
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 4028822864
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility, "SwitchCrownSavePlaceVisibility" }, // 2494523184
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility, "SwitchCrownStoreVisibility" }, // 472051550
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI, "SwitchDuelTurnUI" }, // 805746268
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility, "SwitchLegendVisibility" }, // 2221352643
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility, "SwitchMinigame1UIVisibility" }, // 3797784988
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu, "SwitchMinionDuelSelectionMenu" }, // 2333499072
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility, "SwitchRouletteVisibility" }, // 1732232045
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility, "SwitchScoresVisibility" }, // 2687395032
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI, "SwitchTurnUI" }, // 1496968856
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility, "SwitchUITeamVisibility" }, // 1768486652
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2892537950
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns, "UpdateCrowns" }, // 1731745352
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 2079988859
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues, "UpdateM1SliderBarValues" }, // 2645933302
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore, "UpdateUIScore" }, // 1456132318
+		{ &Z_Construct_UFunction_UPlayerMapUI_HideInScreenText, "HideInScreenText" }, // 3348733800
+		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement, "InitializeRouletteElement" }, // 3072822697
+		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2712313346
+		{ &Z_Construct_UFunction_UPlayerMapUI_SetupUIPots, "SetupUIPots" }, // 2685654397
+		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3679402220
+		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 4232801093
+		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent, "SpinWheelEvent" }, // 2721343810
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility, "SwitchChallengePlayerUIVisibility" }, // 336042933
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility, "SwitchChallengePopupVisibility" }, // 256378770
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 2851671446
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownSavePlaceVisibility, "SwitchCrownSavePlaceVisibility" }, // 233007215
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCrownStoreVisibility, "SwitchCrownStoreVisibility" }, // 2702068171
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchDuelTurnUI, "SwitchDuelTurnUI" }, // 2827719201
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility, "SwitchLegendVisibility" }, // 199844718
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility, "SwitchMinigame1UIVisibility" }, // 1315906279
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu, "SwitchMinionDuelSelectionMenu" }, // 953674691
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility, "SwitchRouletteVisibility" }, // 3679523160
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchScoresVisibility, "SwitchScoresVisibility" }, // 1421446087
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI, "SwitchTurnUI" }, // 1048608052
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility, "SwitchUITeamVisibility" }, // 2593174012
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2055757430
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns, "UpdateCrowns" }, // 865943901
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 3117213477
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues, "UpdateM1SliderBarValues" }, // 796245876
+		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore, "UpdateUIScore" }, // 274681922
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -1301,25 +1349,22 @@ UClass* Z_Construct_UClass_UPlayerMapUI()
 	}
 	return Z_Registration_Info_UClass_UPlayerMapUI.OuterSingleton;
 }
-template<> PARTYJUNGLE_API UClass* StaticClass<UPlayerMapUI>()
-{
-	return UPlayerMapUI::StaticClass();
-}
 UPlayerMapUI::UPlayerMapUI(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(UPlayerMapUI);
 UPlayerMapUI::~UPlayerMapUI() {}
-// End Class UPlayerMapUI
+// ********** End Class UPlayerMapUI ***************************************************************
 
-// Begin Registration
-struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics
+// ********** Begin Registration *******************************************************************
+struct Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1616212331U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 2367674114U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_2185003883(TEXT("/Script/PartyJungle"),
-	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_1241601559(TEXT("/Script/PartyJungle"),
+	Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
-// End Registration
+// ********** End Registration *********************************************************************
+
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
