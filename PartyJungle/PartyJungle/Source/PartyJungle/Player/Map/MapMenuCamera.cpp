@@ -512,8 +512,10 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 {
     EDuelType duelType = ChallengeInformation->ParsePotsInfo(_duelIndex)[MapUI->WheelValue].second.second;
     bool fullPot = (duelType == EDuelType::ALL_IN_COINS || duelType == EDuelType::ALL_IN_VS_ST) ? true : false;
+    TArray<AMinion*> minionsList = ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList;
+    CurrentMinion = minionsList[0];
     
-    for (auto Minion : ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList)
+    for (auto Minion : minionsList)
     {
         int minionTeam = static_cast<int>(Minion->Team);
         int pot = ChallengeInformation->GetPotQuantity(fullPot, _duelIndex);
