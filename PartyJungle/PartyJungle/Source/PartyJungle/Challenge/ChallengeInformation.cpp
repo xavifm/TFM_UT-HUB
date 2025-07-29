@@ -152,6 +152,14 @@ bool AChallengeInformation::CheckIfThereAreCrownsInDuel(int _duelSquareIndex)
     return crownsQuery;
 }
 
+void AChallengeInformation::ResetDuels()
+{
+    for (auto Square : SquaresWithDuelsInRound)
+        Square->SwitchDuelSquare(false);
+
+    SquaresWithDuelsInRound.Reset();
+}
+
 TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)
 {
     TArray<std::pair<int, std::pair<int, EDuelType>>> ParsedInfo;

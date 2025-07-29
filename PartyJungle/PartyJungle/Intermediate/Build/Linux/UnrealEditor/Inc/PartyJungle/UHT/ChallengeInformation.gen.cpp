@@ -325,6 +325,35 @@ DEFINE_FUNCTION(AChallengeInformation::execGetPotQuantity)
 }
 // ********** End Class AChallengeInformation Function GetPotQuantity ******************************
 
+// ********** Begin Class AChallengeInformation Function ResetDuels ********************************
+struct Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "ResetDuels", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AChallengeInformation_ResetDuels()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execResetDuels)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ResetDuels();
+	P_NATIVE_END;
+}
+// ********** End Class AChallengeInformation Function ResetDuels **********************************
+
 // ********** Begin Class AChallengeInformation Function SafeDuelChoice ****************************
 struct Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice_Statics
 {
@@ -515,6 +544,7 @@ void AChallengeInformation::StaticRegisterNativesAChallengeInformation()
 		{ "GetBetCrownsQuantity", &AChallengeInformation::execGetBetCrownsQuantity },
 		{ "GetDuelType", &AChallengeInformation::execGetDuelType },
 		{ "GetPotQuantity", &AChallengeInformation::execGetPotQuantity },
+		{ "ResetDuels", &AChallengeInformation::execResetDuels },
 		{ "SafeDuelChoice", &AChallengeInformation::execSafeDuelChoice },
 		{ "SaveDuelToRegistry", &AChallengeInformation::execSaveDuelToRegistry },
 		{ "SetUpDuelInfo", &AChallengeInformation::execSetUpDuelInfo },
@@ -589,6 +619,7 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCrownsQuantity, "GetBetCrownsQuantity" }, // 3719915498
 		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 2425875142
 		{ &Z_Construct_UFunction_AChallengeInformation_GetPotQuantity, "GetPotQuantity" }, // 3689387680
+		{ &Z_Construct_UFunction_AChallengeInformation_ResetDuels, "ResetDuels" }, // 3418139761
 		{ &Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice, "SafeDuelChoice" }, // 969713328
 		{ &Z_Construct_UFunction_AChallengeInformation_SaveDuelToRegistry, "SaveDuelToRegistry" }, // 1279411535
 		{ &Z_Construct_UFunction_AChallengeInformation_SetUpDuelInfo, "SetUpDuelInfo" }, // 929728015
@@ -658,10 +689,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2964326876U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 3855204136U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 956167704U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_2088177791(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_1071174290(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo));

@@ -65,6 +65,9 @@ public:
 
 	UFUNCTION()
 	bool CheckIfThereAreCrownsInDuel(int _duelSquareIndex);
+
+	UFUNCTION()
+	void ResetDuels();
 	
 	TArray<std::pair<int, std::pair<int, EDuelType>>> ParsePotsInfo(int _duelSquareIndex);
 

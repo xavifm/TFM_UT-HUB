@@ -471,7 +471,16 @@ void AMapMenuCamera::HandleBackInput()
 void AMapMenuCamera::FinishDuelTransition()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-    CloseChallengeMenu(true);
+
+    ChallengeInformation->ResetDuels();
+    
+    for (int index = 0; index < MAX_TEAM_NUMBER; index++)
+        MapUI->SwitchRouletteVisibility(index, false);
+    
+    SwitchChallengeUI(false);
+    SwitchChallengeMenuUI(false, TArray<AMinion*>());
+
+    RestoreTurnLogic();
 }
 
 void AMapMenuCamera::CloseChallengeMenu(bool _duel)
@@ -485,7 +494,8 @@ void AMapMenuCamera::CloseChallengeMenu(bool _duel)
     CurrentMinion->SetMinionsMovements(currentMinionMovements);
 
     SwitchChallengeUI(false);
-
+    SwitchChallengeMenuUI(false, TArray<AMinion*>());
+    
     if(currentMinionMovements <= 0)
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
 }
@@ -978,7 +988,7 @@ void AMapMenuCamera::RestoreTurnLogic()
         if (minion)
             minion->AlreadyMoved = false;
     }
-
+  
     SwitchCameraTeam(1);
     SwitchController();
 
