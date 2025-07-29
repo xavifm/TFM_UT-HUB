@@ -468,6 +468,12 @@ void AMapMenuCamera::HandleBackInput()
 	}
 }
 
+void AMapMenuCamera::FinishDuelTransition()
+{
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+    CloseChallengeMenu(true);
+}
+
 void AMapMenuCamera::CloseChallengeMenu(bool _duel)
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
@@ -502,11 +508,29 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
     MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType(), _team);
 }
 
-void AMapMenuCamera::FinishDuel(int _winner)
+void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 {
-    int winnerIndex = (_winner == 0) ? 0 : 1;
-    int loserIndex = (_winner == 0) ? 1 : 0;
-
+    EDuelType duelType = ChallengeInformation->ParsePotsInfo(_duelIndex)[MapUI->WheelValue].second.second;
+    bool fullPot = (duelType == EDuelType::ALL_IN_COINS || duelType == EDuelType::ALL_IN_VS_ST) ? true : false;
+    
+    for (auto Minion : ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList)
+    {
+        int minionTeam = static_cast<int>(Minion->Team);
+        int pot = ChallengeInformation->GetPotQuantity(fullPot, _duelIndex);
+        int minionPrize = (fullPot) ? Minion->GetCoins() : Minion->GetCoins() / 2;
+        
+        if (static_cast<int>(Minion->Team) == _winner)
+        {
+            Minion->UpdateCoins(pot, true);
+            MapUI->UpdateCoins(minionTeam, pot);
+        }
+        else
+        {
+            Minion->UpdateCoins(-minionPrize, false);
+            MapUI->UpdateCoins(minionTeam, -minionPrize);
+        }
+    }
+    
     //int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
     //int loserCoins = -winnerCoins;
 
@@ -535,7 +559,7 @@ void AMapMenuCamera::FinishDuel(int _winner)
 
     SwitchChallengeUI(false);
 
-    //GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::CloseChallengeMenu, TIME_BEFORE_FINISH_DUEL, false);
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
 }
 
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)

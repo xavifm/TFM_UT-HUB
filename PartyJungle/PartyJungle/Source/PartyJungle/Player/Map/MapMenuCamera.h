@@ -123,6 +123,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleBackInput();
+	void FinishDuelTransition();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void CloseChallengeMenu(bool _duel = false);
@@ -134,7 +135,7 @@ public:
 	void RefreshChallengeInfo(int _direction, int _team);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void FinishDuel(int _winner);
+	void FinishDuel(int _winner, int _duelIndex);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchStoreCrownsUI(bool _visibility);

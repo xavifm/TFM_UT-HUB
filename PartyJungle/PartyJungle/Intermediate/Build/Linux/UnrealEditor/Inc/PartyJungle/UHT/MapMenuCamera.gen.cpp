@@ -264,6 +264,7 @@ struct Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics
 	struct MapMenuCamera_eventFinishDuel_Parms
 	{
 		int32 _winner;
+		int32 _duelIndex;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -272,12 +273,15 @@ struct Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__winner;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__duelIndex;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::NewProp__winner = { "_winner", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventFinishDuel_Parms, _winner), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::NewProp__duelIndex = { "_duelIndex", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventFinishDuel_Parms, _duelIndex), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::NewProp__winner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::NewProp__duelIndex,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "FinishDuel", Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::MapMenuCamera_eventFinishDuel_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_FinishDuel_Statics::Function_MetaDataParams)},  };
@@ -294,9 +298,10 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_FinishDuel()
 DEFINE_FUNCTION(AMapMenuCamera::execFinishDuel)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__winner);
+	P_GET_PROPERTY(FIntProperty,Z_Param__duelIndex);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->FinishDuel(Z_Param__winner);
+	P_THIS->FinishDuel(Z_Param__winner,Z_Param__duelIndex);
 	P_NATIVE_END;
 }
 // ********** End Class AMapMenuCamera Function FinishDuel *****************************************
@@ -1895,7 +1900,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_ConfirmMinionToDuel, "ConfirmMinionToDuel" }, // 2218771679
 		{ &Z_Construct_UFunction_AMapMenuCamera_ConfirmPathSelection, "ConfirmPathSelection" }, // 315158212
 		{ &Z_Construct_UFunction_AMapMenuCamera_ExecuteMinionMovement, "ExecuteMinionMovement" }, // 1396036775
-		{ &Z_Construct_UFunction_AMapMenuCamera_FinishDuel, "FinishDuel" }, // 4088582701
+		{ &Z_Construct_UFunction_AMapMenuCamera_FinishDuel, "FinishDuel" }, // 1054023298
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition, "FinishFadeTransition" }, // 773037478
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2641092475
 		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 768691028
@@ -2022,10 +2027,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3734713756U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3664555577U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_937833307(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_1436773242(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

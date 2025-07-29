@@ -105,7 +105,7 @@ void AMinigameLogic::DelayedSceneSwitch()
 	if (MapMenuCamera)
 	{
 		MapMenuCamera->SwitchMainScene();
-		MapMenuCamera->FinishDuel(Winner);
+		MapMenuCamera->FinishDuel(Winner, 0);
 	}
 }
 
