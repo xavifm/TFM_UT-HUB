@@ -22,7 +22,7 @@ void AMinigameLogic::BeginMinigame()
 void AMinigameLogic::InitializeMinigameInfoForDuel()
 {
 	if (!MapMenuCamera)
-			return;
+		return;
 	
 	TArray<AMinion*> minionList = MapMenuCamera->ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList;
 	PlayingMinions.Empty();

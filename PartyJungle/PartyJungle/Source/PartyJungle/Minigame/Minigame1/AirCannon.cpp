@@ -147,9 +147,11 @@ void AAirCannon::StartCannonCharge(float _time)
     if(AudioManager)
         AudioManager->PlaySFX(CHARGE_CANNON_SFX, 0.5f, true);
 
-    PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), static_cast<int32>(MinionReference->Team));
+    int parsedCannonTeam = static_cast<int32>(MinionReference->Team);
+    PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), parsedCannonTeam);
     if (PlayerController) 
     {
+        CannonTeam = parsedCannonTeam;
         PlayerController->bAutoManageActiveCameraTarget = false;
         PlayerController->Possess(this);
     }
