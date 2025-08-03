@@ -12,8 +12,6 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
 {
     Minions = _minions;
     DuelType = EDuelType::HALF_COINS;
-
-    SavedDuelTypes.Empty();
 }
 
 void AChallengeInformation::SafeDuelChoice()
@@ -158,6 +156,7 @@ void AChallengeInformation::ResetDuels()
         Square->SwitchDuelSquare(false);
 
     SquaresWithDuelsInRound.Reset();
+    SavedDuelTypes.Reset();
 }
 
 TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)

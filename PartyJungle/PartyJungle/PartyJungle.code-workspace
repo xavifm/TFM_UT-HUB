@@ -1,0 +1,911 @@
+{
+	"folders": [
+		{
+			"name": "PartyJungle",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/home/xavi/Documents/Unreal"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.linux": {
+			"PATH": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+			"DOTNET_ROOT": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+			"DOTNET_HOST_PATH": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "PartyJungle Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"Linux",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Test",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungle LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungle LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungle",
+					"LinuxArm64",
+					"Shipping",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungleEditor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Debug",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungleEditor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"DebugGame",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"PartyJungleEditor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"label": "PartyJungleEditor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"PartyJungleEditor",
+					"Linux",
+					"Development",
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/home/xavi/Documents/Unreal"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch PartyJungle (Debug)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "PartyJungle Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungle (DebugGame)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "PartyJungle Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungle (Development)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "PartyJungle Linux Development Build",
+				"args": [
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungle (Test)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "PartyJungle Linux Test Build",
+				"args": [
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungle (Shipping)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "PartyJungle Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungleEditor (Debug)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "PartyJungleEditor Linux Debug Build",
+				"args": [
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject"
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungleEditor (DebugGame)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "PartyJungleEditor Linux DebugGame Build",
+				"args": [
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject"
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Launch PartyJungleEditor (Development)",
+				"request": "launch",
+				"program": "/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "PartyJungleEditor Linux Development Build",
+				"args": [
+					"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject"
+				],
+				"cwd": "/home/xavi/Documents/Unreal",
+				"type": "cppdbg",
+				"visualizerFile": "/home/xavi/Documents/Unreal/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true,
+				"sourceFileMap": {
+					"/UEVFS/PartyJungle": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle",
+					"/UEVFS/Root": "/home/xavi/Documents/Unreal"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/home/xavi/Documents/Unreal/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+					"DOTNET_ROOT": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+					"DOTNET_HOST_PATH": "/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/home/xavi/Documents/Unreal"
+			}
+		]
+	}
+}

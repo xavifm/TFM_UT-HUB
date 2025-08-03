@@ -471,15 +471,6 @@ void AMapMenuCamera::HandleBackInput()
 void AMapMenuCamera::FinishDuelTransition()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-
-    ChallengeInformation->ResetDuels();
-    
-    for (int index = 0; index < MAX_TEAM_NUMBER; index++)
-        MapUI->SwitchRouletteVisibility(index, false);
-    
-    SwitchChallengeUI(false);
-    SwitchChallengeMenuUI(false, TArray<AMinion*>());
-
     RestoreTurnLogic();
 }
 
@@ -571,6 +562,13 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 
     SwitchChallengeUI(false);
 
+    MapUI->SwitchRouletteVisibility(2, false);
+    MapUI->SwitchRouletteVisibility(3, false);
+    MapUI->SwitchRouletteVisibility(4, false);
+
+    ChallengeInformation->ResetDuels();
+    SwitchChallengeMenuUI(false, TArray<AMinion*>());
+
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
 }
 
@@ -619,7 +617,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
         Dice->HideDice();
         MapUI->SwitchLegendVisibility(false);
 
-        if(ChallengeInformation) 
+        if(ChallengeInformation && _challengers.Num() > 0) 
         {
             ChallengeInformation->SetUpDuelInfo(_challengers);
             MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, 0), ChallengeInformation->GetPotQuantity(true, 0));

@@ -1,0 +1,28 @@
+{
+	"configurations": [
+		{
+			"name": "PartyJungleEditor Editor Linux Development (PartyJungle)",
+			"compilerPath": "/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"compilerArgs": [
+				"-isysroot",
+				"/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+			],
+			"cStandard": "c17",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "clang-x64",
+			"compileCommands": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/.vscode/compileCommands_PartyJungle.json"
+		},
+		{
+			"name": "Linux",
+			"compilerPath": "/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"compilerArgs": [
+				"-isysroot",
+				"/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+			],
+			"cStandard": "c17",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "clang-x64",
+			"compileCommands": "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/.vscode/compileCommands_Default.json"
+		}
+	]
+}
