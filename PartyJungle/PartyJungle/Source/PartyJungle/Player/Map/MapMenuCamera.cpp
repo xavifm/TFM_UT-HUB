@@ -180,8 +180,9 @@ void AMapMenuCamera::HandleConfirmInput()
         {
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num();
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
-            RouletteResult = MapUI->SpinWheel(rouletteSize);
+            RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
+            DuelUI = false;
 
             GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::SpinWheelEndSequence, ROULETTE_SPIN_TIME, false);
             
@@ -219,7 +220,34 @@ void AMapMenuCamera::HandleConfirmInput()
 void AMapMenuCamera::SpinWheelEndSequence()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-    SwitchMainScene(0);
+    auto potsInfo = ChallengeInformation->ParsePotsInfo(0);
+    EDuelType rouletteDuel = potsInfo[RouletteResult].second.second;
+    UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
+        
+    for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList)
+    {
+        int team = static_cast<int>(minion->Team);
+            
+        int bet = (rouletteDuel == EDuelType::ALL_IN_COINS ||
+                    rouletteDuel == EDuelType::ALL_IN_VS_ST)
+                    ? minion->GetCoins()
+                    : minion->GetCoins() / 2;
+
+        bet = rouletteDuel == EDuelType::RESIGN ? 0 : bet;
+
+        minion->UpdateCoins(-bet);
+        MapUI->UpdateCoins(team, -bet);
+    }
+
+    SavedSceneValue = 0;
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
+}
+
+void AMapMenuCamera::DelayedSceneSwitch()
+{
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+    
+    SwitchMainScene(SavedSceneValue);
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -511,7 +539,10 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
 
 void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 {
-    EDuelType duelType = ChallengeInformation->ParsePotsInfo(_duelIndex)[MapUI->WheelValue].second.second;
+    auto potsInfo = ChallengeInformation->ParsePotsInfo(_duelIndex);
+    EDuelType duelType = potsInfo[RouletteResult].second.second;
+    UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(duelType));
+    
     bool fullPot = (duelType == EDuelType::ALL_IN_COINS || duelType == EDuelType::ALL_IN_VS_ST) ? true : false;
     TArray<AMinion*> minionsList = ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList;
     CurrentMinion = minionsList[0];
@@ -519,18 +550,18 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
     for (auto Minion : minionsList)
     {
         int minionTeam = static_cast<int>(Minion->Team);
-        int pot = ChallengeInformation->GetPotQuantity(fullPot, _duelIndex);
-        int minionPrize = (fullPot) ? Minion->GetCoins() : Minion->GetCoins() / 2;
         
         if (static_cast<int>(Minion->Team) == _winner)
         {
+            int pot = ChallengeInformation->GetSavedPot();
+            
+            if (!fullPot)
+                pot /= 2;
+            
             Minion->UpdateCoins(pot, true);
             MapUI->UpdateCoins(minionTeam, pot);
-        }
-        else
-        {
-            Minion->UpdateCoins(-minionPrize, false);
-            MapUI->UpdateCoins(minionTeam, -minionPrize);
+
+            break;
         }
     }
     
@@ -712,6 +743,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             if (minigameDetected)
             {
                 //CurrentMinionTeam = oldMinionTeam;
+                CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList[0];
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
                 SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList);
                 return;

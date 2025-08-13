@@ -86,7 +86,7 @@ public:
     void FinishCannonCharge();
 
 private:
-    const float AIR_CANNON_MULIPLIER = 150;
+    const float AIR_CANNON_MULIPLIER = 45;
     const float TICK_UPDATE_TIME = 0.1f;
     const float BULLET_RESPAWN_OFFSET = 150;
     const float MAX_MINIGAME_HEIGHT = 7960;

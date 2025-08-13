@@ -60,6 +60,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	int GetPotQuantity(bool _fullPot, int _duelSquareIndex);
 
+	UFUNCTION()
+	int GetSavedPot();
+
 	UFUNCTION(BlueprintCallable)
 	int GetBetCrownsQuantity(int _team);
 
@@ -73,6 +76,8 @@ public:
 
 private:
 	EDuelType DuelType;
+
+	int SavedPot = 0;
 
 	const float MIN_HALF_BET = 5;
 	const float MIN_FULL_BET = 10;

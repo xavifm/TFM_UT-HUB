@@ -24,6 +24,7 @@ enum class EDuelType : uint8;
 	DECLARE_FUNCTION(execResetDuels); \
 	DECLARE_FUNCTION(execCheckIfThereAreCrownsInDuel); \
 	DECLARE_FUNCTION(execGetBetCrownsQuantity); \
+	DECLARE_FUNCTION(execGetSavedPot); \
 	DECLARE_FUNCTION(execGetPotQuantity); \
 	DECLARE_FUNCTION(execGetBetCoinsQuantity); \
 	DECLARE_FUNCTION(execSwitchDuelType); \

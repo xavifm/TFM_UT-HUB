@@ -97,6 +97,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleConfirmInput();
 	void SpinWheelEndSequence();
+	void DelayedSceneSwitch();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleYInput();
@@ -199,7 +200,7 @@ private:
 	const int CROWN_PRICE = 20;
 	const int CAMERA_HEIGHT_OFFSET = 600;
 	const int MAX_MOVEMENTS_PER_TURN = 2;
-	const int ROULETTE_SPIN_TIME = 7;
+	const int ROULETTE_SPIN_TIME = 5;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -246,6 +247,7 @@ private:
 	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
+	int SavedSceneValue;
 
 	UPROPERTY()
 	int TurnMovementIndex;

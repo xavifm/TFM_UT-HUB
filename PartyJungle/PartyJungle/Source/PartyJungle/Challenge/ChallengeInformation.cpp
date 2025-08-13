@@ -118,7 +118,13 @@ int AChallengeInformation::GetPotQuantity(bool _fullPot, int _duelSquareIndex)
     
     if (!_fullPot) potQuery /= 2;
 
+    SavedPot = potQuery;
     return potQuery;
+}
+
+int AChallengeInformation::GetSavedPot()
+{
+    return SavedPot;
 }
 
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
@@ -162,10 +168,14 @@ void AChallengeInformation::ResetDuels()
 TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)
 {
     TArray<std::pair<int, std::pair<int, EDuelType>>> ParsedInfo;
+
+    if (!SquaresWithDuelsInRound.IsValidIndex(_duelSquareIndex))
+        return ParsedInfo;
     
     ASquare* Square = SquaresWithDuelsInRound[_duelSquareIndex];
     if (!Square) return ParsedInfo;
 
+    ParsedInfo.Reserve(Square->MinionsList.Num());
     int index = 0;
 
     for (AMinion* Minion : Square->MinionsList)
