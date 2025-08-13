@@ -217,12 +217,32 @@ void AMapMenuCamera::HandleConfirmInput()
         ExecuteMinionMovement();
 }
 
+void AMapMenuCamera::CloseDuelMenu()
+{
+    SwitchChallengeUI(false);
+
+    MapUI->SwitchRouletteVisibility(2, false);
+    MapUI->SwitchRouletteVisibility(3, false);
+    MapUI->SwitchRouletteVisibility(4, false);
+
+    ChallengeInformation->ResetDuels();
+    SwitchChallengeMenuUI(false, TArray<AMinion*>());
+
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
+}
+
 void AMapMenuCamera::SpinWheelEndSequence()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     auto potsInfo = ChallengeInformation->ParsePotsInfo(0);
     EDuelType rouletteDuel = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
+
+    if (rouletteDuel == EDuelType::RESIGN)
+    {
+        CloseDuelMenu();
+        return;
+    }
         
     for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList)
     {
@@ -591,16 +611,7 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 
     //ChallengeInformation->SaveDuelToRegistry(WinnerTeam, winnerCoins, winnerCrowns);
 
-    SwitchChallengeUI(false);
-
-    MapUI->SwitchRouletteVisibility(2, false);
-    MapUI->SwitchRouletteVisibility(3, false);
-    MapUI->SwitchRouletteVisibility(4, false);
-
-    ChallengeInformation->ResetDuels();
-    SwitchChallengeMenuUI(false, TArray<AMinion*>());
-
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
+    CloseDuelMenu();
 }
 
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
