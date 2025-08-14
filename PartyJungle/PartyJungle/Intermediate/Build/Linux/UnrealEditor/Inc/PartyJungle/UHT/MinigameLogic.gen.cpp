@@ -208,6 +208,35 @@ DEFINE_FUNCTION(AMinigameLogic::execFinishMinigame)
 }
 // ********** End Class AMinigameLogic Function FinishMinigame *************************************
 
+// ********** Begin Class AMinigameLogic Function InitializeMinigameInfoForDuel ********************
+struct Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "InitializeMinigameInfoForDuel", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinigameLogic::execInitializeMinigameInfoForDuel)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->InitializeMinigameInfoForDuel();
+	P_NATIVE_END;
+}
+// ********** End Class AMinigameLogic Function InitializeMinigameInfoForDuel **********************
+
 // ********** Begin Class AMinigameLogic Function ResetMinigameScene *******************************
 struct Z_Construct_UFunction_AMinigameLogic_ResetMinigameScene_Statics
 {
@@ -496,6 +525,7 @@ void AMinigameLogic::StaticRegisterNativesAMinigameLogic()
 		{ "CheckIfTheMinigameHasFinished", &AMinigameLogic::execCheckIfTheMinigameHasFinished },
 		{ "DelayedSceneSwitch", &AMinigameLogic::execDelayedSceneSwitch },
 		{ "FinishMinigame", &AMinigameLogic::execFinishMinigame },
+		{ "InitializeMinigameInfoForDuel", &AMinigameLogic::execInitializeMinigameInfoForDuel },
 		{ "ResetMinigameScene", &AMinigameLogic::execResetMinigameScene },
 		{ "SetTeamReady", &AMinigameLogic::execSetTeamReady },
 		{ "SetTeamScore", &AMinigameLogic::execSetTeamScore },
@@ -592,6 +622,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ &Z_Construct_UFunction_AMinigameLogic_CheckIfTheMinigameHasFinished, "CheckIfTheMinigameHasFinished" }, // 2507045694
 		{ &Z_Construct_UFunction_AMinigameLogic_DelayedSceneSwitch, "DelayedSceneSwitch" }, // 989486226
 		{ &Z_Construct_UFunction_AMinigameLogic_FinishMinigame, "FinishMinigame" }, // 3881593641
+		{ &Z_Construct_UFunction_AMinigameLogic_InitializeMinigameInfoForDuel, "InitializeMinigameInfoForDuel" }, // 3822354565
 		{ &Z_Construct_UFunction_AMinigameLogic_ResetMinigameScene, "ResetMinigameScene" }, // 814468740
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamReady, "SetTeamReady" }, // 2262883527
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamScore, "SetTeamScore" }, // 1357341579
@@ -681,10 +712,10 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 2567380366U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 117022034U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_830815170(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_920212660(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

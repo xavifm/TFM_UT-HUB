@@ -217,7 +217,7 @@ void AMapMenuCamera::HandleConfirmInput()
         ExecuteMinionMovement();
 }
 
-void AMapMenuCamera::CloseDuelMenu()
+void AMapMenuCamera::CloseDuelMenu(bool _endTurn)
 {
     SwitchChallengeUI(false);
 
@@ -225,10 +225,12 @@ void AMapMenuCamera::CloseDuelMenu()
     MapUI->SwitchRouletteVisibility(3, false);
     MapUI->SwitchRouletteVisibility(4, false);
 
-    ChallengeInformation->ResetDuels();
-    SwitchChallengeMenuUI(false, TArray<AMinion*>());
-
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
+    if (_endTurn)
+    {
+        ChallengeInformation->ResetDuels();
+        SwitchChallengeMenuUI(false, TArray<AMinion*>());
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
+    }
 }
 
 void AMapMenuCamera::SpinWheelEndSequence()
@@ -240,9 +242,11 @@ void AMapMenuCamera::SpinWheelEndSequence()
 
     if (rouletteDuel == EDuelType::RESIGN)
     {
-        CloseDuelMenu();
+        CloseDuelMenu(true);
         return;
     }
+
+    CloseDuelMenu(false);
         
     for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList)
     {
@@ -584,34 +588,8 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
             break;
         }
     }
-    
-    //int winnerCoins = ChallengeInformation->GetBetCoinsQuantity(loserIndex);
-    //int loserCoins = -winnerCoins;
 
-    //int winnerCrowns = ChallengeInformation->GetBetCrownsQuantity(loserIndex);
-    //int loserCrowns = -winnerCrowns;
-
-    //auto* Winner = (_winner == 0) ? ChallengeInformation->Attacker : ChallengeInformation->Victim;
-    //auto* Loser = (_winner == 0) ? ChallengeInformation->Victim : ChallengeInformation->Attacker;
-
-    //bool WinnerPlaySound = (Winner == ChallengeInformation->Attacker) ? true : false;
-    //bool LoserPlaySound = (Loser == ChallengeInformation->Attacker) ? true : false;
-
-    //Winner->UpdateCoins(winnerCoins, WinnerPlaySound);
-    //Loser->UpdateCoins(loserCoins, LoserPlaySound);
-
-    //Winner->UpdateCrowns(winnerCrowns);
-    //Loser->UpdateCrowns(loserCrowns);
-
-    //int WinnerTeam = static_cast<int>(Winner->Team);
-    //int LoserTeam = static_cast<int>(Loser->Team);
-
-    //MapUI->UpdateCoins(WinnerTeam, winnerCoins);
-    //MapUI->UpdateCoins(LoserTeam, loserCoins);
-
-    //ChallengeInformation->SaveDuelToRegistry(WinnerTeam, winnerCoins, winnerCrowns);
-
-    CloseDuelMenu();
+    CloseDuelMenu(true);
 }
 
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)

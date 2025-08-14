@@ -96,8 +96,14 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleConfirmInput();
-	void CloseDuelMenu();
+
+	UFUNCTION()
+	void CloseDuelMenu(bool _endTurn);
+
+	UFUNCTION()
 	void SpinWheelEndSequence();
+
+	UFUNCTION()
 	void DelayedSceneSwitch();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")

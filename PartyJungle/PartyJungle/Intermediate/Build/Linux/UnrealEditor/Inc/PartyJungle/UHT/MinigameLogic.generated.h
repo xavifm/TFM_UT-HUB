@@ -18,6 +18,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AMinigameLogic ***********************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execInitializeMinigameInfoForDuel); \
 	DECLARE_FUNCTION(execResetMinigameScene); \
 	DECLARE_FUNCTION(execDelayedSceneSwitch); \
 	DECLARE_FUNCTION(execBeginMinigame); \

@@ -75,6 +75,7 @@ protected:
     virtual void ResetMinigameScene();
 
 private:
+    UFUNCTION()
     void InitializeMinigameInfoForDuel();
 
     int Winner;
