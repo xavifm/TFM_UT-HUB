@@ -194,7 +194,11 @@ public:
 	UPlayerMapUI* GetMapUI();
 
 	UPROPERTY()
+	int ChosenDuelIndex = 0;
+
+	UPROPERTY()
 	int MAX_TEAM_NUMBER = 4;
+
 
 private:
 	const int MAX_MINION_NUMBER = 3;

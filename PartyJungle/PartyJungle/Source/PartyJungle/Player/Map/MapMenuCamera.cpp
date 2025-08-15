@@ -178,8 +178,8 @@ void AMapMenuCamera::HandleConfirmInput()
 
         if (LastTeam == CurrentMinionTeam)
         {
-            int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num();
-            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(0));
+            int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num();
+            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(ChosenDuelIndex));
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;
@@ -236,7 +236,7 @@ void AMapMenuCamera::CloseDuelMenu(bool _endTurn)
 void AMapMenuCamera::SpinWheelEndSequence()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-    auto potsInfo = ChallengeInformation->ParsePotsInfo(0);
+    auto potsInfo = ChallengeInformation->ParsePotsInfo(ChosenDuelIndex);
     EDuelType rouletteDuel = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
 
@@ -248,7 +248,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
 
     CloseDuelMenu(false);
         
-    for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList)
+    for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList)
     {
         int team = static_cast<int>(minion->Team);
             
@@ -460,7 +460,7 @@ void AMapMenuCamera::SwitchUIController()
 {
     for (int _index = 0; _index < MAX_TEAM_NUMBER; _index++)
     {
-        int controllerIndexQuery = ChallengeInformation->GetCurrentBetControllerMenuIndex(_index, MAX_TEAM_NUMBER, 0);
+        int controllerIndexQuery = ChallengeInformation->GetCurrentBetControllerMenuIndex(_index, MAX_TEAM_NUMBER, ChosenDuelIndex);
 
         if (controllerIndexQuery != -1 && controllerIndexQuery > CurrentMinionTeam)
         {
@@ -640,7 +640,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
         if(ChallengeInformation && _challengers.Num() > 0) 
         {
             ChallengeInformation->SetUpDuelInfo(_challengers);
-            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, 0), ChallengeInformation->GetPotQuantity(true, 0));
+            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, ChosenDuelIndex), ChallengeInformation->GetPotQuantity(true, ChosenDuelIndex));
 
             for (int team = 0; team < MAX_TEAM_NUMBER; team++)
                 MapUI->SwitchChallengePlayerUIVisibility(team, false);
@@ -731,10 +731,10 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
             if (minigameDetected)
             {
-                //CurrentMinionTeam = oldMinionTeam;
-                CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList[0];
+                ChosenDuelIndex = FMath::RandRange(0, ChallengeInformation->SquaresWithDuelsInRound.Num() -1);  //random duel
+                CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList[0];
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
-                SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList);
+                SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
                 return;
             }
         }
@@ -910,7 +910,14 @@ void AMapMenuCamera::RestoreTurnLogicWithAnimation()
     if (currentMinionMovements > 0)
         return;
 
-    if(TurnMovementIndex >= MAX_MOVEMENTS_PER_TURN)
+    bool checkForAvailableMovements = false;
+    for (auto minion : MapDb->GetMinions(CurrentMinionTeam))
+    {
+        if (!minion->AlreadyMoved && !minion->CurrentSquare->IsChallengeEnabled)
+            checkForAvailableMovements = true;
+    }
+
+    if(TurnMovementIndex >= MAX_MOVEMENTS_PER_TURN || !checkForAvailableMovements)
     {
         StartFadeTransition(RESTORE_TURN_TRANSITION_TIME);
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
