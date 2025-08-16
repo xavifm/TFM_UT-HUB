@@ -1,0 +1,30 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/cano.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/ramrod.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/ramrod_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/Cannon_Material.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/0/BL/QKJTKR1XQAZAX5YB8I66VE.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/3/B4/VH5VA013LW4F6LVLL008M8.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/D/CB/0W2ORH3BJJVEH9NJS8DPY9.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/C/89/IHAXUVZAGSJ3XKV6869ZZ4.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/AirCannon.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Vefects/Candle_VFX/VFX/Candle_Smoke/Particles/NS_Candle_Smoke_Beam_01.uasset",
+				"D:/Epic Games/UE_5.6/Engine/Plugins/FX/Niagara/Content/DefaultAssets/Templates/Systems/SimpleExplosion.uasset",
+				"D:/Epic Games/UE_5.6/Engine/Plugins/Runtime/HairStrands/Content/Emitters/SimpleRodsSystem.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Vefects/Cannon_VFX/CannonParticleSystem.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/TrailMaterial.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/SmokeStickerParticle.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/Minigames/Minigame0/SmokeStickerParticle_Mat.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/F/0C/FM63XPIEA8AMKGYCE1FSBD.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Vefects/Cannon_VFX/NewNiagaraSystem.uasset",
+				"C:/Users/joelr/OneDrive/Escriptori/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Vefects/Cannon_VFX/CannonVFX.uasset"
+			]
+		}
+	]
+}

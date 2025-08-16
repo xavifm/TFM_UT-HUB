@@ -61,6 +61,12 @@ public:
     UPROPERTY()
     int UpForce;
 
+    UPROPERTY(BlueprintReadWrite)
+    bool RamrodPressed;
+
+    UPROPERTY(BlueprintReadWrite)
+    bool IsCannonCharging;
+
     UFUNCTION(BlueprintCallable)
     void ResetProjectilePosition();
 
