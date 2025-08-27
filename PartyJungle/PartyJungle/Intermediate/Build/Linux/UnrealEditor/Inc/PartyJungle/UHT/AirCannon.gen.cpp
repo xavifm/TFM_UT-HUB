@@ -154,48 +154,6 @@ DEFINE_FUNCTION(AAirCannon::execResetProjectilePosition)
 }
 // ********** End Class AAirCannon Function ResetProjectilePosition ********************************
 
-// ********** Begin Class AAirCannon Function SetForceBarStrength **********************************
-struct AirCannon_eventSetForceBarStrength_Parms
-{
-	float _force;
-};
-static FName NAME_AAirCannon_SetForceBarStrength = FName(TEXT("SetForceBarStrength"));
-void AAirCannon::SetForceBarStrength(float _force)
-{
-	AirCannon_eventSetForceBarStrength_Parms Parms;
-	Parms._force=_force;
-	UFunction* Func = FindFunctionChecked(NAME_AAirCannon_SetForceBarStrength);
-	ProcessEvent(Func,&Parms);
-}
-struct Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FFloatPropertyParams NewProp__force;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::NewProp__force = { "_force", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AirCannon_eventSetForceBarStrength_Parms, _force), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::NewProp__force,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AAirCannon, nullptr, "SetForceBarStrength", Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::PropPointers), sizeof(AirCannon_eventSetForceBarStrength_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(AirCannon_eventSetForceBarStrength_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AAirCannon_SetForceBarStrength()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAirCannon_SetForceBarStrength_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-// ********** End Class AAirCannon Function SetForceBarStrength ************************************
-
 // ********** Begin Class AAirCannon Function SetTickleStrengthCannon ******************************
 struct AirCannon_eventSetTickleStrengthCannon_Parms
 {
@@ -441,7 +399,6 @@ struct Z_Construct_UClass_AAirCannon_Statics
 		{ &Z_Construct_UFunction_AAirCannon_FinishCannonCharge, "FinishCannonCharge" }, // 1615154248
 		{ &Z_Construct_UFunction_AAirCannon_IncrementUpForce, "IncrementUpForce" }, // 216994208
 		{ &Z_Construct_UFunction_AAirCannon_ResetProjectilePosition, "ResetProjectilePosition" }, // 3866305045
-		{ &Z_Construct_UFunction_AAirCannon_SetForceBarStrength, "SetForceBarStrength" }, // 3461201047
 		{ &Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon, "SetTickleStrengthCannon" }, // 2019407711
 		{ &Z_Construct_UFunction_AAirCannon_ShootCannon, "ShootCannon" }, // 1147673553
 		{ &Z_Construct_UFunction_AAirCannon_StartCannonCharge, "StartCannonCharge" }, // 1557634052
@@ -539,10 +496,10 @@ AAirCannon::~AAirCannon() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 3111960199U) },
+		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 1299358506U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_3266010939(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_807892476(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -74,9 +74,6 @@ public:
     void IncrementUpForce();
 
     UFUNCTION(BlueprintImplementableEvent)
-    void SetForceBarStrength(float _force);
-
-    UFUNCTION(BlueprintImplementableEvent)
     void SetTickleStrengthCannon(float _force);
 
     UFUNCTION()

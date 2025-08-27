@@ -49,7 +49,7 @@ public:
 	void SetMinionAnimation(EMinionState _animation);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
-	void SetMinionsMovements(int _movements, bool _continuation = false);
+	void SetMinionsMovements(int _movements, bool _continuation = false, bool _kickMinion = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Minion Actions")
 	int GetMinionsMovements();

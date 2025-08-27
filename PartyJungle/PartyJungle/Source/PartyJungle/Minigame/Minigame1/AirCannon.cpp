@@ -37,9 +37,7 @@ void AAirCannon::Tick(float DeltaTime)
     Super::Tick(DeltaTime);
 
     float pushStrengh = CalculateCurrentPushStrength();
-    SetForceBarStrength(pushStrengh);
     SetTickleStrengthCannon(pushStrengh);
-    SetForceBarStrength(pushStrengh);
 
     if (!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
     {
