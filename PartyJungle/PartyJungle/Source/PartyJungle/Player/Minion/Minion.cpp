@@ -8,7 +8,7 @@ AMinion::AMinion()
 
 }
 
-void AMinion::SetMinionsMovements(int _movements, bool _continuation)
+void AMinion::SetMinionsMovements(int _movements, bool _continuation, bool _kickMinion)
 {
 	Movements = _movements;
 	if (_movements <= 0)
@@ -23,7 +23,11 @@ void AMinion::SetMinionsMovements(int _movements, bool _continuation)
 		if(IsValid(CurrentSquare))
 			CurrentSquare->RemoveMinion(this);
 
-		CurrentSquare = GetNextSquare();
+		if (_kickMinion)
+			CurrentSquare = CurrentSquare->GetNextNode();
+		else
+			CurrentSquare = GetNextSquare();
+			
 		if(CurrentSquare)
 			UE_LOG(LogTemp, Warning, TEXT("CurrentSquare: %s"), *CurrentSquare->GetName());
 	}

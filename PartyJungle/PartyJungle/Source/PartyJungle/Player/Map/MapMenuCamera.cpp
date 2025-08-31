@@ -328,7 +328,7 @@ void AMapMenuCamera::KickYourTeamDiscardableMinions()
     {
         if (minion != CurrentMinion)
         {
-            minion->SetMinionsMovements(1);
+            minion->SetMinionsMovements(1, false, true);
             CurrentMinion->CurrentSquare->DisposableMinionsList[CurrentMinionTeam].Remove(minion);
         }
     }
@@ -390,7 +390,7 @@ void AMapMenuCamera::ConfirmMinionToDuel()
     {
         if (teamMinions[SelectedMinionChallengeIndex] != minion)
         {
-            minion->SetMinionsMovements(1);
+            minion->SetMinionsMovements(1, false, true);
             CurrentMinion->CurrentSquare->DisposableMinionsList[MinionTeamChallengeIndex].Remove(minion);
         }
     }

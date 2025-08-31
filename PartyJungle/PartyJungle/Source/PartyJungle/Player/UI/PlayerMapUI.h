@@ -80,9 +80,6 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void SwitchMinigame1UIVisibility(bool IsVisible);
-
-    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
-    void UpdateM1SliderBarValues(int _index, float _value);
     
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void SwitchMinionDuelSelectionMenu(bool IsVisible);

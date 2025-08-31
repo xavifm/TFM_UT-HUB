@@ -1130,54 +1130,6 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo()
 }
 // ********** End Class UPlayerMapUI Function UpdateDuelScreenInfo *********************************
 
-// ********** Begin Class UPlayerMapUI Function UpdateM1SliderBarValues ****************************
-struct PlayerMapUI_eventUpdateM1SliderBarValues_Parms
-{
-	int32 _index;
-	float _value;
-};
-static FName NAME_UPlayerMapUI_UpdateM1SliderBarValues = FName(TEXT("UpdateM1SliderBarValues"));
-void UPlayerMapUI::UpdateM1SliderBarValues(int32 _index, float _value)
-{
-	PlayerMapUI_eventUpdateM1SliderBarValues_Parms Parms;
-	Parms._index=_index;
-	Parms._value=_value;
-	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_UpdateM1SliderBarValues);
-	ProcessEvent(Func,&Parms);
-}
-struct Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "UI" },
-		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp__index;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp__value;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::NewProp__index = { "_index", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateM1SliderBarValues_Parms, _index), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::NewProp__value = { "_value", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventUpdateM1SliderBarValues_Parms, _value), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::NewProp__index,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::NewProp__value,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "UpdateM1SliderBarValues", Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::PropPointers), sizeof(PlayerMapUI_eventUpdateM1SliderBarValues_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(PlayerMapUI_eventUpdateM1SliderBarValues_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-// ********** End Class UPlayerMapUI Function UpdateM1SliderBarValues ******************************
-
 // ********** Begin Class UPlayerMapUI Function UpdateUIScore **************************************
 struct PlayerMapUI_eventUpdateUIScore_Parms
 {
@@ -1305,7 +1257,6 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2055757430
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns, "UpdateCrowns" }, // 865943901
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 3117213477
-		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateM1SliderBarValues, "UpdateM1SliderBarValues" }, // 796245876
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateUIScore, "UpdateUIScore" }, // 274681922
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -1358,10 +1309,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 2367674114U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 4042701755U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_1241601559(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_2404072794(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
