@@ -17,7 +17,7 @@ void AMapMenuCamera::BeginPlay()
 	Super::BeginPlay();
 
     SwitchMenuWidget(true);
-    SwitchToFullMapView(false);
+    SwitchToFullMapView(false, CurrentMinion->GetActorLocation());
     UpdateDicePosition();
     Dice->ShowDice();
 
@@ -72,6 +72,12 @@ void AMapMenuCamera::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
+    if (FullMapView)
+    {
+        MoveFullMapCamera(FullMapCameraVelocity.X, FullMapCameraVelocity.Y);
+        FullMapCameraVelocity = FVector2D(0,0);
+    }
+
     if (CurrentMinion)
     {
         FVector CameraLocation = GetActorLocation();
@@ -118,8 +124,32 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(KeybAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleBackInput);
         EnhancedInput->BindAction(KeywiAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleYInput);
         EnhancedInput->BindAction(KeyEscAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleEscInput);
+        EnhancedInput->BindAction(LeftJoystickActionX, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputX);
+        EnhancedInput->BindAction(LeftJoystickActionY, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputY);
         EnhancedInput->bBlockInput = false;
     }
+}
+
+void AMapMenuCamera::HandleLeftJoystickInputX(const FInputActionValue& _value)
+{
+    float stickInputX = _value.Get<float>();
+
+    if (stickInputX < 0.3f && stickInputX > -0.3f)
+        return;
+    
+    if (FullMapView)
+        FullMapCameraVelocity = FVector2D(stickInputX, FullMapCameraVelocity.Y);
+}
+
+void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
+{
+    float stickInputY = _value.Get<float>();
+    
+    if (stickInputY < 0.3f && stickInputY > -0.3f)
+        return;
+    
+    if (FullMapView)
+        FullMapCameraVelocity = FVector2D(FullMapCameraVelocity.X, stickInputY);
 }
 
 void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
@@ -293,9 +323,9 @@ void AMapMenuCamera::SwitchFullMapVision()
 
     if(MapUI)
         MapUI->SwitchLegendVisibility(!FullMapView);
-
+    
     SwitchMenuWidget(!FullMapView);
-    SwitchToFullMapView(FullMapView);
+    SwitchToFullMapView(FullMapView, CurrentMinion->GetActorLocation());
 }
 
 void AMapMenuCamera::StopMinionForDuel()

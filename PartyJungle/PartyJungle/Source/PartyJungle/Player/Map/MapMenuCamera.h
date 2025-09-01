@@ -49,6 +49,12 @@ public:
 	UInputAction* KeyEscAction;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* LeftJoystickActionX;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* LeftJoystickActionY;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Parameters")
@@ -91,6 +97,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void HandleLeftJoystickInputX(const FInputActionValue& _value);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void HandleLeftJoystickInputY(const FInputActionValue& _value);
+	
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleLeftRightInput(const FInputActionValue& _value);
 
@@ -161,7 +173,10 @@ public:
 	void SwitchMenuWidget(bool _enabled);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
-	void SwitchToFullMapView(bool _enabled);
+	void SwitchToFullMapView(bool _enabled, FVector _position);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void MoveFullMapCamera(float _xPos, float _yPos);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
@@ -262,6 +277,9 @@ private:
 
 	UPROPERTY()
 	int TurnMovementIndex;
+
+	UPROPERTY()
+	FVector2D FullMapCameraVelocity;
 	
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;

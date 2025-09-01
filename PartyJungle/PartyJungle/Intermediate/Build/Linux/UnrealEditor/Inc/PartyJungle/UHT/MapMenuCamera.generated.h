@@ -64,6 +64,8 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execCloseDuelMenu); \
 	DECLARE_FUNCTION(execHandleConfirmInput); \
 	DECLARE_FUNCTION(execHandleLeftRightInput); \
+	DECLARE_FUNCTION(execHandleLeftJoystickInputY); \
+	DECLARE_FUNCTION(execHandleLeftJoystickInputX); \
 	DECLARE_FUNCTION(execSetupPlayerInputComponent); \
 	DECLARE_FUNCTION(execSwitchController); \
 	DECLARE_FUNCTION(execSwitchMainScene);
