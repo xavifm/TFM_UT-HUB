@@ -156,6 +156,12 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (InventoryEnabled)
+    {
+        Inventory->SwitchSelectedInventoryItem(direction);
+        return;
+    }
+
     if (SelectingMinion)
     {
         SwitchMinionToSelectForDuel(MinionTeamChallengeIndex, direction);
@@ -187,6 +193,12 @@ void AMapMenuCamera::HandleConfirmInput()
 {
     if (IsMinigameActive || FullMapView)
         return;
+
+    if (InventoryEnabled)
+    {
+        //minion use item
+        return;
+    }
 
     if (SelectingMinion)
     {
@@ -548,6 +560,8 @@ void AMapMenuCamera::HandleBackInput()
         CloseChallengeMenu();
 		return;
 	}
+    
+    SwitchInventory();
 }
 
 void AMapMenuCamera::FinishDuelTransition()
@@ -579,8 +593,11 @@ void AMapMenuCamera::SwitchInventory()
 
     if (InventoryEnabled)
     {
-        
+        Inventory->SetInventoryPosition(CurrentMinion);
+        Inventory->InitializeInventory(CurrentMinionTeam);
     }
+    
+    Inventory->SwitchInventoryVisibility(InventoryEnabled);
 }
 
 void AMapMenuCamera::OpenChallengeMenu() 

@@ -181,6 +181,48 @@ DEFINE_FUNCTION(AInventory::execGetSortedInventory)
 }
 // ********** End Class AInventory Function GetSortedInventory *************************************
 
+// ********** Begin Class AInventory Function SetInventoryPosition *********************************
+struct Inventory_eventSetInventoryPosition_Parms
+{
+	AMinion* _minion;
+};
+static FName NAME_AInventory_SetInventoryPosition = FName(TEXT("SetInventoryPosition"));
+void AInventory::SetInventoryPosition(AMinion* _minion)
+{
+	Inventory_eventSetInventoryPosition_Parms Parms;
+	Parms._minion=_minion;
+	UFunction* Func = FindFunctionChecked(NAME_AInventory_SetInventoryPosition);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp__minion;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::NewProp__minion = { "_minion", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventSetInventoryPosition_Parms, _minion), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::NewProp__minion,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AInventory, nullptr, "SetInventoryPosition", Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::PropPointers), sizeof(Inventory_eventSetInventoryPosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Inventory_eventSetInventoryPosition_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AInventory_SetInventoryPosition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AInventory_SetInventoryPosition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AInventory Function SetInventoryPosition ***********************************
+
 // ********** Begin Class AInventory Function SetItemToSlot ****************************************
 struct Inventory_eventSetItemToSlot_Parms
 {
@@ -269,6 +311,53 @@ UFunction* Z_Construct_UFunction_AInventory_SetSelectedItemFeedback()
 	return ReturnFunction;
 }
 // ********** End Class AInventory Function SetSelectedItemFeedback ********************************
+
+// ********** Begin Class AInventory Function SwitchInventoryVisibility ****************************
+struct Inventory_eventSwitchInventoryVisibility_Parms
+{
+	bool _visible;
+};
+static FName NAME_AInventory_SwitchInventoryVisibility = FName(TEXT("SwitchInventoryVisibility"));
+void AInventory::SwitchInventoryVisibility(bool _visible)
+{
+	Inventory_eventSwitchInventoryVisibility_Parms Parms;
+	Parms._visible=_visible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_AInventory_SwitchInventoryVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::NewProp__visible_SetBit(void* Obj)
+{
+	((Inventory_eventSwitchInventoryVisibility_Parms*)Obj)->_visible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::NewProp__visible = { "_visible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Inventory_eventSwitchInventoryVisibility_Parms), &Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::NewProp__visible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::NewProp__visible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AInventory, nullptr, "SwitchInventoryVisibility", Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::PropPointers), sizeof(Inventory_eventSwitchInventoryVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Inventory_eventSwitchInventoryVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AInventory_SwitchInventoryVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AInventory_SwitchInventoryVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AInventory Function SwitchInventoryVisibility ******************************
 
 // ********** Begin Class AInventory Function UseItem **********************************************
 struct Z_Construct_UFunction_AInventory_UseItem_Statics
@@ -411,11 +500,16 @@ struct Z_Construct_UClass_AInventory_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InventoryIndex_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EmptyItem_MetaData[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SortedInventory_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_InventoryIndex;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_EmptyItem;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SortedInventory_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SortedInventory;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -424,8 +518,10 @@ struct Z_Construct_UClass_AInventory_Statics
 		{ &Z_Construct_UFunction_AInventory_CheckIfItemExists, "CheckIfItemExists" }, // 3392324037
 		{ &Z_Construct_UFunction_AInventory_CheckIfThereIsSpaceToStoreItem, "CheckIfThereIsSpaceToStoreItem" }, // 2191674630
 		{ &Z_Construct_UFunction_AInventory_GetSortedInventory, "GetSortedInventory" }, // 4139357963
+		{ &Z_Construct_UFunction_AInventory_SetInventoryPosition, "SetInventoryPosition" }, // 736717753
 		{ &Z_Construct_UFunction_AInventory_SetItemToSlot, "SetItemToSlot" }, // 257365936
 		{ &Z_Construct_UFunction_AInventory_SetSelectedItemFeedback, "SetSelectedItemFeedback" }, // 2181890398
+		{ &Z_Construct_UFunction_AInventory_SwitchInventoryVisibility, "SwitchInventoryVisibility" }, // 1937366380
 		{ &Z_Construct_UFunction_AInventory_UseItem, "UseItem" }, // 1955862155
 		{ &Z_Construct_UFunction_AInventory_UseItemFromUI, "UseItemFromUI" }, // 4261355869
 	};
@@ -436,10 +532,12 @@ struct Z_Construct_UClass_AInventory_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_InventoryIndex = { "InventoryIndex", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, InventoryIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InventoryIndex_MetaData), NewProp_InventoryIndex_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_EmptyItem = { "EmptyItem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, EmptyItem), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EmptyItem_MetaData), NewProp_EmptyItem_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory_Inner = { "SortedInventory", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory = { "SortedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, SortedInventory), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SortedInventory_MetaData), NewProp_SortedInventory_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInventory_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_InventoryIndex,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_EmptyItem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory,
 };
@@ -480,10 +578,10 @@ AInventory::~AInventory() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 3389608831U) },
+		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 3883052073U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_715798297(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_737234780(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -8,6 +8,13 @@ AInventory::AInventory()
 
 void AInventory::InitializeInventory(int _team)
 {
+	TArray<AItem*>& InventoryArray = Inventories.FindOrAdd(_team);
+	
+	if (InventoryArray.Num() == 0)
+	{
+		InventoryArray.Init(EmptyItem, 2);
+	}
+	
 	SortedInventory = GetSortedInventory(_team);
 	InventoryIndex = 0;
 	int loopIndex = 0;
@@ -24,6 +31,7 @@ void AInventory::InitializeInventory(int _team)
 void AInventory::SwitchSelectedInventoryItem(int _direction)
 {
 	InventoryIndex += _direction;
+	InventoryIndex = FMath::Clamp(InventoryIndex, 0, Inventories[0].Num() - 1);
 	SetSelectedItemFeedback(InventoryIndex);
 }
 
@@ -64,7 +72,6 @@ bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)
 
 	return query;
 }
-
 
 void AInventory::RemoveItem(int _team, AItem* _item)
 {

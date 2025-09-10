@@ -17,6 +17,9 @@ public:
 	UPROPERTY()
 	int InventoryIndex;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AItem* EmptyItem;
+	
 	UPROPERTY()
 	TArray<AItem*> SortedInventory;
 	
@@ -42,6 +45,12 @@ public:
 	
 	UFUNCTION()
 	bool CheckIfItemExists(int _team, AItem* _item);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SwitchInventoryVisibility(bool _visible);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetInventoryPosition(AMinion* _minion);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetItemToSlot(int _slot, AItem* _item);
