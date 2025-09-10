@@ -1,10 +1,17 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
+
+class AMinion;
+
+UENUM(BlueprintType)
+enum class EItemType : uint8
+{
+	DICE UMETA(DisplayName = "Dice"),
+	MISC UMETA(DisplayName = "Miscellaneous")
+};
 
 UCLASS()
 class PARTYJUNGLE_API AItem : public AActor
@@ -12,15 +19,30 @@ class PARTYJUNGLE_API AItem : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
-	AItem();
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	EItemType ItemType;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UStaticMesh* ItemModel;
+
+	AItem();
+	
+	virtual void Tick(float DeltaTime) override;
+	
+	UFUNCTION()
+	virtual void ExecuteItem(AMinion* _minion);
+
+	UFUNCTION()
+	FString GetName();
+
+	UFUNCTION()
+	FString GetDescription();
+	
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+private:
+	FString ItemName;
+	FString ItemDescription;
 
 };

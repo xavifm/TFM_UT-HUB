@@ -3187,6 +3187,10 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/PlayerMapUI.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Rounds/RoundsManager.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/RoundsManager.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Inventory/Inventory.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/Base/Item.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Inventory.generated.h \
   Runtime/Engine/Classes/Camera/CameraComponent.h \
   Runtime/CoreUObject/Public/UObject/ScriptInterface.h \
   Runtime/Engine/Classes/Components/StaticMeshComponent.h \

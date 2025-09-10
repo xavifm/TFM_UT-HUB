@@ -11,6 +11,7 @@
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
 #include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "PartyJungle/Rounds/RoundsManager.h"
+#include "PartyJungle/Player/Inventory/Inventory.h"
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/World/WorldManager.h>
 
@@ -77,6 +78,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
 	ADice* Dice;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Inventory System")
+	AInventory* Inventory;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rounds System")
 	ARoundsManager* RoundsSystem;
@@ -147,6 +151,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void CloseChallengeMenu(bool _duel = false);
+	void SwitchInventory();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void OpenChallengeMenu();
@@ -267,6 +272,7 @@ private:
 	bool LoadingMap = false;
 	bool FullMapView = false;
 	bool SelectingMinion = false;
+	bool InventoryEnabled = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

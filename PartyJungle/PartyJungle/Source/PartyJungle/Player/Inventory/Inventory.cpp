@@ -1,27 +1,113 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "./Inventory.h"
 
-// Sets default values
 AInventory::AInventory()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
-// Called when the game starts or when spawned
-void AInventory::BeginPlay()
+void AInventory::InitializeInventory(int _team)
 {
-	Super::BeginPlay();
+	SortedInventory = GetSortedInventory(_team);
+	InventoryIndex = 0;
+	int loopIndex = 0;
 	
+	for (auto Item : SortedInventory)
+	{
+		SetItemToSlot(loopIndex, Item);
+		loopIndex++;
+	}
+
+	SwitchSelectedInventoryItem(0);
 }
 
-// Called every frame
-void AInventory::Tick(float DeltaTime)
+void AInventory::SwitchSelectedInventoryItem(int _direction)
 {
-	Super::Tick(DeltaTime);
-
+	InventoryIndex += _direction;
+	SetSelectedItemFeedback(InventoryIndex);
 }
 
+void AInventory::UseItem(AItem* _item, AMinion* _minion)
+{
+	bool itemExistsQuery = CheckIfItemExists(static_cast<int>(_minion->Team), _item);
+
+	if (itemExistsQuery)
+	{
+		_item->ExecuteItem(_minion);
+		RemoveItem(static_cast<int>(_minion->Team), _item);
+	}
+}
+
+void AInventory::UseItemFromUI(AMinion* _minion)
+{
+	int minionTeam = static_cast<int>(_minion->Team);
+	AItem* itemQuery = Inventories[minionTeam][InventoryIndex];
+
+	if (IsValid(itemQuery))
+	{
+		itemQuery->ExecuteItem(_minion);
+		RemoveItem(static_cast<int>(_minion->Team), itemQuery);
+	}
+}
+
+bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)
+{
+	bool query = true;
+	
+	if (!_item) query = false;
+
+	for (auto Element : Inventories[_team])
+	{
+		if (Element != nullptr && _item->ItemType == Element->ItemType)
+			query = false;
+	}
+
+	return query;
+}
+
+
+void AInventory::RemoveItem(int _team, AItem* _item)
+{
+	if (!_item) return;
+
+	for (auto Item : Inventories[_team])
+	{
+		if (Item == _item)
+		{
+			if (IsValid(Item))
+				Item = nullptr;
+			break;
+		}
+	}
+}
+
+bool AInventory::CheckIfItemExists(int _team, AItem* _item)
+{
+	if (!_item) return false;
+
+	if (const TArray<AItem*>* Inv = Inventories.Find(_team))
+	{
+		return Inv->Contains(_item);
+	}
+
+	return false;
+}
+
+TArray<AItem*> AInventory::GetSortedInventory(int _team)
+{
+	TArray<AItem*> SortedInventoryAux = TArray<AItem*>();
+	SortedInventoryAux.SetNumZeroed(2);
+	
+	for (auto Element : Inventories[_team])
+	{
+		switch (Element->ItemType)
+		{
+		case EItemType::DICE:
+			SortedInventoryAux[0] = Element;
+		case EItemType::MISC:
+			SortedInventoryAux[1] = Element;
+		}
+	}
+
+	return SortedInventoryAux;
+}

@@ -16,7 +16,19 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class AItem;
+class AMinion;
+
 // ********** Begin Class AInventory ***************************************************************
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execCheckIfItemExists); \
+	DECLARE_FUNCTION(execGetSortedInventory); \
+	DECLARE_FUNCTION(execCheckIfThereIsSpaceToStoreItem); \
+	DECLARE_FUNCTION(execUseItemFromUI); \
+	DECLARE_FUNCTION(execUseItem);
+
+
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AInventory_NoRegister();
 
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_INCLASS_NO_PURE_DECLS \
@@ -44,6 +56,8 @@ public: \
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_CALLBACK_WRAPPERS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_ENHANCED_CONSTRUCTORS \
 private: \

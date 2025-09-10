@@ -573,6 +573,16 @@ void AMapMenuCamera::CloseChallengeMenu(bool _duel)
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
 }
 
+void AMapMenuCamera::SwitchInventory()
+{
+    InventoryEnabled = !InventoryEnabled;
+
+    if (InventoryEnabled)
+    {
+        
+    }
+}
+
 void AMapMenuCamera::OpenChallengeMenu() 
 {
     SwitchChallengeUI(true);

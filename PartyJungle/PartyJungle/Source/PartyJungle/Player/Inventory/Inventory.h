@@ -1,9 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "PartyJungle/Player/Items/Base/Item.h"
+#include "PartyJungle/Player/Minion/Minion.h"
 #include "Inventory.generated.h"
 
 UCLASS()
@@ -12,15 +12,40 @@ class PARTYJUNGLE_API AInventory : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AInventory();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY()
+	int InventoryIndex;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY()
+	TArray<AItem*> SortedInventory;
+	
+	TMap<int, TArray<AItem*>> Inventories;
+	
+	void InitializeInventory(int _team);
+	
+	void SwitchSelectedInventoryItem(int _direction);
 
+	UFUNCTION()
+	void UseItem(AItem* _item, AMinion* _minion);
+	
+	UFUNCTION()
+	void UseItemFromUI(AMinion* _minion);
+
+	UFUNCTION()
+	bool CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item);
+	
+	void RemoveItem(int _team, AItem* _item);
+
+	UFUNCTION()
+	TArray<AItem*> GetSortedInventory(int _team);
+	
+	UFUNCTION()
+	bool CheckIfItemExists(int _team, AItem* _item);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetItemToSlot(int _slot, AItem* _item);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetSelectedItemFeedback(int _slot);
 };
