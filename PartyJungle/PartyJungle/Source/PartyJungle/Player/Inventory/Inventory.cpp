@@ -12,7 +12,8 @@ void AInventory::InitializeInventory(int _team)
 	
 	if (InventoryArray.Num() == 0)
 	{
-		InventoryArray.Init(EmptyItem, 2);
+		InventoryArray.Init(EmptyItemDice, 2);
+		InventoryArray[1] = EmptyItemMisc;
 	}
 	
 	SortedInventory = GetSortedInventory(_team);
@@ -77,12 +78,25 @@ void AInventory::RemoveItem(int _team, AItem* _item)
 {
 	if (!_item) return;
 
-	for (auto Item : Inventories[_team])
+	for (AItem*& Item : Inventories[_team])
 	{
 		if (Item == _item)
 		{
 			if (IsValid(Item))
-				Item = nullptr;
+			{
+				EItemType itemType = Item->ItemType;
+				Item->Destroy();
+				
+				switch (itemType)
+				{
+				case EItemType::DICE:
+					Item = EmptyItemDice;
+					break;
+				case EItemType::MISC:
+					Item = EmptyItemMisc;
+					break;
+				}
+			}
 			break;
 		}
 	}

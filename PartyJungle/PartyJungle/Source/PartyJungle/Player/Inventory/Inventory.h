@@ -18,7 +18,10 @@ public:
 	int InventoryIndex;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	AItem* EmptyItem;
+	AItem* EmptyItemDice;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AItem* EmptyItemMisc;
 	
 	UPROPERTY()
 	TArray<AItem*> SortedInventory;
