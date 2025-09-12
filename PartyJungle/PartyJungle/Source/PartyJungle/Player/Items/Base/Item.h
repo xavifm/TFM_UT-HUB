@@ -32,10 +32,10 @@ public:
 	UFUNCTION()
 	virtual void ExecuteItem(AMinion* _minion);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	FString GetName();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	FString GetDescription();
 	
 protected:

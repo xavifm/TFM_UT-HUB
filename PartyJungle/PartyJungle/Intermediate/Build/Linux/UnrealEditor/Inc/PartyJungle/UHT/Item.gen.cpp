@@ -138,7 +138,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AItem_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AItem_GetDescription_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetDescription_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AItem_GetDescription_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AItem, nullptr, "GetDescription", Z_Construct_UFunction_AItem_GetDescription_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetDescription_Statics::PropPointers), sizeof(Z_Construct_UFunction_AItem_GetDescription_Statics::Item_eventGetDescription_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetDescription_Statics::Function_MetaDataParams), Z_Construct_UFunction_AItem_GetDescription_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AItem_GetDescription_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AItem, nullptr, "GetDescription", Z_Construct_UFunction_AItem_GetDescription_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetDescription_Statics::PropPointers), sizeof(Z_Construct_UFunction_AItem_GetDescription_Statics::Item_eventGetDescription_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetDescription_Statics::Function_MetaDataParams), Z_Construct_UFunction_AItem_GetDescription_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_AItem_GetDescription_Statics::Item_eventGetDescription_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AItem_GetDescription()
 {
@@ -179,7 +179,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AItem_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AItem_GetName_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetName_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AItem_GetName_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AItem, nullptr, "GetName", Z_Construct_UFunction_AItem_GetName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetName_Statics::PropPointers), sizeof(Z_Construct_UFunction_AItem_GetName_Statics::Item_eventGetName_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetName_Statics::Function_MetaDataParams), Z_Construct_UFunction_AItem_GetName_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AItem_GetName_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AItem, nullptr, "GetName", Z_Construct_UFunction_AItem_GetName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetName_Statics::PropPointers), sizeof(Z_Construct_UFunction_AItem_GetName_Statics::Item_eventGetName_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AItem_GetName_Statics::Function_MetaDataParams), Z_Construct_UFunction_AItem_GetName_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_AItem_GetName_Statics::Item_eventGetName_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AItem_GetName()
 {
@@ -262,8 +262,8 @@ struct Z_Construct_UClass_AItem_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AItem_ExecuteItem, "ExecuteItem" }, // 2575655808
-		{ &Z_Construct_UFunction_AItem_GetDescription, "GetDescription" }, // 3208979843
-		{ &Z_Construct_UFunction_AItem_GetName, "GetName" }, // 1102086120
+		{ &Z_Construct_UFunction_AItem_GetDescription, "GetDescription" }, // 2040314103
+		{ &Z_Construct_UFunction_AItem_GetName, "GetName" }, // 1860448088
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -319,10 +319,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ EItemType_StaticEnum, TEXT("EItemType"), &Z_Registration_Info_UEnum_EItemType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 727665334U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 3368745213U) },
+		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 1179839003U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_3640985069(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_3327508852(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::EnumInfo));
