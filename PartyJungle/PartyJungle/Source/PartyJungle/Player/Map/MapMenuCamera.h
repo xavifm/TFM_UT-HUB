@@ -273,6 +273,7 @@ private:
 	bool FullMapView = false;
 	bool SelectingMinion = false;
 	bool InventoryEnabled = false;
+	bool SelectMinionToUseItem = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;
