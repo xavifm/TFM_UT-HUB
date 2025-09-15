@@ -359,6 +359,53 @@ UFunction* Z_Construct_UFunction_AInventory_SwitchInventoryVisibility()
 }
 // ********** End Class AInventory Function SwitchInventoryVisibility ******************************
 
+// ********** Begin Class AInventory Function SwitchSelectedItemVisibility *************************
+struct Inventory_eventSwitchSelectedItemVisibility_Parms
+{
+	bool _visible;
+};
+static FName NAME_AInventory_SwitchSelectedItemVisibility = FName(TEXT("SwitchSelectedItemVisibility"));
+void AInventory::SwitchSelectedItemVisibility(bool _visible)
+{
+	Inventory_eventSwitchSelectedItemVisibility_Parms Parms;
+	Parms._visible=_visible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_AInventory_SwitchSelectedItemVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::NewProp__visible_SetBit(void* Obj)
+{
+	((Inventory_eventSwitchSelectedItemVisibility_Parms*)Obj)->_visible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::NewProp__visible = { "_visible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Inventory_eventSwitchSelectedItemVisibility_Parms), &Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::NewProp__visible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::NewProp__visible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AInventory, nullptr, "SwitchSelectedItemVisibility", Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::PropPointers), sizeof(Inventory_eventSwitchSelectedItemVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Inventory_eventSwitchSelectedItemVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AInventory Function SwitchSelectedItemVisibility ***************************
+
 // ********** Begin Class AInventory Function UseItem **********************************************
 struct Z_Construct_UFunction_AInventory_UseItem_Statics
 {
@@ -527,6 +574,7 @@ struct Z_Construct_UClass_AInventory_Statics
 		{ &Z_Construct_UFunction_AInventory_SetItemToSlot, "SetItemToSlot" }, // 257365936
 		{ &Z_Construct_UFunction_AInventory_SetSelectedItemFeedback, "SetSelectedItemFeedback" }, // 2181890398
 		{ &Z_Construct_UFunction_AInventory_SwitchInventoryVisibility, "SwitchInventoryVisibility" }, // 1937366380
+		{ &Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility, "SwitchSelectedItemVisibility" }, // 1079413649
 		{ &Z_Construct_UFunction_AInventory_UseItem, "UseItem" }, // 1955862155
 		{ &Z_Construct_UFunction_AInventory_UseItemFromUI, "UseItemFromUI" }, // 4261355869
 	};
@@ -585,10 +633,10 @@ AInventory::~AInventory() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 2305139966U) },
+		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 1768960124U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_3022434635(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_3845520096(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

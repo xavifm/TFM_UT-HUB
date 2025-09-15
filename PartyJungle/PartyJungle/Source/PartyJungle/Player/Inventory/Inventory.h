@@ -60,4 +60,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetSelectedItemFeedback(int _slot);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void SwitchSelectedItemVisibility(bool _visible);
 };

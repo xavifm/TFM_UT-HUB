@@ -199,12 +199,14 @@ void AMapMenuCamera::HandleConfirmInput()
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
         SelectMinionToUseItem = true;
+        Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         return;
     }
 
     if (InventoryEnabled && SelectMinionToUseItem)
     {
         SelectMinionToUseItem = false;
+        Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         SwitchInventory();
         Inventory->UseItemFromUI(CurrentMinion);
         return;
@@ -574,10 +576,11 @@ void AMapMenuCamera::HandleBackInput()
     if (InventoryEnabled && SelectMinionToUseItem)
     {
         SelectMinionToUseItem = false;
+        Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         return;
     }
 
-    if (!FullMapView)
+    if (!FullMapView && !SelectingMinion && !SelectingPath && !StartTurnUI && !ChooseMinionToMove && InputEnabled)
     {
         SwitchInventory();
         return;
@@ -611,8 +614,11 @@ void AMapMenuCamera::SwitchInventory()
 {
     InventoryEnabled = !InventoryEnabled;
 
+    Dice->ShowDice();
+
     if (InventoryEnabled)
     {
+        Dice->HideDice();
         Inventory->SetInventoryPosition(CurrentMinion);
         Inventory->InitializeInventory(CurrentMinionTeam);
     }
