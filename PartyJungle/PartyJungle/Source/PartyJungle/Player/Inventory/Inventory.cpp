@@ -74,6 +74,11 @@ bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)
 	return query;
 }
 
+bool AInventory::CheckIfIsEmptySpace(int _team)
+{
+	return (Inventories[_team][InventoryIndex] == EmptyItemDice || Inventories[_team][InventoryIndex] == EmptyItemMisc);
+}
+
 void AInventory::RemoveItem(int _team, AItem* _item)
 {
 	if (!_item) return;

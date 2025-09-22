@@ -23,6 +23,7 @@ class AMinion;
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execCheckIfItemExists); \
 	DECLARE_FUNCTION(execGetSortedInventory); \
+	DECLARE_FUNCTION(execCheckIfIsEmptySpace); \
 	DECLARE_FUNCTION(execCheckIfThereIsSpaceToStoreItem); \
 	DECLARE_FUNCTION(execUseItemFromUI); \
 	DECLARE_FUNCTION(execUseItem);

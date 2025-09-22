@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodePartyJungle_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x59F7C2E0,
+				0xD803EB20,
 				0x29760708,
 				METADATA_PARAMS(0, nullptr)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodePartyJungle_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_PartyJungle.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_PartyJungle(Z_Construct_UPackage__Script_PartyJungle, TEXT("/Script/PartyJungle"), Z_Registration_Info_UPackage__Script_PartyJungle, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x59F7C2E0, 0x29760708));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_PartyJungle(Z_Construct_UPackage__Script_PartyJungle, TEXT("/Script/PartyJungle"), Z_Registration_Info_UPackage__Script_PartyJungle, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xD803EB20, 0x29760708));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

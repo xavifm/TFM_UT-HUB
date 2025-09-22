@@ -40,6 +40,9 @@ public:
 
 	UFUNCTION()
 	bool CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item);
+
+	UFUNCTION()
+	bool CheckIfIsEmptySpace(int _team);
 	
 	void RemoveItem(int _team, AItem* _item);
 

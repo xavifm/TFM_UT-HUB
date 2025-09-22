@@ -198,6 +198,9 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
+        if (Inventory->CheckIfIsEmptySpace(CurrentMinionTeam))
+            return;
+        
         SelectMinionToUseItem = true;
         Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         return;

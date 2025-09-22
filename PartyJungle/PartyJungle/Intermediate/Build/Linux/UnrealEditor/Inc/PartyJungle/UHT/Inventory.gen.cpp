@@ -20,6 +20,57 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class AInventory Function CheckIfIsEmptySpace **********************************
+struct Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics
+{
+	struct Inventory_eventCheckIfIsEmptySpace_Parms
+	{
+		int32 _team;
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventCheckIfIsEmptySpace_Parms, _team), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((Inventory_eventCheckIfIsEmptySpace_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Inventory_eventCheckIfIsEmptySpace_Parms), &Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp__team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AInventory, nullptr, "CheckIfIsEmptySpace", Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::PropPointers), sizeof(Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::Inventory_eventCheckIfIsEmptySpace_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::Function_MetaDataParams), Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::Inventory_eventCheckIfIsEmptySpace_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AInventory::execCheckIfIsEmptySpace)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__team);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->CheckIfIsEmptySpace(Z_Param__team);
+	P_NATIVE_END;
+}
+// ********** End Class AInventory Function CheckIfIsEmptySpace ************************************
+
 // ********** Begin Class AInventory Function CheckIfItemExists ************************************
 struct Z_Construct_UFunction_AInventory_CheckIfItemExists_Statics
 {
@@ -500,6 +551,7 @@ void AInventory::StaticRegisterNativesAInventory()
 {
 	UClass* Class = AInventory::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "CheckIfIsEmptySpace", &AInventory::execCheckIfIsEmptySpace },
 		{ "CheckIfItemExists", &AInventory::execCheckIfItemExists },
 		{ "CheckIfThereIsSpaceToStoreItem", &AInventory::execCheckIfThereIsSpaceToStoreItem },
 		{ "GetSortedInventory", &AInventory::execGetSortedInventory },
@@ -567,6 +619,7 @@ struct Z_Construct_UClass_AInventory_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AInventory_CheckIfIsEmptySpace, "CheckIfIsEmptySpace" }, // 196549424
 		{ &Z_Construct_UFunction_AInventory_CheckIfItemExists, "CheckIfItemExists" }, // 3392324037
 		{ &Z_Construct_UFunction_AInventory_CheckIfThereIsSpaceToStoreItem, "CheckIfThereIsSpaceToStoreItem" }, // 2191674630
 		{ &Z_Construct_UFunction_AInventory_GetSortedInventory, "GetSortedInventory" }, // 4139357963
@@ -633,10 +686,10 @@ AInventory::~AInventory() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 1768960124U) },
+		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 3276907607U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_3845520096(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_3624701616(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
