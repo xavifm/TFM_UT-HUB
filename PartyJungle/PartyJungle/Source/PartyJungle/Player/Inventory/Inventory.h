@@ -22,6 +22,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AItem* EmptyItemMisc;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AItem* DiceItem;
 	
 	UPROPERTY()
 	TArray<AItem*> SortedInventory;

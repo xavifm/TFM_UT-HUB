@@ -29,6 +29,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void Tick(float DeltaTime);
+	void SimpleRestoreTurn();
 
 public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
@@ -196,7 +197,7 @@ public:
 	void RollTheDice();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void ExecuteMinionMovement();
+	void ExecuteMinionMovement(bool _diceItem = false);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ChangeSelectedPath(int _direction);
@@ -218,6 +219,9 @@ public:
 
 	UPROPERTY()
 	int MAX_TEAM_NUMBER = 4;
+
+	UPROPERTY()
+	bool ItemExecuted = false;
 
 
 private:

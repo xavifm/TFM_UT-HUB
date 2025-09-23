@@ -103,14 +103,27 @@ void AMapMenuCamera::Tick(float DeltaTime)
                 if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup) 
                 {
                     UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
-                    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
-                    TimedActionExecuted = true;
+                    if (!ItemExecuted)
+                    {
+                        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
+                        TimedActionExecuted = true;
+                    }
+                    else
+                        SimpleRestoreTurn();
                 }
             }
         }
 
         UpdateDicePosition(false);
     }
+}
+
+void AMapMenuCamera::SimpleRestoreTurn()
+{
+    InputEnabled = true;
+    ItemExecuted = false;
+    RollingDice = false;
+    StartPlayerTurn();
 }
 
 void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -940,19 +953,23 @@ void AMapMenuCamera::RollTheDice()
     }
 }
 
-void AMapMenuCamera::ExecuteMinionMovement()
+void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)
 {
-    if(CurrentMinion->AlreadyMoved || CurrentMinion->CurrentSquare->IsChallengeEnabled)
+    if((!_diceItem && CurrentMinion->AlreadyMoved) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
         return;
 
     CurrentMinion->DiceReference = Dice;
-    CurrentMinion->AlreadyMoved = true;
+
+    if (!_diceItem)
+        CurrentMinion->AlreadyMoved = true;
+    
     CurrentMinion->SetMinionsMovements(Dice->DiceValue);
     RollingDice = false;
     ChooseMinionToMove = false;
     InputEnabled = false;
 
-    TurnMovementIndex++;
+    if (!_diceItem)
+        TurnMovementIndex++;
 }
 
 void AMapMenuCamera::ChangeSelectedPath(int _direction)

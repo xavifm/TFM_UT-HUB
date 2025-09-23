@@ -15,6 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeDiceItem() {}
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ADiceItem();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ADiceItem_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AItem();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
 
@@ -58,13 +59,24 @@ struct Z_Construct_UClass_ADiceItem_Statics
 		{ "IncludePath", "Player/Items/DiceItem.h" },
 		{ "ModuleRelativePath", "Player/Items/DiceItem.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapMenuCamera_MetaData[] = {
+		{ "Category", "DiceItem" },
+		{ "ModuleRelativePath", "Player/Items/DiceItem.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapMenuCamera;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ADiceItem>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADiceItem_Statics::NewProp_MapMenuCamera = { "MapMenuCamera", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADiceItem, MapMenuCamera), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapMenuCamera_MetaData), NewProp_MapMenuCamera_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADiceItem_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADiceItem_Statics::NewProp_MapMenuCamera,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADiceItem_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ADiceItem_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AItem,
 	(UObject* (*)())Z_Construct_UPackage__Script_PartyJungle,
@@ -76,11 +88,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_ADiceItem_Statics::Clas
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	nullptr,
+	Z_Construct_UClass_ADiceItem_Statics::PropPointers,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	0,
+	UE_ARRAY_COUNT(Z_Construct_UClass_ADiceItem_Statics::PropPointers),
 	0,
 	0x009001A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_ADiceItem_Statics::Class_MetaDataParams), Z_Construct_UClass_ADiceItem_Statics::Class_MetaDataParams)
@@ -102,10 +114,10 @@ ADiceItem::~ADiceItem() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_DiceItem_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADiceItem, ADiceItem::StaticClass, TEXT("ADiceItem"), &Z_Registration_Info_UClass_ADiceItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADiceItem), 788882828U) },
+		{ Z_Construct_UClass_ADiceItem, ADiceItem::StaticClass, TEXT("ADiceItem"), &Z_Registration_Info_UClass_ADiceItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADiceItem), 2186289638U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_DiceItem_h__Script_PartyJungle_1166019015(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_DiceItem_h__Script_PartyJungle_3159560247(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_DiceItem_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_DiceItem_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

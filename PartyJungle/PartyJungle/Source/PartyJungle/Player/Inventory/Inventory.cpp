@@ -13,6 +13,11 @@ void AInventory::InitializeInventory(int _team)
 	if (InventoryArray.Num() == 0)
 	{
 		InventoryArray.Init(EmptyItemDice, 2);
+		
+		//test every item
+			InventoryArray[0] = DiceItem;
+		//
+		
 		InventoryArray[1] = EmptyItemMisc;
 	}
 	
