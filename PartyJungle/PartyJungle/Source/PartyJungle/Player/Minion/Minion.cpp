@@ -34,7 +34,7 @@ void AMinion::SetMinionsMovements(int _movements, bool _continuation, bool _kick
 
 	if(CurrentSquare) 
 	{
-		if(CurrentSquare->IsChallengeEnabled)
+		if(CurrentSquare->IsChallengeEnabled || CurrentSquare->IsBlockedByWall)
 		{
 			if(CurrentSquare->CheckIfSquareIsBlocked(this))
 			{

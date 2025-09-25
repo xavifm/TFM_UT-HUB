@@ -21,6 +21,7 @@ class ASquare;
 
 // ********** Begin Class ASquare ******************************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSwitchBlockedSquareMode); \
 	DECLARE_FUNCTION(execResetSquare); \
 	DECLARE_FUNCTION(execGetNextSquare); \
 	DECLARE_FUNCTION(execRemoveMinion); \

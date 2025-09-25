@@ -283,7 +283,7 @@ void AMapMenuCamera::HandleConfirmInput()
         ConfirmPathSelection();
     else if(!ChooseMinionToMove)
         RollTheDice();
-    else
+    else if (!CurrentMinion->CurrentSquare->IsBlockedByWall)
         ExecuteMinionMovement();
 }
 
@@ -849,6 +849,9 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
         CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
 
+        //Reset Items
+        ResetMapItems();
+        
         MapUI->SwitchTurnUI(CurrentMinionTeam);
 
         FVector MinionLocation = CurrentMinion->GetActorLocation();
@@ -867,6 +870,16 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
     StartTurnUI = true;
     UpdateDicePosition();
+}
+
+void AMapMenuCamera::ResetMapItems()
+{
+    TArray<AMinion*> minions = MapDb->GetMinions(CurrentMinionTeam);
+
+    for (AMinion* minion : minions)
+    {
+        minion->CurrentSquare->ResetWallFromSquare(CurrentMinionTeam);
+    }
 }
 
 void AMapMenuCamera::FocusNextMinion(int _direction)
@@ -955,7 +968,8 @@ void AMapMenuCamera::RollTheDice()
 
 void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)
 {
-    if((!_diceItem && CurrentMinion->AlreadyMoved) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
+    if((
+        !_diceItem && CurrentMinion->AlreadyMoved) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
         return;
 
     CurrentMinion->DiceReference = Dice;

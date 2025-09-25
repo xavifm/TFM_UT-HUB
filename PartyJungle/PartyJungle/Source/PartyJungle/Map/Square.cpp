@@ -19,6 +19,9 @@ bool ASquare::CheckIfSquareIsBlocked(AMinion* _minion)
 {
 	bool blockedQuery = false;
 
+	if (IsBlockedByWall)
+		blockedQuery = true;
+
 	for (AMinion* otherMinion : MinionsList)
 	{
 		if (otherMinion && otherMinion != _minion && otherMinion->Team == _minion->Team)
@@ -121,6 +124,18 @@ bool ASquare::ExecuteEvent(AMinion* _minion)
 
 void ASquare::ResetSquare()
 {
+}
+
+void ASquare::SwitchBlockedSquareMode(int _team, bool _blocked)
+{
+	TeamBlockingSquare = _team;
+	IsBlockedByWall = _blocked;
+}
+
+void ASquare::ResetWallFromSquare(int _team)
+{
+	if (TeamBlockingSquare == _team && IsBlockedByWall)
+		IsBlockedByWall = false;
 }
 
 void ASquare::BeginPlay()

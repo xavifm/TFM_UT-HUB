@@ -905,6 +905,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execRefreshChallengeInfo)
 }
 // ********** End Class AMapMenuCamera Function RefreshChallengeInfo *******************************
 
+// ********** Begin Class AMapMenuCamera Function ResetMapItems ************************************
+struct Z_Construct_UFunction_AMapMenuCamera_ResetMapItems_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_ResetMapItems_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "ResetMapItems", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_ResetMapItems_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_ResetMapItems_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_ResetMapItems()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_ResetMapItems_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execResetMapItems)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ResetMapItems();
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function ResetMapItems **************************************
+
 // ********** Begin Class AMapMenuCamera Function RestoreTurnLogic *********************************
 struct Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic_Statics
 {
@@ -1995,6 +2025,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "HandleYInput", &AMapMenuCamera::execHandleYInput },
 		{ "OpenChallengeMenu", &AMapMenuCamera::execOpenChallengeMenu },
 		{ "RefreshChallengeInfo", &AMapMenuCamera::execRefreshChallengeInfo },
+		{ "ResetMapItems", &AMapMenuCamera::execResetMapItems },
 		{ "RestoreTurnLogic", &AMapMenuCamera::execRestoreTurnLogic },
 		{ "RestoreTurnLogicWithAnimation", &AMapMenuCamera::execRestoreTurnLogicWithAnimation },
 		{ "RollTheDice", &AMapMenuCamera::execRollTheDice },
@@ -2221,6 +2252,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_MoveFullMapCamera, "MoveFullMapCamera" }, // 1285154105
 		{ &Z_Construct_UFunction_AMapMenuCamera_OpenChallengeMenu, "OpenChallengeMenu" }, // 4024170478
 		{ &Z_Construct_UFunction_AMapMenuCamera_RefreshChallengeInfo, "RefreshChallengeInfo" }, // 2205320196
+		{ &Z_Construct_UFunction_AMapMenuCamera_ResetMapItems, "ResetMapItems" }, // 826258746
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic, "RestoreTurnLogic" }, // 881133045
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation, "RestoreTurnLogicWithAnimation" }, // 2447711470
 		{ &Z_Construct_UFunction_AMapMenuCamera_RollTheDice, "RollTheDice" }, // 3235366422
@@ -2354,10 +2386,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 770571467U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1643303643U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_4221677811(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_777569031(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

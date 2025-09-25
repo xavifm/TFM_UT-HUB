@@ -13,12 +13,12 @@ void AInventory::InitializeInventory(int _team)
 	if (InventoryArray.Num() == 0)
 	{
 		InventoryArray.Init(EmptyItemDice, 2);
+		InventoryArray[1] = EmptyItemMisc;
 		
 		//test every item
 			InventoryArray[0] = DiceItem;
+			InventoryArray[1] = WallItem;
 		//
-		
-		InventoryArray[1] = EmptyItemMisc;
 	}
 	
 	SortedInventory = GetSortedInventory(_team);

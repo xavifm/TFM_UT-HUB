@@ -191,6 +191,9 @@ public:
 	void SwitchCameraTeam(int _direction);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void ResetMapItems();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FocusNextMinion(int _direction);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")

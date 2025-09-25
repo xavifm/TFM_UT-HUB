@@ -28,6 +28,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "SquareProperties")
 	bool IsChallengeEnabled;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "SquareProperties")
+	bool IsBlockedByWall;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	USceneComponent* Center;
 
@@ -68,12 +71,19 @@ public:
 	TMap<int, TArray<AMinion*>> GetDisposableMinions();
 	TMap<int, TArray<AMinion*>> DisposableMinionsList;
 
+	UFUNCTION()
+	void SwitchBlockedSquareMode(int _team, bool _blocked);
+	void ResetWallFromSquare(int _team);
+
 protected:
 	virtual void BeginPlay() override;
 	bool EventExecuted;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "SquareNodesProperties")
 	TArray<ASquare*> ConnectedNodes;
+
+	UPROPERTY()
+	int TeamBlockingSquare = -1;
 
 public:	
 	virtual void Tick(float DeltaTime) override;

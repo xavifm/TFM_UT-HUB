@@ -40,6 +40,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execExecuteMinionMovement); \
 	DECLARE_FUNCTION(execRollTheDice); \
 	DECLARE_FUNCTION(execFocusNextMinion); \
+	DECLARE_FUNCTION(execResetMapItems); \
 	DECLARE_FUNCTION(execSwitchCameraTeam); \
 	DECLARE_FUNCTION(execSwitchPathMenu); \
 	DECLARE_FUNCTION(execSwitchMenuWidget); \
