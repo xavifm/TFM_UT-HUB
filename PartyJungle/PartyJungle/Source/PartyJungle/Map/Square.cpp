@@ -130,6 +130,8 @@ void ASquare::SwitchBlockedSquareMode(int _team, bool _blocked)
 {
 	TeamBlockingSquare = _team;
 	IsBlockedByWall = _blocked;
+
+	SwitchBlockedSquareVisibility(_blocked);
 }
 
 void ASquare::ResetWallFromSquare(int _team)

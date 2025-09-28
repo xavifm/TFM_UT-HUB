@@ -73,6 +73,8 @@ public:
 
 	UFUNCTION()
 	void SwitchBlockedSquareMode(int _team, bool _blocked);
+	UFUNCTION(BlueprintImplementableEvent)
+	void SwitchBlockedSquareVisibility(bool _blocked);
 	void ResetWallFromSquare(int _team);
 
 protected:

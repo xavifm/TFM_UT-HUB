@@ -33,6 +33,7 @@ class ASquare;
 	DECLARE_FUNCTION(execGetNextNode);
 
 
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare_NoRegister();
 
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_INCLASS_NO_PURE_DECLS \
@@ -61,6 +62,7 @@ public: \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_CALLBACK_WRAPPERS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h_22_ENHANCED_CONSTRUCTORS \
 private: \

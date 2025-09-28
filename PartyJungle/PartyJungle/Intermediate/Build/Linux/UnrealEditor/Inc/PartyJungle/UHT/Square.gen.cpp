@@ -453,6 +453,53 @@ DEFINE_FUNCTION(ASquare::execSwitchBlockedSquareMode)
 }
 // ********** End Class ASquare Function SwitchBlockedSquareMode ***********************************
 
+// ********** Begin Class ASquare Function SwitchBlockedSquareVisibility ***************************
+struct Square_eventSwitchBlockedSquareVisibility_Parms
+{
+	bool _blocked;
+};
+static FName NAME_ASquare_SwitchBlockedSquareVisibility = FName(TEXT("SwitchBlockedSquareVisibility"));
+void ASquare::SwitchBlockedSquareVisibility(bool _blocked)
+{
+	Square_eventSwitchBlockedSquareVisibility_Parms Parms;
+	Parms._blocked=_blocked ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_ASquare_SwitchBlockedSquareVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Map/Square.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__blocked_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__blocked;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::NewProp__blocked_SetBit(void* Obj)
+{
+	((Square_eventSwitchBlockedSquareVisibility_Parms*)Obj)->_blocked = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::NewProp__blocked = { "_blocked", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Square_eventSwitchBlockedSquareVisibility_Parms), &Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::NewProp__blocked_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::NewProp__blocked,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ASquare, nullptr, "SwitchBlockedSquareVisibility", Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::PropPointers), sizeof(Square_eventSwitchBlockedSquareVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Square_eventSwitchBlockedSquareVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ASquare Function SwitchBlockedSquareVisibility *****************************
+
 // ********** Begin Class ASquare Function SwitchDuelSquare ****************************************
 struct Z_Construct_UFunction_ASquare_SwitchDuelSquare_Statics
 {
@@ -620,6 +667,7 @@ struct Z_Construct_UClass_ASquare_Statics
 		{ &Z_Construct_UFunction_ASquare_RemoveMinion, "RemoveMinion" }, // 2469270561
 		{ &Z_Construct_UFunction_ASquare_ResetSquare, "ResetSquare" }, // 579898918
 		{ &Z_Construct_UFunction_ASquare_SwitchBlockedSquareMode, "SwitchBlockedSquareMode" }, // 50426786
+		{ &Z_Construct_UFunction_ASquare_SwitchBlockedSquareVisibility, "SwitchBlockedSquareVisibility" }, // 4174460485
 		{ &Z_Construct_UFunction_ASquare_SwitchDuelSquare, "SwitchDuelSquare" }, // 928350239
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -698,10 +746,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ ESquareType_StaticEnum, TEXT("ESquareType"), &Z_Registration_Info_UEnum_ESquareType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2154578961U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2587947966U) },
+		{ Z_Construct_UClass_ASquare, ASquare::StaticClass, TEXT("ASquare"), &Z_Registration_Info_UClass_ASquare, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquare), 2338021921U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_3575406108(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_1750897803(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_Square_h__Script_PartyJungle_Statics::EnumInfo));
