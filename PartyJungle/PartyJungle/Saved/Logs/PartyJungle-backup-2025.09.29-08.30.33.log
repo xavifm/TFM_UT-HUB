@@ -1,0 +1,70 @@
+﻿Log file open, 09/29/25 10:30:33
+LogInit: Display: Running engine for game: PartyJungle
+LogCore: UTS: Unreal Trace Server launched successfully
+LogTrace: Initializing trace...
+LogCore: Display: Requested channels: 'cpu,gpu,frame,log,bookmark,screenshot,region'
+LogTrace: Display: Control listening on port 1985
+LogTrace: Finished trace initialization.
+LogCsvProfiler: Display: Metadata set : platform="Linux"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.6-CL-43139311"
+LogCsvProfiler: Display: Metadata set : engineversion="5.6.0-43139311+++UE5+Release-5.6"
+LogCsvProfiler: Display: Metadata set : os="Linux Mint 22.1 6.8.0-79-generic"
+LogCsvProfiler: Display: Metadata set : cpu="AuthenticAMD|AMD Ryzen 7 2700 Eight-Core Processor"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : commandline="" /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject""
+LogCsvProfiler: Display: Metadata set : loginid="0a0c047f9f824352ac6a88a2fbfab739-000003e8"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogStats: Stats thread started at 0.214135
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogICUInternationalization: OS requested locale 'ca_ES' is not supported. Using the OS requested language of 'ca-ES' as the locale.
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogInit: Session CrashGUID >====================================================
+         Session CrashGUID >   UECC-Linux-5F45363882274BE9ABC2FD725DE2C63D
+         Session CrashGUID >====================================================
+LogConfig: No local boot hotfix file found at: [../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/PersistentDownloadDir/HotfixForNextBoot.txt]
+LogAudio: Display: Pre-Initializing Audio Device Manager...
+LogAudio: Display: AudioInfo: 'OPUS' Registered
+LogAudio: Display: AudioInfo: 'OGG' Registered
+LogAudio: Display: AudioInfo: 'ADPCM' Registered
+LogAudio: Display: AudioInfo: 'PCM' Registered
+LogAudio: Display: AudioInfo: 'BINKA' Registered
+LogAudio: Display: AudioInfo: 'RADA' Registered
+LogAudio: Display: Audio Device Manager Pre-Initialized
+LogPluginManager: Looking for build plugins target receipt
+LogPluginManager: Found matching target receipt: ../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/PartyJungleEditor.target
+LogPluginManager: Looking for enabled plugins target receipt
+LogPluginManager: Found matching target receipt: ../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux/PartyJungleEditor.target
+LogAssetRegistry: Display: Asset registry cache read as 72.6 MiB from ../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/CachedAssetRegistry_0.bin
+LogPluginManager: Warning: Plugin 'ToonShader' requires engine version '5.4.0' and may not be compatible with the current current engine version '5.6.0-43139311+++UE5+Release-5.6'
+LogInit: Initializing SDL.
+LogConfig: Display: Loading Mac ini files took 0.74 seconds
+LogConfig: Display: Loading IOS ini files took 0.80 seconds
+LogInit: Initialized SDL 2.30.6 revision: SDL-2.30.6-no-vcs (compiled against 2.30.6)
+LogInit: Using SDL video driver 'x11'
+LogInit: Display metrics:
+LogInit:   PrimaryDisplayWidth: 1920
+LogInit:   PrimaryDisplayHeight: 1080
+LogInit:   PrimaryDisplayWorkAreaRect:
+LogInit:     Left=0, Top=0, Right=1920, Bottom=1047
+LogInit:   VirtualDisplayRect:
+LogInit:     Left=0, Top=0, Right=3840, Bottom=1080
+LogInit:   TitleSafePaddingSize: X=0.000 Y=0.000 Z=0.000 W=0.000
+LogInit:   ActionSafePaddingSize: X=0.000 Y=0.000 Z=0.000 W=0.000
+LogInit:   Number of monitors: 2
+LogInit:     Monitor 0
+LogInit:       Name: MSI G241V E2 24"
+LogInit:       ID: display0
+LogInit:       NativeWidth: 1920
+LogInit:       NativeHeight: 1080
+LogInit:       bIsPrimary: true
+LogInit:     Monitor 1
+LogInit:       Name: LG ULTRAGEAR 24"
+LogInit:       ID: display1
+LogInit:       NativeWidth: 1920
+LogInit:       NativeHeight: 1080
+LogInit:       bIsPrimary: false

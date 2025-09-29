@@ -3,6 +3,10 @@
 void ADiceItem::ExecuteItem(AMinion* _minion)
 {
 	Super::ExecuteItem(_minion);
+
+	if (!MapMenuCamera)
+		return;
+	
 	RollTheDice();
 }
 

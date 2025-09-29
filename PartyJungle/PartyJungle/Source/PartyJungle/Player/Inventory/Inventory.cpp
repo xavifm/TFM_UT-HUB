@@ -17,7 +17,7 @@ void AInventory::InitializeInventory(int _team)
 		
 		//test every item
 			InventoryArray[0] = DiceItem;
-			InventoryArray[1] = WallItem;
+			InventoryArray[1] = WhistleItem;
 		//
 	}
 	

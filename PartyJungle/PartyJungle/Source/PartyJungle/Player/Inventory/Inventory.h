@@ -28,6 +28,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AItem* WallItem;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AItem* WhistleItem;
 	
 	UPROPERTY()
 	TArray<AItem*> SortedInventory;

@@ -5,5 +5,9 @@
 void AWallItem::ExecuteItem(AMinion* _minion)
 {
 	Super::ExecuteItem(_minion);
+
+	if (!MapMenuCamera)
+		return;
+	
 	MapMenuCamera->CurrentMinion->CurrentSquare->SwitchBlockedSquareMode(static_cast<int>(_minion->Team), true);
 }
