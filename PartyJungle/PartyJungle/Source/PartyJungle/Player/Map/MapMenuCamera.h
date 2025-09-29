@@ -239,6 +239,7 @@ private:
 	const int CAMERA_HEIGHT_OFFSET = 600;
 	const int MAX_MOVEMENTS_PER_TURN = 2;
 	const int ROULETTE_SPIN_TIME = 5;
+	const int MAX_DICES = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -290,7 +291,13 @@ private:
 	int SavedSceneValue;
 
 	UPROPERTY()
+	int DiceRollIndex;
+
+	UPROPERTY()
 	int TurnMovementIndex;
+
+	UPROPERTY()
+	int SavedDiceMovements;
 
 	UPROPERTY()
 	FVector2D FullMapCameraVelocity;

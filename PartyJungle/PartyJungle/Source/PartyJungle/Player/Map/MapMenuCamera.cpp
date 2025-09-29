@@ -169,6 +169,9 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (DiceRollIndex > 0)
+        return;
+
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
         Inventory->SwitchSelectedInventoryItem(direction);
@@ -562,7 +565,7 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
-    if (IsMinigameActive)
+    if (IsMinigameActive || DiceRollIndex > 0)
         return;
 
     if (StartTurnUI)
@@ -955,14 +958,21 @@ void AMapMenuCamera::RollTheDice()
 {
     if (!InputEnabled || ChooseMinionToMove)
         return;
-
-    ChooseMinionToMove = true;
-    RollingDice = true;
-
+    
     if (Dice && CurrentMinion)
     {
-        int movements = Dice->RollTheDice();
-        Dice->ShowDiceFeedbackNumber(movements);
+        SavedDiceMovements += Dice->RollTheDice();
+        Dice->ShowDiceFeedbackNumber(SavedDiceMovements);
+        DiceRollIndex++;
+    }
+
+    if (DiceRollIndex >= MAX_DICES)
+    {
+        Dice->DiceValue = SavedDiceMovements;
+        SavedDiceMovements = 0;
+        DiceRollIndex = 0;
+        ChooseMinionToMove = true;
+        RollingDice = true;   
     }
 }
 
@@ -978,6 +988,11 @@ void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)
         CurrentMinion->AlreadyMoved = true;
     
     CurrentMinion->SetMinionsMovements(Dice->DiceValue);
+    
+    Dice->DiceValue = 0;
+    SavedDiceMovements = 0;
+    DiceRollIndex = 0;
+    
     RollingDice = false;
     ChooseMinionToMove = false;
     InputEnabled = false;
