@@ -14,6 +14,8 @@ void ADiceItem::RollTheDice()
 {
 	MapMenuCamera->ItemExecuted = true;
 	MapMenuCamera->RollTheDice();
+	MapMenuCamera->Dice->HideDice();
+	MapMenuCamera->Dice->ShowDiceFeedbackNumber(MapMenuCamera->Dice->DiceValue);
 	MapMenuCamera->ExecuteMinionMovement(true);
 }
 

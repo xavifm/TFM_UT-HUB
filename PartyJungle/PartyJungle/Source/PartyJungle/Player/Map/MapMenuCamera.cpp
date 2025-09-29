@@ -969,6 +969,8 @@ void AMapMenuCamera::RollTheDice()
     if (DiceRollIndex >= MAX_DICES)
     {
         Dice->DiceValue = SavedDiceMovements;
+        Dice->HideDice();
+        Dice->ShowDiceFeedbackNumber(Dice->DiceValue);
         SavedDiceMovements = 0;
         DiceRollIndex = 0;
         ChooseMinionToMove = true;
@@ -978,8 +980,7 @@ void AMapMenuCamera::RollTheDice()
 
 void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)
 {
-    if((
-        !_diceItem && CurrentMinion->AlreadyMoved) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
+    if((!_diceItem && CurrentMinion->AlreadyMoved) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
         return;
 
     CurrentMinion->DiceReference = Dice;
