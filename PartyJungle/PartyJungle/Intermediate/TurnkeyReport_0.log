@@ -1,0 +1,3 @@
+Android: (Status=Invalid, MinAllowed_Sdk=r25b, MaxAllowed_Sdk=r29, Current_Sdk=, Allowed_AutoSdk=r25b, Current_AutoSdk=, Flags="Platform_InvalidHostPrerequisites, Support_FullSdk", Error="Android Studio is not installed correctly.")
+Linux: (Status=Valid, Allowed_Sdk=v25_clang-18.1.0-rockylinux8, Current_Sdk=v25_clang-18.1.0-rockylinux8, Allowed_AutoSdk=v25_clang-18.1.0-rockylinux8, Current_AutoSdk=, Flags="InstalledSdk_ValidVersionExists, Sdk_HasBestVersion")
+LinuxArm64: (Status=Valid, Allowed_Sdk=v25_clang-18.1.0-rockylinux8, Current_Sdk=v25_clang-18.1.0-rockylinux8, Allowed_AutoSdk=v25_clang-18.1.0-rockylinux8, Current_AutoSdk=, Flags="InstalledSdk_ValidVersionExists, Sdk_HasBestVersion")
