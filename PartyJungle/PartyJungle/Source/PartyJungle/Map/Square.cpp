@@ -137,7 +137,7 @@ void ASquare::SwitchBlockedSquareMode(int _team, bool _blocked)
 void ASquare::ResetWallFromSquare(int _team)
 {
 	if (TeamBlockingSquare == _team && IsBlockedByWall)
-		IsBlockedByWall = false;
+		SwitchBlockedSquareMode(_team, false);
 }
 
 void ASquare::BeginPlay()

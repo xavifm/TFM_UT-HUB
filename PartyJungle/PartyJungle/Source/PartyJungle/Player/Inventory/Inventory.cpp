@@ -1,5 +1,7 @@
 #include "./Inventory.h"
 
+#include "PartyJungle/Map/Square.h"
+
 AInventory::AInventory()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -17,7 +19,7 @@ void AInventory::InitializeInventory(int _team)
 		
 		//test every item
 			InventoryArray[0] = DiceItem;
-			InventoryArray[1] = WhistleItem;
+			InventoryArray[1] = WallItem;
 		//
 	}
 	
@@ -45,7 +47,7 @@ void AInventory::UseItem(AItem* _item, AMinion* _minion)
 {
 	bool itemExistsQuery = CheckIfItemExists(static_cast<int>(_minion->Team), _item);
 
-	if (itemExistsQuery)
+	if (itemExistsQuery && !_minion->CurrentSquare->CheckIfSquareIsBlocked(_minion) && !_minion->CurrentSquare->IsChallengeEnabled)
 	{
 		_item->ExecuteItem(_minion);
 		RemoveItem(static_cast<int>(_minion->Team), _item);
@@ -57,7 +59,7 @@ void AInventory::UseItemFromUI(AMinion* _minion)
 	int minionTeam = static_cast<int>(_minion->Team);
 	AItem* itemQuery = Inventories[minionTeam][InventoryIndex];
 
-	if (IsValid(itemQuery))
+	if (IsValid(itemQuery) && !_minion->CurrentSquare->CheckIfSquareIsBlocked(_minion) && !_minion->CurrentSquare->IsChallengeEnabled)
 	{
 		itemQuery->ExecuteItem(_minion);
 		RemoveItem(static_cast<int>(_minion->Team), itemQuery);
