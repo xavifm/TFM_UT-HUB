@@ -37,12 +37,13 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FString GetDescription();
+
+	UPROPERTY(EditAnywhere)
+	FString ItemName;
+	UPROPERTY(EditAnywhere)
+	FString ItemDescription;
 	
 protected:
 	virtual void BeginPlay() override;
-
-private:
-	FString ItemName;
-	FString ItemDescription;
 
 };

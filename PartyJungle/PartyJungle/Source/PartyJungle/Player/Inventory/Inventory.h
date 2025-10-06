@@ -45,7 +45,7 @@ public:
 	void UseItem(AItem* _item, AMinion* _minion);
 	
 	UFUNCTION()
-	void UseItemFromUI(AMinion* _minion);
+	bool UseItemFromUI(AMinion* _minionbool, bool _instantUse = false);
 
 	UFUNCTION()
 	bool CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item);

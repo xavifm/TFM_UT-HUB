@@ -47,23 +47,38 @@ void AInventory::UseItem(AItem* _item, AMinion* _minion)
 {
 	bool itemExistsQuery = CheckIfItemExists(static_cast<int>(_minion->Team), _item);
 
-	if (itemExistsQuery && !_minion->CurrentSquare->CheckIfSquareIsBlocked(_minion) && !_minion->CurrentSquare->IsChallengeEnabled)
+	if (itemExistsQuery)
 	{
 		_item->ExecuteItem(_minion);
 		RemoveItem(static_cast<int>(_minion->Team), _item);
 	}
 }
 
-void AInventory::UseItemFromUI(AMinion* _minion)
+bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse)
 {
 	int minionTeam = static_cast<int>(_minion->Team);
 	AItem* itemQuery = Inventories[minionTeam][InventoryIndex];
 
-	if (IsValid(itemQuery) && !_minion->CurrentSquare->CheckIfSquareIsBlocked(_minion) && !_minion->CurrentSquare->IsChallengeEnabled)
+	bool executeItem = true;
+
+	if (_instantUse)
+	{
+		executeItem = false;
+		
+		if (itemQuery->ItemType == EItemType::MISC &&
+			(itemQuery->GetName().Contains("Whistle")))
+		{
+			executeItem = true;
+		}
+	}
+
+	if (IsValid(itemQuery) && executeItem)
 	{
 		itemQuery->ExecuteItem(_minion);
 		RemoveItem(static_cast<int>(_minion->Team), itemQuery);
 	}
+
+	return executeItem;
 }
 
 bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)
