@@ -69,4 +69,5 @@ public:
 
 private:
 	bool IsInitialized = false;
+	int LastStarIndex = -1;
 };

@@ -15,3 +15,8 @@ void ASquareStar::SwitchStar(bool _enabled)
 	ShopEnabled = _enabled;
 	SwitchStarVisibility(_enabled);
 }
+
+bool ASquareStar::IsEnabledStar()
+{
+	return ShopEnabled;
+}

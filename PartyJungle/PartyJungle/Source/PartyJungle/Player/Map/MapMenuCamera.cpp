@@ -224,12 +224,18 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (InventoryEnabled && SelectMinionToUseItem)
     {
+        if (CurrentMinion->CurrentSquare->CheckIfSquareIsBlocked(CurrentMinion) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
+            return;
+        
         SelectMinionToUseItem = false;
         Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         SwitchInventory();
         Inventory->UseItemFromUI(CurrentMinion);
         return;
     }
+
+    if (InventoryEnabled)
+        return;
 
     if (SelectingMinion)
     {

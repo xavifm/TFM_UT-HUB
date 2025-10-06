@@ -135,14 +135,28 @@ void AWorldManager::EnableStarAtRandomLocation()
 	if (MapCrowns.Num() > 0)
 	{
 		int32 RandomIndex = FMath::RandRange(0, MapCrowns.Num() - 1);
+
+		while (RandomIndex == LastStarIndex)
+		{
+			RandomIndex = FMath::RandRange(0, MapCrowns.Num() - 1);
+		}
+
+		LastStarIndex = RandomIndex;
 		MapCrowns[RandomIndex]->SwitchStar(true);
 	}
 }
 
 void AWorldManager::DisableAllStars() 
 {
+	int loopIndex = 0;
+	
 	for (ASquareStar* Star : MapCrowns)
 	{
+		if (Star->IsEnabledStar())
+			LastStarIndex = loopIndex;
+
 		Star->SwitchStar(false);
+		
+		loopIndex++;
 	}
 }

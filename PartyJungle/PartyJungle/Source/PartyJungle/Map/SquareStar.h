@@ -16,6 +16,9 @@ public:
 	UFUNCTION()
 	void SwitchStar(bool _enabled);
 
+	UFUNCTION()
+	bool IsEnabledStar();
+
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Square Functions")
 	void SwitchStarVisibility(bool _visibility);
