@@ -1562,6 +1562,84 @@ DEFINE_FUNCTION(AMapMenuCamera::execSwitchFullMapVision)
 }
 // ********** End Class AMapMenuCamera Function SwitchFullMapVision ********************************
 
+// ********** Begin Class AMapMenuCamera Function SwitchInventory **********************************
+struct Z_Construct_UFunction_AMapMenuCamera_SwitchInventory_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchInventory_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchInventory", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchInventory_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchInventory_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchInventory()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SwitchInventory_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execSwitchInventory)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchInventory();
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function SwitchInventory ************************************
+
+// ********** Begin Class AMapMenuCamera Function SwitchItemThrowPlayerSelector ********************
+struct Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics
+{
+	struct MapMenuCamera_eventSwitchItemThrowPlayerSelector_Parms
+	{
+		bool _enabled;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__enabled_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__enabled;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::NewProp__enabled_SetBit(void* Obj)
+{
+	((MapMenuCamera_eventSwitchItemThrowPlayerSelector_Parms*)Obj)->_enabled = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::NewProp__enabled = { "_enabled", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSwitchItemThrowPlayerSelector_Parms), &Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::NewProp__enabled_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::NewProp__enabled,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchItemThrowPlayerSelector", Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::MapMenuCamera_eventSwitchItemThrowPlayerSelector_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::MapMenuCamera_eventSwitchItemThrowPlayerSelector_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execSwitchItemThrowPlayerSelector)
+{
+	P_GET_UBOOL(Z_Param__enabled);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchItemThrowPlayerSelector(Z_Param__enabled);
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function SwitchItemThrowPlayerSelector **********************
+
 // ********** Begin Class AMapMenuCamera Function SwitchMainScene **********************************
 struct Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics
 {
@@ -2042,6 +2120,8 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "SwitchController", &AMapMenuCamera::execSwitchController },
 		{ "SwitchCrownsShop", &AMapMenuCamera::execSwitchCrownsShop },
 		{ "SwitchFullMapVision", &AMapMenuCamera::execSwitchFullMapVision },
+		{ "SwitchInventory", &AMapMenuCamera::execSwitchInventory },
+		{ "SwitchItemThrowPlayerSelector", &AMapMenuCamera::execSwitchItemThrowPlayerSelector },
 		{ "SwitchMainScene", &AMapMenuCamera::execSwitchMainScene },
 		{ "SwitchMenuWidget", &AMapMenuCamera::execSwitchMenuWidget },
 		{ "SwitchMinionToSelectForDuel", &AMapMenuCamera::execSwitchMinionToSelectForDuel },
@@ -2277,6 +2357,8 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchController, "SwitchController" }, // 2887006734
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCrownsShop, "SwitchCrownsShop" }, // 2713509371
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision, "SwitchFullMapVision" }, // 83696799
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchInventory, "SwitchInventory" }, // 1955938641
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector, "SwitchItemThrowPlayerSelector" }, // 1755286607
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 1822362644
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMenuWidget, "SwitchMenuWidget" }, // 3563137851
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMinionToSelectForDuel, "SwitchMinionToSelectForDuel" }, // 2962733435
@@ -2398,10 +2480,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 2370413195U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3407467031U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_4157720251(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_855761008(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

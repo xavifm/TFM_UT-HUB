@@ -18,6 +18,7 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AItem();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AItem_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EItemType();
+PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EUseMode();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
 
@@ -74,6 +75,63 @@ UEnum* Z_Construct_UEnum_PartyJungle_EItemType()
 	return Z_Registration_Info_UEnum_EItemType.InnerSingleton;
 }
 // ********** End Enum EItemType *******************************************************************
+
+// ********** Begin Enum EUseMode ******************************************************************
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_EUseMode;
+static UEnum* EUseMode_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_EUseMode.OuterSingleton)
+	{
+		Z_Registration_Info_UEnum_EUseMode.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_PartyJungle_EUseMode, (UObject*)Z_Construct_UPackage__Script_PartyJungle(), TEXT("EUseMode"));
+	}
+	return Z_Registration_Info_UEnum_EUseMode.OuterSingleton;
+}
+template<> PARTYJUNGLE_API UEnum* StaticEnum<EUseMode>()
+{
+	return EUseMode_StaticEnum();
+}
+struct Z_Construct_UEnum_PartyJungle_EUseMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "INSTANT.DisplayName", "Instant Use" },
+		{ "INSTANT.Name", "EUseMode::INSTANT" },
+		{ "ModuleRelativePath", "Player/Items/Base/Item.h" },
+		{ "SELECT.DisplayName", "Select Minion" },
+		{ "SELECT.Name", "EUseMode::SELECT" },
+		{ "THROW.DisplayName", "Throw Mode" },
+		{ "THROW.Name", "EUseMode::THROW" },
+	};
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "EUseMode::SELECT", (int64)EUseMode::SELECT },
+		{ "EUseMode::THROW", (int64)EUseMode::THROW },
+		{ "EUseMode::INSTANT", (int64)EUseMode::INSTANT },
+	};
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_PartyJungle_EUseMode_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_PartyJungle,
+	nullptr,
+	"EUseMode",
+	"EUseMode",
+	Z_Construct_UEnum_PartyJungle_EUseMode_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EUseMode_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EUseMode_Statics::Enum_MetaDataParams), Z_Construct_UEnum_PartyJungle_EUseMode_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_PartyJungle_EUseMode()
+{
+	if (!Z_Registration_Info_UEnum_EUseMode.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EUseMode.InnerSingleton, Z_Construct_UEnum_PartyJungle_EUseMode_Statics::EnumParams);
+	}
+	return Z_Registration_Info_UEnum_EUseMode.InnerSingleton;
+}
+// ********** End Enum EUseMode ********************************************************************
 
 // ********** Begin Class AItem Function ExecuteItem ***********************************************
 struct Z_Construct_UFunction_AItem_ExecuteItem_Statics
@@ -250,6 +308,10 @@ struct Z_Construct_UClass_AItem_Statics
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Player/Items/Base/Item.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_UseMode_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "Player/Items/Base/Item.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemModel_MetaData[] = {
 		{ "Category", "Item" },
 		{ "ModuleRelativePath", "Player/Items/Base/Item.h" },
@@ -265,6 +327,8 @@ struct Z_Construct_UClass_AItem_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_ItemType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_ItemType;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_UseMode_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_UseMode;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemModel;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_ItemName;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_ItemDescription;
@@ -283,12 +347,16 @@ struct Z_Construct_UClass_AItem_Statics
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemType = { "ItemType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItem, ItemType), Z_Construct_UEnum_PartyJungle_EItemType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemType_MetaData), NewProp_ItemType_MetaData) }; // 727665334
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AItem_Statics::NewProp_UseMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_UseMode = { "UseMode", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItem, UseMode), Z_Construct_UEnum_PartyJungle_EUseMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_UseMode_MetaData), NewProp_UseMode_MetaData) }; // 2669168769
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemModel = { "ItemModel", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItem, ItemModel), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemModel_MetaData), NewProp_ItemModel_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemName = { "ItemName", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItem, ItemName), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemName_MetaData), NewProp_ItemName_MetaData) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UClass_AItem_Statics::NewProp_ItemDescription = { "ItemDescription", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AItem, ItemDescription), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemDescription_MetaData), NewProp_ItemDescription_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AItem_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_UseMode_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_UseMode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemModel,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemName,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AItem_Statics::NewProp_ItemDescription,
@@ -331,12 +399,13 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EItemType_StaticEnum, TEXT("EItemType"), &Z_Registration_Info_UEnum_EItemType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 727665334U) },
+		{ EUseMode_StaticEnum, TEXT("EUseMode"), &Z_Registration_Info_UEnum_EUseMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2669168769U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 4109052677U) },
+		{ Z_Construct_UClass_AItem, AItem::StaticClass, TEXT("AItem"), &Z_Registration_Info_UClass_AItem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AItem), 35085368U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_2339398222(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_2865613239(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h__Script_PartyJungle_Statics::EnumInfo));

@@ -219,6 +219,12 @@ void AMapMenuCamera::HandleConfirmInput()
         
         if (Inventory->CheckIfIsEmptySpace(CurrentMinionTeam))
             return;
+
+        if (Inventory->GetItemUseModeFromUI(CurrentMinionTeam) == EUseMode::THROW)
+        {
+            SwitchItemThrowPlayerSelector(true);
+            return;
+        }
         
         SelectMinionToUseItem = true;
         Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
@@ -577,6 +583,12 @@ void AMapMenuCamera::HandleBackInput()
     if (IsMinigameActive || DiceRollIndex > 0)
         return;
 
+    if (ThrowItemPlayerMenu)
+    {
+        SwitchItemThrowPlayerSelector(false);
+        return;
+    }
+
     if (StartTurnUI)
     {
         StartPlayerTurn();
@@ -640,6 +652,9 @@ void AMapMenuCamera::CloseChallengeMenu(bool _duel)
 
 void AMapMenuCamera::SwitchInventory()
 {
+    if (ThrowItemPlayerMenu)
+        return;
+    
     InventoryEnabled = !InventoryEnabled;
 
     Dice->ShowDice();
@@ -652,6 +667,12 @@ void AMapMenuCamera::SwitchInventory()
     }
     
     Inventory->SwitchInventoryVisibility(InventoryEnabled);
+}
+
+void AMapMenuCamera::SwitchItemThrowPlayerSelector(bool _enabled)
+{
+    ThrowItemPlayerMenu = _enabled;
+    MapUI->SwitchItemThrowSelectorVisibility(_enabled);
 }
 
 void AMapMenuCamera::OpenChallengeMenu() 

@@ -48,6 +48,9 @@ public:
 	bool UseItemFromUI(AMinion* _minionbool, bool _instantUse = false);
 
 	UFUNCTION()
+	EUseMode GetItemUseModeFromUI(int _team);
+
+	UFUNCTION()
 	bool CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item);
 
 	UFUNCTION()

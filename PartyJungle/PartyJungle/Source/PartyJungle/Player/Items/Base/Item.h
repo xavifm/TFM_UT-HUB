@@ -13,6 +13,14 @@ enum class EItemType : uint8
 	MISC UMETA(DisplayName = "Miscellaneous")
 };
 
+UENUM(BlueprintType)
+enum class EUseMode : uint8
+{
+	SELECT UMETA(DisplayName = "Select Minion"),
+	THROW UMETA(DisplayName = "Throw Mode"),
+	INSTANT UMETA(DisplayName = "Instant Use")
+};
+
 UCLASS()
 class PARTYJUNGLE_API AItem : public AActor
 {
@@ -21,6 +29,9 @@ class PARTYJUNGLE_API AItem : public AActor
 public:	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	EItemType ItemType;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	EUseMode UseMode;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UStaticMesh* ItemModel;

@@ -152,7 +152,12 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void CloseChallengeMenu(bool _duel = false);
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchInventory();
+
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchItemThrowPlayerSelector(bool _enabled);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void OpenChallengeMenu();
@@ -282,6 +287,7 @@ private:
 	bool SelectingMinion = false;
 	bool InventoryEnabled = false;
 	bool SelectMinionToUseItem = false;
+	bool ThrowItemPlayerMenu = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

@@ -66,7 +66,7 @@ bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse)
 		executeItem = false;
 		
 		if (itemQuery->ItemType == EItemType::MISC &&
-			(itemQuery->GetName().Contains("Whistle")))
+			(itemQuery->UseMode == EUseMode::INSTANT))
 		{
 			executeItem = true;
 		}
@@ -79,6 +79,17 @@ bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse)
 	}
 
 	return executeItem;
+}
+
+EUseMode AInventory::GetItemUseModeFromUI(int _team)
+{
+	AItem* itemQuery = Inventories[_team][InventoryIndex];
+	EUseMode useMode = EUseMode::SELECT;
+
+	if(itemQuery)
+		useMode = itemQuery->UseMode;
+
+	return useMode;
 }
 
 bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)

@@ -67,6 +67,9 @@ public:
     void SwitchChallengeVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchItemThrowSelectorVisibility(bool IsVisible);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchChallengePopupVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")

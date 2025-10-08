@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AMinion;
 
 // ********** Begin Class AItem ********************************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetDescription); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execExecuteItem);
@@ -27,7 +27,7 @@ class AMinion;
 
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AItem_NoRegister();
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAItem(); \
 	friend struct Z_Construct_UClass_AItem_Statics; \
@@ -38,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(AItem)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AItem(AItem&&) = delete; \
 	AItem(const AItem&) = delete; \
@@ -48,13 +48,13 @@ public: \
 	NO_API virtual ~AItem();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_16_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_24_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_19_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -75,5 +75,16 @@ enum class EItemType : uint8;
 template<> struct TIsUEnumClass<EItemType> { enum { Value = true }; };
 template<> PARTYJUNGLE_API UEnum* StaticEnum<EItemType>();
 // ********** End Enum EItemType *******************************************************************
+
+// ********** Begin Enum EUseMode ******************************************************************
+#define FOREACH_ENUM_EUSEMODE(op) \
+	op(EUseMode::SELECT) \
+	op(EUseMode::THROW) \
+	op(EUseMode::INSTANT) 
+
+enum class EUseMode : uint8;
+template<> struct TIsUEnumClass<EUseMode> { enum { Value = true }; };
+template<> PARTYJUNGLE_API UEnum* StaticEnum<EUseMode>();
+// ********** End Enum EUseMode ********************************************************************
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -51,6 +51,8 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execFinishDuel); \
 	DECLARE_FUNCTION(execRefreshChallengeInfo); \
 	DECLARE_FUNCTION(execOpenChallengeMenu); \
+	DECLARE_FUNCTION(execSwitchItemThrowPlayerSelector); \
+	DECLARE_FUNCTION(execSwitchInventory); \
 	DECLARE_FUNCTION(execCloseChallengeMenu); \
 	DECLARE_FUNCTION(execHandleBackInput); \
 	DECLARE_FUNCTION(execConfirmMinionToDuel); \
