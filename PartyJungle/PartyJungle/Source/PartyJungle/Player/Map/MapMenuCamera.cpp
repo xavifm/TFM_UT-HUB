@@ -224,6 +224,7 @@ void AMapMenuCamera::HandleConfirmInput()
         int player = Inventory->SwitchItemThrowPlayer(0, MAX_TEAM_NUMBER);
         Inventory->UseItemFromUI(MapDb->GetMinion(player, 0));
         SwitchItemThrowPlayerSelector(false);
+        SwitchInventory();
         return;   
     }
 
