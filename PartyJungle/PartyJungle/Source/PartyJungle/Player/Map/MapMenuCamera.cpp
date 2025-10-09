@@ -172,6 +172,13 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
     if (DiceRollIndex > 0)
         return;
 
+    if (ThrowItemPlayerMenu)
+    {
+        int player = Inventory->SwitchItemThrowPlayer(direction, MAX_TEAM_NUMBER);
+        MapUI->SwitchItemThrowPlayer(player);
+        return;
+    }
+
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
         Inventory->SwitchSelectedInventoryItem(direction);
@@ -212,6 +219,14 @@ void AMapMenuCamera::HandleConfirmInput()
     if (IsMinigameActive || FullMapView)
         return;
 
+    if (ThrowItemPlayerMenu)
+    {
+        int player = Inventory->SwitchItemThrowPlayer(0, MAX_TEAM_NUMBER);
+        Inventory->UseItemFromUI(MapDb->GetMinion(player, 0));
+        SwitchItemThrowPlayerSelector(false);
+        return;   
+    }
+
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
         if (Inventory->UseItemFromUI(CurrentMinion, true))
@@ -223,6 +238,8 @@ void AMapMenuCamera::HandleConfirmInput()
         if (Inventory->GetItemUseModeFromUI(CurrentMinionTeam) == EUseMode::THROW)
         {
             SwitchItemThrowPlayerSelector(true);
+            int player = Inventory->SwitchItemThrowPlayer(0, MAX_TEAM_NUMBER, true);
+            MapUI->SwitchItemThrowPlayer(player);
             return;
         }
         

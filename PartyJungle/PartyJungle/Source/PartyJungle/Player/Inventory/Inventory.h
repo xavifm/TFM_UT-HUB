@@ -17,6 +17,9 @@ public:
 	UPROPERTY()
 	int InventoryIndex;
 
+	UPROPERTY()
+	int PlayerThrowIndex;
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AItem* EmptyItemDice;
 
@@ -45,7 +48,7 @@ public:
 	void UseItem(AItem* _item, AMinion* _minion);
 	
 	UFUNCTION()
-	bool UseItemFromUI(AMinion* _minionbool, bool _instantUse = false);
+	bool UseItemFromUI(AMinion* _minion, bool _instantUse = false);
 
 	UFUNCTION()
 	EUseMode GetItemUseModeFromUI(int _team);
@@ -63,6 +66,9 @@ public:
 	
 	UFUNCTION()
 	bool CheckIfItemExists(int _team, AItem* _item);
+
+	UFUNCTION()
+	int SwitchItemThrowPlayer(int _direction, int _maxPlayers, bool _reset = false);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SwitchInventoryVisibility(bool _visible);

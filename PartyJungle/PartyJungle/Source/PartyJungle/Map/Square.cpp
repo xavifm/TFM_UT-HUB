@@ -22,6 +22,7 @@ bool ASquare::CheckIfSquareIsBlocked(AMinion* _minion)
 	if (IsBlockedByWall)
 		blockedQuery = true;
 
+
 	for (AMinion* otherMinion : MinionsList)
 	{
 		if (otherMinion && otherMinion != _minion && otherMinion->Team == _minion->Team)

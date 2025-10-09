@@ -152,6 +152,21 @@ bool AInventory::CheckIfItemExists(int _team, AItem* _item)
 	return false;
 }
 
+int AInventory::SwitchItemThrowPlayer(int _direction, int _maxPlayers, bool _reset)
+{
+	PlayerThrowIndex += _direction;
+
+	if (PlayerThrowIndex < 0)
+		PlayerThrowIndex = _maxPlayers - 1;
+	else if (PlayerThrowIndex >= _maxPlayers)
+		PlayerThrowIndex = 0;
+
+	if(_reset)
+		PlayerThrowIndex = 0;
+	
+	return PlayerThrowIndex;
+}
+
 TArray<AItem*> AInventory::GetSortedInventory(int _team)
 {
 	TArray<AItem*> SortedInventoryAux = TArray<AItem*>();

@@ -70,6 +70,9 @@ public:
     void SwitchItemThrowSelectorVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchItemThrowPlayer(int Player);
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchChallengePopupVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")

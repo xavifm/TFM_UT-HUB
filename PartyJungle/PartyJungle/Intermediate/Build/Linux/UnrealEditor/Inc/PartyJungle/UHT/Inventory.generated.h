@@ -22,6 +22,7 @@ enum class EUseMode : uint8;
 
 // ********** Begin Class AInventory ***************************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSwitchItemThrowPlayer); \
 	DECLARE_FUNCTION(execCheckIfItemExists); \
 	DECLARE_FUNCTION(execGetSortedInventory); \
 	DECLARE_FUNCTION(execCheckIfIsEmptySpace); \
