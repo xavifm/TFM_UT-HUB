@@ -34,6 +34,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	AItem* WhistleItem;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	AItem* ReducedDiceTrapItem;
 	
 	UPROPERTY()
 	TArray<AItem*> SortedInventory;
@@ -48,7 +51,7 @@ public:
 	void UseItem(AItem* _item, AMinion* _minion);
 	
 	UFUNCTION()
-	bool UseItemFromUI(AMinion* _minion, bool _instantUse = false);
+	bool UseItemFromUI(AMinion* _minion, bool _instantUse = false, int _throwTeam = -1);
 
 	UFUNCTION()
 	EUseMode GetItemUseModeFromUI(int _team);

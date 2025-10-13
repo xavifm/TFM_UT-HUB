@@ -622,6 +622,7 @@ struct Z_Construct_UFunction_AInventory_UseItemFromUI_Statics
 	{
 		AMinion* _minion;
 		bool _instantUse;
+		int32 _throwTeam;
 		bool ReturnValue;
 	};
 #if WITH_METADATA
@@ -632,6 +633,7 @@ struct Z_Construct_UFunction_AInventory_UseItemFromUI_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp__minion;
 	static void NewProp__instantUse_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp__instantUse;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__throwTeam;
 	static void NewProp_ReturnValue_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -643,6 +645,7 @@ void Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__instantUse
 	((Inventory_eventUseItemFromUI_Parms*)Obj)->_instantUse = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__instantUse = { "_instantUse", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Inventory_eventUseItemFromUI_Parms), &Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__instantUse_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__throwTeam = { "_throwTeam", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Inventory_eventUseItemFromUI_Parms, _throwTeam), METADATA_PARAMS(0, nullptr) };
 void Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp_ReturnValue_SetBit(void* Obj)
 {
 	((Inventory_eventUseItemFromUI_Parms*)Obj)->ReturnValue = 1;
@@ -651,6 +654,7 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AInventory_Us
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__minion,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__instantUse,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp__throwTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AInventory_UseItemFromUI_Statics::PropPointers) < 2048);
@@ -669,9 +673,10 @@ DEFINE_FUNCTION(AInventory::execUseItemFromUI)
 {
 	P_GET_OBJECT(AMinion,Z_Param__minion);
 	P_GET_UBOOL(Z_Param__instantUse);
+	P_GET_PROPERTY(FIntProperty,Z_Param__throwTeam);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(bool*)Z_Param__Result=P_THIS->UseItemFromUI(Z_Param__minion,Z_Param__instantUse);
+	*(bool*)Z_Param__Result=P_THIS->UseItemFromUI(Z_Param__minion,Z_Param__instantUse,Z_Param__throwTeam);
 	P_NATIVE_END;
 }
 // ********** End Class AInventory Function UseItemFromUI ******************************************
@@ -754,6 +759,10 @@ struct Z_Construct_UClass_AInventory_Statics
 		{ "Category", "Inventory" },
 		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ReducedDiceTrapItem_MetaData[] = {
+		{ "Category", "Inventory" },
+		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SortedInventory_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Inventory/Inventory.h" },
 	};
@@ -765,6 +774,7 @@ struct Z_Construct_UClass_AInventory_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DiceItem;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WallItem;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WhistleItem;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReducedDiceTrapItem;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SortedInventory_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_SortedInventory;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -782,7 +792,7 @@ struct Z_Construct_UClass_AInventory_Statics
 		{ &Z_Construct_UFunction_AInventory_SwitchItemThrowPlayer, "SwitchItemThrowPlayer" }, // 3449967652
 		{ &Z_Construct_UFunction_AInventory_SwitchSelectedItemVisibility, "SwitchSelectedItemVisibility" }, // 1079413649
 		{ &Z_Construct_UFunction_AInventory_UseItem, "UseItem" }, // 1955862155
-		{ &Z_Construct_UFunction_AInventory_UseItemFromUI, "UseItemFromUI" }, // 3932672687
+		{ &Z_Construct_UFunction_AInventory_UseItemFromUI, "UseItemFromUI" }, // 700971113
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -797,6 +807,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Sta
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_DiceItem = { "DiceItem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, DiceItem), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DiceItem_MetaData), NewProp_DiceItem_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_WallItem = { "WallItem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, WallItem), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WallItem_MetaData), NewProp_WallItem_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_WhistleItem = { "WhistleItem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, WhistleItem), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WhistleItem_MetaData), NewProp_WhistleItem_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_ReducedDiceTrapItem = { "ReducedDiceTrapItem", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, ReducedDiceTrapItem), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ReducedDiceTrapItem_MetaData), NewProp_ReducedDiceTrapItem_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory_Inner = { "SortedInventory", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory = { "SortedInventory", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInventory, SortedInventory), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SortedInventory_MetaData), NewProp_SortedInventory_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInventory_Statics::PropPointers[] = {
@@ -807,6 +818,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInventor
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_DiceItem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_WallItem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_WhistleItem,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_ReducedDiceTrapItem,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInventory_Statics::NewProp_SortedInventory,
 };
@@ -847,10 +859,10 @@ AInventory::~AInventory() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 2275643436U) },
+		{ Z_Construct_UClass_AInventory, AInventory::StaticClass, TEXT("AInventory"), &Z_Registration_Info_UClass_AInventory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInventory), 914245368U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_4142446625(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_3198538086(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Inventory_Inventory_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

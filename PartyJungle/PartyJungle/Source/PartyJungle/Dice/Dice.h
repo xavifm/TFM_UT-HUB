@@ -34,7 +34,7 @@ public:
 	void HideDice();
 
 	UFUNCTION(BlueprintCallable, Category = "Dice Roll")
-	int RollTheDice();
+	int RollTheDice(bool _reduced = false);
 
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Dice Value")
 	int DiceValue;

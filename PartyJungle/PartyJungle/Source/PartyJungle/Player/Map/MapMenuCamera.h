@@ -197,6 +197,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ResetMapItems();
+	void ResetSlowedDice();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FocusNextMinion(int _direction);
@@ -227,6 +228,9 @@ public:
 
 	UPROPERTY()
 	int MAX_TEAM_NUMBER = 4;
+
+	UPROPERTY()
+	int TeamWithDiceSlowed = -1;
 
 	UPROPERTY()
 	bool ItemExecuted = false;

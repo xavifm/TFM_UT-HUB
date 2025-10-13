@@ -53,20 +53,30 @@ struct Z_Construct_UFunction_ADice_RollTheDice_Statics
 {
 	struct Dice_eventRollTheDice_Parms
 	{
+		bool _reduced;
 		int32 ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Dice Roll" },
+		{ "CPP_Default__reduced", "false" },
 		{ "ModuleRelativePath", "Dice/Dice.h" },
 	};
 #endif // WITH_METADATA
+	static void NewProp__reduced_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__reduced;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
+void Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp__reduced_SetBit(void* Obj)
+{
+	((Dice_eventRollTheDice_Parms*)Obj)->_reduced = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp__reduced = { "_reduced", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(Dice_eventRollTheDice_Parms), &Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp__reduced_SetBit, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Dice_eventRollTheDice_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADice_RollTheDice_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp__reduced,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADice_RollTheDice_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_RollTheDice_Statics::PropPointers) < 2048);
@@ -83,9 +93,10 @@ UFunction* Z_Construct_UFunction_ADice_RollTheDice()
 }
 DEFINE_FUNCTION(ADice::execRollTheDice)
 {
+	P_GET_UBOOL(Z_Param__reduced);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(int32*)Z_Param__Result=P_THIS->RollTheDice();
+	*(int32*)Z_Param__Result=P_THIS->RollTheDice(Z_Param__reduced);
 	P_NATIVE_END;
 }
 // ********** End Class ADice Function RollTheDice *************************************************
@@ -275,7 +286,7 @@ struct Z_Construct_UClass_ADice_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADice_HideDice, "HideDice" }, // 2466555837
-		{ &Z_Construct_UFunction_ADice_RollTheDice, "RollTheDice" }, // 1062047416
+		{ &Z_Construct_UFunction_ADice_RollTheDice, "RollTheDice" }, // 1890971482
 		{ &Z_Construct_UFunction_ADice_ShowDice, "ShowDice" }, // 1244172387
 		{ &Z_Construct_UFunction_ADice_ShowDiceFeedbackNumber, "ShowDiceFeedbackNumber" }, // 2292091553
 		{ &Z_Construct_UFunction_ADice_SwitchDicePosition, "SwitchDicePosition" }, // 3104745471
@@ -329,10 +340,10 @@ ADice::~ADice() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 2206467857U) },
+		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 3554842855U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_400638957(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_1999677725(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

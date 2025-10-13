@@ -222,7 +222,8 @@ void AMapMenuCamera::HandleConfirmInput()
     if (ThrowItemPlayerMenu)
     {
         int player = Inventory->SwitchItemThrowPlayer(0, MAX_TEAM_NUMBER);
-        Inventory->UseItemFromUI(MapDb->GetMinion(player, 0));
+        AMinion* minion = MapDb->GetMinion(player, 0);
+        Inventory->UseItemFromUI(minion, false, CurrentMinionTeam);
         SwitchItemThrowPlayerSelector(false);
         SwitchInventory();
         return;   
@@ -926,11 +927,26 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 void AMapMenuCamera::ResetMapItems()
 {
     TArray<AMinion*> minions = MapDb->GetMinions(CurrentMinionTeam);
+    
+    ResetSlowedDice();
 
     for (AMinion* minion : minions)
     {
         minion->CurrentSquare->ResetWallFromSquare(CurrentMinionTeam);
     }
+}
+
+void AMapMenuCamera::ResetSlowedDice()
+{
+    if (TeamWithDiceSlowed == -1)
+        return;
+    
+    int turnToDisable = TeamWithDiceSlowed + 1;
+    if (turnToDisable >= MAX_TEAM_NUMBER)
+        turnToDisable = 0;
+
+    if(CurrentMinionTeam == turnToDisable)
+        TeamWithDiceSlowed = -1;
 }
 
 void AMapMenuCamera::FocusNextMinion(int _direction)
@@ -1009,7 +1025,7 @@ void AMapMenuCamera::RollTheDice()
     
     if (Dice && CurrentMinion)
     {
-        SavedDiceMovements += Dice->RollTheDice();
+        SavedDiceMovements += (TeamWithDiceSlowed != CurrentMinionTeam) ? Dice->RollTheDice() : Dice->RollTheDice(true);
         Dice->ShowDiceFeedbackNumber(SavedDiceMovements);
         DiceRollIndex++;
     }

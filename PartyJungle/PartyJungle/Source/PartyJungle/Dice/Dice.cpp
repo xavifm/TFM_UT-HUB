@@ -18,9 +18,13 @@ void ADice::Tick(float DeltaTime)
 
 }
 
-int ADice::RollTheDice()
+int ADice::RollTheDice(bool _reduced)
 {
-	DiceValue = FMath::RandRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX);
+	if (!_reduced)
+		DiceValue = FMath::RandRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX);
+	else
+		DiceValue = FMath::RandRange(RANDOM_NUMBER_MIN, RANDOM_NUMBER_MAX / 2);
+	
 	return DiceValue;
 }
 

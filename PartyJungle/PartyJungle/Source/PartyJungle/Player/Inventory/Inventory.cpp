@@ -19,7 +19,7 @@ void AInventory::InitializeInventory(int _team)
 		
 		//test every item
 			InventoryArray[0] = DiceItem;
-			InventoryArray[1] = WhistleItem;
+			InventoryArray[1] = ReducedDiceTrapItem;
 		//
 	}
 	
@@ -54,10 +54,10 @@ void AInventory::UseItem(AItem* _item, AMinion* _minion)
 	}
 }
 
-bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse)
+bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse, int _throwTeam)
 {
 	int minionTeam = static_cast<int>(_minion->Team);
-	AItem* itemQuery = Inventories[minionTeam][InventoryIndex];
+	AItem* itemQuery = (_throwTeam == -1) ? Inventories[minionTeam][InventoryIndex] : Inventories[_throwTeam][InventoryIndex];
 
 	bool executeItem = true;
 
@@ -75,7 +75,11 @@ bool AInventory::UseItemFromUI(AMinion* _minion, bool _instantUse)
 	if (IsValid(itemQuery) && executeItem)
 	{
 		itemQuery->ExecuteItem(_minion);
-		RemoveItem(static_cast<int>(_minion->Team), itemQuery);
+
+		if (_throwTeam == -1)
+			RemoveItem(static_cast<int>(_minion->Team), itemQuery);
+		else
+			RemoveItem(_throwTeam, itemQuery);
 	}
 
 	return executeItem;
