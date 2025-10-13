@@ -130,7 +130,7 @@ void AWorldManager::LoadPortion(int _index)
 	}
 }
 
-void AWorldManager::EnableStarAtRandomLocation()
+void AWorldManager::EnableStarAtRandomLocation(bool _pointWithCamera)
 {
 	if (MapCrowns.Num() > 0)
 	{
@@ -143,6 +143,9 @@ void AWorldManager::EnableStarAtRandomLocation()
 
 		LastStarIndex = RandomIndex;
 		MapCrowns[RandomIndex]->SwitchStar(true);
+
+		if (_pointWithCamera)
+			StartMapPointCinematic(MapCrowns[RandomIndex]->GetActorLocation(), POINT_CINEMATIC_TIME);
 	}
 }
 

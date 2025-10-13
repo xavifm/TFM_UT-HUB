@@ -188,7 +188,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
 	void MoveFullMapCamera(float _xPos, float _yPos);
-
+	
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
 
@@ -235,7 +235,8 @@ public:
 	UPROPERTY()
 	bool ItemExecuted = false;
 
-
+	FTimerHandle TimerHandle;
+	
 private:
 	const int MAX_MINION_NUMBER = 3;
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
@@ -320,6 +321,4 @@ private:
 
 	UPROPERTY()
 	UUserWidget* MenuWidget;
-
-	FTimerHandle TimerHandle;
 };

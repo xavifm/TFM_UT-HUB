@@ -8,5 +8,6 @@ void AWhistle::ExecuteItem(AMinion* _minion)
 		return;
 
 	MapMenuCamera->WorldSceneManager->DisableAllStars();
-	MapMenuCamera->WorldSceneManager->EnableStarAtRandomLocation();
+	MapMenuCamera->WorldSceneManager->EnableStarAtRandomLocation(true);
+	MapMenuCamera->SwitchFullMapVision();
 }

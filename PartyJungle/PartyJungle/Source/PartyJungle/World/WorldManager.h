@@ -62,12 +62,16 @@ public:
 	void LoadPortion(int _index);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
-	void EnableStarAtRandomLocation();
+	void EnableStarAtRandomLocation(bool _pointWithCamera = false);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void DisableAllStars();
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void StartMapPointCinematic(FVector _position, float _time);
+
 private:
 	bool IsInitialized = false;
 	int LastStarIndex = -1;
+	const float POINT_CINEMATIC_TIME = 1;
 };

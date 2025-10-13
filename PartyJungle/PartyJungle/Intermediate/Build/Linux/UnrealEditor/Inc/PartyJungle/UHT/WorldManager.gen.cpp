@@ -12,6 +12,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeWorldManager() {}
 
 // ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
@@ -100,15 +101,33 @@ DEFINE_FUNCTION(AWorldManager::execDisableAllStars)
 // ********** Begin Class AWorldManager Function EnableStarAtRandomLocation ************************
 struct Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics
 {
+	struct WorldManager_eventEnableStarAtRandomLocation_Parms
+	{
+		bool _pointWithCamera;
+	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "World_Functions" },
+		{ "CPP_Default__pointWithCamera", "false" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
 #endif // WITH_METADATA
+	static void NewProp__pointWithCamera_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__pointWithCamera;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "EnableStarAtRandomLocation", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams)},  };
+void Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::NewProp__pointWithCamera_SetBit(void* Obj)
+{
+	((WorldManager_eventEnableStarAtRandomLocation_Parms*)Obj)->_pointWithCamera = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::NewProp__pointWithCamera = { "_pointWithCamera", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(WorldManager_eventEnableStarAtRandomLocation_Parms), &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::NewProp__pointWithCamera_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::NewProp__pointWithCamera,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "EnableStarAtRandomLocation", Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::PropPointers), sizeof(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::WorldManager_eventEnableStarAtRandomLocation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation_Statics::WorldManager_eventEnableStarAtRandomLocation_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -120,9 +139,10 @@ UFunction* Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation()
 }
 DEFINE_FUNCTION(AWorldManager::execEnableStarAtRandomLocation)
 {
+	P_GET_UBOOL(Z_Param__pointWithCamera);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->EnableStarAtRandomLocation();
+	P_THIS->EnableStarAtRandomLocation(Z_Param__pointWithCamera);
 	P_NATIVE_END;
 }
 // ********** End Class AWorldManager Function EnableStarAtRandomLocation **************************
@@ -300,6 +320,54 @@ DEFINE_FUNCTION(AWorldManager::execLoadPortion)
 }
 // ********** End Class AWorldManager Function LoadPortion *****************************************
 
+// ********** Begin Class AWorldManager Function StartMapPointCinematic ****************************
+struct WorldManager_eventStartMapPointCinematic_Parms
+{
+	FVector _position;
+	float _time;
+};
+static FName NAME_AWorldManager_StartMapPointCinematic = FName(TEXT("StartMapPointCinematic"));
+void AWorldManager::StartMapPointCinematic(FVector _position, float _time)
+{
+	WorldManager_eventStartMapPointCinematic_Parms Parms;
+	Parms._position=_position;
+	Parms._time=_time;
+	UFunction* Func = FindFunctionChecked(NAME_AWorldManager_StartMapPointCinematic);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp__position;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp__time;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventStartMapPointCinematic_Parms, _position), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::NewProp__time = { "_time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventStartMapPointCinematic_Parms, _time), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::NewProp__position,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::NewProp__time,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "StartMapPointCinematic", Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers), sizeof(WorldManager_eventStartMapPointCinematic_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(WorldManager_eventStartMapPointCinematic_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AWorldManager_StartMapPointCinematic()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AWorldManager Function StartMapPointCinematic ******************************
+
 // ********** Begin Class AWorldManager Function UnloadEntireWorld *********************************
 struct Z_Construct_UFunction_AWorldManager_UnloadEntireWorld_Statics
 {
@@ -441,11 +509,12 @@ struct Z_Construct_UClass_AWorldManager_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AWorldManager_AsssignCameraActors, "AsssignCameraActors" }, // 177570660
 		{ &Z_Construct_UFunction_AWorldManager_DisableAllStars, "DisableAllStars" }, // 556948302
-		{ &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation, "EnableStarAtRandomLocation" }, // 236102404
+		{ &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation, "EnableStarAtRandomLocation" }, // 2635431754
 		{ &Z_Construct_UFunction_AWorldManager_GetLevelByIndex, "GetLevelByIndex" }, // 3134651353
 		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCameraByIndex, "GetMinigameCameraByIndex" }, // 4231099228
 		{ &Z_Construct_UFunction_AWorldManager_InitializeCameras, "InitializeCameras" }, // 522898123
 		{ &Z_Construct_UFunction_AWorldManager_LoadPortion, "LoadPortion" }, // 568760706
+		{ &Z_Construct_UFunction_AWorldManager_StartMapPointCinematic, "StartMapPointCinematic" }, // 3918929468
 		{ &Z_Construct_UFunction_AWorldManager_UnloadEntireWorld, "UnloadEntireWorld" }, // 3062019286
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -521,10 +590,10 @@ AWorldManager::~AWorldManager() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 1956014502U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 3571265479U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_3686835777(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_1367921236(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

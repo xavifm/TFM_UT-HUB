@@ -398,6 +398,8 @@ void AMapMenuCamera::SwitchFullMapVision()
 {
     FullMapView = !FullMapView;
 
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+
     if(MapUI)
         MapUI->SwitchLegendVisibility(!FullMapView);
     
@@ -996,8 +998,11 @@ void AMapMenuCamera::StoreCrowns(int _quantity)
     CurrentMinion->UpdateCrowns(-_quantity);
     MapUI->UpdateCrowns(CurrentMinionTeam, _quantity);
     
-    WorldSceneManager->EnableStarAtRandomLocation();
+    WorldSceneManager->EnableStarAtRandomLocation(true);
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle,this,&AMapMenuCamera::SwitchFullMapVision,2.0f,false);
+    
     SwitchStoreCrownsUI(false);
+    SwitchFullMapVision();
 }
 
 void AMapMenuCamera::BuyCrowns(int _quantity)
