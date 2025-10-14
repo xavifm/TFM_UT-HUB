@@ -73,5 +73,5 @@ public:
 private:
 	bool IsInitialized = false;
 	int LastStarIndex = -1;
-	const float POINT_CINEMATIC_TIME = 1;
+	const float POINT_CINEMATIC_TIME = 2.5f;
 };
