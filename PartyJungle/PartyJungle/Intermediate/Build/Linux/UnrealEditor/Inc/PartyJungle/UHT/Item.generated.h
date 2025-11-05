@@ -20,6 +20,7 @@ class AMinion;
 
 // ********** Begin Class AItem ********************************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Items_Base_Item_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetPrice); \
 	DECLARE_FUNCTION(execGetDescription); \
 	DECLARE_FUNCTION(execGetName); \
 	DECLARE_FUNCTION(execExecuteItem);

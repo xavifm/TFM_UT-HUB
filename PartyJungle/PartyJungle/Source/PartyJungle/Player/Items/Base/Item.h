@@ -49,10 +49,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FString GetDescription();
 
+	UFUNCTION(BlueprintCallable)
+	int GetPrice();
+	
 	UPROPERTY(EditAnywhere)
 	FString ItemName;
 	UPROPERTY(EditAnywhere)
 	FString ItemDescription;
+	UPROPERTY(EditAnywhere)
+	int Price;
 	
 protected:
 	virtual void BeginPlay() override;

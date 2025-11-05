@@ -32,3 +32,8 @@ FString AItem::GetDescription()
 	return ItemDescription;
 }
 
+int AItem::GetPrice()
+{
+	return Price;
+}
+
