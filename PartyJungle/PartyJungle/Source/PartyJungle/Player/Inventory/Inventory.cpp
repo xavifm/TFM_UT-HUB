@@ -1,5 +1,4 @@
 #include "./Inventory.h"
-
 #include "PartyJungle/Map/Square.h"
 
 AInventory::AInventory()
@@ -119,7 +118,7 @@ bool AInventory::AddItem(int _team, AItem* _item)
 	if (_item->ItemType != EItemType::DICE && _item->ItemType != EItemType::MISC)
 		return false;
 	
-	TArray<AItem*>& InventoryArray = Inventories.FindOrAdd(_team);
+	TArray<AItem*>& InventoryArray = Inventories[_team];
 	const int slotIndex = (_item->ItemType == EItemType::DICE) ? 0 : 1;
 
 	AItem*& slotRef = InventoryArray[slotIndex];

@@ -119,6 +119,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleConfirmInput();
 
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void FollowMinionMovement();
+
 	UFUNCTION()
 	void CloseDuelMenu(bool _endTurn);
 

@@ -66,6 +66,12 @@ void AMapMenuCamera::BeginPlay()
         }
     }
 
+    if (Inventory)
+    {
+        for (int team = 0 ; team < MAX_TEAM_NUMBER ; team++)
+            Inventory->InitializeInventory(team);
+    }
+
     SwitchMainScene();
 }
 
@@ -225,13 +231,29 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (SquareShopReference)
     {
-        //buy item here
-        Inventory->AddItem(CurrentMinionTeam ,SquareShopReference->GetCurrentShopItem());
-        SquareShopReference->SwitchShop();
-        SquareShopReference = nullptr;
+        AItem* currentItem = SquareShopReference->GetCurrentShopItem();
+        
+        const FTransform SpawnTM = currentItem->GetActorTransform();
+        FActorSpawnParameters Params;
+        Params.Owner = this;
+        Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+        Params.Template = currentItem;
+        
+        AItem* itemCopy = GetWorld()->SpawnActor<AItem>(currentItem->GetClass(), SpawnTM, Params);
 
-        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
-        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+        if (currentItem->Price <= CurrentMinion->GetCoins())
+        {
+            bool itemAddedQuery = Inventory->AddItem(CurrentMinionTeam, itemCopy);
+            
+            if (itemAddedQuery)
+            {
+                UpdateMinionEconomy(-currentItem->Price);
+                SquareShopReference->SwitchShop();
+                SquareShopReference = nullptr;
+
+                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FollowMinionMovement, TIME_BEFORE_RESTORING_ROUND, false);   
+            }
+        }
     }
     
     if (ThrowItemPlayerMenu)
@@ -337,6 +359,13 @@ void AMapMenuCamera::HandleConfirmInput()
         RollTheDice();
     else if (!CurrentMinion->CurrentSquare->IsBlockedByWall)
         ExecuteMinionMovement();
+}
+
+void AMapMenuCamera::FollowMinionMovement()
+{
+    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+    int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+    CurrentMinion->SetMinionsMovements(currentMinionMovements); 
 }
 
 void AMapMenuCamera::CloseDuelMenu(bool _endTurn)
@@ -616,6 +645,14 @@ void AMapMenuCamera::HandleBackInput()
 {
     if (IsMinigameActive || DiceRollIndex > 0)
         return;
+
+    if (SquareShopReference)
+    {
+        SquareShopReference->SwitchShop();
+        SquareShopReference = nullptr;
+
+        FollowMinionMovement();
+    }
 
     if (ThrowItemPlayerMenu)
     {

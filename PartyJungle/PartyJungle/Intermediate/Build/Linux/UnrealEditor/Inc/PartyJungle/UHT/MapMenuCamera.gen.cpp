@@ -478,6 +478,36 @@ DEFINE_FUNCTION(AMapMenuCamera::execFocusNextMinion)
 }
 // ********** End Class AMapMenuCamera Function FocusNextMinion ************************************
 
+// ********** Begin Class AMapMenuCamera Function FollowMinionMovement *****************************
+struct Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "FollowMinionMovement", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execFollowMinionMovement)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->FollowMinionMovement();
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function FollowMinionMovement *******************************
+
 // ********** Begin Class AMapMenuCamera Function GetMapUI *****************************************
 struct Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics
 {
@@ -2094,6 +2124,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "FinishDuel", &AMapMenuCamera::execFinishDuel },
 		{ "FinishFadeTransition", &AMapMenuCamera::execFinishFadeTransition },
 		{ "FocusNextMinion", &AMapMenuCamera::execFocusNextMinion },
+		{ "FollowMinionMovement", &AMapMenuCamera::execFollowMinionMovement },
 		{ "GetMapUI", &AMapMenuCamera::execGetMapUI },
 		{ "HandleBackInput", &AMapMenuCamera::execHandleBackInput },
 		{ "HandleConfirmInput", &AMapMenuCamera::execHandleConfirmInput },
@@ -2339,6 +2370,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishDuel, "FinishDuel" }, // 1054023298
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishFadeTransition, "FinishFadeTransition" }, // 773037478
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2641092475
+		{ &Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement, "FollowMinionMovement" }, // 296374804
 		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 768691028
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 2248972550
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleConfirmInput, "HandleConfirmInput" }, // 32894684
@@ -2494,10 +2526,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 760778325U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1220680777U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_35579204(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_2793145049(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
