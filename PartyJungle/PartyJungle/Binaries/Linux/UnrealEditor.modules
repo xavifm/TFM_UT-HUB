@@ -2,6 +2,6 @@
 	"BuildId": "43139311",
 	"Modules": 
 	{
-		"PartyJungle": "libUnrealEditor-PartyJungle-2991.so"
+		"PartyJungle": "libUnrealEditor-PartyJungle.so"
 	}
 }

@@ -12,6 +12,7 @@ void ASquareShop::SwitchShop()
 {
 	ShopEnabled = !ShopEnabled;
 	SwitchShopVisibility(ShopEnabled);
+	SwitchShopItem(0);
 }
 
 void ASquareShop::SwitchShopItem(int _direction)
