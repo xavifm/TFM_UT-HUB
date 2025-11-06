@@ -16,11 +16,6 @@ void AInventory::InitializeInventory(int _team)
 	{
 		InventoryArray.Init(EmptyItemDice, 2);
 		InventoryArray[1] = EmptyItemMisc;
-		
-		//test every item
-			InventoryArray[0] = DiceItem;
-			InventoryArray[1] = WhistleItem;
-		//
 	}
 	
 	SortedInventory = GetSortedInventory(_team);
@@ -114,6 +109,31 @@ bool AInventory::CheckIfThereIsSpaceToStoreItem(int _team, AItem* _item)
 bool AInventory::CheckIfIsEmptySpace(int _team)
 {
 	return (Inventories[_team][InventoryIndex] == EmptyItemDice || Inventories[_team][InventoryIndex] == EmptyItemMisc);
+}
+
+bool AInventory::AddItem(int _team, AItem* _item)
+{
+	if (!_item)
+		return false;
+	
+	if (_item->ItemType != EItemType::DICE && _item->ItemType != EItemType::MISC)
+		return false;
+	
+	TArray<AItem*>& InventoryArray = Inventories.FindOrAdd(_team);
+	const int slotIndex = (_item->ItemType == EItemType::DICE) ? 0 : 1;
+
+	AItem*& slotRef = InventoryArray[slotIndex];
+	
+	const bool isDiceSlotEmpty = (slotIndex == 0 && slotRef == EmptyItemDice);
+	const bool isMiscSlotEmpty = (slotIndex == 1 && slotRef == EmptyItemMisc);
+
+	if (isDiceSlotEmpty || isMiscSlotEmpty)
+	{
+		slotRef = _item;
+		return true;
+	}
+	
+	return false;
 }
 
 void AInventory::RemoveItem(int _team, AItem* _item)

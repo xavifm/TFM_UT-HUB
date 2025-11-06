@@ -61,6 +61,9 @@ public:
 
 	UFUNCTION()
 	bool CheckIfIsEmptySpace(int _team);
+
+	UFUNCTION()
+	bool AddItem(int _team, AItem* _item);
 	
 	void RemoveItem(int _team, AItem* _item);
 

@@ -17,6 +17,8 @@
 
 #include "MapMenuCamera.generated.h"
 
+class ASquareShop;
+
 UCLASS()
 class PARTYJUNGLE_API AMapMenuCamera : public APawn
 {
@@ -65,6 +67,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minion On Camera")
 	AMinion* CurrentMinion;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Square Shop Reference")
+	ASquareShop* SquareShopReference;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	AMapDatabase* MapDb;
 

@@ -21,6 +21,7 @@ class AItem;
 // ********** Begin Class ASquareShop **************************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSwitchShop); \
+	DECLARE_FUNCTION(execGetCurrentShopItem); \
 	DECLARE_FUNCTION(execSwitchShopItem);
 
 

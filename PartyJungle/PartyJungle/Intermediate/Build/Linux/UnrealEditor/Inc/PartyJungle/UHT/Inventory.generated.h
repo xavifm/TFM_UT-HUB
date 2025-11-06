@@ -25,6 +25,7 @@ enum class EUseMode : uint8;
 	DECLARE_FUNCTION(execSwitchItemThrowPlayer); \
 	DECLARE_FUNCTION(execCheckIfItemExists); \
 	DECLARE_FUNCTION(execGetSortedInventory); \
+	DECLARE_FUNCTION(execAddItem); \
 	DECLARE_FUNCTION(execCheckIfIsEmptySpace); \
 	DECLARE_FUNCTION(execCheckIfThereIsSpaceToStoreItem); \
 	DECLARE_FUNCTION(execGetItemUseModeFromUI); \

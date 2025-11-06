@@ -2,6 +2,7 @@
 #include "Blueprint/UserWidget.h"
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
+#include <PartyJungle/Map/SquareShop.h>
 #include "EngineUtils.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include <PartyJungle/Map/SquareKeepCrowns.h>
@@ -100,7 +101,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
             {
                 MapUI->SwitchLegendVisibility(false);
 
-                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup) 
+                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup && !SquareShopReference) 
                 {
                     UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
                     if (!ItemExecuted)
@@ -169,6 +170,9 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
 
+    if (SquareShopReference)
+        SquareShopReference->SwitchShopItem(direction);
+
     if (DiceRollIndex > 0)
         return;
 
@@ -219,6 +223,17 @@ void AMapMenuCamera::HandleConfirmInput()
     if (IsMinigameActive || FullMapView)
         return;
 
+    if (SquareShopReference)
+    {
+        //buy item here
+        Inventory->AddItem(CurrentMinionTeam ,SquareShopReference->GetCurrentShopItem());
+        SquareShopReference->SwitchShop();
+        SquareShopReference = nullptr;
+
+        int currentMinionMovements = CurrentMinion->GetMinionsMovements() - 1;
+        CurrentMinion->SetMinionsMovements(currentMinionMovements);
+    }
+    
     if (ThrowItemPlayerMenu)
     {
         int player = Inventory->SwitchItemThrowPlayer(0, MAX_TEAM_NUMBER);
@@ -383,7 +398,7 @@ void AMapMenuCamera::DelayedSceneSwitch()
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI)
+    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
         return;
 
     SwitchFullMapVision();
@@ -1200,7 +1215,7 @@ void AMapMenuCamera::RestoreTurnLogic()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
-    if (DuelUI || DuelPopup)
+    if (DuelUI || DuelPopup || SquareShopReference)
         return;
 
     TurnMovementIndex = 0;

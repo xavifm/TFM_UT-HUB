@@ -3242,6 +3242,8 @@
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStaticsTypes.generated.h \
   Runtime/Engine/Classes/Particles/WorldPSCPool.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStatics.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/SquareShop.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareShop.generated.h \
   Runtime/Engine/Public/EngineUtils.h Runtime/Engine/Public/HitProxies.h \
   Runtime/Engine/Classes/Engine/Level.h \
   Runtime/CoreUObject/Public/UObject/UObjectHash.h \

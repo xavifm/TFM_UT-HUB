@@ -28,13 +28,16 @@ public:
 	UFUNCTION()
 	void SwitchShopItem(int _direction);
 
-private:
+	UFUNCTION()
+	AItem* GetCurrentShopItem();
+
 	UFUNCTION()
 	void SwitchShop();
-	
-	UPROPERTY()
-	bool ShopEnabled;
 
+private:
 	UPROPERTY()
 	int ShopIndex;
+
+	UPROPERTY()
+	bool ShopEnabled;
 };

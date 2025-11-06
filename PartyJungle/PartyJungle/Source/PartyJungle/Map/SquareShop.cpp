@@ -1,9 +1,13 @@
 #include "./SquareShop.h"
+#include "PartyJungle/Player/Map/MapMenuCamera.h"
 
 bool ASquareShop::ExecuteEvent(AMinion* _minion)
 {
-	if (!ShopEnabled)
+	if (!ShopEnabled && Camera)
+	{
+		Camera->SquareShopReference = this;
 		SwitchShop();
+	}
 
 	return true;
 }
@@ -13,6 +17,11 @@ void ASquareShop::SwitchShop()
 	ShopEnabled = !ShopEnabled;
 	SwitchShopVisibility(ShopEnabled);
 	SwitchShopItem(0);
+}
+
+AItem* ASquareShop::GetCurrentShopItem()
+{
+	return ItemsInShop[ShopIndex];
 }
 
 void ASquareShop::SwitchShopItem(int _direction)
