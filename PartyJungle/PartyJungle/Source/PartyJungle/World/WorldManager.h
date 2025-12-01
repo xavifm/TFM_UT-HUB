@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include <Camera/CameraActor.h>
 #include "Camera/CameraComponent.h"
+
 #include "WorldManager.generated.h"
 
 class ASquareStar;
@@ -14,34 +15,16 @@ class PARTYJUNGLE_API AWorldManager : public AActor
 	GENERATED_BODY()
 
 public:
+	/**
+	 * Constructor.
+	 */
 	AWorldManager();
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
-	TArray<AActor*> BoardActors;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
-	TArray<AActor*> Minigame0Actors;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	TArray<AActor*> MinigameCameras;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	UCameraComponent* MapCamera;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	UCameraComponent* FullMapCamera;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	AActor* MapCameraActor;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	AActor* FullMapCameraActor;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	TArray<UCameraComponent*> CameraActors;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Crowns")
-	TArray<ASquareStar*> MapCrowns;
+	
+	/**
+	 * Destructor.
+	 */
+	~AWorldManager() = default;
+	
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void InitializeCameras();
@@ -69,6 +52,34 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
 	void StartMapPointCinematic(FVector _position, float _time);
+	
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
+	TArray<AActor*> BoardActors;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
+	TArray<AActor*> Minigame0Actors;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	TArray<AActor*> MinigameCameras;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	UCameraComponent* MapCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	UCameraComponent* FullMapCamera;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	AActor* MapCameraActor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	AActor* FullMapCameraActor;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	TArray<UCameraComponent*> CameraActors;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Crowns")
+	TArray<ASquareStar*> MapCrowns;
 
 private:
 	bool IsInitialized = false;

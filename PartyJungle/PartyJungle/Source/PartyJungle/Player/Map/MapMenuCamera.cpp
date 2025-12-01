@@ -4,8 +4,8 @@
 #include <Kismet/GameplayStatics.h>
 #include <PartyJungle/Map/SquareShop.h>
 #include "EngineUtils.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include <PartyJungle/Map/SquareKeepCrowns.h>
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -35,13 +35,12 @@ void AMapMenuCamera::BeginPlay()
     UWorld* World = GetWorld();
     if (World)
     {
-        UGameInstance* GameInstance = World->GetGameInstance();
-        UMinigameDataGameInstance* DataGameInstance = Cast<UMinigameDataGameInstance>(GameInstance);
+        auto GameInstance {World->GetGameInstance<UManagerGameInstance>()};
 
         if (GameInstance)
         {
-            MAX_TEAM_NUMBER = DataGameInstance->PlayersInBoard;
-            RoundsSystem->MaxRounds = DataGameInstance->RoundsInBoard;
+            MAX_TEAM_NUMBER = GameInstance->GetGameManager()->PlayersInBoard;
+            RoundsSystem->MaxRounds = GameInstance->GetGameManager()->RoundsInBoard;
         }
 
         if (WorldSceneManager)
