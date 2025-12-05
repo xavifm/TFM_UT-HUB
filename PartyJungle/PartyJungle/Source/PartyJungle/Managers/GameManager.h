@@ -6,15 +6,14 @@
 #include <PartyJungle/Player/Scores/TransactionDto.h>
 #include <PartyJungle/Player/Scores/ScoreDto.h>
 
-#include "GameManager.generated.h"
-
 // ToDo: Posar Scores, Transactions i Challenges a una classe de Player, i fer que que vagi amb Getters() i Setters().
-UCLASS()
-class UGameManager : public UClass
+class UGameManager
 {
-	GENERATED_BODY()
-	
 public:
+	UGameManager() {};
+	
+	~UGameManager() {};
+	
 	UPROPERTY()
 	int PlayersInBoard;
 

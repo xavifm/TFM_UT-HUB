@@ -26,19 +26,19 @@ public:
 	 * Gets a reference to the StateManager.
 	 * @return Reference to the StateManager.
 	 */
-	UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
-	UStateManager* const GetStateManager() { return m_StateManager.Get(); }
+	//UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
+	UStateManager* const GetStateManager() { return &m_StateManager; }
 	
 	/**
 	 * Gets a reference to the GameManager.
 	 * @return Reference to the GameManager.
 	 */
-	UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
-	UGameManager* const GetGameManager() { return m_GameManager.Get(); }
+	//UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
+	UGameManager* const GetGameManager() { return &m_GameManager; }
 	
 	
 private:
-	TSharedPtr<UStateManager> m_StateManager; //!< Instance that manages all data relating to game states.
-	TSharedPtr<UGameManager> m_GameManager; //!< Instance that manages all permanent data from the game.
+	UStateManager m_StateManager; //!< Instance that manages all data relating to game states.
+	UGameManager m_GameManager; //!< Instance that manages all permanent data from the game.
 	
 };
