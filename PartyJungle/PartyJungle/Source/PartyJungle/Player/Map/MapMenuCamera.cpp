@@ -50,6 +50,7 @@ void AMapMenuCamera::BeginPlay()
         }
 
 
+        // ToDo Capy: Esto es para iniciar el input system para cada jugador
         if (GameInstance)
         {
             const TArray<ULocalPlayer*>& LocalPlayers = GameInstance->GetLocalPlayers();
