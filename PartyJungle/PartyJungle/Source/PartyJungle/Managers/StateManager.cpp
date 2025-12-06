@@ -2,6 +2,7 @@
 
 #include "../GameStates/GameStateData.h"
 
+Event UStateManager::m_EventStateChanged;
 
 bool UStateManager::ChangeState(GameStates a_TargetState)
 {
