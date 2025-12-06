@@ -2,6 +2,8 @@
 
 #include <functional>
 
+#include "StateManager.generated.h"
+
 
 class AGameStateData;
 
@@ -11,19 +13,12 @@ class Event { public: void Broadcast(){}; bool Subscribe(bool, std::function<voi
 UENUM(BlueprintType)
 enum class GameStates : uint8 { MainMenu = 0U, GameMenu, MainGame, MiniGame_1, Credits };
 
-class UStateManager
+UCLASS()
+class UStateManager : public UObject
 {
+	GENERATED_BODY()
 	
 public:
-	/**
-	 * Constructor
-	 */
-	UStateManager() { };
-	
-	/**
-	 * Destructor
-	 */
-	~UStateManager() = default;
 	
 	/**
 	 * Changes to the indicated state.
