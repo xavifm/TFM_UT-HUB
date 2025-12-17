@@ -5,6 +5,13 @@
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include "MinigameLogic.generated.h"
 
+UENUM(BlueprintType)
+enum class EMinigameType : uint8
+{
+    DUEL UMETA(DisplayName = "DUEL"),
+    MINIGAME UMETA(DisplayName = "MINIGAME"),
+};
+
 UCLASS()
 class PARTYJUNGLE_API AMinigameLogic : public AActor
 {
@@ -12,6 +19,9 @@ class PARTYJUNGLE_API AMinigameLogic : public AActor
 
 public:
     AMinigameLogic();
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
+    EMinigameType MinigameType;
 
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
@@ -44,13 +54,14 @@ public:
     bool CheckIfTheMinigameHasFinished();
 
     UFUNCTION()
-    int CalculateWinner();
+    TArray<int32> CalculateWinner();
+    int CaculateDuelWinner();
 
     UFUNCTION()
-    virtual void ShowWinnerScene(int _endMinigameTime, int _winner);
+    virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);
 
     UFUNCTION()
-    virtual void FinishMinigame(int _winner);
+    virtual void FinishMinigame(TArray<int32> _winners);
 
     UFUNCTION()
     virtual void SetTeamScore(int _team, int _score);
@@ -78,7 +89,7 @@ private:
     UFUNCTION()
     void InitializeMinigameInfoForDuel();
 
-    int Winner;
+    TArray<int32> Winners;
     bool MinigameFinished;
     FTimerHandle TimerHandle;
 

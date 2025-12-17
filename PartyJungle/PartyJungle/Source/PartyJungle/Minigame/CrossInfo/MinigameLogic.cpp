@@ -63,11 +63,33 @@ bool AMinigameLogic::CheckIfTheMinigameHasFinished()
 }
 
 
-int AMinigameLogic::CalculateWinner()
+TArray<int32> AMinigameLogic::CalculateWinner()
+{
+	TArray<int32> WinningTeams;
+	int MaxScore = TNumericLimits<int>::Min();
+
+	switch (MinigameType)
+	{
+		case EMinigameType::DUEL:
+		{
+			int duelWinner = CaculateDuelWinner();	
+			WinningTeams.Add(duelWinner);
+			break;		
+		}
+		case EMinigameType::MINIGAME:
+		{
+			break;	
+		}
+	}
+	
+	return WinningTeams;
+}
+
+int AMinigameLogic::CaculateDuelWinner()
 {
 	int WinningTeamIndex = -1;
 	int MaxScore = TNumericLimits<int>::Min();
-
+	
 	for (const TPair<int, int>& Elem : TeamMinigameScores)
 	{
 		if (Elem.Value > MaxScore)
@@ -80,21 +102,20 @@ int AMinigameLogic::CalculateWinner()
 	return WinningTeamIndex;
 }
 
-
-void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, int _winner)
+void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners)
 {
-	Winner = _winner;
-	ShowEndScreenSequence(_winner);
+	Winners = _winners;
+	ShowEndScreenSequence(_winners[0]);
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMinigameLogic::DelayedSceneSwitch, _endMinigameTime, false);
 }
 
-void AMinigameLogic::FinishMinigame(int _winner)
+void AMinigameLogic::FinishMinigame(TArray<int32> _winners)
 {
 	if (MinigameFinished)
 		return;
 
 	MinigameFinished = true;
-	ShowWinnerScene(SWITCH_SCENE_TIMER, _winner);
+	ShowWinnerScene(SWITCH_SCENE_TIMER, _winners);
 }
 
 void AMinigameLogic::DelayedSceneSwitch()
@@ -105,7 +126,15 @@ void AMinigameLogic::DelayedSceneSwitch()
 	if (MapMenuCamera)
 	{
 		MapMenuCamera->SwitchMainScene();
-		MapMenuCamera->FinishDuel(Winner, MapMenuCamera->ChosenDuelIndex);
+		switch (MinigameType)
+		{
+			case EMinigameType::DUEL:
+				MapMenuCamera->FinishDuel(Winners[0], MapMenuCamera->ChosenDuelIndex);
+				break;
+			case EMinigameType::MINIGAME:
+				
+				break;
+		}
 	}
 }
 

@@ -61,11 +61,10 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 	}, _startTime, false);
 }
 
-void AMinigame1Logic::FinishMinigame(int _winner)
+void AMinigame1Logic::FinishMinigame(TArray<int32> _winners)
 {
-	Super::FinishMinigame(_winner);
+	Super::FinishMinigame(_winners);
 	MinigameCamera->SetCameraTarget(nullptr);
-
 }
 
 void AMinigame1Logic::SetTeamScore(int _team, int _score)
