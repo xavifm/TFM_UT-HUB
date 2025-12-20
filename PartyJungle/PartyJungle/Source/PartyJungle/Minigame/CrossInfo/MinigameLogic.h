@@ -9,7 +9,7 @@ UENUM(BlueprintType)
 enum class EMinigameType : uint8
 {
     DUEL UMETA(DisplayName = "DUEL"),
-    MINIGAME UMETA(DisplayName = "MINIGAME"),
+    TEAM_MINIGAME UMETA(DisplayName = "TEAM MINIGAME"),
 };
 
 UCLASS()
@@ -56,6 +56,7 @@ public:
     UFUNCTION()
     TArray<int32> CalculateWinner();
     int CaculateDuelWinner();
+    TArray<int32> AMinigameLogic::CalculateTeamMinigameWinners();
 
     UFUNCTION()
     virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);

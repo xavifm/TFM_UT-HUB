@@ -76,13 +76,30 @@ TArray<int32> AMinigameLogic::CalculateWinner()
 			WinningTeams.Add(duelWinner);
 			break;		
 		}
-		case EMinigameType::MINIGAME:
+		case EMinigameType::TEAM_MINIGAME:
 		{
+			TArray<int32> minigameWinners = CalculateTeamMinigameWinners();	
+			WinningTeams = 	minigameWinners;
 			break;	
 		}
 	}
 	
 	return WinningTeams;
+}
+
+TArray<int32> AMinigameLogic::CalculateTeamMinigameWinners()
+{
+	TArray<int32> WinnersTeams;
+	
+	for (const TPair<int, int>& Elem : TeamMinigameScores)
+	{
+		if (Elem.Value > 0)
+		{
+			WinnersTeams.Add(Elem.Key);
+		}
+	}
+	
+	return WinnersTeams;
 }
 
 int AMinigameLogic::CaculateDuelWinner()
@@ -131,7 +148,7 @@ void AMinigameLogic::DelayedSceneSwitch()
 			case EMinigameType::DUEL:
 				MapMenuCamera->FinishDuel(Winners[0], MapMenuCamera->ChosenDuelIndex);
 				break;
-			case EMinigameType::MINIGAME:
+			case EMinigameType::TEAM_MINIGAME:
 				
 				break;
 		}
