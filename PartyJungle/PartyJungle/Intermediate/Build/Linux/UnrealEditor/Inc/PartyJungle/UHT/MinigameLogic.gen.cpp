@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeMinigameLogic() {}
 
 // ********** Begin Cross Module References ********************************************************
 ENGINE_API UClass* Z_Construct_UClass_AActor();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameLogic();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameLogic_NoRegister();
@@ -43,14 +44,14 @@ struct Z_Construct_UEnum_PartyJungle_EMinigameType_Statics
 		{ "BlueprintType", "true" },
 		{ "DUEL.DisplayName", "DUEL" },
 		{ "DUEL.Name", "EMinigameType::DUEL" },
-		{ "MINIGAME.DisplayName", "MINIGAME" },
-		{ "MINIGAME.Name", "EMinigameType::MINIGAME" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+		{ "TEAM_MINIGAME.DisplayName", "TEAM MINIGAME" },
+		{ "TEAM_MINIGAME.Name", "EMinigameType::TEAM_MINIGAME" },
 	};
 #endif // WITH_METADATA
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
 		{ "EMinigameType::DUEL", (int64)EMinigameType::DUEL },
-		{ "EMinigameType::MINIGAME", (int64)EMinigameType::MINIGAME },
+		{ "EMinigameType::TEAM_MINIGAME", (int64)EMinigameType::TEAM_MINIGAME },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -638,6 +639,14 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ "Category", "Minigame Type" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameActors_MetaData[] = {
+		{ "Category", "Minigame Assets" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[] = {
+		{ "Category", "Minigame Camera" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GameInstance_MetaData[] = {
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
@@ -667,6 +676,9 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FBytePropertyParams NewProp_MinigameType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_MinigameType;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigameActors_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinigameActors;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_GameInstance;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapMenuCamera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayingMinions_ValueProp;
@@ -708,7 +720,10 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType = { "MinigameType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameType), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameType_MetaData), NewProp_MinigameType_MetaData) }; // 2163763106
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType = { "MinigameType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameType), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameType_MetaData), NewProp_MinigameType_MetaData) }; // 2530748103
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors_Inner = { "MinigameActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors = { "MinigameActors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameActors_MetaData), NewProp_MinigameActors_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, Camera), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Camera_MetaData), NewProp_Camera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameInstance = { "GameInstance", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, GameInstance), Z_Construct_UClass_UMinigameDataGameInstance_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameInstance_MetaData), NewProp_GameInstance_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MapMenuCamera = { "MapMenuCamera", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MapMenuCamera), Z_Construct_UClass_AMapMenuCamera_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapMenuCamera_MetaData), NewProp_MapMenuCamera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_PlayingMinions_ValueProp = { "PlayingMinions", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
@@ -732,6 +747,9 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinigameLogic_
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinigameLogic_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Camera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameInstance,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MapMenuCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_PlayingMinions_ValueProp,
@@ -786,13 +804,13 @@ AMinigameLogic::~AMinigameLogic() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EMinigameType_StaticEnum, TEXT("EMinigameType"), &Z_Registration_Info_UEnum_EMinigameType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2163763106U) },
+		{ EMinigameType_StaticEnum, TEXT("EMinigameType"), &Z_Registration_Info_UEnum_EMinigameType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2530748103U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 1157174896U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 2169212874U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_3106310719(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_1482542392(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo));

@@ -77,7 +77,7 @@ class AMinigameLogic;
 // ********** Begin Enum EMinigameType *************************************************************
 #define FOREACH_ENUM_EMINIGAMETYPE(op) \
 	op(EMinigameType::DUEL) \
-	op(EMinigameType::MINIGAME) 
+	op(EMinigameType::TEAM_MINIGAME) 
 
 enum class EMinigameType : uint8;
 template<> struct TIsUEnumClass<EMinigameType> { enum { Value = true }; };

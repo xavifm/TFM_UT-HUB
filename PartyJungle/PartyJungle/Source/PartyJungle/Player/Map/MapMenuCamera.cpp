@@ -414,7 +414,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
         MapUI->UpdateCoins(team, -bet);
     }
 
-    SavedSceneValue = 0;
+    SavedSceneValue = 0; //duel minigame 1, crear un sistema per retornar el index de minijoc pel tipus
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
 }
 

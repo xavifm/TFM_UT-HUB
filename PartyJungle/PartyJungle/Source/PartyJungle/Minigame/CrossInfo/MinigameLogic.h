@@ -22,7 +22,13 @@ public:
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
     EMinigameType MinigameType;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Assets")
+    TArray<AActor*> MinigameActors;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
+    AActor* Camera;
+    
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
@@ -56,7 +62,7 @@ public:
     UFUNCTION()
     TArray<int32> CalculateWinner();
     int CaculateDuelWinner();
-    TArray<int32> AMinigameLogic::CalculateTeamMinigameWinners();
+    TArray<int32> CalculateTeamMinigameWinners();
 
     UFUNCTION()
     virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);
