@@ -2072,3 +2072,801 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2025.12.20-17.59.50:412][ 32]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 4
 [2025.12.20-17.59.50:486][ 32]LogUObjectHash: Compacting FUObjectHashTables data took   1.12ms
 [2025.12.20-17.59.50:541][ 33]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2025.12.20-18.03.08:735][415]LogAnalyticsSessionSummarySender: Sent summary session report for: AppId=UEEditor.Rocket.Release SessionId={17C768A7-5DC5-4CE5-8DF1-F8242C8469CE}
+[2025.12.20-18.03.08:866][415]LogAnalyticsSessionSummarySender: Sent summary session report for: AppId=UEEditor.Rocket.Release SessionId={9516593C-ECAD-498E-8517-AE09E3C7915B}
+[2025.12.20-18.03.18:386][444]Candidate modules for hot reload:
+[2025.12.20-18.03.18:386][444]  PartyJungle
+[2025.12.20-18.03.18:402][444]Launching UnrealBuildTool... [/home/xavi/Documents/Unreal/Engine/Build/BatchFiles/Linux/Build.sh  -ModuleWithSuffix=PartyJungle,1664 PartyJungleEditor Linux Development -Project="/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject" "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject"  -IgnoreJunk -progress]
+[2025.12.20-18.03.18:414][444]Warning: Starting HotReload took  0.1s.
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Setting up bundled DotNet SDK
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Running command : dotnet Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.dll -ModuleWithSuffix=PartyJungle,1664 PartyJungleEditor Linux Development -Project=/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject -IgnoreJunk -progress
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Log file: /home/xavi/.config/Epic/UnrealBuildTool/Log.txt
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Invalidating makefile for PartyJungleEditor (ispc deleted)
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress push 5%
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress 'Generating code...' 0%
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress 'Generating code...' 33%
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Parsing headers for PartyJungleEditor
+[2025.12.20-18.03.50:090][633]CompilerResultsLog:   Running Internal UnrealHeaderTool /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/PartyJungleEditor/Development/PartyJungleEditor.uhtmanifest -WarningsAsErrors -installed
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Total of 2 written
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Reflection code generated for PartyJungleEditor in 5.4401729 seconds
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress 'Generating code...' 67%
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress 'Generating code...' 100%
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: @progress pop
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: ------- Build details --------
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Using toolchain located at '/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu'.
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Using clang (/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++) version 'clang version 18.1.0rc (github.com/llvm/llvm-project 461274b81d8641eab64d494accddc81d7db8a09e)
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Target: x86_64-unknown-linux-gnu
+[2025.12.20-18.03.50:090][633]CompilerResultsLog: Thread model: posix
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: InstalledDir: /home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin' (string), 18 (major), 1 (minor), 0 (patch)
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Using bundled libc++ standard C++ library.
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Using lld linker
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Using llvm-ar (/home/xavi/Documents/Unreal/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/llvm-ar) version 'LLVM (http://llvm.org/):
+[2025.12.20-18.03.50:091][633]CompilerResultsLog:   LLVM version 18.1.0rc
+[2025.12.20-18.03.50:091][633]CompilerResultsLog:   Optimized build. (string)'
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Compressing debug files
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Targeted minimum CPU architecture: None
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: ------------------------------
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Building PartyJungleEditor...
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [Adaptive Build] Excluded from PartyJungle unity file: PartyJungle.cpp, ScoreDto.cpp, ScoreDatabase.cpp, TransactionDto.cpp, PlayerMapUI.cpp, EndGameUI.cpp, Inventory.cpp, Minion.cpp, DiceItem.cpp, Whistle.cpp, ReducedDice.cpp, TestItem.cpp, WallItem.cpp, Item.cpp, MainMenuInput.cpp, MapMenuCamera.cpp, MinigameLogic.cpp, MinigameDataGameInstance.cpp, CannonMinigameCamera.cpp, Minigame1Logic.cpp, AirCannon.cpp, ChallengeDto.cpp, ChallengeInformation.cpp, ChallengeDatabase.cpp, ReturnToPartyMapScene.cpp, RoundsManager.cpp, BoardMenu.cpp, MainMenuWidget.cpp, SquareOptional.cpp, MapDatabase.cpp, SquareShop.cpp, Square.cpp, SquareStar.cpp, SquareKeepCrowns.cpp, AudioManager.cpp, WorldManager.cpp, Dice.cpp, ScoresCalculator.cpp, EndGameCamera.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+[2025.12.20-18.03.50:091][633]CompilerResultsLog:   Executing up to 8 processes, one per physical core
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Using Unreal Build Accelerator local executor to run 19 action(s)
+[2025.12.20-18.03.50:091][633]CompilerResultsLog:   Storage capacity 40Gb
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: ---- Starting trace ----
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: UbaServer - Listening on 0.0.0.0:1345
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 0%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: ------ Building 19 action(s) started ------
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 5%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 11%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [1/19] Compile DiceItem.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [2/19] Compile Minion.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 16%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [3/19] Compile Minigame1Logic.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 21%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 26%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [4/19] Compile MinigameLogic.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 32%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [5/19] Compile Module.PartyJungle.3.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 37%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [6/19] Compile Module.PartyJungle.1.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 42%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [7/19] Compile Module.PartyJungle.2.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 47%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [8/19] Compile MapMenuCamera.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 53%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [9/19] Compile ReducedDice.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [10/19] Compile ReturnToPartyMapScene.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 58%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [11/19] Compile Square.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 63%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 68%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [12/19] Compile SquareKeepCrowns.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 74%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [13/19] Compile SquareShop.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 79%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [14/19] Compile WallItem.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 84%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [15/19] Compile SquareStar.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 89%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [16/19] Compile Whistle.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [17/19] Compile WorldManager.cpp
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 95%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [18/19] Link (lld) libUnrealEditor-PartyJungle-1664.so
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: @progress 'Compiling C++ source code...' 100%
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: [19/19] WriteMetadata PartyJungleEditor.target (UBA disabled)
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Trace written to file /home/xavi/.config/Epic/UnrealBuildTool/Log.uba with size 4.9kb
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Total time in Unreal Build Accelerator local executor: 20.52 seconds
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: 
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Result: Succeeded
+[2025.12.20-18.03.50:091][633]CompilerResultsLog: Total execution time: 31.39 seconds
+[2025.12.20-18.03.50:091][633]LogMainFrame: MainFrame: Module compiling took 31.817 seconds
+[2025.12.20-18.03.50:132][633]LogUObjectHash: Compacting FUObjectHashTables data took   0.69ms
+[2025.12.20-18.03.50:155][633]LogClass: UPackage /Script/PartyJungle Reload.
+[2025.12.20-18.03.50:155][633]LogClass: UClass WorldManager Reload.
+[2025.12.20-18.03.50:233][633]LogClass: Could not find existing class WorldManager in package /Script/PartyJungle for reload, assuming new or modified class
+[2025.12.20-18.03.50:233][633]LogClass: Function AsssignCameraActors is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function DisableAllStars is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function EnableStarAtRandomLocation is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function GetLevelByIndex is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function GetMinigameCameraByIndex is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function InitializeCameras is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function LoadPortion is new or belongs to a modified class.
+[2025.12.20-18.03.50:233][633]LogClass: Function UnloadEntireWorld is new or belongs to a modified class.
+[2025.12.20-18.03.50:287][633]Re-instancing WorldManager after reload.
+[2025.12.20-18.03.50:479][633]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2025.12.20-18.03.50:513][633]Display: HotReload took 32.2s.
+[2025.12.20-18.03.50:513][633]Display: Reload/Re-instancing Complete: 1 package changed, 1 class changed, 37 classes unchanged, 7 enums unchanged, 165 functions remapped
+[2025.12.20-18.03.52:648][775]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.12.20-18.03.52:654][775]LogContentBundle: [PartyMap(Editor)] Generating Streaming for 0 Content Bundles.
+[2025.12.20-18.03.52:654][775]LogWorldPartition: Display: GenerateStreaming for 'PartyMap' started...
+[2025.12.20-18.03.52:656][775]MapCheck: Actor needs resave /Game/Scenes/PartyMap.ChallengeDatabase 
+[2025.12.20-18.03.52:656][775]MapCheck: Actor needs resave /Game/Scenes/PartyMap.RoundsManager 
+[2025.12.20-18.03.52:656][775]MapCheck: Actor needs resave /Game/Scenes/PartyMap.ScoreDatabase 
+[2025.12.20-18.03.52:656][775]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/PartyMap.ScoreDatabase 
+[2025.12.20-18.03.52:656][775]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/PartyMap.RoundsManager 
+[2025.12.20-18.03.52:656][775]MapCheck: Error: Non-spatially loaded actor /Game/Scenes/PartyMap.RoundsManager references Spatially loaded actor /Game/Scenes/PartyMap.AudioManager 
+[2025.12.20-18.03.52:656][775]MapCheck: Error: Non-spatially loaded actor /Game/Scenes/PartyMap.RoundsManager references Spatially loaded actor /Game/Scenes/PartyMap.ChallengeInfo 
+[2025.12.20-18.03.52:656][775]MapCheck: Warning: Spatially loaded actor /Game/Scenes/PartyMap.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/PartyMap.ChallengeDatabase 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:658][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:659][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:666][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:667][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]MapCheck: Error: Actor /Game/Scenes/PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.03.52:675][775]LogWorldPartition: Display: GenerateStreaming for 'PartyMap' took 9.852 ms (total: 31.451 ms)
+[2025.12.20-18.03.52:675][775]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.12.20-18.03.52:703][775]LogPlayLevel: Creating play world package: /Game/Scenes/UEDPIE_0_PartyMap
+[2025.12.20-18.03.52:796][775]LogWorldPartition: Display: UWorldPartition::PostDuplicatePIE started...
+[2025.12.20-18.03.52:820][775]LogWorldPartition: Display: UWorldPartition::PostDuplicatePIE took 24.396 ms (total: 110.725 ms)
+[2025.12.20-18.03.52:821][775]LogPlayLevel: PIE: StaticDuplicateObject took: (0.117460s)
+[2025.12.20-18.03.52:821][775]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Scenes/PartyMap.PartyMap to /Game/Scenes/UEDPIE_0_PartyMap.PartyMap (0.117512s)
+[2025.12.20-18.03.52:848][775]LogUObjectHash: Compacting FUObjectHashTables data took   1.52ms
+[2025.12.20-18.03.52:849][775]LogChaosDD: Creating Chaos Debug Draw Scene for world PartyMap
+[2025.12.20-18.03.52:852][775]LogWorldPartition: ULevel::OnLevelLoaded(PartyMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2025.12.20-18.03.52:852][775]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.12.20-18.03.52:852][775]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/UEDPIE_0_PartyMap.PartyMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.12.20-18.03.52:852][775]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2025.12.20-18.03.52:875][775]LogWorldPartition: Display: WorldPartition initialize took 23.452 ms (total: 2.25 sec)
+[2025.12.20-18.03.52:875][775]LogPlayLevel: PIE: World Init took: (0.025969s)
+[2025.12.20-18.03.52:876][775]LogAudio: Display: Creating Audio Device:                 Id: 5, Scope: Unique, Realtime: True
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.12.20-18.03.52:876][775]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2025.12.20-18.03.52:876][775]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.12.20-18.03.52:876][775]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.12.20-18.03.52:877][775]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.12.20-18.03.52:877][775]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.12.20-18.03.52:877][775]LogAudioMixerSDL: Display: Initialized SDL using pulseaudio platform API backend.
+[2025.12.20-18.03.52:882][775]LogAudioMixer: Display: Initializing audio mixer using platform API: 'SDL2'
+[2025.12.20-18.03.53:075][775]LogAudioMixerSDL: Opening default audio device (device index -1)
+[2025.12.20-18.03.53:097][775]LogAudioMixer: Display: Using Audio Hardware Device GA106 High Definition Audio Controller Estￃﾨreo digital (HDMI)
+[2025.12.20-18.03.53:099][775]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.12.20-18.03.53:099][775]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.12.20-18.03.53:099][775]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.12.20-18.03.53:100][775]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=6, Samples=6144, InstanceID=5
+[2025.12.20-18.03.53:106][775]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=5
+[2025.12.20-18.03.53:106][775]LogInit: FAudioDevice initialized with ID 5.
+[2025.12.20-18.03.53:106][775]LogAudio: Display: Audio Device (ID: 5) registered with world 'PartyMap'.
+[2025.12.20-18.03.53:106][775]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 5
+[2025.12.20-18.03.53:113][775]LogUObjectGlobals: Warning: Failed to find object 'Class None.'
+[2025.12.20-18.03.53:113][775]LogLoad: Game class is 'GameModeBase'
+[2025.12.20-18.03.53:164][775]LogWorld: Bringing World /Game/Scenes/UEDPIE_0_PartyMap.PartyMap up for play (max tick rate 0) at 2025.12.20-19.03.53
+[2025.12.20-18.03.53:165][775]LogWorld: Bringing up level for play took: 0.052081
+[2025.12.20-18.03.53:168][775]LogOnline: OSS: Created online subsystem instance for: :Context_4
+[2025.12.20-18.03.53:170][775]LogStreaming: Display: FlushAsyncLoading(851,852,853,848,849,850,844,845,846,847,830,831,832,833,834,835,836,837,838,839,840,841,842,843,818,819,820,821,822,823,824,825,826,827,828,829,812,813,814,815,816,817,811): 43 QueuedPackages, 0 AsyncPackages
+[2025.12.20-18.03.53:209][775]PIE: Server logged in
+[2025.12.20-18.03.53:212][775]PIE: Play in editor total start time 0,558 seconds.
+[2025.12.20-18.03.56:215][943]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.20-18.03.56:215][943]LogWorld: BeginTearingDown for /Game/Scenes/UEDPIE_0_PartyMap
+[2025.12.20-18.03.56:217][943]LogWorld: UWorld::CleanupWorld for PartyMap, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.03.56:223][943]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.03.56:224][943]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/UEDPIE_0_PartyMap.PartyMap
+[2025.12.20-18.03.56:225][943]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.12.20-18.03.56:230][943]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.03.56:280][943]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.20-18.03.56:283][943]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 5
+[2025.12.20-18.03.56:361][943]LogUObjectHash: Compacting FUObjectHashTables data took   0.84ms
+[2025.12.20-18.03.56:401][944]LogPlayLevel: Display: Destroying online subsystem :Context_4
+[2025.12.20-18.04.17:572][220]LogSlate: Took 0.000121 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2025.12.20-18.04.19:232][297]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2025.12.20-18.04.19:235][297]LogStreaming: Display: FlushAsyncLoading(854): 1 QueuedPackages, 0 AsyncPackages
+[2025.12.20-18.04.19:238][297]LogChaosDD: Creating Chaos Debug Draw Scene for world MainMenu
+[2025.12.20-18.04.19:239][297]LogWorldPartition: ULevel::OnLevelLoaded(MainMenu)(bIsOwningWorldGameWorld=0, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=1, InitializeForGame=0)
+[2025.12.20-18.04.19:239][297]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.12.20-18.04.19:239][297]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/MainMenu.MainMenu, World Type = Inactive, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 1, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.12.20-18.04.19:252][297]LogWorldPartition: Display: WorldPartition initialize took 13.245 ms (total: 2.27 sec)
+[2025.12.20-18.04.19:253][297]LogAssetEditorSubsystem: Opening Asset editor for World /Game/Scenes/MainMenu.MainMenu
+[2025.12.20-18.04.19:253][297]Cmd: MAP LOAD FILE="../../../../GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/MainMenu.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2025.12.20-18.04.19:274][297]LogWorld: UWorld::CleanupWorld for PartyMap, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.04.19:275][297]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.04.19:275][297]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/PartyMap.PartyMap
+[2025.12.20-18.04.19:312][297]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.12.20-18.04.19:331][297]LogUObjectHash: Compacting FUObjectHashTables data took   0.88ms
+[2025.12.20-18.04.19:336][297]LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.04.19:336][297]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.04.19:336][297]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/MainMenu.MainMenu
+[2025.12.20-18.04.19:366][297]LogUObjectHash: Compacting FUObjectHashTables data took   0.69ms
+[2025.12.20-18.04.19:566][297]LogUObjectHash: Compacting FUObjectHashTables data took   1.28ms
+[2025.12.20-18.04.19:573][297]LogAudio: Display: Audio Device (ID: 1) registered with world 'MainMenu'.
+[2025.12.20-18.04.19:573][297]LogChaosDD: Creating Chaos Debug Draw Scene for world MainMenu
+[2025.12.20-18.04.19:576][297]LogWorldPartition: ULevel::OnLevelLoaded(MainMenu)(bIsOwningWorldGameWorld=0, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=1, InitializeForGame=0)
+[2025.12.20-18.04.19:576][297]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.12.20-18.04.19:576][297]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/MainMenu.MainMenu, World Type = Editor, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 1, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.12.20-18.04.19:696][297]LogActor: Root component has changed, relocating new root component to old position CameraComponent /Game/Scenes/MainMenu.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.Camera->SceneComponent /Game/Scenes/MainMenu.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.SceneComponent
+[2025.12.20-18.04.19:696][297]LogActor: --- Attaching old root to new root CameraComponent /Game/Scenes/MainMenu.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.Camera->SceneComponent /Game/Scenes/MainMenu.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.SceneComponent
+[2025.12.20-18.04.19:703][297]LogWorldPartition: Display: WorldPartition initialize took 127.417 ms (total: 2.39 sec)
+[2025.12.20-18.04.19:854][297]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2025.12.20-18.04.19:887][297]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2025.12.20-18.04.19:891][297]Cmd: MAP CHECKDEP NOCLEARLOG
+[2025.12.20-18.04.19:892][297]MapCheck: Actor needs resave /Game/Scenes/MainMenu.ChallengeDatabase 
+[2025.12.20-18.04.19:892][297]MapCheck: Actor needs resave /Game/Scenes/MainMenu.ScoreDatabase 
+[2025.12.20-18.04.19:892][297]MapCheck: Warning: Spatially loaded actor /Game/Scenes/MainMenu.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/MainMenu.ChallengeDatabase 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:892][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:893][297]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.19:894][297]MapCheck: Map check complete: 64 Error(s), 1 Warning(s), took 3,084ms to complete.
+[2025.12.20-18.04.20:946][300]LogPSOHitching: Encountered 300 PSO creation hitches so far (158 graphics, 142 compute). 0 of them were precached.
+[2025.12.20-18.04.22:503][403]LogSlate: Window 'Message Log' being destroyed
+[2025.12.20-18.04.22:568][403]LogSlate: Window 'Message Log' being destroyed
+[2025.12.20-18.04.23:640][467]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.12.20-18.04.23:645][467]LogContentBundle: [MainMenu(Editor)] Generating Streaming for 0 Content Bundles.
+[2025.12.20-18.04.23:645][467]LogWorldPartition: Display: GenerateStreaming for 'MainMenu' started...
+[2025.12.20-18.04.23:646][467]MapCheck: Actor needs resave /Game/Scenes/MainMenu.ChallengeDatabase 
+[2025.12.20-18.04.23:646][467]MapCheck: Actor needs resave /Game/Scenes/MainMenu.ScoreDatabase 
+[2025.12.20-18.04.23:646][467]MapCheck: Warning: Spatially loaded actor /Game/Scenes/MainMenu.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/MainMenu.ChallengeDatabase 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:647][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:648][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_0_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-4_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:649][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:650][467]MapCheck: Error: Actor /Game/Scenes/MainMenu.HLOD0_Instancing/OpenWorld_MainGrid_-3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.23:652][467]LogWorldPartition: Display: GenerateStreaming for 'MainMenu' took 6.556 ms (total: 38.008 ms)
+[2025.12.20-18.04.23:652][467]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.12.20-18.04.23:680][467]LogPlayLevel: Creating play world package: /Game/Scenes/UEDPIE_0_MainMenu
+[2025.12.20-18.04.23:720][467]LogWorldPartition: Display: UWorldPartition::PostDuplicatePIE started...
+[2025.12.20-18.04.23:730][467]LogWorldPartition: Display: UWorldPartition::PostDuplicatePIE took 9.409 ms (total: 120.134 ms)
+[2025.12.20-18.04.23:730][467]LogPlayLevel: PIE: StaticDuplicateObject took: (0.050149s)
+[2025.12.20-18.04.23:730][467]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Scenes/MainMenu.MainMenu to /Game/Scenes/UEDPIE_0_MainMenu.MainMenu (0.050206s)
+[2025.12.20-18.04.23:760][467]LogUObjectHash: Compacting FUObjectHashTables data took   0.76ms
+[2025.12.20-18.04.23:762][467]LogChaosDD: Creating Chaos Debug Draw Scene for world MainMenu
+[2025.12.20-18.04.23:765][467]LogWorldPartition: ULevel::OnLevelLoaded(MainMenu)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2025.12.20-18.04.23:765][467]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.12.20-18.04.23:765][467]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/UEDPIE_0_MainMenu.MainMenu, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2025.12.20-18.04.23:765][467]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2025.12.20-18.04.23:779][467]LogWorldPartition: Display: WorldPartition initialize took 14.027 ms (total: 2.41 sec)
+[2025.12.20-18.04.23:779][467]LogPlayLevel: PIE: World Init took: (0.016588s)
+[2025.12.20-18.04.23:780][467]LogAudio: Display: Creating Audio Device:                 Id: 6, Scope: Unique, Realtime: True
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.12.20-18.04.23:780][467]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2025.12.20-18.04.23:780][467]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.12.20-18.04.23:780][467]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.12.20-18.04.23:780][467]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.12.20-18.04.23:780][467]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.12.20-18.04.23:780][467]LogAudioMixerSDL: Display: Initialized SDL using pulseaudio platform API backend.
+[2025.12.20-18.04.23:796][467]LogAudioMixer: Display: Initializing audio mixer using platform API: 'SDL2'
+[2025.12.20-18.04.23:969][467]LogAudioMixerSDL: Opening default audio device (device index -1)
+[2025.12.20-18.04.23:982][467]LogAudioMixer: Display: Using Audio Hardware Device GA106 High Definition Audio Controller Estￃﾨreo digital (HDMI)
+[2025.12.20-18.04.23:983][467]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.12.20-18.04.23:983][467]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.12.20-18.04.23:983][467]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.12.20-18.04.23:984][467]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=6, Samples=6144, InstanceID=6
+[2025.12.20-18.04.23:984][467]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=6
+[2025.12.20-18.04.23:984][467]LogInit: FAudioDevice initialized with ID 6.
+[2025.12.20-18.04.23:984][467]LogAudio: Display: Audio Device (ID: 6) registered with world 'MainMenu'.
+[2025.12.20-18.04.23:984][467]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 6
+[2025.12.20-18.04.23:993][467]LogUObjectGlobals: Warning: Failed to find object 'Class None.'
+[2025.12.20-18.04.23:993][467]LogLoad: Game class is 'GameModeBase'
+[2025.12.20-18.04.23:998][467]LogWorld: Bringing World /Game/Scenes/UEDPIE_0_MainMenu.MainMenu up for play (max tick rate 0) at 2025.12.20-19.04.23
+[2025.12.20-18.04.23:998][467]LogWorld: Bringing up level for play took: 0.005343
+[2025.12.20-18.04.23:999][467]LogOnline: OSS: Created online subsystem instance for: :Context_5
+[2025.12.20-18.04.24:008][467]LogStreaming: Display: FlushAsyncLoading(1175,1176,1152,1153,1154,1155,1156,1157,1158,1159,1160,1161,1162,1163,1164,1165,1166,1167,1168,1169,1170,1171,1172,1173,1174,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1112,1113,1114,1115,1116,1117,1118,1119,1120,1121,1122,1123,1124,1125,1126,1127,1128,1129,1130,1131,1132,1133,1134,1135,1136,1137,1084,1085,1086,1087,1088,1089,1090,1091,1092,1093,1094,1095,1096,1097,1098,1099,1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111,1064,1065,1066,1067,1068,1069,1070,1071,1072,1073,1074,1075,1076,1077,1078,1079,1080,1081,1082,1083,1063): 114 QueuedPackages, 0 AsyncPackages
+[2025.12.20-18.04.24:063][467]LogActor: Root component has changed, relocating new root component to old position CameraComponent /Memory/UEDPIE_0_MainMenu_667I11D7RNMSI0PRD8MCMYT52.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.Camera->SceneComponent /Memory/UEDPIE_0_MainMenu_667I11D7RNMSI0PRD8MCMYT52.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.SceneComponent
+[2025.12.20-18.04.24:063][467]LogActor: --- Attaching old root to new root CameraComponent /Memory/UEDPIE_0_MainMenu_667I11D7RNMSI0PRD8MCMYT52.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.Camera->SceneComponent /Memory/UEDPIE_0_MainMenu_667I11D7RNMSI0PRD8MCMYT52.MainMenu:PersistentLevel.MainMenuCamera_C_UAID_00D861D3AFC9D06A02_1449572045.SceneComponent
+[2025.12.20-18.04.24:187][467]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> NoCapture
+[2025.12.20-18.04.24:191][467]PIE: Server logged in
+[2025.12.20-18.04.24:193][467]PIE: Play in editor total start time 0,548 seconds.
+[2025.12.20-18.04.24:246][468]LogScript: Warning: Script Msg: Attempted to access index 0 from array 'CallFunc_GetAllWidgetsOfClass_FoundWidgets' of length 0 in '/Game/Blueprints/Minigames/Minigame1/GameElements/Minigame1Logic.Minigame1Logic_C:ExecuteUbergraph_Minigame1Logic'!
+[2025.12.20-18.04.24:246][468]LogScript: Warning: Script Msg called by: Minigame1Logic_C /Memory/UEDPIE_0_MainMenu_CI2892GOPKZO5W0UZLRPF8K1B.MainMenu:PersistentLevel.Minigame1Logic_C_UAID_00D861D3AFC9005702_1082509368
+[2025.12.20-18.04.39:618][786]LogGlobalStatus: Browse Started Browse: "/Game/Scenes/PartyMap"
+[2025.12.20-18.04.39:618][786]LogNet: Browse: /Game/Scenes/PartyMap
+[2025.12.20-18.04.39:618][786]LogLoad: LoadMap: /Game/Scenes/PartyMap
+[2025.12.20-18.04.39:618][786]LogWorld: BeginTearingDown for /Game/Scenes/UEDPIE_0_MainMenu
+[2025.12.20-18.04.39:624][786]LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.04.39:624][786]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.04.39:625][786]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/UEDPIE_0_MainMenu.MainMenu
+[2025.12.20-18.04.39:688][786]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.12.20-18.04.39:696][786]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2025.12.20-18.04.39:700][786]LogStreaming: Display: FlushAsyncLoading(1177): 1 QueuedPackages, 0 AsyncPackages
+[2025.12.20-18.04.39:705][786]LogAudio: Display: Audio Device (ID: 6) registered with world 'PartyMap'.
+[2025.12.20-18.04.39:705][786]LogChaosDD: Creating Chaos Debug Draw Scene for world PartyMap
+[2025.12.20-18.04.39:708][786]LogWorldPartition: ULevel::OnLevelLoaded(PartyMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2025.12.20-18.04.39:708][786]LogWorldPartition: Display: WorldPartition initialize started...
+[2025.12.20-18.04.39:708][786]LogWorldPartition: UWorldPartition::Initialize : World = /Game/Scenes/UEDPIE_0_PartyMap.PartyMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 1, IsCooking = 0
+[2025.12.20-18.04.39:708][786]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2025.12.20-18.04.39:721][786]LogWorldPartition: Display: GenerateStreaming for 'PartyMap' started...
+[2025.12.20-18.04.39:723][786]MapCheck: Actor needs resave /Game/Scenes/UEDPIE_0_PartyMap.ChallengeDatabase 
+[2025.12.20-18.04.39:723][786]MapCheck: Actor needs resave /Game/Scenes/UEDPIE_0_PartyMap.RoundsManager 
+[2025.12.20-18.04.39:723][786]MapCheck: Actor needs resave /Game/Scenes/UEDPIE_0_PartyMap.ScoreDatabase 
+[2025.12.20-18.04.39:723][786]MapCheck: Warning: Spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.ScoreDatabase 
+[2025.12.20-18.04.39:723][786]MapCheck: Warning: Spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.PlayerCameraBlueprint references Non-spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.RoundsManager 
+[2025.12.20-18.04.39:723][786]MapCheck: Error: Non-spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.RoundsManager references Spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.AudioManager 
+[2025.12.20-18.04.39:723][786]MapCheck: Error: Non-spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.RoundsManager references Spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.ChallengeInfo 
+[2025.12.20-18.04.39:723][786]MapCheck: Warning: Spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.ChallengeInfo references Non-spatially loaded actor /Game/Scenes/UEDPIE_0_PartyMap.ChallengeDatabase 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:724][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:725][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-2_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_1_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_3_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-4_-4_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_2_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:726][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-3_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:727][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_-2_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:727][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-3_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:727][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_-1_-1_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:727][786]MapCheck: Error: Actor /Game/Scenes/UEDPIE_0_PartyMap.HLOD0_Instancing/OpenWorld_MainGrid_0_0_0_0 has an invalid runtime grid MainGrid:HLOD0_Instancing 
+[2025.12.20-18.04.39:836][786]LogClass: Warning: Type mismatch in SFXPlayer of AudioManager_C - Previous (ObjectProperty) Current(ArrayProperty) in package: /Game/__ExternalActors__/Scenes/PartyMap/F/0A/DNCZ0WXB67WQ1KJFZQN5SJ
+[2025.12.20-18.04.40:030][786]LogWorldPartition: Display: GenerateStreaming for 'PartyMap' took 308.920 ms (total: 346.929 ms)
+[2025.12.20-18.04.40:057][786]LogWorldPartition: Display: WorldPartition initialize took 349.235 ms (total: 2.76 sec)
+[2025.12.20-18.04.40:057][786]LogPlayLevel: PIE: World Init took: (0.351643s)
+[2025.12.20-18.04.40:057][786]LogUObjectGlobals: Warning: Failed to find object 'Class None.'
+[2025.12.20-18.04.40:057][786]LogLoad: Game class is 'GameModeBase'
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/6R/FPV3L463B60WBK1NQZ37IB.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/B6/MCG8YUOZICYYNJ5KV97P6X.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/G8/P824V30RIJFIGQ8SQXRU4A.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/JV/CTNZLH3313SOIC8TTJEL9M.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/MP/XHVKG1WL18BE0K3BB84HAX.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/S5/QVKJAY0JLEWTYZSED0MVU3.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/VM/NYL70VCZB1Q60DV4XYAXG0.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/0/WI/XDBKIDBG4VQAY12R0M66KB.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/1/7V/WAM7J6IR13RSFQU5L2Q033.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/1/CQ/ZRYGBVVO0AKR192ANZXL2J.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/1/M7/YTSBT7OMCYZISYZEVJJ2N7.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/1/VS/Z6HYP6ZWV692KZ4NAWYTA3.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/2/DG/ICVTP4TWV0LTLVPDF7D0OQ.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/2/GW/V1IMLV4GD0EJ3R4M4UPIXV.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/3/4Z/SJBAO8CG66KNJ3CZS9XO6O.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/3/7D/90ZSS0IANJWV3JD6MT7C1K.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/3/H7/N3QQJ9LEYPA8PBEWDLX1Q3.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/3/UD/O27N5TZ2KMI3LQDXVAFR1D.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/4/E4/LAO0QPA5W2V5T4KSJ3YX14.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/4/I2/A25A3IBX2IOD3K96TF2N8Q.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/4/L9/UO8NCPNMWDKWOP1IYD7E3B.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/4/LU/3VAWQSOWJGTZQP0FWDBW6I.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/4/RB/RVR7KSIK2PLCLI1YJ9S6JV.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/5/H8/8X4WRTYV9AYCRS5ZX723SH.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/5/N7/PHOPQWY2DY6YNNEVV61CWS.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/5/XY/IZXIU33GCBY92I4Y89S3UJ.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/FN/FRFSYKJSHLDCFKWNUPAQ1T.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/IS/AAXCHDFGTBQV567EIOCPQH.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/MJ/6WVKE3MYWPLOTDAQ5DAHU2.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/NM/JZT05KONVV5G4ZETJNWC2Z.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/WO/SO142PWFH4DHCIRULMRH0G.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/XF/KPCOS9EW2A05AXEI11SZMG.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/6/XY/4O9BTG2R9QABBT4RU157EV.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/7/OE/GY5UH8CWKSTKNX4AP6VIJY.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/7/TV/N37TRHNKO69L352EPP55G4.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/7/VL/8TPUFB3JR4YJ72B4LGRIQ4.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/8/4X/16PF3NQV7TG2GDZIZCHQY5.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:066][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/8/90/XJS9YI47IN0AYGN09UO5F1.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/8/K8/RX8Q5WHGDYSDI61D0TGX4C.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/8/O8/T9G1H562DX7U769ZE6CH06.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/8/W9/BHITB17U3HQ3SHFOIUAH73.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/9/0L/O1H54YMIP7XKT8GF355ZSE.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/9/C8/O270Z6VB4WB4XFZWSF7W70.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/9/UJ/1H3LET49ZJ27P7OGA10KXU.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/9/VF/KKNJDJWUF4TF61YPCFTEW7.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/01/6G8T0IJV0W5RWPN47XYP2C.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/AO/8YFTBA01LDD95ZZ6IHSU12.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/BT/YVHE1SU62S0WFHSXSYJYZM.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/JU/S1P97PD8PLYYK6PS7O6FHL.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/KC/GGBJJ1FLQSF4SIMQZXOTJR.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/A/ND/B303AIWHCRCBQ0BHREQR3B.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/B/9F/NO5L1XZ0AMZYM93HOV3JE5.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/B/II/WAC6VFB9EYJ5NQJQQDTRXV.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/C/BZ/A1UHCY1XV01P975ES1FJIS.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/C/KB/ZMW2P05A5MDBOVEVJ8BJGV.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/C/L9/BOUNEF2FZS7OEM7485LBIC.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/C/OO/CS6B7DHBFSP1NEO7X236Y7.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/C/VJ/FQYEIYS8QXN3BBIHEWQ1W8.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/D/Q5/990792P53WW70ZMEEAUKMX.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/D/W0/4C5NDULZEXSKF7Z3087VU0.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/E/DI/S7CB7VVTZ0MK44BHMGZ528.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/E/F2/KI4TWGPT0SLSNO4KE65V76.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/E/L6/I51B4DMRNUOZHT8U078EUS.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:067][786]LogStaticMesh: Display: Waiting on static mesh StaticMesh /Game/Scenes/UEDPIE_0_PartyMap_InstanceOf_/Game/__ExternalActors__/Scenes/PartyMap/E/TE/0BNAUM5FUDOLRIGGZDBZTI.StaticMesh_HLOD0_Instancing_1 being ready before playing
+[2025.12.20-18.04.40:352][786]LogWorld: Bringing World /Game/Scenes/UEDPIE_0_PartyMap.PartyMap up for play (max tick rate 0) at 2025.12.20-19.04.40
+[2025.12.20-18.04.40:353][786]LogWorld: Bringing up level for play took: 0.285570
+[2025.12.20-18.04.40:354][786]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2025.12.20-18.04.40:354][786]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2025.12.20-18.04.40:411][786]LogPlayerManagement: Error: Failed to Create Player: A local player already exists for PlatformUserId 1,
+[2025.12.20-18.04.40:412][786]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2025.12.20-18.04.40:413][786]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2025.12.20-18.04.40:415][786]LogLoad: Took 0.797300 seconds to LoadMap(/Game/Scenes/PartyMap)
+[2025.12.20-18.04.40:415][786]LogGlobalStatus: LoadMap Load map complete /Game/Scenes/PartyMap
+[2025.12.20-18.04.43:979][ 15]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1671337469
+[2025.12.20-18.04.44:473][ 52]LogTemp: Warning: CurrentSquare: SquareOptional_C_UAID_00D861D3AFC9165B02_1946199465
+[2025.12.20-18.04.44:974][ 87]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9174F02_1197058981
+[2025.12.20-18.04.45:481][124]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.04.45:986][161]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.04.50:764][515]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1671337469
+[2025.12.20-18.04.51:257][551]LogTemp: Warning: CurrentSquare: SquareOptional_C_UAID_00D861D3AFC9165B02_1946199465
+[2025.12.20-18.04.51:759][588]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9174F02_1197058981
+[2025.12.20-18.04.52:263][625]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.04.52:766][661]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.04.53:777][736]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1498961466
+[2025.12.20-18.04.54:290][774]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9304202_1331308644
+[2025.12.20-18.04.54:799][812]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC90D5002_1818399279
+[2025.12.20-18.04.55:300][849]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1600693467
+[2025.12.20-18.04.55:812][887]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1263379003
+[2025.12.20-18.05.02:977][423]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.05.03:469][460]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.05.09:855][951]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.05.10:351][988]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.05.18:697][646]LogTemp: Warning: Wheel Value: 1
+[2025.12.20-18.05.23:703][ 46]LogTemp: Roulette duel: 1
+[2025.12.20-18.05.53:294][244]LogTemp: Roulette duel: 1
+[2025.12.20-18.05.57:380][562]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1671337469
+[2025.12.20-18.05.57:882][599]LogTemp: Warning: CurrentSquare: SquareOptional_C_UAID_00D861D3AFC9165B02_1946199465
+[2025.12.20-18.05.58:389][636]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9174F02_1197058981
+[2025.12.20-18.05.58:901][674]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.05.59:413][711]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.06.08:397][386]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1671337469
+[2025.12.20-18.06.08:895][423]LogTemp: Warning: CurrentSquare: SquareOptional_C_UAID_00D861D3AFC9165B02_1946199465
+[2025.12.20-18.06.09:397][460]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9174F02_1197058981
+[2025.12.20-18.06.09:903][497]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.06.10:415][534]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.06.16:407][  2]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1498961466
+[2025.12.20-18.06.16:906][ 39]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC9304202_1331308644
+[2025.12.20-18.06.17:414][ 76]LogTemp: Warning: CurrentSquare: Square_C_UAID_00D861D3AFC90D5002_1818399279
+[2025.12.20-18.06.17:914][112]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1600693467
+[2025.12.20-18.06.24:301][596]LogTemp: Warning: CurrentSquare: SquareKeepCrowns_C_UAID_00D861D3AFC9165B02_1435009465
+[2025.12.20-18.06.24:793][632]LogTemp: Warning: CurrentSquare: Square_C_UAID_D8BBC160ECEA325402_1383748004
+[2025.12.20-18.06.33:874][345]LogTemp: Warning: Wheel Value: 0
+[2025.12.20-18.06.38:878][749]LogTemp: Roulette duel: 1
+[2025.12.20-18.07.08:562][ 29]LogTemp: Roulette duel: 1
+[2025.12.20-18.07.11:626][253]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.20-18.07.11:626][253]LogWorld: BeginTearingDown for /Game/Scenes/UEDPIE_0_PartyMap
+[2025.12.20-18.07.11:628][253]LogWorld: UWorld::CleanupWorld for PartyMap, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.07.11:634][253]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.07.11:634][253]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/UEDPIE_0_PartyMap.PartyMap
+[2025.12.20-18.07.11:637][253]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.12.20-18.07.11:642][253]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.07.11:684][253]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.12.20-18.07.11:685][253]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 6
+[2025.12.20-18.07.11:747][253]LogUObjectHash: Compacting FUObjectHashTables data took   1.16ms
+[2025.12.20-18.07.11:800][254]LogPlayLevel: Display: Destroying online subsystem :Context_5
+[2025.12.20-18.07.31:281][412]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2025.12.20-18.07.31:282][412]LogStaticMesh: Abandoning remaining async distance field tasks for shutdown
+[2025.12.20-18.07.31:282][412]LogStaticMesh: Abandoning remaining async card representation tasks for shutdown
+[2025.12.20-18.07.31:291][412]LogWorld: UWorld::CleanupWorld for MainMenu, bSessionEnded=true, bCleanupResources=true
+[2025.12.20-18.07.31:292][412]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.12.20-18.07.31:292][412]LogWorldPartition: UWorldPartition::Uninitialize : World = /Game/Scenes/MainMenu.MainMenu
+[2025.12.20-18.07.31:300][412]LogStylusInput: Shutting down StylusInput subsystem.
+[2025.12.20-18.07.31:300][412]LogTedsSettings: UTedsSettingsEditorSubsystem::Deinitialize
+[2025.12.20-18.07.31:301][412]LogLevelSequenceEditor: LevelSequenceEditor subsystem deinitialized.
+[2025.12.20-18.07.31:306][412]LogRuntimeTelemetry: Recording EnginePreExit events
+[2025.12.20-18.07.31:306][412]LogStudioTelemetry: Ended StudioTelemetry Session
+[2025.12.20-18.07.31:310][412]LogAnalyticsSessionSummarySender: Sent summary session report for: AppId=UEEditor.Rocket.Release SessionId={C03E48CE-5D58-4885-8280-C2C61D6D7FFE}
+[2025.12.20-18.07.31:316][412]LogAnalytics: Display: [UEEditor.Rocket.Release] AnalyticsET::EndSession
+[2025.12.20-18.07.31:317][412]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerSDL)...
+[2025.12.20-18.07.31:317][412]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2025.12.20-18.07.31:317][412]LogAudio: Display: Audio Device unregistered from world 'MainMenu'.
+[2025.12.20-18.07.31:317][412]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.
+[2025.12.20-18.07.31:363][412]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1
+[2025.12.20-18.07.31:363][412]LogAudio: Display: Audio Device Manager Shutdown
+[2025.12.20-18.07.31:529][412]LogSlate: Window 'PartyJungle - Unreal Editor' being destroyed
+[2025.12.20-18.07.31:726][412]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2025.12.20-18.07.31:726][412]LogSlate: Slate User Destroyed.  User Index 1, Is Virtual User: 0
+[2025.12.20-18.07.31:726][412]LogSlate: Slate User Destroyed.  User Index 2, Is Virtual User: 0
+[2025.12.20-18.07.31:726][412]LogSlate: Slate User Destroyed.  User Index 3, Is Virtual User: 0
+[2025.12.20-18.07.31:726][412]LogExit: Preparing to exit.
+[2025.12.20-18.07.31:759][412]LogUObjectHash: Compacting FUObjectHashTables data took   0.70ms
+[2025.12.20-18.07.32:966][412]LogEditorDataStorage: Deinitializing
+[2025.12.20-18.07.33:036][412]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2025.12.20-18.07.33:049][412]LogExit: Editor shut down
+[2025.12.20-18.07.33:050][412]LogExit: Transaction tracking system shut down
+[2025.12.20-18.07.33:133][412]LogStall: Shutdown...
+[2025.12.20-18.07.33:133][412]LogStall: Shutdown complete.
+[2025.12.20-18.07.33:196][412]LogExit: Object subsystem successfully closed.
+[2025.12.20-18.07.33:274][412]LogShaderCompilers: Display: Shaders left to compile 0
+[2025.12.20-18.07.33:309][412]LogMemoryProfiler: Shutdown
+[2025.12.20-18.07.33:309][412]LogNetworkingProfiler: Shutdown
+[2025.12.20-18.07.33:309][412]LoadingProfiler: Shutdown
+[2025.12.20-18.07.33:309][412]LogTimingProfiler: Shutdown
+[2025.12.20-18.07.33:310][412]LogChaosVDEditor: [UnRegisterExtension] UnRegistering CVD Extension [FChaosVDGenericDebugDrawExtension] ...
+[2025.12.20-18.07.33:310][412]LogChaosVDEditor: [UnRegisterExtension] UnRegistering CVD Extension [FChaosVDAccelerationStructuresExtension] ...
+[2025.12.20-18.07.33:648][412]LogChaosDD: Chaos Debug Draw Shutdown
+[2025.12.20-18.07.33:648][412]LogNFORDenoise: NFORDenoise function shutting down
+[2025.12.20-18.07.33:666][412]LogHttp: Warning: [FHttpManager::Shutdown] Unbinding delegates for 1 outstanding Http Requests:
+[2025.12.20-18.07.33:666][412]LogHttp: Warning: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7BC03E48CE-5D58-4885-8280-C2C61D6D7FFE%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.6.1-44394996%2B%2B%2BUE5%2BRelease-5.6&UserID=612ead9b5fc343fe85467d352dde1f9a-000003e8%7C%7C612ead9b5fc343fe85467d352dde1f9a&AppEnvironment=datacollector-binary&UploadType=eteventstream] refs=[2] status=Processing
+[2025.12.20-18.07.33:680][412]LogEOSShared: Shutdown EOS_Shutdown Result=[EOS_Success]
+[2025.12.20-18.07.33:680][412]RenderDocPlugin: plugin has been unloaded.
+[2025.12.20-18.07.33:687][412]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetActorFactory id: 0
+[2025.12.20-18.07.33:687][412]LogIris: FNetObjectFactoryRegistry::UnregisterFactory is unregistering factory: None name: NetSubObjectFactory id: 1
+[2025.12.20-18.07.33:687][412]LogPakFile: Destroying PakPlatformFile
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Warning: Found 1 unfreed allocations!
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: /******************************************* Device Memory ********************************************\
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: Max memory allocations 4294967295.
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 3 Device Memory Heaps:
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   0: Flags 0x1 - Size 12884901888 (12288.00 MB) - Used 8110080 (0.06%) - DeviceLocal - PrimaryHeap
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   1: Flags 0x0 - Size 25193647104 (24026.54 MB) - Used 0 (0.00%)
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   2: Flags 0x1 - Size 257949696 (246.00 MB) - Used 0 (0.00%) - DeviceLocal
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 6 Device Memory Types (Not unified):
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   1: Flags 0x00001 - Heap  0 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   2: Flags 0x00001 - Heap  0 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   0: Flags 0x00000 - Heap  1 - 
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   3: Flags 0x00006 - Heap  1 - VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   4: Flags 0x0000e - Heap  1 - VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT|VK_MEMORY_PROPERTY_HOST_CACHED_BIT
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display:   5: Flags 0x00007 - Heap  2 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT|VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: Memory Budget Extension:
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	         | Usage                     | Budget          | Size            |
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	---------|------------------------------------------------------------------|
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	 HEAP 00 |  21.32% /       2619.81 MB |      11255.75 MB |      12288.00 MB |
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	 HEAP 01 |   0.55% /        131.41 MB |      24026.54 MB |      24026.54 MB |
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	 HEAP 02 |  10.85% /         26.69 MB |        219.31 MB |        246.00 MB |
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	---------|------------------------------------------------------------------|
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: Device Memory: 1 allocations on 3 heaps
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	Heap 0, 1 allocations
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 		Alloc AllocSize(MB) TotalSize(MB)    Handle
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 		    0         7.734         0.000 0x76c9dd8d92e0
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 		Total Allocated 7.73 MB, Peak 3864.31 MB
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	Heap 1, 0 allocations
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 		Total Allocated 0.00 MB, Peak 437.25 MB
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 	Heap 2, 0 allocations
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: 		Total Allocated 0.00 MB, Peak 8.00 MB
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: Blocks Kept alive Current Frame (-1) 
+[2025.12.20-18.07.33:798][412]LogVulkanRHI: Display: Free Blocks in Allocations:
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Warning: Found 1 unfreed allocations!
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: /******************************************* Device Memory ********************************************\
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: Max memory allocations 4294967295.
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 3 Device Memory Heaps:
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   0: Flags 0x1 - Size 12884901888 (12288.00 MB) - Used 8110080 (0.06%) - DeviceLocal - PrimaryHeap
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   1: Flags 0x0 - Size 25193647104 (24026.54 MB) - Used 0 (0.00%)
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   2: Flags 0x1 - Size 257949696 (246.00 MB) - Used 0 (0.00%) - DeviceLocal
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 6 Device Memory Types (Not unified):
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   1: Flags 0x00001 - Heap  0 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   2: Flags 0x00001 - Heap  0 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   0: Flags 0x00000 - Heap  1 - 
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   3: Flags 0x00006 - Heap  1 - VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   4: Flags 0x0000e - Heap  1 - VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT|VK_MEMORY_PROPERTY_HOST_CACHED_BIT
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display:   5: Flags 0x00007 - Heap  2 - VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT|VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT|VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: Memory Budget Extension:
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	         | Usage                     | Budget          | Size            |
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	---------|------------------------------------------------------------------|
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	 HEAP 00 |  21.32% /       2619.81 MB |      11255.75 MB |      12288.00 MB |
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	 HEAP 01 |   0.55% /        131.41 MB |      24026.54 MB |      24026.54 MB |
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	 HEAP 02 |  10.85% /         26.69 MB |        219.31 MB |        246.00 MB |
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	---------|------------------------------------------------------------------|
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: Device Memory: 0 allocations on 3 heaps
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	Heap 0, 1 allocations
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 		Alloc AllocSize(MB) TotalSize(MB)    Handle
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 		    0         7.734         0.000 0x76c9dd8d92e0
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 		Total Allocated 7.73 MB, Peak 3864.31 MB
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	Heap 1, 0 allocations
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 		Total Allocated 0.00 MB, Peak 437.25 MB
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 	Heap 2, 0 allocations
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: 		Total Allocated 0.00 MB, Peak 8.00 MB
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: Blocks Kept alive Current Frame (-1) 
+[2025.12.20-18.07.34:137][412]LogVulkanRHI: Display: Free Blocks in Allocations:
+[2025.12.20-18.07.34:227][412]LogExit: Exiting.
+[2025.12.20-18.07.34:227][412]LogInit: Tearing down SDL.
+[2025.12.20-18.07.34:252][412]LogCore: FUnixPlatformMisc::RequestExit(bForce=false, ReturnCode=130)
+[2025.12.20-18.07.34:270][412]Log file closed, 12/20/25 19:07:34
