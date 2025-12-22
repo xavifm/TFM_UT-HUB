@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+#include "./TeamsGenerator.h"
 #include "MinigameLogic.generated.h"
 
 UENUM(BlueprintType)
@@ -29,6 +30,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
     AActor* Camera;
     
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
+    ATeamsGenerator* TeamsGenerator;
+    
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
@@ -37,6 +41,7 @@ public:
 
     UPROPERTY()
     TMap<int, AMinion*> PlayingMinions;
+    TMap<int, TArray<AMinion*>> PlayingTeamMinions;
 
     UPROPERTY()
     TMap<int, AMinion*> WinnerMinions;
