@@ -13,6 +13,14 @@ enum class EMinigameType : uint8
     TEAM_MINIGAME UMETA(DisplayName = "TEAM MINIGAME"),
 };
 
+UENUM(BlueprintType)
+enum class ETeamsMode : uint8
+{
+    NOTEAM UMETA(DisplayName = "NO_TEAMS"),
+    TWO_VS_TWO UMETA(DisplayName = "TWO_VS_TWO"),
+    ONE_VS_THREE UMETA(DisplayName = "ONE_VS_THREE"),
+};
+
 UCLASS()
 class PARTYJUNGLE_API AMinigameLogic : public AActor
 {
@@ -23,6 +31,9 @@ public:
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
     EMinigameType MinigameType;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
+    ETeamsMode TeamMode;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Assets")
     TArray<AActor*> MinigameActors;
@@ -40,8 +51,9 @@ public:
     AMapMenuCamera* MapMenuCamera;
 
     UPROPERTY()
-    TMap<int, AMinion*> PlayingMinions;
-    TMap<int, TArray<AMinion*>> PlayingTeamMinions;
+    TMap<int, AMinion*> PlayingMinionsDuel;
+    
+    TMap<int, TArray<AMinion*>> PlayingMinionsTeamMinigame;
 
     UPROPERTY()
     TMap<int, AMinion*> WinnerMinions;
@@ -100,6 +112,12 @@ protected:
 private:
     UFUNCTION()
     void InitializeMinigameInfoForDuel();
+    
+    UFUNCTION()
+    void InitializeMinigameInfoForTeam();
+    
+    UFUNCTION()
+    void StartMinigameScoresAndReadyInfo(TArray<AMinion*> _minions);
 
     TArray<int32> Winners;
     bool MinigameFinished;

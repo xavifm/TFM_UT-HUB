@@ -14,9 +14,41 @@ void AMinigameLogic::BeginMinigame()
 	if(GameInstance) 
 	{
 		ResetMinigameScene();
-		InitializeMinigameInfoForDuel();
+		
+		switch(MinigameType)
+		{
+			case EMinigameType::DUEL:
+				InitializeMinigameInfoForDuel();
+			break;
+			case EMinigameType::TEAM_MINIGAME:
+				InitializeMinigameInfoForTeam();
+			break;
+		}
+			
 		StartMinigame(StartTime);
 	}
+}
+
+void AMinigameLogic::InitializeMinigameInfoForTeam()
+{
+	TArray<AMinion*> minionList;
+	
+	for (int index = 0 ; index < MapMenuCamera->MAX_TEAM_NUMBER ; index++)
+	{
+		minionList.Add(MapMenuCamera->MapDb->GetMinion(index, 0));	
+	}
+	
+	switch(TeamMode) 
+	{
+		case ETeamsMode::TWO_VS_TWO:
+			PlayingMinionsTeamMinigame = TeamsGenerator->GetTwoVsTwoTeam(minionList);
+		break;
+		case ETeamsMode::ONE_VS_THREE:
+			PlayingMinionsTeamMinigame = TeamsGenerator->GetOneVsThreeTeam(minionList);
+		break;
+	}
+	
+	StartMinigameScoresAndReadyInfo(minionList);
 }
 
 void AMinigameLogic::InitializeMinigameInfoForDuel()
@@ -25,12 +57,24 @@ void AMinigameLogic::InitializeMinigameInfoForDuel()
 		return;
 	
 	TArray<AMinion*> minionList = MapMenuCamera->ChallengeInformation->SquaresWithDuelsInRound[0]->MinionsList;
-	PlayingMinions.Empty();
+	PlayingMinionsDuel.Empty();
 	
 	for (AMinion* minion : minionList)
-		PlayingMinions.Add(static_cast<int>(minion->Team), minion);
+		PlayingMinionsDuel.Add(static_cast<int>(minion->Team), minion);
 	
-	for (auto Player : PlayingMinions)
+	StartMinigameScoresAndReadyInfo(minionList);
+}
+
+void AMinigameLogic::StartMinigameScoresAndReadyInfo(TArray<AMinion*> _minions)
+{
+	TMap<int, AMinion*> minionList;
+	TeamsReady.Empty();
+	TeamMinigameScores.Empty();
+	
+	for (AMinion* minion : _minions)
+		minionList.Add(static_cast<int>(minion->Team), minion);
+	
+	for (auto Player : minionList)
 	{
 		TeamsReady.Add(Player.Key, false);
 		TeamMinigameScores.Add(Player.Key, 0);

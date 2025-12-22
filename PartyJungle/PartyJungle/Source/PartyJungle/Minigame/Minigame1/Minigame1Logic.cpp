@@ -8,10 +8,10 @@ AMinigame1Logic::AMinigame1Logic()
 
 void AMinigame1Logic::SetupAirCannonsInfo()
 {
-	if (PlayingMinions.Num() == 0)
+	if (PlayingMinionsDuel.Num() == 0)
 		return;
 
-	for (auto minion : PlayingMinions)
+	for (auto minion : PlayingMinionsDuel)
 	{
 		for (size_t i = 0; i < AirCannons.Num(); i++)
 		{
