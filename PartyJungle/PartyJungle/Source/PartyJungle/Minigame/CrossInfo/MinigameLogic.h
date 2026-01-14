@@ -59,7 +59,7 @@ public:
     TMap<int, AMinion*> WinnerMinions;
 
     UPROPERTY()
-    TMap<int, int> TeamMinigameScores;
+    TMap<int32, int32> TeamMinigameScores;
 
     UPROPERTY()
     TMap<int, bool> TeamsReady;
@@ -75,22 +75,23 @@ public:
 
     UFUNCTION()
     bool CheckIfTheMinigameHasFinished();
-
-    UFUNCTION()
+    
     TArray<int32> CalculateWinner();
     int CaculateDuelWinner();
+    
+    UFUNCTION()
     TArray<int32> CalculateTeamMinigameWinners();
-
+    
     UFUNCTION()
     virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);
-
+    
     UFUNCTION()
     virtual void FinishMinigame(TArray<int32> _winners);
 
-    UFUNCTION()
-    virtual void SetTeamScore(int _team, int _score);
+    UFUNCTION(BlueprintCallable)
+    virtual void SetTeamScore(int32 _team, int32 _score);
 
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetTeamReady(int _team);
 
     UFUNCTION()
@@ -105,6 +106,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ShowEndScreenSequence(int _winner);
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowTeamEndScreenSequence(const FText& Message);
+    
 protected:
     UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
     virtual void ResetMinigameScene();
@@ -119,7 +123,9 @@ private:
     UFUNCTION()
     void StartMinigameScoresAndReadyInfo(TArray<AMinion*> _minions);
 
+    UPROPERTY()
     TArray<int32> Winners;
+    
     bool MinigameFinished;
     FTimerHandle TimerHandle;
 

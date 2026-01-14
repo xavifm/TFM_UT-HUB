@@ -1,0 +1,65 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.2-2-cachyos-deckify (network name: Xavi-Desktop)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-Core.so!FDebug::CheckVerifyFailedImpl2(char const*, char const*, int, char16_t const*, ...) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Misc/AssertionMacros.cpp:724]
+libUnrealEditor-PartyJungle.so!AMinigameLogic::ShowWinnerScene(int, TArray<int, TSizedDefaultAllocator<32> >) [/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Containers/Array.h:1067]
+libUnrealEditor-PartyJungle.so!AMinigameLogic::FinishMinigame(TArray<int, TSizedDefaultAllocator<32> >) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/CrossInfo/MinigameLogic.cpp:179]
+libUnrealEditor-PartyJungle.so!AMinigame2Logic::FinishMinigame(TArray<int, TSizedDefaultAllocator<32> >) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame2/Minigame2Logic.cpp:119]
+libUnrealEditor-PartyJungle.so!AMinigameLogic::SetTeamReady(int) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/CrossInfo/MinigameLogic.cpp:219]
+libUnrealEditor-PartyJungle.so!AMinigame2Logic::CheckIfAllVictimsAreDeadToStopMinigame() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame2/Minigame2Logic.cpp:89]
+libUnrealEditor-CoreUObject.so!UFunction::Invoke(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/Class.cpp:7453]
+libUnrealEditor-CoreUObject.so!UObject::CallFunction(FFrame&, void*, UFunction*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1175]
+libUnrealEditor-CoreUObject.so!UObject::execFinalFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:3278]
+libUnrealEditor-CoreUObject.so!UObject::ProcessContextOpcode(FFrame&, void*, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!void ProcessScriptFunction<void (*)(UObject*, FFrame&, void*)>(UObject*, UFunction*, FFrame&, void*, void (*)(UObject*, FFrame&, void*)) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1067]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*)::$_0::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1320]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1337]
+libUnrealEditor-CoreUObject.so!UObject::execLocalFinalFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:3292]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!UObject::ProcessInternal(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1364]
+libUnrealEditor-CoreUObject.so!UFunction::Invoke(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/Class.cpp:7453]
+libUnrealEditor-CoreUObject.so!UObject::ProcessEvent(UFunction*, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:2209]
+libUnrealEditor-Engine.so!AActor::ProcessEvent(UFunction*, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:1456]
+libUnrealEditor-Engine.so!void TMulticastScriptDelegate<FNotThreadSafeDelegateMode>::ProcessMulticastDelegate<UObject>(void*) const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/UObject/ScriptDelegates.h:934]
+libUnrealEditor-Engine.so!FComponentHitSignature_DelegateWrapper(TMulticastScriptDelegate<FNotThreadSafeDelegateMode> const&, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&) [/mnt/horde/++UE5/Sync/Engine/Source/./../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/PrimitiveComponent.gen.cpp:577]
+libUnrealEditor-Engine.so!AActor::DispatchPhysicsCollisionHit(FRigidBodyCollisionInfo const&, FRigidBodyCollisionInfo const&, FCollisionImpactData const&) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h:228]
+libUnrealEditor-Engine.so!FPhysScene_Chaos::DispatchPendingCollisionNotifies() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PhysicsEngine/Experimental/PhysScene_Chaos.cpp:1169]
+libUnrealEditor-Engine.so!FPhysScene_Chaos::HandleCollisionEvents(Chaos::FCollisionEventData const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/PhysicsEngine/Experimental/PhysScene_Chaos.cpp:1144]
+libUnrealEditor-Chaos.so!Chaos::TEventContainer<Chaos::FCollisionEventData>::DispatchConsumerData() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Experimental/Chaos/Public/EventManager.h:364]
+libUnrealEditor-Chaos.so!Chaos::FEventManager::DispatchEvents() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Experimental/Chaos/Private/EventManager.cpp:108]
+libUnrealEditor-PhysicsCore.so!FChaosScene::EndFrame() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/PhysicsCore/Private/ChaosScene.cpp:567]
+libUnrealEditor-Engine.so!TBaseUObjectMethodDelegateInstance<false, UWorld, void (), FDefaultDelegateUserPolicy>::ExecuteIfSafe() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Invoke.h:66]
+libUnrealEditor-Core.so!TGraphTask<FSimpleDelegateGraphTask>::ExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:635]
+libUnrealEditor-Core.so!UE::Tasks::Private::FTaskBase::TryExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Tasks/TaskPrivate.h:527]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:505]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilQuit(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:667]
+libUnrealEditor-Core.so!FTaskGraphCompatibilityImplementation::WaitOnNamedThreadForTasks(TArray<TRefCountPtr<FBaseGraphTask>, TSizedInlineAllocator<4u, 32, TSizedDefaultAllocator<32> > > const&, ENamedThreads::Type, ENamedThreads::Type) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:1485]
+libUnrealEditor-Core.so!FTaskGraphCompatibilityImplementation::ProcessUntilTasksComplete(TArray<TRefCountPtr<FBaseGraphTask>, TSizedInlineAllocator<4u, 32, TSizedDefaultAllocator<32> > > const&, ENamedThreads::Type, TFunction<FTaskGraphInterface::EProcessTasksOperation (int)> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:1585]
+libUnrealEditor-Engine.so!FTickTaskSequencer::ReleaseTickGroup(ETickingGroup, bool, TArray<FTickFunction*, TSizedDefaultAllocator<32> >&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:986]
+libUnrealEditor-Engine.so!FTickTaskManager::RunTickGroup(ETickingGroup, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:2078]
+libUnrealEditor-Engine.so!UWorld::Tick(ELevelTick, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/LevelTick.cpp:783]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2149]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

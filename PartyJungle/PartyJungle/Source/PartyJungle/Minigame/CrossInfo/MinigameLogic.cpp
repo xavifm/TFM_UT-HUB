@@ -116,14 +116,14 @@ TArray<int32> AMinigameLogic::CalculateWinner()
 	{
 		case EMinigameType::DUEL:
 		{
-			int duelWinner = CaculateDuelWinner();	
+			int32 duelWinner = CaculateDuelWinner();	
 			WinningTeams.Add(duelWinner);
 			break;		
 		}
 		case EMinigameType::TEAM_MINIGAME:
 		{
 			TArray<int32> minigameWinners = CalculateTeamMinigameWinners();	
-			WinningTeams = 	minigameWinners;
+			WinningTeams = minigameWinners;
 			break;	
 		}
 	}
@@ -135,11 +135,12 @@ TArray<int32> AMinigameLogic::CalculateTeamMinigameWinners()
 {
 	TArray<int32> WinnersTeams;
 	
-	for (const TPair<int, int>& Elem : TeamMinigameScores)
+	for (const TPair<int32, int32>& Elem : TeamMinigameScores)
 	{
 		if (Elem.Value > 0)
 		{
-			WinnersTeams.Add(Elem.Key);
+			int32 key = Elem.Key;
+			WinnersTeams.Add(key);
 		}
 	}
 	
@@ -163,10 +164,43 @@ int AMinigameLogic::CaculateDuelWinner()
 	return WinningTeamIndex;
 }
 
+auto WinnersToText(const TArray<int32>& Winners)
+{
+	FString Result;
+
+	for (int32 i = 0; i < Winners.Num(); ++i)
+	{
+		Result += FString::FromInt(Winners[i]);
+
+		if (i < Winners.Num() - 1)
+		{
+			Result += TEXT(", ");
+		}
+	}
+
+	return FText::FromString(Result);
+}
+
 void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners)
 {
 	Winners = _winners;
-	ShowEndScreenSequence(_winners[0]);
+
+	switch (MinigameType)
+	{
+		case EMinigameType::DUEL: 
+		{
+			ShowEndScreenSequence(_winners[0]);
+			break;
+		}
+		case EMinigameType::TEAM_MINIGAME:
+		{
+			FText winnersText = WinnersToText(_winners);
+			ShowTeamEndScreenSequence(winnersText);
+			break;		
+		}
+}
+	
+	//ShowEndScreenSequence(_winners[0]); <- AQUÍ PETA
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMinigameLogic::DelayedSceneSwitch, _endMinigameTime, false);
 }
 
@@ -200,7 +234,7 @@ void AMinigameLogic::DelayedSceneSwitch()
 }
 
 
-void AMinigameLogic::SetTeamScore(int _team, int _score)
+void AMinigameLogic::SetTeamScore(int32 _team, int32 _score)
 {
 	if (!TeamsReady.Contains(_team) || !TeamMinigameScores.Contains(_team))
 		return;
@@ -216,7 +250,10 @@ void AMinigameLogic::SetTeamReady(int _team)
 	TeamsReady[_team] = true;
 
 	if (CheckIfTheMinigameHasFinished())
-		FinishMinigame(CalculateWinner());
+	{
+		TArray<int32> winners = CalculateWinner();
+		FinishMinigame(winners);
+	}
 }
 
 
