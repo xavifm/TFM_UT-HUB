@@ -257,6 +257,7 @@ private:
 	const int CAMERA_HEIGHT_OFFSET = 600;
 	const int MAX_MOVEMENTS_PER_TURN = 2;
 	const int ROULETTE_SPIN_TIME = 5;
+	const int ENDROUND_MINIGAME_START_TIME = 5;
 	const int MAX_DICES = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 

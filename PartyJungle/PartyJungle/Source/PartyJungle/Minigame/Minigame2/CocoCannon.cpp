@@ -25,7 +25,7 @@ void ACocoCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
-		EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Triggered, this, &ACocoCannon::ShootCannon);
+		EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &ACocoCannon::ShootCannon);
 		EnhancedInput->bBlockInput = false;
 	}
 }

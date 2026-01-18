@@ -588,14 +588,10 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
         return;
 
     IsMinigameActive = (_sceneIndex >= 0);
-
-    //Dirty code!
-    if(DuelUI && IsMinigameActive)
-    {
-        LoadingMap = true;
-        StartFadeTransition(0.1f);
-        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);  
-    }
+    
+    LoadingMap = true;
+    StartFadeTransition(0.1f);
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);  
 
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
@@ -930,14 +926,23 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
         if (CurrentMinionTeam == 0 && RoundsSystem)
         {
-            bool minigameDetected = RoundsSystem->HandleEndRound(true);
+            TArray<bool> minigamesDetected = RoundsSystem->HandleEndRound(true);
 
-            if (minigameDetected)
+            if (minigamesDetected[0])
             {
                 ChosenDuelIndex = FMath::RandRange(0, ChallengeInformation->SquaresWithDuelsInRound.Num() -1);  //random duel
                 CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList[0];
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
                 SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                return;
+            }
+            if (minigamesDetected[1])
+            {
+                RoundsSystem->EndRoundMinigameAvailable = false;
+                SavedSceneValue = 1; //team minigame 2, crear un sistema per retornar el index de minijoc pel tipus
+                FString Message = FString::Printf(TEXT("Minigame!"));
+                MapUI->ShowTextInScreen(Message, 3);
+                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
                 return;
             }
         }
@@ -957,6 +962,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         ResetMapItems();
         
         MapUI->SwitchTurnUI(CurrentMinionTeam);
+        RoundsSystem->EndRoundMinigameAvailable = true;
 
         FVector MinionLocation = CurrentMinion->GetActorLocation();
         MinionLocation.X = MinionLocation.X - 450;

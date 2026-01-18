@@ -19,16 +19,22 @@ int ARoundsManager::GetCurrentRound()
 	return CurrentRound;
 }
 
-bool ARoundsManager::HandleEndRound(bool _minigame)
+TArray<bool> ARoundsManager::HandleEndRound(bool _minigame)
 {
+	TArray<bool> minigamesResult;
+	bool duelsQuery = false;
 	bool minigameQuery = false;
 	
 	if (_minigame) 
 	{
+		duelsQuery = CheckForDuelMinigame();
 		minigameQuery = CheckForEndRoundMinigame();
 		
-		if (minigameQuery)
-			return minigameQuery;
+		minigamesResult.Add(duelsQuery);
+		minigamesResult.Add(minigameQuery);
+		
+		if (duelsQuery || minigameQuery)
+			return minigamesResult;
 	}
 
 	if (GetRoundsLeft() > 0)
@@ -39,7 +45,7 @@ bool ARoundsManager::HandleEndRound(bool _minigame)
 		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &ARoundsManager::FinishGame, 1, false);
 	}
 
-	return minigameQuery;
+	return minigamesResult;
 }
 
 void ARoundsManager::StartNextRound()
@@ -84,7 +90,7 @@ void ARoundsManager::FinishGame()
 	UGameplayStatics::OpenLevel(this, FName(END_GAME_SCENE_NAME));
 }
 
-bool ARoundsManager::CheckForEndRoundMinigame()
+bool ARoundsManager::CheckForDuelMinigame()
 {
 	bool minigameQuery = false;
 	
@@ -95,6 +101,11 @@ bool ARoundsManager::CheckForEndRoundMinigame()
 		minigameQuery = true;
 
 	return minigameQuery;
+}
+
+bool ARoundsManager::CheckForEndRoundMinigame()
+{
+	return EndRoundMinigameAvailable;
 }
 
 void ARoundsManager::AssignMapUI(UPlayerMapUI* _mapUI)
