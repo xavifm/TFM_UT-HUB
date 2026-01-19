@@ -175,6 +175,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FinishDuel(int _winner, int _duelIndex);
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void FinishMinigame(TArray<int32> _winners, int _money);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchStoreCrownsUI(bool _visibility);

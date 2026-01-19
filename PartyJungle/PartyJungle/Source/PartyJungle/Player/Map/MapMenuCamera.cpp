@@ -589,9 +589,12 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
 
     IsMinigameActive = (_sceneIndex >= 0);
     
-    LoadingMap = true;
-    StartFadeTransition(0.1f);
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);  
+    if(DuelUI && IsMinigameActive)
+    {
+        LoadingMap = true;
+        StartFadeTransition(0.1f);
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
+    }
 
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_sceneIndex);
@@ -789,6 +792,23 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
     }
 
     CloseDuelMenu(true);
+}
+
+void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
+{
+    int dividedMoney = _money / 3;
+    
+    for (auto team : _winners)
+    {
+        TArray<AMinion*> teamMinions = MapDb->GetMinions(team);
+        
+        for (auto minion : teamMinions)
+        {
+            UpdateMinionEconomyWithReference(minion, dividedMoney);
+        }
+    }
+    
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
 }
 
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)

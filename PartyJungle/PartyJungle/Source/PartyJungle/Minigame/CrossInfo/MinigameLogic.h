@@ -41,6 +41,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
     AActor* Camera;
     
+    UPROPERTY(EditAnywhere)
+    int MinigameMoney;
+    
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
     ATeamsGenerator* TeamsGenerator;
     

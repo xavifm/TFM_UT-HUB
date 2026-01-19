@@ -227,7 +227,7 @@ void AMinigameLogic::DelayedSceneSwitch()
 				MapMenuCamera->FinishDuel(Winners[0], MapMenuCamera->ChosenDuelIndex);
 				break;
 			case EMinigameType::TEAM_MINIGAME:
-				
+				MapMenuCamera->FinishMinigame(Winners, MinigameMoney);
 				break;
 		}
 	}
