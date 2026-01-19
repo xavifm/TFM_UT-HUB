@@ -205,6 +205,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
+	void MoveCameraToCurrentTeam();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ResetMapItems();
@@ -305,6 +306,7 @@ private:
 	bool InventoryEnabled = false;
 	bool SelectMinionToUseItem = false;
 	bool ThrowItemPlayerMenu = false;
+	bool SameTurnEnabled = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;
