@@ -1,4 +1,5 @@
 #include "./MapMenuCamera.h"
+
 #include "Blueprint/UserWidget.h"
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
@@ -6,6 +7,7 @@
 #include "EngineUtils.h"
 #include <PartyJungle/Map/SquareKeepCrowns.h>
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -39,8 +41,8 @@ void AMapMenuCamera::BeginPlay()
 
         if (GameInstance)
         {
-            MAX_TEAM_NUMBER = GameInstance->GetGameManager()->PlayersInBoard;
-            RoundsSystem->MaxRounds = GameInstance->GetGameManager()->RoundsInBoard;
+            MAX_TEAM_NUMBER = GameInstance->GetGameDataManager().GetPlayersInBoard();
+            RoundsSystem->MaxRounds = GameInstance->GetGameDataManager().GetRoundsInBoard();
         }
 
         if (WorldSceneManager)
@@ -637,7 +639,7 @@ void AMapMenuCamera::SwitchController()
         EnableInput(PlayerController);
     }
 
-    if(PlayerController0)
+    if(PlayerController0) // ToDo: Preguntar perquè serveix això.
         PlayerController0->SetViewTargetWithBlend(WorldSceneManager->MapCameraActor, 0.f);
 }
 

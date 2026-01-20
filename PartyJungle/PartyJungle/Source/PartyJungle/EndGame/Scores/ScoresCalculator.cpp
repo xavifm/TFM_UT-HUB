@@ -1,6 +1,7 @@
 #include "./ScoresCalculator.h"
 
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
 
 AScoresCalculator::AScoresCalculator()
@@ -19,9 +20,9 @@ void AScoresCalculator::InitializeInfo()
 
 	if (GameInstance)
 	{
-		Scores = GameInstance->GetGameManager()->Scores;
-		TransactionsRegistry = GameInstance->GetGameManager()->TransactionsRegistry;
-		ChallengesRegistry = GameInstance->GetGameManager()->ChallengesRegistry;
+		Scores = GameInstance->GetGameDataManager().GetScores();
+		TransactionsRegistry = GameInstance->GetGameDataManager().GetTransactionsRegistry();
+		ChallengesRegistry = GameInstance->GetGameDataManager().GetChallengesRegistry();
 	}
 }
 

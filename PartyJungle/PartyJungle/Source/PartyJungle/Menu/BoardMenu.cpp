@@ -1,6 +1,7 @@
 #include "./BoardMenu.h"
 
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
 
 ABoardMenu::ABoardMenu()
@@ -95,8 +96,8 @@ void ABoardMenu::StartGame()
 
 	if(GameInstance) 
 	{
-		GameInstance->GetGameManager()->PlayersInBoard = PlayersQ;
-		GameInstance->GetGameManager()->RoundsInBoard = GameRounds;
+		GameInstance->GetGameDataManager().SetPlayersInBoard(PlayersQ);
+		GameInstance->GetGameDataManager().SetRoundsInBoard(GameRounds);
 
 		StartGameSequence();
 	}

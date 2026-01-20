@@ -1,6 +1,7 @@
 #include "./ScoreDatabase.h"
 
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
 
 AScoreDatabase::AScoreDatabase()
@@ -34,8 +35,8 @@ void AScoreDatabase::SendTransactionsAndScoresToInstance()
 	
 	if (GameInstance)
 	{
-		GameInstance->GetGameManager()->Scores = Scores;
-		GameInstance->GetGameManager()->TransactionsRegistry = TransactionsRegistry;
+		GameInstance->GetGameDataManager().SetScores(Scores);
+		GameInstance->GetGameDataManager().SetTransactionsRegistry(TransactionsRegistry);
 	}
 }
 

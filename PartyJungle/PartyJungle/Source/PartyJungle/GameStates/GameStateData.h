@@ -1,35 +1,46 @@
 ﻿#pragma once
 
-#include "../Managers/StateManager.h"
-#include "../Controllers/MapControllerBase.h"
-#include "../Controllers/CameraControllerBase.h"
-#include "../Controllers/CharactersControllerBase.h"
-#include "../Controllers/UIControllerBase.h"
-
 #include "CoreMinimal.h"
 
 #include "GameStateData.generated.h"
 
+class AControllerBase;
+class AUIControllerBase;
+class APlayersControllerBase;
+class ACameraControllerBase;
+class AGameLoopControllerBase;
+class UManagerGameInstance;
 
+enum class EGameStates : uint8;
+
+
+/**
+ * Enum with all Game Controllers Types.
+ */
+UENUM()
+enum class EGameControllers : uint8 { GameLoop = 0U, Camera, Players, UI, COUNT };
+
+
+/**
+ * Actor that contains and manages each State Data, including all its Controllers.
+ */
 UCLASS()
 class AGameStateData : public AActor
 {
 	GENERATED_BODY()
 	
 public:
-	AGameStateData();
-	
-	/** 
-	 * Overridable native event for when play begins for this actor.
+	/**
+	 * Constructor.
 	 */
-	virtual void BeginPlay() override;
+	AGameStateData();
 
 	/**
 	 * Gets the Game State id.
 	 * @return Id of the Game State.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	const GameStates GetGameStateId() const { return m_GameStateId; }
+	const EGameStates GetGameStateId() const { return m_GameStateId; }
 	
 	/**
 	 * Returns True if the conditions to enter a state are accomplished. True by Default.
@@ -46,39 +57,25 @@ public:
 	bool CanExitState() const;
 	
 	/**
-	 * Gets a reference to the MapController.
-	 * @return Reference to the MapController.
+	 * Gets a reference to the InputController.
+	 * @param a_ControllerId Selected controller id.
+	 * @return Reference to the InputController.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	UMapControllerBase* const GetMapController() { return m_MapController; }
+	AControllerBase* const GetController(EGameControllers a_ControllerId);
 	
-	/**
-	 * Gets a reference to the CameraController.
-	 * @return Reference to the CameraController.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	UCameraControllerBase* const GetCameraController() { return m_CameraController; }
-	
-	/**
-	 * Gets a reference to the CharactersController.
-	 * @return Reference to the CharactersController.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	UCharactersControllerBase* const GetCharactersController() { return m_CharactersController; }
-	
-	/**
-	 * Gets a reference to the UIController.
-	 * @return Reference to the UIController.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	UUIControllerBase* const GetUIController() { return m_UIController; }
 	
 protected:
 	/**
-	 * Initializes the State from the StateData instance.
+	 * Method called when the State and the StateManager are ready. Call instead of BeginPlay().
 	 */
 	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	void InitState();
+	void BeginState();
+	
+	/**
+	 * Implementation for OnBeginState from code. Ignored if the StateData has a BP implementation.
+	 */
+	virtual void OnBeginState_Implementation() {};
 	
 	/**
 	 * Implementation for CanEnterState from code. Ignored if the StateData has a BP implementation.
@@ -92,26 +89,41 @@ protected:
 	 */
 	virtual bool CanExitState_Implementation() const { return true; };
 	
+private:
+	/** 
+	 * Overridable native event for when play begins for this actor.
+	 */
+	virtual void BeginPlay() override;
+	
+	/**
+	 * Initializes the State from the StateData instance.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
+	void InitState();
+	
+	/**
+	 * Adds this StateData to the StateManager.
+	 * @param a_GameManager Reference to the GameManager.
+	 */
+	UFUNCTION()
+	void AddToStateManager(UManagerGameInstance* const a_GameManager);
+	
+protected:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
+	EGameStates m_GameStateId; //!< Enum used as an id for each GameState type.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	GameStates m_GameStateId; //!< Enum used as an id for each GameState type.
+	AGameLoopControllerBase* m_GameLoopController; //!< Pointer to the state's GameLoop Controller.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	UMapControllerBase* m_MapController {nullptr}; //!< Pointer to the MapController.
+	ACameraControllerBase* m_CameraController; //!< Pointer to the state's Camera Controller.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	UCameraControllerBase* m_CameraController {nullptr}; //!< Pointer to the CameraController.
+	APlayersControllerBase* m_PlayersController; //!< Pointer to the state's Players Controller.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	UCharactersControllerBase* m_CharactersController {nullptr}; //!< Pointer to the CharactersController.
+	AUIControllerBase* m_UIController; //!< Pointer to the state's UI Controller.
 	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	UUIControllerBase* m_UIController {nullptr}; //!< Pointer to the UIController.
-	
-	// ToDo: Crear un GameLoopController, que s'encarregarà de la lògica dins el propi joc i minijocs.
-	//	- Lògica de canvis d'estats dins el propi minijoc
-	//	- Lògica de condició de victoria/finalització i ChangeState()
-	//	- Control de puntuacions propi en cas de necessitar-se diferent al del GameManager
-	/// Nota: no se si es millor idea fer canvis de SubEstats com a StateData separats, o millor un control d'estats completament propi...
-	///		- Potser implementar un SubStateData i manager..?
+	UPROPERTY(BlueprintReadWrite, meta = (EditConditionHides))
+	TMap<uint8, AControllerBase*> m_GameControllers; //!< Map with the GameState's Game Controllers references
 };

@@ -5,8 +5,11 @@
 #include "UIControllerBase.generated.h"
 
 
+/**
+ * Base UI Controller class.
+ */
 UCLASS()
-class UUIControllerBase : public UControllerBase
+class AUIControllerBase : public AControllerBase
 {
 	GENERATED_BODY()
 	
