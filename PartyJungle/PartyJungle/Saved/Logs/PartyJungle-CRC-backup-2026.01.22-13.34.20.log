@@ -1,0 +1,125 @@
+﻿Log file open, 01/22/26 14:34:17
+LogICUInternationalization: OS requested locale 'ca_ES' is not supported. Using the OS requested language of 'ca-ES' as the locale.
+LogICUInternationalization: ICU TimeZone Detection - Raw Offset: +1:00, Platform Override: ''
+LogConfig: No local boot hotfix file found at: [/home/xavi/.config/Epic/CrashReportClient/Saved/PersistentDownloadDir/HotfixForNextBoot.txt]
+LogInit: ExecutableName: CrashReportClientEditor
+LogInit: Build: ++UE5+Release-5.6-CL-43139311
+LogInit: Platform=Linux
+LogInit: MachineId=cc702e18a90c4b1f89a8d92d3759826b-000003e8
+LogInit: DeviceId=
+LogInit: Engine Version: 5.6.0-43139311+++UE5+Release-5.6
+LogInit: Compatible Engine Version: 5.6.0-43139311+++UE5+Release-5.6
+LogInit: Net CL: 43139311
+LogInit: OS: CachyOS (6.18.2-2-cachyos-deckify), CPU: AMD Ryzen 7 2700 Eight-Core Processor, GPU: NVIDIA GeForce RTX 3060 (NVIDIA UNIX Open Kernel Module for x86_64  590.48.01  Release Build  (notroot@)  Thu Dec 18 21:40:30 UTC 2025)
+LogInit: Compiled (64-bit): May 31 2025 16:35:11
+LogInit: Architecture: x64
+LogInit: Compiled with Clang: 18.1.0rc (github.com/llvm/llvm-project 461274b81d8641eab64d494accddc81d7db8a09e)
+LogInit: Build Configuration: Shipping
+LogInit: Branch Name: ++UE5+Release-5.6
+LogInit: Command Line:  -Abslog="/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Logs/PartyJungle-CRC.log" -Unattended "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/"
+LogInit: Base Directory: /home/xavi/Documents/Unreal/Engine/Binaries/Linux/
+LogInit: Allocator: Mimalloc
+LogInit: Installed Engine Build: 1
+LogInit: This binary is optimized with LTO: no, PGO: no, instrumented for PGO data collection: no
+LogInit: Presizing for max 2097152 objects, including 1 objects not considered by GC.
+LogInit: Object subsystem initialized
+LogConfig: Applying CVar settings from Section [ConsoleVariables] File [Engine]
+[2026.01.22-13.34.17:488][  0]LogInit: Unix hardware info:
+[2026.01.22-13.34.17:488][  0]LogInit:  - we are the first instance of this executable
+[2026.01.22-13.34.17:488][  0]LogInit:  - this process' id (pid) is 28287, parent process' id (ppid) is 10373
+[2026.01.22-13.34.17:488][  0]LogInit:  - we are not running under debugger
+[2026.01.22-13.34.17:488][  0]LogInit:  - machine network name is 'Xavi-Desktop'
+[2026.01.22-13.34.17:488][  0]LogInit:  - user name is 'xavi' (xavi)
+[2026.01.22-13.34.17:488][  0]LogInit:  - we're logged in locally
+[2026.01.22-13.34.17:488][  0]LogInit:  - we're running with rendering
+[2026.01.22-13.34.17:488][  0]LogInit:  - CPU: AuthenticAMD 'AMD Ryzen 7 2700 Eight-Core Processor' (signature: 0x800F82)
+[2026.01.22-13.34.17:488][  0]LogInit:  - Number of physical cores available for the process: 8
+[2026.01.22-13.34.17:488][  0]LogInit:  - Number of logical cores available for the process: 16
+[2026.01.22-13.34.17:488][  0]LogInit:  - GPU Brand Info: NVIDIA GeForce RTX 3060 (NVIDIA UNIX Open Kernel Module for x86_64  590.48.01  Release Build  (notroot@)  Thu Dec 18 21:40:30 UTC 2025)
+[2026.01.22-13.34.17:488][  0]LogInit:  - Memory allocator used: Mimalloc
+[2026.01.22-13.34.17:488][  0]LogInit:  - This is an internal build.
+[2026.01.22-13.34.17:488][  0]LogCore: Skipped benchmarking clocks because the engine is running in a standalone program mode - CLOCK_MONOTONIC will be used.
+[2026.01.22-13.34.17:488][  0]LogInit: Unix-specific commandline switches:
+[2026.01.22-13.34.17:488][  0]LogInit:  -ansimalloc - use malloc()/free() from libc (useful for tools like valgrind and electric fence)
+[2026.01.22-13.34.17:488][  0]LogInit:  -jemalloc - use jemalloc for all memory allocation
+[2026.01.22-13.34.17:488][  0]LogInit:  -binnedmalloc - use binned malloc  for all memory allocation
+[2026.01.22-13.34.17:488][  0]LogInit:  -filemapcachesize=NUMBER - set the size for case-sensitive file mapping cache
+[2026.01.22-13.34.17:488][  0]LogInit:  -useksm - uses kernel same-page mapping (KSM) for mapped memory (OFF)
+[2026.01.22-13.34.17:488][  0]LogInit:  -ksmmergeall - marks all mmap'd memory pages suitable for KSM (OFF)
+[2026.01.22-13.34.17:488][  0]LogInit:  -preloadmodulesymbols - Loads the main module symbols file into memory (OFF)
+[2026.01.22-13.34.17:488][  0]LogInit:  -sigdfl=SIGNAL - Allows a specific signal to be set to its default handler rather then ignoring the signal
+[2026.01.22-13.34.17:488][  0]LogInit:  -crashhandlerstacksize - Allows setting crash handler stack sizes (204800)
+[2026.01.22-13.34.17:488][  0]LogInit:  -noexclusivelockonwrite - disables marking files created by the engine as exclusive locked while the engine has them opened
+[2026.01.22-13.34.17:488][  0]LogInit:  -httpproxy=ADDRESS:PORT - redirects HTTP requests to a proxy (only supported if compiled with libcurl)
+[2026.01.22-13.34.17:488][  0]LogInit:  -reuseconn - allow libcurl to reuse HTTP connections (only matters if compiled with libcurl)
+[2026.01.22-13.34.17:488][  0]LogInit:  -virtmemkb=NUMBER - sets process virtual memory (address space) limit (overrides VirtualMemoryLimitInKB value from .ini)
+[2026.01.22-13.34.17:488][  0]LogInit:  -allowsyscallfilterfile=PATH_TO_FILE - sets up a system call filter allow list. any invalid syscall in this list *will* cause a crash
+[2026.01.22-13.34.17:488][  0]LogInit:  - Physical RAM available (not considering process quota): 32 GB (32033 MB, 32802568 KB, 33589829632 bytes)
+[2026.01.22-13.34.17:488][  0]LogInit:  - VirtualMemoryAllocator pools will grow at scale 1
+[2026.01.22-13.34.17:488][  0]LogInit:  - MemoryRangeDecommit() will be a no-op (re-run with -vmapoolevict to change)
+[2026.01.22-13.34.17:488][  0]LogInit:  - PageSize 4096
+[2026.01.22-13.34.17:488][  0]LogInit:  - BinnedPageSize 65536
+[2026.01.22-13.34.17:494][  0]LogUObjectArray: 552 objects as part of root set at end of initial load.
+[2026.01.22-13.34.17:494][  0]LogUObjectArray: 0 objects are not in the root set, but can never be destroyed because they are in the DisregardForGC set.
+[2026.01.22-13.34.17:494][  0]LogUObjectArray: CloseDisregardForGC: 552/552 objects in disregard for GC pool
+[2026.01.22-13.34.17:496][  0]LogInit: Using OS detected language (ca-ES).
+[2026.01.22-13.34.17:496][  0]LogInit: Using OS detected locale (ca-ES).
+[2026.01.22-13.34.17:496][  0]LogTextLocalizationManager: No localization for 'ca-ES' exists, so 'en' will be used for the language.
+[2026.01.22-13.34.17:497][  0]LogTextLocalizationManager: No localization for 'ca-ES' exists, so 'en' will be used for the locale.
+[2026.01.22-13.34.17:557][  0]LogInit: Using OS detected language (ca-ES).
+[2026.01.22-13.34.17:557][  0]LogInit: Using OS detected locale (ca-ES).
+[2026.01.22-13.34.17:557][  0]LogTextLocalizationManager: No localization for 'ca-ES' exists, so 'en' will be used for the language.
+[2026.01.22-13.34.17:557][  0]LogTextLocalizationManager: No localization for 'ca-ES' exists, so 'en' will be used for the locale.
+[2026.01.22-13.34.17:558][  0]LogPackageLocalizationCache: Processed 2 localized package path(s) for 1 prioritized culture(s) in 0.000041 seconds
+[2026.01.22-13.34.17:577][  0]LogInit: Using libcurl 8.12.1
+[2026.01.22-13.34.17:577][  0]LogInit:  - built for x86_64-unknown-linux-gnu
+[2026.01.22-13.34.17:577][  0]LogInit:  - supports SSL with OpenSSL/1.1.1t
+[2026.01.22-13.34.17:577][  0]LogInit:  - supports HTTP deflate (compression) using libz 1.3
+[2026.01.22-13.34.17:577][  0]LogInit:  - other features:
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_SSL
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_LIBZ
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_IPV6
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_TLSAUTH_SRP
+[2026.01.22-13.34.17:577][  0]LogInit:      CURL_VERSION_HTTP2
+[2026.01.22-13.34.17:577][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2026.01.22-13.34.17:577][  0]LogInit:  - bVerifyPeer = false  - Libcurl will NOT verify peer certificate
+[2026.01.22-13.34.17:577][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2026.01.22-13.34.17:577][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2026.01.22-13.34.17:577][  0]LogInit:  - MaxHostConnections = 16  - Libcurl will limit the number of connections to a host
+[2026.01.22-13.34.17:577][  0]LogInit:  - LocalHostAddr = Default
+[2026.01.22-13.34.17:577][  0]LogInit:  - BufferSize = 65536
+[2026.01.22-13.34.17:577][  0]LogInit: CreateHttpThread using FCurlMultiPollEventLoopHttpThread
+[2026.01.22-13.34.17:577][  0]LogInit: Creating http thread with maximum 256 concurrent requests
+[2026.01.22-13.34.17:577][  0]LogAnalytics: Display: [CrashReporter.Release] AnalyticsET::StartSession ( APIServer = https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data. AppVersion = ++UE5+Release-5.6-CL-43139311 )
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: Display: Applying project settings from '/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/CrashReportClient.ini'.
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: CrashReportClientVersion=1.0
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: CrashReportReceiver disabled
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: DataRouterUrl: https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: Initial state = Unknown UploadState value
+[2026.01.22-13.34.17:580][  0]CrashReportCoreLog: Initial state = Unknown UploadState value
+[2026.01.22-13.34.17:581][  0]LogCrashDebugHelper: DepotName: //UE5/Release-5.6
+[2026.01.22-13.34.17:581][  0]LogCrashDebugHelper: BuiltFromCL: 43139311
+[2026.01.22-13.34.17:581][  0]LogCrashDebugHelper: EngineVersion: 5.6.0-43139311+++UE5+Release-5.6
+[2026.01.22-13.34.17:581][  0]LogCrashDebugHelper: BuildVersion: ++UE5+Release-5.6-CL-43139311
+[2026.01.22-13.34.18:551][  0]CrashReportCoreLog: Got 4 pending files to upload from 'ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA'
+[2026.01.22-13.34.18:551][  0]CrashReportCoreLog: State change from Ready to SendingFiles
+[2026.01.22-13.34.18:551][  0]CrashReportCoreLog: CompressAndSendData have 4 pending files
+[2026.01.22-13.34.18:551][  0]CrashReportCoreLog: CompressAndSendData compressing 2626 bytes ('/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/Diagnostics.txt')
+[2026.01.22-13.34.18:551][  0]CrashReportCoreLog: CompressAndSendData compressing 40772 bytes ('/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/CrashContext.runtime-xml')
+[2026.01.22-13.34.18:552][  0]CrashReportCoreLog: CompressAndSendData compressing 665302 bytes ('/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/PartyJungle.log')
+[2026.01.22-13.34.18:552][  0]CrashReportCoreLog: CompressAndSendData compressing 256 bytes ('/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Saved/Crashes/ensureinfo-PartyJungle-pid-10373-9969D15466BB4AE9A6C05C6DE0C339CA/CrashReportClient.ini')
+[2026.01.22-13.34.18:563][  0]CrashReportCoreLog: Sending HTTP request: https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?AppID=CrashReporter&AppVersion=5.6.0-43139311%2B%2B%2BUE5%2BRelease-5.6&AppEnvironment=Release&UploadType=crashreports&UserID=cc702e18a90c4b1f89a8d92d3759826b-000003e8%7C%7Ccc702e18a90c4b1f89a8d92d3759826b, Payload size: 78959
+[2026.01.22-13.34.19:152][  0]CrashReportCoreLog: OnProcessRequestComplete(), State=SendingFiles Response=204 ConnectedSuccesfully=1
+[2026.01.22-13.34.19:152][  0]CrashReportCoreLog: All uploads done
+[2026.01.22-13.34.19:152][  0]CrashReportCoreLog: State change from SendingFiles to Finished
+[2026.01.22-13.34.19:586][  0]CrashReportCoreLog: Final state (Receiver) = Finished
+[2026.01.22-13.34.19:586][  0]CrashReportCoreLog: Final state (Receiver) = Unknown UploadState value
+[2026.01.22-13.34.19:586][  0]LogAnalytics: Display: [CrashReporter.Release] AnalyticsET::EndSession
+[2026.01.22-13.34.19:586][  0]LogCore: Engine exit requested (reason: CrashReportClientApp RequestExit)
+[2026.01.22-13.34.19:586][  0]LogExit: Preparing to exit.
+[2026.01.22-13.34.19:587][  0]LogExit: Object subsystem successfully closed.
+[2026.01.22-13.34.20:089][  0]LogPakFile: Destroying PakPlatformFile
+[2026.01.22-13.34.20:089][  0]LogExit: Exiting.
+[2026.01.22-13.34.20:100][  0]Log file closed, 01/22/26 14:34:20

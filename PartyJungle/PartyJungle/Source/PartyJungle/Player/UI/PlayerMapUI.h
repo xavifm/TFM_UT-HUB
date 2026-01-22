@@ -95,6 +95,12 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCrowns(int Team, int Quantity);
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void SwitchScoreListUI(bool _visible);
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
+    void SetScore(int _position, int _team, int _coins, int _crowns);
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void SpinWheelEvent(int WheelSize);

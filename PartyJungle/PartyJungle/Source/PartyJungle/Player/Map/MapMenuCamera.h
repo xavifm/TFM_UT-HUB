@@ -206,6 +206,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
 	void MoveCameraToCurrentTeam();
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchRankingScoreList(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ResetMapItems();
@@ -307,6 +310,7 @@ private:
 	bool SelectMinionToUseItem = false;
 	bool ThrowItemPlayerMenu = false;
 	bool SameTurnEnabled = false;
+	bool ScoreRankingEnabled = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

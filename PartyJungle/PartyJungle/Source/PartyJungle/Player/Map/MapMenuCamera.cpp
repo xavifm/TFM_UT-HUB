@@ -73,6 +73,7 @@ void AMapMenuCamera::BeginPlay()
     }
 
     SwitchMainScene();
+    SwitchRankingScoreList(false);
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
@@ -175,6 +176,9 @@ void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
 void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
+    
+    if (ScoreRankingEnabled)
+        return;
 
     if (SquareShopReference)
         SquareShopReference->SwitchShopItem(direction);
@@ -226,6 +230,12 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (ScoreRankingEnabled)
+    {
+        SwitchRankingScoreList(false);
+        return;
+    }
+    
     if (IsMinigameActive || FullMapView)
         return;
 
@@ -642,6 +652,12 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
+    if (ScoreRankingEnabled)
+    {
+        SwitchRankingScoreList(false);
+        return;
+    }
+    
     if (IsMinigameActive || DiceRollIndex > 0)
         return;
 
@@ -808,6 +824,7 @@ void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
         }
     }
     
+    SwitchRankingScoreList(true);
     SameTurnEnabled = true;
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
 }
@@ -1015,6 +1032,31 @@ void AMapMenuCamera::MoveCameraToCurrentTeam()
     CurrentMinion->SetMinionAnimation(EMinionState::WALK);
 
     SetActorLocation(MinionLocation);
+}
+
+void AMapMenuCamera::SwitchRankingScoreList(bool _visibility)
+{
+    ScoreRankingEnabled = _visibility;
+    MapUI->SwitchScoreListUI(_visibility);
+    
+    if (!_visibility || !ScoreDb)
+        return;
+    
+    TArray<UScoreDto*> scores = ScoreDb->GetScoresArray();
+    
+    int pos = 0;
+
+    for (int index = MAX_TEAM_NUMBER; index < 4; ++index)
+        MapUI->SetScore(index, -1, 0, -1);
+    
+    if (scores.Num() > 0)
+    {
+        for (auto score : scores)
+        {
+            MapUI->SetScore(pos, score->Team, score->TotalCoins, score->StoredCrowns);
+            pos++;
+        }
+    }
 }
 
 void AMapMenuCamera::ResetMapItems()

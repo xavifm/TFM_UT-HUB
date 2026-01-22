@@ -1917,6 +1917,54 @@ DEFINE_FUNCTION(AMapMenuCamera::execSwitchPathMenu)
 }
 // ********** End Class AMapMenuCamera Function SwitchPathMenu *************************************
 
+// ********** Begin Class AMapMenuCamera Function SwitchRankingScoreList ***************************
+struct Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics
+{
+	struct MapMenuCamera_eventSwitchRankingScoreList_Parms
+	{
+		bool _visibility;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visibility_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visibility;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::NewProp__visibility_SetBit(void* Obj)
+{
+	((MapMenuCamera_eventSwitchRankingScoreList_Parms*)Obj)->_visibility = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::NewProp__visibility = { "_visibility", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSwitchRankingScoreList_Parms), &Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::NewProp__visibility_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::NewProp__visibility,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SwitchRankingScoreList", Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::MapMenuCamera_eventSwitchRankingScoreList_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::MapMenuCamera_eventSwitchRankingScoreList_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execSwitchRankingScoreList)
+{
+	P_GET_UBOOL(Z_Param__visibility);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchRankingScoreList(Z_Param__visibility);
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function SwitchRankingScoreList *****************************
+
 // ********** Begin Class AMapMenuCamera Function SwitchStoreCrownsUI ******************************
 struct Z_Construct_UFunction_AMapMenuCamera_SwitchStoreCrownsUI_Statics
 {
@@ -2210,6 +2258,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "SwitchMenuWidget", &AMapMenuCamera::execSwitchMenuWidget },
 		{ "SwitchMinionToSelectForDuel", &AMapMenuCamera::execSwitchMinionToSelectForDuel },
 		{ "SwitchPathMenu", &AMapMenuCamera::execSwitchPathMenu },
+		{ "SwitchRankingScoreList", &AMapMenuCamera::execSwitchRankingScoreList },
 		{ "SwitchStoreCrownsUI", &AMapMenuCamera::execSwitchStoreCrownsUI },
 		{ "UpdateDicePosition", &AMapMenuCamera::execUpdateDicePosition },
 		{ "UpdateMinionEconomy", &AMapMenuCamera::execUpdateMinionEconomy },
@@ -2458,6 +2507,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMenuWidget, "SwitchMenuWidget" }, // 3563137851
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMinionToSelectForDuel, "SwitchMinionToSelectForDuel" }, // 2962733435
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchPathMenu, "SwitchPathMenu" }, // 2369989188
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchRankingScoreList, "SwitchRankingScoreList" }, // 1582783717
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchStoreCrownsUI, "SwitchStoreCrownsUI" }, // 3496390430
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchToFullMapView, "SwitchToFullMapView" }, // 1111404998
 		{ &Z_Construct_UFunction_AMapMenuCamera_UpdateDicePosition, "UpdateDicePosition" }, // 3915403318
@@ -2579,10 +2629,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 2468005951U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3374923531U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_1200890263(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_2714589801(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
