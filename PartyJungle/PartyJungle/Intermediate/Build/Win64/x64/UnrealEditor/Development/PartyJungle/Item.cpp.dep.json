@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\items\\base\\item.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\items\\base\\item.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\item.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
