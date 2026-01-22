@@ -19,7 +19,7 @@ public:
 
 protected:
 	void StartMinigame(int _startTime) override;
-	void FinishMinigame(int _winner) override;
+	void FinishMinigame(TArray<int32> _winners) override;
 	void SetTeamScore(int _team, int _score) override;
 	void ResetMinigameScene() override;
 

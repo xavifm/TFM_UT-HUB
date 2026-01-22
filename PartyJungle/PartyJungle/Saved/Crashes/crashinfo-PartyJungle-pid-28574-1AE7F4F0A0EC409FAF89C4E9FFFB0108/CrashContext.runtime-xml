@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FGenericCrashContext>
+	<RuntimeProperties>
+		<CrashVersion>3</CrashVersion>
+		<ExecutionGuid>53D7DCA913F143B584CFC7966A43CA8C</ExecutionGuid>
+		<CrashGUID>UECC-Linux-EF2B934D4C05487F9A1A5FD4BB0084EA_0000</CrashGUID>
+		<IsEnsure>false</IsEnsure>
+		<IsStall>false</IsStall>
+		<IsAssert>false</IsAssert>
+		<CrashType>GPUCrash</CrashType>
+		<ErrorMessage>Assertion failed: !&quot;Enclosing block should never be called&quot; [File:./Runtime/VulkanRHI/Private/VulkanUtil.cpp] [Line: 965] 
+
+</ErrorMessage>
+		<CrashReporterMessage />
+		<CrashReporterMessage>Attended</CrashReporterMessage>
+		<ProcessId>28574</ProcessId>
+		<SecondsSinceStart>0</SecondsSinceStart>
+		<IsInternalBuild>false</IsInternalBuild>
+		<IsPerforceBuild>false</IsPerforceBuild>
+		<IsWithDebugInfo>true</IsWithDebugInfo>
+		<IsSourceDistribution>false</IsSourceDistribution>
+		<GameName>UE-PartyJungle</GameName>
+		<ExecutableName>UnrealEditor</ExecutableName>
+		<BuildConfiguration>Development</BuildConfiguration>
+		<GameSessionID />
+		<PlatformName>LinuxEditor</PlatformName>
+		<PlatformFullName>Linux [CachyOS 6.18.2-2-cachyos-deckify 64b]</PlatformFullName>
+		<PlatformNameIni>Linux</PlatformNameIni>
+		<EngineMode>Editor</EngineMode>
+		<EngineModeEx>Unset</EngineModeEx>
+		<DeploymentName />
+		<EngineVersion>5.6.0-43139311+++UE5+Release-5.6</EngineVersion>
+		<EngineCompatibleVersion>5.6.0-43139311+++UE5+Release-5.6</EngineCompatibleVersion>
+		<CommandLine>/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/PartyJungle.uproject</CommandLine>
+		<LanguageLCID>9</LanguageLCID>
+		<AppDefaultLocale>ca_ES</AppDefaultLocale>
+		<BuildVersion>++UE5+Release-5.6-CL-43139311</BuildVersion>
+		<Symbols>**UE5*Release-5.6-CL-43139311-Linux-Development</Symbols>
+		<IsUERelease>true</IsUERelease>
+		<IsRequestingExit>false</IsRequestingExit>
+		<UserName />
+		<BaseDir>/home/xavi/Documents/Unreal/Engine/Binaries/Linux/</BaseDir>
+		<RootDir>/home/xavi/Documents/Unreal/</RootDir>
+		<MachineId>CC702E18A90C4B1F89A8D92D3759826B-000003E8</MachineId>
+		<LoginId>cc702e18a90c4b1f89a8d92d3759826b-000003e8</LoginId>
+		<EpicAccountId />
+		<SourceContext />
+		<UserDescription />
+		<UserActivityHint />
+		<CrashDumpMode>0</CrashDumpMode>
+		<GameStateName />
+		<Misc.NumberOfCores>8</Misc.NumberOfCores>
+		<Misc.NumberOfCoresIncludingHyperthreads>16</Misc.NumberOfCoresIncludingHyperthreads>
+		<Misc.Is64bitOperatingSystem>1</Misc.Is64bitOperatingSystem>
+		<Misc.CPUVendor>AuthenticAMD</Misc.CPUVendor>
+		<Misc.CPUBrand>AMD Ryzen 7 2700 Eight-Core Processor</Misc.CPUBrand>
+		<Misc.PrimaryGPUBrand>NVIDIA GeForce RTX 3060 (NVIDIA UNIX Open Kernel Module for x86</Misc.PrimaryGPUBrand>
+		<Misc.OSVersionMajor>CachyOS</Misc.OSVersionMajor>
+		<Misc.OSVersionMinor>6.18.2-2-cachyos-deckify</Misc.OSVersionMinor>
+		<Misc.AnticheatProvider />
+		<MemoryStats.TotalPhysical>33589833728</MemoryStats.TotalPhysical>
+		<MemoryStats.TotalVirtual>33589030912</MemoryStats.TotalVirtual>
+		<MemoryStats.PageSize>4096</MemoryStats.PageSize>
+		<MemoryStats.TotalPhysicalGB>32</MemoryStats.TotalPhysicalGB>
+		<MemoryStats.AvailablePhysical>22399852544</MemoryStats.AvailablePhysical>
+		<MemoryStats.AvailableVirtual>80058204160</MemoryStats.AvailableVirtual>
+		<MemoryStats.UsedPhysical>1176850432</MemoryStats.UsedPhysical>
+		<MemoryStats.PeakUsedPhysical>1209389056</MemoryStats.PeakUsedPhysical>
+		<MemoryStats.UsedVirtual>6520188928</MemoryStats.UsedVirtual>
+		<MemoryStats.PeakUsedVirtual>6633857024</MemoryStats.PeakUsedVirtual>
+		<MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+		<MemoryStats.OOMAllocationSize>0</MemoryStats.OOMAllocationSize>
+		<MemoryStats.OOMAllocationAlignment>0</MemoryStats.OOMAllocationAlignment>
+		<NumMinidumpFramesToIgnore>3</NumMinidumpFramesToIgnore>
+		<CallStack />
+		<PCallStack>
+
+libUnrealEditor-Core 0x00007f4fd3000000 + b6b669 
+libUnrealEditor-VulkanRHI 0x00007f4ec1e00000 + 275441 
+libUnrealEditor-VulkanRHI 0x00007f4ec1e00000 + 19c13b 
+libUnrealEditor-VulkanRHI 0x00007f4ec1e00000 + 1a06e4 
+libUnrealEditor-VulkanRHI 0x00007f4ec1e00000 + 22eca9 
+libUnrealEditor-VulkanRHI 0x00007f4ec1e00000 + 22e9fd 
+libUnrealEditor-RHI 0x00007f4fcb62e000 + acfd0 
+UnrealEditor 0x0000000000200000 + 56014 
+UnrealEditor 0x0000000000200000 + 4cbec 
+libUnrealEditor-UnixCommonStartup 0x00007f4fd47b7000 + 8e5a 
+libc.so 0x00007f4fc6800000 + 27b8b 
+libc.so 0x00007f4fc6800000 + 27c4b 
+UnrealEditor 0x0000000000200000 + 3964a 
+</PCallStack>
+		<PCallStackHash>C3CA0B38D34D14F3CAAA34D65F520B853D69F6E9</PCallStackHash>
+		<TimeOfCrash>639029535627970000</TimeOfCrash>
+		<bAllowToBeContacted>1</bAllowToBeContacted>
+		<CPUBrand>AMD Ryzen 7 2700 Eight-Core Processor</CPUBrand>
+		<CrashReportClientVersion>1.0</CrashReportClientVersion>
+	</RuntimeProperties>
+	<PlatformProperties>
+		<CrashSignal>11</CrashSignal>
+		<CrashSignalName>Segmentation fault</CrashSignalName>
+		<PlatformCallbackResult>0</PlatformCallbackResult>
+		<CrashTrigger>0</CrashTrigger>
+	</PlatformProperties>
+	<EngineData>
+		<MatchingDPStatus>LinuxEditorNo errors</MatchingDPStatus>
+		<RHI.DriverDenylisted>false</RHI.DriverDenylisted>
+	</EngineData>
+	<GameData>
+</GameData>
+</FGenericCrashContext>

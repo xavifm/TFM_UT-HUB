@@ -17,6 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AActor;
+class AMinigameLogic;
 class UCameraComponent;
 
 // ********** Begin Class AWorldManager ************************************************************

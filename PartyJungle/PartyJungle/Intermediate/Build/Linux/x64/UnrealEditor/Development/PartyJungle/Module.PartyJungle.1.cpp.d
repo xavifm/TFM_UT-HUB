@@ -3045,6 +3045,8 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Scores/ScoreDto.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ScoreDto.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MinigameDataGameInstance.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/CrossInfo/./TeamsGenerator.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TeamsGenerator.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MinigameLogic.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/AirCannon.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/AudioManager.gen.cpp \
@@ -3063,6 +3065,37 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Challenge/ChallengeInformation.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Challenge/../Player/Minion/Minion.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ChallengeInformation.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/CocoCannon.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame2/CocoCannon.h \
+  Runtime/Engine/Classes/Kismet/GameplayStatics.h \
+  Runtime/CoreUObject/Public/Templates/SubclassOf.h \
+  Runtime/Engine/Public/CollisionQueryParams.h \
+  Runtime/Engine/Classes/Engine/LatentActionManager.h \
+  Runtime/Engine/Classes/GameFramework/PlayerController.h \
+  Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h \
+  Runtime/CoreUObject/Public/UObject/UnrealType.h \
+  Runtime/CoreUObject/Public/UObject/TextProperty.h \
+  Runtime/CoreUObject/Public/UObject/SoftObjectPtr.h \
+  Runtime/CoreUObject/Public/UObject/PropertyAccessUtil.h \
+  Runtime/Core/Public/CoreGlobals.h \
+  Runtime/Core/Public/Misc/EnumClassFlags.h \
+  Runtime/Core/Public/Templates/Function.h \
+  Runtime/CoreUObject/Public/UObject/TopLevelAssetPath.h \
+  Runtime/Engine/Classes/Engine/CollisionProfile.h \
+  Runtime/CoreUObject/Public/AssetRegistry/ARFilter.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/KismetSystemLibrary.generated.h \
+  Runtime/Engine/Classes/Sound/DialogueTypes.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/DialogueTypes.generated.h \
+  Runtime/Engine/Classes/Kismet/GameplayStaticsTypes.h \
+  Runtime/Engine/Classes/Engine/HitResult.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStaticsTypes.generated.h \
+  Runtime/Engine/Classes/Particles/WorldPSCPool.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStatics.generated.h \
+  Runtime/Engine/Classes/Components/StaticMeshComponent.h \
+  Runtime/Engine/Classes/Components/ArrowComponent.h \
+  Runtime/Engine/Classes/Components/PrimitiveComponent.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/ArrowComponent.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/CocoCannon.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Dice.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/DiceItem.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/DiceItem.h \
@@ -3093,7 +3126,6 @@
   Runtime/Core/Public/Templates/RefCounting.h \
   Runtime/CoreUObject/Public/UObject/CookEnums.h \
   Runtime/Core/Public/HAL/PlatformMath.h \
-  Runtime/Core/Public/Misc/EnumClassFlags.h \
   Runtime/CoreUObject/Public/UObject/ObjectSaveOverride.h \
   Runtime/CoreUObject/Public/UObject/FieldPath.h \
   Runtime/CoreUObject/Public/Cooker/BuildResultDependenciesMap.h \
@@ -3101,7 +3133,6 @@
   Runtime/Core/Public/HAL/PreprocessorHelpers.h \
   Runtime/Core/Public/Logging/LogVerbosity.h \
   Runtime/Core/Public/Serialization/CompactBinary.h \
-  Runtime/Core/Public/Templates/Function.h \
   Runtime/SlateCore/Public/Styling/SlateColor.h \
   Runtime/SlateCore/Public/Layout/Geometry.h \
   Runtime/SlateCore/Public/Input/CursorReply.h \
@@ -3123,19 +3154,16 @@
   Runtime/FieldNotification/Public/IFieldNotificationClassDescriptor.h \
   Runtime/FieldNotification/Public/INotifyFieldValueChanged.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/FieldNotification/UHT/INotifyFieldValueChanged.generated.h \
-  Runtime/CoreUObject/Public/Templates/SubclassOf.h \
   Runtime/SlateCore/Public/Layout/Visibility.h \
   Runtime/SlateCore/Public/Types/SlateStructs.h \
   Runtime/UMG/Public/Components/Visual.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/UMG/UHT/Visual.generated.h \
   Runtime/SlateCore/Public/Styling/SlateBrush.h \
-  Runtime/CoreUObject/Public/UObject/TextProperty.h \
   Runtime/UMG/Public/Slate/WidgetTransform.h \
   Runtime/Core/Public/Math/TransformCalculus2D.h \
   Runtime/SlateCore/Public/Rendering/SlateRenderTransform.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/UMG/UHT/WidgetTransform.generated.h \
   Runtime/CoreUObject/Public/UObject/UObjectThreadContext.h \
-  Runtime/Engine/Classes/GameFramework/PlayerController.h \
   Runtime/UMG/Public/Blueprint/WidgetNavigation.h \
   Runtime/SlateCore/Public/Types/NavigationMetaData.h \
   Runtime/SlateCore/Public/Types/SlateEnums.h \
@@ -3238,7 +3266,6 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Inventory.generated.h \
   Runtime/Engine/Classes/Camera/CameraComponent.h \
   Runtime/CoreUObject/Public/UObject/ScriptInterface.h \
-  Runtime/Engine/Classes/Components/StaticMeshComponent.h \
   Runtime/Engine/Classes/Engine/BlendableInterface.h \
   Runtime/Engine/Classes/Engine/Scene.h \
   Runtime/Engine/Classes/Camera/CameraTypes.h \
@@ -3258,7 +3285,4 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ScoresCalculator.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/EndGameUI.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Inventory.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MainMenuInput.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Menu/MainMenuInput.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MainMenuInput.generated.h
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.gen.cpp

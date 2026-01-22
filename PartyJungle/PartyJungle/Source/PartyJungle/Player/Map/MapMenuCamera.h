@@ -175,6 +175,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FinishDuel(int _winner, int _duelIndex);
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void FinishMinigame(TArray<int32> _winners, int _money);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchStoreCrownsUI(bool _visibility);
@@ -202,6 +205,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
+	void MoveCameraToCurrentTeam();
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void SwitchRankingScoreList(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void ResetMapItems();
@@ -257,6 +264,7 @@ private:
 	const int CAMERA_HEIGHT_OFFSET = 600;
 	const int MAX_MOVEMENTS_PER_TURN = 2;
 	const int ROULETTE_SPIN_TIME = 5;
+	const int ENDROUND_MINIGAME_START_TIME = 5;
 	const int MAX_DICES = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
 
@@ -301,6 +309,8 @@ private:
 	bool InventoryEnabled = false;
 	bool SelectMinionToUseItem = false;
 	bool ThrowItemPlayerMenu = false;
+	bool SameTurnEnabled = false;
+	bool ScoreRankingEnabled = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

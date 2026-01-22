@@ -41,6 +41,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execRollTheDice); \
 	DECLARE_FUNCTION(execFocusNextMinion); \
 	DECLARE_FUNCTION(execResetMapItems); \
+	DECLARE_FUNCTION(execSwitchRankingScoreList); \
 	DECLARE_FUNCTION(execSwitchCameraTeam); \
 	DECLARE_FUNCTION(execSwitchPathMenu); \
 	DECLARE_FUNCTION(execSwitchMenuWidget); \
@@ -48,6 +49,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchChallengeUI); \
 	DECLARE_FUNCTION(execSwitchCrownsShop); \
 	DECLARE_FUNCTION(execSwitchStoreCrownsUI); \
+	DECLARE_FUNCTION(execFinishMinigame); \
 	DECLARE_FUNCTION(execFinishDuel); \
 	DECLARE_FUNCTION(execRefreshChallengeInfo); \
 	DECLARE_FUNCTION(execOpenChallengeMenu); \

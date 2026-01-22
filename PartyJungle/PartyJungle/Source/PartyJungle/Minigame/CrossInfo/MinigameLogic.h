@@ -3,7 +3,23 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+#include "./TeamsGenerator.h"
 #include "MinigameLogic.generated.h"
+
+UENUM(BlueprintType)
+enum class EMinigameType : uint8
+{
+    DUEL UMETA(DisplayName = "DUEL"),
+    TEAM_MINIGAME UMETA(DisplayName = "TEAM MINIGAME"),
+};
+
+UENUM(BlueprintType)
+enum class ETeamsMode : uint8
+{
+    NOTEAM UMETA(DisplayName = "NO_TEAMS"),
+    TWO_VS_TWO UMETA(DisplayName = "TWO_VS_TWO"),
+    ONE_VS_THREE UMETA(DisplayName = "ONE_VS_THREE"),
+};
 
 UCLASS()
 class PARTYJUNGLE_API AMinigameLogic : public AActor
@@ -12,7 +28,25 @@ class PARTYJUNGLE_API AMinigameLogic : public AActor
 
 public:
     AMinigameLogic();
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
+    EMinigameType MinigameType;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
+    ETeamsMode TeamMode;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Assets")
+    TArray<AActor*> MinigameActors;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
+    AActor* Camera;
+    
+    UPROPERTY(EditAnywhere)
+    int MinigameMoney;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Camera")
+    ATeamsGenerator* TeamsGenerator;
+    
     UPROPERTY()
     UMinigameDataGameInstance* GameInstance;
 
@@ -20,13 +54,15 @@ public:
     AMapMenuCamera* MapMenuCamera;
 
     UPROPERTY()
-    TMap<int, AMinion*> PlayingMinions;
+    TMap<int, AMinion*> PlayingMinionsDuel;
+    
+    TMap<int, TArray<AMinion*>> PlayingMinionsTeamMinigame;
 
     UPROPERTY()
     TMap<int, AMinion*> WinnerMinions;
 
     UPROPERTY()
-    TMap<int, int> TeamMinigameScores;
+    TMap<int32, int32> TeamMinigameScores;
 
     UPROPERTY()
     TMap<int, bool> TeamsReady;
@@ -42,20 +78,23 @@ public:
 
     UFUNCTION()
     bool CheckIfTheMinigameHasFinished();
-
+    
+    TArray<int32> CalculateWinner();
+    int CaculateDuelWinner();
+    
     UFUNCTION()
-    int CalculateWinner();
-
+    TArray<int32> CalculateTeamMinigameWinners();
+    
     UFUNCTION()
-    virtual void ShowWinnerScene(int _endMinigameTime, int _winner);
-
+    virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);
+    
     UFUNCTION()
-    virtual void FinishMinigame(int _winner);
+    virtual void FinishMinigame(TArray<int32> _winners);
 
-    UFUNCTION()
-    virtual void SetTeamScore(int _team, int _score);
+    UFUNCTION(BlueprintCallable)
+    virtual void SetTeamScore(int32 _team, int32 _score);
 
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void SetTeamReady(int _team);
 
     UFUNCTION()
@@ -70,6 +109,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent)
     void ShowEndScreenSequence(int _winner);
 
+    UFUNCTION(BlueprintImplementableEvent)
+    void ShowTeamEndScreenSequence(const FText& Message);
+    
 protected:
     UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
     virtual void ResetMinigameScene();
@@ -77,8 +119,16 @@ protected:
 private:
     UFUNCTION()
     void InitializeMinigameInfoForDuel();
+    
+    UFUNCTION()
+    void InitializeMinigameInfoForTeam();
+    
+    UFUNCTION()
+    void StartMinigameScoresAndReadyInfo(TArray<AMinion*> _minions);
 
-    int Winner;
+    UPROPERTY()
+    TArray<int32> Winners;
+    
     bool MinigameFinished;
     FTimerHandle TimerHandle;
 

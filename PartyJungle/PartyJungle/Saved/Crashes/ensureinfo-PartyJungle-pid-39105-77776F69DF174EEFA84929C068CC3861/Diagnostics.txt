@@ -1,0 +1,39 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.2-2-cachyos-deckify (network name: Xavi-Desktop)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "Ensure condition failed: this->IsBound()  [File:/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl] [Line: 1148] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-PartyJungle-9174.so!void TBaseDynamicDelegate<FNotThreadSafeDelegateMode, void, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&>::__Internal_BindDynamic<AVictimCharacter>(AVictimCharacter*, TBaseDynamicDelegate<FNotThreadSafeDelegateMode, void, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&>::TMethodPtrResolver<AVictimCharacter>::FMethodPtr, FName)::'lambda'()::operator()() const [/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:1148]
+libUnrealEditor-PartyJungle-9174.so!void TBaseDynamicDelegate<FNotThreadSafeDelegateMode, void, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&>::__Internal_BindDynamic<AVictimCharacter>(AVictimCharacter*, TBaseDynamicDelegate<FNotThreadSafeDelegateMode, void, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&>::TMethodPtrResolver<AVictimCharacter>::FMethodPtr, FName) [/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:1148]
+libUnrealEditor-PartyJungle-9174.so!void TSparseDynamicDelegate<FComponentHitSignature_MCSignature, UPrimitiveComponent, FComponentHitSignatureInfoGetter>::__Internal_AddDynamic<AVictimCharacter>(AVictimCharacter*, TBaseDynamicDelegate<FNotThreadSafeDelegateMode, void, UPrimitiveComponent*, AActor*, UPrimitiveComponent*, UE::Math::TVector<double>, FHitResult const&>::TMethodPtrResolver<AVictimCharacter>::FMethodPtr, FName) [/home/xavi/Documents/Unreal/Engine/Source/Runtime/CoreUObject/Public/UObject/SparseDelegate.h:376]
+libUnrealEditor-PartyJungle-9174.so!AVictimCharacter::BeginPlay() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame2/VictimCharacter.cpp:34]
+libUnrealEditor-Engine.so!AActor::DispatchBeginPlay(bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:4710]
+libUnrealEditor-Engine.so!AWorldSettings::NotifyBeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/WorldSettings.cpp:362]
+libUnrealEditor-Engine.so!AGameStateBase::HandleBeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/GameStateBase.cpp:227]
+libUnrealEditor-Engine.so!AGameModeBase::StartPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/GameModeBase.cpp:206]
+libUnrealEditor-Engine.so!UWorld::BeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/World.cpp:5915]
+libUnrealEditor-Engine.so!UEngine::LoadMap(FWorldContext&, FURL, UPendingNetGame*, FString&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:16174]
+libUnrealEditor-Engine.so!UEngine::Browse(FWorldContext&, FURL, FString&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:15318]
+libUnrealEditor-Engine.so!UEngine::TickWorldTravel(FWorldContext&, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:15516]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2122]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

@@ -2940,119 +2940,51 @@
   /home/xavi/Documents/Unreal/Engine/Source/../Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/include/c++/v1/array \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/Module.PartyJungle.3.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/Definitions.PartyJungle.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ReducedDice.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/PartyJungle.init.gen.cpp \
   Runtime/CoreUObject/Public/UObject/GeneratedCppIncludes.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/ReducedDice.h \
-  Runtime/Core/Public/CoreMinimal.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/./Base/Item.h \
-  Runtime/Engine/Classes/GameFramework/Actor.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.generated.h \
-  Runtime/CoreUObject/Public/UObject/ObjectMacros.h \
-  Runtime/CoreUObject/Public/UObject/ScriptMacros.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.h \
-  Runtime/Engine/Classes/GameFramework/Pawn.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/MapDatabase.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MapDatabase.generated.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h \
-  Runtime/Engine/Classes/Components/InputComponent.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputAction.h \
-  Runtime/Engine/Classes/Engine/DataAsset.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputModifiers.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputActionValue.h \
-  Runtime/InputCore/Classes/InputCoreTypes.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputActionValue.generated.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputModifiers.generated.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputTriggers.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputTriggers.generated.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputAction.generated.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputComponent.generated.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputMappingContext.h \
-  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedActionKeyMapping.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedActionKeyMapping.generated.h \
-  Runtime/GameplayTags/Classes/GameplayTagContainer.h \
-  Runtime/Core/Public/Stats/Stats.h \
-  Runtime/CoreUObject/Public/UObject/Object.h \
-  Runtime/CoreUObject/Public/UObject/Class.h \
-  Runtime/Core/Public/Misc/ComparisonUtility.h \
-  Runtime/Core/Public/Containers/StringFwd.h \
-  Runtime/Core/Public/Containers/StringView.h \
-  Runtime/Core/Public/HAL/Platform.h \
-  Runtime/Core/Public/UObject/NameTypes.h \
-  ../Intermediate/Build/Linux/UnrealEditor/Inc/GameplayTags/UHT/GameplayTagContainer.generated.h \
-  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputMappingContext.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Dice/Dice.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Dice.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/SquareOptional.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/./Square.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Minion/Minion.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/SoundManager/AudioManager.h \
-  Runtime/Engine/Classes/Components/AudioComponent.h \
-  Runtime/Engine/Public/Audio.h \
-  Runtime/Engine/Public/Audio/SoundParameterControllerInterface.h \
-  Runtime/AudioExtensions/Public/AudioParameterControllerInterface.h \
-  Runtime/Engine/Classes/Kismet/BlueprintFunctionLibrary.h \
-  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/SoundParameterControllerInterface.generated.h \
-  Runtime/Engine/Classes/Components/SceneComponent.h \
-  Runtime/Engine/Classes/Engine/EngineTypes.h \
-  Runtime/AudioExtensions/Public/IAudioParameterTransmitter.h \
-  Runtime/AudioExtensions/Public/AudioParameter.h \
-  Runtime/Core/Public/Containers/Array.h Runtime/Core/Public/CoreTypes.h \
-  Runtime/AudioExtensions/Public/IAudioProxyInitializer.h \
-  Runtime/Core/Public/Templates/UniquePtr.h \
-  Runtime/Core/Public/Math/RandomStream.h \
-  Runtime/Core/Public/Misc/TransactionallySafeCriticalSection.h \
-  Runtime/AudioMixer/Public/Quartz/AudioMixerQuantizedCommands.h \
-  Runtime/AudioMixer/Public/Quartz/AudioMixerClock.h \
-  Runtime/Core/Public/HAL/ThreadSafeBool.h \
-  Runtime/Engine/Classes/Sound/QuartzQuantizationUtilities.h \
-  Runtime/AudioMixer/Public/Quartz/QuartzMetronome.h \
-  Runtime/Core/Public/Templates/SharedPointer.h \
-  Runtime/Engine/Classes/Sound/QuartzSubscription.h \
-  Runtime/Engine/Classes/Sound/QuartzSubscriptionToken.h \
-  Runtime/Engine/Classes/Sound/QuartzInterfaces.h \
-  Runtime/Engine/Classes/Sound/QuartzCommandQueue.h \
-  Runtime/Core/Public/Containers/ConsumeAllMpmcQueue.h \
-  Runtime/Engine/Classes/Sound/SoundAttenuation.h \
-  Runtime/Engine/Classes/Sound/SoundModulationDestination.h \
-  Runtime/Engine/Classes/Sound/SoundSubmixSend.h \
-  Runtime/Engine/Classes/Sound/SoundSourceBusSend.h \
-  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/AudioComponent.generated.h \
-  Runtime/Core/Public/Containers/Map.h \
-  Runtime/Engine/Classes/Sound/SoundBase.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/AudioManager.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Minion.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Square.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareOptional.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/PlayerMapUI.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/UI/PlayerMapUI.h \
+  Runtime/Core/Public/CoreMinimal.h \
   Runtime/UMG/Public/Blueprint/UserWidget.h \
   Runtime/UMG/Public/Blueprint/UMGSequencePlayMode.h \
+  Runtime/Core/Public/CoreTypes.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/UMG/UHT/UMGSequencePlayMode.generated.h \
   Runtime/CoreUObject/Public/Templates/IsUEnumClass.h \
+  Runtime/CoreUObject/Public/UObject/ObjectMacros.h \
   Runtime/CoreUObject/Public/UObject/ReflectedTypeAccessors.h \
   Runtime/UMG/Public/Blueprint/WidgetChild.h \
+  Runtime/CoreUObject/Public/UObject/Object.h \
   Runtime/CoreUObject/Public/UObject/WeakObjectPtr.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/UMG/UHT/WidgetChild.generated.h \
+  Runtime/CoreUObject/Public/UObject/ScriptMacros.h \
   Runtime/CoreUObject/Public/UObject/ObjectSaveContext.h \
+  Runtime/Core/Public/Containers/Array.h \
+  Runtime/Core/Public/Containers/Map.h \
   Runtime/Core/Public/Containers/UnrealString.h \
+  Runtime/Core/Public/HAL/Platform.h \
   Runtime/Core/Public/Serialization/ArchiveSavePackageData.h \
   Runtime/Core/Public/Templates/RefCounting.h \
   Runtime/CoreUObject/Public/UObject/CookEnums.h \
   Runtime/Core/Public/HAL/PlatformMath.h \
   Runtime/Core/Public/Misc/EnumClassFlags.h \
+  Runtime/Core/Public/UObject/NameTypes.h \
   Runtime/CoreUObject/Public/UObject/ObjectSaveOverride.h \
   Runtime/CoreUObject/Public/UObject/FieldPath.h \
   Runtime/CoreUObject/Public/Cooker/BuildResultDependenciesMap.h \
   Runtime/CoreUObject/Public/Cooker/CookDependency.h \
+  Runtime/Core/Public/Containers/StringView.h \
   Runtime/Core/Public/HAL/PreprocessorHelpers.h \
   Runtime/Core/Public/Logging/LogVerbosity.h \
   Runtime/Core/Public/Serialization/CompactBinary.h \
   Runtime/Core/Public/Templates/Function.h \
+  Runtime/Core/Public/Templates/UniquePtr.h \
   Runtime/SlateCore/Public/Styling/SlateColor.h \
   Runtime/SlateCore/Public/Layout/Geometry.h \
   Runtime/SlateCore/Public/Input/CursorReply.h \
   Runtime/SlateCore/Public/Input/Events.h \
   Runtime/SlateCore/Public/Input/Reply.h \
   Runtime/SlateCore/Public/Widgets/SWidget.h \
+  Runtime/Engine/Classes/Kismet/BlueprintFunctionLibrary.h \
   Runtime/SlateCore/Public/Layout/Margin.h \
   Runtime/UMG/Public/Components/SlateWrapperTypes.h \
   Runtime/Core/Public/Misc/Attribute.h \
@@ -3097,7 +3029,7 @@
   Runtime/Slate/Public/Widgets/Layout/Anchors.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Slate/UHT/Anchors.generated.h \
   Runtime/Core/Public/Logging/MessageLog.h \
-  Runtime/Engine/Public/EngineStats.h \
+  Runtime/Core/Public/Stats/Stats.h Runtime/Engine/Public/EngineStats.h \
   Runtime/SlateCore/Public/SlateGlobals.h \
   Runtime/UMG/Public/Animation/WidgetAnimationEvents.h \
   Runtime/Core/Public/Delegates/DelegateCombinations.h \
@@ -3161,10 +3093,12 @@
   Runtime/Core/Public/Templates/TypeCompatibleBytes.h \
   Runtime/MovieScene/Public/Evaluation/MovieSceneEvaluationOperand.h \
   Runtime/MovieScene/Public/MovieSceneSequenceID.h \
+  Runtime/CoreUObject/Public/UObject/Class.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/MovieScene/UHT/MovieSceneSequenceID.generated.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/MovieScene/UHT/MovieSceneEvaluationOperand.generated.h \
   Runtime/MovieScene/Public/Evaluation/MovieScenePlaybackCapabilities.h \
   Runtime/MovieScene/Public/Evaluation/IMovieScenePlaybackCapability.h \
+  Runtime/Core/Public/Templates/SharedPointer.h \
   Runtime/MovieScene/Public/EntitySystem/RelativePtr.h \
   ../Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/include/c++/v1/limits \
   ../Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/include/c++/v1/type_traits \
@@ -3174,6 +3108,40 @@
   Runtime/Core/Public/Misc/QualifiedFrameTime.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/UMG/UHT/UserWidget.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/UI/../Minion/Minion.h \
+  Runtime/Engine/Classes/GameFramework/Actor.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Dice/Dice.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Dice.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/SoundManager/AudioManager.h \
+  Runtime/Engine/Classes/Components/AudioComponent.h \
+  Runtime/Engine/Public/Audio.h \
+  Runtime/Engine/Public/Audio/SoundParameterControllerInterface.h \
+  Runtime/AudioExtensions/Public/AudioParameterControllerInterface.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/SoundParameterControllerInterface.generated.h \
+  Runtime/Engine/Classes/Components/SceneComponent.h \
+  Runtime/Engine/Classes/Engine/EngineTypes.h \
+  Runtime/AudioExtensions/Public/IAudioParameterTransmitter.h \
+  Runtime/AudioExtensions/Public/AudioParameter.h \
+  Runtime/AudioExtensions/Public/IAudioProxyInitializer.h \
+  Runtime/Core/Public/Math/RandomStream.h \
+  Runtime/Core/Public/Misc/TransactionallySafeCriticalSection.h \
+  Runtime/AudioMixer/Public/Quartz/AudioMixerQuantizedCommands.h \
+  Runtime/AudioMixer/Public/Quartz/AudioMixerClock.h \
+  Runtime/Core/Public/HAL/ThreadSafeBool.h \
+  Runtime/Engine/Classes/Sound/QuartzQuantizationUtilities.h \
+  Runtime/AudioMixer/Public/Quartz/QuartzMetronome.h \
+  Runtime/Engine/Classes/Sound/QuartzSubscription.h \
+  Runtime/Engine/Classes/Sound/QuartzSubscriptionToken.h \
+  Runtime/Engine/Classes/Sound/QuartzInterfaces.h \
+  Runtime/Engine/Classes/Sound/QuartzCommandQueue.h \
+  Runtime/Core/Public/Containers/ConsumeAllMpmcQueue.h \
+  Runtime/Engine/Classes/Sound/SoundAttenuation.h \
+  Runtime/Engine/Classes/Sound/SoundModulationDestination.h \
+  Runtime/Engine/Classes/Sound/SoundSubmixSend.h \
+  Runtime/Engine/Classes/Sound/SoundSourceBusSend.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/AudioComponent.generated.h \
+  Runtime/Engine/Classes/Sound/SoundBase.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/AudioManager.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Minion.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Scores/ScoreDatabase.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Scores/./ScoreDto.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ScoreDto.generated.h \
@@ -3187,7 +3155,41 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ChallengeDto.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ChallengeDatabase.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ChallengeInformation.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/MapDatabase.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MapDatabase.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/PlayerMapUI.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/ReducedDice.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/ReducedDice.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/./Base/Item.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.h \
+  Runtime/Engine/Classes/GameFramework/Pawn.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h \
+  Runtime/Engine/Classes/Components/InputComponent.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputAction.h \
+  Runtime/Engine/Classes/Engine/DataAsset.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputModifiers.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputActionValue.h \
+  Runtime/InputCore/Classes/InputCoreTypes.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputActionValue.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputModifiers.generated.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputTriggers.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputTriggers.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputAction.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputComponent.generated.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/InputMappingContext.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedActionKeyMapping.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedActionKeyMapping.generated.h \
+  Runtime/GameplayTags/Classes/GameplayTagContainer.h \
+  Runtime/Core/Public/Misc/ComparisonUtility.h \
+  Runtime/Core/Public/Containers/StringFwd.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/GameplayTags/UHT/GameplayTagContainer.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/InputMappingContext.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/SquareOptional.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/./Square.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Minion/Minion.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Square.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareOptional.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Rounds/RoundsManager.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/RoundsManager.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Inventory/Inventory.h \
@@ -3229,18 +3231,57 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareStar.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/SquareStar.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareStar.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TeamsGenerator.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/CrossInfo/TeamsGenerator.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TeamsGenerator.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TestItem.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/TestItem.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TestItem.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TransactionDto.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame2/VictimCharacter.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputSubsystems.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputSubsystemInterface.h \
+  ../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedPlayerInput.h \
+  Runtime/Engine/Classes/GameFramework/PlayerInput.h \
+  Runtime/Slate/Public/Framework/Commands/InputChord.h \
+  Runtime/Engine/Public/GestureRecognizer.h \
+  Runtime/Engine/Public/InputKeyEventArgs.h \
+  Runtime/Engine/Public/KeyState.h \
+  Runtime/Engine/Classes/Engine/EngineBaseTypes.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/PlayerInput.generated.h \
+  Runtime/GameplayTags/Public/NativeGameplayTags.h \
+  Runtime/Core/Public/Containers/Set.h \
+  Runtime/GameplayTags/Classes/GameplayTagsManager.h \
+  Runtime/CoreUObject/Public/AssetRegistry/AssetData.h \
+  Runtime/Engine/Classes/Engine/DataTable.h \
+  Runtime/Core/Public/Misc/ScopeLock.h Runtime/Core/Public/Hash/Blake3.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/GameplayTags/UHT/GameplayTagsManager.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedPlayerInput.generated.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputSubsystemInterface.generated.h \
+  Runtime/Engine/Public/Subsystems/LocalPlayerSubsystem.h \
+  Runtime/Engine/Public/Subsystems/WorldSubsystem.h \
+  ../Plugins/EnhancedInput/Intermediate/Build/Linux/UnrealEditor/Inc/EnhancedInput/UHT/EnhancedInputSubsystems.generated.h \
+  Runtime/Engine/Classes/Kismet/GameplayStatics.h \
+  Runtime/Engine/Public/CollisionQueryParams.h \
+  Runtime/Engine/Classes/Engine/LatentActionManager.h \
+  Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h \
+  Runtime/CoreUObject/Public/UObject/UnrealType.h \
+  Runtime/CoreUObject/Public/UObject/SoftObjectPtr.h \
+  Runtime/CoreUObject/Public/UObject/PropertyAccessUtil.h \
+  Runtime/Core/Public/CoreGlobals.h \
+  Runtime/CoreUObject/Public/UObject/TopLevelAssetPath.h \
+  Runtime/Engine/Classes/Engine/CollisionProfile.h \
+  Runtime/CoreUObject/Public/AssetRegistry/ARFilter.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/KismetSystemLibrary.generated.h \
+  Runtime/Engine/Classes/Sound/DialogueTypes.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/DialogueTypes.generated.h \
+  Runtime/Engine/Classes/Kismet/GameplayStaticsTypes.h \
+  Runtime/Engine/Classes/Engine/HitResult.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStaticsTypes.generated.h \
+  Runtime/Engine/Classes/Particles/WorldPSCPool.h \
+  ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStatics.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/WallItem.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Whistle.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/Whistle.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Whistle.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WorldManager.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/PerModuleInline.gen.cpp \
-  Runtime/Core/Public/HAL/PerModuleInline.inl \
-  Runtime/Core/Public/CoreGlobals.h \
-  Runtime/Core/Public/Modules/Boilerplate/ModuleBoilerplate.h
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.generated.h

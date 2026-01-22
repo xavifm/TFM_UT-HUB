@@ -8,10 +8,10 @@ AMinigame1Logic::AMinigame1Logic()
 
 void AMinigame1Logic::SetupAirCannonsInfo()
 {
-	if (PlayingMinions.Num() == 0)
+	if (PlayingMinionsDuel.Num() == 0)
 		return;
 
-	for (auto minion : PlayingMinions)
+	for (auto minion : PlayingMinionsDuel)
 	{
 		for (size_t i = 0; i < AirCannons.Num(); i++)
 		{
@@ -61,11 +61,10 @@ void AMinigame1Logic::StartMinigame(int _startTime)
 	}, _startTime, false);
 }
 
-void AMinigame1Logic::FinishMinigame(int _winner)
+void AMinigame1Logic::FinishMinigame(TArray<int32> _winners)
 {
-	Super::FinishMinigame(_winner);
+	Super::FinishMinigame(_winners);
 	MinigameCamera->SetCameraTarget(nullptr);
-
 }
 
 void AMinigame1Logic::SetTeamScore(int _team, int _score)

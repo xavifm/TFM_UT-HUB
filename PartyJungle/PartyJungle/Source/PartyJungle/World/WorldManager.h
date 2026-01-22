@@ -18,12 +18,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
 	TArray<AActor*> BoardActors;
-
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Segment")
-	TArray<AActor*> Minigame0Actors;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
-	TArray<AActor*> MinigameCameras;
+	TArray<AMinigameLogic*> Minigames;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	UCameraComponent* MapCamera;
@@ -47,7 +44,7 @@ public:
 	void InitializeCameras();
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
-	void AsssignCameraActors(TArray<AActor*> _actors);
+	void AsssignCameraActors(TArray<AMinigameLogic*> _minigames);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	TArray<AActor*> GetLevelByIndex(int _index);

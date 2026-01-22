@@ -18,7 +18,7 @@ public:
 	int GetCurrentRound();
 
 	UFUNCTION()
-	bool HandleEndRound(bool _minigame = false);
+	TArray<bool> HandleEndRound(bool _minigame = false);
 
 	UFUNCTION()
 	void StartNextRound();
@@ -30,6 +30,9 @@ public:
 	void FinishGame();
 
 	UFUNCTION()
+	bool CheckForDuelMinigame();
+	
+	UFUNCTION()
 	bool CheckForEndRoundMinigame();
 
 	UFUNCTION()
@@ -39,6 +42,9 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Rounds")
 	bool GameFinished;
+	
+	UPROPERTY(EditAnywhere, Category = "Rounds")
+	bool EndRoundMinigameAvailable;
 
 	UPROPERTY(EditAnywhere, Category = "Rounds Audio")
 	AAudioManager* AudioManager;

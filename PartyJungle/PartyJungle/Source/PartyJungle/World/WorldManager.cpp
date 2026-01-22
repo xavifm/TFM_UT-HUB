@@ -10,16 +10,12 @@ AWorldManager::AWorldManager()
 
 TArray<AActor*> AWorldManager::GetLevelByIndex(int _index)
 {
-	switch (_index)
-	{
-	case -1:
+	if (_index == -1)
 		return BoardActors;
-	case 0:
-		return Minigame0Actors;
-	default:
-		return TArray<AActor*>();
-	}
+	
+	return Minigames[_index]->MinigameActors;
 }
+
 
 void AWorldManager::InitializeCameras() 
 {
@@ -35,17 +31,19 @@ void AWorldManager::InitializeCameras()
 	FullMapCameraActor->GetComponents<UCameraComponent>(fullMapCameraComponents);
 	FullMapCamera = fullMapCameraComponents[0];
 
-	AsssignCameraActors(MinigameCameras);
+	AsssignCameraActors(Minigames);
 
 	IsInitialized = true;
 }
 
-void AWorldManager::AsssignCameraActors(TArray<AActor*> _actors)
+void AWorldManager::AsssignCameraActors(TArray<AMinigameLogic*> _minigames)
 {
-	for (AActor* Actor : _actors)
+	for (AMinigameLogic* minigame : _minigames)
 	{
+		AActor* camera = minigame->Camera;
+		
 		TArray<UCameraComponent*> minigameCameraComponents;
-		Actor->GetComponents<UCameraComponent>(minigameCameraComponents);
+		camera->GetComponents<UCameraComponent>(minigameCameraComponents);
 		UCameraComponent* foundCamera = minigameCameraComponents[0];
 
 		if (foundCamera)
@@ -65,7 +63,7 @@ void AWorldManager::UnloadEntireWorld()
 {
 	InitializeCameras();
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < Minigames.Num(); i++)
 	{
 		TArray<AActor*> ActorsToUnload = GetLevelByIndex(i);
 
@@ -106,13 +104,14 @@ void AWorldManager::LoadPortion(int _index)
 			Actor->SetActorHiddenInGame(false);
 			Actor->SetActorEnableCollision(true);
 			Actor->SetActorTickEnabled(true);
-
-			AMinigameLogic* Minigame = Cast<AMinigameLogic>(Actor);
-
-			if (Minigame)
-				Minigame->BeginMinigame();
 		}
-
+	}
+	
+	if (_index != -1)
+	{
+		AMinigameLogic* Minigame = Minigames[_index];	
+		if (Minigame)
+			Minigame->BeginMinigame();
 	}
 
 	if (_index == -1 && MapCamera && FullMapCamera)

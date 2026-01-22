@@ -73,6 +73,7 @@ void AMapMenuCamera::BeginPlay()
     }
 
     SwitchMainScene();
+    SwitchRankingScoreList(false);
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
@@ -175,6 +176,9 @@ void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
 void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
+    
+    if (ScoreRankingEnabled)
+        return;
 
     if (SquareShopReference)
         SquareShopReference->SwitchShopItem(direction);
@@ -226,6 +230,12 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (ScoreRankingEnabled)
+    {
+        SwitchRankingScoreList(false);
+        return;
+    }
+    
     if (IsMinigameActive || FullMapView)
         return;
 
@@ -414,7 +424,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
         MapUI->UpdateCoins(team, -bet);
     }
 
-    SavedSceneValue = 0;
+    SavedSceneValue = 0; //duel minigame 1, crear un sistema per retornar el index de minijoc pel tipus
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
 }
 
@@ -588,13 +598,12 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
         return;
 
     IsMinigameActive = (_sceneIndex >= 0);
-
-    //Dirty code!
+    
     if(DuelUI && IsMinigameActive)
     {
         LoadingMap = true;
         StartFadeTransition(0.1f);
-        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);  
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
     }
 
     WorldSceneManager->UnloadEntireWorld();
@@ -643,6 +652,12 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
+    if (ScoreRankingEnabled)
+    {
+        SwitchRankingScoreList(false);
+        return;
+    }
+    
     if (IsMinigameActive || DiceRollIndex > 0)
         return;
 
@@ -795,6 +810,25 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
     CloseDuelMenu(true);
 }
 
+void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
+{
+    int dividedMoney = _money / 3;
+    
+    for (auto team : _winners)
+    {
+        TArray<AMinion*> teamMinions = MapDb->GetMinions(team);
+        
+        for (auto minion : teamMinions)
+        {
+            UpdateMinionEconomyWithReference(minion, dividedMoney);
+        }
+    }
+    
+    SwitchRankingScoreList(true);
+    SameTurnEnabled = true;
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);
+}
+
 void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
 {
     StoreCrownsUI = _visibility;
@@ -930,14 +964,23 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
 
         if (CurrentMinionTeam == 0 && RoundsSystem)
         {
-            bool minigameDetected = RoundsSystem->HandleEndRound(true);
+            TArray<bool> minigamesDetected = RoundsSystem->HandleEndRound(true);
 
-            if (minigameDetected)
+            if (minigamesDetected[0])
             {
                 ChosenDuelIndex = FMath::RandRange(0, ChallengeInformation->SquaresWithDuelsInRound.Num() -1);  //random duel
                 CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList[0];
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
                 SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                return;
+            }
+            if (minigamesDetected[1])
+            {
+                RoundsSystem->EndRoundMinigameAvailable = false;
+                SavedSceneValue = 1; //team minigame 2, crear un sistema per retornar el index de minijoc pel tipus
+                FString Message = FString::Printf(TEXT("Minigame!"));
+                MapUI->ShowTextInScreen(Message, 3);
+                GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
                 return;
             }
         }
@@ -948,32 +991,72 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
             MapUI->ShowTextInScreen(Message, -1);
         }
-
-        CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
-        CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
-        CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
-
-        //Reset Items
-        ResetMapItems();
         
-        MapUI->SwitchTurnUI(CurrentMinionTeam);
-
-        FVector MinionLocation = CurrentMinion->GetActorLocation();
-        MinionLocation.X = MinionLocation.X - 450;
-        MinionLocation.Z = GetActorLocation().Z;
-
-        CurrentMinion->SetMinionAnimation(EMinionState::WALK);
-
-        SetActorLocation(MinionLocation);
+        MoveCameraToCurrentTeam();
     }
     else
     {
-        FString Message = FString::Printf(TEXT("Second Move!"));
-        MapUI->ShowTextInScreen(Message, -1);
+        FString Message;
+        
+        if (TurnMovementIndex > 0)
+            Message = FString::Printf(TEXT("Second Move!"));
+        else
+            Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
+        
+        MapUI->ShowTextInScreen(Message, -1); 
+        
+        if (SameTurnEnabled)
+            MoveCameraToCurrentTeam();
     }
-
+    
     StartTurnUI = true;
     UpdateDicePosition();
+}
+
+void AMapMenuCamera::MoveCameraToCurrentTeam()
+{
+    CurrentMinion->MoveCrownVerticalAxis(CROWN_MIN_OFFSET);
+    CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
+    CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+
+    //Reset Items
+    ResetMapItems();
+        
+    MapUI->SwitchTurnUI(CurrentMinionTeam);
+    RoundsSystem->EndRoundMinigameAvailable = true;
+
+    FVector MinionLocation = CurrentMinion->GetActorLocation();
+    MinionLocation.X = MinionLocation.X - 450;
+    MinionLocation.Z = GetActorLocation().Z;
+
+    CurrentMinion->SetMinionAnimation(EMinionState::WALK);
+
+    SetActorLocation(MinionLocation);
+}
+
+void AMapMenuCamera::SwitchRankingScoreList(bool _visibility)
+{
+    ScoreRankingEnabled = _visibility;
+    MapUI->SwitchScoreListUI(_visibility);
+    
+    if (!_visibility || !ScoreDb)
+        return;
+    
+    TArray<UScoreDto*> scores = ScoreDb->GetScoresArray();
+    
+    int pos = 0;
+
+    for (int index = MAX_TEAM_NUMBER; index < 4; ++index)
+        MapUI->SetScore(index, -1, 0, -1);
+    
+    if (scores.Num() > 0)
+    {
+        for (auto score : scores)
+        {
+            MapUI->SetScore(pos, score->Team, score->TotalCoins, score->StoredCrowns);
+            pos++;
+        }
+    }
 }
 
 void AMapMenuCamera::ResetMapItems()
@@ -1263,8 +1346,15 @@ void AMapMenuCamera::RestoreTurnLogic()
         if (minion)
             minion->AlreadyMoved = false;
     }
-  
-    SwitchCameraTeam(1);
+    
+    if (SameTurnEnabled)
+    {
+        SwitchCameraTeam(0);
+        SameTurnEnabled = false;
+    }
+    else 
+        SwitchCameraTeam(1);
+    
     SwitchController();
 
     InputEnabled = true;
