@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\PartyJungle.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\PartyJungle.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\PartyJungleEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.ignore" />
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\Makefile" />
+    <None Include="..\..\PartyJungle.code-workspace" />
+    <None Include="..\..\PartyJungle.uproject.DotSettings.user" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\PartyJungle">
+      <UniqueIdentifier>{47178167-FE3E-34DF-8BAD-F2C083E3502D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\PartyJungle\Dice.h">
+      <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\PartyJungle\PartyJungle.Build.cs">
+      <Filter>Source\PartyJungle</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\PartyJungle\PartyJungle.cpp">
+      <Filter>Source\PartyJungle</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\PartyJungle.h">
+      <Filter>Source\PartyJungle</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Challenge">
+      <UniqueIdentifier>{6C8EE5CF-93A6-3E9A-9CF8-CAAD1048982F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeDatabase.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeDatabase.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeDto.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeDto.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Challenge\ChallengeInformation.cpp">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Challenge\ChallengeInformation.h">
+      <Filter>Source\PartyJungle\Challenge</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Dice">
+      <UniqueIdentifier>{41C4BB2F-9E5D-38AE-A62B-C919F260E601}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Dice\Dice.cpp">
+      <Filter>Source\PartyJungle\Dice</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Dice\Dice.h">
+      <Filter>Source\PartyJungle\Dice</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\EndGame">
+      <UniqueIdentifier>{59C6EAEF-CD37-3709-9B78-46CD43738070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\EndGame\Camera">
+      <UniqueIdentifier>{5546BD4E-71DA-3F25-BA6C-2FB7AC59C30C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.cpp">
+      <Filter>Source\PartyJungle\EndGame\Camera</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\EndGame\Camera\EndGameCamera.h">
+      <Filter>Source\PartyJungle\EndGame\Camera</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\EndGame\Scores">
+      <UniqueIdentifier>{82C0A0C1-F649-31F2-8590-E9B27D905456}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\EndGame\Scores\ScoresCalculator.cpp">
+      <Filter>Source\PartyJungle\EndGame\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\EndGame\Scores\ScoresCalculator.h">
+      <Filter>Source\PartyJungle\EndGame\Scores</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Map">
+      <UniqueIdentifier>{22BA07C5-A984-3C77-9B50-65011CA36B2F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\MapDatabase.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\MapDatabase.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\Square.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\Square.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareKeepCrowns.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareKeepCrowns.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareOptional.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareOptional.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareShop.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareShop.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Map\SquareStar.cpp">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Map\SquareStar.h">
+      <Filter>Source\PartyJungle\Map</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Menu">
+      <UniqueIdentifier>{D19D2CB6-EF82-3769-9DD5-647B5A7AD18E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Menu\BoardMenu.cpp">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Menu\BoardMenu.h">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Menu\MainMenuWidget.cpp">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Menu\MainMenuWidget.h">
+      <Filter>Source\PartyJungle\Menu</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Minigame">
+      <UniqueIdentifier>{0F4131EC-4BBB-3742-8CAF-A034BEC7C3D3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\Minigame\CrossInfo">
+      <UniqueIdentifier>{39EC6F96-D33B-3E8C-94B0-33A9AF86E4A6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.cpp">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.h">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameLogic.cpp">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameLogic.h">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\TeamsGenerator.cpp">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\CrossInfo\TeamsGenerator.h">
+      <Filter>Source\PartyJungle\Minigame\CrossInfo</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Minigame\Minigame1">
+      <UniqueIdentifier>{26D01FB3-C4C7-3555-A2CD-6C7ABC56BFB1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame1\AirCannon.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame1\AirCannon.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame1\CannonMinigameCamera.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame1\Minigame1Logic.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame1\Minigame1Logic.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame1</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Minigame\Minigame2">
+      <UniqueIdentifier>{2F820E86-3408-3CDD-8D1B-53A16ACAA67D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame2\CocoCannon.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame2\CocoCannon.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame2\Minigame2Logic.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame2\Minigame2Logic.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame2\VictimCharacter.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame2\VictimCharacter.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player">
+      <UniqueIdentifier>{4BB96A41-B63B-386F-AD66-5BD0AA7EBA3C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\Player\Inventory">
+      <UniqueIdentifier>{870016D0-FD18-38E4-BEC7-9B14A5D84798}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Inventory\Inventory.cpp">
+      <Filter>Source\PartyJungle\Player\Inventory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Inventory\Inventory.h">
+      <Filter>Source\PartyJungle\Player\Inventory</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Items">
+      <UniqueIdentifier>{E56946E0-A71A-3CCC-ADDA-3E4A8BA14A7E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\DiceItem.cpp">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\DiceItem.h">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\ReducedDice.cpp">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\ReducedDice.h">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\TestItem.cpp">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\TestItem.h">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\WallItem.cpp">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\WallItem.h">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\Whistle.cpp">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\Whistle.h">
+      <Filter>Source\PartyJungle\Player\Items</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Items\Base">
+      <UniqueIdentifier>{333A5237-2A2C-3CEC-A055-24E53F73F4E9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Items\Base\Item.cpp">
+      <Filter>Source\PartyJungle\Player\Items\Base</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Items\Base\Item.h">
+      <Filter>Source\PartyJungle\Player\Items\Base</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Map">
+      <UniqueIdentifier>{1A0638E6-E4D0-39EE-BC65-43C1B7DE7A9A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.cpp">
+      <Filter>Source\PartyJungle\Player\Map</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Map\MapMenuCamera.h">
+      <Filter>Source\PartyJungle\Player\Map</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Menu">
+      <UniqueIdentifier>{0DA55D55-B89B-38C9-8796-D4CB9E875511}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.cpp">
+      <Filter>Source\PartyJungle\Player\Menu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Menu\MainMenuInput.h">
+      <Filter>Source\PartyJungle\Player\Menu</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Minion">
+      <UniqueIdentifier>{F816DA62-5E9F-33A4-930F-1B0578DD1BEF}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Minion\Minion.cpp">
+      <Filter>Source\PartyJungle\Player\Minion</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Minion\Minion.h">
+      <Filter>Source\PartyJungle\Player\Minion</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\Scores">
+      <UniqueIdentifier>{638EA71E-C438-3868-A657-8FF9DA3C4CF2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\ScoreDatabase.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\ScoreDatabase.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\ScoreDto.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\ScoreDto.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\Scores\TransactionDto.cpp">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\Scores\TransactionDto.h">
+      <Filter>Source\PartyJungle\Player\Scores</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Player\UI">
+      <UniqueIdentifier>{01B54EC1-76B7-386C-A03C-0A78D03089D3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\UI\EndGameUI.cpp">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\UI\EndGameUI.h">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.cpp">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Player\UI\PlayerMapUI.h">
+      <Filter>Source\PartyJungle\Player\UI</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Rounds">
+      <UniqueIdentifier>{FA46A15A-72F5-390D-A4A4-26BA497FE1A5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Rounds\RoundsManager.cpp">
+      <Filter>Source\PartyJungle\Rounds</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Rounds\RoundsManager.h">
+      <Filter>Source\PartyJungle\Rounds</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\SoundManager">
+      <UniqueIdentifier>{5236F0E6-3EA1-377F-821B-107B88823D18}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\SoundManager\AudioManager.cpp">
+      <Filter>Source\PartyJungle\SoundManager</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\SoundManager\AudioManager.h">
+      <Filter>Source\PartyJungle\SoundManager</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Testing">
+      <UniqueIdentifier>{5B19AB45-C52F-35BC-923A-47A19B708CFA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.cpp">
+      <Filter>Source\PartyJungle\Testing</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.h">
+      <Filter>Source\PartyJungle\Testing</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\World">
+      <UniqueIdentifier>{68B6808E-4E0F-3738-ADCC-B48B8E31A968}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\World\WorldManager.cpp">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\World\WorldManager.h">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClInclude>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{BB38096A-B391-30DC-A0D4-4F3EA6B44507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\ue5-toon-shader-plugin-master">
+      <UniqueIdentifier>{FBD89515-01D3-36F3-BFC9-F4B9060C7DBA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\ToonShader.uplugin">
+      <Filter>Plugins\ue5-toon-shader-plugin-master</Filter>
+    </None>
+    <Filter Include="Plugins\ue5-toon-shader-plugin-master\Resources">
+      <UniqueIdentifier>{4FBC9D7A-3474-3FF5-93CA-E858C8A9AC7C}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\Resources\Icon128.png">
+      <Filter>Plugins\ue5-toon-shader-plugin-master\Resources</Filter>
+    </None>
+    <None Include="..\..\Plugins\ue5-toon-shader-plugin-master\Resources\Icon512.png">
+      <Filter>Plugins\ue5-toon-shader-plugin-master\Resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>
