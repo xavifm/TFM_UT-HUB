@@ -424,7 +424,11 @@ void AMapMenuCamera::SpinWheelEndSequence()
         MapUI->UpdateCoins(team, -bet);
     }
 
-    SavedSceneValue = 0; //duel minigame 1, crear un sistema per retornar el index de minijoc pel tipus
+    //TEST MINIGAME
+    MinigameType = EMinigameType::DUEL;
+    TeamsMode = ETeamsMode::NOTEAM;
+    //___________________________________
+    
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
 }
 
@@ -432,7 +436,7 @@ void AMapMenuCamera::DelayedSceneSwitch()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     
-    SwitchMainScene(SavedSceneValue);
+    SwitchMainScene(false, MinigameType, TeamsMode);
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -592,12 +596,12 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
     SwitchMainScene(_minigame);
 }
 
-void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
+void AMapMenuCamera::SwitchMainScene(bool _isMap, EMinigameType _type, ETeamsMode _teams)
 {
     if (!WorldSceneManager)
         return;
 
-    IsMinigameActive = (_sceneIndex >= 0);
+    IsMinigameActive = !_isMap;
     
     if(DuelUI && IsMinigameActive)
     {
@@ -607,7 +611,7 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
     }
 
     WorldSceneManager->UnloadEntireWorld();
-    WorldSceneManager->LoadPortion(_sceneIndex);
+    WorldSceneManager->LoadPortion(_isMap, _type, _teams);
 
 
     if (!IsMinigameActive)
@@ -977,7 +981,12 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             if (minigamesDetected[1])
             {
                 RoundsSystem->EndRoundMinigameAvailable = false;
-                SavedSceneValue = 1; //team minigame 2, crear un sistema per retornar el index de minijoc pel tipus
+                
+                //TEST MINIGAME
+                MinigameType = EMinigameType::TEAM_MINIGAME;
+                TeamsMode = ETeamsMode::ONE_VS_THREE;
+                //______________________________________________
+                
                 FString Message = FString::Printf(TEXT("Minigame!"));
                 MapUI->ShowTextInScreen(Message, 3);
                 GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);

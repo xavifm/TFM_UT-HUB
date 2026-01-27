@@ -15,6 +15,7 @@
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/World/WorldManager.h>
 
+#include "PartyJungle/Minigame/CrossInfo/MinigameLogic.h"
 #include "MapMenuCamera.generated.h"
 
 class ASquareShop;
@@ -98,7 +99,7 @@ public:
 	AWorldManager* WorldSceneManager;
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
-	void SwitchMainScene(int _minigameIndex = -1);
+	void SwitchMainScene(bool _isMap = true, EMinigameType _type = EMinigameType::DUEL, ETeamsMode _teams = ETeamsMode::NOTEAM);
 	void SwitchUIController();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -317,7 +318,9 @@ private:
 	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
-	int SavedSceneValue;
+	
+	EMinigameType MinigameType;
+	ETeamsMode TeamsMode;
 
 	UPROPERTY()
 	int DiceRollIndex;
