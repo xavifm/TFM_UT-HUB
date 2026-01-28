@@ -5,9 +5,16 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Lista de cambios no controlados predeterminada",
 			"files": [
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/TestScene_HLOD0_Instancing.uasset",
 				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/PartyMap.umap",
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/MainMenu.umap"
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/MainMenu.umap",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/PlayerUIlila.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/PlayerUIgroc.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/PlayerUIvermell.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/PlayerUIblau.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/PlayerUIGrey.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Art/Templates/UI/lila.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Scenes/TestScene_HLOD0_Instancing.uasset"
 			]
 		}
 	]
