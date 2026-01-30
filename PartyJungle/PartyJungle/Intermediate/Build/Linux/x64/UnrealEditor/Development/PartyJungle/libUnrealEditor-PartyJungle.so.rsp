@@ -45,6 +45,7 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/WorldManager.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/BoardMenu.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/MainMenuWidget.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/MinigameWheel.cpp.o"
  -soname="libUnrealEditor-PartyJungle.so"
  -rpath="${ORIGIN}/../../../../../../Unreal/Engine/Plugins/EnhancedInput/Binaries/Linux"
  -rpath-link="/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux"

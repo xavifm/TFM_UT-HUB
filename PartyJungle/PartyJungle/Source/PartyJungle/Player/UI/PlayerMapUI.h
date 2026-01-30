@@ -59,6 +59,15 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchScoresVisibility(bool IsVisible);
+    
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI_Minigame")
+    void InitializeWheelValue(int _index, const FText& _value);
+    
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI_Minigame")
+    void SwitchWheelValueSelected(int _index, bool _selected);
+    
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI_Minigame")
+    void SwitchMinigameWheelVisibility(bool _visible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchLegendVisibility(bool IsVisible);

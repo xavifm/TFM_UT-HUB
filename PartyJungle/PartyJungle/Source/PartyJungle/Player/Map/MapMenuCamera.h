@@ -13,6 +13,7 @@
 #include "PartyJungle/Rounds/RoundsManager.h"
 #include "PartyJungle/Player/Inventory/Inventory.h"
 #include "Camera/CameraComponent.h"
+#include <PartyJungle/UIManager/MInigames/MinigameWheel.h>
 #include <PartyJungle/World/WorldManager.h>
 
 #include "MapMenuCamera.generated.h"
@@ -251,6 +252,9 @@ public:
 	bool ItemExecuted = false;
 
 	FTimerHandle TimerHandle;
+	
+	UPROPERTY(EditAnywhere)
+	AMinigameWheel* MinigameWheel;
 	
 private:
 	const int MAX_MINION_NUMBER = 3;
