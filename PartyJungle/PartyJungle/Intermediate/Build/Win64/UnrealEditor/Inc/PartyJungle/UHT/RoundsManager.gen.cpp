@@ -68,6 +68,52 @@ DEFINE_FUNCTION(ARoundsManager::execAssignMapUI)
 }
 // ********** End Class ARoundsManager Function AssignMapUI ****************************************
 
+// ********** Begin Class ARoundsManager Function CheckForDuelMinigame *****************************
+struct Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics
+{
+	struct RoundsManager_eventCheckForDuelMinigame_Parms
+	{
+		bool ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_ReturnValue_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+{
+	((RoundsManager_eventCheckForDuelMinigame_Parms*)Obj)->ReturnValue = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoundsManager_eventCheckForDuelMinigame_Parms), &Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ARoundsManager, nullptr, "CheckForDuelMinigame", Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::PropPointers), sizeof(Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::RoundsManager_eventCheckForDuelMinigame_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::Function_MetaDataParams), Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::RoundsManager_eventCheckForDuelMinigame_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ARoundsManager::execCheckForDuelMinigame)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(bool*)Z_Param__Result=P_THIS->CheckForDuelMinigame();
+	P_NATIVE_END;
+}
+// ********** End Class ARoundsManager Function CheckForDuelMinigame *******************************
+
 // ********** Begin Class ARoundsManager Function CheckForEndRoundMinigame *************************
 struct Z_Construct_UFunction_ARoundsManager_CheckForEndRoundMinigame_Statics
 {
@@ -231,7 +277,7 @@ struct Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics
 	struct RoundsManager_eventHandleEndRound_Parms
 	{
 		bool _minigame;
-		bool ReturnValue;
+		TArray<bool> ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -240,8 +286,8 @@ struct Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics
 #endif // WITH_METADATA
 	static void NewProp__minigame_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp__minigame;
-	static void NewProp_ReturnValue_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
@@ -250,13 +296,11 @@ void Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp__minig
 	((RoundsManager_eventHandleEndRound_Parms*)Obj)->_minigame = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp__minigame = { "_minigame", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoundsManager_eventHandleEndRound_Parms), &Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp__minigame_SetBit, METADATA_PARAMS(0, nullptr) };
-void Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue_SetBit(void* Obj)
-{
-	((RoundsManager_eventHandleEndRound_Parms*)Obj)->ReturnValue = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(RoundsManager_eventHandleEndRound_Parms), &Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(RoundsManager_eventHandleEndRound_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp__minigame,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ARoundsManager_HandleEndRound_Statics::PropPointers) < 2048);
@@ -276,7 +320,7 @@ DEFINE_FUNCTION(ARoundsManager::execHandleEndRound)
 	P_GET_UBOOL(Z_Param__minigame);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(bool*)Z_Param__Result=P_THIS->HandleEndRound(Z_Param__minigame);
+	*(TArray<bool>*)Z_Param__Result=P_THIS->HandleEndRound(Z_Param__minigame);
 	P_NATIVE_END;
 }
 // ********** End Class ARoundsManager Function HandleEndRound *************************************
@@ -316,6 +360,7 @@ void ARoundsManager::StaticRegisterNativesARoundsManager()
 	UClass* Class = ARoundsManager::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "AssignMapUI", &ARoundsManager::execAssignMapUI },
+		{ "CheckForDuelMinigame", &ARoundsManager::execCheckForDuelMinigame },
 		{ "CheckForEndRoundMinigame", &ARoundsManager::execCheckForEndRoundMinigame },
 		{ "FinishGame", &ARoundsManager::execFinishGame },
 		{ "GetCurrentRound", &ARoundsManager::execGetCurrentRound },
@@ -365,6 +410,10 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 		{ "Category", "Rounds" },
 		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_EndRoundMinigameAvailable_MetaData[] = {
+		{ "Category", "Rounds" },
+		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AudioManager_MetaData[] = {
 		{ "Category", "Rounds Audio" },
 		{ "ModuleRelativePath", "Rounds/RoundsManager.h" },
@@ -396,6 +445,8 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 #endif // WITH_METADATA
 	static void NewProp_GameFinished_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_GameFinished;
+	static void NewProp_EndRoundMinigameAvailable_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_EndRoundMinigameAvailable;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioManager;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengeInfo;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_MaxRounds;
@@ -407,11 +458,12 @@ struct Z_Construct_UClass_ARoundsManager_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ARoundsManager_AssignMapUI, "AssignMapUI" }, // 4275939896
+		{ &Z_Construct_UFunction_ARoundsManager_CheckForDuelMinigame, "CheckForDuelMinigame" }, // 3922922845
 		{ &Z_Construct_UFunction_ARoundsManager_CheckForEndRoundMinigame, "CheckForEndRoundMinigame" }, // 2527618696
 		{ &Z_Construct_UFunction_ARoundsManager_FinishGame, "FinishGame" }, // 805760768
 		{ &Z_Construct_UFunction_ARoundsManager_GetCurrentRound, "GetCurrentRound" }, // 1994097049
 		{ &Z_Construct_UFunction_ARoundsManager_GetRoundsLeft, "GetRoundsLeft" }, // 3201213780
-		{ &Z_Construct_UFunction_ARoundsManager_HandleEndRound, "HandleEndRound" }, // 2387047649
+		{ &Z_Construct_UFunction_ARoundsManager_HandleEndRound, "HandleEndRound" }, // 1402999091
 		{ &Z_Construct_UFunction_ARoundsManager_StartNextRound, "StartNextRound" }, // 2183550192
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -425,6 +477,11 @@ void Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished_SetBit(void
 	((ARoundsManager*)Obj)->GameFinished = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished = { "GameFinished", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ARoundsManager), &Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameFinished_MetaData), NewProp_GameFinished_MetaData) };
+void Z_Construct_UClass_ARoundsManager_Statics::NewProp_EndRoundMinigameAvailable_SetBit(void* Obj)
+{
+	((ARoundsManager*)Obj)->EndRoundMinigameAvailable = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_EndRoundMinigameAvailable = { "EndRoundMinigameAvailable", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ARoundsManager), &Z_Construct_UClass_ARoundsManager_Statics::NewProp_EndRoundMinigameAvailable_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_EndRoundMinigameAvailable_MetaData), NewProp_EndRoundMinigameAvailable_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_AudioManager = { "AudioManager", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, AudioManager), Z_Construct_UClass_AAudioManager_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AudioManager_MetaData), NewProp_AudioManager_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_ChallengeInfo = { "ChallengeInfo", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, ChallengeInfo), Z_Construct_UClass_AChallengeInformation_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeInfo_MetaData), NewProp_ChallengeInfo_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_MaxRounds = { "MaxRounds", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, MaxRounds), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MaxRounds_MetaData), NewProp_MaxRounds_MetaData) };
@@ -434,6 +491,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ARoundsManager_Statics::NewProp_ChallengeDB = { "ChallengeDB", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ARoundsManager, ChallengeDB), Z_Construct_UClass_AChallengeDatabase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengeDB_MetaData), NewProp_ChallengeDB_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ARoundsManager_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_GameFinished,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_EndRoundMinigameAvailable,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_AudioManager,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_ChallengeInfo,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ARoundsManager_Statics::NewProp_MaxRounds,
@@ -479,10 +537,10 @@ ARoundsManager::~ARoundsManager() {}
 struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ARoundsManager, ARoundsManager::StaticClass, TEXT("ARoundsManager"), &Z_Registration_Info_UClass_ARoundsManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoundsManager), 4087357030U) },
+		{ Z_Construct_UClass_ARoundsManager, ARoundsManager::StaticClass, TEXT("ARoundsManager"), &Z_Registration_Info_UClass_ARoundsManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoundsManager), 3012666882U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h__Script_PartyJungle_74900957(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h__Script_PartyJungle_1830622201(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

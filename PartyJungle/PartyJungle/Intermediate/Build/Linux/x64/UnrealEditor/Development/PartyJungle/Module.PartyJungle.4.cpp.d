@@ -2940,9 +2940,9 @@
   /home/xavi/Documents/Unreal/Engine/Source/../Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v25_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/include/c++/v1/array \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/Module.PartyJungle.4.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealEditor/Development/PartyJungle/Definitions.PartyJungle.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Whistle.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.gen.cpp \
   Runtime/CoreUObject/Public/UObject/GeneratedCppIncludes.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/Whistle.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/WallItem.h \
   Runtime/Core/Public/CoreMinimal.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/./Base/Item.h \
   Runtime/Engine/Classes/GameFramework/Actor.h \
@@ -3200,6 +3200,8 @@
   Runtime/Engine/Classes/Engine/Scene.h \
   Runtime/Engine/Classes/Camera/CameraTypes.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/CameraComponent.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/UIManager/MInigames/MinigameWheel.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MinigameWheel.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/World/WorldManager.h \
   Runtime/Engine/Classes/Camera/CameraActor.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/CameraActor.generated.h \
@@ -3216,6 +3218,9 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WorldDB.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WorldManager.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MapMenuCamera.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Whistle.gen.cpp \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/Whistle.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Whistle.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WorldDB.gen.cpp \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/World/WorldDB.h \

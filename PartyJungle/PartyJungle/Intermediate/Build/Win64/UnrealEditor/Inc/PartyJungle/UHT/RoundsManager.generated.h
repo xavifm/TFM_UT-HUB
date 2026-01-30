@@ -22,6 +22,7 @@ class UPlayerMapUI;
 #define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Rounds_RoundsManager_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execAssignMapUI); \
 	DECLARE_FUNCTION(execCheckForEndRoundMinigame); \
+	DECLARE_FUNCTION(execCheckForDuelMinigame); \
 	DECLARE_FUNCTION(execFinishGame); \
 	DECLARE_FUNCTION(execGetRoundsLeft); \
 	DECLARE_FUNCTION(execStartNextRound); \

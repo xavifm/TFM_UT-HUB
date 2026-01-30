@@ -27,6 +27,7 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AInventory_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapDatabase_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameWheel_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ARoundsManager_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoreDatabase_NoRegister();
@@ -1759,7 +1760,7 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamer
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__type = { "_type", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchMainScene_Parms, _type), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(0, nullptr) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__teams_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchMainScene_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3706549719
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSwitchMainScene_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3117846603
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__isMap,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene_Statics::NewProp__type_Underlying,
@@ -2424,6 +2425,10 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemExecuted_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameWheel_MetaData[] = {
+		{ "Category", "MapMenuCamera" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DiceRollIndex_MetaData[] = {
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
@@ -2474,6 +2479,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 	static const UECodeGen_Private::FIntPropertyParams NewProp_TeamWithDiceSlowed;
 	static void NewProp_ItemExecuted_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_ItemExecuted;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigameWheel;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_DiceRollIndex;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_TurnMovementIndex;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_SavedDiceMovements;
@@ -2528,7 +2534,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchFullMapVision, "SwitchFullMapVision" }, // 83696799
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchInventory, "SwitchInventory" }, // 1955938641
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchItemThrowPlayerSelector, "SwitchItemThrowPlayerSelector" }, // 1755286607
-		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 3758613241
+		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMainScene, "SwitchMainScene" }, // 837757064
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMenuWidget, "SwitchMenuWidget" }, // 3563137851
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchMinionToSelectForDuel, "SwitchMinionToSelectForDuel" }, // 2962733435
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchPathMenu, "SwitchPathMenu" }, // 2369989188
@@ -2574,6 +2580,7 @@ void Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ItemExecuted_SetBit(void
 	((AMapMenuCamera*)Obj)->ItemExecuted = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ItemExecuted = { "ItemExecuted", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AMapMenuCamera), &Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ItemExecuted_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemExecuted_MetaData), NewProp_ItemExecuted_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MinigameWheel = { "MinigameWheel", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, MinigameWheel), Z_Construct_UClass_AMinigameWheel_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameWheel_MetaData), NewProp_MinigameWheel_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_DiceRollIndex = { "DiceRollIndex", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, DiceRollIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DiceRollIndex_MetaData), NewProp_DiceRollIndex_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_TurnMovementIndex = { "TurnMovementIndex", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, TurnMovementIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TurnMovementIndex_MetaData), NewProp_TurnMovementIndex_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_SavedDiceMovements = { "SavedDiceMovements", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMapMenuCamera, SavedDiceMovements), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SavedDiceMovements_MetaData), NewProp_SavedDiceMovements_MetaData) };
@@ -2608,6 +2615,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapMenuC
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MAX_TEAM_NUMBER,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_TeamWithDiceSlowed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_ItemExecuted,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_MinigameWheel,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_DiceRollIndex,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_TurnMovementIndex,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapMenuCamera_Statics::NewProp_SavedDiceMovements,
@@ -2654,10 +2662,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1619655358U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 461352758U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_3126451000(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_924477381(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -71,6 +71,22 @@ void AMapMenuCamera::BeginPlay()
         for (int team = 0 ; team < MAX_TEAM_NUMBER ; team++)
             Inventory->InitializeInventory(team);
     }
+    
+    MinigameWheel->InitializeUI(MapUI);
+    
+    if (MinigameWheel)
+    {
+        TArray<AMinigameLogic*> minigames = WorldSceneManager->WorldDB->GetMinigamesOfType(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
+        TArray<FText> gameTitles;
+        
+        for (auto minigame : minigames)
+        {
+            gameTitles.Add(minigame->GameTitle);
+        }
+        
+        MinigameWheel->InitializeUiValues(gameTitles);
+        MinigameWheel->SwitchUiVisibility(false);
+    }
 
     SwitchMainScene();
     SwitchRankingScoreList(false);

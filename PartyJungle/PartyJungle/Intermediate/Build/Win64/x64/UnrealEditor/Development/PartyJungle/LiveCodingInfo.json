@@ -9,26 +9,28 @@
 			"ChallengeDatabase.gen.cpp.obj",
 			"ChallengeDto.gen.cpp.obj",
 			"ChallengeInformation.gen.cpp.obj",
+			"CocoCannon.gen.cpp.obj",
 			"Dice.gen.cpp.obj",
 			"DiceItem.gen.cpp.obj",
 			"EndGameCamera.gen.cpp.obj",
 			"EndGameUI.gen.cpp.obj",
 			"Inventory.gen.cpp.obj",
-			"Item.gen.cpp.obj",
-			"MainMenuInput.gen.cpp.obj"
+			"Item.gen.cpp.obj"
 		],
 		"Module.PartyJungle.2.cpp.obj": [
+			"MainMenuInput.gen.cpp.obj",
 			"MainMenuWidget.gen.cpp.obj",
 			"MapDatabase.gen.cpp.obj",
 			"MapMenuCamera.gen.cpp.obj",
 			"Minigame1Logic.gen.cpp.obj",
+			"Minigame2Logic.gen.cpp.obj",
 			"MinigameDataGameInstance.gen.cpp.obj",
 			"MinigameLogic.gen.cpp.obj",
-			"Minion.gen.cpp.obj",
-			"PartyJungle.init.gen.cpp.obj",
-			"PlayerMapUI.gen.cpp.obj"
+			"Minion.gen.cpp.obj"
 		],
 		"Module.PartyJungle.3.cpp.obj": [
+			"PartyJungle.init.gen.cpp.obj",
+			"PlayerMapUI.gen.cpp.obj",
 			"ReducedDice.gen.cpp.obj",
 			"ReturnToPartyMapScene.gen.cpp.obj",
 			"RoundsManager.gen.cpp.obj",
@@ -40,9 +42,13 @@
 			"SquareOptional.gen.cpp.obj",
 			"SquareShop.gen.cpp.obj",
 			"SquareStar.gen.cpp.obj",
+			"TeamsGenerator.gen.cpp.obj",
 			"TestItem.gen.cpp.obj",
 			"TransactionDto.gen.cpp.obj",
-			"WallItem.gen.cpp.obj",
+			"VictimCharacter.gen.cpp.obj",
+			"WallItem.gen.cpp.obj"
+		],
+		"Module.PartyJungle.4.cpp.obj": [
 			"Whistle.gen.cpp.obj",
 			"WorldManager.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
@@ -62,9 +68,13 @@
 			"MainMenuWidget.cpp.obj",
 			"MinigameDataGameInstance.cpp.obj",
 			"MinigameLogic.cpp.obj",
+			"TeamsGenerator.cpp.obj",
 			"AirCannon.cpp.obj",
 			"CannonMinigameCamera.cpp.obj",
 			"Minigame1Logic.cpp.obj",
+			"CocoCannon.cpp.obj",
+			"Minigame2Logic.cpp.obj",
+			"VictimCharacter.cpp.obj",
 			"PartyJungle.cpp.obj",
 			"Inventory.cpp.obj",
 			"Item.cpp.obj",
@@ -81,7 +91,10 @@
 			"TransactionDto.cpp.obj",
 			"EndGameUI.cpp.obj",
 			"PlayerMapUI.cpp.obj",
-			"RoundsManager.cpp.obj"
+			"RoundsManager.cpp.obj",
+			"AudioManager.cpp.obj",
+			"ReturnToPartyMapScene.cpp.obj",
+			"WorldManager.cpp.obj"
 		]
 	}
 }

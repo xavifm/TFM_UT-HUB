@@ -19,6 +19,7 @@ enum class ETeamsMode : uint8
     NOTEAM UMETA(DisplayName = "NO_TEAMS"),
     TWO_VS_TWO UMETA(DisplayName = "TWO_VS_TWO"),
     ONE_VS_THREE UMETA(DisplayName = "ONE_VS_THREE"),
+    ANY UMETA(DisplayName = "ANY")
 };
 
 UCLASS()
@@ -28,6 +29,9 @@ class PARTYJUNGLE_API AMinigameLogic : public AActor
 
 public:
     AMinigameLogic();
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Name")
+    FText GameTitle;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
     EMinigameType MinigameType;

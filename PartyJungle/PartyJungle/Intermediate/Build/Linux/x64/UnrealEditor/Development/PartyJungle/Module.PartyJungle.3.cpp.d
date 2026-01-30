@@ -3202,6 +3202,8 @@
   Runtime/Engine/Classes/Engine/Scene.h \
   Runtime/Engine/Classes/Camera/CameraTypes.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/CameraComponent.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/UIManager/MInigames/MinigameWheel.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MinigameWheel.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/World/WorldManager.h \
   Runtime/Engine/Classes/Camera/CameraActor.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/CameraActor.generated.h \
@@ -3289,7 +3291,4 @@
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStaticsTypes.generated.h \
   Runtime/Engine/Classes/Particles/WorldPSCPool.h \
   ../Intermediate/Build/Linux/UnrealEditor/Inc/Engine/UHT/GameplayStatics.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.generated.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.gen.cpp \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/WallItem.h \
-  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.generated.h
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.generated.h

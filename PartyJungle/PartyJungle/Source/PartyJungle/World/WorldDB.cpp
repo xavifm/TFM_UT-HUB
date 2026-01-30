@@ -20,7 +20,8 @@ TArray<AMinigameLogic*> AWorldDB::GetMinigamesOfType(EMinigameType _type, ETeams
 		}
 
 		if (Minigame->MinigameType == _type &&
-			Minigame->TeamMode == _teams)
+			((Minigame->TeamMode == _teams) || 
+			(_teams == ETeamsMode::ANY)))
 		{
 			result.Add(Minigame);
 		}

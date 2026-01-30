@@ -16,4 +16,3 @@
 #include "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TestItem.gen.cpp"
 #include "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/TransactionDto.gen.cpp"
 #include "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.gen.cpp"
-#include "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WallItem.gen.cpp"

@@ -185,7 +185,7 @@ struct Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp__type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp__type = { "_type", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetMinigamesOfType_Parms, _type), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(0, nullptr) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp__teams_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetMinigamesOfType_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3706549719
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetMinigamesOfType_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3117846603
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinigameLogic_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetMinigamesOfType_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldDB_GetMinigamesOfType_Statics::PropPointers[] = {
@@ -285,7 +285,7 @@ struct Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__type_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__type = { "_type", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetRandomMinigameOfType_Parms, _type), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(0, nullptr) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__teams_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetRandomMinigameOfType_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3706549719
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__teams = { "_teams", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetRandomMinigameOfType_Parms, _teams), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3117846603
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldDB_eventGetRandomMinigameOfType_Parms, ReturnValue), Z_Construct_UClass_AMinigameLogic_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType_Statics::NewProp__type_Underlying,
@@ -386,9 +386,9 @@ struct Z_Construct_UClass_AWorldDB_Statics
 		{ &Z_Construct_UFunction_AWorldDB_GetAllMinigames, "GetAllMinigames" }, // 1548123264
 		{ &Z_Construct_UFunction_AWorldDB_GetLevelByIndex, "GetLevelByIndex" }, // 2068646777
 		{ &Z_Construct_UFunction_AWorldDB_GetMapActors, "GetMapActors" }, // 472168229
-		{ &Z_Construct_UFunction_AWorldDB_GetMinigamesOfType, "GetMinigamesOfType" }, // 517589110
+		{ &Z_Construct_UFunction_AWorldDB_GetMinigamesOfType, "GetMinigamesOfType" }, // 1174255353
 		{ &Z_Construct_UFunction_AWorldDB_GetMinigamesQuantity, "GetMinigamesQuantity" }, // 1951828640
-		{ &Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType, "GetRandomMinigameOfType" }, // 68282089
+		{ &Z_Construct_UFunction_AWorldDB_GetRandomMinigameOfType, "GetRandomMinigameOfType" }, // 3819272631
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -444,10 +444,10 @@ AWorldDB::~AWorldDB() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldDB_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldDB, AWorldDB::StaticClass, TEXT("AWorldDB"), &Z_Registration_Info_UClass_AWorldDB, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldDB), 3951919370U) },
+		{ Z_Construct_UClass_AWorldDB, AWorldDB::StaticClass, TEXT("AWorldDB"), &Z_Registration_Info_UClass_AWorldDB, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldDB), 2356225089U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldDB_h__Script_PartyJungle_4120879077(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldDB_h__Script_PartyJungle_1736059188(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldDB_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldDB_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

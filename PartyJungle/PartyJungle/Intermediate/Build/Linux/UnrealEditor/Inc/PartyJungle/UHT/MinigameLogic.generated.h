@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AMinion;
 
 // ********** Begin Class AMinigameLogic ***********************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execStartMinigameScoresAndReadyInfo); \
 	DECLARE_FUNCTION(execInitializeMinigameInfoForTeam); \
 	DECLARE_FUNCTION(execInitializeMinigameInfoForDuel); \
@@ -35,10 +35,10 @@ class AMinion;
 	DECLARE_FUNCTION(execStartMinigame);
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_CALLBACK_WRAPPERS
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameLogic_NoRegister();
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigameLogic(); \
 	friend struct Z_Construct_UClass_AMinigameLogic_Statics; \
@@ -49,7 +49,7 @@ public: \
 	DECLARE_SERIALIZER(AMinigameLogic)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMinigameLogic(AMinigameLogic&&) = delete; \
 	AMinigameLogic(const AMinigameLogic&) = delete; \
@@ -59,14 +59,14 @@ public: \
 	NO_API virtual ~AMinigameLogic();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_24_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_25_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_CALLBACK_WRAPPERS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_27_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_CALLBACK_WRAPPERS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -92,7 +92,8 @@ template<> PARTYJUNGLE_API UEnum* StaticEnum<EMinigameType>();
 #define FOREACH_ENUM_ETEAMSMODE(op) \
 	op(ETeamsMode::NOTEAM) \
 	op(ETeamsMode::TWO_VS_TWO) \
-	op(ETeamsMode::ONE_VS_THREE) 
+	op(ETeamsMode::ONE_VS_THREE) \
+	op(ETeamsMode::ANY) 
 
 enum class ETeamsMode : uint8;
 template<> struct TIsUEnumClass<ETeamsMode> { enum { Value = true }; };

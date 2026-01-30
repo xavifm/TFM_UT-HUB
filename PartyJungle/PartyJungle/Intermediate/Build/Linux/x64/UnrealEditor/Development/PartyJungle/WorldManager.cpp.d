@@ -3231,6 +3231,8 @@
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Items/Base/Item.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Item.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/Inventory.generated.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/UIManager/MInigames/MinigameWheel.h \
+  /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MinigameWheel.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/World/WorldManager.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/MapMenuCamera.generated.h \
   /home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/SquareStar.generated.h \

@@ -97,6 +97,8 @@ struct Z_Construct_UEnum_PartyJungle_ETeamsMode_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "ANY.DisplayName", "ANY" },
+		{ "ANY.Name", "ETeamsMode::ANY" },
 		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 		{ "NOTEAM.DisplayName", "NO_TEAMS" },
@@ -111,6 +113,7 @@ struct Z_Construct_UEnum_PartyJungle_ETeamsMode_Statics
 		{ "ETeamsMode::NOTEAM", (int64)ETeamsMode::NOTEAM },
 		{ "ETeamsMode::TWO_VS_TWO", (int64)ETeamsMode::TWO_VS_TWO },
 		{ "ETeamsMode::ONE_VS_THREE", (int64)ETeamsMode::ONE_VS_THREE },
+		{ "ETeamsMode::ANY", (int64)ETeamsMode::ANY },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
@@ -815,6 +818,10 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ "IncludePath", "Minigame/CrossInfo/MinigameLogic.h" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GameTitle_MetaData[] = {
+		{ "Category", "Minigame Name" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameType_MetaData[] = {
 		{ "Category", "Minigame Type" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
@@ -869,6 +876,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FTextPropertyParams NewProp_GameTitle;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_MinigameType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_MinigameType;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_TeamMode_Underlying;
@@ -923,10 +931,11 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FTextPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameTitle = { "GameTitle", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, GameTitle), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameTitle_MetaData), NewProp_GameTitle_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType = { "MinigameType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameType), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameType_MetaData), NewProp_MinigameType_MetaData) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode = { "TeamMode", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, TeamMode), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TeamMode_MetaData), NewProp_TeamMode_MetaData) }; // 3706549719
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode = { "TeamMode", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, TeamMode), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TeamMode_MetaData), NewProp_TeamMode_MetaData) }; // 3117846603
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors_Inner = { "MinigameActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameActors = { "MinigameActors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameActors_MetaData), NewProp_MinigameActors_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, Camera), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Camera_MetaData), NewProp_Camera_MetaData) };
@@ -955,6 +964,7 @@ const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMinigameLogic_
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Winners_Inner = { "Winners", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Winners = { "Winners", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, Winners), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Winners_MetaData), NewProp_Winners_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinigameLogic_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameTitle,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode_Underlying,
@@ -1021,13 +1031,13 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EMinigameType_StaticEnum, TEXT("EMinigameType"), &Z_Registration_Info_UEnum_EMinigameType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2530748103U) },
-		{ ETeamsMode_StaticEnum, TEXT("ETeamsMode"), &Z_Registration_Info_UEnum_ETeamsMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3706549719U) },
+		{ ETeamsMode_StaticEnum, TEXT("ETeamsMode"), &Z_Registration_Info_UEnum_ETeamsMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3117846603U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 1716749809U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 3610453602U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_182400999(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_3986874839(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo));

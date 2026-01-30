@@ -217,7 +217,7 @@ const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AWorldManager
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__minigameType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__minigameType = { "_minigameType", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventLoadPortion_Parms, _minigameType), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(0, nullptr) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__teamsMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__teamsMode = { "_teamsMode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventLoadPortion_Parms, _teamsMode), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3706549719
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__teamsMode = { "_teamsMode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(WorldManager_eventLoadPortion_Parms, _teamsMode), Z_Construct_UEnum_PartyJungle_ETeamsMode, METADATA_PARAMS(0, nullptr) }; // 3117846603
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__isMap,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_LoadPortion_Statics::NewProp__minigameType_Underlying,
@@ -425,7 +425,7 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ &Z_Construct_UFunction_AWorldManager_EnableStarAtRandomLocation, "EnableStarAtRandomLocation" }, // 2635431754
 		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCamera, "GetMinigameCamera" }, // 3361099478
 		{ &Z_Construct_UFunction_AWorldManager_InitializeCameras, "InitializeCameras" }, // 522898123
-		{ &Z_Construct_UFunction_AWorldManager_LoadPortion, "LoadPortion" }, // 175216141
+		{ &Z_Construct_UFunction_AWorldManager_LoadPortion, "LoadPortion" }, // 3349128540
 		{ &Z_Construct_UFunction_AWorldManager_StartMapPointCinematic, "StartMapPointCinematic" }, // 3918929468
 		{ &Z_Construct_UFunction_AWorldManager_UnloadEntireWorld, "UnloadEntireWorld" }, // 3062019286
 	};
@@ -492,10 +492,10 @@ AWorldManager::~AWorldManager() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 200959543U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 3412470512U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_472095598(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_1631763725(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
