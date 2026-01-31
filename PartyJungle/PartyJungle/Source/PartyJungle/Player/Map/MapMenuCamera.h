@@ -100,7 +100,7 @@ public:
 	AWorldManager* WorldSceneManager;
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
-	void SwitchMainScene(bool _isMap = true, EMinigameType _type = EMinigameType::DUEL, ETeamsMode _teams = ETeamsMode::NOTEAM);
+	void SwitchMainScene(bool _isMap = true, FText _name = FText::GetEmpty());
 	void SwitchUIController();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -257,6 +257,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	AMinigameWheel* MinigameWheel;
 	
+	UPROPERTY(EditAnywhere)
+	TArray<AMinigameLogic*> MinigamesList;
+	
 private:
 	const int MAX_MINION_NUMBER = 3;
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
@@ -323,8 +326,7 @@ private:
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
 	
-	EMinigameType MinigameType;
-	ETeamsMode TeamsMode;
+	FText SavedMinigameName;
 
 	UPROPERTY()
 	int DiceRollIndex;

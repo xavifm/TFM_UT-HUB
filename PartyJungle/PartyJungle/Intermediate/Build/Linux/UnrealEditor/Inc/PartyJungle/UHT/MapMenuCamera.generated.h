@@ -20,8 +20,6 @@ class AMinion;
 class ASquareOptional;
 class UInputComponent;
 class UPlayerMapUI;
-enum class EMinigameType : uint8;
-enum class ETeamsMode : uint8;
 struct FInputActionValue;
 
 // ********** Begin Class AMapMenuCamera ***********************************************************

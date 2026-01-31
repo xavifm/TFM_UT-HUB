@@ -29,6 +29,7 @@ public:
 	
 	UFUNCTION(BlueprintCallable)
 	AMinigameLogic* GetRandomMinigameOfType(EMinigameType _type, ETeamsMode _teams);
+	AMinigameLogic* GetMinigameByName(FText _name);
 
 	UFUNCTION(BlueprintCallable)
 	TArray<AMinigameLogic*> GetAllMinigames();

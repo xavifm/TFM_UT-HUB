@@ -46,9 +46,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void UnloadEntireWorld();
-
+	
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
-	void LoadPortion(bool _isMap, EMinigameType _minigameType, ETeamsMode _teamsMode);
+	void LoadPortion(bool _isMap, FText _name);
 
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void EnableStarAtRandomLocation(bool _pointWithCamera = false);

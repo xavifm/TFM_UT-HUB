@@ -44,11 +44,11 @@ void AMinigameWheel::SpinWheel(float _time)
 	SpinningTime = _time;
 	
 	GetWorldTimerManager().SetTimer(
-	SpinStepTimerHandle,
-	this,
-	&AMinigameWheel::SpinStep,
-	WHEEL_SPAN_TIME,
-	true
+		SpinStepTimerHandle,
+		this,
+		&AMinigameWheel::SpinStep,
+		WHEEL_SPAN_TIME,
+		true
 	);
 	
 	GetWorldTimerManager().SetTimer(
@@ -67,7 +67,6 @@ void AMinigameWheel::SpinStep()
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, false);
 	WheelValue = (WheelValue + 1) % Values.Num();
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, true);
-	
 }
 
 void AMinigameWheel::StopSpin()

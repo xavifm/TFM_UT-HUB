@@ -18,8 +18,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AMinigameLogic;
 class UCameraComponent;
-enum class EMinigameType : uint8;
-enum class ETeamsMode : uint8;
 
 // ********** Begin Class AWorldManager ************************************************************
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \

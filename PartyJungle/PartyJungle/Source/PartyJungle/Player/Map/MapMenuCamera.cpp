@@ -76,10 +76,10 @@ void AMapMenuCamera::BeginPlay()
     
     if (MinigameWheel)
     {
-        TArray<AMinigameLogic*> minigames = WorldSceneManager->WorldDB->GetMinigamesOfType(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
+        MinigamesList = WorldSceneManager->WorldDB->GetMinigamesOfType(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
         TArray<FText> gameTitles;
         
-        for (auto minigame : minigames)
+        for (auto minigame : MinigamesList)
         {
             gameTitles.Add(minigame->GameTitle);
         }
@@ -441,8 +441,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
     }
 
     //TEST MINIGAME
-    MinigameType = EMinigameType::DUEL;
-    TeamsMode = ETeamsMode::NOTEAM;
+    SavedMinigameName = FText::FromString(TEXT("Cannon Madness"));
     //___________________________________
     
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
@@ -452,7 +451,8 @@ void AMapMenuCamera::DelayedSceneSwitch()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     
-    SwitchMainScene(false, MinigameType, TeamsMode);
+    MinigameWheel->SwitchUiVisibility(false);
+    SwitchMainScene(false, SavedMinigameName);
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -612,7 +612,7 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
     SwitchMainScene(_minigame);
 }
 
-void AMapMenuCamera::SwitchMainScene(bool _isMap, EMinigameType _type, ETeamsMode _teams)
+void AMapMenuCamera::SwitchMainScene(bool _isMap, FText _name)
 {
     if (!WorldSceneManager)
         return;
@@ -627,7 +627,7 @@ void AMapMenuCamera::SwitchMainScene(bool _isMap, EMinigameType _type, ETeamsMod
     }
 
     WorldSceneManager->UnloadEntireWorld();
-    WorldSceneManager->LoadPortion(_isMap, _type, _teams);
+    WorldSceneManager->LoadPortion(_isMap, _name);
 
 
     if (!IsMinigameActive)
@@ -998,13 +998,12 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             {
                 RoundsSystem->EndRoundMinigameAvailable = false;
                 
-                //TEST MINIGAME
-                MinigameType = EMinigameType::TEAM_MINIGAME;
-                TeamsMode = ETeamsMode::ONE_VS_THREE;
-                //______________________________________________
+                SavedMinigameName = MinigamesList[MinigameWheel->GetSpinValue()]->GameTitle;
                 
                 FString Message = FString::Printf(TEXT("Minigame!"));
-                MapUI->ShowTextInScreen(Message, 3);
+                MapUI->ShowTextInScreen(Message, 1);
+                MinigameWheel->SwitchUiVisibility(true);
+                MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
                 GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
                 return;
             }

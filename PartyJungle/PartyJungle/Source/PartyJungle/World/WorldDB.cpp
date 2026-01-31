@@ -44,6 +44,26 @@ AMinigameLogic* AWorldDB::GetRandomMinigameOfType(EMinigameType _type, ETeamsMod
 	return filteredMinigames[randomIndex];
 }
 
+AMinigameLogic* AWorldDB::GetMinigameByName(FText _name)
+{
+	TArray<AMinigameLogic*> minigamesList = GetAllMinigames();
+
+	if (minigamesList.Num() == 0)
+	{
+		return nullptr;
+	}
+
+	for (auto minigame : minigamesList)
+	{
+		if (minigame->GameTitle.EqualTo(_name))
+		{
+			return minigame;
+		}
+	}
+
+	return nullptr;
+}
+
 TArray<AMinigameLogic*> AWorldDB::GetAllMinigames()
 {
 	return Minigames;

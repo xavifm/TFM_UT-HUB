@@ -34,5 +34,5 @@ private:
 	FTimerHandle SpinStopTimerHandle;
 	
 	const float WHEEL_SPAN_TIME = 0.2f;
-	int MAX_SCREEN_ELEMENTS = 4;
+	int MAX_SCREEN_ELEMENTS = 5;
 };

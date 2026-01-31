@@ -74,7 +74,7 @@ void AWorldManager::UnloadEntireWorld()
 	}
 }
 
-void AWorldManager::LoadPortion(bool _isMap, EMinigameType _minigameType, ETeamsMode _teamsMode)
+void AWorldManager::LoadPortion(bool _isMap, FText _name)
 {
 	TArray<AActor*> actorsToLoad;
 	AMinigameLogic* minigame;
@@ -86,7 +86,7 @@ void AWorldManager::LoadPortion(bool _isMap, EMinigameType _minigameType, ETeams
 	
 	if (!_isMap)
 	{
-		minigame = WorldDB->GetRandomMinigameOfType(_minigameType, _teamsMode);
+		minigame = WorldDB->GetMinigameByName(_name);
 		if (minigame)
 			actorsToLoad = minigame->MinigameActors;
 	}
