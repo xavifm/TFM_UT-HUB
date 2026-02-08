@@ -239,6 +239,7 @@ public:
 
 	UFUNCTION()
 	UPlayerMapUI* GetMapUI();
+	void InitializeRouletteWithMinigames(EMinigameType _minigameType, ETeamsMode _teamsMode);
 
 	UPROPERTY()
 	int ChosenDuelIndex = 0;
