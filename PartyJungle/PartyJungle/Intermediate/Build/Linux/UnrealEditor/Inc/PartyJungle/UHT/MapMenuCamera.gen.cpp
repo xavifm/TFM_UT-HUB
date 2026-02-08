@@ -1227,67 +1227,6 @@ DEFINE_FUNCTION(AMapMenuCamera::execStartFadeTransition)
 }
 // ********** End Class AMapMenuCamera Function StartFadeTransition ********************************
 
-// ********** Begin Class AMapMenuCamera Function StartMinigame ************************************
-struct Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics
-{
-	struct MapMenuCamera_eventStartMinigame_Parms
-	{
-		bool _duel;
-		int32 _minigame;
-		TArray<AMinion*> _minionsPlaying;
-	};
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "Category", "Functions" },
-		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
-	};
-#endif // WITH_METADATA
-	static void NewProp__duel_SetBit(void* Obj);
-	static const UECodeGen_Private::FBoolPropertyParams NewProp__duel;
-	static const UECodeGen_Private::FIntPropertyParams NewProp__minigame;
-	static const UECodeGen_Private::FObjectPropertyParams NewProp__minionsPlaying_Inner;
-	static const UECodeGen_Private::FArrayPropertyParams NewProp__minionsPlaying;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-void Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__duel_SetBit(void* Obj)
-{
-	((MapMenuCamera_eventStartMinigame_Parms*)Obj)->_duel = 1;
-}
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__duel = { "_duel", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventStartMinigame_Parms), &Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__duel_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minigame = { "_minigame", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStartMinigame_Parms, _minigame), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minionsPlaying_Inner = { "_minionsPlaying", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minionsPlaying = { "_minionsPlaying", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStartMinigame_Parms, _minionsPlaying), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__duel,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minigame,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minionsPlaying_Inner,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::NewProp__minionsPlaying,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "StartMinigame", Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::MapMenuCamera_eventStartMinigame_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::MapMenuCamera_eventStartMinigame_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AMapMenuCamera_StartMinigame()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_StartMinigame_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(AMapMenuCamera::execStartMinigame)
-{
-	P_GET_UBOOL(Z_Param__duel);
-	P_GET_PROPERTY(FIntProperty,Z_Param__minigame);
-	P_GET_TARRAY(AMinion*,Z_Param__minionsPlaying);
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	P_THIS->StartMinigame(Z_Param__duel,Z_Param__minigame,Z_Param__minionsPlaying);
-	P_NATIVE_END;
-}
-// ********** End Class AMapMenuCamera Function StartMinigame **************************************
-
 // ********** Begin Class AMapMenuCamera Function StartPlayerTurn **********************************
 struct Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn_Statics
 {
@@ -2255,7 +2194,6 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "SetupPlayerInputComponent", &AMapMenuCamera::execSetupPlayerInputComponent },
 		{ "SpinWheelEndSequence", &AMapMenuCamera::execSpinWheelEndSequence },
 		{ "StartFadeTransition", &AMapMenuCamera::execStartFadeTransition },
-		{ "StartMinigame", &AMapMenuCamera::execStartMinigame },
 		{ "StartPlayerTurn", &AMapMenuCamera::execStartPlayerTurn },
 		{ "StopMinionForDuel", &AMapMenuCamera::execStopMinionForDuel },
 		{ "StoreCrowns", &AMapMenuCamera::execStoreCrowns },
@@ -2515,7 +2453,6 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetupPlayerInputComponent, "SetupPlayerInputComponent" }, // 3255206399
 		{ &Z_Construct_UFunction_AMapMenuCamera_SpinWheelEndSequence, "SpinWheelEndSequence" }, // 2696137888
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition, "StartFadeTransition" }, // 318122657
-		{ &Z_Construct_UFunction_AMapMenuCamera_StartMinigame, "StartMinigame" }, // 2146500280
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn, "StartPlayerTurn" }, // 715828140
 		{ &Z_Construct_UFunction_AMapMenuCamera_StopMinionForDuel, "StopMinionForDuel" }, // 2378700612
 		{ &Z_Construct_UFunction_AMapMenuCamera_StoreCrowns, "StoreCrowns" }, // 2947720821
@@ -2659,10 +2596,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 595418761U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3920200178U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_107966821(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_460353998(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

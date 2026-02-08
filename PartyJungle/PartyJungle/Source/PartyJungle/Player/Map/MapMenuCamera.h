@@ -143,9 +143,6 @@ public:
 	void SwitchFullMapVision();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying);
-
-	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StopMinionForDuel();
 	void KickYourTeamDiscardableMinions();
 	void StartSelectionByTeam();

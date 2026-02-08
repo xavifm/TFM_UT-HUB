@@ -60,7 +60,6 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execConfirmMinionToDuel); \
 	DECLARE_FUNCTION(execSwitchMinionToSelectForDuel); \
 	DECLARE_FUNCTION(execStopMinionForDuel); \
-	DECLARE_FUNCTION(execStartMinigame); \
 	DECLARE_FUNCTION(execSwitchFullMapVision); \
 	DECLARE_FUNCTION(execHandleEscInput); \
 	DECLARE_FUNCTION(execHandleYInput); \

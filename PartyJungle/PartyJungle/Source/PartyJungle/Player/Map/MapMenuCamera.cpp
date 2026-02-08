@@ -568,38 +568,6 @@ void AMapMenuCamera::ConfirmMinionToDuel()
     StopMinionForDuel();
 }
 
-void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _minionsPlaying) 
-{
-    //UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
-
-    //if (GameInstance)
-    //{
-      //  GameInstance->Teams = { 0, 1, 2, 3 };
-      //  GameInstance->MapMenuCamera = this;
-
-        //if (_minionsPlaying.Num() > 0)
-        //{
-          //  for (AMinion* _minion : _minionsPlaying)
-          //  {
-          //      if (_minion) 
-          //      {
-          //          int32 teamId = static_cast<int32>(_minion->Team);
-          //          GameInstance->PlayingMinions.Add(teamId, _minion);
-          //      }
-          //  }
-        // }
-
-        //if(_duel) 
-        //{
-            //GameInstance->Attacker = ChallengeInformation->Attacker;
-            //GameInstance->Victim = ChallengeInformation->Victim;
-            //GameInstance->Challenge = true;       
-        //}
-    //}
-    
-    SwitchMainScene(_minigame);
-}
-
 void AMapMenuCamera::SwitchMainScene(bool _isMap, FText _name)
 {
     if (!WorldSceneManager)
