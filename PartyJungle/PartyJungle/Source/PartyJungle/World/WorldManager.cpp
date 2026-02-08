@@ -3,19 +3,12 @@
 #include <PartyJungle/Map/SquareStar.h>
 #include <PartyJungle/Minigame/CrossInfo/MinigameLogic.h>
 
+#include "WorldDB.h"
+
 AWorldManager::AWorldManager()
 {
 	PrimaryActorTick.bCanEverTick = false;
 }
-
-TArray<AActor*> AWorldManager::GetLevelByIndex(int _index)
-{
-	if (_index == -1)
-		return BoardActors;
-	
-	return Minigames[_index]->MinigameActors;
-}
-
 
 void AWorldManager::InitializeCameras() 
 {
@@ -31,41 +24,27 @@ void AWorldManager::InitializeCameras()
 	FullMapCameraActor->GetComponents<UCameraComponent>(fullMapCameraComponents);
 	FullMapCamera = fullMapCameraComponents[0];
 
-	AsssignCameraActors(Minigames);
-
 	IsInitialized = true;
 }
 
-void AWorldManager::AsssignCameraActors(TArray<AMinigameLogic*> _minigames)
+UCameraComponent* AWorldManager::GetMinigameCamera(AMinigameLogic* _minigame)
 {
-	for (AMinigameLogic* minigame : _minigames)
-	{
-		AActor* camera = minigame->Camera;
+	AActor* camera = _minigame->Camera;
 		
-		TArray<UCameraComponent*> minigameCameraComponents;
-		camera->GetComponents<UCameraComponent>(minigameCameraComponents);
-		UCameraComponent* foundCamera = minigameCameraComponents[0];
+	TArray<UCameraComponent*> minigameCameraComponents;
+	camera->GetComponents<UCameraComponent>(minigameCameraComponents);
+	UCameraComponent* foundCamera = minigameCameraComponents[0]; // AQUI PETA
 
-		if (foundCamera)
-			CameraActors.Add(foundCamera);
-	}
-}
-
-UCameraComponent* AWorldManager::GetMinigameCameraByIndex(int _index)
-{
-	if (CameraActors.IsValidIndex(_index))
-		return CameraActors[_index];
-
-	return nullptr;
+	return foundCamera;
 }
 
 void AWorldManager::UnloadEntireWorld()
 {
 	InitializeCameras();
 
-	for (int i = 0; i < Minigames.Num(); i++)
+	for (int i = 0; i < WorldDB->GetMinigamesQuantity(); i++)
 	{
-		TArray<AActor*> ActorsToUnload = GetLevelByIndex(i);
+		TArray<AActor*> ActorsToUnload = WorldDB->GetLevelByIndex(i);
 
 		for (AActor* Actor : ActorsToUnload)
 		{
@@ -82,50 +61,68 @@ void AWorldManager::UnloadEntireWorld()
 
 		if (FullMapCamera)
 			FullMapCamera->Deactivate();
+	}
 
-		UCameraComponent* cameraActor = GetMinigameCameraByIndex(i);
-		if (cameraActor)
-			cameraActor->Deactivate();
+	TArray<AMinigameLogic*> minigameList = WorldDB->GetAllMinigames();
+	
+	for (auto minigame : minigameList)
+	{
+		UCameraComponent* camera = GetMinigameCamera(minigame);
+		
+		if (camera)
+			camera->Deactivate();
 	}
 }
 
-void AWorldManager::LoadPortion(int _index)
+void AWorldManager::LoadPortion(bool _isMap, FText _name)
 {
-	TArray<AActor*> ActorsToLoad = GetLevelByIndex(_index);
+	TArray<AActor*> actorsToLoad;
+	AMinigameLogic* minigame;
+	
 	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-
-	if (!PC)
+	
+	if (!PC || !WorldDB)
 		return;
-
-	for (AActor* Actor : ActorsToLoad)
+	
+	if (!_isMap)
 	{
-		if (Actor)
+		minigame = WorldDB->GetMinigameByName(_name);
+		if (minigame)
+			actorsToLoad = minigame->MinigameActors;
+	}
+	else
+		actorsToLoad = WorldDB->GetMapActors();
+	
+	for (AActor* actor : actorsToLoad)
+	{
+		if (actor)
 		{
-			Actor->SetActorHiddenInGame(false);
-			Actor->SetActorEnableCollision(true);
-			Actor->SetActorTickEnabled(true);
+			actor->SetActorHiddenInGame(false);
+			actor->SetActorEnableCollision(true);
+			actor->SetActorTickEnabled(true);
 		}
 	}
 	
-	if (_index != -1)
+	if (!_isMap && minigame)
 	{
-		AMinigameLogic* Minigame = Minigames[_index];	
-		if (Minigame)
-			Minigame->BeginMinigame();
+		minigame->BeginMinigame();
 	}
 
-	if (_index == -1 && MapCamera && FullMapCamera)
+	if (_isMap && MapCamera && FullMapCamera)
 	{
 		MapCamera->Activate();
 		FullMapCamera->Activate();
 		PC->SetViewTargetWithBlend(MapCamera->GetAttachParentActor(), 0.0f);
 	}
 
-	UCameraComponent* cameraActor = GetMinigameCameraByIndex(_index);
-	if (cameraActor) 
+	if (!_isMap)
 	{
-		cameraActor->Activate();
-		PC->SetViewTargetWithBlend(cameraActor->GetOwner(), 0.0f);
+		UCameraComponent* cameraActor = GetMinigameCamera(minigame);
+		if (cameraActor) 
+		{
+			cameraActor->Activate();
+			PC->SetViewTargetWithBlend(cameraActor->GetOwner(), 0.0f);
+		}	
 	}
 }
 

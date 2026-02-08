@@ -17,7 +17,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AMinigameWheel ***********************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigameWheel_NoRegister();
 
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_INCLASS_NO_PURE_DECLS \
@@ -45,7 +44,6 @@ public: \
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_CALLBACK_WRAPPERS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_UIManager_MInigames_MinigameWheel_h_11_ENHANCED_CONSTRUCTORS \
 private: \

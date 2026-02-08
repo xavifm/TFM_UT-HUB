@@ -16,6 +16,7 @@
 #include <PartyJungle/UIManager/MInigames/MinigameWheel.h>
 #include <PartyJungle/World/WorldManager.h>
 
+#include "PartyJungle/Minigame/CrossInfo/MinigameLogic.h"
 #include "MapMenuCamera.generated.h"
 
 class ASquareShop;
@@ -99,7 +100,7 @@ public:
 	AWorldManager* WorldSceneManager;
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
-	void SwitchMainScene(int _minigameIndex = -1);
+	void SwitchMainScene(bool _isMap = true, FText _name = FText::GetEmpty());
 	void SwitchUIController();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
@@ -238,6 +239,7 @@ public:
 
 	UFUNCTION()
 	UPlayerMapUI* GetMapUI();
+	void InitializeRouletteWithMinigames(EMinigameType _minigameType, ETeamsMode _teamsMode);
 
 	UPROPERTY()
 	int ChosenDuelIndex = 0;
@@ -255,6 +257,9 @@ public:
 	
 	UPROPERTY(EditAnywhere)
 	AMinigameWheel* MinigameWheel;
+	
+	UPROPERTY(EditAnywhere)
+	TArray<AMinigameLogic*> MinigamesList;
 	
 private:
 	const int MAX_MINION_NUMBER = 3;
@@ -321,7 +326,8 @@ private:
 	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
-	int SavedSceneValue;
+	
+	FText SavedMinigameName;
 
 	UPROPERTY()
 	int DiceRollIndex;

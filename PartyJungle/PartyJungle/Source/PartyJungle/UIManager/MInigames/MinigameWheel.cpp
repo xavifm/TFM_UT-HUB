@@ -6,6 +6,11 @@ AMinigameWheel::AMinigameWheel()
 
 }
 
+void AMinigameWheel::SwitchUiVisibility(bool _visibility)
+{
+	PlayerMapUI->SwitchMinigameWheelVisibility(_visibility);
+}
+
 void AMinigameWheel::InitializeUiValues(TArray<FText> _values)
 {
 	Values.Empty(); 
@@ -20,6 +25,17 @@ void AMinigameWheel::InitializeUiValues(TArray<FText> _values)
 		PlayerMapUI->InitializeWheelValue(index, Element);
 		index++;
 	}
+	
+	if(index >= MAX_SCREEN_ELEMENTS)
+		return;
+
+	int originalMaxScreenElements = MAX_SCREEN_ELEMENTS;
+	MAX_SCREEN_ELEMENTS = index;
+	
+	for (int _index = MAX_SCREEN_ELEMENTS; _index < originalMaxScreenElements; ++_index)
+	{
+		PlayerMapUI->InitializeWheelValue(_index, FText::GetEmpty());
+	}
 }
 
 void AMinigameWheel::SpinWheel(float _time)
@@ -28,11 +44,11 @@ void AMinigameWheel::SpinWheel(float _time)
 	SpinningTime = _time;
 	
 	GetWorldTimerManager().SetTimer(
-	SpinStepTimerHandle,
-	this,
-	&AMinigameWheel::SpinStep,
-	WHEEL_SPAN_TIME,
-	true
+		SpinStepTimerHandle,
+		this,
+		&AMinigameWheel::SpinStep,
+		WHEEL_SPAN_TIME,
+		true
 	);
 	
 	GetWorldTimerManager().SetTimer(
@@ -51,7 +67,6 @@ void AMinigameWheel::SpinStep()
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, false);
 	WheelValue = (WheelValue + 1) % Values.Num();
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, true);
-	
 }
 
 void AMinigameWheel::StopSpin()

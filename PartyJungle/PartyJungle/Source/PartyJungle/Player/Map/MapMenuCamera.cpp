@@ -71,6 +71,9 @@ void AMapMenuCamera::BeginPlay()
         for (int team = 0 ; team < MAX_TEAM_NUMBER ; team++)
             Inventory->InitializeInventory(team);
     }
+    
+    MinigameWheel->InitializeUI(MapUI);
+    MinigameWheel->SwitchUiVisibility(false);
 
     SwitchMainScene();
     SwitchRankingScoreList(false);
@@ -423,16 +426,21 @@ void AMapMenuCamera::SpinWheelEndSequence()
         minion->UpdateCoins(-bet);
         MapUI->UpdateCoins(team, -bet);
     }
-
-    SavedSceneValue = 0; //duel minigame 1, crear un sistema per retornar el index de minijoc pel tipus
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ROULETTE_SPIN_TIME, false);
+    
+    InitializeRouletteWithMinigames(EMinigameType::DUEL, ETeamsMode::NOTEAM);
+    
+    MinigameWheel->SwitchUiVisibility(true);
+    MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
+    
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, (ROULETTE_SPIN_TIME + ENDROUND_MINIGAME_START_TIME - 2), false);
 }
 
 void AMapMenuCamera::DelayedSceneSwitch()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-    
-    SwitchMainScene(SavedSceneValue);
+    SavedMinigameName = MinigamesList[MinigameWheel->GetSpinValue()]->GameTitle;
+    MinigameWheel->SwitchUiVisibility(false);
+    SwitchMainScene(false, SavedMinigameName);
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -592,12 +600,12 @@ void AMapMenuCamera::StartMinigame(bool _duel, int _minigame, TArray<AMinion*> _
     SwitchMainScene(_minigame);
 }
 
-void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
+void AMapMenuCamera::SwitchMainScene(bool _isMap, FText _name)
 {
     if (!WorldSceneManager)
         return;
 
-    IsMinigameActive = (_sceneIndex >= 0);
+    IsMinigameActive = !_isMap;
     
     if(DuelUI && IsMinigameActive)
     {
@@ -607,7 +615,7 @@ void AMapMenuCamera::SwitchMainScene(int _sceneIndex)
     }
 
     WorldSceneManager->UnloadEntireWorld();
-    WorldSceneManager->LoadPortion(_sceneIndex);
+    WorldSceneManager->LoadPortion(_isMap, _name);
 
 
     if (!IsMinigameActive)
@@ -976,10 +984,11 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             }
             if (minigamesDetected[1])
             {
+                //Minigame
                 RoundsSystem->EndRoundMinigameAvailable = false;
-                SavedSceneValue = 1; //team minigame 2, crear un sistema per retornar el index de minijoc pel tipus
-                FString Message = FString::Printf(TEXT("Minigame!"));
-                MapUI->ShowTextInScreen(Message, 3);
+                InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
+                MinigameWheel->SwitchUiVisibility(true);
+                MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
                 GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
                 return;
             }
@@ -1152,6 +1161,22 @@ UPlayerMapUI* AMapMenuCamera::GetMapUI()
     return MapUI;
 }
 
+void AMapMenuCamera::InitializeRouletteWithMinigames(EMinigameType _minigameType, ETeamsMode _teamsMode)
+{
+    if (MinigameWheel)
+    {
+        MinigamesList = WorldSceneManager->WorldDB->GetMinigamesOfType(_minigameType, _teamsMode);
+        TArray<FText> gameTitles;
+        
+        for (auto minigame : MinigamesList)
+        {
+            gameTitles.Add(minigame->GameTitle);
+        }
+        
+        MinigameWheel->InitializeUiValues(gameTitles);
+        MinigameWheel->SwitchUiVisibility(false);
+    }
+}
 
 void AMapMenuCamera::RollTheDice()
 {

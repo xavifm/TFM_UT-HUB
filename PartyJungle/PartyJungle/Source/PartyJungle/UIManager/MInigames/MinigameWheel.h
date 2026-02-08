@@ -14,7 +14,6 @@ public:
 	AMinigameWheel();
 	void InitializeUI(UPlayerMapUI* _ui) { PlayerMapUI = _ui; }
 	
-	UFUNCTION(BlueprintImplementableEvent, Category = "UI")
 	void SwitchUiVisibility(bool _visibility);
 	
 	int GetSpinValue() { return WheelValue; }
@@ -35,4 +34,5 @@ private:
 	FTimerHandle SpinStopTimerHandle;
 	
 	const float WHEEL_SPAN_TIME = 0.2f;
+	int MAX_SCREEN_ELEMENTS = 5;
 };
