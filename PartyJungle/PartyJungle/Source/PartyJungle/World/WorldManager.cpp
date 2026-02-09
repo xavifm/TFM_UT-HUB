@@ -77,7 +77,7 @@ void AWorldManager::UnloadEntireWorld()
 void AWorldManager::LoadPortion(bool _isMap, FText _name)
 {
 	TArray<AActor*> actorsToLoad;
-	AMinigameLogic* minigame;
+	AMinigameLogic* minigame = nullptr;
 	
 	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	
