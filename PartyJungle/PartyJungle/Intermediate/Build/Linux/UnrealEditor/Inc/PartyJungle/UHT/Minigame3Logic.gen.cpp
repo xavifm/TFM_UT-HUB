@@ -47,6 +47,34 @@ UFunction* Z_Construct_UFunction_AMinigame3Logic_ResetBallPosition()
 }
 // ********** End Class AMinigame3Logic Function ResetBallPosition *********************************
 
+// ********** Begin Class AMinigame3Logic Function ResetBallVelocity *******************************
+static FName NAME_AMinigame3Logic_ResetBallVelocity = FName(TEXT("ResetBallVelocity"));
+void AMinigame3Logic::ResetBallVelocity()
+{
+	UFunction* Func = FindFunctionChecked(NAME_AMinigame3Logic_ResetBallVelocity);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame3/Minigame3Logic.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMinigame3Logic, nullptr, "ResetBallVelocity", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AMinigame3Logic Function ResetBallVelocity *********************************
+
 // ********** Begin Class AMinigame3Logic Function SumScore ****************************************
 struct Z_Construct_UFunction_AMinigame3Logic_SumScore_Statics
 {
@@ -245,6 +273,7 @@ struct Z_Construct_UClass_AMinigame3Logic_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMinigame3Logic_ResetBallPosition, "ResetBallPosition" }, // 4188708489
+		{ &Z_Construct_UFunction_AMinigame3Logic_ResetBallVelocity, "ResetBallVelocity" }, // 2101559818
 		{ &Z_Construct_UFunction_AMinigame3Logic_SumScore, "SumScore" }, // 801434434
 		{ &Z_Construct_UFunction_AMinigame3Logic_SwitchBallMovement, "SwitchBallMovement" }, // 3085979912
 		{ &Z_Construct_UFunction_AMinigame3Logic_SwitchScore, "SwitchScore" }, // 2393385358
@@ -302,10 +331,10 @@ AMinigame3Logic::~AMinigame3Logic() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigame3Logic, AMinigame3Logic::StaticClass, TEXT("AMinigame3Logic"), &Z_Registration_Info_UClass_AMinigame3Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame3Logic), 2618807613U) },
+		{ Z_Construct_UClass_AMinigame3Logic, AMinigame3Logic::StaticClass, TEXT("AMinigame3Logic"), &Z_Registration_Info_UClass_AMinigame3Logic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigame3Logic), 269186219U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h__Script_PartyJungle_2534621681(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h__Script_PartyJungle_3461175059(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

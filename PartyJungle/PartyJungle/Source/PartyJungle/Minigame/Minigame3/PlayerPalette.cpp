@@ -60,6 +60,11 @@ void APlayerPalette::MovePallette(const FInputActionValue& _value)
 		CharacterPhysics->SetAllPhysicsPosition(finalPosition);
 }
 
+void APlayerPalette::ResetCharacterPosition()
+{
+	SetActorLocation(InitialPosition);
+}
+
 void APlayerPalette::PossessMovement()
 {
 	PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), CharacterTeam);

@@ -15,7 +15,7 @@ class PARTYJUNGLE_API APlayerPalette : public APawn
 public:
 	APlayerPalette();
 	
-	UPROPERTY()
+	UPROPERTY(EditAnywhere)
 	int CharacterTeam;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
@@ -46,7 +46,8 @@ public:
 	
 	UFUNCTION()
 	void MovePallette(const FInputActionValue& _value);
-	
+	void ResetCharacterPosition();
+
 	UFUNCTION()
 	void PossessMovement();
 

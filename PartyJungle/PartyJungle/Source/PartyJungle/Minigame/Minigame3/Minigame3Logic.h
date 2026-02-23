@@ -22,6 +22,9 @@ class PARTYJUNGLE_API AMinigame3Logic : public AMinigameLogic
 	void SwitchBallMovement(bool _mode);
 	
 	UFUNCTION(BlueprintImplementableEvent)
+	void ResetBallVelocity();
+	
+	UFUNCTION(BlueprintImplementableEvent)
 	void ResetBallPosition();
 	
 	UFUNCTION(BlueprintImplementableEvent)
@@ -47,6 +50,7 @@ class PARTYJUNGLE_API AMinigame3Logic : public AMinigameLogic
 	FTimerHandle TimerHandle;
 	
 	const float BASE_MINIGAME_TIME = 30;
+	const float BASE_BALL_VELOCITY = 1000;
 	bool MinigameRunning = false;
-	float MinigameTime = BASE_MINIGAME_TIME; 
+	float MinigameTime = BASE_MINIGAME_TIME;
 };

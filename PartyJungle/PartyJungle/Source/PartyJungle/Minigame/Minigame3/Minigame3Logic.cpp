@@ -12,6 +12,7 @@ void AMinigame3Logic::StartMinigame(int _startTime)
 	Super::StartMinigame(_startTime);
 	
 	SetupPlayersInfo();
+	SwitchBallMovement(false);
 	
 	MinigameTime = BASE_MINIGAME_TIME;
 	
@@ -36,6 +37,19 @@ void AMinigame3Logic::ResetMinigameScene()
 	ScoreTeamTwo = 0;
 	SwitchScore(1, 0);
 	SwitchScore(2, 0);
+	
+	for (auto pallete : TeamOne)
+	{
+		pallete->ResetCharacterPosition();
+		pallete->CharacterTeam = -1;
+	}
+	
+	for (auto pallete2 : TeamTwo)
+	{
+		pallete2->ResetCharacterPosition();
+		pallete2->CharacterTeam = -1;	
+	}
+	
 	Super::ResetMinigameScene();
 }
 
@@ -124,7 +138,8 @@ void AMinigame3Logic::StartMinigamePlay()
 			TeamTwo[i]->PossessMovement();
 	}
 	
-	SwitchBallMovement(true);
+	ResetBallPosition();
+	ResetBallVelocity();
 }
 
 void AMinigame3Logic::StopMinigame()
