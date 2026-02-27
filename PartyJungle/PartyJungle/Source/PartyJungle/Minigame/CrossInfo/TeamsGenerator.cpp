@@ -21,8 +21,17 @@ TMap<int, TArray<AMinion*>> ATeamsGenerator::GetTwoVsTwoTeam(TArray<AMinion*> _p
 	
 	FRandomStream stream(FMath::Rand());
 	ShuffleMinions(shuffledMinions, stream);
-	
-	for (int32 i = 0; i < shuffledMinions.Num(); ++i)
+
+	if (shuffledMinions.Num() == 1)
+	{
+		Result[0].Add(shuffledMinions[0]);
+		return Result;
+	}
+
+	Result[0].Add(shuffledMinions[0]);
+	Result[1].Add(shuffledMinions[1]);
+
+	for (int32 i = 2; i < shuffledMinions.Num(); ++i)
 	{
 		const int TeamId = (i % 2);
 		Result[TeamId].Add(shuffledMinions[i]);

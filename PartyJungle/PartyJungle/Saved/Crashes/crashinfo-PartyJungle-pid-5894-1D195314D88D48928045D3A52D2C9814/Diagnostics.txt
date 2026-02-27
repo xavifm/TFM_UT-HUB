@@ -1,0 +1,32 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.2-2-cachyos-deckify (network name: Xavi-Desktop)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGABRT: abort() called"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libc.so.6!UnknownFunction(0xb0892)
+libc.so.6!UnknownFunction(0xa4247)
+libc.so.6!UnknownFunction(0xa49a2)
+libc.so.6!pthread_cond_timedwait(+0x1a2)
+libUnrealEditor-Core.so!FPThreadEvent::Wait(unsigned int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/GenericPlatform/GenericPlatformProcess.cpp:498]
+libUnrealEditor-RenderCore.so!FRenderCommandFence::Wait(bool) const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/HAL/Event.h:89]
+libUnrealEditor-RenderCore.so!FFrameEndSync::Sync(FFrameEndSync::EFlushMode) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/RenderCore/Private/RenderingThread.cpp:2155]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5839]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

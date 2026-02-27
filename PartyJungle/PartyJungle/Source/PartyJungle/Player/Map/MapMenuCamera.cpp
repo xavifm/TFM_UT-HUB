@@ -1307,9 +1307,8 @@ void AMapMenuCamera::UpdateMinionEconomyWithReference(AMinion* _minion, int _coi
 
     int currentCoins = _minion->GetCoins();
     int updatedCoins = _minion->UpdateCoins(_coins);
-
-    if (currentCoins != updatedCoins)
-        MapUI->UpdateCoins(static_cast<int32>(_minion->Team), updatedCoins);
+    
+    MapUI->UpdateCoins(static_cast<int32>(_minion->Team), updatedCoins);
 }
 
 void AMapMenuCamera::StartPlayerTurn()
