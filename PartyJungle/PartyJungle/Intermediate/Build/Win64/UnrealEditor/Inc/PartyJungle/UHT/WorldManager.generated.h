@@ -16,26 +16,23 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
-class AActor;
 class AMinigameLogic;
 class UCameraComponent;
 
 // ********** Begin Class AWorldManager ************************************************************
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execDisableAllStars); \
 	DECLARE_FUNCTION(execEnableStarAtRandomLocation); \
 	DECLARE_FUNCTION(execLoadPortion); \
 	DECLARE_FUNCTION(execUnloadEntireWorld); \
-	DECLARE_FUNCTION(execGetMinigameCameraByIndex); \
-	DECLARE_FUNCTION(execGetLevelByIndex); \
-	DECLARE_FUNCTION(execAsssignCameraActors); \
+	DECLARE_FUNCTION(execGetMinigameCamera); \
 	DECLARE_FUNCTION(execInitializeCameras);
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_CALLBACK_WRAPPERS
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AWorldManager_NoRegister();
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWorldManager(); \
 	friend struct Z_Construct_UClass_AWorldManager_Statics; \
@@ -46,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(AWorldManager)
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AWorldManager(AWorldManager&&) = delete; \
 	AWorldManager(const AWorldManager&) = delete; \
@@ -56,14 +53,14 @@ public: \
 	NO_API virtual ~AWorldManager();
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_11_PROLOG
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_GENERATED_BODY \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_12_PROLOG
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_CALLBACK_WRAPPERS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_CALLBACK_WRAPPERS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
