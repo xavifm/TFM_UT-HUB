@@ -581,7 +581,8 @@ void AMapMenuCamera::SwitchMainScene(bool _isMap, FText _name)
         StartFadeTransition(0.1f);
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
     }
-
+    
+    MapUI->SwitchMinigameUIVisibility(IsMinigameActive);
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_isMap, _name);
 

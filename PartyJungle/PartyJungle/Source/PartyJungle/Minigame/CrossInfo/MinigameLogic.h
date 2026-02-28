@@ -119,7 +119,10 @@ public:
 protected:
     UFUNCTION(BlueprintCallable, Category = "Minigame_functions")
     virtual void ResetMinigameScene();
-
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float BASE_MINIGAME_TIME = 30;
+    
 private:
     UFUNCTION()
     void InitializeMinigameInfoForDuel();

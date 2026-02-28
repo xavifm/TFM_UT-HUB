@@ -209,6 +209,48 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeWheelValue()
 }
 // ********** End Class UPlayerMapUI Function InitializeWheelValue *********************************
 
+// ********** Begin Class UPlayerMapUI Function SetMinigameVisibleTime *****************************
+struct PlayerMapUI_eventSetMinigameVisibleTime_Parms
+{
+	float Time;
+};
+static FName NAME_UPlayerMapUI_SetMinigameVisibleTime = FName(TEXT("SetMinigameVisibleTime"));
+void UPlayerMapUI::SetMinigameVisibleTime(float Time)
+{
+	PlayerMapUI_eventSetMinigameVisibleTime_Parms Parms;
+	Parms.Time=Time;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SetMinigameVisibleTime);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_Time;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::NewProp_Time = { "Time", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetMinigameVisibleTime_Parms, Time), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::NewProp_Time,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetMinigameVisibleTime", Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::PropPointers), sizeof(PlayerMapUI_eventSetMinigameVisibleTime_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSetMinigameVisibleTime_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SetMinigameVisibleTime *******************************
+
 // ********** Begin Class UPlayerMapUI Function SetScore *******************************************
 struct PlayerMapUI_eventSetScore_Parms
 {
@@ -881,20 +923,20 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility()
 }
 // ********** End Class UPlayerMapUI Function SwitchLegendVisibility *******************************
 
-// ********** Begin Class UPlayerMapUI Function SwitchMinigame1UIVisibility ************************
-struct PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms
+// ********** Begin Class UPlayerMapUI Function SwitchMinigameUIVisibility *************************
+struct PlayerMapUI_eventSwitchMinigameUIVisibility_Parms
 {
 	bool IsVisible;
 };
-static FName NAME_UPlayerMapUI_SwitchMinigame1UIVisibility = FName(TEXT("SwitchMinigame1UIVisibility"));
-void UPlayerMapUI::SwitchMinigame1UIVisibility(bool IsVisible)
+static FName NAME_UPlayerMapUI_SwitchMinigameUIVisibility = FName(TEXT("SwitchMinigameUIVisibility"));
+void UPlayerMapUI::SwitchMinigameUIVisibility(bool IsVisible)
 {
-	PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms Parms;
+	PlayerMapUI_eventSwitchMinigameUIVisibility_Parms Parms;
 	Parms.IsVisible=IsVisible ? true : false;
-	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinigame1UIVisibility);
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchMinigameUIVisibility);
 	ProcessEvent(Func,&Parms);
 }
-struct Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -906,27 +948,27 @@ struct Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-void Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
+void Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
 {
-	((PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms*)Obj)->IsVisible = 1;
+	((PlayerMapUI_eventSwitchMinigameUIVisibility_Parms*)Obj)->IsVisible = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::NewProp_IsVisible,
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchMinigameUIVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::NewProp_IsVisible,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinigame1UIVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(PlayerMapUI_eventSwitchMinigame1UIVisibility_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchMinigameUIVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchMinigameUIVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSwitchMinigameUIVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-// ********** End Class UPlayerMapUI Function SwitchMinigame1UIVisibility **************************
+// ********** End Class UPlayerMapUI Function SwitchMinigameUIVisibility ***************************
 
 // ********** Begin Class UPlayerMapUI Function SwitchMinigameWheelVisibility **********************
 struct PlayerMapUI_eventSwitchMinigameWheelVisibility_Parms
@@ -1587,6 +1629,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement, "InitializeRouletteElement" }, // 3072822697
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2712313346
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeWheelValue, "InitializeWheelValue" }, // 1173492839
+		{ &Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime, "SetMinigameVisibleTime" }, // 2620845466
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetScore, "SetScore" }, // 489454972
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetupUIPots, "SetupUIPots" }, // 2685654397
 		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3679402220
@@ -1601,7 +1644,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchItemThrowPlayer, "SwitchItemThrowPlayer" }, // 767679543
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchItemThrowSelectorVisibility, "SwitchItemThrowSelectorVisibility" }, // 2851455349
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchLegendVisibility, "SwitchLegendVisibility" }, // 199844718
-		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigame1UIVisibility, "SwitchMinigame1UIVisibility" }, // 1315906279
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameUIVisibility, "SwitchMinigameUIVisibility" }, // 1714041853
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinigameWheelVisibility, "SwitchMinigameWheelVisibility" }, // 692014330
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchMinionDuelSelectionMenu, "SwitchMinionDuelSelectionMenu" }, // 953674691
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchRouletteVisibility, "SwitchRouletteVisibility" }, // 3679523160
@@ -1665,10 +1708,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 3668210842U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 2429596031U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_3575039319(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_1384522654(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -4,6 +4,7 @@
 #include "../CrossInfo/MinigameLogic.h"
 #include "AirCannon.h"
 #include "CannonMinigameCamera.h"
+#include "../../Player/Map/MapMenuCamera.h"
 #include "Minigame1Logic.generated.h"
 
 UCLASS()
@@ -22,6 +23,8 @@ protected:
 	void FinishMinigame(TArray<int32> _winners) override;
 	void SetTeamScore(int _team, int _score) override;
 	void ResetMinigameScene() override;
+	virtual void BeginPlay() override;
+	void Tick(float DeltaTime);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannons")
 	ACannonMinigameCamera* MinigameCamera;
@@ -40,4 +43,6 @@ protected:
 
 private:
 	FTimerHandle TimerHandle;
+	
+	float GameTime = 0.0f;
 };

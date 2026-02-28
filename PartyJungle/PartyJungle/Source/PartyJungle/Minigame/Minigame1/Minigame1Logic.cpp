@@ -4,6 +4,9 @@
 
 AMinigame1Logic::AMinigame1Logic()
 {
+	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bStartWithTickEnabled = true;
+	SetActorTickEnabled(true); 
 }
 
 void AMinigame1Logic::SetupAirCannonsInfo()
@@ -50,11 +53,35 @@ void AMinigame1Logic::ResetMinigameScene()
 	}
 }
 
+void AMinigame1Logic::BeginPlay()
+{
+	Super::BeginPlay();
+	BASE_MINIGAME_TIME = StartTime;
+}
+
+void AMinigame1Logic::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	
+	if (AirCannons[0]->CannonCharging && GameTime > 0)
+	{
+		GameTime -= DeltaTime;
+		
+		if (MapMenuCamera)
+			MapMenuCamera->GetMapUI()->SetMinigameVisibleTime(GameTime);
+	}
+}
+
 void AMinigame1Logic::StartMinigame(int _startTime)
 {
 	Super::StartMinigame(_startTime);
 
 	SetupAirCannonsInfo();
+	
+	GameTime = BASE_MINIGAME_TIME;
+	
+	if (MapMenuCamera)
+		MapMenuCamera->GetMapUI()->SetMinigameVisibleTime(_startTime);
 
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, _startTime]() {
 		StartCannonsCharge(_startTime);

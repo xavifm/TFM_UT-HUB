@@ -7,6 +7,7 @@
 #include "../CrossInfo/MinigameLogic.h"
 #include "./VictimCharacter.h"
 #include "./CocoCannon.h"
+#include "../../Player/Map/MapMenuCamera.h"
 #include "Minigame2Logic.generated.h"
 
 UCLASS()
@@ -40,7 +41,6 @@ protected:
 private:
 	FTimerHandle TimerHandle;
 	
-	const float BASE_MINIGAME_TIME = 30;
 	bool MinigameRunning = false;
 	float MinigameTime = BASE_MINIGAME_TIME; 
 	

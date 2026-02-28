@@ -94,7 +94,10 @@ public:
     void UpdateDuelScreenInfo(int _coins, int _crowns, EDuelType _duelType, int _team);
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-    void SwitchMinigame1UIVisibility(bool IsVisible);
+    void SwitchMinigameUIVisibility(bool IsVisible);
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SetMinigameVisibleTime(float Time);
     
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void SwitchMinionDuelSelectionMenu(bool IsVisible);

@@ -1,0 +1,37 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.2-2-cachyos-deckify (network name: Xavi-Desktop)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to read memory at address 0x0000000000000519"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-PartyJungle-0030.so!AMinigame1Logic::Tick(float) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Minigame/Minigame1/Minigame1Logic.cpp:66]
+libUnrealEditor-Engine.so!FActorTickFunction::ExecuteTick(float, ELevelTick, ENamedThreads::Type, TRefCountPtr<FBaseGraphTask> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:372]
+libUnrealEditor-Engine.so!TGraphTask<FTickFunctionTask>::ExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:329]
+libUnrealEditor-Core.so!UE::Tasks::Private::FTaskBase::TryExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Tasks/TaskPrivate.h:527]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:505]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilIdle(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:678]
+libUnrealEditor-Core.so!FTaskGraphCompatibilityImplementation::ProcessUntilTasksComplete(TArray<TRefCountPtr<FBaseGraphTask>, TSizedInlineAllocator<4u, 32, TSizedDefaultAllocator<32> > > const&, ENamedThreads::Type, TFunction<FTaskGraphInterface::EProcessTasksOperation (int)> const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:1557]
+libUnrealEditor-Engine.so!FTickTaskSequencer::ReleaseTickGroup(ETickingGroup, bool, TArray<FTickFunction*, TSizedDefaultAllocator<32> >&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:986]
+libUnrealEditor-Engine.so!FTickTaskManager::RunTickGroup(ETickingGroup, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TickTaskManager.cpp:2078]
+libUnrealEditor-Engine.so!UWorld::Tick(ELevelTick, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/LevelTick.cpp:783]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2149]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

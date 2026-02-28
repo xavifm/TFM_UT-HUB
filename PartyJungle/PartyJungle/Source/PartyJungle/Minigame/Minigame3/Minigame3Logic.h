@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "../CrossInfo/MinigameLogic.h"
 #include "../Minigame3/PlayerPalette.h"
+#include "../../Player/Map/MapMenuCamera.h"
 #include "Minigame3Logic.generated.h"
 
 UCLASS()
@@ -49,7 +50,6 @@ class PARTYJUNGLE_API AMinigame3Logic : public AMinigameLogic
 	
 	FTimerHandle TimerHandle;
 	
-	const float BASE_MINIGAME_TIME = 30;
 	const float BASE_BALL_VELOCITY = 1000;
 	bool MinigameRunning = false;
 	float MinigameTime = BASE_MINIGAME_TIME;

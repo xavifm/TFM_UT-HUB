@@ -17,14 +17,14 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AMinigame3Logic **********************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSumScore);
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_CALLBACK_WRAPPERS
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigame3Logic_NoRegister();
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigame3Logic(); \
 	friend struct Z_Construct_UClass_AMinigame3Logic_Statics; \
@@ -35,7 +35,7 @@ public: \
 	DECLARE_SERIALIZER(AMinigame3Logic)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMinigame3Logic(AMinigame3Logic&&) = delete; \
 	AMinigame3Logic(const AMinigame3Logic&) = delete; \
@@ -45,14 +45,14 @@ public: \
 	NO_API virtual ~AMinigame3Logic();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_8_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_9_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_CALLBACK_WRAPPERS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_13_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_CALLBACK_WRAPPERS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_Minigame3Logic_h_14_ENHANCED_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -168,7 +168,11 @@ void AMinigame3Logic::Tick(float DeltaTime)
 	if (MinigameRunning)
 	{
 		if (MinigameTime > 0)
+		{
 			MinigameTime -= DeltaTime;
+			if (MapMenuCamera)
+				MapMenuCamera->GetMapUI()->SetMinigameVisibleTime(MinigameTime);
+		}
 		else
 		{
 			SetTeamScores();

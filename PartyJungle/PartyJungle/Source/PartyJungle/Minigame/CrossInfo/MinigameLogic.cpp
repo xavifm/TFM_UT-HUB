@@ -10,6 +10,9 @@ AMinigameLogic::AMinigameLogic()
 void AMinigameLogic::BeginMinigame()
 {
 	GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+	
+	if (MapMenuCamera)
+		MapMenuCamera->GetMapUI()->SetMinigameVisibleTime(BASE_MINIGAME_TIME);
 
 	if(GameInstance) 
 	{
