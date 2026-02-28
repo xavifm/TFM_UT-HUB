@@ -50,6 +50,36 @@ UScoreDto* AScoreDatabase::GetScore(int PlayerID) const
 
 void AScoreDatabase::UpdateGlobalPositions()
 {
+	TArray<int> players;
+	players.Reserve(Scores.Num());
+
+	for (auto& score : Scores)
+	{
+		if (score != nullptr)
+		{
+			players.Add(score->Team);
+		}
+	}
+	
+	players.Sort([this](int32 A, int32 B)
+	{
+		const auto* SA = Scores[A];
+		const auto* SB = Scores[B];
+
+		if (SA->StoredCrowns != SB->StoredCrowns)
+			return SA->StoredCrowns > SB->StoredCrowns;
+
+		if (SA->TotalCoins != SB->TotalCoins)
+			return SA->TotalCoins > SB->TotalCoins;
+		
+		return A < B;
+	});
+	
+	for (int32 i = 0; i < players.Num(); ++i)
+	{
+		const int32 team = players[i];
+		Scores[team]->GlobalPosition = i;
+	}
 }
 
 void AScoreDatabase::UpdateTotalCoins(int PlayerID, int Quantity)

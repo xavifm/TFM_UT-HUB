@@ -1014,14 +1014,13 @@ void AMapMenuCamera::MoveCameraToCurrentTeam()
 void AMapMenuCamera::SwitchRankingScoreList(bool _visibility)
 {
     ScoreRankingEnabled = _visibility;
+    ScoreDb->UpdateGlobalPositions();
     MapUI->SwitchScoreListUI(_visibility);
     
     if (!_visibility || !ScoreDb)
         return;
     
     TArray<UScoreDto*> scores = ScoreDb->GetScoresArray();
-    
-    int pos = 0;
 
     for (int index = MAX_TEAM_NUMBER; index < 4; ++index)
         MapUI->SetScore(index, -1, 0, -1);
@@ -1030,8 +1029,7 @@ void AMapMenuCamera::SwitchRankingScoreList(bool _visibility)
     {
         for (auto score : scores)
         {
-            MapUI->SetScore(pos, score->Team, score->TotalCoins, score->StoredCrowns);
-            pos++;
+            MapUI->SetScore(score->GlobalPosition, score->Team, score->TotalCoins, score->StoredCrowns);
         }
     }
 }
