@@ -52,5 +52,7 @@ class PARTYJUNGLE_API AMinigame3Logic : public AMinigameLogic
 	
 	const float BASE_BALL_VELOCITY = 1000;
 	bool MinigameRunning = false;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MinigameTime = BASE_MINIGAME_TIME;
 };

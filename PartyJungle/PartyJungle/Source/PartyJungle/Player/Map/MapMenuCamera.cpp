@@ -239,7 +239,7 @@ void AMapMenuCamera::HandleConfirmInput()
         return;
     }
     
-    if (IsMinigameActive || FullMapView)
+    if (IsMinigameActive || FullMapView || SpinningWheel)
         return;
 
     if (SquareShopReference)
@@ -340,6 +340,7 @@ void AMapMenuCamera::HandleConfirmInput()
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;
+            SpinningWheel = true;
 
             GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::SpinWheelEndSequence, ROULETTE_SPIN_TIME, false);
             
@@ -440,6 +441,7 @@ void AMapMenuCamera::DelayedSceneSwitch()
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     SavedMinigameName = MinigamesList[MinigameWheel->GetSpinValue()]->GameTitle;
     MinigameWheel->SwitchUiVisibility(false);
+    SpinningWheel = false;
     SwitchMainScene(false, SavedMinigameName);
 }
 

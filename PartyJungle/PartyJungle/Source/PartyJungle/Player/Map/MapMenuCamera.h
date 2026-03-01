@@ -307,6 +307,7 @@ private:
 	bool StartTurnUI = false;
 	bool BuyCrownsUI = false;
 	bool StoreCrownsUI = false;
+	bool SpinningWheel = false;
 	bool TimedActionExecuted = false;
 	bool IsMinigameActive = false;
 	bool LoadingMap = false;
