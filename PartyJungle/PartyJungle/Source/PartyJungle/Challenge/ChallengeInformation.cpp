@@ -16,7 +16,7 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
 
 void AChallengeInformation::SafeDuelChoice()
 {
-    SavedDuelTypes.Add(DuelType);
+    SavedDuelTypes.Add(DuelPercentage);
 }
 
 int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const
@@ -46,77 +46,63 @@ void AChallengeInformation::SaveDuelToRegistry(int _winner, int _coins, int _cro
     }
 }
 
-EDuelType AChallengeInformation::GetDuelType()
+float AChallengeInformation::GetDuelType()
 {
-    return DuelType;
+    return DuelPercentage;
 }
 
-EDuelType AChallengeInformation::SwitchDuelType(int _direction, int _team)
+int AChallengeInformation::SwitchDuelType(int _direction, int _team)
 {
-    int DuelTypeInt = static_cast<int>(DuelType);
-    int EnumMin = static_cast<int>(EDuelType::HALF_COINS);
-    int EnumMax = static_cast<int>(EDuelType::RESIGN);
+    int NewDuelPercentage = DuelPercentage + (_direction * 10);
+    NewDuelPercentage = FMath::Clamp(NewDuelPercentage, MIN_PERCENTAGE, MAX_PERCENTAGE);
 
-    DuelTypeInt += _direction;
-
-    if (!Minions[_team] || DuelTypeInt > EnumMax || DuelTypeInt < EnumMin)
-        return DuelType;
-
-    EDuelType duelType = static_cast<EDuelType>(DuelTypeInt);
+    if (!Minions[_team])
+        return DuelPercentage;
+    
     int minionCoins = Minions[_team]->GetCoins();
     int minionCrowns = Minions[_team]->GetCrowns();
-
     int minCoins = 0;
 
-    if (minionCrowns > 0)
-        duelType = EDuelType::ALL_IN_VS_ST;
+    int range = (NewDuelPercentage > MAX_PERCENTAGE / 2) ? 2 : (NewDuelPercentage > 0 ? 1 : 0);
+    if (NewDuelPercentage == 0)
+        range = 0;
 
-    switch (duelType)
+    switch (range) 
     {
-        case EDuelType::HALF_COINS:      minCoins = MIN_HALF_BET;  break;
-        case EDuelType::ALL_IN_COINS:    minCoins = MIN_FULL_BET; break;
-        case EDuelType::ALL_IN_VS_ST:    if (!CheckIfThereAreCrownsInDuel(0))
-            { if (_direction > 0) { duelType = EDuelType::RESIGN; minCoins = 0; } if (_direction < 0) { duelType = EDuelType::ALL_IN_COINS; minCoins = MIN_FULL_BET; } } else minCoins = MIN_FULL_BET;
-        case EDuelType::RESIGN:          minCoins = 0;
+        case 1:
+            minCoins = MIN_HALF_BET;
             break;
+        case 2:
+            minCoins = MIN_FULL_BET;
+            break;
+        case 0:
+            minCoins = 0;
     }
 
-    if (minCoins > 0 && (minionCoins < minCoins || (minionCoins < minCoins && duelType != EDuelType::ALL_IN_VS_ST)))
-        return DuelType;
+    if (minCoins > 0 && (minionCoins < minCoins || (minionCoins < minCoins && minionCrowns <= 0)))
+        return DuelPercentage;
 
-    DuelType = duelType;
+    DuelPercentage = NewDuelPercentage;
 
-    return DuelType;
+    return DuelPercentage;
 }
 
 
 int AChallengeInformation::GetBetCoinsQuantity(int _team)
 {
     if (!Minions[_team]) return 0;
-
-    switch (DuelType)
-    {
-    case EDuelType::ALL_IN_COINS:
-        return Minions[_team]->GetCoins();
-
-    case EDuelType::HALF_COINS:
-        return Minions[_team]->GetCoins() / 2;
-
-    case EDuelType::ALL_IN_VS_ST:
-        return Minions[_team]->GetCoins();
-    }
-
-    return 0;
+    int coins = Minions[_team]->GetCoins();
+    return (coins * DuelPercentage) / MAX_PERCENTAGE;
 }
 
-int AChallengeInformation::GetPotQuantity(bool _fullPot, int _duelSquareIndex)
+int AChallengeInformation::GetPotQuantity(int _percentage, int _duelSquareIndex)
 {
     int potQuery = 0;
 
     for (AMinion* Minion : SquaresWithDuelsInRound[_duelSquareIndex]->MinionsList)
         potQuery += Minion->GetCoins();
     
-    if (!_fullPot) potQuery /= 2;
+    potQuery = (potQuery * _percentage) / MAX_PERCENTAGE;
 
     SavedPot = potQuery;
     return potQuery;
@@ -127,17 +113,22 @@ int AChallengeInformation::GetSavedPot()
     return SavedPot;
 }
 
+void AChallengeInformation::AddSavedPot(int _quantity)
+{
+    SavedPot += _quantity;
+}
+
+void AChallengeInformation::ResetSavedPot()
+{
+    SavedPot = 0;
+}
+
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
 {
     if (!Minions[_team]) return 0;
-
-    switch (DuelType)
-    {
-    case EDuelType::ALL_IN_VS_ST:
-        return 1;
-    }
-
-    return 0;
+    int Crowns = Minions[_team]->GetCrowns();
+    
+    return Crowns;
 }
 
 bool AChallengeInformation::CheckIfThereAreCrownsInDuel(int _duelSquareIndex)
@@ -165,9 +156,9 @@ void AChallengeInformation::ResetDuels()
     SavedDuelTypes.Reset();
 }
 
-TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)
+TArray<std::pair<int, std::pair<int, int>>> AChallengeInformation::ParsePotsInfo(int _duelSquareIndex)
 {
-    TArray<std::pair<int, std::pair<int, EDuelType>>> ParsedInfo;
+    TArray<std::pair<int, std::pair<int, int>>> ParsedInfo;
 
     if (!SquaresWithDuelsInRound.IsValidIndex(_duelSquareIndex))
         return ParsedInfo;
@@ -183,7 +174,7 @@ TArray<std::pair<int, std::pair<int, EDuelType>>> AChallengeInformation::ParsePo
         if (!Minion) continue;
 
         int PlayerTeam = static_cast<int>(Minion->Team);
-        EDuelType Duel = SavedDuelTypes[index];
+        int Duel = SavedDuelTypes[index];
 
         ParsedInfo.Add(std::make_pair(index, std::make_pair(PlayerTeam, Duel)));
 

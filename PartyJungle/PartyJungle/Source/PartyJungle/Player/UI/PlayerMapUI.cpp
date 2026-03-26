@@ -37,20 +37,16 @@ int UPlayerMapUI::SpinWheel(int WheelSize)
 	return WheelValue;
 }
 
-void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, EDuelType>>> PotElements)
+void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, int>>> PotElements)
 {
 	SavedPotElements = PotElements;
-
-	const UEnum* EnumPtr = StaticEnum<EDuelType>();
 	
 	for (auto Element : SavedPotElements)
 	{
 		int position = Element.first;
 		int player = Element.second.first;
 		FString option = "ERROR!";
-
-		if (EnumPtr)
-			option = EnumPtr->GetDisplayNameTextByValue(static_cast<int64>(Element.second.second)).ToString();
+		option = FString::FromInt(Element.second.second);
 
 		InitializeRouletteElement(RouletteSize, position, player, option);
 	}

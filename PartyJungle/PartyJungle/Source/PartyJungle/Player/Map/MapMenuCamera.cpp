@@ -402,10 +402,10 @@ void AMapMenuCamera::SpinWheelEndSequence()
 {
     GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
     auto potsInfo = ChallengeInformation->ParsePotsInfo(ChosenDuelIndex);
-    EDuelType rouletteDuel = potsInfo[RouletteResult].second.second;
+    int rouletteDuel = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
 
-    if (rouletteDuel == EDuelType::RESIGN)
+    if (rouletteDuel == 0)
     {
         CloseDuelMenu(true);
         return;
@@ -413,17 +413,13 @@ void AMapMenuCamera::SpinWheelEndSequence()
 
     CloseDuelMenu(false);
         
+    ChallengeInformation->ResetSavedPot();
     for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList)
     {
         int team = static_cast<int>(minion->Team);
-            
-        int bet = (rouletteDuel == EDuelType::ALL_IN_COINS ||
-                    rouletteDuel == EDuelType::ALL_IN_VS_ST)
-                    ? minion->GetCoins()
-                    : minion->GetCoins() / 2;
-
-        bet = rouletteDuel == EDuelType::RESIGN ? 0 : bet;
-
+        int bet = (minion->GetCoins() * rouletteDuel) / 100;
+        ChallengeInformation->AddSavedPot(bet);
+        
         minion->UpdateCoins(-bet);
         MapUI->UpdateCoins(team, -bet);
     }
@@ -755,16 +751,15 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
     int Coins = ChallengeInformation->GetBetCoinsQuantity(_team);
     int Crowns = ChallengeInformation->GetBetCrownsQuantity(_team);
 
-    MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType(), _team);
+    MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType() / 100, _team);
 }
 
 void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
 {
     auto potsInfo = ChallengeInformation->ParsePotsInfo(_duelIndex);
-    EDuelType duelType = potsInfo[RouletteResult].second.second;
-    UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(duelType));
+    int duelPercentage = potsInfo[RouletteResult].second.second;
+    UE_LOG(LogTemp, Log, TEXT("Roulette duel percentage: %d"), static_cast<int32>(duelPercentage));
     
-    bool fullPot = (duelType == EDuelType::ALL_IN_COINS || duelType == EDuelType::ALL_IN_VS_ST) ? true : false;
     TArray<AMinion*> minionsList = ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList;
     CurrentMinion = minionsList[0];
     
@@ -775,10 +770,6 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
         if (static_cast<int>(Minion->Team) == _winner)
         {
             int pot = ChallengeInformation->GetSavedPot();
-            
-            if (!fullPot)
-                pot /= 2;
-            
             Minion->UpdateCoins(pot, true);
             MapUI->UpdateCoins(minionTeam, pot);
 
@@ -856,7 +847,7 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
         if(ChallengeInformation && _challengers.Num() > 0) 
         {
             ChallengeInformation->SetUpDuelInfo(_challengers);
-            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(false, ChosenDuelIndex), ChallengeInformation->GetPotQuantity(true, ChosenDuelIndex));
+            MapUI->SetupUIPots(ChallengeInformation->GetPotQuantity(10, ChosenDuelIndex), ChallengeInformation->GetPotQuantity(100, ChosenDuelIndex));
 
             for (int team = 0; team < MAX_TEAM_NUMBER; team++)
                 MapUI->SwitchChallengePlayerUIVisibility(team, false);

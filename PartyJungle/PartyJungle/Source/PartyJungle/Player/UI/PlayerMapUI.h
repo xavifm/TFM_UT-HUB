@@ -22,7 +22,7 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
     int WheelValue = 0;
 
-    TArray<std::pair<int, std::pair<int, EDuelType>>> SavedPotElements;
+    TArray<std::pair<int, std::pair<int, int>>> SavedPotElements;
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void InitializeUI(AScoreDatabase* InScores, AMapDatabase* InMapDb);
@@ -91,7 +91,7 @@ public:
     void SwitchCrownSavePlaceVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
-    void UpdateDuelScreenInfo(int _coins, int _crowns, EDuelType _duelType, int _team);
+    void UpdateDuelScreenInfo(int _coins, int _crowns, float _duelPercentage, int _team);
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void SwitchMinigameUIVisibility(bool IsVisible);
@@ -120,5 +120,5 @@ public:
     UFUNCTION()
     int SpinWheel(int WheelSize);
     
-    void InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, EDuelType>>> PotElements);
+    void InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, int>>> PotElements);
 };

@@ -30,7 +30,7 @@ public:
 	TArray<AMinion*> Minions;
 
 	UPROPERTY()
-	TArray<EDuelType> SavedDuelTypes;
+	TArray<float> SavedDuelTypes;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Active Duels")
 	TArray<ASquare*> SquaresWithDuelsInRound;
@@ -49,19 +49,25 @@ public:
 	void SaveDuelToRegistry(int _winner, int _coins, int _crowns);
 
 	UFUNCTION(BlueprintCallable)
-	EDuelType GetDuelType();
+	float GetDuelType();
 
 	UFUNCTION(BlueprintCallable)
-	EDuelType SwitchDuelType(int _direction, int _team);
+	int SwitchDuelType(int _direction, int _team);
 
 	UFUNCTION(BlueprintCallable)
 	int GetBetCoinsQuantity(int _team);
 
 	UFUNCTION(BlueprintCallable)
-	int GetPotQuantity(bool _fullPot, int _duelSquareIndex);
+	int GetPotQuantity(int _percentage, int _duelSquareIndex);
 
 	UFUNCTION()
 	int GetSavedPot();
+	
+	UFUNCTION()
+	void AddSavedPot(int _quantity);
+	
+	UFUNCTION()
+	void ResetSavedPot();
 
 	UFUNCTION(BlueprintCallable)
 	int GetBetCrownsQuantity(int _team);
@@ -72,13 +78,17 @@ public:
 	UFUNCTION()
 	void ResetDuels();
 	
-	TArray<std::pair<int, std::pair<int, EDuelType>>> ParsePotsInfo(int _duelSquareIndex);
+	TArray<std::pair<int, std::pair<int, int>>> ParsePotsInfo(int _duelSquareIndex);
 
 private:
 	EDuelType DuelType;
+	int DuelPercentage;
 
 	int SavedPot = 0;
 
+	const int MIN_PERCENTAGE = 0;
+	const int MAX_PERCENTAGE = 100;
+	
 	const float MIN_HALF_BET = 5;
 	const float MIN_FULL_BET = 10;
 };
