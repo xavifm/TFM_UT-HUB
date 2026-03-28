@@ -412,13 +412,14 @@ void AMapMenuCamera::SpinWheelEndSequence()
     }
 
     CloseDuelMenu(false);
-        
-    ChallengeInformation->ResetSavedPot();
-    for (AMinion* minion : ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList)
+
+    TArray<AMinion*> minions = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList;
+    ChallengeInformation->UpdateCurrentPot(minions, rouletteDuel);
+
+    for (AMinion* minion : minions)
     {
         int team = static_cast<int>(minion->Team);
         int bet = (minion->GetCoins() * rouletteDuel) / 100;
-        ChallengeInformation->AddSavedPot(bet);
         
         minion->UpdateCoins(-bet);
         MapUI->UpdateCoins(team, -bet);
@@ -751,7 +752,11 @@ void AMapMenuCamera::RefreshChallengeInfo(int _direction, int _team)
     int Coins = ChallengeInformation->GetBetCoinsQuantity(_team);
     int Crowns = ChallengeInformation->GetBetCrownsQuantity(_team);
 
-    MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType() / 100, _team);
+    TArray<AMinion*> minions = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList;
+    ChallengeInformation->UpdateCurrentPot(minions, ChallengeInformation->GetDuelType());
+    int pot = ChallengeInformation->GetSavedPot();
+    
+    MapUI->UpdateDuelScreenInfo(Coins, Crowns, ChallengeInformation->GetDuelType() / 100, _team, pot);
 }
 
 void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)

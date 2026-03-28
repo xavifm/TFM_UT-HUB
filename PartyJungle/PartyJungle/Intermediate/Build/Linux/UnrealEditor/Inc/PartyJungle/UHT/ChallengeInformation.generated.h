@@ -23,6 +23,7 @@ class AMinion;
 	DECLARE_FUNCTION(execResetDuels); \
 	DECLARE_FUNCTION(execCheckIfThereAreCrownsInDuel); \
 	DECLARE_FUNCTION(execGetBetCrownsQuantity); \
+	DECLARE_FUNCTION(execUpdateCurrentPot); \
 	DECLARE_FUNCTION(execResetSavedPot); \
 	DECLARE_FUNCTION(execAddSavedPot); \
 	DECLARE_FUNCTION(execGetSavedPot); \

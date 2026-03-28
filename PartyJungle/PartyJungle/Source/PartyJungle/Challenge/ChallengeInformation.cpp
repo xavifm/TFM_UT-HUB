@@ -17,6 +17,7 @@ void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)
 void AChallengeInformation::SafeDuelChoice()
 {
     SavedDuelTypes.Add(DuelPercentage);
+    DuelPercentage = 0;
 }
 
 int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const
@@ -121,6 +122,16 @@ void AChallengeInformation::AddSavedPot(int _quantity)
 void AChallengeInformation::ResetSavedPot()
 {
     SavedPot = 0;
+}
+
+void AChallengeInformation::UpdateCurrentPot(TArray<AMinion*> _minions, float _percentage)
+{
+    ResetSavedPot();
+    for (AMinion* minion : _minions)
+    {
+        int bet = (minion->GetCoins() * _percentage) / 100;
+        AddSavedPot(bet);
+    }
 }
 
 int AChallengeInformation::GetBetCrownsQuantity(int _team)

@@ -68,6 +68,9 @@ public:
 	
 	UFUNCTION()
 	void ResetSavedPot();
+	
+	UFUNCTION()
+	void UpdateCurrentPot(TArray<AMinion*> _minions, float _percentage);
 
 	UFUNCTION(BlueprintCallable)
 	int GetBetCrownsQuantity(int _team);
