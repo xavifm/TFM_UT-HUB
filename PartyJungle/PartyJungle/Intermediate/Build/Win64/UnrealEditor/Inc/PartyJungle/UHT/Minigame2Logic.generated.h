@@ -17,13 +17,13 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AMinigame2Logic **********************************************************
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execCheckIfAllVictimsAreDeadToStopMinigame);
 
 
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinigame2Logic_NoRegister();
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMinigame2Logic(); \
 	friend struct Z_Construct_UClass_AMinigame2Logic_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AMinigame2Logic)
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMinigame2Logic(AMinigame2Logic&&) = delete; \
 	AMinigame2Logic(const AMinigame2Logic&) = delete; \
@@ -44,13 +44,13 @@ public: \
 	NO_API virtual ~AMinigame2Logic();
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_12_PROLOG
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_GENERATED_BODY \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_13_PROLOG
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_Minigame2Logic_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -16,4 +16,3 @@
 #include "C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/TestItem.gen.cpp"
 #include "C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/TransactionDto.gen.cpp"
 #include "C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/VictimCharacter.gen.cpp"
-#include "C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Win64/UnrealEditor/Inc/PartyJungle/UHT/WallItem.gen.cpp"
