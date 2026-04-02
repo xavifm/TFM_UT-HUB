@@ -59,6 +59,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	int GetPotQuantity(int _percentage, int _duelSquareIndex);
+	
+	UFUNCTION(BlueprintCallable)
+	int GetCalculatedPot(TArray<AMinion*> _minions, float _percentage);
 
 	UFUNCTION()
 	int GetSavedPot();

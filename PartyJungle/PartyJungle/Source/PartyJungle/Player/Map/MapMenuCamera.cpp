@@ -336,7 +336,7 @@ void AMapMenuCamera::HandleConfirmInput()
         if (LastTeam == CurrentMinionTeam)
         {
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num();
-            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(ChosenDuelIndex));
+            MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList, ChallengeInformation->ParsePotsInfo(ChosenDuelIndex), ChallengeInformation);
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;

@@ -120,5 +120,5 @@ public:
     UFUNCTION()
     int SpinWheel(int WheelSize);
     
-    void InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, int>>> PotElements);
+    void InitializePotRoulette(TArray<AMinion*> _minions, TArray<std::pair<int, std::pair<int, int>>> PotElements, AChallengeInformation* _challenge);
 };

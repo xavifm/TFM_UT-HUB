@@ -134,6 +134,18 @@ void AChallengeInformation::UpdateCurrentPot(TArray<AMinion*> _minions, float _p
     }
 }
 
+int AChallengeInformation::GetCalculatedPot(TArray<AMinion*> _minions, float _percentage)
+{
+    int finalPot = 0;
+    for (AMinion* minion : _minions)
+    {
+        int bet = (minion->GetCoins() * _percentage) / 100;
+        finalPot += bet;
+    }
+    
+    return finalPot;
+}
+
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
 {
     if (!Minions[_team]) return 0;

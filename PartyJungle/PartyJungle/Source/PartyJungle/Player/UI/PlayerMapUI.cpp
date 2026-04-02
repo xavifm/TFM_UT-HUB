@@ -37,23 +37,24 @@ int UPlayerMapUI::SpinWheel(int WheelSize)
 	return WheelValue;
 }
 
-void UPlayerMapUI::InitializePotRoulette(int RouletteSize, TArray<std::pair<int, std::pair<int, int>>> PotElements)
+void UPlayerMapUI::InitializePotRoulette(TArray<AMinion*> _minions, TArray<std::pair<int, std::pair<int, int>>> PotElements, AChallengeInformation* _challenge)
 {
 	SavedPotElements = PotElements;
+	int rouletteSize = _minions.Num();
 	
 	for (auto Element : SavedPotElements)
 	{
 		int position = Element.first;
 		int player = Element.second.first;
 		FString option = "ERROR!";
-		option = FString::FromInt(Element.second.second);
+		option = FString::FromInt(_challenge->GetCalculatedPot(_minions, Element.second.second));
 
-		InitializeRouletteElement(RouletteSize, position, player, option);
+		InitializeRouletteElement(rouletteSize, position, player, option);
 	}
 
 
 	for (int index = 0 ; index < MAX_LOCAL_PLAYERS; index++)
 		SwitchChallengePlayerUIVisibility(index, false);
 	
-	SwitchRouletteVisibility(RouletteSize, true);
+	SwitchRouletteVisibility(rouletteSize, true);
 }
