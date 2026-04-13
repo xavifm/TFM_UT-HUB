@@ -10,7 +10,6 @@ class APlayersControllerBase;
 class ACameraControllerBase;
 class AGameLoopControllerBase;
 class UManagerGameInstance;
-
 enum class EGameStates : uint8;
 
 
@@ -40,7 +39,7 @@ public:
 	 * @return Id of the Game State.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
-	const EGameStates GetGameStateId() const { return m_GameStateId; }
+	const FString& GetGameStateId() const { return m_GameStateId; }
 	
 	/**
 	 * Returns True if the conditions to enter a state are accomplished. True by Default.
@@ -55,6 +54,20 @@ public:
 	 */
 	UFUNCTION(BlueprintNativeEvent, CallInEditor, Category = "StateData_Functions")
 	bool CanExitState() const;
+
+	/**
+	 * Returns True if all the controllers can be entered.
+	 * @return True if all the controllers can be entered.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
+	bool CanEnterControllers() const;
+	
+	/**
+	 * Returns True if all the controllers can be exited.
+	 * @return True if all the controllers can be exited.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "StateData_Functions")
+	bool CanExitControllers() const;
 	
 	/**
 	 * Gets a reference to the InputController.
@@ -81,13 +94,13 @@ protected:
 	 * Implementation for CanEnterState from code. Ignored if the StateData has a BP implementation.
 	 * @return True if the conditions to enter a state are accomplished.
 	 */
-	virtual bool CanEnterState_Implementation() const { return true; };
+	virtual bool CanEnterState_Implementation() const;
 	
 	/**
 	 * Implementation for CanExitState from code. Ignored if the StateData has a BP implementation.
 	 * @return True if the conditions to exit a state are accomplished.
 	 */
-	virtual bool CanExitState_Implementation() const { return true; };
+	virtual bool CanExitState_Implementation() const;
 	
 private:
 	/** 
@@ -110,7 +123,7 @@ private:
 	
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
-	EGameStates m_GameStateId; //!< Enum used as an id for each GameState type.
+	FString m_GameStateId; //!< Enum used as an id for each GameState type.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "StateData")
 	AGameLoopControllerBase* m_GameLoopController; //!< Pointer to the state's GameLoop Controller.

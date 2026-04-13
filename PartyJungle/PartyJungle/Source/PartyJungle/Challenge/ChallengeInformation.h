@@ -6,15 +6,11 @@
 #include "ChallengeDatabase.h"
 #include "ChallengeInformation.generated.h"
 
-UENUM(BlueprintType)
-enum class EDuelType : uint8
-{
-	HALF_COINS UMETA(DisplayName = "Half Coins"),
-	ALL_IN_COINS UMETA(DisplayName = "All In Coins"),
-	ALL_IN_VS_ST UMETA(DisplayName = "All In Vs St"),
-	RESIGN UMETA(DisplayName = "Escape Vote")
-};
+class ASquare;
+enum class EDuelType : uint8;
 
+
+// ToDo Capy: La clase ha sido sustituida por el DuelManager. Quitar durante el refactor, una vez ya no se use en ning´n lado.
 UCLASS()
 class PARTYJUNGLE_API AChallengeInformation : public AActor
 {

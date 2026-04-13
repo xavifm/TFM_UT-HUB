@@ -1,113 +1,98 @@
 #include "./AirCannon.h"
-#include "TimerManager.h"
-#include "EnhancedInputSubsystems.h"
-#include "EnhancedInputComponent.h"
-#include <Kismet/GameplayStatics.h>
+
+#include <PartyJungle/Controllers/GameLoopControllers/GameLoopControllerBase.h>
+#include <PartyJungle/Controllers/PlayersControllers/PlayersControllerBase.h>
+#include <PartyJungle/Controllers/PlayersControllers/PlayerInputsControllers/PlayerInputsControllerBase.h>
+#include <PartyJungle/Controllers/PlayersControllers/ControllerAuxs/PlayerData.h>
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/Managers/InputManager.h>
+#include <PartyJungle/Managers/StateManager.h>
+
+#include <TimerManager.h>
+
 
 AAirCannon::AAirCannon()
 {
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 void AAirCannon::BeginPlay()
 {
     Super::BeginPlay();
 
-    APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
-    if (PC)
-    {
-        UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer());
-        if (Subsystem)
-        {
-            if (!Subsystem->HasMappingContext(InputMappingContext))
-            {
-                Subsystem->AddMappingContext(InputMappingContext, 0);
-            }
-        }
-    }
-
-    if(ProjectileReference)
-        ProjectileReference->SetActorHiddenInGame(true);
+    if(m_ProjectileReference)
+        m_ProjectileReference->SetActorHiddenInGame(true);
 }
 
-
-void AAirCannon::Tick(float DeltaTime)
+void AAirCannon::Tick(float a_DeltaTime)
 {
-    Super::Tick(DeltaTime);
+    Super::Tick(a_DeltaTime);
 
-    float pushStrengh = CalculateCurrentPushStrength();
-    SetTickleStrengthCannon(pushStrengh);
+    float PushStrengh {CalculateCurrentPushStrength()};
+    SetTickleStrengthCannon(PushStrengh);
 
-    if (!CannonCharging && !CannonFinished && ProjectilePhysics && MinigameLogic)
+    if (!m_CannonCharging && !m_CannonFinished && m_ProjectilePhysics && m_GameLoopCtr)
     {
-        if(ProjectileReference->GetActorLocation().Z >= MAX_MINIGAME_HEIGHT) 
+        if(m_ProjectileReference->GetActorLocation().Z >= MAX_MINIGAME_HEIGHT) 
         {
-            FVector downVector = FVector(0, 0, -20);
-            ProjectilePhysics->SetPhysicsLinearVelocity(downVector);
-            MinigameLogic->SetTeamScore(CannonTeam, -10);
+            FVector DownVector {FVector(0, 0, -20)};
+            m_ProjectilePhysics->SetPhysicsLinearVelocity(DownVector);
+            m_GameLoopCtr->SetTeamScore(m_TeamId, -10);
         }
 
-        if (ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
+        if (m_ProjectilePhysics->GetPhysicsLinearVelocity().Z < 0)
         {
-            CannonFinished = true;
-            MinigameLogic->SetTeamReady(CannonTeam);
+            m_CannonFinished = true;
+            m_GameLoopCtr->SetTeamReady(m_TeamId);
         }
     }
 }
 
-void AAirCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AAirCannon::ResetAirCannon()
 {
-    Super::SetupPlayerInputComponent(PlayerInputComponent);
+    m_CannonFinished = false;
+    m_CannonCharging = false;
+    m_UpForce = 0;
+    
+    FVector NewPosition {GetActorLocation() + FVector(0, 0, BULLET_RESPAWN_OFFSET)};
+    m_ProjectileReference->SetActorLocation(NewPosition);
 
-    if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
-    {
-        EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &AAirCannon::IncrementUpForce);
-        EnhancedInput->bBlockInput = false;
-    }
-}
+    m_ProjectileReference->SetActorTickEnabled(false);
 
-void AAirCannon::ResetProjectilePosition()
-{
-    FVector newPosition = GetActorLocation() + FVector(0, 0, BULLET_RESPAWN_OFFSET);
-    ProjectileReference->SetActorLocation(newPosition);
+    UPrimitiveComponent* RootComp {Cast<UPrimitiveComponent>(m_ProjectileReference->GetRootComponent())};
+    if (!RootComp) return;
 
-    ProjectileReference->SetActorTickEnabled(false);
-
-    UPrimitiveComponent* rootComp = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
-    if (!rootComp) return;
-
-    rootComp->SetSimulatePhysics(false);
-    rootComp->SetAllPhysicsLinearVelocity(FVector::ZeroVector);
-    rootComp->SetAllPhysicsAngularVelocityInDegrees(FVector::ZeroVector);
+    RootComp->SetSimulatePhysics(false);
+    RootComp->SetAllPhysicsLinearVelocity(FVector::ZeroVector);
+    RootComp->SetAllPhysicsAngularVelocityInDegrees(FVector::ZeroVector);
 }
 
 void AAirCannon::IncrementUpForce()
 {
-    if (!CannonCharging || CannonFinished)
+    if (!m_CannonCharging || m_CannonFinished)
         return;
 
-    UpForce++;
-    PushTimestamps.Add(GetWorld()->GetTimeSeconds());
+    m_UpForce++;
+    m_PushTimestamps.Add(GetWorld()->GetTimeSeconds());
 
-    RamrodPressed = true;
+    m_RamrodPressed = true;
 
 
-    if (AudioManager)
-        AudioManager->PlaySFX(CHARGE_FORCE_CANNON_SFX, 0.5f, true, CannonTeam);
+    if (m_AudioManager)
+        m_AudioManager->PlaySFX(CHARGE_FORCE_CANNON_SFX, 0.5f, true, m_TeamId);
 }
 
 
 float AAirCannon::CalculateCurrentPushStrength()
 {
-    float CurrentTime = GetWorld()->GetTimeSeconds();
-    float Interval = FORCE_CHECK_INTERVAL;
+    float CurrentTime {static_cast<float>(GetWorld()->GetTimeSeconds())};
+    float Interval {FORCE_CHECK_INTERVAL};
 
-    PushTimestamps.RemoveAll([CurrentTime, Interval](float Time) {
+    m_PushTimestamps.RemoveAll([CurrentTime, Interval](float Time) {
         return CurrentTime - Time > Interval;
         });
 
-    float Strength = FMath::Clamp((float)PushTimestamps.Num() / (float)MAX_PUSHES_PER_INTERVAL, 0.0f, 1.0f);
+    float Strength {FMath::Clamp((float)m_PushTimestamps.Num() / (float)MAX_PUSHES_PER_INTERVAL, 0.0f, 1.0f)};
 
     return Strength;
 }
@@ -115,63 +100,59 @@ float AAirCannon::CalculateCurrentPushStrength()
 
 void AAirCannon::ShootCannon()
 {
-    MinigameLogic->SetTeamScore(CannonTeam, UpForce);
+    m_GameLoopCtr->SetTeamScore(m_TeamId, m_UpForce);
 
-    if (UpForce <= 5)
+    if (m_UpForce <= 5)
     {
-        MinigameLogic->SetTeamReady(CannonTeam);
-        //AudioManager->PlaySFX("FumbleSFX", 0.3f, true);
+        m_GameLoopCtr->SetTeamReady(m_TeamId);
     }
-    else if (AudioManager)
-        AudioManager->PlaySFX(SHOOT_CANNON_SFX, 0.3f, true);
+    else if (m_AudioManager)
+        m_AudioManager->PlaySFX(SHOOT_CANNON_SFX, 0.3f, true);
 
-    if (ProjectileReference)
+    if (m_ProjectileReference)
     {
-        ProjectileReference->SetActorHiddenInGame(false);
-        ProjectilePhysics = Cast<UPrimitiveComponent>(ProjectileReference->GetRootComponent());
-        if (ProjectilePhysics)
+        m_ProjectileReference->SetActorHiddenInGame(false);
+        m_ProjectilePhysics = Cast<UPrimitiveComponent>(m_ProjectileReference->GetRootComponent());
+        if (m_ProjectilePhysics)
         {
-            ProjectilePhysics->SetSimulatePhysics(true);
-            FVector LaunchForce = FVector(0.0f, 0.0f, UpForce * AIR_CANNON_MULIPLIER);
-            ProjectilePhysics->AddImpulse(LaunchForce, NAME_None, true);
+            m_ProjectilePhysics->SetSimulatePhysics(true);
+            FVector LaunchForce {FVector(0.0f, 0.0f, m_UpForce * AIR_CANNON_MULIPLIER)};
+            m_ProjectilePhysics->AddImpulse(LaunchForce, NAME_None, true);
         }
     }
 }
 
-void AAirCannon::StartCannonCharge(float _time)
+void AAirCannon::StartCannonCharge(float a_Time)
 {
-    if (!MinionReference)
-        return;
+    m_CannonCharging = m_IsCannonCharging = true;
+    m_CannonFinished = false;
 
-    CannonCharging = true;
+    if(m_AudioManager)
+        m_AudioManager->PlaySFX(CHARGE_CANNON_SFX, 0.5f, true);
 
-    if(AudioManager)
-        AudioManager->PlaySFX(CHARGE_CANNON_SFX, 0.5f, true);
-
-    IsCannonCharging = true;
-
-    int parsedCannonTeam = static_cast<int32>(MinionReference->Team);
-    PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), parsedCannonTeam);
-    if (PlayerController) 
+    auto PlayersCtr {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
+    auto PlayersInTeam {PlayersCtr->GetPlayersByTeamId(m_TeamId)};
+    for (auto PlayerId : PlayersInTeam)
     {
-        CannonTeam = parsedCannonTeam;
-        PlayerController->bAutoManageActiveCameraTarget = false;
-        PlayerController->Possess(this);
+        PlayersCtr->GetPlayerById(PlayerId).GetInputsController()->GetInputKeyEvent(EInputKeys::Button_Right, ETriggerEvents::Pressed)->AddUniqueDynamic(this, &AAirCannon::OnButtonRight_Pressed);
     }
 
-    GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, _time]() {
+    GetWorld()->GetTimerManager().SetTimer(m_TimerHandle, [this, a_Time]() {
         FinishCannonCharge();
-    }, _time, false);
+    }, a_Time, false);
 }
 
 void AAirCannon::FinishCannonCharge()
 {
-    GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
-    CannonCharging = false;
-
-    IsCannonCharging = false;
+    GetWorld()->GetTimerManager().ClearTimer(m_TimerHandle);
+    m_CannonCharging = false;
 
     ShootCannon();
+}
+
+void AAirCannon::OnButtonRight_Pressed(EInputKeys a_InputKey, ETriggerEvents a_InputEvent, int a_PlayerId)
+{
+    IncrementUpForce();
 }
 
 

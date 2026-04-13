@@ -1,36 +1,16 @@
 ﻿#pragma once
 
-#include <CoreMinimal.h>
-#include <PartyJungle/Controllers/ControllerAuxs/InputPair.h>
-#include "PartyJungle/Controllers/ControllerBase.h"
+#include <PartyJungle/Controllers/ControllerBase.h>
+#include <PartyJungle/Controllers/PlayersControllers/ControllerAuxs/InputKeyData.h>
+#include <PartyJungle/Controllers/PlayersControllers/ControllerAuxs/InputAxisData.h>
 
-#include "PlayerInputs.generated.h"
+#include <CoreMinimal.h>
+
+#include "PlayerInputsControllerBase.generated.h"
 
 enum class EInputAxes : uint8;
 enum class EInputKeys : uint8;
 struct FPlayerData;
-
-
-/**
- * Event used for Input Key Events.
- */
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(
-	FEvent_PlayerInputKey, // Name of the structure that will be generated
-	// Parameters of the delegate (Type, Name):
-	EInputKeys, a_InputKey, // Key pressed.
-	ETriggerEvents, a_InputEvent, // Input event.
-	int, a_PlayerId // Id of the Player who has triggered the event.
-);
-
-/**
- * Event used for Input Axis Events.
- */
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
-  FEvent_PlayerInputAxis, // Name of the structure that will be generated
-  // Parameters of the delegate (Type, Name):
-  float, a_Axis, // Value of the received axis.
-  int, a_PlayerId // Id of the Player who has triggered the event.
-);
 
 
 /**
@@ -69,14 +49,33 @@ public:
 	 * @param a_TriggerEvent Selected Trigger Event.
 	 * @return Pointer to the selected Input Key Event.
 	 */
-	FEvent_PlayerInputKey* const GetInputEvent(EInputKeys a_InputKey, ETriggerEvents a_TriggerEvent);
+	FEvent_PlayerInputKey* const GetInputKeyEvent(EInputKeys a_InputKey, ETriggerEvents a_TriggerEvent);
 
 	/**
 	 * Gets the Input Axis Event from the selected Input Axis.
 	 * @param a_InputAxis Selected Input Axis.
 	 * @return Pointer to the selected Input Axis Event.
 	 */
-	FEvent_PlayerInputAxis* const GetInputEvent(EInputAxes a_InputAxis);
+	FEvent_PlayerInputAxis* const GetInputAxisEvent(EInputAxes a_InputAxis);
+	
+	/**
+	 * Gets the Input Axis Event from the selected Input Axis.
+	 * @param a_InputAxis Selected Input Axis.
+	 * @return Pointer to the selected Input Axis Event.
+	 */
+	FEvent_PlayerInputAxis* const GetInputAxisReleasedEvent(EInputAxes a_InputAxis);
+
+	/**
+	 * Sets the associated Player Inputs enabled.
+	 * @param a_Enabled Enables the associated Player Inputs.
+	 */
+	void SetInputsEnabled(bool a_Enabled) { m_PlayerInputsEnabled = a_Enabled; }
+
+	/**
+	 * Gets if the associated Player Inputs enabled.
+	 * @return True if the associated Player Inputs enabled.
+	 */
+	bool GetInputsEnabled() const { return m_PlayerInputsEnabled; }
 	
 protected:
 	/**
@@ -116,19 +115,23 @@ protected:
 	 * @param a_Axis Value of the selected Axis.
 	 * @return True if the selected Axis is valid.
 	 */
-	bool IsValidAxis(float a_Axis) { return (FMath::Abs(a_Axis) > 0.1f); }
+	bool IsValidAxis(float a_Axis);
+	
+	void OnAxisInput(EInputAxes a_AxisId, float a_Axis);
 	
 	
 	UPROPERTY() float AXIS_THRESHOLD {0.1f}; //!< Threshold for an Axis to be considered valid.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "PlayerInputs")
-	TArray<FInputPair> m_KeyMap; //!< All the combinations of Input Keys and Trigger Events needed by the Player Inputs Controller in the current State.
+	TArray<FInputKeyData> m_KeyMap; //!< All the combinations of Input Keys and Trigger Events needed by the Player Inputs Controller in the current State.
 	
 	UPROPERTY()
 	TMap<FString, FEvent_PlayerInputKey> m_KeyEvents; //!< Map with all the Input Key Events active in the current state, and their Ids.
 	
 	UPROPERTY()
-	TMap<uint8, FEvent_PlayerInputAxis> m_AxisEvents; //!< Map with all the Input Axis Events active in the current state, and their Ids.
+	TMap<uint8, FInputAxisData> m_AxisEvents; //!< Map with all the Input Axis Events active in the current state, and their Ids.
 	
 	FPlayerData* m_PlayerData {nullptr}; //!< Pointer to the Player Data associated to this Player Inputs Controller.
+	
+	bool m_PlayerInputsEnabled {false};
 };

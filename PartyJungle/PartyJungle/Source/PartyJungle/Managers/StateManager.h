@@ -1,11 +1,9 @@
 ﻿#pragma once
 
-#ifndef _INCLUDE_GameStateData_
-	#define _INCLUDE_GameStateData_
+#ifndef include_GameStateData
+	#define include_GameStateData
 	#include <PartyJungle/GameStates/GameStateData.h>
 #endif
-
-#include <functional>
 
 #include "StateManager.generated.h"
 
@@ -14,15 +12,15 @@ class AControllerBase;
 enum class EGameControllers : uint8;
 
 
-// ToDo Capy: Change for Unreal Event.
-class Event { public: void Broadcast(){}; bool Subscribe(bool, std::function<void>* a_Function) { return true; }; };
-
-
 /**
- * Enum with all the possible Game States.
+ * Event triggered when the current GameState is changed.
  */
-UENUM(BlueprintType)
-enum class EGameStates : uint8 { None, MainMenu, GameMenu, MainGame, MiniGame_1, Credits };
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(
+	FEvent_GameStateChanged, // Name of the structure that will be generated
+	// Parameters of the delegate (Type, Name):
+	AGameStateData* const, a_PreviousState, // Id of the previous GameState.
+	AGameStateData* const, a_CurrentState // Id of the current GameState.
+);
 
 
 /**
@@ -44,13 +42,27 @@ public:
 	 */
 	void BeginPlay() override;
 	
+	/** 
+	 * Function called every frame on this Actor. Override this function to implement custom logic to be executed every frame.
+	 * @param a_DeltaTime Game time elapsed during last frame modified by the time dilation
+	 */
+	virtual void Tick(float a_DeltaTime) override;
+	
 	/**
 	 * Changes to the indicated state.
-	 * @param a_State Indicated state id.
+	 * @param a_TargetState Indicated state id.
 	 * @return True if the state was changed successfully.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "GameState_Functions")
-	bool ChangeState(EGameStates a_State);
+	bool ChangeState(const FString& a_TargetState);
+
+	/**
+	* Changes to the indicated state.
+	 * @param a_TargetState Indicated state id.
+	 * @param a_Context Pointer to a context information.
+	 * @return True if the state was changed successfully.
+	 */
+	bool ChangeState(const FString& a_TargetState, void* a_Context);
 	
 	/**
 	 * Adds a new State to the StateManager.
@@ -58,7 +70,7 @@ public:
 	 * @param a_StateData Pointer to the GameState Data.
 	 * @return True if the state was successfully added.
 	 */
-	bool AddState(EGameStates a_State, AGameStateData* const a_StateData);
+	bool AddState(const FString& a_State, AGameStateData* const a_StateData);
 	
 	/**
 	 * Gets the selected controller.
@@ -78,35 +90,41 @@ public:
 	 * Gets the default GameState Id.
 	 * @return Default GameState Id.
 	 */
-	static EGameStates GetDefaultGameState() { return EGameStates::MainMenu; };
+	const FString& GetGameStateId();
 	
 	/**
-	 * Subscribes a function to the StateChanged Event.
-	 * @param a_Subscribe True to subscribe. False to unsubscribe.
-	 * @param a_Function Function to subscribe to the Event.
-	 * @return True if the function was subscribed properly.
+	 * Gets the default GameState Id.
+	 * @return Default GameState Id.
 	 */
-	static bool SubscribeToEventStateChanged(bool a_Subscribe, std::function<void>* a_Function) { return m_EventStateChanged.Subscribe(a_Subscribe, a_Function); }
+	const FString& GetDefaultGameStateId() { return m_DefaultState; };
+
+	/**
+	 * Gets the 'GameStateChanged' event.
+	 * @return Reference to the 'GameStateChanged' event.
+	 */
+	FEvent_GameStateChanged& GetEvent_GameStateChanged() { return m_EventStateChanged; }
 
 private:
 	/**
 	 * Triggers the Start() function for all controllers of the passed game state.
-	 * @param a_GameState GameStateData that contains all the controllers to start.
+	 * @param a_PreviousGameState GameStateData that contains all the controllers to start.
+	 * @param a_Context Pointer to a context information.
 	 */
-	void StartCurrentControllers(AGameStateData* a_PreviousGameState);
+	void StartCurrentControllers(AGameStateData* a_PreviousGameState, void* a_Context);
 	
 	/**
 	* Triggers the Exit() function for all current controllers.
-	* @param a_GameState GameStateData that contains the controllers of the next game state.
+	* @param a_NextGameState GameStateData that contains the controllers of the next game state.
 	 */
 	void ExitCurrentControllers(AGameStateData* a_NextGameState);
 
 	/**
 	 * Start the passed controller.
-	 * @param a_TargetGameState Game state of the target controller.
+	 * @param a_PreviousGameState Game state of the target controller.
 	 * @param a_ControllerId Target controller id.
+	 * @param a_Context Pointer to a context information.
 	 */
-	void StartController(AGameStateData* const a_PreviousGameState, EGameControllers a_ControllerId);
+	void StartController(AGameStateData* const a_PreviousGameState, EGameControllers a_ControllerId, void* a_Context);
 	
 	/**
 	 * Exit the passed controller.
@@ -123,12 +141,16 @@ private:
 	bool IsValidGameState(AGameStateData* const a_GameState);
 	
 	
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "StateManager")
+	FString m_DefaultState; //!< Default GameState of the StateManager.
+	
+private:
 	UPROPERTY()
 	TObjectPtr<AGameStateData> m_CurrentState {nullptr}; //!< Pointer to the current state data.
 	
 	UPROPERTY()
-	TMap<uint8, AGameStateData*> m_GameStates; //!< Map with every type of AStateData, identified by a unique GameState id.
+	TMap<FString, AGameStateData*> m_GameStates; //!< Map with every type of AStateData, identified by a unique GameState id.
 	
-	static Event m_EventStateChanged; //!< Event played when the GameState change has finished.
-	
+	FEvent_GameStateChanged m_EventStateChanged; //!< Event triggered when the GameState is changed.
 };

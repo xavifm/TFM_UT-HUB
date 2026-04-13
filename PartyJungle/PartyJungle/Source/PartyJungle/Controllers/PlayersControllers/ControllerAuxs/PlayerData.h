@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <PartyJungle/Player/Minion/Minion.h>
+
 #include <CoreMinimal.h>
 
 #include "PlayerData.generated.h"
@@ -40,6 +41,18 @@ public:
 	 * @return Players Id.
 	 */
 	int GetPlayerId() const { return m_PlayerId; }
+	
+	/**
+	 * Gets this players Team Id.
+	 * @return Team Id.
+	 */
+	int GetTeamId() const { return m_TeamId; }
+
+	/**
+	 * Gets this players Team Id.
+	 * @param a_TeamId Team Id.
+	 */
+	void SetTeamId(int a_TeamId);
 
 	/**
 	 * Gets this Players Input Controller.
@@ -54,6 +67,9 @@ public:
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "PlayerData")
 	UBlueprint* m_PlayerInputsControllerBP; //!< Pointer to the Player Inputs Blueprint.
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "PlayerData")
+	int m_TeamId {-1}; //!< Id of this players Team.
 	
 private:
 	int m_PlayerId {-1}; //!< Id of this Player.

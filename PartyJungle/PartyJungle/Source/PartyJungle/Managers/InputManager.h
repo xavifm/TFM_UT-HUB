@@ -1,11 +1,9 @@
 ﻿#pragma once
 
+#include <Kismet/GameplayStatics.h>
+#include <CoreMinimal.h>
+#include <Modules/ModuleManager.h>
 #include <string>
-#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
-#include "Kismet/GameplayStatics.h"
-#include "CoreMinimal.h"
-#include "InputActionValue.h"
-#include "Modules/ModuleManager.h"
 
 #include "InputManager.generated.h"
 
@@ -110,6 +108,14 @@ public:
 	 * @return Pointer to the Player's Input Axis Event.
 	 */
 	FEvent_PlayerInputAxis* const GetPlayerAxisEvent(int a_PlayerId, EInputAxes a_InputAxis);
+	
+	/**
+	 * Gets the indicated Input Axis Event from the chosen Player.
+	 * @param a_PlayerId Chosen Player Id.
+	 * @param a_InputAxis Id of the chosen Input Axis.
+	 * @return Pointer to the Player's Input Axis Event.
+	 */
+	FEvent_PlayerInputAxis* const GetPlayerAxisReleasedEvent(int a_PlayerId, EInputAxes a_InputAxis);
 
 	/**
 	 * Binds the chosen Input Key to the indicated Function for all Players.

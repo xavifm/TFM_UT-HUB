@@ -1,18 +1,11 @@
 ﻿#include "InputManager.h"
 
-#include <string>
-
-#include "EnhancedInputComponent.h"
-#include "EnhancedInputSubsystems.h"
-#include "InputMappingContext.h"
 #include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
-#include "Kismet/GameplayStatics.h"
-#include "PartyJungle/Controllers/PlayersControllerBase.h"
+#include <PartyJungle/Controllers/PlayersControllers/PlayersControllerBase.h>
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
 #include <PartyJungle/Managers/StateManager.h>
-#include <PartyJungle/Controllers/ControllerAuxs/PlayerInputs.h>
-
-#include "PartyJungle/GameStates/GameStateData.h"
+#include <PartyJungle/Controllers/PlayersControllers/PlayerInputsControllers/PlayerInputsControllerBase.h>
+#include <PartyJungle/GameStates/GameStateData.h>
 
 
 void AInputManager::BeginPlay()
@@ -161,7 +154,7 @@ FEvent_PlayerInputKey* const AInputManager::GetPlayerKeyEvent(int a_PlayerId, EI
 	auto PlayersController {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
 	auto PlayerInputsController {PlayersController->GetPlayerById(a_PlayerId).GetInputsController()};
 		
-	return PlayerInputsController->GetInputEvent(a_InputKey, a_TriggerEvent);
+	return PlayerInputsController->GetInputKeyEvent(a_InputKey, a_TriggerEvent);
 }
 
 FEvent_PlayerInputAxis* const AInputManager::GetPlayerAxisEvent(int a_PlayerId, EInputAxes a_InputAxis)
@@ -169,7 +162,15 @@ FEvent_PlayerInputAxis* const AInputManager::GetPlayerAxisEvent(int a_PlayerId, 
 	auto PlayersController {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
 	auto PlayerInputsController {PlayersController->GetPlayerById(a_PlayerId).GetInputsController()};
 		
-	return PlayerInputsController->GetInputEvent(a_InputAxis);
+	return PlayerInputsController->GetInputAxisEvent(a_InputAxis);
+}
+
+FEvent_PlayerInputAxis* const AInputManager::GetPlayerAxisReleasedEvent(int a_PlayerId, EInputAxes a_InputAxis)
+{
+	auto PlayersController {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
+	auto PlayerInputsController {PlayersController->GetPlayerById(a_PlayerId).GetInputsController()};
+	
+	return PlayerInputsController->GetInputAxisReleasedEvent(a_InputAxis);
 }
 
 
@@ -186,49 +187,3 @@ TArray<int> AInputManager::GetAllPlayerIds()
 	
 	return PlayerIds;
 }
-
-
-/*bool AInputManager::UpdateInputComponent(UManagerGameInstance* const a_GameInstance, AInputControllerBase* const a_InputController)
-{
-	if (m_InputReadyToInit)
-	{
-		ExitInputMappingContext(a_GameInstance);
-	}
-	
-	m_InputController = a_InputController;
-	
-	EnterInputMappingContext(a_GameInstance);
-	
-	return m_InputController != nullptr;
-}*/
-
-/*bool AInputManager::UnbindInput(UObject* a_Object, const FName& a_FunctionName)
-{
-	auto BindKey {GetInputBindKey(a_Object, a_FunctionName)};
-	auto HasBind {m_InputBindings.Contains(BindKey)};
-	//auto BindKey = TPair<UObject*, FName>(a_Object, a_FunctionName);
-	//auto BindKey = a_Object->GetFName().ToString() + a_FunctionName.ToString();
-	
-	if (HasBind)
-	{
-		GetInputComponent()->RemoveActionBinding(m_InputBindings[BindKey]->GetHandle());
-		m_InputBindings.Remove(BindKey);
-		
-		
-		/auto BindAction = m_InputBindings[BindKey];
-		int32 CurrentBindIdx = m_InputBindings[BindKey];
-		m_InputComponent->RemoveActionBinding(CurrentBindIdx);
-		
-		m_InputBindings.Remove(BindKey);
-		for (auto& [Key, BindIdx] : m_InputBindings)
-		{
-			if (BindIdx > CurrentBindIdx)
-			{
-				--BindIdx;
-			}
-		}/
-	}
-	
-	return HasBind;
-}*/
-

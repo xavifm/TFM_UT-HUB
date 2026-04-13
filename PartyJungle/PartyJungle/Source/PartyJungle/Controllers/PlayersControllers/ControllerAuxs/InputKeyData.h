@@ -2,17 +2,29 @@
 
 #include <string>
 
-#include "InputPair.generated.h"
+#include "InputKeyData.generated.h"
 
 enum class EInputKeys : uint8;
 enum class ETriggerEvents : uint8;
 
 
 /**
+ * Event used for Input Key Events.
+ */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(
+	FEvent_PlayerInputKey, // Name of the structure that will be generated
+	// Parameters of the delegate (Type, Name):
+	EInputKeys, a_InputKey, // Key pressed.
+	ETriggerEvents, a_InputEvent, // Input event.
+	int, a_PlayerId // Id of the Player who has triggered the event.
+);
+
+
+/**
  * Struct with the Data of both, the Input Key and the Trigger Event.
  */
 USTRUCT(BlueprintType)
-struct FInputPair
+struct FInputKeyData
 {
 	GENERATED_BODY()
 	
@@ -20,12 +32,12 @@ public:
 	/**
 	 * Constructor.
 	 */
-	FInputPair() = default;
+	FInputKeyData() = default;
 
 	/**
 	 * Destructor.
 	 */
-	~FInputPair() = default;
+	~FInputKeyData() = default;
 
 	/**
 	 * Gets the Input Key.

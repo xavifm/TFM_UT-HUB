@@ -1,15 +1,5 @@
 ﻿#include "ManagerGameInstance.h"
 
-#include "../Managers/StateManager.h"
-#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
-#include "../Managers/InputManager.h"
-#include "Kismet/GameplayStatics.h"
-
-
-UManagerGameInstance::UManagerGameInstance() :
-	UGameInstance()
-{
-}
 
 void UManagerGameInstance::Init()
 {
@@ -44,9 +34,23 @@ void UManagerGameInstance::SetInputManager(AInputManager* const a_InputManager)
 	CheckGameManagerLoaded();
 }
 
+void UManagerGameInstance::SetDuelManager(ADuelManager* const a_DuelManager)
+{
+	m_DuelManager = a_DuelManager;
+	
+	CheckGameManagerLoaded();
+}
+
+void UManagerGameInstance::SetSceneManager(ASceneManager* const a_SceneManager)
+{
+	m_SceneManager = a_SceneManager;
+	
+	CheckGameManagerLoaded();
+}
+
 void UManagerGameInstance::CheckGameManagerLoaded()
 {
-	const bool AllManagersReady {m_StateManager && m_InputManager};
+	const bool AllManagersReady {m_StateManager && m_InputManager && m_DuelManager && m_SceneManager};
 	if (!m_GameManagerReady && AllManagersReady)
 	{
 		m_GameManagerReady = true;
@@ -58,11 +62,9 @@ void UManagerGameInstance::Reset()
 {
 	m_StateManager = nullptr;
 	m_InputManager = nullptr;
+	m_DuelManager = nullptr;
+	m_SceneManager = nullptr;
 	
 	m_EventGameManagerLoaded.Clear();
 	m_GameManagerReady = false;
-	
-	
-	//m_StateManager->ResetStates();  
-	//m_InputManager->ResetInputs();
 }

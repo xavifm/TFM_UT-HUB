@@ -1,11 +1,12 @@
 #include "./ChallengeInformation.h"
 
-#include "PartyJungle/Map/Square.h"
+#include <PartyJungle/Managers/DuelManager.h>
+#include <PartyJungle/Map/Square.h>
+
 
 AChallengeInformation::AChallengeInformation()
 {
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
 void AChallengeInformation::SetUpDuelInfo(TArray<AMinion*> _minions)

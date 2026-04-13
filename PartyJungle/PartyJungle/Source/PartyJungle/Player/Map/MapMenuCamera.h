@@ -9,7 +9,6 @@
 #include <PartyJungle/Dice/Dice.h>
 #include <PartyJungle/Map/SquareOptional.h>
 #include <PartyJungle/Player/UI/PlayerMapUI.h>
-#include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "PartyJungle/Rounds/RoundsManager.h"
 #include "PartyJungle/Player/Inventory/Inventory.h"
 #include "Camera/CameraComponent.h"
@@ -18,7 +17,10 @@
 #include "MapMenuCamera.generated.h"
 
 class ASquareShop;
+class AChallengeInformation;
 
+
+// ToDo Capy: Treure durant el refactor, un cop ja no es faci servir a cap lloc.
 UCLASS()
 class PARTYJUNGLE_API AMapMenuCamera : public APawn
 {

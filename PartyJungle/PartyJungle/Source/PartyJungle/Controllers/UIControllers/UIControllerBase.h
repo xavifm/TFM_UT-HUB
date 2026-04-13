@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "ControllerBase.h"
+#include <PartyJungle/Controllers/ControllerBase.h>
 
 #include "UIControllerBase.generated.h"
 

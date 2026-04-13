@@ -1,16 +1,13 @@
 ﻿#include "StateManager.h"
 
-#include "../GameStates/GameStateData.h"
-#include "Kismet/GameplayStatics.h"
-#include "PartyJungle/GameInstance/ManagerGameInstance.h"
-#include "../Controllers/ControllerBase.h"
-
-Event AStateManager::m_EventStateChanged;
+#include <PartyJungle/GameStates/GameStateData.h>
+#include <PartyJungle/Controllers/ControllerBase.h>
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
 
 
 AStateManager::AStateManager() : AActor()
 {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 void AStateManager::BeginPlay()
@@ -20,35 +17,69 @@ void AStateManager::BeginPlay()
 	GetGameInstance<UManagerGameInstance>()->SetStateManager(this);
 }
 
-bool AStateManager::ChangeState(EGameStates a_TargetState)
+void AStateManager::Tick(float a_DeltaTime)
 {
-	uint8 TargetStateKey {static_cast<uint8>(a_TargetState)};
+	Super::Tick(a_DeltaTime);
+	
+	if (IsValidGameState(m_CurrentState))
+	{
+		m_CurrentState->GetController(EGameControllers::Players)->OnUpdateState(a_DeltaTime);
+		m_CurrentState->GetController(EGameControllers::Camera)->OnUpdateState(a_DeltaTime);
+		m_CurrentState->GetController(EGameControllers::UI)->OnUpdateState(a_DeltaTime);
+		m_CurrentState->GetController(EGameControllers::GameLoop)->OnUpdateState(a_DeltaTime);
+	}
+}
+
+bool AStateManager::ChangeState(const FString& a_TargetState)
+{
 	const bool HasValidState {IsValidGameState(m_CurrentState)};
 	const bool CanExitState {!HasValidState || (HasValidState && m_CurrentState->CanExitState())};
-	const bool CanChangeState {CanExitState && m_GameStates.Contains(TargetStateKey) && m_GameStates[TargetStateKey]->CanEnterState()};
+	const bool CanChangeState {CanExitState && m_GameStates.Contains(a_TargetState) && m_GameStates[a_TargetState]->CanEnterState()};
 	
 	if (CanChangeState)
 	{
-		auto TargetGameState {m_GameStates[TargetStateKey]};
+		auto TargetGameState {m_GameStates[a_TargetState]};
 		ExitCurrentControllers(TargetGameState);
 		
 		auto PreviousGameState {m_CurrentState};
 		m_CurrentState = TargetGameState;
-		StartCurrentControllers(PreviousGameState);
+		StartCurrentControllers(PreviousGameState, nullptr);
 		
-		m_EventStateChanged.Broadcast();
+		UE_LOG(LogTemp, Log, TEXT("GameState '%s' entered successfully."), *m_CurrentState->GetGameStateId());
+		m_EventStateChanged.Broadcast(PreviousGameState, m_CurrentState);
 	}
 	
 	return CanChangeState;
 }
 
-bool AStateManager::AddState(EGameStates a_State, AGameStateData* const a_StateData)
+bool AStateManager::ChangeState(const FString& a_TargetState, void* a_Context)
 {
-	uint8 StateKey {static_cast<uint8>(a_State)};
-	const bool CanCreateState {IsValidGameState(a_StateData) && (m_GameStates.IsEmpty() || !m_GameStates.Contains(StateKey))};
+	const bool HasValidState {IsValidGameState(m_CurrentState)};
+	const bool CanExitState {!HasValidState || (HasValidState && m_CurrentState->CanExitState())};
+	const bool CanChangeState {CanExitState && m_GameStates.Contains(a_TargetState) && m_GameStates[a_TargetState]->CanEnterState()};
+	
+	if (CanChangeState)
+	{
+		auto TargetGameState {m_GameStates[a_TargetState]};
+		ExitCurrentControllers(TargetGameState);
+		
+		auto PreviousGameState {m_CurrentState};
+		m_CurrentState = TargetGameState;
+		StartCurrentControllers(PreviousGameState, a_Context);
+		
+		UE_LOG(LogTemp, Log, TEXT("GameState '%s' entered successfully."), *m_CurrentState->GetGameStateId());
+		m_EventStateChanged.Broadcast(PreviousGameState, m_CurrentState);
+	}
+	
+	return CanChangeState;
+}
+
+bool AStateManager::AddState(const FString& a_State, AGameStateData* const a_StateData)
+{
+	const bool CanCreateState {IsValidGameState(a_StateData) && (m_GameStates.IsEmpty() || !m_GameStates.Contains(a_State))};
 	if (CanCreateState)
 	{
-		m_GameStates.Add(StateKey, a_StateData);
+		m_GameStates.Add(a_State, a_StateData);
 	}
 	
 	return CanCreateState;
@@ -57,35 +88,38 @@ bool AStateManager::AddState(EGameStates a_State, AGameStateData* const a_StateD
 void AStateManager::ResetStates()
 {
 	m_GameStates.Reset();
-	m_GameStates = TMap<uint8, AGameStateData*>();
+	m_GameStates = TMap<FString, AGameStateData*>();
 	if (m_CurrentState != nullptr)
 	{
 		m_CurrentState->Reset();
 	}
 }
 
-void AStateManager::StartCurrentControllers(AGameStateData* a_PreviousGameState)
+const FString& AStateManager::GetGameStateId()
 {
-	//StartController(a_GameState, EGameControllers::Input); // Input Controller should always start the first. 
-	
-	StartController(a_PreviousGameState, EGameControllers::Players);
-	StartController(a_PreviousGameState, EGameControllers::Camera);
-	StartController(a_PreviousGameState, EGameControllers::UI);
+	return m_CurrentState->GetGameStateId();
+}
+
+void AStateManager::StartCurrentControllers(AGameStateData* a_PreviousGameState, void* a_Context)
+{
+	StartController(a_PreviousGameState, EGameControllers::Players, a_Context);
+	StartController(a_PreviousGameState, EGameControllers::Camera, a_Context);
+	StartController(a_PreviousGameState, EGameControllers::UI, a_Context);
+	StartController(a_PreviousGameState, EGameControllers::GameLoop, a_Context);
 }
 
 void AStateManager::ExitCurrentControllers(AGameStateData* a_NextGameState)
 {
 	if (m_CurrentState && m_CurrentState->GetName() != "None")
 	{
+		ExitController(a_NextGameState, EGameControllers::GameLoop);
 		ExitController(a_NextGameState, EGameControllers::Camera);
 		ExitController(a_NextGameState, EGameControllers::UI);
 		ExitController(a_NextGameState, EGameControllers::Players);
-		
-		//ExitController(a_NextGameState, EGameControllers::Input); // Input Controller should always exit the last.
 	}
 }
 
-void AStateManager::StartController(AGameStateData* const a_PreviousGameState, EGameControllers a_ControllerId)
+void AStateManager::StartController(AGameStateData* const a_PreviousGameState, EGameControllers a_ControllerId, void* a_Context)
 {
 	auto TargetController {m_CurrentState->GetController(a_ControllerId)};
 	const bool StartController {TargetController && (!IsValidGameState(a_PreviousGameState) || TargetController->ReinitIfMatches() 
@@ -93,6 +127,7 @@ void AStateManager::StartController(AGameStateData* const a_PreviousGameState, E
 	
 	if (StartController)
 	{
+		TargetController->OnContextStart(a_Context);
 		TargetController->OnStart();
 	}
 }
@@ -111,6 +146,6 @@ void AStateManager::ExitController(AGameStateData* const a_NextGameState, EGameC
 
 bool AStateManager::IsValidGameState(AGameStateData* const a_GameState)
 {
-	return a_GameState && a_GameState->GetName() != "None" && a_GameState->GetGameStateId() != EGameStates::None;
+	return a_GameState && a_GameState->GetName() != "None" && a_GameState->GetGameStateId() != "";
 }
 

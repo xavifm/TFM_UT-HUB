@@ -1,13 +1,17 @@
 #include "./MapMenuCamera.h"
 
-#include "Blueprint/UserWidget.h"
-#include <EnhancedInputSubsystems.h>
-#include <Kismet/GameplayStatics.h>
 #include <PartyJungle/Map/SquareShop.h>
-#include "EngineUtils.h"
 #include <PartyJungle/Map/SquareKeepCrowns.h>
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
 #include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
+#include <PartyJungle/Challenge/ChallengeInformation.h>
+#include <PartyJungle/Managers/DuelManager.h>
+
+#include <Blueprint/UserWidget.h>
+#include <EnhancedInputSubsystems.h>
+#include <Kismet/GameplayStatics.h>
+#include <EngineUtils.h>
+
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -42,7 +46,7 @@ void AMapMenuCamera::BeginPlay()
         if (GameInstance)
         {
             MAX_TEAM_NUMBER = GameInstance->GetGameDataManager().GetPlayersInBoard();
-            RoundsSystem->MaxRounds = GameInstance->GetGameDataManager().GetRoundsInBoard();
+            RoundsSystem->m_MaxRounds = GameInstance->GetGameDataManager().GetRoundsInBoard();
         }
 
         if (WorldSceneManager)
@@ -52,7 +56,6 @@ void AMapMenuCamera::BeginPlay()
         }
 
 
-        // ToDo Capy: Esto es para iniciar el input system para cada jugador
         if (GameInstance)
         {
             const TArray<ULocalPlayer*>& LocalPlayers = GameInstance->GetLocalPlayers();
@@ -326,7 +329,9 @@ void AMapMenuCamera::HandleConfirmInput()
         {
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num();
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num() /* GUARRO */ ,ChallengeInformation->ParsePotsInfo(ChosenDuelIndex));
+            // ToDo Capy: Al fer refactor, guardar el RouletteResult al ChallengeManager->SetRouletteResult(int)
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
+            //
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;
 
@@ -639,7 +644,7 @@ void AMapMenuCamera::SwitchController()
         EnableInput(PlayerController);
     }
 
-    if(PlayerController0) // ToDo: Preguntar perquè serveix això.
+    if(PlayerController0)
         PlayerController0->SetViewTargetWithBlend(WorldSceneManager->MapCameraActor, 0.f);
 }
 
@@ -944,8 +949,8 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             }
         }
         if (MapUI &&
-            ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
-            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
+            ((RoundsSystem->GetRoundsLeft() > RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE)
+            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE && CurrentMinionTeam != 0)))
         {
             FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
             MapUI->ShowTextInScreen(Message, -1);
@@ -1202,7 +1207,7 @@ void AMapMenuCamera::FinishFadeTransition()
 
     LoadingMap = false;
 
-    if (RoundsSystem && RoundsSystem->GameFinished)
+    if (RoundsSystem && RoundsSystem->m_GameFinished)
         return;
 
     if (APlayerController* PC = GetWorld()->GetFirstPlayerController())

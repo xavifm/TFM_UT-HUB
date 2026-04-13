@@ -1,7 +1,10 @@
 #include "PlayerMapUI.h"
+
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "./PlayerMapUI.h"
+#include "PartyJungle/Challenge/ChallengeInformation.h"
+
 
 void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 {

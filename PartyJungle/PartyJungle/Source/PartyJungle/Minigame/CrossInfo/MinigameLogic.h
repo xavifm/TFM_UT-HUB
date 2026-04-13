@@ -5,6 +5,8 @@
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include "MinigameLogic.generated.h"
 
+
+// ToDo Capy: Treure durant el refactor, un cop ja no es faci servir a cap lloc.
 UCLASS()
 class PARTYJUNGLE_API AMinigameLogic : public AActor
 {

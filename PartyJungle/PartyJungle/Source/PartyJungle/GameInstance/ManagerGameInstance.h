@@ -1,9 +1,11 @@
 ﻿#pragma once
 
-#include "GameInstanceAux/GameData.h"
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
 #include "ManagerGameInstance.generated.h"
 
+class ASceneManager;
+class ADuelManager;
 class AStateManager;
 class AInputManager;
 class UManagerGameInstance;
@@ -28,11 +30,6 @@ class UManagerGameInstance : public UGameInstance
 GENERATED_BODY()
 	
 public:
-	/**
-	 * Constructor.
-	 */
-	UManagerGameInstance();
-	
 	/**
 	 * Method called on game Init.
 	 */
@@ -61,6 +58,18 @@ public:
 	void SetInputManager(AInputManager* const a_InputManager);
 	
 	/**
+	 * Sets the DuelManager reference.
+	 * @param a_DuelManager Pointer to a DuelManager.
+	 */
+	void SetDuelManager(ADuelManager* const a_DuelManager);
+	
+	/**
+	 * Sets the SceneManager reference.
+	 * @param a_SceneManager Pointer to a SceneManager.
+	 */
+	void SetSceneManager(ASceneManager* const a_SceneManager);
+	
+	/**
 	 * Gets a reference to the GameManager.
 	 * @return Reference to the GameManager.
 	 */
@@ -80,6 +89,20 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
 	AInputManager* const GetInputManager() { return m_InputManager; }
+	
+	/**
+	 * Gets a reference to the DuelManager.
+	 * @return Reference to the DuelManager.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
+	ADuelManager* const GetDuelManager() { return m_DuelManager; }
+	
+	/**
+	 * Gets a reference to the SceneManager.
+	 * @return Reference to the SceneManager.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "Manager_Functions")
+	ASceneManager* const GetSceneManager() { return m_SceneManager; }
 
 	/**
 	 * Gets the 'Game Manager Loaded' Event.
@@ -91,7 +114,7 @@ public:
 	 * Gets if the Game Manager has finished Loading.
 	 * @return True if the Game Manager has finished Loading.
 	 */
-	bool IsGameManagerReady() { return m_GameManagerReady; }
+	bool IsGameManagerReady() const { return m_GameManagerReady; }
 	
 private:
 	/**
@@ -107,6 +130,7 @@ private:
 	void Reset();
 	
 	
+private:
 	UPROPERTY() 
 	FGameData m_GameDataManager {FGameData()}; //!< Instance that Manages all the Game's permanent Data.
 	
@@ -115,6 +139,12 @@ private:
 	
 	UPROPERTY() 
 	AInputManager* m_InputManager; //!< Instance that Manages all data relating to Inputs.
+	
+	UPROPERTY() 
+	ADuelManager* m_DuelManager; //!< Instance that Manages all data relating to Duels.
+	
+	UPROPERTY() 
+	ASceneManager* m_SceneManager; //!< Instance that Manages all data relating to Scenes.
 	
 	UPROPERTY()
 	FEvent_GameManagerLoaded m_EventGameManagerLoaded; //!< 'Game Manager Loaded' Event.
