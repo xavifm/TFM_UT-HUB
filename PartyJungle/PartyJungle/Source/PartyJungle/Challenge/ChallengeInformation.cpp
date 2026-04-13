@@ -114,14 +114,21 @@ int AChallengeInformation::GetSavedPot()
     return SavedPot;
 }
 
-void AChallengeInformation::AddSavedPot(int _quantity)
+int AChallengeInformation::GetSavedPotStars()
+{
+    return SavedPotStars;
+}
+
+void AChallengeInformation::AddSavedPot(int _quantity, int _crowns)
 {
     SavedPot += _quantity;
+    SavedPotStars += _crowns;
 }
 
 void AChallengeInformation::ResetSavedPot()
 {
     SavedPot = 0;
+    SavedPotStars = 0;
 }
 
 void AChallengeInformation::UpdateCurrentPot(TArray<AMinion*> _minions, float _percentage)
@@ -130,7 +137,7 @@ void AChallengeInformation::UpdateCurrentPot(TArray<AMinion*> _minions, float _p
     for (AMinion* minion : _minions)
     {
         int bet = (minion->GetCoins() * _percentage) / 100;
-        AddSavedPot(bet);
+        AddSavedPot(bet, minion->GetCrowns());
     }
 }
 

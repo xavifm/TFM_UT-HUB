@@ -67,7 +67,10 @@ public:
 	int GetSavedPot();
 	
 	UFUNCTION()
-	void AddSavedPot(int _quantity);
+	int GetSavedPotStars();
+	
+	UFUNCTION()
+	void AddSavedPot(int _quantity, int _crowns = 0);
 	
 	UFUNCTION()
 	void ResetSavedPot();
@@ -91,6 +94,7 @@ private:
 	int DuelPercentage;
 
 	int SavedPot = 0;
+	int SavedPotStars = 0;
 
 	const int MIN_PERCENTAGE = 0;
 	const int MAX_PERCENTAGE = 100;

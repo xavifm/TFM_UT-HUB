@@ -420,9 +420,12 @@ void AMapMenuCamera::SpinWheelEndSequence()
     {
         int team = static_cast<int>(minion->Team);
         int bet = (minion->GetCoins() * rouletteDuel) / 100;
+        int crowns = ChallengeInformation->GetSavedPotStars();
         
         minion->UpdateCoins(-bet);
+        minion->UpdateCrowns(-crowns);
         MapUI->UpdateCoins(team, -bet);
+        MapUI->UpdateCrowns(team, -crowns);
     }
     
     InitializeRouletteWithMinigames(EMinigameType::DUEL, ETeamsMode::NOTEAM);
@@ -775,8 +778,11 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
         if (static_cast<int>(Minion->Team) == _winner)
         {
             int pot = ChallengeInformation->GetSavedPot();
+            int crowns = ChallengeInformation->GetSavedPotStars();
             Minion->UpdateCoins(pot, true);
+            Minion->UpdateCrowns(crowns);
             MapUI->UpdateCoins(minionTeam, pot);
+            MapUI->UpdateCrowns(minionTeam, crowns);
 
             break;
         }

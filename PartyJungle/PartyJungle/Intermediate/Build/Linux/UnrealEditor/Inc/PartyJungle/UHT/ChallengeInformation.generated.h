@@ -26,7 +26,9 @@ class AMinion;
 	DECLARE_FUNCTION(execUpdateCurrentPot); \
 	DECLARE_FUNCTION(execResetSavedPot); \
 	DECLARE_FUNCTION(execAddSavedPot); \
+	DECLARE_FUNCTION(execGetSavedPotStars); \
 	DECLARE_FUNCTION(execGetSavedPot); \
+	DECLARE_FUNCTION(execGetCalculatedPot); \
 	DECLARE_FUNCTION(execGetPotQuantity); \
 	DECLARE_FUNCTION(execGetBetCoinsQuantity); \
 	DECLARE_FUNCTION(execSwitchDuelType); \
