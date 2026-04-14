@@ -364,8 +364,12 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ "IncludePath", "World/WorldManager.h" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WorldDB_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BoardActors_MetaData[] = {
 		{ "Category", "World_Segment" },
+		{ "ModuleRelativePath", "World/WorldManager.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WorldDB_MetaData[] = {
+		{ "Category", "World_Database" },
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MapCamera_MetaData[] = {
@@ -396,6 +400,8 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ "ModuleRelativePath", "World/WorldManager.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_BoardActors_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_BoardActors;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_WorldDB;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MapCamera;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_FullMapCamera;
@@ -422,6 +428,8 @@ struct Z_Construct_UClass_AWorldManager_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors_Inner = { "BoardActors", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors = { "BoardActors", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, BoardActors), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BoardActors_MetaData), NewProp_BoardActors_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_WorldDB = { "WorldDB", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, WorldDB), Z_Construct_UClass_AWorldDB_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WorldDB_MetaData), NewProp_WorldDB_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCamera = { "MapCamera", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MapCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapCamera_MetaData), NewProp_MapCamera_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCamera = { "FullMapCamera", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, FullMapCamera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_FullMapCamera_MetaData), NewProp_FullMapCamera_MetaData) };
@@ -432,6 +440,8 @@ const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_S
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCrowns_Inner = { "MapCrowns", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_ASquareStar_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCrowns = { "MapCrowns", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AWorldManager, MapCrowns), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MapCrowns_MetaData), NewProp_MapCrowns_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWorldManager_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_BoardActors,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_WorldDB,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_MapCamera,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWorldManager_Statics::NewProp_FullMapCamera,
@@ -472,17 +482,16 @@ UClass* Z_Construct_UClass_AWorldManager()
 	return Z_Registration_Info_UClass_AWorldManager.OuterSingleton;
 }
 DEFINE_VTABLE_PTR_HELPER_CTOR(AWorldManager);
-AWorldManager::~AWorldManager() {}
 // ********** End Class AWorldManager **************************************************************
 
 // ********** Begin Registration *******************************************************************
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 4012166663U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 608839082U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_868009496(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_1520961836(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

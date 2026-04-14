@@ -4,10 +4,12 @@
 #include "Blueprint/UserWidget.h"
 #include "../Minion/Minion.h"
 #include "PartyJungle/Player/Scores/ScoreDatabase.h"
-#include <PartyJungle/Challenge/ChallengeInformation.h>
 #include "PartyJungle/Map/MapDatabase.h"
+#include "PartyJungle/Challenge/ChallengeInformation.h"
 #include "PlayerMapUI.generated.h"
 
+
+// ToDo Capy: Treure durant el refactor, un cop ja no es faci servir a cap lloc.
 UCLASS()
 class PARTYJUNGLE_API UPlayerMapUI : public UUserWidget
 {

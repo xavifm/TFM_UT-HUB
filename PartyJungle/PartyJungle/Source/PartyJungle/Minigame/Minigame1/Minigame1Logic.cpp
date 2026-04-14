@@ -2,6 +2,7 @@
 
 #include "PartyJungle/Player/Map/MapMenuCamera.h"
 
+
 AMinigame1Logic::AMinigame1Logic()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -20,16 +21,18 @@ void AMinigame1Logic::SetupAirCannonsInfo()
 		{
 			if (i == minion.Key)
 			{
-				AirCannons[i]->MinionReference = minion.Value;
-				AirCannons[i]->MinigameLogic = this;
+				AirCannons[i]->m_TeamId = minion.Key;
 				
-				AActor* projectileReference = AirCannons[i]->ProjectileReference;
+				// ToDo Capy: Usar 'AirCannons[i]->m_GameLoopCtr = this;' un cop el MiniGame1Logic es faci com a GameLoopController
+				//AirCannons[i]->MinigameLogic = this;
+				
+				/*AActor* projectileReference = AirCannons[i]->ProjectileReference;
 
 				if (projectileReference) 
 				{
 					projectileReference->SetActorTickEnabled(true);
 					projectileReference->SetActorHiddenInGame(true);
-				}
+				}*/
 				
 				break;
 			}
@@ -46,10 +49,7 @@ void AMinigame1Logic::ResetMinigameScene()
 
 	for (int i = 0; i < AirCannons.Num(); i++)
 	{
-		AirCannons[i]->CannonFinished = false;
-		AirCannons[i]->CannonCharging = false;
-		AirCannons[i]->UpForce = 0;
-		AirCannons[i]->ResetProjectilePosition();
+		AirCannons[i]->ResetAirCannon();
 	}
 }
 
@@ -63,7 +63,7 @@ void AMinigame1Logic::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	if (AirCannons[0]->CannonCharging && GameTime > 0)
+	if (AirCannons[0]->m_CannonCharging && GameTime > 0)
 	{
 		GameTime -= DeltaTime;
 		
@@ -129,9 +129,9 @@ void AMinigame1Logic::SetCameraTarget()
 
 	for (AAirCannon* Cannon : AirCannons)
 	{
-		if (Cannon && Cannon->CannonTeam == HighestTeam && Cannon->ProjectileReference)
+		if (Cannon && Cannon->m_TeamId == HighestTeam && Cannon->m_ProjectileReference)
 		{
-			MinigameCamera->SetCameraTarget(Cannon->ProjectileReference);
+			MinigameCamera->SetCameraTarget(Cannon->m_ProjectileReference);
 			break;
 		}
 	}

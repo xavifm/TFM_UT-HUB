@@ -604,6 +604,7 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Module.PartyJungle.2.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Module.PartyJungle.3.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Module.PartyJungle.4.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Module.PartyJungle.5.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/PartyJungle.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ChallengeDto.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ChallengeDatabase.cpp.o"
@@ -618,8 +619,8 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/SquareShop.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/SquareStar.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MinigameDataGameInstance.cpp.o"
-"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MinigameLogic.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/TeamsGenerator.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MinigameLogic.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/CannonMinigameCamera.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/AirCannon.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Minigame1Logic.cpp.o"
@@ -635,7 +636,6 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ScoreDatabase.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/EndGameUI.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/PlayerMapUI.cpp.o"
-"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MainMenuInput.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Inventory.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/DiceItem.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ReducedDice.cpp.o"
@@ -643,6 +643,7 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/WallItem.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Whistle.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Item.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MainMenuInput.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/RoundsManager.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/AudioManager.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ReturnToPartyMapScene.cpp.o"
@@ -651,6 +652,30 @@
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MainMenuWidget.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/BoardMenu.cpp.o"
 "/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/MinigameWheel.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/CameraControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/StaticMiniGame_CameraController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/CameraModeControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Cinematic_CameraModeController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Focused_CameraModeController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/FullView_CameraModeController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Static_CameraModeController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/AirCannon_GLController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/DuelBase_GameLoopController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/GameLoopControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Testing_GameLoopController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/WinnerSequence_GLController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/Default_PlayersController.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/PlayersControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/PlayerData.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/PlayerInputsControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/UIControllerBase.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/ManagerGameInstance.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/GameData.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/GameStateData.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/DuelManager.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/InputManager.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/SceneManager.cpp.o"
+"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/x64/UnrealGame/DebugGame/PartyJungle/StateManager.cpp.o"
 "../Plugins/2D/Paper2D/Intermediate/Build/Linux/x64/UnrealGame/Development/Paper2D/Module.Paper2D.cpp.o"
 "../Plugins/AI/AISupport/Intermediate/Build/Linux/x64/UnrealGame/Development/AISupportModule/Module.AISupportModule.cpp.o"
 "../Plugins/Animation/ACLPlugin/Intermediate/Build/Linux/x64/UnrealGame/Development/ACLPlugin/Module.ACLPlugin.cpp.o"
@@ -994,73 +1019,73 @@
 "../Plugins/WorldMetrics/Intermediate/Build/Linux/x64/UnrealGame/Development/WorldMetricsCore/Module.WorldMetricsCore.cpp.o"
 "../Plugins/WorldMetrics/Intermediate/Build/Linux/x64/UnrealGame/Development/WorldMetricsTest/Module.WorldMetricsTest.cpp.o"
 "../Plugins/WorldMetrics/Intermediate/Build/Linux/x64/UnrealGame/Development/CsvMetrics/Module.CsvMetrics.cpp.o"
- -rpath="${ORIGIN}/../../../../../../Linux_Unreal_Engine_5.6.0/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux"
- -rpath="${ORIGIN}/../../../../../../Linux_Unreal_Engine_5.6.0/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux"
- -rpath="${ORIGIN}/../../../../../../Linux_Unreal_Engine_5.6.0/Engine/Binaries/ThirdParty/MsQuic/v220/linux"
- -rpath="${ORIGIN}/../../../../../../Linux_Unreal_Engine_5.6.0/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu"
+ -rpath="${ORIGIN}/../../../../../../Unreal/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux"
+ -rpath="${ORIGIN}/../../../../../../Unreal/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux"
+ -rpath="${ORIGIN}/../../../../../../Unreal/Engine/Binaries/ThirdParty/MsQuic/v220/linux"
+ -rpath="${ORIGIN}/../../../../../../Unreal/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu"
  -rpath-link="/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Binaries/Linux"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/BLAKE3/1.3.1/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/OodleDataCompression/Sdks/2.9.13/lib/Linux"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/zlib/1.3/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/jemalloc/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/ICU/icu4c-64_1/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/SDL2/SDL-gui-backend/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libPNG/libPNG-1.6.44/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/FreeType2/FreeType2-2.10.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/HarfBuzz/harfbuzz-2.4.0/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libjpeg-turbo/3.0.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/LibTiff/Lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/UEJpegComp/Lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Imath/Deploy/Imath-3.1.12/Unix/x86_64-unknown-linux-gnu/lib"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/nghttp2/1.64.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libcurl/8.12.1/lib/Unix/x86_64-unknown-linux-gnu/Release"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/MikkTSpace/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Ogg/libogg-1.2.2/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/RadAudioCodec/SDK/Lib"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/BinkAudioDecoder/SDK/BinkAudio/Lib"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Binaries/ThirdParty/MsQuic/v220/linux"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libvpx/libvpx-1.14.1/lib/Unix/x86_64-unknown-linux-gnu"
- -L"/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/BLAKE3/1.3.1/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/Runtime/OodleDataCompression/Sdks/2.9.13/lib/Linux"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/zlib/1.3/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/jemalloc/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/ICU/icu4c-64_1/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/SDL2/SDL-gui-backend/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libPNG/libPNG-1.6.44/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/FreeType2/FreeType2-2.10.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/HarfBuzz/harfbuzz-2.4.0/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libjpeg-turbo/3.0.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/LibTiff/Lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/Runtime/UEJpegComp/Lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Imath/Deploy/Imath-3.1.12/Unix/x86_64-unknown-linux-gnu/lib"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/nghttp2/1.64.0/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libcurl/8.12.1/lib/Unix/x86_64-unknown-linux-gnu/Release"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/MikkTSpace/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Ogg/libogg-1.2.2/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/Runtime/RadAudioCodec/SDK/Lib"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/Runtime/BinkAudioDecoder/SDK/BinkAudio/Lib"
+ -L"/home/xavi/Documents/Unreal/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux"
+ -L"/home/xavi/Documents/Unreal/Engine/Binaries/ThirdParty/MsQuic/v220/linux"
+ -L"/home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libvpx/libvpx-1.14.1/lib/Unix/x86_64-unknown-linux-gnu"
+ -L"/home/xavi/Documents/Unreal/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu"
  --start-group
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/BLAKE3/1.3.1/lib/Unix/x86_64-unknown-linux-gnu/Release/libBLAKE3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/OodleDataCompression/Sdks/2.9.13/lib/Linux/liboo2corelinux64.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/zlib/1.3/lib/Unix/x86_64-unknown-linux-gnu/Release/libz.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/jemalloc/lib/Unix/x86_64-unknown-linux-gnu/libjemalloc_pic.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/ICU/icu4c-64_1/lib/Unix/x86_64-unknown-linux-gnu/libicu_fPIC.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/SDL2/SDL-gui-backend/lib/Unix/x86_64-unknown-linux-gnu/libSDL2_fPIC.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libPNG/libPNG-1.6.44/lib/Unix/x86_64-unknown-linux-gnu/Release/libpng.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/FreeType2/FreeType2-2.10.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libfreetype.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/HarfBuzz/harfbuzz-2.4.0/lib/Unix/x86_64-unknown-linux-gnu/libharfbuzz_fPIC.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libjpeg-turbo/3.0.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libturbojpeg.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/LibTiff/Lib/Unix/x86_64-unknown-linux-gnu/libtiff.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/UEJpegComp/Lib/Unix/x86_64-unknown-linux-gnu/uejpeg_linux.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Imath/Deploy/Imath-3.1.12/Unix/x86_64-unknown-linux-gnu/lib/libImath-3_1.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libIex-3_3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libIlmThread-3_3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXR-3_3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXRCore-3_3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXRUtil-3_3.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu/libssl.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu/libcrypto.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/nghttp2/1.64.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libnghttp2.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libcurl/8.12.1/lib/Unix/x86_64-unknown-linux-gnu/Release/libcurl.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/MikkTSpace/lib/Unix/x86_64-unknown-linux-gnu/libMikkTSpace.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Ogg/libogg-1.2.2/lib/Unix/x86_64-unknown-linux-gnu/libogg.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbis.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbisfile.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbisenc.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu/libopus.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu/libresampler.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/RadAudioCodec/SDK/Lib/libradaudio_decoder_linux64.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/Runtime/BinkAudioDecoder/SDK/BinkAudio/Lib/libbinka_ue_decode_lnx64_static.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux/liboo2netlinux64.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux/libdraco.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Source/ThirdParty/libvpx/libvpx-1.14.1/lib/Unix/x86_64-unknown-linux-gnu/libvpx.a
- /home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu/libwebm.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/BLAKE3/1.3.1/lib/Unix/x86_64-unknown-linux-gnu/Release/libBLAKE3.a
+ /home/xavi/Documents/Unreal/Engine/Source/Runtime/OodleDataCompression/Sdks/2.9.13/lib/Linux/liboo2corelinux64.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/zlib/1.3/lib/Unix/x86_64-unknown-linux-gnu/Release/libz.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/jemalloc/lib/Unix/x86_64-unknown-linux-gnu/libjemalloc_pic.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/ICU/icu4c-64_1/lib/Unix/x86_64-unknown-linux-gnu/libicu_fPIC.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/SDL2/SDL-gui-backend/lib/Unix/x86_64-unknown-linux-gnu/libSDL2_fPIC.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libPNG/libPNG-1.6.44/lib/Unix/x86_64-unknown-linux-gnu/Release/libpng.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/FreeType2/FreeType2-2.10.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libfreetype.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/HarfBuzz/harfbuzz-2.4.0/lib/Unix/x86_64-unknown-linux-gnu/libharfbuzz_fPIC.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libjpeg-turbo/3.0.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libturbojpeg.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/LibTiff/Lib/Unix/x86_64-unknown-linux-gnu/libtiff.a
+ /home/xavi/Documents/Unreal/Engine/Source/Runtime/UEJpegComp/Lib/Unix/x86_64-unknown-linux-gnu/uejpeg_linux.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Imath/Deploy/Imath-3.1.12/Unix/x86_64-unknown-linux-gnu/lib/libImath-3_1.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libIex-3_3.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libIlmThread-3_3.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXR-3_3.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXRCore-3_3.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/openexr/Deploy/openexr-3.3.2/Unix/x86_64-unknown-linux-gnu/lib/libOpenEXRUtil-3_3.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu/libssl.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/OpenSSL/1.1.1t/lib/Unix/x86_64-unknown-linux-gnu/libcrypto.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/nghttp2/1.64.0/lib/Unix/x86_64-unknown-linux-gnu/Release/libnghttp2.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libcurl/8.12.1/lib/Unix/x86_64-unknown-linux-gnu/Release/libcurl.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/MikkTSpace/lib/Unix/x86_64-unknown-linux-gnu/libMikkTSpace.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Ogg/libogg-1.2.2/lib/Unix/x86_64-unknown-linux-gnu/libogg.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbis.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbisfile.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/Vorbis/libvorbis-1.3.2/lib/Unix/x86_64-unknown-linux-gnu/libvorbisenc.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu/libopus.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libOpus/opus-1.1/Unix/x86_64-unknown-linux-gnu/libresampler.a
+ /home/xavi/Documents/Unreal/Engine/Source/Runtime/RadAudioCodec/SDK/Lib/libradaudio_decoder_linux64.a
+ /home/xavi/Documents/Unreal/Engine/Source/Runtime/BinkAudioDecoder/SDK/BinkAudio/Lib/libbinka_ue_decode_lnx64_static.a
+ /home/xavi/Documents/Unreal/Engine/Plugins/Compression/OodleNetwork/Sdks/2.9.13/lib/Linux/liboo2netlinux64.a
+ /home/xavi/Documents/Unreal/Engine/Plugins/Interchange/Runtime/Source/ThirdParty/Draco/lib/Linux/libdraco.a
+ /home/xavi/Documents/Unreal/Engine/Source/ThirdParty/libvpx/libvpx-1.14.1/lib/Unix/x86_64-unknown-linux-gnu/libvpx.a
+ /home/xavi/Documents/Unreal/Engine/Plugins/Media/WebMMedia/Source/ThirdParty/webm/lib/Unix/x86_64-unknown-linux-gnu/libwebm.a
  --end-group

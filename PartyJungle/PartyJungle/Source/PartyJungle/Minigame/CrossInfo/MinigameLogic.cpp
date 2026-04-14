@@ -1,5 +1,8 @@
 #include "./MinigameLogic.h"
+
 #include <PartyJungle/Player/Map/MapMenuCamera.h>
+#include "PartyJungle/Challenge/ChallengeInformation.h"
+
 
 AMinigameLogic::AMinigameLogic()
 {

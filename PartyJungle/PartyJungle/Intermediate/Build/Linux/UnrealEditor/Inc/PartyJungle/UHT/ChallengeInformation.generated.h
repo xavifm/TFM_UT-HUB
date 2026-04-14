@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AMinion;
 
 // ********** Begin Class AChallengeInformation ****************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execResetDuels); \
 	DECLARE_FUNCTION(execCheckIfThereAreCrownsInDuel); \
 	DECLARE_FUNCTION(execGetBetCrownsQuantity); \
@@ -40,7 +40,7 @@ class AMinion;
 
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeInformation_NoRegister();
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAChallengeInformation(); \
 	friend struct Z_Construct_UClass_AChallengeInformation_Statics; \
@@ -51,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(AChallengeInformation)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AChallengeInformation(AChallengeInformation&&) = delete; \
 	AChallengeInformation(const AChallengeInformation&) = delete; \
@@ -61,13 +61,13 @@ public: \
 	NO_API virtual ~AChallengeInformation();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_18_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_14_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -78,17 +78,5 @@ class AChallengeInformation;
 
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h
-
-// ********** Begin Enum EDuelType *****************************************************************
-#define FOREACH_ENUM_EDUELTYPE(op) \
-	op(EDuelType::HALF_COINS) \
-	op(EDuelType::ALL_IN_COINS) \
-	op(EDuelType::ALL_IN_VS_ST) \
-	op(EDuelType::RESIGN) 
-
-enum class EDuelType : uint8;
-template<> struct TIsUEnumClass<EDuelType> { enum { Value = true }; };
-template<> PARTYJUNGLE_API UEnum* StaticEnum<EDuelType>();
-// ********** End Enum EDuelType *******************************************************************
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

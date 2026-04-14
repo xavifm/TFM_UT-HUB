@@ -1,5 +1,8 @@
 #include "./ScoreDatabase.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
+
 
 AScoreDatabase::AScoreDatabase()
 {
@@ -28,12 +31,12 @@ void AScoreDatabase::AddTransactionToRegistry(int Team, int Coins, int Crowns)
 
 void AScoreDatabase::SendTransactionsAndScoresToInstance()
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
-
+	auto GameInstance {GetGameInstance<UManagerGameInstance>()};
+	
 	if (GameInstance)
 	{
-		GameInstance->Scores = Scores;
-		GameInstance->TransactionsRegistry = TransactionsRegistry;
+		GameInstance->GetGameDataManager().SetScores(Scores);
+		GameInstance->GetGameDataManager().SetTransactionsRegistry(TransactionsRegistry);
 	}
 }
 
@@ -103,7 +106,7 @@ void AScoreDatabase::BeginPlay()
 
 void AScoreDatabase::InitializeScores()
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+	auto GameInstance {GetGameInstance<UManagerGameInstance>()};
 
 	if (!GameInstance)
 		return;

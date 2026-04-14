@@ -18,69 +18,8 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeInformation();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeInformation_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare_NoRegister();
-PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EDuelType();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
-
-// ********** Begin Enum EDuelType *****************************************************************
-static FEnumRegistrationInfo Z_Registration_Info_UEnum_EDuelType;
-static UEnum* EDuelType_StaticEnum()
-{
-	if (!Z_Registration_Info_UEnum_EDuelType.OuterSingleton)
-	{
-		Z_Registration_Info_UEnum_EDuelType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_PartyJungle_EDuelType, (UObject*)Z_Construct_UPackage__Script_PartyJungle(), TEXT("EDuelType"));
-	}
-	return Z_Registration_Info_UEnum_EDuelType.OuterSingleton;
-}
-template<> PARTYJUNGLE_API UEnum* StaticEnum<EDuelType>()
-{
-	return EDuelType_StaticEnum();
-}
-struct Z_Construct_UEnum_PartyJungle_EDuelType_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-		{ "ALL_IN_COINS.DisplayName", "All In Coins" },
-		{ "ALL_IN_COINS.Name", "EDuelType::ALL_IN_COINS" },
-		{ "ALL_IN_VS_ST.DisplayName", "All In Vs St" },
-		{ "ALL_IN_VS_ST.Name", "EDuelType::ALL_IN_VS_ST" },
-		{ "BlueprintType", "true" },
-		{ "HALF_COINS.DisplayName", "Half Coins" },
-		{ "HALF_COINS.Name", "EDuelType::HALF_COINS" },
-		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
-		{ "RESIGN.DisplayName", "Escape Vote" },
-		{ "RESIGN.Name", "EDuelType::RESIGN" },
-	};
-#endif // WITH_METADATA
-	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
-		{ "EDuelType::HALF_COINS", (int64)EDuelType::HALF_COINS },
-		{ "EDuelType::ALL_IN_COINS", (int64)EDuelType::ALL_IN_COINS },
-		{ "EDuelType::ALL_IN_VS_ST", (int64)EDuelType::ALL_IN_VS_ST },
-		{ "EDuelType::RESIGN", (int64)EDuelType::RESIGN },
-	};
-	static const UECodeGen_Private::FEnumParams EnumParams;
-};
-const UECodeGen_Private::FEnumParams Z_Construct_UEnum_PartyJungle_EDuelType_Statics::EnumParams = {
-	(UObject*(*)())Z_Construct_UPackage__Script_PartyJungle,
-	nullptr,
-	"EDuelType",
-	"EDuelType",
-	Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enumerators,
-	RF_Public|RF_Transient|RF_MarkAsNative,
-	UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enumerators),
-	EEnumFlags::None,
-	(uint8)UEnum::ECppForm::EnumClass,
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enum_MetaDataParams)
-};
-UEnum* Z_Construct_UEnum_PartyJungle_EDuelType()
-{
-	if (!Z_Registration_Info_UEnum_EDuelType.InnerSingleton)
-	{
-		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EDuelType.InnerSingleton, Z_Construct_UEnum_PartyJungle_EDuelType_Statics::EnumParams);
-	}
-	return Z_Registration_Info_UEnum_EDuelType.InnerSingleton;
-}
-// ********** End Enum EDuelType *******************************************************************
 
 // ********** Begin Class AChallengeInformation Function AddSavedPot *******************************
 struct Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics
@@ -842,8 +781,14 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// ToDo Capy: La clase ha sido sustituida por el DuelManager. Quitar durante el refactor, una vez ya no se use en ning\xc2\xb4n lado.\n" },
+#endif
 		{ "IncludePath", "Challenge/ChallengeInformation.h" },
 		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "ToDo Capy: La clase ha sido sustituida por el DuelManager. Quitar durante el refactor, una vez ya no se use en ning\xc2\xb4n lado." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChallengeRegistry_MetaData[] = {
 		{ "Category", "Registry" },
@@ -945,17 +890,14 @@ AChallengeInformation::~AChallengeInformation() {}
 // ********** Begin Registration *******************************************************************
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics
 {
-	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2964326876U) },
-	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 3154465915U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2669294294U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_1679118877(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_1880421047(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo));
+	nullptr, 0);
 // ********** End Registration *********************************************************************
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -4,6 +4,7 @@
 #include "GameFramework/Actor.h"
 #include "./ScoreDto.h"
 #include "TransactionDto.h"
+
 #include "ScoreDatabase.generated.h"
 
 UCLASS()

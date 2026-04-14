@@ -18,69 +18,8 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeInformation();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AChallengeInformation_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMinion_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_ASquare_NoRegister();
-PARTYJUNGLE_API UEnum* Z_Construct_UEnum_PartyJungle_EDuelType();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
-
-// ********** Begin Enum EDuelType *****************************************************************
-static FEnumRegistrationInfo Z_Registration_Info_UEnum_EDuelType;
-static UEnum* EDuelType_StaticEnum()
-{
-	if (!Z_Registration_Info_UEnum_EDuelType.OuterSingleton)
-	{
-		Z_Registration_Info_UEnum_EDuelType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_PartyJungle_EDuelType, (UObject*)Z_Construct_UPackage__Script_PartyJungle(), TEXT("EDuelType"));
-	}
-	return Z_Registration_Info_UEnum_EDuelType.OuterSingleton;
-}
-template<> PARTYJUNGLE_API UEnum* StaticEnum<EDuelType>()
-{
-	return EDuelType_StaticEnum();
-}
-struct Z_Construct_UEnum_PartyJungle_EDuelType_Statics
-{
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-		{ "ALL_IN_COINS.DisplayName", "All In Coins" },
-		{ "ALL_IN_COINS.Name", "EDuelType::ALL_IN_COINS" },
-		{ "ALL_IN_VS_ST.DisplayName", "All In Vs St" },
-		{ "ALL_IN_VS_ST.Name", "EDuelType::ALL_IN_VS_ST" },
-		{ "BlueprintType", "true" },
-		{ "HALF_COINS.DisplayName", "Half Coins" },
-		{ "HALF_COINS.Name", "EDuelType::HALF_COINS" },
-		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
-		{ "RESIGN.DisplayName", "Escape Vote" },
-		{ "RESIGN.Name", "EDuelType::RESIGN" },
-	};
-#endif // WITH_METADATA
-	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
-		{ "EDuelType::HALF_COINS", (int64)EDuelType::HALF_COINS },
-		{ "EDuelType::ALL_IN_COINS", (int64)EDuelType::ALL_IN_COINS },
-		{ "EDuelType::ALL_IN_VS_ST", (int64)EDuelType::ALL_IN_VS_ST },
-		{ "EDuelType::RESIGN", (int64)EDuelType::RESIGN },
-	};
-	static const UECodeGen_Private::FEnumParams EnumParams;
-};
-const UECodeGen_Private::FEnumParams Z_Construct_UEnum_PartyJungle_EDuelType_Statics::EnumParams = {
-	(UObject*(*)())Z_Construct_UPackage__Script_PartyJungle,
-	nullptr,
-	"EDuelType",
-	"EDuelType",
-	Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enumerators,
-	RF_Public|RF_Transient|RF_MarkAsNative,
-	UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enumerators),
-	EEnumFlags::None,
-	(uint8)UEnum::ECppForm::EnumClass,
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_PartyJungle_EDuelType_Statics::Enum_MetaDataParams)
-};
-UEnum* Z_Construct_UEnum_PartyJungle_EDuelType()
-{
-	if (!Z_Registration_Info_UEnum_EDuelType.InnerSingleton)
-	{
-		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EDuelType.InnerSingleton, Z_Construct_UEnum_PartyJungle_EDuelType_Statics::EnumParams);
-	}
-	return Z_Registration_Info_UEnum_EDuelType.InnerSingleton;
-}
-// ********** End Enum EDuelType *******************************************************************
 
 // ********** Begin Class AChallengeInformation Function AddSavedPot *******************************
 struct Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics
@@ -88,6 +27,7 @@ struct Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics
 	struct ChallengeInformation_eventAddSavedPot_Parms
 	{
 		int32 _quantity;
+		int32 _crowns;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -95,12 +35,15 @@ struct Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__crowns;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventAddSavedPot_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::NewProp__crowns = { "_crowns", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventAddSavedPot_Parms, _crowns), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::NewProp__quantity,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::NewProp__crowns,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::PropPointers) < 2048);
 const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "AddSavedPot", Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::PropPointers), sizeof(Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::ChallengeInformation_eventAddSavedPot_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_AddSavedPot_Statics::Function_MetaDataParams)},  };
@@ -117,9 +60,10 @@ UFunction* Z_Construct_UFunction_AChallengeInformation_AddSavedPot()
 DEFINE_FUNCTION(AChallengeInformation::execAddSavedPot)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__quantity);
+	P_GET_PROPERTY(FIntProperty,Z_Param__crowns);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->AddSavedPot(Z_Param__quantity);
+	P_THIS->AddSavedPot(Z_Param__quantity,Z_Param__crowns);
 	P_NATIVE_END;
 }
 // ********** End Class AChallengeInformation Function AddSavedPot *********************************
@@ -454,6 +398,47 @@ DEFINE_FUNCTION(AChallengeInformation::execGetSavedPot)
 }
 // ********** End Class AChallengeInformation Function GetSavedPot *********************************
 
+// ********** Begin Class AChallengeInformation Function GetSavedPotStars **************************
+struct Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics
+{
+	struct ChallengeInformation_eventGetSavedPotStars_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ChallengeInformation_eventGetSavedPotStars_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AChallengeInformation, nullptr, "GetSavedPotStars", Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::PropPointers), sizeof(Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::ChallengeInformation_eventGetSavedPotStars_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::Function_MetaDataParams), Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::ChallengeInformation_eventGetSavedPotStars_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AChallengeInformation::execGetSavedPotStars)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetSavedPotStars();
+	P_NATIVE_END;
+}
+// ********** End Class AChallengeInformation Function GetSavedPotStars ****************************
+
 // ********** Begin Class AChallengeInformation Function ResetDuels ********************************
 struct Z_Construct_UFunction_AChallengeInformation_ResetDuels_Statics
 {
@@ -752,6 +737,7 @@ void AChallengeInformation::StaticRegisterNativesAChallengeInformation()
 		{ "GetDuelType", &AChallengeInformation::execGetDuelType },
 		{ "GetPotQuantity", &AChallengeInformation::execGetPotQuantity },
 		{ "GetSavedPot", &AChallengeInformation::execGetSavedPot },
+		{ "GetSavedPotStars", &AChallengeInformation::execGetSavedPotStars },
 		{ "ResetDuels", &AChallengeInformation::execResetDuels },
 		{ "ResetSavedPot", &AChallengeInformation::execResetSavedPot },
 		{ "SafeDuelChoice", &AChallengeInformation::execSafeDuelChoice },
@@ -795,8 +781,14 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// ToDo Capy: La clase ha sido sustituida por el DuelManager. Quitar durante el refactor, una vez ya no se use en ning\xc2\xb4n lado.\n" },
+#endif
 		{ "IncludePath", "Challenge/ChallengeInformation.h" },
 		{ "ModuleRelativePath", "Challenge/ChallengeInformation.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "ToDo Capy: La clase ha sido sustituida por el DuelManager. Quitar durante el refactor, una vez ya no se use en ning\xc2\xb4n lado." },
+#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChallengeRegistry_MetaData[] = {
 		{ "Category", "Registry" },
@@ -823,7 +815,7 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_AChallengeInformation_AddSavedPot, "AddSavedPot" }, // 2171708640
+		{ &Z_Construct_UFunction_AChallengeInformation_AddSavedPot, "AddSavedPot" }, // 705075181
 		{ &Z_Construct_UFunction_AChallengeInformation_CheckIfThereAreCrownsInDuel, "CheckIfThereAreCrownsInDuel" }, // 3257653377
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCoinsQuantity, "GetBetCoinsQuantity" }, // 2268137023
 		{ &Z_Construct_UFunction_AChallengeInformation_GetBetCrownsQuantity, "GetBetCrownsQuantity" }, // 3719915498
@@ -831,6 +823,7 @@ struct Z_Construct_UClass_AChallengeInformation_Statics
 		{ &Z_Construct_UFunction_AChallengeInformation_GetDuelType, "GetDuelType" }, // 3313317591
 		{ &Z_Construct_UFunction_AChallengeInformation_GetPotQuantity, "GetPotQuantity" }, // 2955502477
 		{ &Z_Construct_UFunction_AChallengeInformation_GetSavedPot, "GetSavedPot" }, // 30548849
+		{ &Z_Construct_UFunction_AChallengeInformation_GetSavedPotStars, "GetSavedPotStars" }, // 2904151286
 		{ &Z_Construct_UFunction_AChallengeInformation_ResetDuels, "ResetDuels" }, // 3418139761
 		{ &Z_Construct_UFunction_AChallengeInformation_ResetSavedPot, "ResetSavedPot" }, // 127218988
 		{ &Z_Construct_UFunction_AChallengeInformation_SafeDuelChoice, "SafeDuelChoice" }, // 969713328
@@ -897,17 +890,14 @@ AChallengeInformation::~AChallengeInformation() {}
 // ********** Begin Registration *******************************************************************
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics
 {
-	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ EDuelType_StaticEnum, TEXT("EDuelType"), &Z_Registration_Info_UEnum_EDuelType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2964326876U) },
-	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 3453034079U) },
+		{ Z_Construct_UClass_AChallengeInformation, AChallengeInformation::StaticClass, TEXT("AChallengeInformation"), &Z_Registration_Info_UClass_AChallengeInformation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AChallengeInformation), 2669294294U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_497580656(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_1880421047(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h__Script_PartyJungle_Statics::EnumInfo));
+	nullptr, 0);
 // ********** End Registration *********************************************************************
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

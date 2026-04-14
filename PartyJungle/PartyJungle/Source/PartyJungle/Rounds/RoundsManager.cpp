@@ -1,115 +1,116 @@
 #include "./RoundsManager.h"
 
 #include <Kismet/GameplayStatics.h>
+#include <PartyJungle/Challenge/ChallengeInformation.h>
+
 
 ARoundsManager::ARoundsManager()
 {
 	PrimaryActorTick.bCanEverTick = false;
-
 }
 
 void ARoundsManager::BeginPlay()
 {
 	Super::BeginPlay();
-	CurrentRound = 1;
+	m_CurrentRound = 1;
 }
 
 int ARoundsManager::GetCurrentRound()
 {
-	return CurrentRound;
+	return m_CurrentRound;
 }
 
-TArray<bool> ARoundsManager::HandleEndRound(bool _minigame)
+TArray<bool> ARoundsManager::HandleEndRound(bool a_Minigame)
 {
-	TArray<bool> minigamesResult;
-	bool duelsQuery = false;
-	bool minigameQuery = false;
+	TArray<bool> MinigamesResult;
+	bool DuelsQuery = {false};
+	bool MinigameQuery = {false};
 	
-	if (_minigame) 
+	if (a_Minigame) 
 	{
-		duelsQuery = CheckForDuelMinigame();
-		minigameQuery = CheckForEndRoundMinigame();
+		DuelsQuery = CheckForDuelMinigame();
+		MinigameQuery = CheckForEndRoundMinigame();
 		
-		minigamesResult.Add(duelsQuery);
-		minigamesResult.Add(minigameQuery);
+		MinigamesResult.Add(DuelsQuery);
+		MinigamesResult.Add(MinigameQuery);
 		
-		if (duelsQuery || minigameQuery)
-			return minigamesResult;
+		if (DuelsQuery || MinigameQuery)
+			return MinigamesResult;
 	}
 
 	if (GetRoundsLeft() > 0)
 		StartNextRound();
 	else 
 	{
-		GameFinished = true;
-		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &ARoundsManager::FinishGame, 1, false);
+		m_GameFinished = true;
+		GetWorld()->GetTimerManager().SetTimer(m_TimerHandle, this, &ARoundsManager::FinishGame, 1, false);
 	}
 
-	return minigamesResult;
+	return MinigamesResult;
 }
 
 void ARoundsManager::StartNextRound()
 {
-	if (!MapUI)
+	if (!m_MapUI)
 		return;
 
-	CurrentRound++;
+	++m_CurrentRound;
 
-	int RoundShown = GetRoundsLeft();
-	FString FeedbackText;
+	int RoundShown {GetRoundsLeft()};
+	FString FeedbackText {""};
 
-	if(RoundShown <= MIN_ROUNDS_ANNOUNCED)
+	if(RoundShown <= ROUNDS_REMAINING_FOR_ANNOUNCE)
 	{
 		FeedbackText = FString::Printf(TEXT("%d turns left"), RoundShown);
 
 		if(RoundShown == 0)
 			FeedbackText = FString::Printf(TEXT("Last Round!"));
 
-		MapUI->ShowTextInScreen(FeedbackText, -1);
+		m_MapUI->ShowTextInScreen(FeedbackText, -1);
 
-		if (AudioManager)
-			AudioManager->PlaySFX(LAST_ROUNDS_SFX, LAST_ROUNDS_SFX_VOLUME);
+		if (m_AudioManager)
+			m_AudioManager->PlaySFX(LAST_ROUNDS_SFX, LAST_ROUNDS_SFX_VOLUME);
 	}
 }
 
 int ARoundsManager::GetRoundsLeft()
 {
-	return MaxRounds - CurrentRound;
+	return m_MaxRounds - m_CurrentRound;
 }
 
 void ARoundsManager::FinishGame()
 {
-	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
+	GetWorld()->GetTimerManager().ClearTimer(m_TimerHandle);
 
-	if (!MapUI || !ScoresDB || !ChallengeDB)
+	if (!m_MapUI || !m_ScoresDB || !m_ChallengeDB)
 		return;
 
-	ScoresDB->SendTransactionsAndScoresToInstance();
-	ChallengeDB->SendRegistryToInstance();
+	m_ScoresDB->SendTransactionsAndScoresToInstance();
+	m_ChallengeDB->SendRegistryToInstance();
 
 	UGameplayStatics::OpenLevel(this, FName(END_GAME_SCENE_NAME));
 }
 
 bool ARoundsManager::CheckForDuelMinigame()
 {
-	bool minigameQuery = false;
+	bool MinigameQuery {false};
 	
-	if (!MapUI || !ChallengeInfo)
-		return minigameQuery;
+	if (!m_MapUI || !m_ChallengeInfo)
+		return MinigameQuery;
 
-	if (ChallengeInfo->SquaresWithDuelsInRound.Num() > 0)
-		minigameQuery = true;
+	if (m_ChallengeInfo->SquaresWithDuelsInRound.Num() > 0)
+		MinigameQuery = true;
 
-	return minigameQuery;
+	return MinigameQuery;
 }
 
 bool ARoundsManager::CheckForEndRoundMinigame()
 {
-	return EndRoundMinigameAvailable;
+	return m_EndRoundMinigameAvailable;
 }
 
-void ARoundsManager::AssignMapUI(UPlayerMapUI* _mapUI)
+void ARoundsManager::AssignMapUI(UPlayerMapUI* a_MapUI)
 {
-	MapUI = _mapUI;
+	m_MapUI = a_MapUI;
 }
 

@@ -1,11 +1,17 @@
 #include "./MapMenuCamera.h"
-#include "Blueprint/UserWidget.h"
+
+#include <PartyJungle/Map/SquareShop.h>
+#include <PartyJungle/Map/SquareKeepCrowns.h>
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
+#include <PartyJungle/Challenge/ChallengeInformation.h>
+#include <PartyJungle/Managers/DuelManager.h>
+
+#include <Blueprint/UserWidget.h>
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
-#include <PartyJungle/Map/SquareShop.h>
-#include "EngineUtils.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
-#include <PartyJungle/Map/SquareKeepCrowns.h>
+#include <EngineUtils.h>
+
 
 AMapMenuCamera::AMapMenuCamera()
 {
@@ -35,13 +41,12 @@ void AMapMenuCamera::BeginPlay()
     UWorld* World = GetWorld();
     if (World)
     {
-        UGameInstance* GameInstance = World->GetGameInstance();
-        UMinigameDataGameInstance* DataGameInstance = Cast<UMinigameDataGameInstance>(GameInstance);
+        auto GameInstance {World->GetGameInstance<UManagerGameInstance>()};
 
         if (GameInstance)
         {
-            MAX_TEAM_NUMBER = DataGameInstance->PlayersInBoard;
-            RoundsSystem->MaxRounds = DataGameInstance->RoundsInBoard;
+            MAX_TEAM_NUMBER = GameInstance->GetGameDataManager().GetPlayersInBoard();
+            RoundsSystem->m_MaxRounds = GameInstance->GetGameDataManager().GetRoundsInBoard();
         }
 
         if (WorldSceneManager)
@@ -338,6 +343,7 @@ void AMapMenuCamera::HandleConfirmInput()
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num();
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList, ChallengeInformation->ParsePotsInfo(ChosenDuelIndex), ChallengeInformation);
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
+            //
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;
             SpinningWheel = true;
@@ -959,7 +965,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             if (minigamesDetected[1])
             {
                 //Minigame
-                RoundsSystem->EndRoundMinigameAvailable = false;
+                RoundsSystem->m_EndRoundMinigameAvailable = false;
                 InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
                 MinigameWheel->SwitchUiVisibility(true);
                 MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
@@ -968,8 +974,8 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             }
         }
         if (MapUI &&
-            ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
-            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
+            ((RoundsSystem->GetRoundsLeft() > RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE)
+            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE && CurrentMinionTeam != 0)))
         {
             FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
             MapUI->ShowTextInScreen(Message, -1);
@@ -1006,7 +1012,7 @@ void AMapMenuCamera::MoveCameraToCurrentTeam()
     ResetMapItems();
         
     MapUI->SwitchTurnUI(CurrentMinionTeam);
-    RoundsSystem->EndRoundMinigameAvailable = true;
+    RoundsSystem->m_EndRoundMinigameAvailable = true;
 
     FVector MinionLocation = CurrentMinion->GetActorLocation();
     MinionLocation.X = MinionLocation.X - 450;
@@ -1282,7 +1288,7 @@ void AMapMenuCamera::FinishFadeTransition()
 
     LoadingMap = false;
 
-    if (RoundsSystem && RoundsSystem->GameFinished)
+    if (RoundsSystem && RoundsSystem->m_GameFinished)
         return;
 
     if (APlayerController* PC = GetWorld()->GetFirstPlayerController())

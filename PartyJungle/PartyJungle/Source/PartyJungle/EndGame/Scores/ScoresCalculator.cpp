@@ -1,5 +1,8 @@
 #include "./ScoresCalculator.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
+
 
 AScoresCalculator::AScoresCalculator()
 {
@@ -13,13 +16,13 @@ void AScoresCalculator::BeginPlay()
 
 void AScoresCalculator::InitializeInfo()
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+	auto GameInstance {GetGameInstance<UManagerGameInstance>()};
 
 	if (GameInstance)
 	{
-		Scores = GameInstance->Scores;
-		TransactionsRegistry = GameInstance->TransactionsRegistry;
-		ChallengesRegistry = GameInstance->ChallengesRegistry;
+		Scores = GameInstance->GetGameDataManager().GetScores();
+		TransactionsRegistry = GameInstance->GetGameDataManager().GetTransactionsRegistry();
+		ChallengesRegistry = GameInstance->GetGameDataManager().GetChallengesRegistry();
 	}
 }
 

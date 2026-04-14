@@ -1,5 +1,8 @@
 #include "./BoardMenu.h"
-#include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
+
+#include <PartyJungle/GameInstance/ManagerGameInstance.h>
+#include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
+
 
 ABoardMenu::ABoardMenu()
 {
@@ -89,12 +92,12 @@ void ABoardMenu::PerformPartyAction()
 
 void ABoardMenu::StartGame() 
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+	auto GameInstance {GetGameInstance<UManagerGameInstance>()};
 
 	if(GameInstance) 
 	{
-		GameInstance->PlayersInBoard = PlayersQ;
-		GameInstance->RoundsInBoard = GameRounds;
+		GameInstance->GetGameDataManager().SetPlayersInBoard(PlayersQ);
+		GameInstance->GetGameDataManager().SetRoundsInBoard(GameRounds);
 
 		StartGameSequence();
 	}
