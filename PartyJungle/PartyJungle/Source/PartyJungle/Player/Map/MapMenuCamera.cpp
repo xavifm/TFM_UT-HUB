@@ -1109,7 +1109,6 @@ void AMapMenuCamera::StoreCrowns(int _quantity)
         return;
 
     CurrentMinion->UpdateCrowns(-_quantity);
-    MapUI->UpdateCrowns(CurrentMinionTeam, _quantity);
     
     WorldSceneManager->EnableStarAtRandomLocation(true);
     SwitchStoreCrownsUI(false);
@@ -1122,6 +1121,8 @@ void AMapMenuCamera::BuyCrowns(int _quantity)
 
     CurrentMinion->UpdateCoins(-CROWN_PRICE, false);
     CurrentMinion->UpdateCrowns(_quantity);
+    MapUI->UpdateCrowns(CurrentMinionTeam, _quantity);
+    
     WorldSceneManager->DisableAllStars();
 
     SwitchCrownsShop(false);
