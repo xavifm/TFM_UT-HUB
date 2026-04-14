@@ -1287,12 +1287,13 @@ DEFINE_FUNCTION(AMapMenuCamera::execStopMinionForDuel)
 }
 // ********** End Class AMapMenuCamera Function StopMinionForDuel **********************************
 
-// ********** Begin Class AMapMenuCamera Function StoreCrowns **************************************
-struct Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics
+// ********** Begin Class AMapMenuCamera Function StoreEconomy *************************************
+struct Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics
 {
-	struct MapMenuCamera_eventStoreCrowns_Parms
+	struct MapMenuCamera_eventStoreEconomy_Parms
 	{
-		int32 _quantity;
+		int32 _crowns;
+		int32 _money;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -1300,35 +1301,39 @@ struct Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp__quantity;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__crowns;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__money;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::NewProp__quantity = { "_quantity", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStoreCrowns_Parms, _quantity), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::NewProp__quantity,
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::NewProp__crowns = { "_crowns", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStoreEconomy_Parms, _crowns), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::NewProp__money = { "_money", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventStoreEconomy_Parms, _money), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::NewProp__crowns,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::NewProp__money,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "StoreCrowns", Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::MapMenuCamera_eventStoreCrowns_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::MapMenuCamera_eventStoreCrowns_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AMapMenuCamera_StoreCrowns()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "StoreEconomy", Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::MapMenuCamera_eventStoreEconomy_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::MapMenuCamera_eventStoreEconomy_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_StoreEconomy()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_StoreCrowns_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_StoreEconomy_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(AMapMenuCamera::execStoreCrowns)
+DEFINE_FUNCTION(AMapMenuCamera::execStoreEconomy)
 {
-	P_GET_PROPERTY(FIntProperty,Z_Param__quantity);
+	P_GET_PROPERTY(FIntProperty,Z_Param__crowns);
+	P_GET_PROPERTY(FIntProperty,Z_Param__money);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	P_THIS->StoreCrowns(Z_Param__quantity);
+	P_THIS->StoreEconomy(Z_Param__crowns,Z_Param__money);
 	P_NATIVE_END;
 }
-// ********** End Class AMapMenuCamera Function StoreCrowns ****************************************
+// ********** End Class AMapMenuCamera Function StoreEconomy ***************************************
 
 // ********** Begin Class AMapMenuCamera Function SwitchCameraTeam *********************************
 struct Z_Construct_UFunction_AMapMenuCamera_SwitchCameraTeam_Statics
@@ -2196,7 +2201,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "StartFadeTransition", &AMapMenuCamera::execStartFadeTransition },
 		{ "StartPlayerTurn", &AMapMenuCamera::execStartPlayerTurn },
 		{ "StopMinionForDuel", &AMapMenuCamera::execStopMinionForDuel },
-		{ "StoreCrowns", &AMapMenuCamera::execStoreCrowns },
+		{ "StoreEconomy", &AMapMenuCamera::execStoreEconomy },
 		{ "SwitchCameraTeam", &AMapMenuCamera::execSwitchCameraTeam },
 		{ "SwitchChallengeMenuUI", &AMapMenuCamera::execSwitchChallengeMenuUI },
 		{ "SwitchChallengeUI", &AMapMenuCamera::execSwitchChallengeUI },
@@ -2455,7 +2460,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition, "StartFadeTransition" }, // 318122657
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartPlayerTurn, "StartPlayerTurn" }, // 715828140
 		{ &Z_Construct_UFunction_AMapMenuCamera_StopMinionForDuel, "StopMinionForDuel" }, // 2378700612
-		{ &Z_Construct_UFunction_AMapMenuCamera_StoreCrowns, "StoreCrowns" }, // 2947720821
+		{ &Z_Construct_UFunction_AMapMenuCamera_StoreEconomy, "StoreEconomy" }, // 1938467118
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchCameraTeam, "SwitchCameraTeam" }, // 3643825407
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeMenuUI, "SwitchChallengeMenuUI" }, // 2563477385
 		{ &Z_Construct_UFunction_AMapMenuCamera_SwitchChallengeUI, "SwitchChallengeUI" }, // 1079546028
@@ -2596,10 +2601,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3920200178U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 4194579765U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_460353998(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_1772247982(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

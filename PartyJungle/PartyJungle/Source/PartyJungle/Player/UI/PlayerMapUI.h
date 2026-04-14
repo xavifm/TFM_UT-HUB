@@ -89,6 +89,9 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchCrownSavePlaceVisibility(bool IsVisible);
+    
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SetSaveEnconomyText(int _crowns, int _money);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void UpdateDuelScreenInfo(int _coins, int _crowns, float _duelPercentage, int _team, int pot);

@@ -34,7 +34,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execUpdateDicePosition); \
 	DECLARE_FUNCTION(execGetMapUI); \
 	DECLARE_FUNCTION(execBuyCrowns); \
-	DECLARE_FUNCTION(execStoreCrowns); \
+	DECLARE_FUNCTION(execStoreEconomy); \
 	DECLARE_FUNCTION(execConfirmPathSelection); \
 	DECLARE_FUNCTION(execChangeSelectedPath); \
 	DECLARE_FUNCTION(execExecuteMinionMovement); \

@@ -229,7 +229,7 @@ public:
 	void ConfirmPathSelection();
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	void StoreCrowns(int _quantity);
+	void StoreEconomy(int _crowns, int _money);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void BuyCrowns(int _quantity);

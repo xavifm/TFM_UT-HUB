@@ -363,7 +363,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if(StoreCrownsUI) 
     {
-        StoreCrowns(1);
+        StoreEconomy(CurrentMinion->GetCrowns(), CurrentMinion->GetCoins());
         return;
     }
 
@@ -814,6 +814,7 @@ void AMapMenuCamera::SwitchStoreCrownsUI(bool _visibility)
 {
     StoreCrownsUI = _visibility;
     MapUI->SwitchCrownSavePlaceVisibility(_visibility);
+    MapUI->SetSaveEnconomyText(CurrentMinion->GetCrowns(), CurrentMinion->GetCoins());
 
     if (_visibility)
         MapUI->SwitchLegendVisibility(false);
@@ -1103,12 +1104,13 @@ void AMapMenuCamera::ConfirmPathSelection()
     SwitchPathMenu(false, {});
 }
 
-void AMapMenuCamera::StoreCrowns(int _quantity)
+void AMapMenuCamera::StoreEconomy(int _crowns, int _money)
 {
     if (!CurrentMinion || !WorldSceneManager)
         return;
 
-    CurrentMinion->UpdateCrowns(-_quantity);
+    CurrentMinion->UpdateCrowns(-_crowns);
+    CurrentMinion->UpdateCoins(-_money, false);
     
     WorldSceneManager->EnableStarAtRandomLocation(true);
     SwitchStoreCrownsUI(false);
