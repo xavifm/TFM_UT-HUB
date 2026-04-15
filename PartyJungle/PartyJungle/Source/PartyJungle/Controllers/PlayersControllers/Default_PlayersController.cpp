@@ -15,6 +15,10 @@ void ADefault_PlayersController::SetInputsEnabled(bool a_Enable)
 		{
 			auto PlayerInputsController {PlayerData.GetInputsController()};
 			PlayerInputsController->GetInputAxisEvent(EInputAxes::AxisX_Left)->AddUniqueDynamic(this, &ADefault_PlayersController::OnLeftJoystick_X);
+			PlayerInputsController->GetInputKeyEvent(EInputKeys::Button_Up, ETriggerEvents::Pressed)->AddUniqueDynamic(this, &ADefault_PlayersController::ButtonUp_Pressed);
+			PlayerInputsController->GetInputKeyEvent(EInputKeys::Button_Down, ETriggerEvents::Pressed)->AddUniqueDynamic(this, &ADefault_PlayersController::ButtonDown_Pressed);
+			PlayerInputsController->GetInputKeyEvent(EInputKeys::Button_Left, ETriggerEvents::Pressed)->AddUniqueDynamic(this, &ADefault_PlayersController::ButtonLeft_Pressed);
+			PlayerInputsController->GetInputKeyEvent(EInputKeys::Button_Right, ETriggerEvents::Pressed)->AddUniqueDynamic(this, &ADefault_PlayersController::ButtonRight_Pressed);
 		}
 	}
 	else
@@ -45,6 +49,26 @@ void ADefault_PlayersController::OnLeftJoystick_X(float a_Axis, int a_PlayerId, 
 	{
 		a_Axis > 0.0f ? NextMinion() : PreviousMinion();
 	}
+}
+
+void ADefault_PlayersController::ButtonUp_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId)
+{
+	
+}
+
+void ADefault_PlayersController::ButtonDown_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId)
+{
+	
+}
+
+void ADefault_PlayersController::ButtonLeft_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId)
+{
+	
+}
+
+void ADefault_PlayersController::ButtonRight_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId)
+{
+	
 }
 
 void ADefault_PlayersController::OnPlayerChanged(int a_OldPlayerId, int a_NewPlayerId)
