@@ -159,6 +159,35 @@ DEFINE_FUNCTION(ABoardMenu::execStartGame)
 }
 // ********** End Class ABoardMenu Function StartGame **********************************************
 
+// ********** Begin Class ABoardMenu Function StartGameCheat ***************************************
+struct Z_Construct_UFunction_ABoardMenu_StartGameCheat_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_StartGameCheat_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "StartGameCheat", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_StartGameCheat_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_StartGameCheat_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_StartGameCheat()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_StartGameCheat_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABoardMenu::execStartGameCheat)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->StartGameCheat();
+	P_NATIVE_END;
+}
+// ********** End Class ABoardMenu Function StartGameCheat *****************************************
+
 // ********** Begin Class ABoardMenu Function StartGameSequence ************************************
 static FName NAME_ABoardMenu_StartGameSequence = FName(TEXT("StartGameSequence"));
 void ABoardMenu::StartGameSequence()
@@ -452,6 +481,7 @@ void ABoardMenu::StaticRegisterNativesABoardMenu()
 		{ "GetCurrentMenuPosition", &ABoardMenu::execGetCurrentMenuPosition },
 		{ "PerformPartyAction", &ABoardMenu::execPerformPartyAction },
 		{ "StartGame", &ABoardMenu::execStartGame },
+		{ "StartGameCheat", &ABoardMenu::execStartGameCheat },
 		{ "SwitchMenuPosition", &ABoardMenu::execSwitchMenuPosition },
 		{ "SwitchPartyMenuPosition", &ABoardMenu::execSwitchPartyMenuPosition },
 		{ "SwitchPartyValues", &ABoardMenu::execSwitchPartyValues },
@@ -524,6 +554,7 @@ struct Z_Construct_UClass_ABoardMenu_Statics
 		{ &Z_Construct_UFunction_ABoardMenu_PerformMenuAction, "PerformMenuAction" }, // 2745501884
 		{ &Z_Construct_UFunction_ABoardMenu_PerformPartyAction, "PerformPartyAction" }, // 2634774604
 		{ &Z_Construct_UFunction_ABoardMenu_StartGame, "StartGame" }, // 3807531011
+		{ &Z_Construct_UFunction_ABoardMenu_StartGameCheat, "StartGameCheat" }, // 3511263981
 		{ &Z_Construct_UFunction_ABoardMenu_StartGameSequence, "StartGameSequence" }, // 2304481208
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardPartyCurrentOption, "SwitchBoardPartyCurrentOption" }, // 2930583374
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardVisibleOption, "SwitchBoardVisibleOption" }, // 2772329613
@@ -591,10 +622,10 @@ ABoardMenu::~ABoardMenu() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 189589246U) },
+		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 2301879570U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_218314779(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_2055406635(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

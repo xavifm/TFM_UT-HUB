@@ -100,6 +100,19 @@ void ABoardMenu::StartGame()
 	}
 }
 
+void ABoardMenu::StartGameCheat() 
+{
+	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
+
+	if(GameInstance) 
+	{
+		GameInstance->PlayersInBoard = 2;
+		GameInstance->RoundsInBoard = GameRounds;
+
+		StartGameSequence();
+	}
+}
+
 int ABoardMenu::GetCurrentMenuPosition()
 {
 	return CurrentMenuPosition;

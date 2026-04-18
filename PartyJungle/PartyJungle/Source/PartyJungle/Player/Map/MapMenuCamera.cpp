@@ -150,8 +150,19 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(KeyEscAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleEscInput);
         EnhancedInput->BindAction(LeftJoystickActionX, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputX);
         EnhancedInput->BindAction(LeftJoystickActionY, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputY);
+        EnhancedInput->BindAction(KeyF1Action, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleCheatKey);
         EnhancedInput->bBlockInput = false;
     }
+}
+
+void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
+{
+    //Start Minigame
+    RoundsSystem->EndRoundMinigameAvailable = false;
+    InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
+    MinigameWheel->SwitchUiVisibility(true);
+    MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
 }
 
 void AMapMenuCamera::HandleLeftJoystickInputX(const FInputActionValue& _value)

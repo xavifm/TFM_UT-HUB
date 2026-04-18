@@ -50,6 +50,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* KeywiAction;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
+	UInputAction* KeyF1Action;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* KeyEscAction;
@@ -108,6 +111,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	void HandleCheatKey(const FInputActionValue& _value);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void HandleLeftJoystickInputX(const FInputActionValue& _value);

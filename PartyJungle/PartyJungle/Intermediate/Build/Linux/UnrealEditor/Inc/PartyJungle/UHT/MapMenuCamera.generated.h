@@ -71,6 +71,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execHandleLeftRightInput); \
 	DECLARE_FUNCTION(execHandleLeftJoystickInputY); \
 	DECLARE_FUNCTION(execHandleLeftJoystickInputX); \
+	DECLARE_FUNCTION(execHandleCheatKey); \
 	DECLARE_FUNCTION(execSetupPlayerInputComponent); \
 	DECLARE_FUNCTION(execSwitchController); \
 	DECLARE_FUNCTION(execSwitchMainScene);
