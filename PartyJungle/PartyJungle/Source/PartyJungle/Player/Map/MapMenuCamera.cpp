@@ -625,7 +625,7 @@ void AMapMenuCamera::SwitchUIController()
 
 void AMapMenuCamera::SwitchController() 
 {
-    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), CurrentMinionTeam);
+    APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), /*CurrentMinionTeam*/ 0);
     APlayerController* PlayerController0 = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 
     if(PlayerController) 
