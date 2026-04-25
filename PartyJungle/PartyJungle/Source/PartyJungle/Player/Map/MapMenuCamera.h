@@ -266,6 +266,7 @@ public:
 	
 private:
 	const int MAX_MINION_NUMBER = 3;
+	const FVector START_INTRO_CAM_POSITION = FVector(1735,-2165,0);
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
@@ -324,6 +325,8 @@ private:
 	bool ThrowItemPlayerMenu = false;
 	bool SameTurnEnabled = false;
 	bool ScoreRankingEnabled = false;
+	bool StartGameIntro = true;
+	bool StartGameDices = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

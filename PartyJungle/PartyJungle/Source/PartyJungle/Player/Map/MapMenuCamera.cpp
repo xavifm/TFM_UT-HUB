@@ -20,7 +20,6 @@ void AMapMenuCamera::BeginPlay()
     SwitchMenuWidget(true);
     SwitchToFullMapView(false, CurrentMinion->GetActorLocation());
     UpdateDicePosition();
-    Dice->ShowDice();
 
     if(WorldSceneManager) 
     {
@@ -77,13 +76,61 @@ void AMapMenuCamera::BeginPlay()
 
     SwitchMainScene();
     SwitchRankingScoreList(false);
+    
+    WorldSceneManager->StartMapPointCinematic(START_INTRO_CAM_POSITION, 2);
+    
+    if (MapUI)
+    {
+        MapUI->SwitchLegendVisibility(false);
+    }
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (FullMapView)
+    if (StartGameIntro)
+    {
+        if (!FullMapView)
+        {
+            if (MapUI)
+            {
+                MapUI->SwitchScoresVisibility(false);
+                MapUI->SwitchLegendVisibility(false);
+            }
+            
+            FullMapView = true;
+            SwitchToFullMapView(FullMapView, START_INTRO_CAM_POSITION);   
+        }
+        
+        FVector CurrentLocation = WorldSceneManager->FullMapCamera->GetAttachParentActor()->GetActorLocation();
+        FVector TargetLocation = FVector(-1070, 300,0);
+
+        FVector MoveDirection = (TargetLocation - CurrentLocation).GetSafeNormal();
+        
+        auto SnapAxis = [](float Value)
+        {
+            if (Value > 0.1f) return 0.17f;
+            if (Value < -0.1f) return -0.17f;
+            return 0.f;
+        };
+        
+        float dirY = SnapAxis(MoveDirection.Y);
+        float dirX = SnapAxis(MoveDirection.X);
+
+        MoveFullMapCamera(dirY, dirX);
+        
+        if (dirY == 0.f && dirX == 0.f)
+        {
+            SwitchFullMapVision();
+            MapUI->SwitchScoresVisibility(false);
+            MapUI->SwitchLegendVisibility(false);
+            StartGameDices = true;
+            StartGameIntro = false;
+        }
+    }
+    
+    if (FullMapView && !StartGameIntro)
     {
         MoveFullMapCamera(FullMapCameraVelocity.X, FullMapCameraVelocity.Y);
         FullMapCameraVelocity = FVector2D(0,0);
@@ -168,6 +215,9 @@ void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
 void AMapMenuCamera::HandleLeftJoystickInputX(const FInputActionValue& _value)
 {
     float stickInputX = _value.Get<float>();
+    
+    if (StartGameIntro || StartGameDices)
+        return;
 
     if (stickInputX < 0.3f && stickInputX > -0.3f)
         return;
@@ -180,6 +230,9 @@ void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
 {
     float stickInputY = _value.Get<float>();
     
+    if (StartGameIntro || StartGameDices)
+        return;
+    
     if (stickInputY < 0.3f && stickInputY > -0.3f)
         return;
     
@@ -190,6 +243,9 @@ void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
 void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
+    
+    if (StartGameIntro || StartGameDices)
+        return;
     
     if (ScoreRankingEnabled)
         return;
@@ -244,6 +300,14 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (StartGameIntro || StartGameDices)
+    {
+        if (StartGameIntro) return;
+        //llògica minijoc dau per torns
+        
+        return;
+    }
+    
     if (ScoreRankingEnabled)
     {
         SwitchRankingScoreList(false);
@@ -458,7 +522,7 @@ void AMapMenuCamera::DelayedSceneSwitch()
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
+    if ((!InputEnabled && !SelectingPath) || StartGameIntro || StartGameDices || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
         return;
 
     SwitchFullMapVision();
@@ -642,6 +706,9 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
+    if (StartGameIntro || StartGameDices)
+        return;
+    
     if (ScoreRankingEnabled)
     {
         SwitchRankingScoreList(false);
