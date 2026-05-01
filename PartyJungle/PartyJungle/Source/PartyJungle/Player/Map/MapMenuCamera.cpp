@@ -97,6 +97,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
             {
                 MapUI->SwitchScoresVisibility(false);
                 MapUI->SwitchLegendVisibility(false);
+                Dice->HideDice();
             }
             
             FullMapView = true;
@@ -104,7 +105,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
         }
         
         FVector CurrentLocation = WorldSceneManager->FullMapCamera->GetAttachParentActor()->GetActorLocation();
-        FVector TargetLocation = FVector(-1070, 300,0);
+        FVector TargetLocation = FVector(-800, 300,0);
 
         FVector MoveDirection = (TargetLocation - CurrentLocation).GetSafeNormal();
         
@@ -117,20 +118,31 @@ void AMapMenuCamera::Tick(float DeltaTime)
         
         float dirY = SnapAxis(MoveDirection.Y);
         float dirX = SnapAxis(MoveDirection.X);
-
-        MoveFullMapCamera(dirY, dirX);
+        
+        float duration = 10.f;
+        Elapsed += DeltaTime;
+        float t = Elapsed / duration;
+        float startZoom = 3150;
+        float finalZoom = 2800;
+        
+        CurrentZoom = startZoom + (finalZoom - startZoom) * t;
+        
+        MoveFullMapCamera(dirY, dirX, CurrentZoom);
         
         if (dirY == 0.f && dirX == 0.f)
         {
-            SwitchFullMapVision();
             MapUI->SwitchScoresVisibility(false);
             MapUI->SwitchLegendVisibility(false);
+            SwitchKingsPosition(true);
+            
+            MoveFullMapCamera(0, 0, CurrentZoom);
+            
             StartGameDices = true;
             StartGameIntro = false;
         }
     }
     
-    if (FullMapView && !StartGameIntro)
+    if (FullMapView && !StartGameIntro && !StartGameDices)
     {
         MoveFullMapCamera(FullMapCameraVelocity.X, FullMapCameraVelocity.Y);
         FullMapCameraVelocity = FVector2D(0,0);

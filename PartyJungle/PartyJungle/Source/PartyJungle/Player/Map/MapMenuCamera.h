@@ -203,7 +203,10 @@ public:
 	void SwitchToFullMapView(bool _enabled, FVector _position);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
-	void MoveFullMapCamera(float _xPos, float _yPos);
+	void MoveFullMapCamera(float _xPos, float _yPos, float _zPos = 3150);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void SwitchKingsPosition(bool _center);
 	
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
@@ -333,6 +336,10 @@ private:
 	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
+	
+	//camera zoom lerp
+	float Elapsed;
+	float CurrentZoom;
 	
 	FText SavedMinigameName;
 
