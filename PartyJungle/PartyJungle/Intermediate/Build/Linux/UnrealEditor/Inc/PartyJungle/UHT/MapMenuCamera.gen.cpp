@@ -1160,6 +1160,54 @@ DEFINE_FUNCTION(AMapMenuCamera::execRollTheDice)
 }
 // ********** End Class AMapMenuCamera Function RollTheDice ****************************************
 
+// ********** Begin Class AMapMenuCamera Function SetDiceToKingLocation ****************************
+struct MapMenuCamera_eventSetDiceToKingLocation_Parms
+{
+	int32 _team;
+	int32 _delay;
+};
+static FName NAME_AMapMenuCamera_SetDiceToKingLocation = FName(TEXT("SetDiceToKingLocation"));
+void AMapMenuCamera::SetDiceToKingLocation(int32 _team, int32 _delay)
+{
+	MapMenuCamera_eventSetDiceToKingLocation_Parms Parms;
+	Parms._team=_team;
+	Parms._delay=_delay;
+	UFunction* Func = FindFunctionChecked(NAME_AMapMenuCamera_SetDiceToKingLocation);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__delay;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSetDiceToKingLocation_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::NewProp__delay = { "_delay", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSetDiceToKingLocation_Parms, _delay), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::NewProp__team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::NewProp__delay,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "SetDiceToKingLocation", Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::PropPointers), sizeof(MapMenuCamera_eventSetDiceToKingLocation_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(MapMenuCamera_eventSetDiceToKingLocation_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AMapMenuCamera Function SetDiceToKingLocation ******************************
+
 // ********** Begin Class AMapMenuCamera Function SetupPlayerInputComponent ************************
 struct Z_Construct_UFunction_AMapMenuCamera_SetupPlayerInputComponent_Statics
 {
@@ -2561,6 +2609,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogic, "RestoreTurnLogic" }, // 881133045
 		{ &Z_Construct_UFunction_AMapMenuCamera_RestoreTurnLogicWithAnimation, "RestoreTurnLogicWithAnimation" }, // 2447711470
 		{ &Z_Construct_UFunction_AMapMenuCamera_RollTheDice, "RollTheDice" }, // 3235366422
+		{ &Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation, "SetDiceToKingLocation" }, // 3363957710
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetupPlayerInputComponent, "SetupPlayerInputComponent" }, // 3255206399
 		{ &Z_Construct_UFunction_AMapMenuCamera_SpinWheelEndSequence, "SpinWheelEndSequence" }, // 2696137888
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition, "StartFadeTransition" }, // 318122657
@@ -2710,10 +2759,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 162107158U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 3601266462U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_3296360464(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_260429026(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

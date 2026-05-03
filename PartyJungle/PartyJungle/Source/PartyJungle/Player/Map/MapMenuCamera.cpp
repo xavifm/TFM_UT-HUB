@@ -136,6 +136,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
             SwitchKingsPosition(true);
             
             MoveFullMapCamera(0, 0, CurrentZoom);
+            SetDiceToKingLocation(0, 1);
             
             StartGameDices = true;
             StartGameIntro = false;
@@ -184,7 +185,8 @@ void AMapMenuCamera::Tick(float DeltaTime)
             }
         }
 
-        UpdateDicePosition(false);
+        if (!StartGameDices)
+            UpdateDicePosition(false);
     }
 }
 

@@ -201,7 +201,10 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
 	void SwitchToFullMapView(bool _enabled, FVector _position);
-
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void SetDiceToKingLocation(int _team, int _delay = 0);
+	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
 	void MoveFullMapCamera(float _xPos, float _yPos, float _zPos = 3150);
 	

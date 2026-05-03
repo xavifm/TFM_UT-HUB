@@ -18,7 +18,7 @@ protected:
 public:	
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Displacement")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Dice Displacement")
 	void SwitchDicePosition(FVector NewPosition, bool ResizeDice);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Feedback")
@@ -27,7 +27,7 @@ public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "Dice Feedback")
 	float DiceFeedbackTime = 2;
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Visibility")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Dice Visibility")
 	void ShowDice();
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Dice Visibility")
