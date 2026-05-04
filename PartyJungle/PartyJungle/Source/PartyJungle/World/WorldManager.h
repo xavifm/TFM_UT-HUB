@@ -56,7 +56,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void DisableAllStars();
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
 	void StartMapPointCinematic(FVector _position, float _time);
 
 private:

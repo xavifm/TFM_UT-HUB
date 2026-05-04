@@ -271,7 +271,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AWorld
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::NewProp__time,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "StartMapPointCinematic", Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers), sizeof(WorldManager_eventStartMapPointCinematic_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AWorldManager, nullptr, "StartMapPointCinematic", Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::PropPointers), sizeof(WorldManager_eventStartMapPointCinematic_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams), Z_Construct_UFunction_AWorldManager_StartMapPointCinematic_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(WorldManager_eventStartMapPointCinematic_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AWorldManager_StartMapPointCinematic()
 {
@@ -413,7 +413,7 @@ struct Z_Construct_UClass_AWorldManager_Statics
 		{ &Z_Construct_UFunction_AWorldManager_GetMinigameCamera, "GetMinigameCamera" }, // 3361099478
 		{ &Z_Construct_UFunction_AWorldManager_InitializeCameras, "InitializeCameras" }, // 522898123
 		{ &Z_Construct_UFunction_AWorldManager_LoadPortion, "LoadPortion" }, // 3259949932
-		{ &Z_Construct_UFunction_AWorldManager_StartMapPointCinematic, "StartMapPointCinematic" }, // 3918929468
+		{ &Z_Construct_UFunction_AWorldManager_StartMapPointCinematic, "StartMapPointCinematic" }, // 1249375816
 		{ &Z_Construct_UFunction_AWorldManager_UnloadEntireWorld, "UnloadEntireWorld" }, // 3062019286
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -479,10 +479,10 @@ AWorldManager::~AWorldManager() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 4012166663U) },
+		{ Z_Construct_UClass_AWorldManager, AWorldManager::StaticClass, TEXT("AWorldManager"), &Z_Registration_Info_UClass_AWorldManager, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AWorldManager), 755095511U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_868009496(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_3754599910(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_World_WorldManager_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -318,6 +318,7 @@ void AMapMenuCamera::HandleConfirmInput()
     {
         if (StartGameIntro) return;
         //llògica minijoc dau per torns
+        RollTheDice();
         
         return;
     }
@@ -1027,16 +1028,21 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
     //int oldMinionTeam = CurrentMinionTeam;
-    CurrentMinionTeam += _direction;
+    if (PlayerTurnsOrder.Num() <= 0)
+        return;
+    
+    MinionTeamIndex += _direction;
 
     if(_direction != 0)
     {
-        if (CurrentMinionTeam >= MAX_TEAM_NUMBER)
-            CurrentMinionTeam = 0;
-        else if (CurrentMinionTeam <= 0)
-            CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
+        if (MinionTeamIndex >= MAX_TEAM_NUMBER)
+            MinionTeamIndex = 0;
+        else if (MinionTeamIndex <= 0)
+            MinionTeamIndex = MAX_TEAM_NUMBER - 1;
+        
+        CurrentMinionTeam = PlayerTurnsOrder[MinionTeamIndex];
 
-        if (CurrentMinionTeam == 0 && RoundsSystem)
+        if (MinionTeamIndex == 0 && RoundsSystem)
         {
             TArray<bool> minigamesDetected = RoundsSystem->HandleEndRound(true);
 
@@ -1061,7 +1067,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         }
         if (MapUI &&
             ((RoundsSystem->GetRoundsLeft() > RoundsSystem->MIN_ROUNDS_ANNOUNCED)
-            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && CurrentMinionTeam != 0)))
+            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->MIN_ROUNDS_ANNOUNCED && MinionTeamIndex != 0)))
         {
             FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
             MapUI->ShowTextInScreen(Message, -1);
@@ -1263,9 +1269,53 @@ void AMapMenuCamera::RollTheDice()
         Dice->ShowDiceFeedbackNumber(Dice->DiceValue);
         SavedDiceMovements = 0;
         DiceRollIndex = 0;
-        ChooseMinionToMove = true;
-        RollingDice = true;   
+        
+        if (!StartGameDices)
+        {
+            RollingDice = true; 
+            ChooseMinionToMove = true;
+        }
+        //dice start turns
+        else if (CurrentMinionTeam < MAX_TEAM_NUMBER)
+        {
+            SetKingNumber(CurrentMinionTeam, Dice->DiceValue);
+            PlayerDicesValues.Add(Dice->DiceValue);
+            CurrentMinionTeam += 1;
+            
+            Dice->DiceValue = 0;
+            SavedDiceMovements = 0;
+            DiceRollIndex = 0;
+            
+            if (CurrentMinionTeam < MAX_TEAM_NUMBER)
+                SetDiceToKingLocation(CurrentMinionTeam, 0);
+            else
+            {
+                ChooseMinionToMove = true;
+                Dice->HideDice();
+                PlayerTurnsOrder = CalculateTurnsOrder(PlayerDicesValues);
+                CurrentMinionTeam = PlayerTurnsOrder[0];
+                CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+                FinishGameIntroCinematic();
+            }
+        }
     }
+}
+
+TArray<int> AMapMenuCamera::CalculateTurnsOrder(TArray<int> _diceResults)
+{
+    TArray<int> Order;
+    
+    for (int i = 0; i < _diceResults.Num(); i++)
+    {
+        Order.Add(i);
+    }
+    
+    Order.Sort([&_diceResults](const int& A, const int& B)
+    {
+        return _diceResults[A] > _diceResults[B];
+    });
+
+    return Order;
 }
 
 void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)

@@ -30,6 +30,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execFinishFadeTransition); \
 	DECLARE_FUNCTION(execStartFadeTransition); \
+	DECLARE_FUNCTION(execCalculateTurnsOrder); \
 	DECLARE_FUNCTION(execRestoreTurnLogicWithAnimation); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
 	DECLARE_FUNCTION(execGetMapUI); \
