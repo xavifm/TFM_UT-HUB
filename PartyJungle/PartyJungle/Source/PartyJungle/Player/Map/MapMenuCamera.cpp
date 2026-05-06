@@ -314,6 +314,13 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (MinigameInfo)
+    {
+        SwitchMainScene(false, SavedMinigameName);
+        MinigameInfo = false;
+        return;
+    }
+    
     if (StartGameIntro || StartGameDices)
     {
         if (StartGameIntro) return;
@@ -521,7 +528,8 @@ void AMapMenuCamera::SpinWheelEndSequence()
     InitializeRouletteWithMinigames(EMinigameType::DUEL, ETeamsMode::NOTEAM);
     
     MinigameWheel->SwitchUiVisibility(true);
-    MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
+    int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
+    MinigameWheel->SpinWheel(randomTime);
     
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, (ROULETTE_SPIN_TIME + ENDROUND_MINIGAME_START_TIME - 2), false);
 }
@@ -532,7 +540,13 @@ void AMapMenuCamera::DelayedSceneSwitch()
     SavedMinigameName = MinigamesList[MinigameWheel->GetSpinValue()]->GameTitle;
     MinigameWheel->SwitchUiVisibility(false);
     SpinningWheel = false;
-    SwitchMainScene(false, SavedMinigameName);
+    
+    //minigameBook
+    if (MinigameBookInfo)
+        MinigameBookInfo->SetMinigameInfo(SavedMinigameName);
+    
+    MinigameInfo = true;
+    SwitchMainScene(false, FText::FromString("Book"));
 }
 
 void AMapMenuCamera::HandleYInput() 
@@ -1243,6 +1257,14 @@ void AMapMenuCamera::InitializeRouletteWithMinigames(EMinigameType _minigameType
         for (auto minigame : MinigamesList)
         {
             gameTitles.Add(minigame->GameTitle);
+            
+            if (MinigameBookInfo)
+            {   
+                MinigameBookInfo->MinigameInfoMap.Add(
+                    minigame->GameTitle.ToString(),
+                    minigame->GameDescription.ToString()
+                );
+            }
         }
         
         MinigameWheel->InitializeUiValues(gameTitles);

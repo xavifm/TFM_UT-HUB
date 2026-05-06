@@ -15,6 +15,7 @@
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/UIManager/MInigames/MinigameWheel.h>
 #include <PartyJungle/World/WorldManager.h>
+#include "../../Minigame/MinigameInfoDesc.h"
 
 #include "PartyJungle/Minigame/CrossInfo/MinigameLogic.h"
 #include "MapMenuCamera.generated.h"
@@ -104,6 +105,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map Manager")
 	AWorldManager* WorldSceneManager;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MinigameInfo")
+	AMinigameInfoDesc* MinigameBookInfo;
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(bool _isMap = true, FText _name = FText::GetEmpty());
@@ -352,6 +356,7 @@ private:
 	bool SameTurnEnabled = false;
 	bool ScoreRankingEnabled = false;
 	bool StartGameIntro = true;
+	bool MinigameInfo = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;

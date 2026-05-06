@@ -1,0 +1,65 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.0-2-cachyos-deckify (network name: cachyos-x8664-xfm)
+Running 20 x86_64 processors (28 logical cores)
+Exception was "SIGSEGV: invalid attempt to read memory at address 0x0000000000000010"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-CoreUObject.so!UObject::FindFunctionChecked(FName) const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/CoreUObject/Public/UObject/ObjectHandle.h:423]
+libUnrealEditor-PartyJungle-2697.so!UPlayerMapUI::SwitchTurnUI(int) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/PlayerMapUI.gen.cpp:1275]
+libUnrealEditor-PartyJungle-2697.so!AMapMenuCamera::SwitchMenuWidget(bool) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:995]
+libUnrealEditor-PartyJungle-2697.so!AMapMenuCamera::SwitchFullMapVision() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:564]
+libUnrealEditor-CoreUObject.so!UFunction::Invoke(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/Class.cpp:7453]
+libUnrealEditor-CoreUObject.so!UObject::CallFunction(FFrame&, void*, UFunction*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1175]
+libUnrealEditor-CoreUObject.so!UObject::execFinalFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:3278]
+libUnrealEditor-CoreUObject.so!UObject::ProcessContextOpcode(FFrame&, void*, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!void ProcessScriptFunction<void (*)(UObject*, FFrame&, void*)>(UObject*, UFunction*, FFrame&, void*, void (*)(UObject*, FFrame&, void*)) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1067]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*)::$_0::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1320]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1337]
+libUnrealEditor-CoreUObject.so!UObject::execLocalFinalFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:3292]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!void ProcessScriptFunction<void (*)(UObject*, FFrame&, void*)>(UObject*, UFunction*, FFrame&, void*, void (*)(UObject*, FFrame&, void*)) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1067]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*)::$_0::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1320]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1337]
+libUnrealEditor-CoreUObject.so!UObject::ProcessContextOpcode(FFrame&, void*, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!void ProcessScriptFunction<void (*)(UObject*, FFrame&, void*)>(UObject*, UFunction*, FFrame&, void*, void (*)(UObject*, FFrame&, void*)) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1067]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*)::$_0::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1320]
+libUnrealEditor-CoreUObject.so!ProcessLocalFunction(UObject*, UFunction*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1337]
+libUnrealEditor-CoreUObject.so!UObject::execLocalFinalFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:3292]
+libUnrealEditor-CoreUObject.so!ProcessLocalScriptFunction(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:509]
+libUnrealEditor-CoreUObject.so!UObject::ProcessInternal(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:1364]
+libUnrealEditor-CoreUObject.so!UFunction::Invoke(UObject*, FFrame&, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/Class.cpp:7453]
+libUnrealEditor-CoreUObject.so!UObject::ProcessEvent(UFunction*, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/ScriptCore.cpp:2209]
+libUnrealEditor-Engine.so!AActor::ProcessEvent(UFunction*, void*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:1456]
+libUnrealEditor-PartyJungle-6151.so!AWorldManager::StartMapPointCinematic(UE::Math::TVector<double>, float) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Intermediate/Build/Linux/UnrealEditor/Inc/PartyJungle/UHT/WorldManager.gen.cpp:252]
+libUnrealEditor-PartyJungle-6151.so!AMapMenuCamera::BeginPlay() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:80]
+libUnrealEditor-Engine.so!AActor::DispatchBeginPlay(bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Actor.cpp:4710]
+libUnrealEditor-Engine.so!AWorldSettings::NotifyBeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/WorldSettings.cpp:362]
+libUnrealEditor-Engine.so!AGameStateBase::HandleBeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/GameStateBase.cpp:227]
+libUnrealEditor-Engine.so!AGameModeBase::StartPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/GameModeBase.cpp:206]
+libUnrealEditor-Engine.so!UWorld::BeginPlay() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/World.cpp:5915]
+libUnrealEditor-Engine.so!UEngine::LoadMap(FWorldContext&, FURL, UPendingNetGame*, FString&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:16174]
+libUnrealEditor-Engine.so!UEngine::Browse(FWorldContext&, FURL, FString&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:15318]
+libUnrealEditor-Engine.so!UEngine::TickWorldTravel(FWorldContext&, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UnrealEngine.cpp:15516]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2122]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
