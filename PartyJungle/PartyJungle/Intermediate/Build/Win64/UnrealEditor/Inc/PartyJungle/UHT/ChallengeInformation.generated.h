@@ -17,14 +17,18 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AMinion;
-enum class EDuelType : uint8;
 
 // ********** Begin Class AChallengeInformation ****************************************************
 #define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeInformation_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execResetDuels); \
 	DECLARE_FUNCTION(execCheckIfThereAreCrownsInDuel); \
 	DECLARE_FUNCTION(execGetBetCrownsQuantity); \
+	DECLARE_FUNCTION(execUpdateCurrentPot); \
+	DECLARE_FUNCTION(execResetSavedPot); \
+	DECLARE_FUNCTION(execAddSavedPot); \
+	DECLARE_FUNCTION(execGetSavedPotStars); \
 	DECLARE_FUNCTION(execGetSavedPot); \
+	DECLARE_FUNCTION(execGetCalculatedPot); \
 	DECLARE_FUNCTION(execGetPotQuantity); \
 	DECLARE_FUNCTION(execGetBetCoinsQuantity); \
 	DECLARE_FUNCTION(execSwitchDuelType); \

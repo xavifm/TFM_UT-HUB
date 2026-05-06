@@ -18,7 +18,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class AMapDatabase;
 class AScoreDatabase;
-enum class EDuelType : uint8;
 
 // ********** Begin Class UPlayerMapUI *************************************************************
 #define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_14_RPC_WRAPPERS_NO_PURE_DECLS \

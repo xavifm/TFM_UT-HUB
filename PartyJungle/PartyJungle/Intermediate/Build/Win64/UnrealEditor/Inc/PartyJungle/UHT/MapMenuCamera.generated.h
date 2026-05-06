@@ -34,7 +34,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execUpdateDicePosition); \
 	DECLARE_FUNCTION(execGetMapUI); \
 	DECLARE_FUNCTION(execBuyCrowns); \
-	DECLARE_FUNCTION(execStoreCrowns); \
+	DECLARE_FUNCTION(execStoreEconomy); \
 	DECLARE_FUNCTION(execConfirmPathSelection); \
 	DECLARE_FUNCTION(execChangeSelectedPath); \
 	DECLARE_FUNCTION(execExecuteMinionMovement); \
@@ -71,6 +71,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execHandleLeftRightInput); \
 	DECLARE_FUNCTION(execHandleLeftJoystickInputY); \
 	DECLARE_FUNCTION(execHandleLeftJoystickInputX); \
+	DECLARE_FUNCTION(execHandleCheatKey); \
 	DECLARE_FUNCTION(execSetupPlayerInputComponent); \
 	DECLARE_FUNCTION(execSwitchController); \
 	DECLARE_FUNCTION(execSwitchMainScene);

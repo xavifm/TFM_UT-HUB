@@ -6,6 +6,9 @@
         "PCH": "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
         "Includes": [
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\item.gen.cpp",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\items\\base\\item.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\item.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\mainmenuinput.gen.cpp",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\menu\\mainmenuinput.h",
             "c:\\program files\\epic games\\ue_5.6\\engine\\plugins\\enhancedinput\\source\\enhancedinput\\public\\enhancedinputsubsystems.h",
@@ -154,8 +157,6 @@
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\rounds\\roundsmanager.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\roundsmanager.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\inventory\\inventory.h",
-            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\player\\items\\base\\item.h",
-            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\item.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\inventory.generated.h",
             "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
             "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h",
@@ -199,10 +200,13 @@
             "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\arrowcomponent.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\cococannon.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigame2logic.generated.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigame3logic.gen.cpp",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame3\\minigame3logic.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame3\\playerpalette.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\playerpalette.generated.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigame3logic.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamedatagameinstance.gen.cpp",
-            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamelogic.gen.cpp",
-            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamewheel.gen.cpp",
-            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minion.gen.cpp"
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamelogic.gen.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
