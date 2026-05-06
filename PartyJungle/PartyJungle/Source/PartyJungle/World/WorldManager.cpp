@@ -17,12 +17,16 @@ void AWorldManager::InitializeCameras()
 
 	TArray<UCameraComponent*> mapCameraComponents;
 	TArray<UCameraComponent*> fullMapCameraComponents;
+	TArray<UCameraComponent*> bookCameraComponents;
 
 	MapCameraActor->GetComponents<UCameraComponent>(mapCameraComponents);
 	MapCamera = mapCameraComponents[0];
 
 	FullMapCameraActor->GetComponents<UCameraComponent>(fullMapCameraComponents);
 	FullMapCamera = fullMapCameraComponents[0];
+	
+	BookCameraActor->GetComponents<UCameraComponent>(bookCameraComponents);
+	BookCamera = bookCameraComponents[0];
 
 	IsInitialized = true;
 }
@@ -61,6 +65,9 @@ void AWorldManager::UnloadEntireWorld()
 
 		if (FullMapCamera)
 			FullMapCamera->Deactivate();
+		
+		if (BookCamera)
+			BookCamera->Deactivate();
 	}
 
 	TArray<AMinigameLogic*> minigameList = WorldDB->GetAllMinigames();
@@ -78,13 +85,14 @@ void AWorldManager::LoadPortion(bool _isMap, FText _name)
 {
 	TArray<AActor*> actorsToLoad;
 	AMinigameLogic* minigame = nullptr;
+	FText bookName = FText::FromString("Book");
 	
 	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	
 	if (!PC || !WorldDB)
 		return;
 	
-	if (!_isMap)
+	if (!_isMap && !_name.EqualTo(bookName))
 	{
 		minigame = WorldDB->GetMinigameByName(_name);
 		if (minigame)
@@ -103,7 +111,7 @@ void AWorldManager::LoadPortion(bool _isMap, FText _name)
 		}
 	}
 	
-	if (!_isMap && minigame)
+	if (!_isMap && minigame && !_name.EqualTo(bookName))
 	{
 		minigame->BeginMinigame();
 	}
@@ -117,12 +125,20 @@ void AWorldManager::LoadPortion(bool _isMap, FText _name)
 
 	if (!_isMap)
 	{
-		UCameraComponent* cameraActor = GetMinigameCamera(minigame);
-		if (cameraActor) 
+		if (!_name.EqualTo(bookName))
 		{
-			cameraActor->Activate();
-			PC->SetViewTargetWithBlend(cameraActor->GetOwner(), 0.0f);
-		}	
+			UCameraComponent* cameraActor = GetMinigameCamera(minigame);
+			if (cameraActor) 
+			{
+				cameraActor->Activate();
+				PC->SetViewTargetWithBlend(cameraActor->GetOwner(), 0.0f);
+			}	
+		}
+		else if (BookCamera)
+		{
+			BookCamera->Activate();
+			PC->SetViewTargetWithBlend(BookCamera->GetAttachParentActor(), 0.0f);
+		}
 	}
 }
 

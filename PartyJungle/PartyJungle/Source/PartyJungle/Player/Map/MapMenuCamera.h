@@ -15,6 +15,7 @@
 #include "Camera/CameraComponent.h"
 #include <PartyJungle/UIManager/MInigames/MinigameWheel.h>
 #include <PartyJungle/World/WorldManager.h>
+#include "../../Minigame/MinigameInfoDesc.h"
 
 #include "PartyJungle/Minigame/CrossInfo/MinigameLogic.h"
 #include "MapMenuCamera.generated.h"
@@ -85,6 +86,9 @@ public:
 	int CurrentMinionPos;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
+	int MinionTeamIndex;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Camera Navigation")
 	int CurrentMinionTeam;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Dice System")
@@ -101,6 +105,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Map Manager")
 	AWorldManager* WorldSceneManager;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MinigameInfo")
+	AMinigameInfoDesc* MinigameBookInfo;
 
 	UFUNCTION(BlueprintCallable, Category = "Scene Toggle")
 	void SwitchMainScene(bool _isMap = true, FText _name = FText::GetEmpty());
@@ -198,12 +205,24 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchMenuWidget(bool _enabled);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void FinishGameIntroCinematic();
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
 	void SwitchToFullMapView(bool _enabled, FVector _position);
-
+	
 	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
-	void MoveFullMapCamera(float _xPos, float _yPos);
+	void SetDiceToKingLocation(int _team, int _delay = 0);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void SetKingNumber(int _team, int _number);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void MoveFullMapCamera(float _xPos, float _yPos, float _zPos = 3150);
+	
+	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	void SwitchKingsPosition(bool _center);
 	
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _paths);
@@ -264,8 +283,18 @@ public:
 	UPROPERTY(EditAnywhere)
 	TArray<AMinigameLogic*> MinigamesList;
 	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<int> PlayerTurnsOrder;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool ChooseMinionToMove = false;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool StartGameDices = false;
+	
 private:
 	const int MAX_MINION_NUMBER = 3;
+	const FVector START_INTRO_CAM_POSITION = FVector(1735,-2165,0);
 	const float RESTORE_TURN_TRANSITION_TIME = 0.75f;
 	const float DICE_HEIGHT_OFFSET = 140;
 	const float TIME_BEFORE_RESTORING_ROUND = 2;
@@ -285,6 +314,9 @@ private:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void RestoreTurnLogicWithAnimation();
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	TArray<int> CalculateTurnsOrder(TArray<int> _diceResults);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void StartFadeTransition(float _time);
@@ -306,7 +338,6 @@ private:
 
 	bool InputEnabled = true;
 	bool RollingDice = false;
-	bool ChooseMinionToMove = false;
 	bool SelectingPath = false;
 	bool DuelUI = false;
 	bool DuelPopup = false;
@@ -324,12 +355,18 @@ private:
 	bool ThrowItemPlayerMenu = false;
 	bool SameTurnEnabled = false;
 	bool ScoreRankingEnabled = false;
+	bool StartGameIntro = true;
+	bool MinigameInfo = false;
 
 	int SelectedPathIndex = 0;
 	int SelectedMinionChallengeIndex = 0;
 	int MinionTeamChallengeIndex = 0;
 	int SavedCameraHeight = 770;
 	int RouletteResult = 0;
+	
+	//camera zoom lerp
+	float Elapsed;
+	float CurrentZoom;
 	
 	FText SavedMinigameName;
 
@@ -347,6 +384,9 @@ private:
 	
 	UPROPERTY()
 	TArray<ASquareOptional*> AvailablePaths;
+	
+	UPROPERTY()
+	TArray<int> PlayerDicesValues;
 	
 	UPROPERTY()
 	UPlayerMapUI* MapUI;

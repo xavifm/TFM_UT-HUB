@@ -1,0 +1,39 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.0-2-cachyos-deckify (network name: cachyos-x8664-xfm)
+Running 20 x86_64 processors (28 logical cores)
+Exception was "Ensure condition failed: false  [File:/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Math/Matrix.h] [Line: 469] "
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-Renderer.so!UE::Math::TMatrix<float>::ErrorEnsure(char16_t const*)::'lambda'()::operator()() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Math/Matrix.h:469]
+libUnrealEditor-Renderer.so!UE::Math::TMatrix<float>::InverseFast() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Math/Matrix.h:469]
+libUnrealEditor-Renderer.so!UE::Core::Private::Function::TFunctionRefCaller<FDistanceFieldSceneData::UpdateDistanceFieldObjectBuffers(FRDGBuilder&, FRDGExternalAccessQueue&, FScene*, TArray<FDistanceFieldAssetMipId, TSizedDefaultAllocator<32> >&, TArray<FSetElementId, TSizedDefaultAllocator<32> >&)::$_1, void, int>::Call(void*, int&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Renderer/Private/DistanceFieldObjectManagement.cpp:625]
+libUnrealEditor-Renderer.so!void ParallelForImpl::ParallelForInternal<TFunctionRef<void (int)>, ParallelFor(int, TFunctionRef<void (int)>, bool, bool)::'lambda'(), std::nullptr_t>(char16_t const*, int, int, TFunctionRef<void (int)>, ParallelFor(int, TFunctionRef<void (int)>, bool, bool)::'lambda'(), EParallelForFlags, TArrayView<std::nullptr_t, int> const&) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Function.h:471]
+libUnrealEditor-Renderer.so!FDistanceFieldSceneData::UpdateDistanceFieldObjectBuffers(FRDGBuilder&, FRDGExternalAccessQueue&, FScene*, TArray<FDistanceFieldAssetMipId, TSizedDefaultAllocator<32> >&, TArray<FSetElementId, TSizedDefaultAllocator<32> >&) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/ParallelFor.h:483]
+libUnrealEditor-Renderer.so!PrepareDistanceFieldScene(FRDGBuilder&, FRDGExternalAccessQueue&, FSceneRenderUpdateInputs const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Renderer/Private/DistanceFieldObjectManagement.cpp:1027]
+libUnrealEditor-Renderer.so!FDeferredShadingSceneRenderer::Render(FRDGBuilder&, FSceneRenderUpdateInputs const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Renderer/Private/DeferredShadingRenderer.cpp:1614]
+libUnrealEditor-Renderer.so!FRendererModule::BeginRenderingViewFamilies(FCanvas*, TArrayView<FSceneViewFamily* const, int>)::$_0::__invoke(FRDGBuilder&, FSceneRenderFunctionInputs const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Renderer/Private/SceneRendering.cpp:4816]
+libUnrealEditor-Renderer.so!FSceneRenderProcessor::Execute()::$_0::operator()(FRHICommandListImmediate&) const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Function.h:471]
+libUnrealEditor-RenderCore.so!UE::Core::Private::Function::TFunctionRefCaller<FRenderThreadCommandPipe::EnqueueAndLaunch(char16_t const*, unsigned int&, TStatId, TUniqueFunction<void (FRHICommandListImmediate&)>&&)::$_0, void>::Call(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Function.h:471]
+libUnrealEditor-RenderCore.so!TGraphTask<TFunctionGraphTaskImpl<void (), (ESubsequentsMode::Type)1> >::ExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Function.h:471]
+libUnrealEditor-Core.so!UE::Tasks::Private::FTaskBase::TryExecuteTask() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Tasks/TaskPrivate.h:527]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:505]
+libUnrealEditor-Core.so!FNamedTaskThread::ProcessTasksUntilQuit(int) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Async/TaskGraph.cpp:667]
+libUnrealEditor-RenderCore.so!RenderingThreadMain(FEvent*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/RenderCore/Private/RenderingThread.cpp:318]
+libUnrealEditor-RenderCore.so!FRenderingThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/RenderCore/Private/RenderingThread.cpp:476]
+libUnrealEditor-Core.so!FRunnableThreadPThread::Run() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+libUnrealEditor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:187]
+libc.so.6!UnknownFunction(0xa80d5)
+libc.so.6!UnknownFunction(0x13b05b)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

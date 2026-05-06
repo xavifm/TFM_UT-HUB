@@ -25,12 +25,18 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	UCameraComponent* FullMapCamera;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	UCameraComponent* BookCamera;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	AActor* MapCameraActor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	AActor* FullMapCameraActor;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	AActor* BookCameraActor;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
 	TArray<UCameraComponent*> CameraActors;
@@ -56,7 +62,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void DisableAllStars();
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
 	void StartMapPointCinematic(FVector _position, float _time);
 
 private:
