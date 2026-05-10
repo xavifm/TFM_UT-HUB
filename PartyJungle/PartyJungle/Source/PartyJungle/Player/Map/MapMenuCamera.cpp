@@ -501,6 +501,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
     auto potsInfo = ChallengeInformation->ParsePotsInfo(ChosenDuelIndex);
     int rouletteDuel = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
+    MinionTeamIndex = MAX_TEAM_NUMBER - 1;
 
     if (rouletteDuel == 0)
     {
@@ -1039,6 +1040,28 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
     }
 }
 
+AMinion* AMapMenuCamera::GetMinionWithSmallestTeam(TArray<AMinion*> MinionsList)
+{
+    if (MinionsList.Num() == 0)
+    {
+        return nullptr;
+    }
+
+    AMinion* SmallestTeamMinion = MinionsList[0];
+
+    for (AMinion* Minion : MinionsList)
+    {
+        if (Minion &&
+            static_cast<int>(Minion->Team) <
+            static_cast<int>(SmallestTeamMinion->Team))
+        {
+            SmallestTeamMinion = Minion;
+        }
+    }
+
+    return SmallestTeamMinion;
+}
+
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
     //int oldMinionTeam = CurrentMinionTeam;
@@ -1063,14 +1086,19 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
             if (minigamesDetected[0])
             {
                 ChosenDuelIndex = FMath::RandRange(0, ChallengeInformation->SquaresWithDuelsInRound.Num() -1);  //random duel
-                CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList[0];
+                CurrentMinion = GetMinionWithSmallestTeam(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
-                SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                {
+                    CurrentMinionTeam = static_cast<int>(CurrentMinion->Team);
+                    SwitchController();
+                    SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                }
                 return;
             }
             if (minigamesDetected[1])
             {
                 //Minigame
+                IsMinigameActive = true;
                 RoundsSystem->EndRoundMinigameAvailable = false;
                 InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
                 MinigameWheel->SwitchUiVisibility(true);

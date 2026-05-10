@@ -688,6 +688,56 @@ DEFINE_FUNCTION(AMapMenuCamera::execGetMapUI)
 }
 // ********** End Class AMapMenuCamera Function GetMapUI *******************************************
 
+// ********** Begin Class AMapMenuCamera Function GetMinionWithSmallestTeam ************************
+struct Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics
+{
+	struct MapMenuCamera_eventGetMinionWithSmallestTeam_Parms
+	{
+		TArray<AMinion*> MinionsList;
+		AMinion* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Functions" },
+		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinionsList_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinionsList;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_MinionsList_Inner = { "MinionsList", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_MinionsList = { "MinionsList", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventGetMinionWithSmallestTeam_Parms, MinionsList), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventGetMinionWithSmallestTeam_Parms, ReturnValue), Z_Construct_UClass_AMinion_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_MinionsList_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_MinionsList,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "GetMinionWithSmallestTeam", Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::MapMenuCamera_eventGetMinionWithSmallestTeam_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::MapMenuCamera_eventGetMinionWithSmallestTeam_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMapMenuCamera::execGetMinionWithSmallestTeam)
+{
+	P_GET_TARRAY(AMinion*,Z_Param_MinionsList);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(AMinion**)Z_Param__Result=P_THIS->GetMinionWithSmallestTeam(Z_Param_MinionsList);
+	P_NATIVE_END;
+}
+// ********** End Class AMapMenuCamera Function GetMinionWithSmallestTeam **************************
+
 // ********** Begin Class AMapMenuCamera Function HandleBackInput **********************************
 struct Z_Construct_UFunction_AMapMenuCamera_HandleBackInput_Statics
 {
@@ -2462,6 +2512,7 @@ void AMapMenuCamera::StaticRegisterNativesAMapMenuCamera()
 		{ "FocusNextMinion", &AMapMenuCamera::execFocusNextMinion },
 		{ "FollowMinionMovement", &AMapMenuCamera::execFollowMinionMovement },
 		{ "GetMapUI", &AMapMenuCamera::execGetMapUI },
+		{ "GetMinionWithSmallestTeam", &AMapMenuCamera::execGetMinionWithSmallestTeam },
 		{ "HandleBackInput", &AMapMenuCamera::execHandleBackInput },
 		{ "HandleCheatKey", &AMapMenuCamera::execHandleCheatKey },
 		{ "HandleConfirmInput", &AMapMenuCamera::execHandleConfirmInput },
@@ -2761,6 +2812,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2641092475
 		{ &Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement, "FollowMinionMovement" }, // 296374804
 		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 768691028
+		{ &Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam, "GetMinionWithSmallestTeam" }, // 4051021209
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 2248972550
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleCheatKey, "HandleCheatKey" }, // 2217485244
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleConfirmInput, "HandleConfirmInput" }, // 32894684
@@ -2951,10 +3003,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 4247026564U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 687592458U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_1898068815(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_564586564(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

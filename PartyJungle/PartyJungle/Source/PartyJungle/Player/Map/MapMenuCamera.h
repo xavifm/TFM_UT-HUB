@@ -136,6 +136,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void FollowMinionMovement();
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	AMinion* GetMinionWithSmallestTeam(TArray<AMinion*> MinionsList);
 
 	UFUNCTION()
 	void CloseDuelMenu(bool _endTurn);
