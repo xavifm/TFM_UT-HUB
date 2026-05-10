@@ -83,7 +83,13 @@ struct Z_Construct_UClass_UMinigameDataGameInstance_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChallengesRegistry_MetaData[] = {
 		{ "Category", "MinigameDataGameInstance" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//canviar per minigames\n" },
+#endif
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameDataGameInstance.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "canviar per minigames" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayersInBoard;
@@ -157,10 +163,10 @@ UMinigameDataGameInstance::~UMinigameDataGameInstance() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 4153923970U) },
+		{ Z_Construct_UClass_UMinigameDataGameInstance, UMinigameDataGameInstance::StaticClass, TEXT("UMinigameDataGameInstance"), &Z_Registration_Info_UClass_UMinigameDataGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMinigameDataGameInstance), 3706972744U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h__Script_PartyJungle_387458824(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h__Script_PartyJungle_3162246790(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameDataGameInstance_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -876,6 +876,7 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
     int duelPercentage = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel percentage: %d"), static_cast<int32>(duelPercentage));
     
+    
     TArray<AMinion*> minionsList = ChallengeInformation->SquaresWithDuelsInRound[_duelIndex]->MinionsList;
     CurrentMinion = minionsList[0];
     
@@ -892,6 +893,16 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
             MapUI->UpdateCoins(minionTeam, pot);
             MapUI->UpdateCrowns(minionTeam, crowns);
 
+            UChallengeDto* challengeInfo = NewObject<UChallengeDto>(this);
+
+            challengeInfo->Init(_winner, duelPercentage,pot, crowns);
+            
+            UGameInstance* gameInstance = GetGameInstance();
+            UMinigameDataGameInstance* dataGameInstance = Cast<UMinigameDataGameInstance>(gameInstance);
+            
+            if (dataGameInstance)
+                dataGameInstance->ChallengesRegistry.Add(challengeInfo);
+            
             break;
         }
     }

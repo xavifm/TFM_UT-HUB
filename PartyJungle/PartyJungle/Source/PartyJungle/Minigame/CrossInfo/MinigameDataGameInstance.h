@@ -30,7 +30,7 @@ public:
 	TArray<UScoreDto*> Scores;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TArray<UTransactionDto*> TransactionsRegistry;
+	TArray<UTransactionDto*> TransactionsRegistry; //canviar per minigames
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<UChallengeDto*> ChallengesRegistry;

@@ -81,11 +81,10 @@ void ARoundsManager::FinishGame()
 {
 	GetWorld()->GetTimerManager().ClearTimer(TimerHandle);
 
-	if (!MapUI || !ScoresDB || !ChallengeDB)
+	if (!MapUI || !ScoresDB)
 		return;
 
 	ScoresDB->SendTransactionsAndScoresToInstance();
-	ChallengeDB->SendRegistryToInstance();
 
 	UGameplayStatics::OpenLevel(this, FName(END_GAME_SCENE_NAME));
 }

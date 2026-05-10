@@ -78,8 +78,6 @@ int AScoresCalculator::GetWorstDuelingTeam()
     {
         if (Challenge)
         {
-            int LoserTeam = (Challenge->WinnerTeam == Challenge->AttackerTeam) ? Challenge->VictimTeam : Challenge->AttackerTeam;
-            TeamLosses.FindOrAdd(LoserTeam)++;
         }
     }
 
