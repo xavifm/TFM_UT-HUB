@@ -3,6 +3,7 @@
 #include <EnhancedInputSubsystems.h>
 #include <Kismet/GameplayStatics.h>
 #include <PartyJungle/Map/SquareShop.h>
+#include <PartyJungle/Challenge/MinigameDto.h>
 #include "EngineUtils.h"
 #include <PartyJungle/Minigame/CrossInfo/MinigameDataGameInstance.h>
 #include <PartyJungle/Map/SquareKeepCrowns.h>
@@ -914,15 +915,25 @@ void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
 {
     int dividedMoney = _money / 3;
     
+    UMinigameDto* minigameInfo = NewObject<UMinigameDto>();
+    minigameInfo->CoinsReward = _money;
+    
+    UGameInstance* gameInstance = GetGameInstance();
+    UMinigameDataGameInstance* dataGameInstance = Cast<UMinigameDataGameInstance>(gameInstance);
+    
     for (auto team : _winners)
     {
         TArray<AMinion*> teamMinions = MapDb->GetMinions(team);
+        minigameInfo->WinnerTeam.Add(team);
         
         for (auto minion : teamMinions)
         {
             UpdateMinionEconomyWithReference(minion, dividedMoney);
         }
     }
+    
+    if (dataGameInstance)
+        dataGameInstance->MinigamesRegistry.Add(minigameInfo);
     
     SwitchRankingScoreList(true);
     SameTurnEnabled = true;

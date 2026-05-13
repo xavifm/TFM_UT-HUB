@@ -4,6 +4,7 @@
 #include "Engine/GameInstance.h"
 #include <PartyJungle/Player/Minion/Minion.h>
 #include <PartyJungle/Challenge/ChallengeDto.h>
+#include <PartyJungle/Challenge/MinigameDto.h>
 #include <PartyJungle/Player/Scores/TransactionDto.h>
 #include <PartyJungle/Player/Scores/ScoreDto.h>
 #include "MinigameDataGameInstance.generated.h"
@@ -34,4 +35,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<UChallengeDto*> ChallengesRegistry;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<UMinigameDto*> MinigamesRegistry;
 };
