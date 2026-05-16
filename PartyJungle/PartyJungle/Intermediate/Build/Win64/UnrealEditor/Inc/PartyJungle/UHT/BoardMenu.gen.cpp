@@ -18,6 +18,90 @@ PARTYJUNGLE_API UClass* Z_Construct_UClass_ABoardMenu_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class ABoardMenu Function ExitCreditsMenuMode **********************************
+static FName NAME_ABoardMenu_ExitCreditsMenuMode = FName(TEXT("ExitCreditsMenuMode"));
+void ABoardMenu::ExitCreditsMenuMode()
+{
+	UFunction* Func = FindFunctionChecked(NAME_ABoardMenu_ExitCreditsMenuMode);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "ExitCreditsMenuMode", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ABoardMenu Function ExitCreditsMenuMode ************************************
+
+// ********** Begin Class ABoardMenu Function ExitOptionsMenuMode **********************************
+static FName NAME_ABoardMenu_ExitOptionsMenuMode = FName(TEXT("ExitOptionsMenuMode"));
+void ABoardMenu::ExitOptionsMenuMode()
+{
+	UFunction* Func = FindFunctionChecked(NAME_ABoardMenu_ExitOptionsMenuMode);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "ExitOptionsMenuMode", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ABoardMenu Function ExitOptionsMenuMode ************************************
+
+// ********** Begin Class ABoardMenu Function ExitPlayMenuMode *************************************
+static FName NAME_ABoardMenu_ExitPlayMenuMode = FName(TEXT("ExitPlayMenuMode"));
+void ABoardMenu::ExitPlayMenuMode()
+{
+	UFunction* Func = FindFunctionChecked(NAME_ABoardMenu_ExitPlayMenuMode);
+	ProcessEvent(Func,NULL);
+}
+struct Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "ExitPlayMenuMode", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ABoardMenu Function ExitPlayMenuMode ***************************************
+
 // ********** Begin Class ABoardMenu Function GetCurrentMenuPosition *******************************
 struct Z_Construct_UFunction_ABoardMenu_GetCurrentMenuPosition_Statics
 {
@@ -58,6 +142,35 @@ DEFINE_FUNCTION(ABoardMenu::execGetCurrentMenuPosition)
 	P_NATIVE_END;
 }
 // ********** End Class ABoardMenu Function GetCurrentMenuPosition *********************************
+
+// ********** Begin Class ABoardMenu Function PerformCreditsAction *********************************
+struct Z_Construct_UFunction_ABoardMenu_PerformCreditsAction_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_PerformCreditsAction_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "PerformCreditsAction", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_PerformCreditsAction_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_PerformCreditsAction_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_PerformCreditsAction()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_PerformCreditsAction_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABoardMenu::execPerformCreditsAction)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->PerformCreditsAction();
+	P_NATIVE_END;
+}
+// ********** End Class ABoardMenu Function PerformCreditsAction ***********************************
 
 // ********** Begin Class ABoardMenu Function PerformMenuAction ************************************
 struct BoardMenu_eventPerformMenuAction_Parms
@@ -100,6 +213,35 @@ UFunction* Z_Construct_UFunction_ABoardMenu_PerformMenuAction()
 	return ReturnFunction;
 }
 // ********** End Class ABoardMenu Function PerformMenuAction **************************************
+
+// ********** Begin Class ABoardMenu Function PerformOptionsAction *********************************
+struct Z_Construct_UFunction_ABoardMenu_PerformOptionsAction_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_PerformOptionsAction_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "PerformOptionsAction", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_PerformOptionsAction_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_PerformOptionsAction_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_ABoardMenu_PerformOptionsAction()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_PerformOptionsAction_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABoardMenu::execPerformOptionsAction)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->PerformOptionsAction();
+	P_NATIVE_END;
+}
+// ********** End Class ABoardMenu Function PerformOptionsAction ***********************************
 
 // ********** Begin Class ABoardMenu Function PerformPartyAction ***********************************
 struct Z_Construct_UFunction_ABoardMenu_PerformPartyAction_Statics
@@ -300,6 +442,48 @@ UFunction* Z_Construct_UFunction_ABoardMenu_SwitchBoardVisibleOption()
 }
 // ********** End Class ABoardMenu Function SwitchBoardVisibleOption *******************************
 
+// ********** Begin Class ABoardMenu Function SwitchCreditsMenuPosition ****************************
+struct Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics
+{
+	struct BoardMenu_eventSwitchCreditsMenuPosition_Parms
+	{
+		int32 _direction;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BoardMenu_eventSwitchCreditsMenuPosition_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::NewProp__direction,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "SwitchCreditsMenuPosition", Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::BoardMenu_eventSwitchCreditsMenuPosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::BoardMenu_eventSwitchCreditsMenuPosition_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABoardMenu::execSwitchCreditsMenuPosition)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__direction);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchCreditsMenuPosition(Z_Param__direction);
+	P_NATIVE_END;
+}
+// ********** End Class ABoardMenu Function SwitchCreditsMenuPosition ******************************
+
 // ********** Begin Class ABoardMenu Function SwitchMenuNumber *************************************
 struct BoardMenu_eventSwitchMenuNumber_Parms
 {
@@ -388,6 +572,48 @@ DEFINE_FUNCTION(ABoardMenu::execSwitchMenuPosition)
 	P_NATIVE_END;
 }
 // ********** End Class ABoardMenu Function SwitchMenuPosition *************************************
+
+// ********** Begin Class ABoardMenu Function SwitchOptionsMenuPosition ****************************
+struct Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics
+{
+	struct BoardMenu_eventSwitchOptionsMenuPosition_Parms
+	{
+		int32 _direction;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__direction;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::NewProp__direction = { "_direction", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BoardMenu_eventSwitchOptionsMenuPosition_Parms, _direction), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::NewProp__direction,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "SwitchOptionsMenuPosition", Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::PropPointers), sizeof(Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::BoardMenu_eventSwitchOptionsMenuPosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::BoardMenu_eventSwitchOptionsMenuPosition_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ABoardMenu::execSwitchOptionsMenuPosition)
+{
+	P_GET_PROPERTY(FIntProperty,Z_Param__direction);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->SwitchOptionsMenuPosition(Z_Param__direction);
+	P_NATIVE_END;
+}
+// ********** End Class ABoardMenu Function SwitchOptionsMenuPosition ******************************
 
 // ********** Begin Class ABoardMenu Function SwitchPartyMenuPosition ******************************
 struct Z_Construct_UFunction_ABoardMenu_SwitchPartyMenuPosition_Statics
@@ -479,10 +705,14 @@ void ABoardMenu::StaticRegisterNativesABoardMenu()
 	UClass* Class = ABoardMenu::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
 		{ "GetCurrentMenuPosition", &ABoardMenu::execGetCurrentMenuPosition },
+		{ "PerformCreditsAction", &ABoardMenu::execPerformCreditsAction },
+		{ "PerformOptionsAction", &ABoardMenu::execPerformOptionsAction },
 		{ "PerformPartyAction", &ABoardMenu::execPerformPartyAction },
 		{ "StartGame", &ABoardMenu::execStartGame },
 		{ "StartGameCheat", &ABoardMenu::execStartGameCheat },
+		{ "SwitchCreditsMenuPosition", &ABoardMenu::execSwitchCreditsMenuPosition },
 		{ "SwitchMenuPosition", &ABoardMenu::execSwitchMenuPosition },
+		{ "SwitchOptionsMenuPosition", &ABoardMenu::execSwitchOptionsMenuPosition },
 		{ "SwitchPartyMenuPosition", &ABoardMenu::execSwitchPartyMenuPosition },
 		{ "SwitchPartyValues", &ABoardMenu::execSwitchPartyValues },
 	};
@@ -528,10 +758,24 @@ struct Z_Construct_UClass_ABoardMenu_Statics
 		{ "Category", "BoardMenu" },
 		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OptionsMenuMode_MetaData[] = {
+		{ "Category", "BoardMenu" },
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CreditsMenuMode_MetaData[] = {
+		{ "Category", "BoardMenu" },
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentMenuPosition_MetaData[] = {
 		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentPartyMenuPosition_MetaData[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentOptionsMenuPosition_MetaData[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentCreditsMenuPosition_MetaData[] = {
 		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayersQ_MetaData[] = {
@@ -543,23 +787,36 @@ struct Z_Construct_UClass_ABoardMenu_Statics
 #endif // WITH_METADATA
 	static void NewProp_PlayMenuMode_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_PlayMenuMode;
+	static void NewProp_OptionsMenuMode_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_OptionsMenuMode;
+	static void NewProp_CreditsMenuMode_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_CreditsMenuMode;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentMenuPosition;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentPartyMenuPosition;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentOptionsMenuPosition;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentCreditsMenuPosition;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_PlayersQ;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_GameRounds;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_ABoardMenu_ExitCreditsMenuMode, "ExitCreditsMenuMode" }, // 4067584304
+		{ &Z_Construct_UFunction_ABoardMenu_ExitOptionsMenuMode, "ExitOptionsMenuMode" }, // 4165777086
+		{ &Z_Construct_UFunction_ABoardMenu_ExitPlayMenuMode, "ExitPlayMenuMode" }, // 4070761525
 		{ &Z_Construct_UFunction_ABoardMenu_GetCurrentMenuPosition, "GetCurrentMenuPosition" }, // 406449037
+		{ &Z_Construct_UFunction_ABoardMenu_PerformCreditsAction, "PerformCreditsAction" }, // 1592301403
 		{ &Z_Construct_UFunction_ABoardMenu_PerformMenuAction, "PerformMenuAction" }, // 2745501884
+		{ &Z_Construct_UFunction_ABoardMenu_PerformOptionsAction, "PerformOptionsAction" }, // 3574781324
 		{ &Z_Construct_UFunction_ABoardMenu_PerformPartyAction, "PerformPartyAction" }, // 2634774604
 		{ &Z_Construct_UFunction_ABoardMenu_StartGame, "StartGame" }, // 3807531011
 		{ &Z_Construct_UFunction_ABoardMenu_StartGameCheat, "StartGameCheat" }, // 3511263981
 		{ &Z_Construct_UFunction_ABoardMenu_StartGameSequence, "StartGameSequence" }, // 2304481208
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardPartyCurrentOption, "SwitchBoardPartyCurrentOption" }, // 2930583374
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardVisibleOption, "SwitchBoardVisibleOption" }, // 2772329613
+		{ &Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition, "SwitchCreditsMenuPosition" }, // 1126545536
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchMenuNumber, "SwitchMenuNumber" }, // 2859754738
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchMenuPosition, "SwitchMenuPosition" }, // 3857486474
+		{ &Z_Construct_UFunction_ABoardMenu_SwitchOptionsMenuPosition, "SwitchOptionsMenuPosition" }, // 2789764848
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchPartyMenuPosition, "SwitchPartyMenuPosition" }, // 2414072746
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchPartyValues, "SwitchPartyValues" }, // 3154310685
 	};
@@ -574,14 +831,30 @@ void Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayMenuMode_SetBit(void* Ob
 	((ABoardMenu*)Obj)->PlayMenuMode = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayMenuMode = { "PlayMenuMode", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABoardMenu), &Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayMenuMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayMenuMode_MetaData), NewProp_PlayMenuMode_MetaData) };
+void Z_Construct_UClass_ABoardMenu_Statics::NewProp_OptionsMenuMode_SetBit(void* Obj)
+{
+	((ABoardMenu*)Obj)->OptionsMenuMode = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_OptionsMenuMode = { "OptionsMenuMode", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABoardMenu), &Z_Construct_UClass_ABoardMenu_Statics::NewProp_OptionsMenuMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OptionsMenuMode_MetaData), NewProp_OptionsMenuMode_MetaData) };
+void Z_Construct_UClass_ABoardMenu_Statics::NewProp_CreditsMenuMode_SetBit(void* Obj)
+{
+	((ABoardMenu*)Obj)->CreditsMenuMode = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_CreditsMenuMode = { "CreditsMenuMode", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ABoardMenu), &Z_Construct_UClass_ABoardMenu_Statics::NewProp_CreditsMenuMode_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CreditsMenuMode_MetaData), NewProp_CreditsMenuMode_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentMenuPosition = { "CurrentMenuPosition", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, CurrentMenuPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentMenuPosition_MetaData), NewProp_CurrentMenuPosition_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentPartyMenuPosition = { "CurrentPartyMenuPosition", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, CurrentPartyMenuPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentPartyMenuPosition_MetaData), NewProp_CurrentPartyMenuPosition_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentOptionsMenuPosition = { "CurrentOptionsMenuPosition", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, CurrentOptionsMenuPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentOptionsMenuPosition_MetaData), NewProp_CurrentOptionsMenuPosition_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentCreditsMenuPosition = { "CurrentCreditsMenuPosition", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, CurrentCreditsMenuPosition), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentCreditsMenuPosition_MetaData), NewProp_CurrentCreditsMenuPosition_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayersQ = { "PlayersQ", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, PlayersQ), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayersQ_MetaData), NewProp_PlayersQ_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABoardMenu_Statics::NewProp_GameRounds = { "GameRounds", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ABoardMenu, GameRounds), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameRounds_MetaData), NewProp_GameRounds_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABoardMenu_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayMenuMode,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_OptionsMenuMode,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_CreditsMenuMode,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentMenuPosition,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentPartyMenuPosition,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentOptionsMenuPosition,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_CurrentCreditsMenuPosition,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_PlayersQ,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABoardMenu_Statics::NewProp_GameRounds,
 };
@@ -622,10 +895,10 @@ ABoardMenu::~ABoardMenu() {}
 struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 2301879570U) },
+		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 2150171784U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_2055406635(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_121394234(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

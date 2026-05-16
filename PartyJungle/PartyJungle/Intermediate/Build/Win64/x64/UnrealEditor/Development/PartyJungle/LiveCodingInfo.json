@@ -26,6 +26,7 @@
 			"Minigame2Logic.gen.cpp.obj",
 			"Minigame3Logic.gen.cpp.obj",
 			"MinigameDataGameInstance.gen.cpp.obj",
+			"MinigameInfoDesc.gen.cpp.obj",
 			"MinigameLogic.gen.cpp.obj"
 		],
 		"Module.PartyJungle.3.cpp.obj": [
@@ -81,6 +82,7 @@
 			"VictimCharacter.cpp.obj",
 			"Minigame3Logic.cpp.obj",
 			"PlayerPalette.cpp.obj",
+			"MinigameInfoDesc.cpp.obj",
 			"PartyJungle.cpp.obj",
 			"Inventory.cpp.obj",
 			"Item.cpp.obj",

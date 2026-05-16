@@ -118,7 +118,7 @@ struct Z_Construct_UFunction_ADice_ShowDice_Statics
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADice_ShowDice_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADice, nullptr, "ShowDice", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_ShowDice_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADice_ShowDice_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADice_ShowDice_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADice, nullptr, "ShowDice", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_ShowDice_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADice_ShowDice_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_ADice_ShowDice()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -213,7 +213,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ADice_
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::NewProp_ResizeDice,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADice, nullptr, "SwitchDicePosition", Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers), sizeof(Dice_eventSwitchDicePosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ADice, nullptr, "SwitchDicePosition", Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::PropPointers), sizeof(Dice_eventSwitchDicePosition_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C820800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams), Z_Construct_UFunction_ADice_SwitchDicePosition_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Dice_eventSwitchDicePosition_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_ADice_SwitchDicePosition()
 {
@@ -287,9 +287,9 @@ struct Z_Construct_UClass_ADice_Statics
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ADice_HideDice, "HideDice" }, // 2466555837
 		{ &Z_Construct_UFunction_ADice_RollTheDice, "RollTheDice" }, // 1890971482
-		{ &Z_Construct_UFunction_ADice_ShowDice, "ShowDice" }, // 1244172387
+		{ &Z_Construct_UFunction_ADice_ShowDice, "ShowDice" }, // 1315514430
 		{ &Z_Construct_UFunction_ADice_ShowDiceFeedbackNumber, "ShowDiceFeedbackNumber" }, // 2292091553
-		{ &Z_Construct_UFunction_ADice_SwitchDicePosition, "SwitchDicePosition" }, // 3104745471
+		{ &Z_Construct_UFunction_ADice_SwitchDicePosition, "SwitchDicePosition" }, // 4002339692
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -340,10 +340,10 @@ ADice::~ADice() {}
 struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 3554842855U) },
+		{ Z_Construct_UClass_ADice, ADice::StaticClass, TEXT("ADice"), &Z_Registration_Info_UClass_ADice, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADice), 862716162U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_1999677725(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_1462296743(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Dice_Dice_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -23,13 +23,14 @@ class UPlayerMapUI;
 struct FInputActionValue;
 
 // ********** Begin Class AMapMenuCamera ***********************************************************
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRestoreTurnLogic); \
 	DECLARE_FUNCTION(execStartPlayerTurn); \
 	DECLARE_FUNCTION(execUpdateMinionEconomyWithReference); \
 	DECLARE_FUNCTION(execUpdateMinionEconomy); \
 	DECLARE_FUNCTION(execFinishFadeTransition); \
 	DECLARE_FUNCTION(execStartFadeTransition); \
+	DECLARE_FUNCTION(execCalculateTurnsOrder); \
 	DECLARE_FUNCTION(execRestoreTurnLogicWithAnimation); \
 	DECLARE_FUNCTION(execUpdateDicePosition); \
 	DECLARE_FUNCTION(execGetMapUI); \
@@ -77,10 +78,10 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execSwitchMainScene);
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_CALLBACK_WRAPPERS
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_CALLBACK_WRAPPERS
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AMapMenuCamera_NoRegister();
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_INCLASS_NO_PURE_DECLS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMapMenuCamera(); \
 	friend struct Z_Construct_UClass_AMapMenuCamera_Statics; \
@@ -91,7 +92,7 @@ public: \
 	DECLARE_SERIALIZER(AMapMenuCamera)
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_ENHANCED_CONSTRUCTORS \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AMapMenuCamera(AMapMenuCamera&&) = delete; \
 	AMapMenuCamera(const AMapMenuCamera&) = delete; \
@@ -101,14 +102,14 @@ public: \
 	NO_API virtual ~AMapMenuCamera();
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_24_PROLOG
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_GENERATED_BODY \
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_25_PROLOG
+#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_CALLBACK_WRAPPERS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_INCLASS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_27_ENHANCED_CONSTRUCTORS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_CALLBACK_WRAPPERS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_INCLASS_NO_PURE_DECLS \
+	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h_28_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

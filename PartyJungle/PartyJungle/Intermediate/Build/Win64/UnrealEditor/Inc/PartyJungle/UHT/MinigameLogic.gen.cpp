@@ -822,6 +822,10 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ "Category", "Minigame Name" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_GameDescription_MetaData[] = {
+		{ "Category", "Minigame Name" },
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigameType_MetaData[] = {
 		{ "Category", "Minigame Type" },
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
@@ -881,6 +885,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FTextPropertyParams NewProp_GameTitle;
+	static const UECodeGen_Private::FTextPropertyParams NewProp_GameDescription;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_MinigameType_Underlying;
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_MinigameType;
 	static const UECodeGen_Private::FBytePropertyParams NewProp_TeamMode_Underlying;
@@ -937,6 +942,7 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
 const UECodeGen_Private::FTextPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameTitle = { "GameTitle", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, GameTitle), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameTitle_MetaData), NewProp_GameTitle_MetaData) };
+const UECodeGen_Private::FTextPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameDescription = { "GameDescription", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, GameDescription), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_GameDescription_MetaData), NewProp_GameDescription_MetaData) };
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType = { "MinigameType", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, MinigameType), Z_Construct_UEnum_PartyJungle_EMinigameType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigameType_MetaData), NewProp_MinigameType_MetaData) }; // 2530748103
 const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
@@ -971,6 +977,7 @@ const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMinigameLogic_St
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMinigameLogic_Statics::NewProp_Winners = { "Winners", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMinigameLogic, Winners), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Winners_MetaData), NewProp_Winners_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMinigameLogic_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameTitle,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_GameDescription,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType_Underlying,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_MinigameType,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMinigameLogic_Statics::NewProp_TeamMode_Underlying,
@@ -1041,10 +1048,10 @@ struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_P
 		{ ETeamsMode_StaticEnum, TEXT("ETeamsMode"), &Z_Registration_Info_UEnum_ETeamsMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3117846603U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 4089113582U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 122761640U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_742602605(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_3908352237(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo));

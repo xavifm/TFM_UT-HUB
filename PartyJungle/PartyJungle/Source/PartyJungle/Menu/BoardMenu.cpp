@@ -37,6 +37,30 @@ void ABoardMenu::SwitchPartyMenuPosition(int _direction)
 	SwitchBoardPartyCurrentOption(CurrentPartyMenuPosition);
 }
 
+void ABoardMenu::SwitchOptionsMenuPosition(int _direction)
+{
+	/*CurrentPartyMenuPosition += -_direction;
+
+	if (CurrentPartyMenuPosition < 0)
+		CurrentPartyMenuPosition = 0;
+	if (CurrentPartyMenuPosition > MAX_PLAY_MENU_POSITIONS)
+		CurrentPartyMenuPosition = MAX_PLAY_MENU_POSITIONS;
+
+	SwitchBoardPartyCurrentOption(CurrentPartyMenuPosition);*/
+}
+
+void ABoardMenu::SwitchCreditsMenuPosition(int _direction)
+{
+	CurrentCreditsMenuPosition += -_direction;
+
+	if (CurrentCreditsMenuPosition < 0)
+		CurrentCreditsMenuPosition = 0;
+	if (CurrentCreditsMenuPosition > MAX_CREDITS_MENU_POSITIONS)
+		CurrentCreditsMenuPosition = MAX_CREDITS_MENU_POSITIONS;
+
+	SwitchBoardPartyCurrentOption(CurrentCreditsMenuPosition);
+}
+
 void ABoardMenu::SwitchPartyValues(int _position)
 {
 	switch (_position)
@@ -81,6 +105,64 @@ void ABoardMenu::PerformPartyAction()
 		case 2: 
 		{
 			StartGame();
+
+			break;
+		}
+		case 3:
+		{
+			CurrentMenuPosition = 0;
+			CurrentPartyMenuPosition = 0;
+			ExitPlayMenuMode();
+
+			break;
+		}
+	}
+}
+
+void ABoardMenu::PerformOptionsAction()
+{
+	/*switch (CurrentPartyMenuPosition)
+	{
+		case 0:
+		{
+			SwitchPartyValues(CurrentPartyMenuPosition);
+			SwitchMenuNumber(CurrentPartyMenuPosition, PlayersQ);
+
+			break;
+		}
+		case 1:
+		{
+			SwitchPartyValues(CurrentPartyMenuPosition);
+			SwitchMenuNumber(CurrentPartyMenuPosition, GameRounds);
+
+			break;
+		}
+		case 2:
+		{
+			StartGame();
+
+			break;
+		}
+		case 3:
+		{
+			CurrentMenuPosition = 0;
+			CurrentPartyMenuPosition = 0;
+			ExitPlayMenuMode();
+
+			break;
+		}
+	}*/
+}
+
+void ABoardMenu::PerformCreditsAction()
+{
+	switch (CurrentPartyMenuPosition)
+	{
+		case 0:
+		{
+			CurrentMenuPosition = 0;
+			CurrentCreditsMenuPosition = 0;
+			ExitCreditsMenuMode();
 
 			break;
 		}

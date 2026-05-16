@@ -21,8 +21,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execGetCurrentMenuPosition); \
 	DECLARE_FUNCTION(execStartGameCheat); \
 	DECLARE_FUNCTION(execStartGame); \
+	DECLARE_FUNCTION(execPerformCreditsAction); \
+	DECLARE_FUNCTION(execPerformOptionsAction); \
 	DECLARE_FUNCTION(execPerformPartyAction); \
 	DECLARE_FUNCTION(execSwitchPartyValues); \
+	DECLARE_FUNCTION(execSwitchCreditsMenuPosition); \
+	DECLARE_FUNCTION(execSwitchOptionsMenuPosition); \
 	DECLARE_FUNCTION(execSwitchPartyMenuPosition); \
 	DECLARE_FUNCTION(execSwitchMenuPosition);
 

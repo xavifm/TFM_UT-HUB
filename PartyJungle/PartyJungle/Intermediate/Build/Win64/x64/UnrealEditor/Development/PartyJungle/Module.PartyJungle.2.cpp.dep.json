@@ -174,6 +174,8 @@
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamelogic.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\worlddb.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\worldmanager.generated.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigameinfodesc.h",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigameinfodesc.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\mapmenucamera.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigame1logic.gen.cpp",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\minigame\\minigame1\\minigame1logic.h",
@@ -206,6 +208,7 @@
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\playerpalette.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigame3logic.generated.h",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamedatagameinstance.gen.cpp",
+            "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigameinfodesc.gen.cpp",
             "c:\\users\\user\\desktop\\unreal projects\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\minigamelogic.gen.cpp"
         ],
         "ImportedModules": [],
