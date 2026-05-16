@@ -358,6 +358,90 @@ UFunction* Z_Construct_UFunction_ABoardMenu_StartGameSequence()
 }
 // ********** End Class ABoardMenu Function StartGameSequence **************************************
 
+// ********** Begin Class ABoardMenu Function SwitchBoardCreditsCurrentOption **********************
+struct BoardMenu_eventSwitchBoardCreditsCurrentOption_Parms
+{
+	int32 _position;
+};
+static FName NAME_ABoardMenu_SwitchBoardCreditsCurrentOption = FName(TEXT("SwitchBoardCreditsCurrentOption"));
+void ABoardMenu::SwitchBoardCreditsCurrentOption(int32 _position)
+{
+	BoardMenu_eventSwitchBoardCreditsCurrentOption_Parms Parms;
+	Parms._position=_position;
+	UFunction* Func = FindFunctionChecked(NAME_ABoardMenu_SwitchBoardCreditsCurrentOption);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__position;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BoardMenu_eventSwitchBoardCreditsCurrentOption_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::NewProp__position,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "SwitchBoardCreditsCurrentOption", Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::PropPointers), sizeof(BoardMenu_eventSwitchBoardCreditsCurrentOption_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(BoardMenu_eventSwitchBoardCreditsCurrentOption_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ABoardMenu Function SwitchBoardCreditsCurrentOption ************************
+
+// ********** Begin Class ABoardMenu Function SwitchBoardOptionsCurrentOption **********************
+struct BoardMenu_eventSwitchBoardOptionsCurrentOption_Parms
+{
+	int32 _position;
+};
+static FName NAME_ABoardMenu_SwitchBoardOptionsCurrentOption = FName(TEXT("SwitchBoardOptionsCurrentOption"));
+void ABoardMenu::SwitchBoardOptionsCurrentOption(int32 _position)
+{
+	BoardMenu_eventSwitchBoardOptionsCurrentOption_Parms Parms;
+	Parms._position=_position;
+	UFunction* Func = FindFunctionChecked(NAME_ABoardMenu_SwitchBoardOptionsCurrentOption);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Menu/BoardMenu.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__position;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(BoardMenu_eventSwitchBoardOptionsCurrentOption_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::NewProp__position,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ABoardMenu, nullptr, "SwitchBoardOptionsCurrentOption", Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::PropPointers), sizeof(BoardMenu_eventSwitchBoardOptionsCurrentOption_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C080800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::Function_MetaDataParams), Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(BoardMenu_eventSwitchBoardOptionsCurrentOption_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ABoardMenu Function SwitchBoardOptionsCurrentOption ************************
+
 // ********** Begin Class ABoardMenu Function SwitchBoardPartyCurrentOption ************************
 struct BoardMenu_eventSwitchBoardPartyCurrentOption_Parms
 {
@@ -811,6 +895,8 @@ struct Z_Construct_UClass_ABoardMenu_Statics
 		{ &Z_Construct_UFunction_ABoardMenu_StartGame, "StartGame" }, // 3807531011
 		{ &Z_Construct_UFunction_ABoardMenu_StartGameCheat, "StartGameCheat" }, // 3511263981
 		{ &Z_Construct_UFunction_ABoardMenu_StartGameSequence, "StartGameSequence" }, // 2304481208
+		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardCreditsCurrentOption, "SwitchBoardCreditsCurrentOption" }, // 529738653
+		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardOptionsCurrentOption, "SwitchBoardOptionsCurrentOption" }, // 2219189053
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardPartyCurrentOption, "SwitchBoardPartyCurrentOption" }, // 2930583374
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchBoardVisibleOption, "SwitchBoardVisibleOption" }, // 2772329613
 		{ &Z_Construct_UFunction_ABoardMenu_SwitchCreditsMenuPosition, "SwitchCreditsMenuPosition" }, // 1126545536
@@ -895,10 +981,10 @@ ABoardMenu::~ABoardMenu() {}
 struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 2150171784U) },
+		{ Z_Construct_UClass_ABoardMenu, ABoardMenu::StaticClass, TEXT("ABoardMenu"), &Z_Registration_Info_UClass_ABoardMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABoardMenu), 1425455257U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_121394234(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_3595377913(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Menu_BoardMenu_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

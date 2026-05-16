@@ -59,6 +59,12 @@ protected:
 	void SwitchBoardPartyCurrentOption(int _position);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SwitchBoardOptionsCurrentOption(int _position);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SwitchBoardCreditsCurrentOption(int _position);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void SwitchMenuNumber(int _position, int _number);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
