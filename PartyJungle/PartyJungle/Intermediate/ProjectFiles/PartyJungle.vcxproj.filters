@@ -157,6 +157,12 @@
     <Filter Include="Source\PartyJungle\Minigame">
       <UniqueIdentifier>{0F4131EC-4BBB-3742-8CAF-A034BEC7C3D3}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\MinigameInfoDesc.cpp">
+      <Filter>Source\PartyJungle\Minigame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\MinigameInfoDesc.h">
+      <Filter>Source\PartyJungle\Minigame</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\Minigame\CrossInfo">
       <UniqueIdentifier>{39EC6F96-D33B-3E8C-94B0-33A9AF86E4A6}</UniqueIdentifier>
     </Filter>
@@ -219,6 +225,21 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame2\VictimCharacter.h">
       <Filter>Source\PartyJungle\Minigame\Minigame2</Filter>
+    </ClInclude>
+    <Filter Include="Source\PartyJungle\Minigame\Minigame3">
+      <UniqueIdentifier>{CDA2A9D2-FC8B-309F-9730-DA8610BD769F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame3\Minigame3Logic.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame3</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame3\Minigame3Logic.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame3</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame3\PlayerPalette.cpp">
+      <Filter>Source\PartyJungle\Minigame\Minigame3</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame3\PlayerPalette.h">
+      <Filter>Source\PartyJungle\Minigame\Minigame3</Filter>
     </ClInclude>
     <Filter Include="Source\PartyJungle\Player">
       <UniqueIdentifier>{4BB96A41-B63B-386F-AD66-5BD0AA7EBA3C}</UniqueIdentifier>
@@ -364,9 +385,27 @@
     <ClInclude Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.h">
       <Filter>Source\PartyJungle\Testing</Filter>
     </ClInclude>
+    <Filter Include="Source\PartyJungle\UIManager">
+      <UniqueIdentifier>{E3543638-8AB3-37B2-9D9C-3BC99BF28542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PartyJungle\UIManager\MInigames">
+      <UniqueIdentifier>{F971C4BC-3DD1-32F8-BC6B-D476A7C4BFC6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\UIManager\MInigames\MinigameWheel.cpp">
+      <Filter>Source\PartyJungle\UIManager\MInigames</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\UIManager\MInigames\MinigameWheel.h">
+      <Filter>Source\PartyJungle\UIManager\MInigames</Filter>
+    </ClInclude>
     <Filter Include="Source\PartyJungle\World">
       <UniqueIdentifier>{68B6808E-4E0F-3738-ADCC-B48B8E31A968}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PartyJungle\World\WorldDB.cpp">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\World\WorldDB.h">
+      <Filter>Source\PartyJungle\World</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PartyJungle\World\WorldManager.cpp">
       <Filter>Source\PartyJungle\World</Filter>
     </ClCompile>

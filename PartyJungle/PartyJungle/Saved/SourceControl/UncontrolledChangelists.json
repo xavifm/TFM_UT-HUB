@@ -5,9 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/Input/MainMenuInput.uasset",
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset",
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/MainMenu/C/ZT/T7TZ49897V6R5M7420TUQG.uasset"
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset"
 			]
 		}
 	]

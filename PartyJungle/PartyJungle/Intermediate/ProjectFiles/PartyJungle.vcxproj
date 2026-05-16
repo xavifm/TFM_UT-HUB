@@ -324,6 +324,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Menu\MainMenuWidget.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\MinigameInfoDesc.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\MinigameInfoDesc.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Minigame\CrossInfo\MinigameDataGameInstance.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -360,6 +364,14 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame2\VictimCharacter.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame3\Minigame3Logic.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame3\Minigame3Logic.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\Minigame\Minigame3\PlayerPalette.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\Minigame\Minigame3\PlayerPalette.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\Player\Inventory\Inventory.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -432,6 +444,14 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\PartyJungle\Testing\ReturnToPartyMapScene.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\UIManager\MInigames\MinigameWheel.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\UIManager\MInigames\MinigameWheel.h"/>
+    <ClCompile Include="..\..\Source\PartyJungle\World\WorldDB.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PartyJungle\World\WorldDB.h"/>
     <ClCompile Include="..\..\Source\PartyJungle\World\WorldManager.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
