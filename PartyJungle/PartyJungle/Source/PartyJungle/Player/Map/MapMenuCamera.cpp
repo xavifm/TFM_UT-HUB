@@ -935,6 +935,8 @@ void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
     if (dataGameInstance)
         dataGameInstance->MinigamesRegistry.Add(minigameInfo);
     
+    RoundsSystem->HandleEndRound(false);
+    
     SwitchRankingScoreList(true);
     SameTurnEnabled = true;
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishDuelTransition, TIME_BEFORE_FINISH_DUEL, false);

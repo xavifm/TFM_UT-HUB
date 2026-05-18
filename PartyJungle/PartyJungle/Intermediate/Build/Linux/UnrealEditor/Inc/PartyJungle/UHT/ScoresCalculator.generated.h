@@ -17,11 +17,11 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AScoresCalculator ********************************************************
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetWinnerTeam); \
 	DECLARE_FUNCTION(execCompensationCrown); \
 	DECLARE_FUNCTION(execGetTeamWithHigherCoins); \
-	DECLARE_FUNCTION(execGetWorstDuelingTeam); \
+	DECLARE_FUNCTION(execGetBestMinigameTeam); \
 	DECLARE_FUNCTION(execGetBestDuelingTeam); \
 	DECLARE_FUNCTION(execAddCrownToTeam); \
 	DECLARE_FUNCTION(execInitializeInfo);
@@ -29,7 +29,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoresCalculator_NoRegister();
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAScoresCalculator(); \
 	friend struct Z_Construct_UClass_AScoresCalculator_Statics; \
@@ -40,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(AScoresCalculator)
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	AScoresCalculator(AScoresCalculator&&) = delete; \
 	AScoresCalculator(const AScoresCalculator&) = delete; \
@@ -50,13 +50,13 @@ public: \
 	NO_API virtual ~AScoresCalculator();
 
 
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_10_PROLOG
-#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_GENERATED_BODY \
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_12_PROLOG
+#define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_13_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

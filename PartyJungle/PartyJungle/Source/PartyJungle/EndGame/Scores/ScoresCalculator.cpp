@@ -20,6 +20,7 @@ void AScoresCalculator::InitializeInfo()
 		Scores = GameInstance->Scores;
 		TransactionsRegistry = GameInstance->TransactionsRegistry;
 		ChallengesRegistry = GameInstance->ChallengesRegistry;
+	    MinigamesRegistry = GameInstance->MinigamesRegistry;
 	}
 }
 
@@ -67,34 +68,38 @@ int AScoresCalculator::GetBestDuelingTeam()
     return BestTeam;
 }
 
-int AScoresCalculator::GetWorstDuelingTeam()
+int AScoresCalculator::GetBestMinigameTeam()
 {
-    if (ChallengesRegistry.Num() <= 0)
+    if (MinigamesRegistry.Num() <= 0)
         return -1;
 
-    TMap<int, int> TeamLosses;
+    TMap<int, int> TeamWins;
 
-    for (UChallengeDto* Challenge : ChallengesRegistry)
+    for (UMinigameDto* Minigame : MinigamesRegistry)
     {
-        if (Challenge)
+        if (Minigame)
         {
+            for (auto TeamWin : Minigame->WinnerTeam)
+            {
+                TeamWins.FindOrAdd(TeamWin)++;
+            }
         }
     }
 
-    int WorstTeam = -1;
-    int MaxLosses = -1;
-    for (auto& Elem : TeamLosses)
+    int BestTeam = -1;
+    int MaxWins = -1;
+    for (auto& Elem : TeamWins)
     {
-        if (Elem.Value > MaxLosses)
+        if (Elem.Value > MaxWins)
         {
-            MaxLosses = Elem.Value;
-            WorstTeam = Elem.Key;
+            MaxWins = Elem.Value;
+            BestTeam = Elem.Key;
         }
     }
 
-    AddCrownToTeam(WorstTeam);
+    AddCrownToTeam(BestTeam);
 
-    return WorstTeam;
+    return BestTeam;
 }
 
 int AScoresCalculator::GetTeamWithHigherCoins()

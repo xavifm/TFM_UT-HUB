@@ -107,7 +107,7 @@ void ABoardMenu::StartGameCheat()
 	if(GameInstance) 
 	{
 		GameInstance->PlayersInBoard = 2;
-		GameInstance->RoundsInBoard = GameRounds;
+		GameInstance->RoundsInBoard = 2;
 
 		StartGameSequence();
 	}
