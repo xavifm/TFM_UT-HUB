@@ -269,13 +269,17 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
         return;
 
     if (SquareShopReference)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SquareShopReference->SwitchShopItem(direction);
+    }
 
     if (DiceRollIndex > 0)
         return;
 
     if (ThrowItemPlayerMenu)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         int player = Inventory->SwitchItemThrowPlayer(direction, MAX_TEAM_NUMBER);
         MapUI->SwitchItemThrowPlayer(player);
         return;
@@ -283,12 +287,14 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         Inventory->SwitchSelectedInventoryItem(direction);
         return;
     }
 
     if (SelectingMinion)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SwitchMinionToSelectForDuel(MinionTeamChallengeIndex, direction);
         return;
     }
@@ -298,20 +304,28 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (StartTurnUI)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StartPlayerTurn();
         return;
     }
 
     if (DuelUI)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         RefreshChallengeInfo(direction, CurrentMinionTeam);
         return;
     }
 
     if (SelectingPath)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         ChangeSelectedPath(direction);
+    }
     else
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         FocusNextMinion(direction);
+    }
 
     Inventory->SetInventoryPosition(CurrentMinion);
 }
@@ -382,6 +396,8 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
+        
         if (Inventory->UseItemFromUI(CurrentMinion, true))
             SwitchInventory();
         
@@ -406,6 +422,7 @@ void AMapMenuCamera::HandleConfirmInput()
         if (CurrentMinion->CurrentSquare->CheckIfSquareIsBlocked(CurrentMinion) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
             return;
         
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SelectMinionToUseItem = false;
         Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         SwitchInventory();
@@ -418,12 +435,14 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (SelectingMinion)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         ConfirmMinionToDuel();
         return;
     }
 
     if (StartTurnUI) 
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StartPlayerTurn();
         return;
     }
@@ -433,6 +452,8 @@ void AMapMenuCamera::HandleConfirmInput()
         int LastTeam = CurrentMinionTeam;
         ChallengeInformation->SafeDuelChoice();
         SwitchUIController();
+        
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
 
         if (LastTeam == CurrentMinionTeam)
         {
@@ -452,6 +473,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelPopup)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StopMinionForDuel();
         return;
     }
@@ -471,7 +493,10 @@ void AMapMenuCamera::HandleConfirmInput()
     if (SelectingPath)
         ConfirmPathSelection();
     else if(!ChooseMinionToMove)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f); //dice sound
         RollTheDice();
+    }
     else if (!CurrentMinion->CurrentSquare->IsBlockedByWall)
         ExecuteMinionMovement();
 }
@@ -559,6 +584,7 @@ void AMapMenuCamera::HandleYInput()
     if ((!InputEnabled && !SelectingPath) || StartGameIntro || StartGameDices || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
         return;
 
+    AudioManager->PlaySFX("ZoomUPSFX", 0.3f);
     SwitchFullMapVision();
 }
 
@@ -988,6 +1014,8 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
 
     if (_visibility) 
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
+        
         Dice->HideDice();
         MapUI->SwitchLegendVisibility(false);
 

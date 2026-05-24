@@ -36,9 +36,15 @@ void AAudioManager::PlaySong(const FString& Sound, float Volume, bool loop)
     USoundBase* trackQuery = GetAudioTrack(Sound);
     if (trackQuery)
     {
+        if (USoundWave* Wave = Cast<USoundWave>(trackQuery))
+        {
+            Wave->bLooping = loop;
+        }
+        
         MusicPlayer->SetSound(trackQuery);
         MusicPlayer->SetVolumeMultiplier(Volume);
         MusicPlayer->Play();
+        
     }
 }
 

@@ -39,6 +39,9 @@ protected:
 public:	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
 	TSubclassOf<UUserWidget> MenuWidgetClass;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+	AAudioManager* AudioManager;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* AxisxAction;
@@ -311,6 +314,7 @@ private:
 	const int ENDROUND_MINIGAME_START_TIME = 5;
 	const int MAX_DICES = 2;
 	const FString MAIN_MENU_SCENE = "MainMenu";
+	const FString POPUP_SFX = "PopupSFX";
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void UpdateDicePosition(bool _resizeDice = true);

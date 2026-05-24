@@ -14,6 +14,9 @@ public:
 	AMinigameWheel();
 	void InitializeUI(UPlayerMapUI* _ui) { PlayerMapUI = _ui; }
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+	AAudioManager* AudioManager;
+	
 	void SwitchUiVisibility(bool _visibility);
 	
 	int GetSpinValue() { return WheelValue; }
