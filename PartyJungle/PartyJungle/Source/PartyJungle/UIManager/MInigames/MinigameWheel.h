@@ -29,6 +29,7 @@ private:
 	bool Spinning = false;
 	float SpinningTime = 0.0f;
 	int WheelValue = 0;
+	int OldWheelValue = 0;
 	
 	FTimerHandle SpinStepTimerHandle;
 	FTimerHandle SpinStopTimerHandle;

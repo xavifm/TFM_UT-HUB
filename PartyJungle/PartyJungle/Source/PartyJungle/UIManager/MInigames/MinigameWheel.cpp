@@ -71,8 +71,12 @@ void AMinigameWheel::SpinStep()
 
 void AMinigameWheel::StopSpin()
 {
+	if (WheelValue == OldWheelValue)
+		SpinStep();
+	
 	Spinning = false;
-
+	OldWheelValue = WheelValue;
+	
 	GetWorldTimerManager().ClearTimer(SpinStepTimerHandle);
 	GetWorldTimerManager().ClearTimer(SpinStopTimerHandle);
 }

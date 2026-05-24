@@ -223,7 +223,10 @@ void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
     RoundsSystem->EndRoundMinigameAvailable = false;
     InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
     MinigameWheel->SwitchUiVisibility(true);
-    MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
+    
+    int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
+    MinigameWheel->SpinWheel(randomTime);
+    
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
 }
 
