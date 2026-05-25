@@ -342,7 +342,8 @@ void AMapMenuCamera::HandleConfirmInput()
     if (StartGameIntro || StartGameDices)
     {
         if (StartGameIntro) return;
-        //llògica minijoc dau per torns
+        
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         RollTheDice();
         
         return;
