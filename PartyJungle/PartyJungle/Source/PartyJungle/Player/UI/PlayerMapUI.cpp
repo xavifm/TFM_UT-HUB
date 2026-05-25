@@ -14,6 +14,7 @@ void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 		ScoresDb->AddTransactionToRegistry(Team, Quantity, 0);
 		UpdateUIScore(ScoresDb);
 		ScoresDb->UpdateGlobalPositions();
+		UpdateUIPositions();
 	}
 }
 
@@ -28,6 +29,16 @@ void UPlayerMapUI::UpdateCrowns(int Team, int Quantity)
 		ScoresDb->AddTransactionToRegistry(Team, 0, Quantity);
 		UpdateUIScore(ScoresDb);
 		ScoresDb->UpdateGlobalPositions();
+		UpdateUIPositions();
+	}
+}
+
+void UPlayerMapUI::UpdateUIPositions()
+{
+	for (int index = 0; index < MAX_LOCAL_PLAYERS; index++)
+	{
+		int pos = ScoresDb->GetScore(index)->GlobalPosition + 1;
+		UpdatePosition(index, pos);
 	}
 }
 
