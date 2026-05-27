@@ -5,7 +5,17 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset"
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame3/GameElements/WallLimit.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/6S/H4N8AINW323R8QFXASGU21.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/E/L3/SHBZIEECZO08HBK38PTSF5.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/F/4K/KJP8SG8H7FQHT82Z19A66R.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/B/EZ/IVQQQ6OV85EFPGGWP9LZPU.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/2/AV/2EBRETURRPRG91MRSRK1HX.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/1/JG/3YH0WK7P9QB8EC92X5JUCJ.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame3/GameElements/PlayerPalette.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/C/JW/K7KB9M801IIDJJEWWRO48Y.uasset",
+				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame3/GameElements/Ball.uasset"
 			]
 		}
 	]
