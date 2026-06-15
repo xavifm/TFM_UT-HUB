@@ -35,10 +35,6 @@ private:
 	 */
 	UFUNCTION()
 	void OnLeftJoystick_X(float a_Axis, int a_PlayerId, bool a_WasActive);
-	void ButtonUp_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId);
-	void ButtonDown_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId);
-	void ButtonLeft_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId);
-	void ButtonRight_Pressed(EInputKeys Key, ETriggerEvents Event, int PlayerId);
 
 	/**
 	 * Method called when the current Player is changed. It manages which player inputs are active.

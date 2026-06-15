@@ -84,30 +84,35 @@ protected:
 	 * @param a_TriggerEvent Trigger Event of the received Input Event.
 	 * @param a_PlayerId Id of the Player who triggered the Input Event.
 	 */
+	UFUNCTION()
 	void OnKeyInput(EInputKeys a_InputKey, ETriggerEvents a_TriggerEvent, int a_PlayerId);
 
 	/**
 	 * Method called when an Input Axis Event from the X Axis of the Left Joystick is received.
 	 * @param a_Axis Value of the received Axis.
 	 */
+	UFUNCTION()
 	void OnAxis_LeftJoystickX(float a_Axis);
 	
 	/**
 	 * Method called when an Input Axis Event from the Y Axis of the Left Joystick is received.
 	 * @param a_Axis Value of the received Axis.
 	 */
+	UFUNCTION()
 	void OnAxis_LeftJoystickY(float a_Axis);
 	
 	/**
 	 * Method called when an Input Axis Event from the X Axis of the Right Joystick is received.
 	 * @param a_Axis Value of the received Axis.
 	 */
+	UFUNCTION()
 	void OnAxis_RightJoystickX(float a_Axis);
 	
 	/**
 	 * Method called when an Input Axis Event from the Y Axis of the Right Joystick is received.
 	 * @param a_Axis Value of the received Axis.
 	 */
+	UFUNCTION()
 	void OnAxis_RightJoystickY(float a_Axis);
 
 	/**
@@ -133,5 +138,5 @@ protected:
 	
 	FPlayerData* m_PlayerData {nullptr}; //!< Pointer to the Player Data associated to this Player Inputs Controller.
 	
-	bool m_PlayerInputsEnabled {false};
+	bool m_PlayerInputsEnabled {false}; //!< Indicates if the associated Player has its inputs enabled.
 };

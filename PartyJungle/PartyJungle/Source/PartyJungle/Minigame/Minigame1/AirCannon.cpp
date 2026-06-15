@@ -154,5 +154,3 @@ void AAirCannon::OnButtonRight_Pressed(EInputKeys a_InputKey, ETriggerEvents a_I
 {
     IncrementUpForce();
 }
-
-

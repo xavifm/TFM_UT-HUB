@@ -43,7 +43,7 @@ void AWorldManager::UnloadEntireWorld()
 {
 	InitializeCameras();
 
-	for (int i = 0; i < WorldDB->GetMinigamesQuantity(); i++)
+	/*for (int i = 0; i < WorldDB->GetMinigamesQuantity(); i++)
 	{
 		TArray<AActor*> ActorsToUnload = WorldDB->GetLevelByIndex(i);
 
@@ -72,12 +72,12 @@ void AWorldManager::UnloadEntireWorld()
 		
 		if (camera)
 			camera->Deactivate();
-	}
+	}*/
 }
 
 void AWorldManager::LoadPortion(bool _isMap, FText _name)
 {
-	TArray<AActor*> actorsToLoad;
+	/*TArray<AActor*> actorsToLoad;
 	AMinigameLogic* minigame = nullptr;
 	
 	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
@@ -124,7 +124,7 @@ void AWorldManager::LoadPortion(bool _isMap, FText _name)
 			cameraActor->Activate();
 			PC->SetViewTargetWithBlend(cameraActor->GetOwner(), 0.0f);
 		}	
-	}
+	}*/
 }
 
 void AWorldManager::EnableStarAtRandomLocation(bool _pointWithCamera)

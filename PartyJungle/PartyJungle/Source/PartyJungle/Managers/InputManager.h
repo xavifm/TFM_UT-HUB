@@ -276,7 +276,7 @@ TArray<FInputActionBinding*> const AInputManager::BindInput(TArray<int> a_Player
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputKey, a_TriggerEvent, a_Object)};
 		
-		if (!m_InputBindings.Contains(BindKey))
+		if (PlayerController && !m_InputBindings.Contains(BindKey))
 		{
 			FInputActionBinding* BindAction = &PlayerController->InputComponent->BindAction<TDelegate<void(EInputKeys, ETriggerEvents, int)>, UserClass, EInputKeys, ETriggerEvents, int>
 				(FName(*UEnum::GetDisplayValueAsText(a_InputKey).ToString()), static_cast<EInputEvent>(a_TriggerEvent), a_Object, a_Function, a_InputKey, a_TriggerEvent, PlayerId);
@@ -307,7 +307,7 @@ TArray<FInputAxisBinding*> const AInputManager::BindAxis(TArray<int> a_PlayerIds
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputAxis, EInputEvent::IE_Axis, a_Object)};
 		
-		if (!m_InputBindings.Contains(BindKey))
+		if (PlayerController && !m_InputBindings.Contains(BindKey))
 		{
 			FInputAxisBinding* BindAxis = &PlayerController->InputComponent->BindAxis(FName(*UEnum::GetDisplayValueAsText(a_InputAxis).ToString()), a_Object, a_Function);
 			if (BindAxis)
@@ -332,7 +332,7 @@ bool AInputManager::UnbindInput(EInputKeys a_InputKey, ETriggerEvents a_TriggerE
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputKey, a_TriggerEvent, a_Object)};
 		
-		if (m_InputBindings.Contains(BindKey))
+		if (PlayerController && m_InputBindings.Contains(BindKey))
 		{
 			PlayerController->InputComponent->RemoveActionBindingForHandle(m_InputBindings[BindKey]->GetHandle());
 			m_InputBindings.Remove(BindKey);
@@ -353,7 +353,7 @@ bool AInputManager::UnbindInput(TArray<int> a_PlayerIds, EInputKeys a_InputKey, 
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputKey, a_TriggerEvent, a_Object)};
 		
-		if (m_InputBindings.Contains(BindKey))
+		if (PlayerController && m_InputBindings.Contains(BindKey))
 		{
 			PlayerController->InputComponent->RemoveActionBindingForHandle(m_InputBindings[BindKey]->GetHandle());
 			m_InputBindings.Remove(BindKey);
@@ -378,7 +378,7 @@ bool AInputManager::UnbindAxis(EInputAxes a_InputAxis, UserClass* a_Object)
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputAxis, EInputEvent::IE_Axis, a_Object)};
 		
-		if (m_AxisBindings.Contains(BindKey))
+		if (PlayerController && m_AxisBindings.Contains(BindKey))
 		{
 			PlayerController->InputComponent->RemoveAxisBinding(m_AxisBindings[BindKey]->AxisName);
 			m_AxisBindings.Remove(BindKey);
@@ -399,7 +399,7 @@ bool AInputManager::UnbindAxis(TArray<int> a_PlayerIds, EInputAxes a_InputAxis, 
 		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
 		auto BindKey {GetInputBindKey<UserClass>(PlayerId, a_InputAxis, EInputEvent::IE_Axis, a_Object)};
 		
-		if (m_AxisBindings.Contains(BindKey))
+		if (PlayerController && m_AxisBindings.Contains(BindKey))
 		{
 			PlayerController->InputComponent->RemoveAxisBinding(m_AxisBindings[BindKey]->AxisName);
 			m_AxisBindings.Remove(BindKey);
