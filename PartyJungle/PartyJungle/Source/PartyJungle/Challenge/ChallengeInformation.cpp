@@ -45,12 +45,23 @@ int AChallengeInformation::SwitchDuelType(int _direction, int _team)
 {
     int NewDuelPercentage = DuelPercentage + (_direction * 10);
     NewDuelPercentage = FMath::Clamp(NewDuelPercentage, MIN_PERCENTAGE, MAX_PERCENTAGE);
+    
+    AMinion* Minion;
 
-    if (!Minions[_team])
+    for (auto minion : Minions)
+    {
+        if (static_cast<int>(minion->Team) == _team)
+        {
+            Minion = minion;
+            break;
+        }
+    }
+    
+    if (!Minion)
         return DuelPercentage;
     
-    int minionCoins = Minions[_team]->GetCoins();
-    int minionCrowns = Minions[_team]->GetCrowns();
+    int minionCoins = Minion->GetCoins();
+    int minionCrowns = Minion->GetCrowns();
     int minCoins = 0;
 
     int range = (NewDuelPercentage > MAX_PERCENTAGE / 2) ? 2 : (NewDuelPercentage > 0 ? 1 : 0);

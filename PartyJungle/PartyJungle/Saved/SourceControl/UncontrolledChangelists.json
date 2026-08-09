@@ -5,6 +5,8 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Player/Minions/Minion_T1.uasset",
 				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Menu/UI/BoardMenu.uasset",
 				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame3/GameElements/WallLimit.uasset",
 				"C:/Users/User/Desktop/Unreal Projects/TFM_UT-HUB/PartyJungle/PartyJungle/Content/__ExternalActors__/Scenes/PartyMap/9/6S/H4N8AINW323R8QFXASGU21.uasset",
