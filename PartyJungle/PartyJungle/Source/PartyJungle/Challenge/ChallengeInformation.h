@@ -3,7 +3,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "../Player/Minion/Minion.h"
-#include "ChallengeDatabase.h"
 #include "ChallengeInformation.generated.h"
 
 UENUM(BlueprintType)
@@ -22,9 +21,6 @@ class PARTYJUNGLE_API AChallengeInformation : public AActor
 
 public:
 	AChallengeInformation();
-	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
-	class AChallengeDatabase* ChallengeRegistry;
 
 	UPROPERTY()
 	TArray<AMinion*> Minions;
@@ -44,9 +40,6 @@ public:
 	void SafeDuelChoice();
 	
 	int GetCurrentBetControllerMenuIndex(int _currentTeam, int _maxTeamNumber, int _duelSquareIndex) const;
-
-	UFUNCTION(BlueprintCallable)
-	void SaveDuelToRegistry(int _winner, int _coins, int _crowns);
 
 	UFUNCTION(BlueprintCallable)
 	float GetDuelType();

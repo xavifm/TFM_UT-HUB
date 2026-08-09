@@ -68,9 +68,6 @@ private:
 	UPROPERTY(EditAnywhere, Category = "ScoresDB")
 	AScoreDatabase* ScoresDB;
 
-	UPROPERTY(EditAnywhere, Category = "ChallengeDB")
-	AChallengeDatabase* ChallengeDB;
-
 	FTimerHandle TimerHandle;
 	const FString END_GAME_SCENE_NAME = "EndGameScene";
 

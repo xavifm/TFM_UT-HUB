@@ -14,6 +14,9 @@ public:
 	AMinigameWheel();
 	void InitializeUI(UPlayerMapUI* _ui) { PlayerMapUI = _ui; }
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio")
+	AAudioManager* AudioManager;
+	
 	void SwitchUiVisibility(bool _visibility);
 	
 	int GetSpinValue() { return WheelValue; }
@@ -29,6 +32,7 @@ private:
 	bool Spinning = false;
 	float SpinningTime = 0.0f;
 	int WheelValue = 0;
+	int OldWheelValue = -1;
 	
 	FTimerHandle SpinStepTimerHandle;
 	FTimerHandle SpinStopTimerHandle;

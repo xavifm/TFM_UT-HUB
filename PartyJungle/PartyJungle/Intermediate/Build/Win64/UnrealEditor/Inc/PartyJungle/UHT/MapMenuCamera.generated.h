@@ -67,6 +67,7 @@ struct FInputActionValue;
 	DECLARE_FUNCTION(execDelayedSceneSwitch); \
 	DECLARE_FUNCTION(execSpinWheelEndSequence); \
 	DECLARE_FUNCTION(execCloseDuelMenu); \
+	DECLARE_FUNCTION(execGetMinionWithSmallestTeam); \
 	DECLARE_FUNCTION(execFollowMinionMovement); \
 	DECLARE_FUNCTION(execHandleConfirmInput); \
 	DECLARE_FUNCTION(execHandleLeftRightInput); \

@@ -5,6 +5,8 @@
 #include <PartyJungle/Player/Scores/ScoreDto.h>
 #include <PartyJungle/Player/Scores/TransactionDto.h>
 #include <PartyJungle/Challenge/ChallengeDto.h>
+
+#include "PartyJungle/Challenge/MinigameDto.h"
 #include "ScoresCalculator.generated.h"
 
 UCLASS()
@@ -27,6 +29,9 @@ public:
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<UChallengeDto*> ChallengesRegistry;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    TArray<UMinigameDto*> MinigamesRegistry;
 
     UFUNCTION(BlueprintCallable)
     void InitializeInfo();
@@ -38,7 +43,7 @@ public:
     int GetBestDuelingTeam();
 
     UFUNCTION(BlueprintCallable)
-    int GetWorstDuelingTeam();
+    int GetBestMinigameTeam();
 
     UFUNCTION(BlueprintCallable)
     int GetTeamWithHigherCoins();

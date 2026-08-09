@@ -111,6 +111,12 @@ public:
     UFUNCTION(BlueprintCallable, Category = "UI")
     void UpdateCrowns(int Team, int Quantity);
     
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    void UpdateUIPositions();
+
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void UpdatePosition(int Team, int Position);
+    
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "UI")
     void SwitchScoreListUI(bool _visible);
     
