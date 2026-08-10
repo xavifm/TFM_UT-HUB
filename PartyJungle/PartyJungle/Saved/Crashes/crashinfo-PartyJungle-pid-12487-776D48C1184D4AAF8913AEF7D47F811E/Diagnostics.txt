@@ -1,0 +1,47 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 6.18.0-2-cachyos-deckify (network name: cachyos-x8664-xfm)
+Running 20 x86_64 processors (28 logical cores)
+Exception was "SIGSEGV: invalid attempt to write memory at address 0x0000000000000003"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-Core.so!FDebug::CheckVerifyFailedImpl2(char const*, char const*, int, char16_t const*, ...) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Core/Private/Misc/AssertionMacros.cpp:724]
+libUnrealEditor-Engine.so!FEngineFontServices::Get() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/UserInterface/EngineFontServices.cpp:49]
+libUnrealEditor-Engine.so!UFont::GetMaxCharHeight() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Font.cpp:306]
+libUnrealEditor-Engine.so!UTextRenderComponent::GetRenderMatrix() const [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/TextRenderComponent.cpp:1390]
+libUnrealEditor-Engine.so!UTextRenderComponent::UpdateBounds() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/TextRenderComponent.cpp:1368]
+libUnrealEditor-Engine.so!USceneComponent::PropagateTransformUpdate(bool, EUpdateTransformFlags, ETeleportType) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/SceneComponent.cpp:1015]
+libUnrealEditor-Engine.so!USceneComponent::UpdateComponentToWorldWithParent(USceneComponent*, FName, EUpdateTransformFlags, UE::Math::TQuat<double> const&, ETeleportType) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/SceneComponent.cpp:788]
+libUnrealEditor-Engine.so!USceneComponent::UpdateComponentToWorld(EUpdateTransformFlags, ETeleportType) [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h:929]
+libUnrealEditor-Engine.so!USceneComponent::DetachFromComponent(FDetachmentTransformRules const&) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/SceneComponent.cpp:2712]
+libUnrealEditor-Engine.so!USceneComponent::OnComponentDestroyed(bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/SceneComponent.cpp:1631]
+libUnrealEditor-Engine.so!UActorComponent::BeginDestroy() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/ActorComponent.cpp:1101]
+libUnrealEditor-Engine.so!UPrimitiveComponent::BeginDestroy() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/Components/PrimitiveComponent.cpp:1888]
+libUnrealEditor-CoreUObject.so!UObject::ConditionalBeginDestroy() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/Obj.cpp:1230]
+libUnrealEditor-CoreUObject.so!UnhashUnreachableObjects(bool, double) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:6092]
+libUnrealEditor-CoreUObject.so!void UE::GC::PostCollectGarbageImpl<true>(EObjectFlags) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:5700]
+libUnrealEditor-CoreUObject.so!UE::GC::FReachabilityAnalysisState::PerformReachabilityAnalysisAndConditionallyPurgeGarbage(bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:5906]
+libUnrealEditor-CoreUObject.so!CollectGarbage(EObjectFlags, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/CoreUObject/Private/UObject/GarbageCollection.cpp:5774]
+libUnrealEditor-PythonScriptPlugin.so!FPyReferenceCollector::PurgeUnrealGeneratedTypes() [/mnt/horde/++UE5/Sync/Engine/Source/./../Plugins/Experimental/PythonScriptPlugin/Source/PythonScriptPlugin/Private/PyReferenceCollector.cpp:204]
+libUnrealEditor-PythonScriptPlugin.so!FPythonScriptPlugin::ShutdownPython() [/mnt/horde/++UE5/Sync/Engine/Source/./../Plugins/Experimental/PythonScriptPlugin/Source/PythonScriptPlugin/Private/PythonScriptPlugin.cpp:1412]
+libUnrealEditor-PythonScriptPlugin.so!TBaseRawMethodDelegateInstance<false, FPythonScriptPlugin, void (), FDefaultDelegateUserPolicy>::ExecuteIfSafe() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Templates/Invoke.h:66]
+UnrealEditor!void TMulticastDelegateBase<FDefaultDelegateUserPolicy>::Broadcast<IBaseDelegateInstance<void (), FDefaultDelegateUserPolicy> >() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Delegates/MulticastDelegateBase.h:258]
+UnrealEditor!FEngineLoop::AppPreExit() [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:1080]
+UnrealEditor!FEngineLoop::Exit() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:4872]
+UnrealEditor!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:71]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27b8a)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor!_start [/home/xavi/Documents/Linux_Unreal_Engine_5.6.0/Engine/Binaries/Linux/UnrealEditor:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

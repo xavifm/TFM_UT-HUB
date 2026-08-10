@@ -91,8 +91,19 @@ int AChallengeInformation::SwitchDuelType(int _direction, int _team)
 
 int AChallengeInformation::GetBetCoinsQuantity(int _team)
 {
-    if (!Minions[_team]) return 0;
-    int coins = Minions[_team]->GetCoins();
+    AMinion* Minion;
+    
+    for (auto minion : Minions)
+    {
+        if (static_cast<int>(minion->Team) == _team)
+        {
+            Minion = minion;
+            break;
+        }
+    }
+    
+    if (!Minion) return 0;
+    int coins = Minion->GetCoins();
     return (coins * DuelPercentage) / MAX_PERCENTAGE;
 }
 
@@ -155,8 +166,19 @@ int AChallengeInformation::GetCalculatedPot(TArray<AMinion*> _minions, float _pe
 
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
 {
-    if (!Minions[_team]) return 0;
-    int Crowns = Minions[_team]->GetCrowns();
+    AMinion* Minion;
+    
+    for (auto minion : Minions)
+    {
+        if (static_cast<int>(minion->Team) == _team)
+        {
+            Minion = minion;
+            break;
+        }
+    }
+    
+    if (!Minion) return 0;
+    int Crowns = Minion->GetCrowns();
     
     return Crowns;
 }
