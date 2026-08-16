@@ -720,7 +720,9 @@ void AMapMenuCamera::SwitchMainScene(bool _isMap, FText _name)
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::FinishFadeTransition, RESTORE_TURN_TRANSITION_TIME, false);
     }
     
-    MapUI->SwitchMinigameUIVisibility(IsMinigameActive);
+    if (!_name.EqualTo(FText::FromString(TEXT("Book"))))
+        MapUI->SwitchMinigameUIVisibility(IsMinigameActive);
+    
     WorldSceneManager->UnloadEntireWorld();
     WorldSceneManager->LoadPortion(_isMap, _name);
 
