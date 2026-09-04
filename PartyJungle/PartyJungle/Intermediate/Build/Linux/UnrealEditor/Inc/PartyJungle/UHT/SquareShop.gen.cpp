@@ -274,19 +274,20 @@ struct Z_Construct_UClass_ASquareShop_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CurrentItemStored_MetaData[] = {
 		{ "ModuleRelativePath", "Map/SquareShop.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShopIndex_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShopEnabled_MetaData[] = {
+		{ "Category", "SquareShop" },
 		{ "ModuleRelativePath", "Map/SquareShop.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShopEnabled_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ShopIndex_MetaData[] = {
 		{ "ModuleRelativePath", "Map/SquareShop.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemsInShop_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ItemsInShop;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentItemStored;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_ShopIndex;
 	static void NewProp_ShopEnabled_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_ShopEnabled;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ShopIndex;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -305,18 +306,18 @@ struct Z_Construct_UClass_ASquareShop_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ItemsInShop_Inner = { "ItemsInShop", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ItemsInShop = { "ItemsInShop", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareShop, ItemsInShop), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemsInShop_MetaData), NewProp_ItemsInShop_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_CurrentItemStored = { "CurrentItemStored", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareShop, CurrentItemStored), Z_Construct_UClass_AItem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentItemStored_MetaData), NewProp_CurrentItemStored_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopIndex = { "ShopIndex", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareShop, ShopIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShopIndex_MetaData), NewProp_ShopIndex_MetaData) };
 void Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled_SetBit(void* Obj)
 {
 	((ASquareShop*)Obj)->ShopEnabled = 1;
 }
-const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled = { "ShopEnabled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASquareShop), &Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShopEnabled_MetaData), NewProp_ShopEnabled_MetaData) };
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled = { "ShopEnabled", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ASquareShop), &Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShopEnabled_MetaData), NewProp_ShopEnabled_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopIndex = { "ShopIndex", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASquareShop, ShopIndex), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ShopIndex_MetaData), NewProp_ShopIndex_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASquareShop_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_ItemsInShop_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_ItemsInShop,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_CurrentItemStored,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopIndex,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopEnabled,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASquareShop_Statics::NewProp_ShopIndex,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASquareShop_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASquareShop_Statics::DependentSingletons[])() = {
@@ -356,10 +357,10 @@ ASquareShop::~ASquareShop() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASquareShop, ASquareShop::StaticClass, TEXT("ASquareShop"), &Z_Registration_Info_UClass_ASquareShop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareShop), 2863810844U) },
+		{ Z_Construct_UClass_ASquareShop, ASquareShop::StaticClass, TEXT("ASquareShop"), &Z_Registration_Info_UClass_ASquareShop, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASquareShop), 579199646U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h__Script_PartyJungle_215198890(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h__Script_PartyJungle_1768727928(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Map_SquareShop_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

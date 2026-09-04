@@ -33,11 +33,11 @@ public:
 
 	UFUNCTION()
 	void SwitchShop();
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool ShopEnabled;
 
 private:
 	UPROPERTY()
 	int ShopIndex;
-
-	UPROPERTY()
-	bool ShopEnabled;
 };
