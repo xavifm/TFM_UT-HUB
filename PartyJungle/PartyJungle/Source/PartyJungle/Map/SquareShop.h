@@ -18,6 +18,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetCurrentShopItem(AItem* _item);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetCurrentWheelPosition(int _position);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<AItem*> ItemsInShop;

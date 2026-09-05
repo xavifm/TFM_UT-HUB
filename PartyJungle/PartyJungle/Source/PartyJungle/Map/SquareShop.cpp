@@ -16,6 +16,7 @@ void ASquareShop::SwitchShop()
 {
 	ShopEnabled = !ShopEnabled;
 	SwitchShopVisibility(ShopEnabled);
+	ShopIndex = 0;
 	SwitchShopItem(0);
 }
 
@@ -35,4 +36,5 @@ void ASquareShop::SwitchShopItem(int _direction)
 		
 	CurrentItemStored = ItemsInShop[ShopIndex];
 	SetCurrentShopItem(CurrentItemStored);
+	SetCurrentWheelPosition(_direction);
 }
