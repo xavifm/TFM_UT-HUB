@@ -45,13 +45,7 @@ int ADuelManager::GetBetControllerMenuIndex(int a_Team, int a_DuelSquareIndex) c
 
 void ADuelManager::SaveDuelToRegistry(int a_Winner, int a_Coins, int a_Crowns)
 {
-    if (m_ChallengeRegistry) 
-    {
-        int AttackerTeam = static_cast<int>(m_Minions[0]->Team);
-        int Duel = static_cast<int>(m_DuelType);
-
-        RegisterDuel(AttackerTeam, 0, a_Winner, Duel, a_Coins, a_Crowns);
-    }
+    RegisterDuel(a_Winner, static_cast<int>(m_DuelType), a_Coins, a_Crowns);
 }
 
 EDuelType ADuelManager::GetDuelType()
@@ -245,17 +239,15 @@ void ADuelManager::FinishForcedDuel()
     }
 }
 
-void ADuelManager::RegisterDuel(int32 a_Attacker, int32 a_Victim, int32 a_Winner, int32 a_BetType, int32 a_Coins, int32 a_Crowns)
+void ADuelManager::RegisterDuel(int32 a_Winner, int32 a_BetPercentage, int32 a_Coins, int32 a_Crowns)
 {
     UChallengeDto* Registry = NewObject<UChallengeDto>();
 
     if (!Registry)
         return;
 
-    Registry->AttackerTeam = a_Attacker;
-    Registry->VictimTeam = a_Victim;
     Registry->WinnerTeam = a_Winner;
-    Registry->BetStyle = a_BetType;
+    Registry->BetPercentage = a_BetPercentage;
     Registry->CoinsGained = a_Coins;
     Registry->CrownsGained = a_Crowns;
 

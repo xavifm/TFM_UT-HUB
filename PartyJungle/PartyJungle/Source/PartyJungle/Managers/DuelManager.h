@@ -135,15 +135,13 @@ public:
 
 	/**
 	 * Registers a Duel's Data.
-	 * @param a_Attacker Id of the attacker player.
-	 * @param a_Victim Id of the victim player.
 	 * @param a_Winner Id of the winner player.
-	 * @param a_BetType Bet Type.
+	 * @param a_BetPercentage Percentage for the played bet.
 	 * @param a_Coins Duel won coins.
 	 * @param a_Crowns Duel won crowns.
 	 */
 	UFUNCTION(BlueprintCallable, Category = "Challenge")
-	void RegisterDuel(int32 a_Attacker, int32 a_Victim, int32 a_Winner, int32 a_BetType, int32 a_Coins, int32 a_Crowns = 0);
+	void RegisterDuel(int32 a_Winner, int32 a_BetPercentage, int32 a_Coins, int32 a_Crowns = 0);
 
 	/**
 	 * Saves the Duel Registry into the DataManager Instance.
@@ -203,12 +201,15 @@ public:
 	 * @return True if the current Duel is being forced.
 	 */
 	bool IsForcedDuel() { return m_IsForcingDuel; };
+
+	/**
+	 * Gets the Duel Registry.
+	 * @return Array with the Duel Registry data.
+	 */
+	const TArray<UChallengeDto*>& GetDuelsRegistry() { return m_DuelsRegistry; };
 	
 	
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Registry")
-	class AChallengeDatabase* m_ChallengeRegistry; //!< Reference to the challenge registry database.
-
 	UPROPERTY()
 	TArray<AMinion*> m_Minions; //!< List of Minions that participate in the Duel.
 

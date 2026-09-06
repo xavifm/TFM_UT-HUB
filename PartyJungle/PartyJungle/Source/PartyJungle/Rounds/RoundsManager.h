@@ -119,8 +119,5 @@ private:
 	UPROPERTY(EditAnywhere, Category = "ScoresDB")
 	AScoreDatabase* m_ScoresDB {nullptr}; //!< Pointer to the Score Database.
 
-	UPROPERTY(EditAnywhere, Category = "ChallengeDB")
-	AChallengeDatabase* m_ChallengeDB {nullptr}; //!< Pointer to the Challenge Database.
-
 	FTimerHandle m_TimerHandle; //!< Timer used for round management.
 };

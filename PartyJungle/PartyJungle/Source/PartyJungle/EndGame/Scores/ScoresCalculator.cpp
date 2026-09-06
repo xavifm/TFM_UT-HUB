@@ -3,6 +3,8 @@
 #include <PartyJungle/GameInstance/ManagerGameInstance.h>
 #include <PartyJungle/GameInstance/GameInstanceAux/GameData.h>
 
+#include "PartyJungle/Managers/DuelManager.h"
+
 
 AScoresCalculator::AScoresCalculator()
 {
@@ -24,9 +26,9 @@ void AScoresCalculator::InitializeInfo()
 		TransactionsRegistry = GameInstance->GetGameDataManager().GetTransactionsRegistry();
 		ChallengesRegistry = GameInstance->GetGameDataManager().GetChallengesRegistry();
 	    
-	    // ToDo Capy: Revisar si funciona
-		MinigamesRegistry = GameInstance->GetGameDataManager().GetMinigamesRegistry();
+	    // ToDo Capy: En teoria s'hauria de substituir pel duel registry, mirar si es correcte canviar-ho o directament s'hauria de posar la lógica a un altre lloc.
 	    //MinigamesRegistry = GameInstance->MinigamesRegistry;
+		m_DuelsRegistry = GameInstance->GetDuelManager()->GetDuelsRegistry();
 	}
 }
 
@@ -76,7 +78,8 @@ int AScoresCalculator::GetBestDuelingTeam()
 
 int AScoresCalculator::GetBestMinigameTeam()
 {
-    if (MinigamesRegistry.Num() <= 0)
+    // ToDo Capy: En teoria s'hauria de substituir pel duel registry, mirar si es correcte canviar-ho o directament s'hauria de posar la lógica a un altre lloc.
+    /*if (MinigamesRegistry.Num() <= 0)
         return -1;
 
     TMap<int, int> TeamWins;
@@ -89,6 +92,19 @@ int AScoresCalculator::GetBestMinigameTeam()
             {
                 TeamWins.FindOrAdd(TeamWin)++;
             }
+        }
+    }*/
+    
+    if (m_DuelsRegistry.Num() <= 0)
+        return -1;
+
+    TMap<int, int> TeamWins;
+
+    for (auto Duel : m_DuelsRegistry)
+    {
+        if (Duel)
+        {
+            TeamWins.FindOrAdd(Duel->WinnerTeam)++;
         }
     }
 

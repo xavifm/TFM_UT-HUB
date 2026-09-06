@@ -105,13 +105,12 @@ void ABoardMenu::StartGame()
 
 void ABoardMenu::StartGameCheat() 
 {
-	UMinigameDataGameInstance* GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
-
-	if(GameInstance) 
+	auto GameManager { GetGameInstance<UManagerGameInstance>() };
+	if (GameManager)
 	{
-		GameInstance->PlayersInBoard = 2;
-		GameInstance->RoundsInBoard = 2;
-
+		GameManager->GetGameDataManager().SetPlayersInBoard(2);
+		GameManager->GetGameDataManager().SetRoundsInBoard(2);
+		
 		StartGameSequence();
 	}
 }

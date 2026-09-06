@@ -19,14 +19,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct FInputActionValue;
 
 // ********** Begin Class APlayerPalette ***********************************************************
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execPossessMovement); \
 	DECLARE_FUNCTION(execMovePallette);
 
 
 PARTYJUNGLE_API UClass* Z_Construct_UClass_APlayerPalette_NoRegister();
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerPalette(); \
 	friend struct Z_Construct_UClass_APlayerPalette_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(APlayerPalette)
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	APlayerPalette(APlayerPalette&&) = delete; \
 	APlayerPalette(const APlayerPalette&) = delete; \
@@ -47,13 +47,13 @@ public: \
 	NO_API virtual ~APlayerPalette();
 
 
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_10_PROLOG
-#define FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_GENERATED_BODY \
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_10_PROLOG
+#define FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_ENHANCED_CONSTRUCTORS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_INCLASS_NO_PURE_DECLS \
+	FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -63,6 +63,6 @@ class APlayerPalette;
 // ********** End Class APlayerPalette *************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h
+#define CURRENT_FILE_ID FID_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

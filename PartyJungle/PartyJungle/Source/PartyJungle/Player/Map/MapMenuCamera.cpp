@@ -224,7 +224,7 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
 {
     //Start Minigame
-    RoundsSystem->EndRoundMinigameAvailable = false;
+    RoundsSystem->m_EndRoundMinigameAvailable = false;
     InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
     MinigameWheel->SwitchUiVisibility(true);
     

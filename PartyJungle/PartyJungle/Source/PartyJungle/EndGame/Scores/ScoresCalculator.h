@@ -30,8 +30,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<UChallengeDto*> ChallengesRegistry;
     
+    /*UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    TArray<UMinigameDto*> MinigamesRegistry;*/
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    TArray<UMinigameDto*> MinigamesRegistry;
+    TArray<UChallengeDto*> m_DuelsRegistry; //!< Array with the data of the Duels.
 
     UFUNCTION(BlueprintCallable)
     void InitializeInfo();
