@@ -26,6 +26,9 @@ public:
 
 	UFUNCTION()
 	void StartGame();
+	
+	UFUNCTION(BlueprintCallable)
+	void StartGameCheat();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void PerformMenuAction(int CurrentBoardPosition);

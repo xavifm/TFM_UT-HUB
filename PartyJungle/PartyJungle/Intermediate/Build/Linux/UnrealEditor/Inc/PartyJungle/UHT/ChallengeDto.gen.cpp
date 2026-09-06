@@ -58,19 +58,11 @@ struct Z_Construct_UClass_UChallengeDto_Statics
 		{ "IncludePath", "Challenge/ChallengeDto.h" },
 		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_AttackerTeam_MetaData[] = {
-		{ "Category", "Challenge" },
-		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
-	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_VictimTeam_MetaData[] = {
-		{ "Category", "Challenge" },
-		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_WinnerTeam_MetaData[] = {
 		{ "Category", "Challenge" },
 		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BetStyle_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_BetPercentage_MetaData[] = {
 		{ "Category", "Challenge" },
 		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
 	};
@@ -83,10 +75,8 @@ struct Z_Construct_UClass_UChallengeDto_Statics
 		{ "ModuleRelativePath", "Challenge/ChallengeDto.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_AttackerTeam;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_VictimTeam;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_WinnerTeam;
-	static const UECodeGen_Private::FIntPropertyParams NewProp_BetStyle;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_BetPercentage;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CoinsGained;
 	static const UECodeGen_Private::FIntPropertyParams NewProp_CrownsGained;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
@@ -96,17 +86,13 @@ struct Z_Construct_UClass_UChallengeDto_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_AttackerTeam = { "AttackerTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, AttackerTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_AttackerTeam_MetaData), NewProp_AttackerTeam_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_VictimTeam = { "VictimTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, VictimTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_VictimTeam_MetaData), NewProp_VictimTeam_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_WinnerTeam = { "WinnerTeam", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, WinnerTeam), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_WinnerTeam_MetaData), NewProp_WinnerTeam_MetaData) };
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_BetStyle = { "BetStyle", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, BetStyle), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BetStyle_MetaData), NewProp_BetStyle_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_BetPercentage = { "BetPercentage", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, BetPercentage), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_BetPercentage_MetaData), NewProp_BetPercentage_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_CoinsGained = { "CoinsGained", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, CoinsGained), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CoinsGained_MetaData), NewProp_CoinsGained_MetaData) };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UChallengeDto_Statics::NewProp_CrownsGained = { "CrownsGained", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UChallengeDto, CrownsGained), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CrownsGained_MetaData), NewProp_CrownsGained_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UChallengeDto_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_AttackerTeam,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_VictimTeam,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_WinnerTeam,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_BetStyle,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_BetPercentage,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_CoinsGained,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UChallengeDto_Statics::NewProp_CrownsGained,
 };
@@ -147,10 +133,10 @@ UChallengeDto::~UChallengeDto() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeDto_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UChallengeDto, UChallengeDto::StaticClass, TEXT("UChallengeDto"), &Z_Registration_Info_UClass_UChallengeDto, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChallengeDto), 2608496950U) },
+		{ Z_Construct_UClass_UChallengeDto, UChallengeDto::StaticClass, TEXT("UChallengeDto"), &Z_Registration_Info_UClass_UChallengeDto, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChallengeDto), 3858817498U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeDto_h__Script_PartyJungle_4138971180(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeDto_h__Script_PartyJungle_1884395000(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeDto_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Challenge_ChallengeDto_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

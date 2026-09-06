@@ -26,7 +26,6 @@ void AMapMenuCamera::BeginPlay()
     SwitchMenuWidget(true);
     SwitchToFullMapView(false, CurrentMinion->GetActorLocation());
     UpdateDicePosition();
-    Dice->ShowDice();
 
     if(WorldSceneManager) 
     {
@@ -82,13 +81,74 @@ void AMapMenuCamera::BeginPlay()
 
     SwitchMainScene();
     SwitchRankingScoreList(false);
+    
+    WorldSceneManager->StartMapPointCinematic(START_INTRO_CAM_POSITION, 2);
+    
+    if (MapUI)
+    {
+        MapUI->SwitchLegendVisibility(false);
+    }
 }
 
 void AMapMenuCamera::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    if (FullMapView)
+    if (StartGameIntro)
+    {
+        if (!FullMapView)
+        {
+            if (MapUI)
+            {
+                MapUI->SwitchScoresVisibility(false);
+                MapUI->SwitchLegendVisibility(false);
+                Dice->HideDice();
+            }
+            
+            FullMapView = true;
+            SwitchToFullMapView(FullMapView, START_INTRO_CAM_POSITION);   
+        }
+        
+        FVector CurrentLocation = WorldSceneManager->FullMapCamera->GetAttachParentActor()->GetActorLocation();
+        FVector TargetLocation = FVector(-800, 300,0);
+
+        FVector MoveDirection = (TargetLocation - CurrentLocation).GetSafeNormal();
+        
+        auto SnapAxis = [](float Value)
+        {
+            if (Value > 0.1f) return 0.17f;
+            if (Value < -0.1f) return -0.17f;
+            return 0.f;
+        };
+        
+        float dirY = SnapAxis(MoveDirection.Y);
+        float dirX = SnapAxis(MoveDirection.X);
+        
+        float duration = 10.f;
+        Elapsed += DeltaTime;
+        float t = Elapsed / duration;
+        float startZoom = 3150;
+        float finalZoom = 2800;
+        
+        CurrentZoom = startZoom + (finalZoom - startZoom) * t;
+        
+        MoveFullMapCamera(dirY, dirX, CurrentZoom);
+        
+        if (dirY == 0.f && dirX == 0.f)
+        {
+            MapUI->SwitchScoresVisibility(false);
+            MapUI->SwitchLegendVisibility(false);
+            SwitchKingsPosition(true);
+            
+            MoveFullMapCamera(0, 0, CurrentZoom);
+            SetDiceToKingLocation(0, 1);
+            
+            StartGameDices = true;
+            StartGameIntro = false;
+        }
+    }
+    
+    if (FullMapView && !StartGameIntro && !StartGameDices)
     {
         MoveFullMapCamera(FullMapCameraVelocity.X, FullMapCameraVelocity.Y);
         FullMapCameraVelocity = FVector2D(0,0);
@@ -130,7 +190,8 @@ void AMapMenuCamera::Tick(float DeltaTime)
             }
         }
 
-        UpdateDicePosition(false);
+        if (!StartGameDices)
+            UpdateDicePosition(false);
     }
 }
 
@@ -155,13 +216,30 @@ void AMapMenuCamera::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         EnhancedInput->BindAction(KeyEscAction, ETriggerEvent::Started, this, &AMapMenuCamera::HandleEscInput);
         EnhancedInput->BindAction(LeftJoystickActionX, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputX);
         EnhancedInput->BindAction(LeftJoystickActionY, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleLeftJoystickInputY);
+        EnhancedInput->BindAction(KeyF1Action, ETriggerEvent::Triggered, this, &AMapMenuCamera::HandleCheatKey);
         EnhancedInput->bBlockInput = false;
     }
+}
+
+void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
+{
+    //Start Minigame
+    RoundsSystem->EndRoundMinigameAvailable = false;
+    InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
+    MinigameWheel->SwitchUiVisibility(true);
+    
+    int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
+    MinigameWheel->SpinWheel(randomTime);
+    
+    GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, ENDROUND_MINIGAME_START_TIME, false);
 }
 
 void AMapMenuCamera::HandleLeftJoystickInputX(const FInputActionValue& _value)
 {
     float stickInputX = _value.Get<float>();
+    
+    if (StartGameIntro || StartGameDices)
+        return;
 
     if (stickInputX < 0.3f && stickInputX > -0.3f)
         return;
@@ -174,6 +252,9 @@ void AMapMenuCamera::HandleLeftJoystickInputY(const FInputActionValue& _value)
 {
     float stickInputY = _value.Get<float>();
     
+    if (StartGameIntro || StartGameDices)
+        return;
+    
     if (stickInputY < 0.3f && stickInputY > -0.3f)
         return;
     
@@ -185,17 +266,24 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 {
     int direction = _value.GetMagnitude();
     
+    if (StartGameIntro || StartGameDices)
+        return;
+    
     if (ScoreRankingEnabled)
         return;
 
     if (SquareShopReference)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SquareShopReference->SwitchShopItem(direction);
+    }
 
     if (DiceRollIndex > 0)
         return;
 
     if (ThrowItemPlayerMenu)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         int player = Inventory->SwitchItemThrowPlayer(direction, MAX_TEAM_NUMBER);
         MapUI->SwitchItemThrowPlayer(player);
         return;
@@ -203,12 +291,14 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         Inventory->SwitchSelectedInventoryItem(direction);
         return;
     }
 
     if (SelectingMinion)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SwitchMinionToSelectForDuel(MinionTeamChallengeIndex, direction);
         return;
     }
@@ -218,26 +308,50 @@ void AMapMenuCamera::HandleLeftRightInput(const FInputActionValue& _value)
 
     if (StartTurnUI)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StartPlayerTurn();
         return;
     }
 
     if (DuelUI)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         RefreshChallengeInfo(direction, CurrentMinionTeam);
         return;
     }
 
     if (SelectingPath)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         ChangeSelectedPath(direction);
+    }
     else
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         FocusNextMinion(direction);
+    }
 
     Inventory->SetInventoryPosition(CurrentMinion);
 }
 
 void AMapMenuCamera::HandleConfirmInput()
 {
+    if (MinigameInfo)
+    {
+        SwitchMainScene(false, SavedMinigameName);
+        MinigameInfo = false;
+        return;
+    }
+    
+    if (StartGameIntro || StartGameDices)
+    {
+        if (StartGameIntro) return;
+        //llògica minijoc dau per torns
+        RollTheDice();
+        
+        return;
+    }
+    
     if (ScoreRankingEnabled)
     {
         SwitchRankingScoreList(false);
@@ -286,6 +400,8 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (InventoryEnabled && !SelectMinionToUseItem)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
+        
         if (Inventory->UseItemFromUI(CurrentMinion, true))
             SwitchInventory();
         
@@ -310,6 +426,7 @@ void AMapMenuCamera::HandleConfirmInput()
         if (CurrentMinion->CurrentSquare->CheckIfSquareIsBlocked(CurrentMinion) || CurrentMinion->CurrentSquare->IsChallengeEnabled)
             return;
         
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         SelectMinionToUseItem = false;
         Inventory->SwitchSelectedItemVisibility(SelectMinionToUseItem);
         SwitchInventory();
@@ -322,12 +439,14 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (SelectingMinion)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         ConfirmMinionToDuel();
         return;
     }
 
     if (StartTurnUI) 
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StartPlayerTurn();
         return;
     }
@@ -337,13 +456,14 @@ void AMapMenuCamera::HandleConfirmInput()
         int LastTeam = CurrentMinionTeam;
         ChallengeInformation->SafeDuelChoice();
         SwitchUIController();
+        
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
 
         if (LastTeam == CurrentMinionTeam)
         {
             int rouletteSize = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList.Num();
             MapUI->InitializePotRoulette(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList, ChallengeInformation->ParsePotsInfo(ChosenDuelIndex), ChallengeInformation);
             RouletteResult = MapUI->SpinWheel(rouletteSize) - 1;
-            //
             UE_LOG(LogTemp, Warning, TEXT("Wheel Value: %d"), RouletteResult);
             DuelUI = false;
             SpinningWheel = true;
@@ -357,6 +477,7 @@ void AMapMenuCamera::HandleConfirmInput()
 
     if (DuelPopup)
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
         StopMinionForDuel();
         return;
     }
@@ -376,7 +497,10 @@ void AMapMenuCamera::HandleConfirmInput()
     if (SelectingPath)
         ConfirmPathSelection();
     else if(!ChooseMinionToMove)
+    {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f); //dice sound
         RollTheDice();
+    }
     else if (!CurrentMinion->CurrentSquare->IsBlockedByWall)
         ExecuteMinionMovement();
 }
@@ -410,6 +534,7 @@ void AMapMenuCamera::SpinWheelEndSequence()
     auto potsInfo = ChallengeInformation->ParsePotsInfo(ChosenDuelIndex);
     int rouletteDuel = potsInfo[RouletteResult].second.second;
     UE_LOG(LogTemp, Log, TEXT("Roulette duel: %d"), static_cast<int32>(rouletteDuel));
+    MinionTeamIndex = MAX_TEAM_NUMBER - 1;
 
     if (rouletteDuel == 0)
     {
@@ -437,7 +562,8 @@ void AMapMenuCamera::SpinWheelEndSequence()
     InitializeRouletteWithMinigames(EMinigameType::DUEL, ETeamsMode::NOTEAM);
     
     //MinigameWheel->SwitchUiVisibility(true);
-    //MinigameWheel->SpinWheel(ENDROUND_MINIGAME_START_TIME - 2);
+    //int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
+    //MinigameWheel->SpinWheel(randomTime);
     
     GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::DelayedSceneSwitch, (ROULETTE_SPIN_TIME + ENDROUND_MINIGAME_START_TIME - 2), false);
 }
@@ -448,14 +574,21 @@ void AMapMenuCamera::DelayedSceneSwitch()
     //SavedMinigameName = MinigamesList[MinigameWheel->GetSpinValue()]->GameTitle;
     //MinigameWheel->SwitchUiVisibility(false);
     SpinningWheel = false;
-    SwitchMainScene(false, SavedMinigameName);
+    
+    //minigameBook
+    if (MinigameBookInfo)
+        MinigameBookInfo->SetMinigameInfo(SavedMinigameName);
+    
+    MinigameInfo = true;
+    SwitchMainScene(false, FText::FromString("Book"));
 }
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if ((!InputEnabled && !SelectingPath) || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
+    if ((!InputEnabled && !SelectingPath) || StartGameIntro || StartGameDices || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
         return;
 
+    AudioManager->PlaySFX("ZoomUPSFX", 0.3f);
     SwitchFullMapVision();
 }
 
@@ -637,6 +770,9 @@ void AMapMenuCamera::SwitchController()
 
 void AMapMenuCamera::HandleBackInput() 
 {
+    if (StartGameIntro || StartGameDices)
+        return;
+    
     if (ScoreRankingEnabled)
     {
         SwitchRankingScoreList(false);
@@ -790,6 +926,16 @@ void AMapMenuCamera::FinishDuel(int _winner, int _duelIndex)
             MapUI->UpdateCoins(minionTeam, pot);
             MapUI->UpdateCrowns(minionTeam, crowns);
 
+            UChallengeDto* challengeInfo = NewObject<UChallengeDto>(this);
+
+            challengeInfo->Init(_winner, duelPercentage,pot, crowns);
+            
+            UGameInstance* gameInstance = GetGameInstance();
+            UMinigameDataGameInstance* dataGameInstance = Cast<UMinigameDataGameInstance>(gameInstance);
+            
+            if (dataGameInstance)
+                dataGameInstance->ChallengesRegistry.Add(challengeInfo);
+            
             break;
         }
     }
@@ -801,15 +947,27 @@ void AMapMenuCamera::FinishMinigame(TArray<int32> _winners, int _money)
 {
     int dividedMoney = _money / 3;
     
+    UMinigameDto* minigameInfo = NewObject<UMinigameDto>();
+    minigameInfo->CoinsReward = _money;
+    
+    UGameInstance* gameInstance = GetGameInstance();
+    UMinigameDataGameInstance* dataGameInstance = Cast<UMinigameDataGameInstance>(gameInstance);
+    
     for (auto team : _winners)
     {
         TArray<AMinion*> teamMinions = MapDb->GetMinions(team);
+        minigameInfo->WinnerTeam.Add(team);
         
         for (auto minion : teamMinions)
         {
             UpdateMinionEconomyWithReference(minion, dividedMoney);
         }
     }
+    
+    if (dataGameInstance)
+        dataGameInstance->MinigamesRegistry.Add(minigameInfo);
+    
+    RoundsSystem->HandleEndRound(false);
     
     SwitchRankingScoreList(true);
     SameTurnEnabled = true;
@@ -859,6 +1017,8 @@ void AMapMenuCamera::SwitchChallengeMenuUI(bool _visibility, TArray<AMinion*> _c
 
     if (_visibility) 
     {
+        AudioManager->PlaySFX(POPUP_SFX, 0.3f);
+        
         Dice->HideDice();
         MapUI->SwitchLegendVisibility(false);
 
@@ -938,33 +1098,65 @@ void AMapMenuCamera::SwitchPathMenu(bool _enabled, TArray<ASquareOptional*> _pat
     }
 }
 
+AMinion* AMapMenuCamera::GetMinionWithSmallestTeam(TArray<AMinion*> MinionsList)
+{
+    if (MinionsList.Num() == 0)
+    {
+        return nullptr;
+    }
+
+    AMinion* SmallestTeamMinion = MinionsList[0];
+
+    for (AMinion* Minion : MinionsList)
+    {
+        if (Minion &&
+            static_cast<int>(Minion->Team) <
+            static_cast<int>(SmallestTeamMinion->Team))
+        {
+            SmallestTeamMinion = Minion;
+        }
+    }
+
+    return SmallestTeamMinion;
+}
+
 void AMapMenuCamera::SwitchCameraTeam(int _direction)
 {
     //int oldMinionTeam = CurrentMinionTeam;
-    CurrentMinionTeam += _direction;
+    if (PlayerTurnsOrder.Num() <= 0)
+        return;
+    
+    MinionTeamIndex += _direction;
 
     if(_direction != 0)
     {
-        if (CurrentMinionTeam >= MAX_TEAM_NUMBER)
-            CurrentMinionTeam = 0;
-        else if (CurrentMinionTeam <= 0)
-            CurrentMinionTeam = MAX_TEAM_NUMBER - 1;
+        if (MinionTeamIndex >= MAX_TEAM_NUMBER)
+            MinionTeamIndex = 0;
+        else if (MinionTeamIndex <= 0)
+            MinionTeamIndex = MAX_TEAM_NUMBER - 1;
+        
+        CurrentMinionTeam = PlayerTurnsOrder[MinionTeamIndex];
 
-        if (CurrentMinionTeam == 0 && RoundsSystem)
+        if (MinionTeamIndex == 0 && RoundsSystem)
         {
             TArray<bool> minigamesDetected = RoundsSystem->HandleEndRound(true);
 
             if (minigamesDetected[0])
             {
                 ChosenDuelIndex = FMath::RandRange(0, ChallengeInformation->SquaresWithDuelsInRound.Num() -1);  //random duel
-                CurrentMinion = ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList[0];
+                CurrentMinion = GetMinionWithSmallestTeam(ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
                 if (ChallengeInformation && ChallengeInformation->SquaresWithDuelsInRound.Num() > 0)
-                SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                {
+                    CurrentMinionTeam = static_cast<int>(CurrentMinion->Team);
+                    SwitchController();
+                    SwitchChallengeMenuUI(true, ChallengeInformation->SquaresWithDuelsInRound[ChosenDuelIndex]->MinionsList);
+                }
                 return;
             }
             if (minigamesDetected[1])
             {
                 //Minigame
+                IsMinigameActive = true;
                 RoundsSystem->m_EndRoundMinigameAvailable = false;
                 InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
                 //MinigameWheel->SwitchUiVisibility(true);
@@ -975,7 +1167,7 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
         }
         if (MapUI &&
             ((RoundsSystem->GetRoundsLeft() > RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE)
-            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE && CurrentMinionTeam != 0)))
+            || (RoundsSystem->GetRoundsLeft() <= RoundsSystem->ROUNDS_REMAINING_FOR_ANNOUNCE && MinionTeamIndex != 0)))
         {
             FString Message = FString::Printf(TEXT("Player %d!"), static_cast<int32>(CurrentMinionTeam + 1));
             MapUI->ShowTextInScreen(Message, -1);
@@ -1151,6 +1343,14 @@ void AMapMenuCamera::InitializeRouletteWithMinigames(EMinigameType _minigameType
         for (auto minigame : MinigamesList)
         {
             gameTitles.Add(minigame->GameTitle);
+            
+            if (MinigameBookInfo)
+            {   
+                MinigameBookInfo->MinigameInfoMap.Add(
+                    minigame->GameTitle.ToString(),
+                    minigame->GameDescription.ToString()
+                );
+            }
         }
         
         MinigameWheel->InitializeUiValues(gameTitles);
@@ -1177,9 +1377,53 @@ void AMapMenuCamera::RollTheDice()
         Dice->ShowDiceFeedbackNumber(Dice->DiceValue);
         SavedDiceMovements = 0;
         DiceRollIndex = 0;
-        ChooseMinionToMove = true;
-        RollingDice = true;   
+        
+        if (!StartGameDices)
+        {
+            RollingDice = true; 
+            ChooseMinionToMove = true;
+        }
+        //dice start turns
+        else if (CurrentMinionTeam < MAX_TEAM_NUMBER)
+        {
+            SetKingNumber(CurrentMinionTeam, Dice->DiceValue);
+            PlayerDicesValues.Add(Dice->DiceValue);
+            CurrentMinionTeam += 1;
+            
+            Dice->DiceValue = 0;
+            SavedDiceMovements = 0;
+            DiceRollIndex = 0;
+            
+            if (CurrentMinionTeam < MAX_TEAM_NUMBER)
+                SetDiceToKingLocation(CurrentMinionTeam, 0);
+            else
+            {
+                ChooseMinionToMove = true;
+                Dice->HideDice();
+                PlayerTurnsOrder = CalculateTurnsOrder(PlayerDicesValues);
+                CurrentMinionTeam = PlayerTurnsOrder[0];
+                CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, 0);
+                FinishGameIntroCinematic();
+            }
+        }
     }
+}
+
+TArray<int> AMapMenuCamera::CalculateTurnsOrder(TArray<int> _diceResults)
+{
+    TArray<int> Order;
+    
+    for (int i = 0; i < _diceResults.Num(); i++)
+    {
+        Order.Add(i);
+    }
+    
+    Order.Sort([&_diceResults](const int& A, const int& B)
+    {
+        return _diceResults[A] > _diceResults[B];
+    });
+
+    return Order;
 }
 
 void AMapMenuCamera::ExecuteMinionMovement(bool _diceItem)

@@ -16,6 +16,7 @@ ENGINE_API UClass* Z_Construct_UClass_AActor();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoresCalculator();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_AScoresCalculator_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UChallengeDto_NoRegister();
+PARTYJUNGLE_API UClass* Z_Construct_UClass_UMinigameDto_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UScoreDto_NoRegister();
 PARTYJUNGLE_API UClass* Z_Construct_UClass_UTransactionDto_NoRegister();
 UPackage* Z_Construct_UPackage__Script_PartyJungle();
@@ -145,6 +146,47 @@ DEFINE_FUNCTION(AScoresCalculator::execGetBestDuelingTeam)
 }
 // ********** End Class AScoresCalculator Function GetBestDuelingTeam ******************************
 
+// ********** Begin Class AScoresCalculator Function GetBestMinigameTeam ***************************
+struct Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics
+{
+	struct ScoresCalculator_eventGetBestMinigameTeam_Parms
+	{
+		int32 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EndGame/Scores/ScoresCalculator.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoresCalculator_eventGetBestMinigameTeam_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AScoresCalculator, nullptr, "GetBestMinigameTeam", Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::PropPointers), sizeof(Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::ScoresCalculator_eventGetBestMinigameTeam_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::Function_MetaDataParams), Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::ScoresCalculator_eventGetBestMinigameTeam_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AScoresCalculator::execGetBestMinigameTeam)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(int32*)Z_Param__Result=P_THIS->GetBestMinigameTeam();
+	P_NATIVE_END;
+}
+// ********** End Class AScoresCalculator Function GetBestMinigameTeam *****************************
+
 // ********** Begin Class AScoresCalculator Function GetTeamWithHigherCoins ************************
 struct Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins_Statics
 {
@@ -227,47 +269,6 @@ DEFINE_FUNCTION(AScoresCalculator::execGetWinnerTeam)
 }
 // ********** End Class AScoresCalculator Function GetWinnerTeam ***********************************
 
-// ********** Begin Class AScoresCalculator Function GetWorstDuelingTeam ***************************
-struct Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics
-{
-	struct ScoresCalculator_eventGetWorstDuelingTeam_Parms
-	{
-		int32 ReturnValue;
-	};
-#if WITH_METADATA
-	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "EndGame/Scores/ScoresCalculator.h" },
-	};
-#endif // WITH_METADATA
-	static const UECodeGen_Private::FIntPropertyParams NewProp_ReturnValue;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-	static const UECodeGen_Private::FFunctionParams FuncParams;
-};
-const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ScoresCalculator_eventGetWorstDuelingTeam_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::NewProp_ReturnValue,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AScoresCalculator, nullptr, "GetWorstDuelingTeam", Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::PropPointers), sizeof(Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::ScoresCalculator_eventGetWorstDuelingTeam_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::Function_MetaDataParams), Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::ScoresCalculator_eventGetWorstDuelingTeam_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam()
-{
-	static UFunction* ReturnFunction = nullptr;
-	if (!ReturnFunction)
-	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam_Statics::FuncParams);
-	}
-	return ReturnFunction;
-}
-DEFINE_FUNCTION(AScoresCalculator::execGetWorstDuelingTeam)
-{
-	P_FINISH;
-	P_NATIVE_BEGIN;
-	*(int32*)Z_Param__Result=P_THIS->GetWorstDuelingTeam();
-	P_NATIVE_END;
-}
-// ********** End Class AScoresCalculator Function GetWorstDuelingTeam *****************************
-
 // ********** Begin Class AScoresCalculator Function InitializeInfo ********************************
 struct Z_Construct_UFunction_AScoresCalculator_InitializeInfo_Statics
 {
@@ -305,9 +306,9 @@ void AScoresCalculator::StaticRegisterNativesAScoresCalculator()
 		{ "AddCrownToTeam", &AScoresCalculator::execAddCrownToTeam },
 		{ "CompensationCrown", &AScoresCalculator::execCompensationCrown },
 		{ "GetBestDuelingTeam", &AScoresCalculator::execGetBestDuelingTeam },
+		{ "GetBestMinigameTeam", &AScoresCalculator::execGetBestMinigameTeam },
 		{ "GetTeamWithHigherCoins", &AScoresCalculator::execGetTeamWithHigherCoins },
 		{ "GetWinnerTeam", &AScoresCalculator::execGetWinnerTeam },
-		{ "GetWorstDuelingTeam", &AScoresCalculator::execGetWorstDuelingTeam },
 		{ "InitializeInfo", &AScoresCalculator::execInitializeInfo },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -360,6 +361,10 @@ struct Z_Construct_UClass_AScoresCalculator_Statics
 		{ "Category", "ScoresCalculator" },
 		{ "ModuleRelativePath", "EndGame/Scores/ScoresCalculator.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MinigamesRegistry_MetaData[] = {
+		{ "Category", "ScoresCalculator" },
+		{ "ModuleRelativePath", "EndGame/Scores/ScoresCalculator.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_Scores_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_Scores;
@@ -367,15 +372,17 @@ struct Z_Construct_UClass_AScoresCalculator_Statics
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_TransactionsRegistry;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChallengesRegistry_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_ChallengesRegistry;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_MinigamesRegistry_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_MinigamesRegistry;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_AScoresCalculator_AddCrownToTeam, "AddCrownToTeam" }, // 227118271
 		{ &Z_Construct_UFunction_AScoresCalculator_CompensationCrown, "CompensationCrown" }, // 1474218542
 		{ &Z_Construct_UFunction_AScoresCalculator_GetBestDuelingTeam, "GetBestDuelingTeam" }, // 2313235953
+		{ &Z_Construct_UFunction_AScoresCalculator_GetBestMinigameTeam, "GetBestMinigameTeam" }, // 1942293999
 		{ &Z_Construct_UFunction_AScoresCalculator_GetTeamWithHigherCoins, "GetTeamWithHigherCoins" }, // 236581310
 		{ &Z_Construct_UFunction_AScoresCalculator_GetWinnerTeam, "GetWinnerTeam" }, // 610508650
-		{ &Z_Construct_UFunction_AScoresCalculator_GetWorstDuelingTeam, "GetWorstDuelingTeam" }, // 4054031234
 		{ &Z_Construct_UFunction_AScoresCalculator_InitializeInfo, "InitializeInfo" }, // 2305487080
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -390,6 +397,8 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AScoresCalcula
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AScoresCalculator_Statics::NewProp_TransactionsRegistry = { "TransactionsRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AScoresCalculator, TransactionsRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_TransactionsRegistry_MetaData), NewProp_TransactionsRegistry_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AScoresCalculator_Statics::NewProp_ChallengesRegistry_Inner = { "ChallengesRegistry", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UChallengeDto_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AScoresCalculator_Statics::NewProp_ChallengesRegistry = { "ChallengesRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AScoresCalculator, ChallengesRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChallengesRegistry_MetaData), NewProp_ChallengesRegistry_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AScoresCalculator_Statics::NewProp_MinigamesRegistry_Inner = { "MinigamesRegistry", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UClass_UMinigameDto_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AScoresCalculator_Statics::NewProp_MinigamesRegistry = { "MinigamesRegistry", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AScoresCalculator, MinigamesRegistry), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MinigamesRegistry_MetaData), NewProp_MinigamesRegistry_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AScoresCalculator_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_Scores_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_Scores,
@@ -397,6 +406,8 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AScoresCa
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_TransactionsRegistry,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_ChallengesRegistry_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_ChallengesRegistry,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_MinigamesRegistry_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AScoresCalculator_Statics::NewProp_MinigamesRegistry,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AScoresCalculator_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AScoresCalculator_Statics::DependentSingletons[])() = {
@@ -435,10 +446,10 @@ AScoresCalculator::~AScoresCalculator() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AScoresCalculator, AScoresCalculator::StaticClass, TEXT("AScoresCalculator"), &Z_Registration_Info_UClass_AScoresCalculator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoresCalculator), 2755628239U) },
+		{ Z_Construct_UClass_AScoresCalculator, AScoresCalculator::StaticClass, TEXT("AScoresCalculator"), &Z_Registration_Info_UClass_AScoresCalculator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AScoresCalculator), 3334494870U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h__Script_PartyJungle_3134795204(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h__Script_PartyJungle_1956881540(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_EndGame_Scores_ScoresCalculator_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

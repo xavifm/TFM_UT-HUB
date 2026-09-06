@@ -67,12 +67,19 @@ void AMinigameWheel::SpinStep()
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, false);
 	WheelValue = (WheelValue + 1) % Values.Num();
 	PlayerMapUI->SwitchWheelValueSelected(WheelValue, true);
+	
+	if (AudioManager)
+		AudioManager->PlaySFX("PopupSFX", 0.3f);
 }
 
 void AMinigameWheel::StopSpin()
 {
+	if (WheelValue == OldWheelValue)
+		SpinStep();
+	
 	Spinning = false;
-
+	OldWheelValue = WheelValue;
+	
 	GetWorldTimerManager().ClearTimer(SpinStepTimerHandle);
 	GetWorldTimerManager().ClearTimer(SpinStopTimerHandle);
 }

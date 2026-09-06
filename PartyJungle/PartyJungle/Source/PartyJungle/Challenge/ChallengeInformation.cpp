@@ -37,17 +37,6 @@ int AChallengeInformation::GetCurrentBetControllerMenuIndex(int _currentTeam, in
     return teamQuery;
 }
 
-void AChallengeInformation::SaveDuelToRegistry(int _winner, int _coins, int _crowns)
-{
-    if (ChallengeRegistry) 
-    {
-        int attackerTeam = static_cast<int>(Minions[0]->Team);
-        int duel = static_cast<int>(DuelType);
-
-        ChallengeRegistry->RegisterDuel(attackerTeam, 0, _winner, duel, _coins, _crowns);
-    }
-}
-
 float AChallengeInformation::GetDuelType()
 {
     return DuelPercentage;

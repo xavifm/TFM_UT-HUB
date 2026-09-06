@@ -9,18 +9,11 @@ class PARTYJUNGLE_API UChallengeDto : public UObject
 	GENERATED_BODY()
 	
 public:
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Challenge")
-    int AttackerTeam;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Challenge")
-    int VictimTeam;
-
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Challenge")
     int WinnerTeam;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Challenge")
-    int BetStyle;
+    int BetPercentage;
 
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Challenge")
     int CoinsGained;
@@ -29,15 +22,18 @@ public:
     int CrownsGained;
 
     UChallengeDto()
-        : AttackerTeam(0), VictimTeam(0), WinnerTeam(0), BetStyle(0), CoinsGained(0), CrownsGained(0)
+        : WinnerTeam(0), BetPercentage(0), CoinsGained(0), CrownsGained(0)
     {}
-
-    UChallengeDto(int InAttackerTeam, int InVictimTeam, int InWinnerTeam, int InBetStyle, int InCoinsGained, int InCrownsGained)
-        : AttackerTeam(InAttackerTeam),
-        VictimTeam(InVictimTeam),
-        WinnerTeam(InWinnerTeam),
-        BetStyle(InBetStyle),
-        CoinsGained(InCoinsGained),
-        CrownsGained(InCrownsGained)
-    {}
+    
+    void Init(
+        int _winnerTeam,
+        int _betPercentage,
+        int _inCoinsGained,
+        int _inCrownsGained)
+    {
+        WinnerTeam = _winnerTeam;
+        BetPercentage = _betPercentage;
+        CoinsGained = _inCoinsGained;
+        CrownsGained = _inCrownsGained;
+    }
 };

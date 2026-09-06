@@ -33,6 +33,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Name")
     FText GameTitle;
     
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Name")
+    FText GameDescription;
+    
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Minigame Type")
     EMinigameType MinigameType;
     

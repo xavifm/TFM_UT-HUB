@@ -26,7 +26,6 @@ public:
 	 */
 	~AWorldManager() = default;
 	
-
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void InitializeCameras();
 
@@ -45,7 +44,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "World_Functions")
 	void DisableAllStars();
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Functions")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Functions")
 	void StartMapPointCinematic(FVector _position, float _time);
 	
 	
@@ -72,6 +71,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Crowns")
 	TArray<ASquareStar*> MapCrowns;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	UCameraComponent* BookCamera;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "World_Cameras")
+	AActor* BookCameraActor;
 
 private:
 	bool IsInitialized = false;
