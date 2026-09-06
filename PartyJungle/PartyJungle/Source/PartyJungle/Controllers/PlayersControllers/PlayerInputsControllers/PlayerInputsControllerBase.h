@@ -121,10 +121,16 @@ protected:
 	 * @return True if the selected Axis is valid.
 	 */
 	bool IsValidAxis(float a_Axis);
-	
+
+	/**
+	 * Method called when an Input Axis Event is received.
+	 * @param a_AxisId Id of the received Input Axis Event.
+	 * @param a_Axis Value of the received Input Axis Event.
+	 */
 	void OnAxisInput(EInputAxes a_AxisId, float a_Axis);
+
 	
-	
+protected:
 	UPROPERTY() float AXIS_THRESHOLD {0.1f}; //!< Threshold for an Axis to be considered valid.
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "PlayerInputs")

@@ -2,11 +2,19 @@
 
 #include <PartyJungle/Controllers/ControllerBase.h>
 
-#include <PartyJungle/Controllers/UIControllers/CustomWidgets/WidgetFolderContainer.h>
+#include <Blueprint/UserWidget.h>
+#include <Blueprint/WidgetTree.h>
+#include <Blueprint/WidgetBlueprintGeneratedClass.h>
 
 #include "UIControllerBase.generated.h"
 
+class UWidget;
 class UWidgetFolderContainer;
+
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(
+	FEvent_UpdateWidgets // Name of the structure that will be generated
+);
 
 
 /**
@@ -19,6 +27,11 @@ class AUIControllerBase : public AControllerBase
 	
 public:
 	/**
+	 * Method called when the State and the StateManager are ready. Call instead of BeginPlay().
+	 */
+	virtual void OnBeginState_Implementation() override;
+	
+	/**
 	 * Function called when the State is changed for starting the controller.
 	 */
 	virtual void OnStart_Implementation() override;
@@ -28,75 +41,28 @@ public:
 	 */
 	virtual void OnExit_Implementation() override;
 	
-	/**
-	 * Gets the wanted Widget from the WidgetContainer.
-	 * @tparam TWidgetType Type of the returned Widget.
-	 * @param a_WidgetId Id of the wanted Widget.
-	 * @param a_FolderId Id of the Folder that contains the wanted Widget. If empty, it looks in all folders.
-	 * @return Pointer to the wanted Widget.
-	 */
 	template <typename TWidgetType = UWidget>
 	UFUNCTION(BlueprintCallable, Category = "UIController_Functions")
-	TWidgetType* const GetWidget(const FString& a_WidgetId, const FString& a_FolderId = "");
-
-	/**
-	 * Gets if the wanted Widget exists in the WidgetContainer.
-	 * @param a_WidgetId Id of the wanted Widget.
-	 * @param a_FolderId Id of the Folder that contains the wanted Widget. If empty, it looks in all folders.
-	 * @return True if the wanted Widget exists in the WidgetContainer.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "UIController_Functions")
-	bool HasWidget(const FString& a_WidgetId, const FString& a_FolderId = "");
-
-	/**
-	 * Sets the selected Folder from the WidgetContainer active.
-	 * @param a_FolderId Id of the selected Folder.
-	 * @param a_Active True to activate. False to deactivate.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "UIController_Functions")
-	void SetFolderActive(const FString& a_FolderId, bool a_Active);
-
-	/**
-	 * Sets the visibility state for the selected Folder from the WidgetContainer.
-	 * @param a_FolderId Id of the selected Folder.
-	 * @param a_VisibilityMode Wanted visibility state.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "UIController_Functions")
-	void SetFolderVisibility(const FString& a_FolderId, ESlateVisibility a_VisibilityMode);
-
-	/**
-	 * Gets the WidgetContainer of the UIController.
-	 * @return Pointer to the WidgetContainer of the UIController.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "UIController_Functions")
-	UWidgetFolderContainer* const GetWidgetContainer();
+	TWidgetType* FindWidget(const FName& a_WidgetName);
 	
 	
 protected:
+	FEvent_UpdateWidgets m_EventBeginWidgets; //!< Event triggered when the Controller begins, used for beginning the selected widget.
+	
+	FEvent_UpdateWidgets m_EventStartWidgets; //!< Event triggered when the Controller starts, used for starting the selected widget.
+	
+	FEvent_UpdateWidgets m_EventExitWidgets; //!< Event triggered when the Controller exits, used for exiting the selected widget.
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "UIController")
 	TSubclassOf<UUserWidget> m_UserWidgetClass {nullptr}; //!< Type of the used UserWidget class.
 	
 	UPROPERTY()
 	UUserWidget* m_UserWidget {nullptr}; //!< Pointer to the UIController's UserWidget.
-	
-	UPROPERTY()
-	UWidgetFolderContainer* m_WidgetContainer {nullptr}; //!< Pointer to the UIController's WidgetContainer.
 };
 
 
 template <typename TWidgetType>
-TWidgetType* const AUIControllerBase::GetWidget(const FString& a_WidgetId, const FString& a_FolderId)
+TWidgetType* AUIControllerBase::FindWidget(const FName& a_WidgetName)
 {
-	TWidgetType* TargetWidget {nullptr};
-	
-	if (a_FolderId == "")
-	{
-		TargetWidget = Cast<TWidgetType>(m_WidgetContainer->SearchWidget(a_WidgetId));
-	}
-	else
-	{
-		TargetWidget = Cast<TWidgetType>(m_WidgetContainer->GetWidgetInFolder(a_FolderId, a_WidgetId));
-	}
-	
-	return TargetWidget;
+	return m_UserWidget->GetWidgetTreeOwningClass()->GetWidgetTreeArchetype()->FindWidget<TWidgetType>(a_WidgetName);
 }

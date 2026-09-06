@@ -16,7 +16,6 @@ void ATesting_GameLoopController::OnStart_Implementation()
 	Super::OnStart_Implementation();
 	
 	auto PlayerCtr {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
-	PlayerCtr->SetAllPlayersInputsEnabled(true);
 	for (int PlayerId {0}; PlayerId < PlayerCtr->GetPlayersAmount(); ++PlayerId)
 	{
 		auto PlayerInputsCtr {PlayerCtr->GetPlayerById(PlayerId).GetInputsController()};
@@ -31,7 +30,6 @@ void ATesting_GameLoopController::OnExit_Implementation()
 	Super::OnExit_Implementation();
 	
 	auto PlayerCtr {GetGameInstance<UManagerGameInstance>()->GetStateManager()->GetController<APlayersControllerBase>(EGameControllers::Players)};
-	PlayerCtr->SetAllPlayersInputsEnabled(true);
 	for (int PlayerId {0}; PlayerId < PlayerCtr->GetPlayersAmount(); ++PlayerId)
 	{
 		auto PlayerInputsCtr {PlayerCtr->GetPlayerById(PlayerId).GetInputsController()};

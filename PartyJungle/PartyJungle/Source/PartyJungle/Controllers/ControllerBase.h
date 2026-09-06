@@ -118,11 +118,11 @@ protected:
 	 * Implementation for ReinitIfMatches() from code. Ignored if the StateData has a BP implementation.
 	 * @return True if must reinitialize the controller when the state is changed, even if the controller is the same.
 	 */
-	virtual bool ReinitIfMatches_Implementation() { return m_ReinitIfMatchesTargetController; };
+	virtual bool ReinitIfMatches_Implementation() { return m_ReinitIfControllerStaysOnStateChange; };
 	
 	
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Controller")
-	bool m_ReinitIfMatchesTargetController {false}; //!< Indicates if the controller must be reinitialized if the previous Controller and the target Controller are the same.
+	bool m_ReinitIfControllerStaysOnStateChange {false}; //!< Indicates if the controller must be reinitialized if the previous Controller and the target Controller are the same when changing GameState.
 	
 };

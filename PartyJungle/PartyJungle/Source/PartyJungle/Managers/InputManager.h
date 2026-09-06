@@ -78,19 +78,6 @@ public:
 	 * Resets InputManager data.
 	 */
 	void ResetInputs();
-	
-	// ToDo Capy: Revisar que tot el tema de "Players Possessed" funcioni.
-	/*
-	void SetAllPlayersPossessed();
-	
-	void SetPossessions(TArray<int> a_PlayerIds);
-	
-	void AddPossessions(TArray<int> a_PlayerIds);
-	
-	void RemovePossessions(TArray<int> a_PlayerIds);
-	
-	void ResetPossessions();
-	*/
 
 	/**
 	 * Gets the indicated Input Key Event from the chosen Player.
@@ -209,6 +196,10 @@ public:
 	template <typename UserClass>
 	bool UnbindAxis(TArray<int> a_PlayerIds, EInputAxes a_InputAxis, UserClass* a_Object);
 	
+protected:
+	UFUNCTION()
+	void OnGameManagerLoaded(UManagerGameInstance* const a_GameManager);
+	
 private:
 	/**
 	 * Gets the Input Bind Key for the selected Input Event.
@@ -240,13 +231,24 @@ private:
 	 */
 	TArray<int> GetAllPlayerIds();
 
+	/**
+	 * Resets all player possessions.
+	 */
+	void ResetPossessions();
+
+	/**
+	 * Sets all the players possessed. The player in control is managed through PlayerInputController's m_PlayerInputsEnabled.
+	 */
+	void SetAllPlayersPossessed();
+
 	
 protected:
 	TMap<FString, FInputActionBinding*> m_InputBindings; //!< Map with all the current Input Key Bindings.
 	TMap<FString, FInputAxisBinding*> m_AxisBindings; //!< Map with all the current Input Axis Bindings.
 	
 private:
-	bool m_InputManagerReady {false}; //!< Indicates if the Input Manager is Ready to Load.
+	bool m_InputComponentReady {false}; //!< Indicates if the Input Component is Ready to Load.
+	bool m_InputBeginPlayed {false}; //!< Indicates if the Input Begin() function has been played.
 	
 	bool m_InputManagerLoaded {false}; //!< Indicates if the Input Manager has been Loaded.
 	

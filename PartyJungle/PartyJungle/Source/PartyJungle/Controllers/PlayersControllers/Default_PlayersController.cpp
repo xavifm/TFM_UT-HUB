@@ -24,6 +24,8 @@ void ADefault_PlayersController::SetInputsEnabled(bool a_Enable)
 			auto PlayerInputsController {PlayerData.GetInputsController()};
 			PlayerInputsController->GetInputAxisEvent(EInputAxes::AxisX_Left)->RemoveDynamic(this, &ADefault_PlayersController::OnLeftJoystick_X);
 		}
+		
+		SetAllPlayersInputsEnabled(false);
 	}
 }
 

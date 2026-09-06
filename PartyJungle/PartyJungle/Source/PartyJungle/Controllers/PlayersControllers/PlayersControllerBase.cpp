@@ -15,10 +15,6 @@ void APlayersControllerBase::OnBeginState_Implementation()
 
 void APlayersControllerBase::OnStart_Implementation()
 {
-	// ToDo Capy: Revisar perquè no funciona el SetPossessions(...). De moment es pot fer amb BindInput de jugadors concrets.
-	//auto InputManager {GetGameInstance<UManagerGameInstance>()->GetInputManager()};
-	//InputManager->SetAllPlayersPossessed();
-	
 	for (auto PlayerData : m_Players)
 	{
 		PlayerData.GetInputsController()->OnStart();
@@ -62,12 +58,12 @@ void APlayersControllerBase::SetPlayerById(int a_PlayerId)
 void APlayersControllerBase::NextPlayer()
 {
 	int OldPlayerId {m_CurrentPlayerId};
-	m_CurrentMinionId = 0;
 	++m_CurrentPlayerId;
 	if (m_CurrentPlayerId >= m_Players.Num())
 	{
 		m_CurrentPlayerId = 0;
 	}
+	m_CurrentMinionId = 0;
 	
 	m_EventPlayerChanged.Broadcast(OldPlayerId, m_CurrentPlayerId);
 }

@@ -12,6 +12,7 @@ void AInputManager::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	m_InputBeginPlayed = true;
 	CheckInputManagerLoaded();
 }
 
@@ -19,6 +20,7 @@ void AInputManager::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	
+	m_InputComponentReady = true;
 	CheckInputManagerLoaded();
 }
 
@@ -26,14 +28,13 @@ void AInputManager::CheckInputManagerLoaded()
 {
 	if (!m_InputManagerLoaded)
 	{
-		if (m_InputManagerReady)
+		if (m_InputBeginPlayed && m_InputComponentReady)
 		{
+			auto GameManager { GetGameInstance<UManagerGameInstance>() };
+			
 			m_InputManagerLoaded = true;
-			GetGameInstance<UManagerGameInstance>()->SetInputManager(this);
-		}
-		else
-		{
-			m_InputManagerReady = true;
+			GameManager->GetEvent_GameManagerLoaded().AddUniqueDynamic(this, &AInputManager::OnGameManagerLoaded);
+			GameManager->SetInputManager(this);
 		}
 	}
 }
@@ -41,100 +42,14 @@ void AInputManager::CheckInputManagerLoaded()
 void AInputManager::ResetInputs()
 {
 	m_InputManagerLoaded = false;
-	m_InputManagerReady = false;
+	m_InputComponentReady = false;
+	m_InputBeginPlayed = false;
 	
 	m_InputBindings.Reset();
 	m_InputBindings = TMap<FString, FInputActionBinding*>();
 	
 	m_AxisBindings.Reset();
 	m_AxisBindings = TMap<FString, FInputAxisBinding*>();
-}
-
-/*void AInputManager::SetAllPlayersPossessed()
-{
-	ResetPossessions();
-	
-	auto GameData {GetGameInstance<UManagerGameInstance>()->GetGameDataManager()};
-	for (int PlayerId {0}; PlayerId < GameData.GetPlayersInBoard(); ++PlayerId)
-	{
-		TDelegate<void()> MyDelegate;
-		TDelegate<void()>::TMethodPtr<UObject> StoredMethod;
-		MyDelegate.BindUObject(this, StoredMethod);
-		MyDelegate.TryGetBoundFunctionName();#1#
-		
-		
-		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
-	
-		if(PlayerController) 
-		{
-			PlayerController->bAutoManageActiveCameraTarget = false;
-			PlayerController->UnPossess();
-			PlayerController->Possess(this);
-			EnableInput(PlayerController);
-			
-			m_PossessedPlayers.Add(PlayerId);
-		}
-	}
-}
-
-void AInputManager::SetPossessions(TArray<int> a_PlayerIds)
-{
-	ResetPossessions();
-	
-	for (auto PlayerId : a_PlayerIds)
-	{
-		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
-	
-		if(PlayerController) 
-		{
-			PlayerController->bAutoManageActiveCameraTarget = false;
-			PlayerController->UnPossess();
-			PlayerController->Possess(this);
-			EnableInput(PlayerController);
-			
-			m_PossessedPlayers.Add(PlayerId);
-		}
-	}
-}
-
-void AInputManager::AddPossessions(TArray<int> a_PlayerIds)
-{
-	for (auto PlayerId : a_PlayerIds)
-	{
-		if (!m_PossessedPlayers.Contains(PlayerId))
-		{
-			APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
-	
-			if(PlayerController) 
-			{
-				PlayerController->bAutoManageActiveCameraTarget = false;
-				PlayerController->UnPossess();
-				PlayerController->Possess(this);
-				EnableInput(PlayerController);
-				
-				m_PossessedPlayers.Add(PlayerId);
-			}
-		}
-	}
-}
-
-void AInputManager::RemovePossessions(TArray<int> a_PlayerIds)
-{
-	for (auto PlayerId : a_PlayerIds)
-	{
-		if (m_PossessedPlayers.Contains(PlayerId))
-		{
-			APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
-	
-			if(PlayerController) 
-			{
-				PlayerController->UnPossess();
-				DisableInput(PlayerController);
-				
-				m_PossessedPlayers.Remove(PlayerId);
-			}
-		}
-	}
 }
 
 void AInputManager::ResetPossessions()
@@ -147,7 +62,29 @@ void AInputManager::ResetPossessions()
 	}
 	
 	m_PossessedPlayers.Empty();
-}*/
+}
+
+void AInputManager::SetAllPlayersPossessed()
+{
+	ResetPossessions();
+	
+	auto GameData {GetGameInstance<UManagerGameInstance>()->GetGameDataManager()};
+	for (int PlayerId {0}; PlayerId < GameData.GetPlayersInBoard(); ++PlayerId)
+	{
+		APlayerController* PlayerController {UGameplayStatics::GetPlayerController(GetWorld(), PlayerId)};
+		
+		if(PlayerController) 
+		{
+			PlayerController->bAutoManageActiveCameraTarget = false;
+			PlayerController->UnPossess();
+			PlayerController->Possess(this);
+			EnableInput(PlayerController);
+			
+			m_PossessedPlayers.Add(PlayerId);
+		}
+	}
+}
+
 
 FEvent_PlayerInputKey* const AInputManager::GetPlayerKeyEvent(int a_PlayerId, EInputKeys a_InputKey, ETriggerEvents a_TriggerEvent)
 {
@@ -173,6 +110,12 @@ FEvent_PlayerInputAxis* const AInputManager::GetPlayerAxisReleasedEvent(int a_Pl
 	return PlayerInputsController->GetInputAxisReleasedEvent(a_InputAxis);
 }
 
+
+void AInputManager::OnGameManagerLoaded(UManagerGameInstance* const a_GameManager)
+{
+	GetGameInstance<UManagerGameInstance>()->GetEvent_GameManagerLoaded().RemoveDynamic(this, &AInputManager::OnGameManagerLoaded);
+	SetAllPlayersPossessed();
+}
 
 TArray<int> AInputManager::GetAllPlayerIds()
 {
