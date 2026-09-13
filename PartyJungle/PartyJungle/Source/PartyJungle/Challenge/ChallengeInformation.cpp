@@ -46,7 +46,7 @@ int AChallengeInformation::SwitchDuelType(int _direction, int _team)
     int NewDuelPercentage = DuelPercentage + (_direction * 10);
     NewDuelPercentage = FMath::Clamp(NewDuelPercentage, MIN_PERCENTAGE, MAX_PERCENTAGE);
     
-    AMinion* Minion;
+    AMinion* Minion = nullptr;
 
     for (auto minion : Minions)
     {
@@ -91,7 +91,7 @@ int AChallengeInformation::SwitchDuelType(int _direction, int _team)
 
 int AChallengeInformation::GetBetCoinsQuantity(int _team)
 {
-    AMinion* Minion;
+    AMinion* Minion = nullptr;
     
     for (auto minion : Minions)
     {
@@ -166,7 +166,7 @@ int AChallengeInformation::GetCalculatedPot(TArray<AMinion*> _minions, float _pe
 
 int AChallengeInformation::GetBetCrownsQuantity(int _team)
 {
-    AMinion* Minion;
+    AMinion* Minion = nullptr;
     
     for (auto minion : Minions)
     {
