@@ -86,12 +86,12 @@ void APlayerInputsControllerBase::OnKeyInput(EInputKeys a_InputKey, ETriggerEven
 
 void APlayerInputsControllerBase::OnAxis_LeftJoystickX(float a_Axis)
 {
-	OnAxisInput(EInputAxes::AxisX_Left, -a_Axis);
+	OnAxisInput(EInputAxes::AxisX_Left, a_Axis);
 }
 
 void APlayerInputsControllerBase::OnAxis_LeftJoystickY(float a_Axis)
 {
-	OnAxisInput(EInputAxes::AxisY_Left, -a_Axis);
+	OnAxisInput(EInputAxes::AxisY_Left, a_Axis);
 }
 
 void APlayerInputsControllerBase::OnAxis_RightJoystickX(float a_Axis)

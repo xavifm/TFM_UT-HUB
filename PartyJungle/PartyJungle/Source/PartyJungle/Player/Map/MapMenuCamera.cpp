@@ -1514,13 +1514,13 @@ void AMapMenuCamera::RestoreTurnLogicWithAnimation()
 
 void AMapMenuCamera::StartFadeTransition(float _time) 
 {
-    if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
+    /*if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
     {
         if (PC->PlayerCameraManager)
         {
             PC->PlayerCameraManager->StartCameraFade(0.0f, 1.0f, _time, FLinearColor::Black, false, true);
         }
-    }
+    }*/
 }
 
 void AMapMenuCamera::FinishFadeTransition()
@@ -1535,13 +1535,13 @@ void AMapMenuCamera::FinishFadeTransition()
     if (RoundsSystem && RoundsSystem->m_GameFinished)
         return;
 
-    if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
+    /*if (APlayerController* PC = GetWorld()->GetFirstPlayerController())
     {
         if (PC->PlayerCameraManager)
         {
             PC->PlayerCameraManager->StartCameraFade(1.0f, 0.0f, RESTORE_TURN_TRANSITION_TIME, FLinearColor::Black, false, true);
         }
-    }
+    }*/
 }
 
 void AMapMenuCamera::UpdateMinionEconomy(int _coins) 

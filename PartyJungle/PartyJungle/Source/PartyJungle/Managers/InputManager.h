@@ -68,6 +68,8 @@ public:
 	 * @param PlayerInputComponent InputComponent created by CreatePlayerInputComponent().
 	 */
 	void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	
+	void PossessedBy(AController* NewController) override;
 
 	/**
 	 * Checks if the Input Manager has been completely loaded.

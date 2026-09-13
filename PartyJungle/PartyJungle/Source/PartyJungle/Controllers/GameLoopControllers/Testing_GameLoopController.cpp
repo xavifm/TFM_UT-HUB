@@ -57,7 +57,7 @@ void ATesting_GameLoopController::OnTrigger2_Right(EInputKeys a_InputKey, ETrigg
 	auto StateManager {GetGameInstance<UManagerGameInstance>()->GetStateManager()};
 	if (StateManager->GetGameStateId() == StateManager->GetDefaultGameStateId())
 	{
-		GetGameInstance<UManagerGameInstance>()->GetSceneManager()->ChangeScene("AirCannon");
+		GetGameInstance<UManagerGameInstance>()->GetSceneManager()->ChangeScene("AirCannonMG");
 	}
 }
 

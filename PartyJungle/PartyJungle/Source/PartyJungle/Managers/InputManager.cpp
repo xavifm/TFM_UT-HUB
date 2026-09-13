@@ -24,6 +24,14 @@ void AInputManager::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	CheckInputManagerLoaded();
 }
 
+void AInputManager::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	UE_LOG(LogTemp, Warning, TEXT("Pawn possessed by: %s"),
+		*GetNameSafe(NewController));
+}
+
 void AInputManager::CheckInputManagerLoaded()
 {
 	if (!m_InputManagerLoaded)

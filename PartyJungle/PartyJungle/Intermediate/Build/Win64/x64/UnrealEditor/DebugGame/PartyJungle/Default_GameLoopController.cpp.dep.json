@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\controllers\\gameloopcontrollers\\default_gameloopcontroller.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\partyjungleeditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\partyjungle\\definitions.partyjungle.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\controllers\\gameloopcontrollers\\default_gameloopcontroller.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\controllers\\gameloopcontrollers\\gameloopcontrollerbase.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\source\\partyjungle\\controllers\\controllerbase.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\controllerbase.generated.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\gameloopcontrollerbase.generated.h",
+            "c:\\users\\elisa\\desktop\\projectes\\party jungle\\tfm_ut-hub\\partyjungle\\partyjungle\\intermediate\\build\\win64\\unrealeditor\\inc\\partyjungle\\uht\\default_gameloopcontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
