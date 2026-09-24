@@ -54,6 +54,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void ShowTextInScreen(const FString& Text, float Time);
 
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SetInScreenTextColor(float R, float G, float B, float A);
+    
     UFUNCTION(BlueprintImplementableEvent)
     void HideInScreenText();
 

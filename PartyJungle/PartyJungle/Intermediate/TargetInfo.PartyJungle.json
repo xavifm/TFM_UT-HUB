@@ -1,0 +1,44 @@
+{
+	"Targets": [
+		{
+			"Name": "LiveLinkHub",
+			"Path": "../../../../../Unreal/Engine/Source/Programs/LiveLinkHub/Source/LiveLinkHub.Target.cs",
+			"Type": "Editor"
+		},
+		{
+			"Name": "DotNetPerforceLib",
+			"Path": "../../../../../Unreal/Engine/Source/Programs/Shared/EpicGames.Perforce.Native/DotNetPerforceLib.Target.cs",
+			"Type": "Program"
+		},
+		{
+			"Name": "IoStoreOnDemandTests",
+			"Path": "../../../../../Unreal/Engine/Source/Runtime/Experimental/IoStore/Tests/IoStoreOnDemandTests.Target.cs",
+			"Type": "Program"
+		},
+		{
+			"Name": "EventLoopUnitTests",
+			"Path": "../../../../../Unreal/Engine/Source/Runtime/Online/Experimental/EventLoopTests/EventLoopUnitTests.Target.cs",
+			"Type": "Program"
+		},
+		{
+			"Name": "UnrealEditor",
+			"Path": "../../../../../Unreal/Engine/Source/UnrealEditor.Target.cs",
+			"Type": "Editor"
+		},
+		{
+			"Name": "UnrealGame",
+			"Path": "../../../../../Unreal/Engine/Source/UnrealGame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PartyJungle",
+			"Path": "../Source/PartyJungle.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PartyJungleEditor",
+			"Path": "../Source/PartyJungleEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

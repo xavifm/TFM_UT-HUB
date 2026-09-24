@@ -235,6 +235,10 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCameraTeam(int _direction);
+	
+	UFUNCTION(BlueprintCallable, Category = "Functions")
+	FString SetTeamMessage(int _currentMinionTeam);
+	
 	void MoveCameraToCurrentTeam();
 	
 	UFUNCTION(BlueprintCallable, Category = "Functions")

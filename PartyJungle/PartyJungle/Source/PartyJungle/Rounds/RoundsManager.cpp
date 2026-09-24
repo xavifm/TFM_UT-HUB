@@ -60,6 +60,8 @@ void ARoundsManager::StartNextRound()
 
 	if(RoundShown <= MIN_ROUNDS_ANNOUNCED)
 	{
+		MapUI->SetInScreenTextColor(1.0f, 0.988f, 0.96f, 1.0f);
+		
 		FeedbackText = FString::Printf(TEXT("%d turns left"), RoundShown);
 
 		if(RoundShown == 0)
