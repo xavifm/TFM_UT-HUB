@@ -32,7 +32,8 @@ public:
 	
 	UFUNCTION()
 	void PossessMovement();
-	
+	void WalkTo(const FInputActionValue& _value);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	AActor* ProjectileReference;
 
@@ -41,25 +42,28 @@ public:
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Input")
 	UInputAction* KeyaAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Metronome")
-	bool MetronomeEnabled = true;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Metronome")
-	float MaxYawDegrees = 90.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Metronome")
-	float BPM = 50.0f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
+	UInputAction* KeyDirAction;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
 	UStaticMeshComponent* CannonMesh;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
 	UArrowComponent* ShootPivot;
+	
+	const float CHARACTER_VELOCITY = 5;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPrimitiveComponent* CharacterPhysics;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int MinX = 0;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int MaxX = 0;
 
 private:
-	float Elapsed = 0.0f;
-	float BaseYaw = 0.0f;
 	float TimerShoot = 0.0f; 
 	float ImpulseStrength = 2500.0f;
 	

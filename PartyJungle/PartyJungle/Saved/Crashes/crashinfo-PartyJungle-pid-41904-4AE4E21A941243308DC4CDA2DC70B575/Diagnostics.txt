@@ -1,0 +1,38 @@
+Generating report for minidump
+
+Application version 5.6.0.0
+ ... built from changelist 43139311
+
+OS version Linux 7.0.3-1-cachyos-deckify (network name: Xavi-Desktop)
+Running 8 x86_64 processors (16 logical cores)
+Exception was "SIGSEGV: invalid attempt to read memory at address 0x00000000000004e0"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!ASquare::ResetWallFromSquare(int) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Map/Square.cpp:140]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!AMapMenuCamera::ResetMapItems() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:1280]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!AMapMenuCamera::MoveCameraToCurrentTeam() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:1235]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!AMapMenuCamera::SwitchCameraTeam(int) [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:1188]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!AMapMenuCamera::RestoreTurnLogic() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:1631]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!AMapMenuCamera::FinishDuelTransition() [/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Source/PartyJungle/Player/Map/MapMenuCamera.cpp:839]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!decltype(auto) UE::Core::Private::Tuple::TTupleBase<TIntegerSequence<unsigned int> >::ApplyAfter<void (AMapMenuCamera::* const&)(), AMapMenuCamera*&>(void (AMapMenuCamera::* const&&&)(), AMapMenuCamera*&&&) const & [/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Templates/Invoke.h:66]
+libUnrealEditor-PartyJungle-9747-Linux-DebugGame.so!TBaseUObjectMethodDelegateInstance<false, AMapMenuCamera, void (), FNotThreadSafeNotCheckedDelegateUserPolicy>::Execute() const [/home/xavi/Documents/Unreal/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:672]
+libUnrealEditor-Engine.so!FTimerUnifiedDelegate::Execute() const [/mnt/horde/++UE5/Sync/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:614]
+libUnrealEditor-Engine.so!FTimerManager::Tick(float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/TimerManager.cpp:1062]
+libUnrealEditor-Engine.so!UWorld::Tick(ELevelTick, float) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Engine/Private/LevelTick.cpp:1577]
+libUnrealEditor-UnrealEd.so!UEditorEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/EditorEngine.cpp:2149]
+libUnrealEditor-UnrealEd.so!UUnrealEdEngine::Tick(float, bool) [/mnt/horde/++UE5/Sync/Engine/Source/./Editor/UnrealEd/Private/UnrealEdEngine.cpp:530]
+UnrealEditor-Linux-DebugGame!FEngineLoop::Tick() [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/LaunchEngineLoop.cpp:5619]
+UnrealEditor-Linux-DebugGame!GuardedMain(char16_t const*) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Launch/Private/Launch.cpp:60]
+libUnrealEditor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/mnt/horde/++UE5/Sync/Engine/Source/./Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:323]
+libc.so.6!UnknownFunction(0x27c8d)
+libc.so.6!__libc_start_main(+0x8a)
+UnrealEditor-Linux-DebugGame!_start [/home/xavi/Documents/Unreal/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame:-1]
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

@@ -16,7 +16,7 @@ ACocoCannon::ACocoCannon()
 void ACocoCannon::BeginPlay()
 {
 	Super::BeginPlay();
-	BaseYaw = GetActorRotation().Yaw;
+	CharacterPhysics = Cast<UPrimitiveComponent>(this->GetRootComponent());
 }
 
 void ACocoCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -26,6 +26,7 @@ void ACocoCannon::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	if (UEnhancedInputComponent* EnhancedInput = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInput->BindAction(KeyaAction, ETriggerEvent::Started, this, &ACocoCannon::ShootCannon);
+		EnhancedInput->BindAction(KeyDirAction, ETriggerEvent::Triggered, this, &ACocoCannon::WalkTo);
 		EnhancedInput->bBlockInput = false;
 	}
 }
@@ -71,22 +72,23 @@ void ACocoCannon::PossessMovement()
 	}
 }
 
+void ACocoCannon::WalkTo(const FInputActionValue& _value)
+{
+	float stickInputX = _value.Get<float>();
+	FVector newVector = FVector(stickInputX * CHARACTER_VELOCITY, 0.0f, 0.0f);
+
+	if (stickInputX < 0.3f && stickInputX > -0.3f)
+		return;
+	
+	FVector finalPosition = CharacterPhysics->GetActorPositionForRenderer() + newVector;
+	finalPosition.X = FMath::Clamp(finalPosition.X, MinX, MaxX);
+    
+	if (CharacterPhysics)
+		CharacterPhysics->SetAllPhysicsPosition(finalPosition);
+}
+
 void ACocoCannon::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	if (!MetronomeEnabled || BPM <= 0.0f) return;
-	
 	if(TimerShoot > 0) TimerShoot -= DeltaTime;
-
-	Elapsed += DeltaTime;
-
-	const float BeatHz = BPM / 60.0f;
-	const float OscHz  = BeatHz / 2.0f;
-	const float Phase = 2.0f * PI * OscHz * Elapsed;
-	const float YawOffset = MaxYawDegrees * FMath::Sin(Phase);
-
-	FRotator Rotation = GetActorRotation();
-	Rotation.Pitch = BaseYaw + YawOffset;
-	SetActorRotation(Rotation);
 }
