@@ -93,6 +93,9 @@ public:
     TArray<int32> CalculateTeamMinigameWinners();
     
     UFUNCTION()
+    TArray<FText> WinnersToText(const TArray<int32>& Winners) const;
+    
+    UFUNCTION()
     virtual void ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners);
     
     UFUNCTION()
@@ -117,7 +120,7 @@ public:
     void ShowEndScreenSequence(int _winner);
 
     UFUNCTION(BlueprintImplementableEvent)
-    void ShowTeamEndScreenSequence(const FText& Message);
+    void ShowTeamEndScreenSequence();
     
 protected:
     UFUNCTION(BlueprintCallable, Category = "Minigame_functions")

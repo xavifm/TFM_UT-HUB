@@ -1192,32 +1192,35 @@ void AMapMenuCamera::SwitchCameraTeam(int _direction)
     UpdateDicePosition();
 }
 
-FString AMapMenuCamera::SetTeamMessage(int _currentMinionTeam)
+FString AMapMenuCamera::SetTeamMessage(int _currentMinionTeam, bool _showTeamText, int _position)
 {
     FString messageQuery = FString::Printf(TEXT(""));
     
     switch (_currentMinionTeam)
     {
     case 0:
-        messageQuery = FString::Printf(TEXT("Yellow Team!"));
-        MapUI->SetInScreenTextColor(0.958f, 1.0f, 0.11f, 1.0f);
+        messageQuery = FString::Printf(TEXT("Yellow"));
+        MapUI->SetInScreenTextColor(0.958f, 1.0f, 0.11f, 1.0f, _position);
         break;
     case 1:
-        messageQuery = FString::Printf(TEXT("Blue Team!"));
-        MapUI->SetInScreenTextColor(0.334f, 0.588f, 1.0f, 1.0f);
+        messageQuery = FString::Printf(TEXT("Blue"));
+        MapUI->SetInScreenTextColor(0.334f, 0.588f, 1.0f, 1.0f, _position);
         break;
     case 2:
-        messageQuery = FString::Printf(TEXT("Green Team!"));
-        MapUI->SetInScreenTextColor(0.177f, 1.0f, 0.191f, 1.0f);
+        messageQuery = FString::Printf(TEXT("Green"));
+        MapUI->SetInScreenTextColor(0.177f, 1.0f, 0.191f, 1.0f, _position);
         break;
     case 3:
-        messageQuery = FString::Printf(TEXT("Red Team!"));
-        MapUI->SetInScreenTextColor(1.0f, 0.132f, 0.105f, 1.0f);
+        messageQuery = FString::Printf(TEXT("Red"));
+        MapUI->SetInScreenTextColor(1.0f, 0.132f, 0.105f, 1.0f, _position);
         break;
                 
     default:
         break;
     }
+    
+    if (_showTeamText)
+        messageQuery += " Team!";
     
     return messageQuery;
 }

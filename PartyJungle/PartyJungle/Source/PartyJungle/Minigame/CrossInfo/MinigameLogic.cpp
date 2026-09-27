@@ -12,7 +12,10 @@ void AMinigameLogic::BeginMinigame()
 	GameInstance = Cast<UMinigameDataGameInstance>(GetGameInstance());
 	
 	if (MapMenuCamera)
+	{
+		MapMenuCamera->GetMapUI()->ResetMinigameWinners();
 		MapMenuCamera->GetMapUI()->SetMinigameVisibleTime(BASE_MINIGAME_TIME);
+	}
 
 	if(GameInstance) 
 	{
@@ -167,41 +170,40 @@ int AMinigameLogic::CaculateDuelWinner()
 	return WinningTeamIndex;
 }
 
-auto WinnersToText(const TArray<int32>& Winners)
+TArray<FText> AMinigameLogic::WinnersToText(const TArray<int32>& Winners) const
 {
-	FString Result;
+	TArray<FText> Result;
 
 	for (int32 i = 0; i < Winners.Num(); ++i)
 	{
-		Result += FString::FromInt(Winners[i]);
-
-		if (i < Winners.Num() - 1)
-		{
-			Result += TEXT(", ");
-		}
+		if (MapMenuCamera)
+			Result.Add(FText::FromString(MapMenuCamera->SetTeamMessage(Winners[i], false, i)));
 	}
 
-	return FText::FromString(Result);
+	return Result;
 }
 
 void AMinigameLogic::ShowWinnerScene(int _endMinigameTime, TArray<int32> _winners)
 {
 	Winners = _winners;
-
-	switch (MinigameType)
+	TArray<FText> winnersText = WinnersToText(_winners);
+	int32 index = 0;
+				
+	if (MapMenuCamera)
 	{
-		case EMinigameType::DUEL: 
+		for (; index < winnersText.Num(); index++)
 		{
-			ShowEndScreenSequence(_winners[0]);
-			break;
-		}
-		case EMinigameType::TEAM_MINIGAME:
-		{
-			FText winnersText = WinnersToText(_winners);
-			ShowTeamEndScreenSequence(winnersText);
-			break;		
-		}
-}
+			MapMenuCamera->GetMapUI()->SetMinigameTextWinner(index, winnersText[index]);
+		}	
+				
+		MapMenuCamera->GetMapUI()->SetInScreenTextColor(0.976f, 1.0f, 0.968f, 1.0f, index);
+		
+		FText winText = winnersText.Num() > 1 ? FText::FromString(TEXT("Teams Win!")) : FText::FromString(TEXT("Team Wins!"));
+		
+		MapMenuCamera->GetMapUI()->SetMinigameTextWinner(index, winText);	
+	}
+				
+	ShowTeamEndScreenSequence();
 	
 	//ShowEndScreenSequence(_winners[0]); <- AQUÍ PETA
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMinigameLogic::DelayedSceneSwitch, _endMinigameTime, false);

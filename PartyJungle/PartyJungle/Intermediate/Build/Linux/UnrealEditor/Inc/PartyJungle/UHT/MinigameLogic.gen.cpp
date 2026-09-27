@@ -580,17 +580,11 @@ UFunction* Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence()
 // ********** End Class AMinigameLogic Function ShowStartScreenSequence ****************************
 
 // ********** Begin Class AMinigameLogic Function ShowTeamEndScreenSequence ************************
-struct MinigameLogic_eventShowTeamEndScreenSequence_Parms
-{
-	FText Message;
-};
 static FName NAME_AMinigameLogic_ShowTeamEndScreenSequence = FName(TEXT("ShowTeamEndScreenSequence"));
-void AMinigameLogic::ShowTeamEndScreenSequence(FText const& Message)
+void AMinigameLogic::ShowTeamEndScreenSequence()
 {
-	MinigameLogic_eventShowTeamEndScreenSequence_Parms Parms;
-	Parms.Message=Message;
 	UFunction* Func = FindFunctionChecked(NAME_AMinigameLogic_ShowTeamEndScreenSequence);
-	ProcessEvent(Func,&Parms);
+	ProcessEvent(Func,NULL);
 }
 struct Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics
 {
@@ -598,21 +592,10 @@ struct Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Message_MetaData[] = {
-		{ "NativeConst", "" },
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FTextPropertyParams NewProp_Message;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::NewProp_Message = { "Message", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MinigameLogic_eventShowTeamEndScreenSequence_Parms, Message), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Message_MetaData), NewProp_Message_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::NewProp_Message,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "ShowTeamEndScreenSequence", Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::PropPointers), sizeof(MinigameLogic_eventShowTeamEndScreenSequence_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08420800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::Function_MetaDataParams)},  };
-static_assert(sizeof(MinigameLogic_eventShowTeamEndScreenSequence_Parms) < MAX_uint16);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "ShowTeamEndScreenSequence", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence_Statics::Function_MetaDataParams)},  };
 UFunction* Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence()
 {
 	static UFunction* ReturnFunction = nullptr;
@@ -761,6 +744,61 @@ DEFINE_FUNCTION(AMinigameLogic::execStartMinigameScoresAndReadyInfo)
 }
 // ********** End Class AMinigameLogic Function StartMinigameScoresAndReadyInfo ********************
 
+// ********** Begin Class AMinigameLogic Function WinnersToText ************************************
+struct Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics
+{
+	struct MinigameLogic_eventWinnersToText_Parms
+	{
+		TArray<int32> Winners;
+		TArray<FText> ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/CrossInfo/MinigameLogic.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Winners_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp_Winners_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_Winners;
+	static const UECodeGen_Private::FTextPropertyParams NewProp_ReturnValue_Inner;
+	static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_Winners_Inner = { "Winners", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_Winners = { "Winners", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MinigameLogic_eventWinnersToText_Parms, Winners), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Winners_MetaData), NewProp_Winners_MetaData) };
+const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MinigameLogic_eventWinnersToText_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_Winners_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_Winners,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_ReturnValue_Inner,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMinigameLogic, nullptr, "WinnersToText", Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::MinigameLogic_eventWinnersToText_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40420401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::MinigameLogic_eventWinnersToText_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMinigameLogic_WinnersToText()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMinigameLogic_WinnersToText_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMinigameLogic::execWinnersToText)
+{
+	P_GET_TARRAY_REF(int32,Z_Param_Out_Winners);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(TArray<FText>*)Z_Param__Result=P_THIS->WinnersToText(Z_Param_Out_Winners);
+	P_NATIVE_END;
+}
+// ********** End Class AMinigameLogic Function WinnersToText **************************************
+
 // ********** Begin Class AMinigameLogic ***********************************************************
 void AMinigameLogic::StaticRegisterNativesAMinigameLogic()
 {
@@ -779,6 +817,7 @@ void AMinigameLogic::StaticRegisterNativesAMinigameLogic()
 		{ "ShowWinnerScene", &AMinigameLogic::execShowWinnerScene },
 		{ "StartMinigame", &AMinigameLogic::execStartMinigame },
 		{ "StartMinigameScoresAndReadyInfo", &AMinigameLogic::execStartMinigameScoresAndReadyInfo },
+		{ "WinnersToText", &AMinigameLogic::execWinnersToText },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -930,10 +969,11 @@ struct Z_Construct_UClass_AMinigameLogic_Statics
 		{ &Z_Construct_UFunction_AMinigameLogic_SetTeamScore, "SetTeamScore" }, // 317174834
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowEndScreenSequence, "ShowEndScreenSequence" }, // 192778728
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowStartScreenSequence, "ShowStartScreenSequence" }, // 297265215
-		{ &Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence, "ShowTeamEndScreenSequence" }, // 2586637747
+		{ &Z_Construct_UFunction_AMinigameLogic_ShowTeamEndScreenSequence, "ShowTeamEndScreenSequence" }, // 4260141832
 		{ &Z_Construct_UFunction_AMinigameLogic_ShowWinnerScene, "ShowWinnerScene" }, // 2238785350
 		{ &Z_Construct_UFunction_AMinigameLogic_StartMinigame, "StartMinigame" }, // 3749851246
 		{ &Z_Construct_UFunction_AMinigameLogic_StartMinigameScoresAndReadyInfo, "StartMinigameScoresAndReadyInfo" }, // 2169996804
+		{ &Z_Construct_UFunction_AMinigameLogic_WinnersToText, "WinnersToText" }, // 3336338549
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -1048,10 +1088,10 @@ struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Sourc
 		{ ETeamsMode_StaticEnum, TEXT("ETeamsMode"), &Z_Registration_Info_UEnum_ETeamsMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3117846603U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 122761640U) },
+		{ Z_Construct_UClass_AMinigameLogic, AMinigameLogic::StaticClass, TEXT("AMinigameLogic"), &Z_Registration_Info_UClass_AMinigameLogic, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMinigameLogic), 3495431091U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_3908352237(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_1286378885(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_CrossInfo_MinigameLogic_h__Script_PartyJungle_Statics::EnumInfo));

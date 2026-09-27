@@ -5,7 +5,10 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset"
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Widgets/Map/MenuWidget.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame3/GameElements/Minigame3Logic.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame2/GameElements/Minigame2Logic.uasset",
+				"/home/xavi/Documents/GitHub/TFM_UT-HUB/PartyJungle/PartyJungle/Content/Blueprints/Minigames/Minigame1/GameElements/Minigame1Logic.uasset"
 			]
 		}
 	]

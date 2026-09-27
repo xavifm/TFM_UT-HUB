@@ -237,7 +237,7 @@ public:
 	void SwitchCameraTeam(int _direction);
 	
 	UFUNCTION(BlueprintCallable, Category = "Functions")
-	FString SetTeamMessage(int _currentMinionTeam);
+	FString SetTeamMessage(int _currentMinionTeam, bool _showTeamText = true, int position = -1);
 	
 	void MoveCameraToCurrentTeam();
 	
@@ -269,8 +269,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void BuyCrowns(int _quantity);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	UPlayerMapUI* GetMapUI();
+	
 	void InitializeRouletteWithMinigames(EMinigameType _minigameType, ETeamsMode _teamsMode);
 
 	UPROPERTY()

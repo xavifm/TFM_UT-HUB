@@ -3,6 +3,12 @@
 #include "Kismet/GameplayStatics.h"
 #include "./PlayerMapUI.h"
 
+void UPlayerMapUI::ResetMinigameWinners()
+{
+	for (int i = 0; i < 4; i++)
+		SetMinigameTextWinner(i, FText::FromString(""));
+}
+
 void UPlayerMapUI::UpdateCoins(int Team, int Quantity)
 {
 	if (Quantity == 0)

@@ -669,7 +669,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMe
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "GetMapUI", Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::MapMenuCamera_eventGetMapUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams)},  };
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMapMenuCamera, nullptr, "GetMapUI", Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::MapMenuCamera_eventGetMapUI_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::Function_MetaDataParams)},  };
 static_assert(sizeof(Z_Construct_UFunction_AMapMenuCamera_GetMapUI_Statics::MapMenuCamera_eventGetMapUI_Parms) < MAX_uint16);
 UFunction* Z_Construct_UFunction_AMapMenuCamera_GetMapUI()
 {
@@ -1396,23 +1396,38 @@ struct Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics
 	struct MapMenuCamera_eventSetTeamMessage_Parms
 	{
 		int32 _currentMinionTeam;
+		bool _showTeamText;
+		int32 position;
 		FString ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "Category", "Functions" },
+		{ "CPP_Default__showTeamText", "true" },
+		{ "CPP_Default_position", "-1" },
 		{ "ModuleRelativePath", "Player/Map/MapMenuCamera.h" },
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp__currentMinionTeam;
+	static void NewProp__showTeamText_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__showTeamText;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_position;
 	static const UECodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
 const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__currentMinionTeam = { "_currentMinionTeam", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSetTeamMessage_Parms, _currentMinionTeam), METADATA_PARAMS(0, nullptr) };
+void Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__showTeamText_SetBit(void* Obj)
+{
+	((MapMenuCamera_eventSetTeamMessage_Parms*)Obj)->_showTeamText = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__showTeamText = { "_showTeamText", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(MapMenuCamera_eventSetTeamMessage_Parms), &Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__showTeamText_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp_position = { "position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSetTeamMessage_Parms, position), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MapMenuCamera_eventSetTeamMessage_Parms, ReturnValue), METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__currentMinionTeam,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp__showTeamText,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp_position,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::NewProp_ReturnValue,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage_Statics::PropPointers) < 2048);
@@ -1430,9 +1445,11 @@ UFunction* Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage()
 DEFINE_FUNCTION(AMapMenuCamera::execSetTeamMessage)
 {
 	P_GET_PROPERTY(FIntProperty,Z_Param__currentMinionTeam);
+	P_GET_UBOOL(Z_Param__showTeamText);
+	P_GET_PROPERTY(FIntProperty,Z_Param_position);
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(FString*)Z_Param__Result=P_THIS->SetTeamMessage(Z_Param__currentMinionTeam);
+	*(FString*)Z_Param__Result=P_THIS->SetTeamMessage(Z_Param__currentMinionTeam,Z_Param__showTeamText,Z_Param_position);
 	P_NATIVE_END;
 }
 // ********** End Class AMapMenuCamera Function SetTeamMessage *************************************
@@ -2865,7 +2882,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_FinishMinigame, "FinishMinigame" }, // 162270426
 		{ &Z_Construct_UFunction_AMapMenuCamera_FocusNextMinion, "FocusNextMinion" }, // 2641092475
 		{ &Z_Construct_UFunction_AMapMenuCamera_FollowMinionMovement, "FollowMinionMovement" }, // 296374804
-		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 768691028
+		{ &Z_Construct_UFunction_AMapMenuCamera_GetMapUI, "GetMapUI" }, // 386155914
 		{ &Z_Construct_UFunction_AMapMenuCamera_GetMinionWithSmallestTeam, "GetMinionWithSmallestTeam" }, // 4051021209
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleBackInput, "HandleBackInput" }, // 2248972550
 		{ &Z_Construct_UFunction_AMapMenuCamera_HandleCheatKey, "HandleCheatKey" }, // 2217485244
@@ -2884,7 +2901,7 @@ struct Z_Construct_UClass_AMapMenuCamera_Statics
 		{ &Z_Construct_UFunction_AMapMenuCamera_RollTheDice, "RollTheDice" }, // 3235366422
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetDiceToKingLocation, "SetDiceToKingLocation" }, // 3363957710
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetKingNumber, "SetKingNumber" }, // 228384463
-		{ &Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage, "SetTeamMessage" }, // 3267478435
+		{ &Z_Construct_UFunction_AMapMenuCamera_SetTeamMessage, "SetTeamMessage" }, // 1717347512
 		{ &Z_Construct_UFunction_AMapMenuCamera_SetupPlayerInputComponent, "SetupPlayerInputComponent" }, // 3255206399
 		{ &Z_Construct_UFunction_AMapMenuCamera_SpinWheelEndSequence, "SpinWheelEndSequence" }, // 2696137888
 		{ &Z_Construct_UFunction_AMapMenuCamera_StartFadeTransition, "StartFadeTransition" }, // 318122657
@@ -3060,10 +3077,10 @@ AMapMenuCamera::~AMapMenuCamera() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1021261920U) },
+		{ Z_Construct_UClass_AMapMenuCamera, AMapMenuCamera::StaticClass, TEXT("AMapMenuCamera"), &Z_Registration_Info_UClass_AMapMenuCamera, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapMenuCamera), 1661470662U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_1777348901(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_2143703585(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_Map_MapMenuCamera_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

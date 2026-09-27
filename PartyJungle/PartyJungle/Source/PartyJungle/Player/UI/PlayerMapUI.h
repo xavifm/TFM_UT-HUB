@@ -55,13 +55,22 @@ public:
     void ShowTextInScreen(const FString& Text, float Time);
 
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-    void SetInScreenTextColor(float R, float G, float B, float A);
+    void SetInScreenTextColor(float R, float G, float B, float A, int _position = -1);
     
     UFUNCTION(BlueprintImplementableEvent)
     void HideInScreenText();
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchScoresVisibility(bool IsVisible);
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SetMinigameTextWinner(int _position, const FText& _text);
+    
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SwitchWinnersTextVisibility(bool _visible);
+    
+    UFUNCTION()
+    void ResetMinigameWinners();
     
     UFUNCTION(BlueprintImplementableEvent, Category = "UI_Minigame")
     void InitializeWheelValue(int _index, const FText& _value);

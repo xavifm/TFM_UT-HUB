@@ -24,7 +24,8 @@ class AScoreDatabase;
 	DECLARE_FUNCTION(execSpinWheel); \
 	DECLARE_FUNCTION(execUpdateUIPositions); \
 	DECLARE_FUNCTION(execUpdateCrowns); \
-	DECLARE_FUNCTION(execUpdateCoins);
+	DECLARE_FUNCTION(execUpdateCoins); \
+	DECLARE_FUNCTION(execResetMinigameWinners);
 
 
 #define FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h_14_CALLBACK_WRAPPERS
