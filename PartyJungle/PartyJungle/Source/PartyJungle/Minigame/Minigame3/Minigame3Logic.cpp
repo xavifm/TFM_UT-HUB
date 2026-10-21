@@ -76,7 +76,9 @@ void AMinigame3Logic::SetupPlayersInfo()
 		//team 1
 		if (IsValid(TeamOne[index]))
 		{
-			TeamOne[index]->CharacterTeam = static_cast<int>(minion->Team);	
+			int team = static_cast<int>(minion->Team);
+			TeamOne[index]->CharacterTeam = team;	
+			TeamOne[index]->SetPaletteColor(team);
 			index++;
 		}
 	}
@@ -87,7 +89,9 @@ void AMinigame3Logic::SetupPlayersInfo()
 		//team 2
 		if (IsValid(TeamTwo[index]))
 		{
-			TeamTwo[index]->CharacterTeam = static_cast<int>(minion->Team);	
+			int team = static_cast<int>(minion->Team);
+			TeamTwo[index]->CharacterTeam = team;	
+			TeamTwo[index]->SetPaletteColor(team);
 			index++;
 		}
 	}
