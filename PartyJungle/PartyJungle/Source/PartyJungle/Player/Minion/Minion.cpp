@@ -223,6 +223,8 @@ void AMinion::HandleMovement(float _deltaTime)
 
 			if (Movements > 0)
 				SetMinionsMovements(Movements - 1);
+			else
+				SetMinionAnimation(EMinionState::IDLE);
 		}
     }
 }

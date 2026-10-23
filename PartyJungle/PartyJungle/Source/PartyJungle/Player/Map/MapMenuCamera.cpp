@@ -1310,7 +1310,9 @@ void AMapMenuCamera::FocusNextMinion(int _direction)
     CurrentMinion->SetMinionAnimation(EMinionState::IDLE);
 
     CurrentMinion = MapDb->GetMinion(CurrentMinionTeam, CurrentMinionPos);
-    CurrentMinion->SetMinionAnimation(EMinionState::WALK);
+    
+    if (!CurrentMinion->AlreadyMoved)
+        CurrentMinion->SetMinionAnimation(EMinionState::WALK);
 
     UpdateDicePosition();
 }
