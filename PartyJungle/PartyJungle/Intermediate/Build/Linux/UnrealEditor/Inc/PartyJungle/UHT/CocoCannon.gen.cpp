@@ -53,6 +53,48 @@ DEFINE_FUNCTION(ACocoCannon::execPossessMovement)
 }
 // ********** End Class ACocoCannon Function PossessMovement ***************************************
 
+// ********** Begin Class ACocoCannon Function SetCharacterFavicon *********************************
+struct CocoCannon_eventSetCharacterFavicon_Parms
+{
+	int32 _team;
+};
+static FName NAME_ACocoCannon_SetCharacterFavicon = FName(TEXT("SetCharacterFavicon"));
+void ACocoCannon::SetCharacterFavicon(int32 _team)
+{
+	CocoCannon_eventSetCharacterFavicon_Parms Parms;
+	Parms._team=_team;
+	UFunction* Func = FindFunctionChecked(NAME_ACocoCannon_SetCharacterFavicon);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame2/CocoCannon.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(CocoCannon_eventSetCharacterFavicon_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::NewProp__team,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_ACocoCannon, nullptr, "SetCharacterFavicon", Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::PropPointers), sizeof(CocoCannon_eventSetCharacterFavicon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::Function_MetaDataParams), Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(CocoCannon_eventSetCharacterFavicon_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class ACocoCannon Function SetCharacterFavicon ***********************************
+
 // ********** Begin Class ACocoCannon Function ShootCannon *****************************************
 struct Z_Construct_UFunction_ACocoCannon_ShootCannon_Statics
 {
@@ -186,6 +228,7 @@ struct Z_Construct_UClass_ACocoCannon_Statics
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ACocoCannon_PossessMovement, "PossessMovement" }, // 2118547952
+		{ &Z_Construct_UFunction_ACocoCannon_SetCharacterFavicon, "SetCharacterFavicon" }, // 2791546902
 		{ &Z_Construct_UFunction_ACocoCannon_ShootCannon, "ShootCannon" }, // 71609905
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -253,10 +296,10 @@ ACocoCannon::~ACocoCannon() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_CocoCannon_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ACocoCannon, ACocoCannon::StaticClass, TEXT("ACocoCannon"), &Z_Registration_Info_UClass_ACocoCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACocoCannon), 3477969405U) },
+		{ Z_Construct_UClass_ACocoCannon, ACocoCannon::StaticClass, TEXT("ACocoCannon"), &Z_Registration_Info_UClass_ACocoCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACocoCannon), 3591241665U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_CocoCannon_h__Script_PartyJungle_1551352200(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_CocoCannon_h__Script_PartyJungle_593749683(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_CocoCannon_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_CocoCannon_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

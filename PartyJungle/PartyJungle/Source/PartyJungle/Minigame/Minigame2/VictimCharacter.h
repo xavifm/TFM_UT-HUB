@@ -27,6 +27,9 @@ public:
 	
 	UFUNCTION()
 	void PossessMovement();
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetCharacterFavicon(int _team);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int CharacterTeam = -1;
@@ -52,7 +55,7 @@ public:
 	UFUNCTION()
 	void ResetCharacterPosition();
 	
-	const float CHARACTER_VELOCITY = 5;
+	const float CHARACTER_VELOCITY = 10;
 	
 private:
 	FVector InitialPosition;

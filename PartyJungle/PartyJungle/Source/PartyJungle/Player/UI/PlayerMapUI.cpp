@@ -45,6 +45,7 @@ void UPlayerMapUI::UpdateUIPositions()
 	{
 		int pos = ScoresDb->GetScore(index)->GlobalPosition + 1;
 		UpdatePosition(index, pos);
+		SetPlayerPositionScore(index, pos);
 	}
 }
 

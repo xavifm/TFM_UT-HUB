@@ -15,6 +15,15 @@ void AMinigame2Logic::StartMinigame(int _startTime)
 	
 	SetupRunnersInfo();
 	
+	if (Attacker)
+		Attacker->SetCharacterFavicon(Attacker->CharacterTeam);
+	
+	for (int32 i = 0; i < Victims.Num(); i++)
+	{
+		if (Victims[i])
+			Victims[i]->SetCharacterFavicon(Victims[i]->CharacterTeam);
+	}
+	
 	GetWorld()->GetTimerManager().SetTimer(TimerHandle, [this, _startTime]() {
 		StartMinigamePlay();
 	}, _startTime, false);

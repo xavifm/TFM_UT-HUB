@@ -69,6 +69,9 @@ public:
     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
     void SwitchWinnersTextVisibility(bool _visible);
     
+    UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+    void SetPlayerPositionScore(int _team, int _position);
+    
     UFUNCTION()
     void ResetMinigameWinners();
     

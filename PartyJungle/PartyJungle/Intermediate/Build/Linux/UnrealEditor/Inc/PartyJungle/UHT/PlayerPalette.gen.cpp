@@ -140,6 +140,48 @@ UFunction* Z_Construct_UFunction_APlayerPalette_SetPaletteColor()
 }
 // ********** End Class APlayerPalette Function SetPaletteColor ************************************
 
+// ********** Begin Class APlayerPalette Function SetPlayerFavicon *********************************
+struct PlayerPalette_eventSetPlayerFavicon_Parms
+{
+	int32 _team;
+};
+static FName NAME_APlayerPalette_SetPlayerFavicon = FName(TEXT("SetPlayerFavicon"));
+void APlayerPalette::SetPlayerFavicon(int32 _team)
+{
+	PlayerPalette_eventSetPlayerFavicon_Parms Parms;
+	Parms._team=_team;
+	UFunction* Func = FindFunctionChecked(NAME_APlayerPalette_SetPlayerFavicon);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame3/PlayerPalette.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerPalette_eventSetPlayerFavicon_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::NewProp__team,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_APlayerPalette, nullptr, "SetPlayerFavicon", Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::PropPointers), sizeof(PlayerPalette_eventSetPlayerFavicon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::Function_MetaDataParams), Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerPalette_eventSetPlayerFavicon_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class APlayerPalette Function SetPlayerFavicon ***********************************
+
 // ********** Begin Class APlayerPalette ***********************************************************
 void APlayerPalette::StaticRegisterNativesAPlayerPalette()
 {
@@ -229,6 +271,7 @@ struct Z_Construct_UClass_APlayerPalette_Statics
 		{ &Z_Construct_UFunction_APlayerPalette_MovePallette, "MovePallette" }, // 4002779766
 		{ &Z_Construct_UFunction_APlayerPalette_PossessMovement, "PossessMovement" }, // 1408639444
 		{ &Z_Construct_UFunction_APlayerPalette_SetPaletteColor, "SetPaletteColor" }, // 4239650723
+		{ &Z_Construct_UFunction_APlayerPalette_SetPlayerFavicon, "SetPlayerFavicon" }, // 1839097871
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -289,10 +332,10 @@ APlayerPalette::~APlayerPalette() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerPalette, APlayerPalette::StaticClass, TEXT("APlayerPalette"), &Z_Registration_Info_UClass_APlayerPalette, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerPalette), 3927176251U) },
+		{ Z_Construct_UClass_APlayerPalette, APlayerPalette::StaticClass, TEXT("APlayerPalette"), &Z_Registration_Info_UClass_APlayerPalette, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerPalette), 786912137U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h__Script_PartyJungle_3640918415(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h__Script_PartyJungle_2389190690(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame3_PlayerPalette_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

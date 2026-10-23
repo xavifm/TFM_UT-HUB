@@ -70,6 +70,12 @@ void AMinigame3Logic::SumScore(int _team)
 
 void AMinigame3Logic::SetupPlayersInfo()
 {
+	for (int i = 0; i < 2; ++i)
+	{
+		TeamOne[i]->SetPlayerFavicon(-1);
+		TeamTwo[i]->SetPlayerFavicon(-1);
+	}
+	
 	int index = 0;
 	for (auto minion : *PlayingMinionsTeamMinigame.Find(0))
 	{
@@ -79,6 +85,7 @@ void AMinigame3Logic::SetupPlayersInfo()
 			int team = static_cast<int>(minion->Team);
 			TeamOne[index]->CharacterTeam = team;	
 			TeamOne[index]->SetPaletteColor(team);
+			TeamOne[index]->SetPlayerFavicon(team);
 			index++;
 		}
 	}
@@ -92,6 +99,7 @@ void AMinigame3Logic::SetupPlayersInfo()
 			int team = static_cast<int>(minion->Team);
 			TeamTwo[index]->CharacterTeam = team;	
 			TeamTwo[index]->SetPaletteColor(team);
+			TeamTwo[index]->SetPlayerFavicon(team);
 			index++;
 		}
 	}

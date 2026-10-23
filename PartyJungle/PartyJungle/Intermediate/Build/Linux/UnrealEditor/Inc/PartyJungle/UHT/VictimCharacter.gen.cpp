@@ -109,6 +109,48 @@ DEFINE_FUNCTION(AVictimCharacter::execResetCharacterPosition)
 }
 // ********** End Class AVictimCharacter Function ResetCharacterPosition ***************************
 
+// ********** Begin Class AVictimCharacter Function SetCharacterFavicon ****************************
+struct VictimCharacter_eventSetCharacterFavicon_Parms
+{
+	int32 _team;
+};
+static FName NAME_AVictimCharacter_SetCharacterFavicon = FName(TEXT("SetCharacterFavicon"));
+void AVictimCharacter::SetCharacterFavicon(int32 _team)
+{
+	VictimCharacter_eventSetCharacterFavicon_Parms Parms;
+	Parms._team=_team;
+	UFunction* Func = FindFunctionChecked(NAME_AVictimCharacter_SetCharacterFavicon);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Minigame/Minigame2/VictimCharacter.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(VictimCharacter_eventSetCharacterFavicon_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::NewProp__team,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AVictimCharacter, nullptr, "SetCharacterFavicon", Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::PropPointers), sizeof(VictimCharacter_eventSetCharacterFavicon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::Function_MetaDataParams), Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(VictimCharacter_eventSetCharacterFavicon_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AVictimCharacter Function SetCharacterFavicon ******************************
+
 // ********** Begin Class AVictimCharacter *********************************************************
 void AVictimCharacter::StaticRegisterNativesAVictimCharacter()
 {
@@ -199,6 +241,7 @@ struct Z_Construct_UClass_AVictimCharacter_Statics
 		{ &Z_Construct_UFunction_AVictimCharacter_BeginPlay, "BeginPlay" }, // 3545300052
 		{ &Z_Construct_UFunction_AVictimCharacter_PossessMovement, "PossessMovement" }, // 1955856938
 		{ &Z_Construct_UFunction_AVictimCharacter_ResetCharacterPosition, "ResetCharacterPosition" }, // 4131908690
+		{ &Z_Construct_UFunction_AVictimCharacter_SetCharacterFavicon, "SetCharacterFavicon" }, // 1312401388
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -259,10 +302,10 @@ AVictimCharacter::~AVictimCharacter() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_VictimCharacter_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AVictimCharacter, AVictimCharacter::StaticClass, TEXT("AVictimCharacter"), &Z_Registration_Info_UClass_AVictimCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AVictimCharacter), 3056569106U) },
+		{ Z_Construct_UClass_AVictimCharacter, AVictimCharacter::StaticClass, TEXT("AVictimCharacter"), &Z_Registration_Info_UClass_AVictimCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AVictimCharacter), 2866710599U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_VictimCharacter_h__Script_PartyJungle_3362152374(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_VictimCharacter_h__Script_PartyJungle_1088351683(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_VictimCharacter_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame2_VictimCharacter_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

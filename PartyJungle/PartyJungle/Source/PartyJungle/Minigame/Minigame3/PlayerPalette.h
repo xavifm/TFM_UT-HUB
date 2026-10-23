@@ -47,6 +47,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void SetPaletteColor(int _team);
 	
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetPlayerFavicon(int _team);
+	
 	UFUNCTION()
 	void MovePallette(const FInputActionValue& _value);
 	void ResetCharacterPosition();

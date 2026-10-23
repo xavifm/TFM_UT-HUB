@@ -33,6 +33,9 @@ public:
 	UFUNCTION()
 	void PossessMovement();
 	void WalkTo(const FInputActionValue& _value);
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void SetCharacterFavicon(int _team);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	AActor* ProjectileReference;
@@ -52,7 +55,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
 	UArrowComponent* ShootPivot;
 	
-	const float CHARACTER_VELOCITY = 5;
+	const float CHARACTER_VELOCITY = 7.5f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UPrimitiveComponent* CharacterPhysics;
