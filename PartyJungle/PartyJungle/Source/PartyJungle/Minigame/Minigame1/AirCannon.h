@@ -17,6 +17,8 @@ class PARTYJUNGLE_API AAirCannon : public APawn
 public:
     AAirCannon();
 
+    UFUNCTION(BlueprintImplementableEvent, Category = "Cannon_Function")
+    void SwitchCannonVisibility(bool _visible);
 
 protected:
     virtual void BeginPlay() override;

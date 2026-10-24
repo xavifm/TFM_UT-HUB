@@ -267,6 +267,54 @@ DEFINE_FUNCTION(AAirCannon::execStartCannonCharge)
 }
 // ********** End Class AAirCannon Function StartCannonCharge **************************************
 
+// ********** Begin Class AAirCannon Function SwitchCannonVisibility *******************************
+struct AirCannon_eventSwitchCannonVisibility_Parms
+{
+	bool _visible;
+};
+static FName NAME_AAirCannon_SwitchCannonVisibility = FName(TEXT("SwitchCannonVisibility"));
+void AAirCannon::SwitchCannonVisibility(bool _visible)
+{
+	AirCannon_eventSwitchCannonVisibility_Parms Parms;
+	Parms._visible=_visible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_AAirCannon_SwitchCannonVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Cannon_Function" },
+		{ "ModuleRelativePath", "Minigame/Minigame1/AirCannon.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::NewProp__visible_SetBit(void* Obj)
+{
+	((AirCannon_eventSwitchCannonVisibility_Parms*)Obj)->_visible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::NewProp__visible = { "_visible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AirCannon_eventSwitchCannonVisibility_Parms), &Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::NewProp__visible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::NewProp__visible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AAirCannon, nullptr, "SwitchCannonVisibility", Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::PropPointers), sizeof(AirCannon_eventSwitchCannonVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(AirCannon_eventSwitchCannonVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class AAirCannon Function SwitchCannonVisibility *********************************
+
 // ********** Begin Class AAirCannon ***************************************************************
 void AAirCannon::StaticRegisterNativesAAirCannon()
 {
@@ -402,6 +450,7 @@ struct Z_Construct_UClass_AAirCannon_Statics
 		{ &Z_Construct_UFunction_AAirCannon_SetTickleStrengthCannon, "SetTickleStrengthCannon" }, // 2019407711
 		{ &Z_Construct_UFunction_AAirCannon_ShootCannon, "ShootCannon" }, // 1147673553
 		{ &Z_Construct_UFunction_AAirCannon_StartCannonCharge, "StartCannonCharge" }, // 1557634052
+		{ &Z_Construct_UFunction_AAirCannon_SwitchCannonVisibility, "SwitchCannonVisibility" }, // 2305811965
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -496,10 +545,10 @@ AAirCannon::~AAirCannon() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 1299358506U) },
+		{ Z_Construct_UClass_AAirCannon, AAirCannon::StaticClass, TEXT("AAirCannon"), &Z_Registration_Info_UClass_AAirCannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AAirCannon), 1611035899U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_807892476(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_399690974(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Minigame_Minigame1_AirCannon_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

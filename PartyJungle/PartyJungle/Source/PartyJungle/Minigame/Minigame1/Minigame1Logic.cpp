@@ -14,22 +14,29 @@ void AMinigame1Logic::SetupAirCannonsInfo()
 	if (PlayingMinionsDuel.Num() == 0)
 		return;
 
+	for (auto Cannon : AirCannons)
+	{
+		Cannon->SwitchCannonVisibility(false);
+		
+		if (Cannon->ProjectileReference) 
+			Cannon->ProjectileReference->SetActorHiddenInGame(true);
+	}
+
 	for (auto minion : PlayingMinionsDuel)
 	{
 		for (size_t i = 0; i < AirCannons.Num(); i++)
 		{
 			if (i == minion.Key)
 			{
+				AirCannons[i]->SwitchCannonVisibility(true);
+				
 				AirCannons[i]->MinionReference = minion.Value;
 				AirCannons[i]->MinigameLogic = this;
 				
 				AActor* projectileReference = AirCannons[i]->ProjectileReference;
 
 				if (projectileReference) 
-				{
 					projectileReference->SetActorTickEnabled(true);
-					projectileReference->SetActorHiddenInGame(true);
-				}
 				
 				break;
 			}

@@ -17,6 +17,8 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+	
+	void SetMaxDiceValue(int _value) { RANDOM_NUMBER_MAX = _value; }
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Dice Displacement")
 	void SwitchDicePosition(FVector NewPosition, bool ResizeDice);
@@ -41,6 +43,6 @@ public:
 
 
 private:
-	const int RANDOM_NUMBER_MIN = 1;
-	const int RANDOM_NUMBER_MAX = 6;
+	int RANDOM_NUMBER_MIN = 1;
+	int RANDOM_NUMBER_MAX = 6;
 };

@@ -224,6 +224,9 @@ void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
     InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
     MinigameWheel->SwitchUiVisibility(true);
     
+    //if (Dice)
+        //Dice->SetMaxDiceValue(100);
+    
     int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
     MinigameWheel->SpinWheel(randomTime);
     
