@@ -101,6 +101,9 @@ public:
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchCrownStoreVisibility(bool IsVisible);
+    
+    UFUNCTION(BlueprintImplementableEvent, Category = "UI")
+    void SwitchCannotAffordCrownVisibility(bool IsVisible);
 
     UFUNCTION(BlueprintImplementableEvent, Category = "UI")
     void SwitchCrownSavePlaceVisibility(bool IsVisible);

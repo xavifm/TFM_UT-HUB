@@ -172,7 +172,7 @@ void AMapMenuCamera::Tick(float DeltaTime)
             {
                 MapUI->SwitchLegendVisibility(false);
 
-                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup && !SquareShopReference) 
+                if(!BuyCrownsUI && !StoreCrownsUI && !DuelUI && !DuelPopup && !SquareShopReference && !CannotAffordUI) 
                 {
                     UpdateMinionEconomy(CurrentMinion->CurrentSquare->Money);
                     if (!ItemExecuted)
@@ -224,8 +224,8 @@ void AMapMenuCamera::HandleCheatKey(const FInputActionValue& _value)
     InitializeRouletteWithMinigames(EMinigameType::TEAM_MINIGAME, ETeamsMode::ANY);
     MinigameWheel->SwitchUiVisibility(true);
     
-    //if (Dice)
-        //Dice->SetMaxDiceValue(100);
+    if (Dice)
+        Dice->SetMaxDiceValue(100);
     
     int randomTime = rand() % (ENDROUND_MINIGAME_START_TIME - 2) + 1;
     MinigameWheel->SpinWheel(randomTime);
@@ -482,6 +482,11 @@ void AMapMenuCamera::HandleConfirmInput()
         return;
     }
     
+    if (CannotAffordUI)
+    {
+        SwitchCannotAffordCrown(false);
+    }
+    
     if (BuyCrownsUI)
     {
         BuyCrowns(1);
@@ -585,7 +590,7 @@ void AMapMenuCamera::DelayedSceneSwitch()
 
 void AMapMenuCamera::HandleYInput() 
 {
-    if ((!InputEnabled && !SelectingPath) || StartGameIntro || StartGameDices || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
+    if ((!InputEnabled && !SelectingPath) || StartGameIntro || StartGameDices || StartTurnUI || IsMinigameActive || DuelPopup || DuelUI || CannotAffordUI || BuyCrownsUI || StoreCrownsUI || SquareShopReference)
         return;
 
     AudioManager->PlaySFX("ZoomUPSFX", 0.3f);
@@ -803,6 +808,11 @@ void AMapMenuCamera::HandleBackInput()
         StartPlayerTurn();
         return;
     }
+    
+    if (CannotAffordUI)
+    {
+        SwitchCannotAffordCrown(false);
+    }
 
     if (BuyCrownsUI)
     {
@@ -998,6 +1008,17 @@ void AMapMenuCamera::SwitchCrownsShop(bool _visibility)
         MapUI->SwitchLegendVisibility(false);
     else
         GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND, false);
+}
+
+void AMapMenuCamera::SwitchCannotAffordCrown(bool _visibility)
+{
+    CannotAffordUI = _visibility;
+    MapUI->SwitchCannotAffordCrownVisibility(_visibility);
+
+    if(_visibility)
+        MapUI->SwitchLegendVisibility(false);
+    else
+        GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMapMenuCamera::RestoreTurnLogicWithAnimation, TIME_BEFORE_RESTORING_ROUND / 2, false);
 }
 
 void AMapMenuCamera::SwitchChallengeUI(bool _visibility) 

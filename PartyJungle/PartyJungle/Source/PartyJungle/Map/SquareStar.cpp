@@ -2,10 +2,13 @@
 
 bool ASquareStar::ExecuteEvent(AMinion* _minion)
 {
-	if (!ShopEnabled || !_minion || _minion->GetCoins() < MIN_BUY_COINS)
+	if (!ShopEnabled || !_minion)
 		return false;
-
-	Camera->SwitchCrownsShop(true);
+	
+	if (_minion->GetCoins() >= MIN_BUY_COINS)
+		Camera->SwitchCrownsShop(true);
+	else
+		Camera->SwitchCannotAffordCrown(true);
 
 	return true;
 }

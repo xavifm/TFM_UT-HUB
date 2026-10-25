@@ -202,6 +202,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchCrownsShop(bool _visibility);
+	void SwitchCannotAffordCrown(bool _visibility);
 
 	UFUNCTION(BlueprintCallable, Category = "Functions")
 	void SwitchChallengeUI(bool _visibility);
@@ -355,6 +356,7 @@ private:
 	bool DuelPopup = false;
 	bool StartTurnUI = false;
 	bool BuyCrownsUI = false;
+	bool CannotAffordUI = false;
 	bool StoreCrownsUI = false;
 	bool SpinningWheel = false;
 	bool TimedActionExecuted = false;

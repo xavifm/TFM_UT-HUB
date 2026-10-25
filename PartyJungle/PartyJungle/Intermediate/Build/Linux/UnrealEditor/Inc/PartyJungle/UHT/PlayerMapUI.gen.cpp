@@ -732,6 +732,54 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent()
 }
 // ********** End Class UPlayerMapUI Function SpinWheelEvent ***************************************
 
+// ********** Begin Class UPlayerMapUI Function SwitchCannotAffordCrownVisibility ******************
+struct PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms
+{
+	bool IsVisible;
+};
+static FName NAME_UPlayerMapUI_SwitchCannotAffordCrownVisibility = FName(TEXT("SwitchCannotAffordCrownVisibility"));
+void UPlayerMapUI::SwitchCannotAffordCrownVisibility(bool IsVisible)
+{
+	PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms Parms;
+	Parms.IsVisible=IsVisible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchCannotAffordCrownVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_IsVisible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsVisible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
+{
+	((PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms*)Obj)->IsVisible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCannotAffordCrownVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SwitchCannotAffordCrownVisibility ********************
+
 // ********** Begin Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility ******************
 struct PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms
 {
@@ -2005,6 +2053,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3679402220
 		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 4232801093
 		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent, "SpinWheelEvent" }, // 2721343810
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility, "SwitchCannotAffordCrownVisibility" }, // 1239165901
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility, "SwitchChallengePlayerUIVisibility" }, // 336042933
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility, "SwitchChallengePopupVisibility" }, // 256378770
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 2851671446
@@ -2081,10 +2130,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1384746337U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1576430856U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_4050268222(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_1437920109(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
