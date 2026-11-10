@@ -30,6 +30,7 @@ class AMinion;
 	DECLARE_FUNCTION(execSetTeamScore); \
 	DECLARE_FUNCTION(execFinishMinigame); \
 	DECLARE_FUNCTION(execShowWinnerScene); \
+	DECLARE_FUNCTION(execWinnersToText); \
 	DECLARE_FUNCTION(execCalculateTeamMinigameWinners); \
 	DECLARE_FUNCTION(execCheckIfTheMinigameHasFinished); \
 	DECLARE_FUNCTION(execStartMinigame);

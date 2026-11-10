@@ -208,6 +208,148 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_InitializeWheelValue()
 }
 // ********** End Class UPlayerMapUI Function InitializeWheelValue *********************************
 
+// ********** Begin Class UPlayerMapUI Function ResetMinigameWinners *******************************
+struct Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "ResetMinigameWinners", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UPlayerMapUI::execResetMinigameWinners)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->ResetMinigameWinners();
+	P_NATIVE_END;
+}
+// ********** End Class UPlayerMapUI Function ResetMinigameWinners *********************************
+
+// ********** Begin Class UPlayerMapUI Function SetInScreenTextColor *******************************
+struct PlayerMapUI_eventSetInScreenTextColor_Parms
+{
+	float R;
+	float G;
+	float B;
+	float A;
+	int32 _position;
+};
+static FName NAME_UPlayerMapUI_SetInScreenTextColor = FName(TEXT("SetInScreenTextColor"));
+void UPlayerMapUI::SetInScreenTextColor(float R, float G, float B, float A, int32 _position)
+{
+	PlayerMapUI_eventSetInScreenTextColor_Parms Parms;
+	Parms.R=R;
+	Parms.G=G;
+	Parms.B=B;
+	Parms.A=A;
+	Parms._position=_position;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SetInScreenTextColor);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "CPP_Default__position", "-1" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_R;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_G;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_B;
+	static const UECodeGen_Private::FFloatPropertyParams NewProp_A;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__position;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_R = { "R", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetInScreenTextColor_Parms, R), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_G = { "G", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetInScreenTextColor_Parms, G), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_B = { "B", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetInScreenTextColor_Parms, B), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_A = { "A", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetInScreenTextColor_Parms, A), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetInScreenTextColor_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_R,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_G,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_B,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp_A,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::NewProp__position,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetInScreenTextColor", Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::PropPointers), sizeof(PlayerMapUI_eventSetInScreenTextColor_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSetInScreenTextColor_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SetInScreenTextColor *********************************
+
+// ********** Begin Class UPlayerMapUI Function SetMinigameTextWinner ******************************
+struct PlayerMapUI_eventSetMinigameTextWinner_Parms
+{
+	int32 _position;
+	FText _text;
+};
+static FName NAME_UPlayerMapUI_SetMinigameTextWinner = FName(TEXT("SetMinigameTextWinner"));
+void UPlayerMapUI::SetMinigameTextWinner(int32 _position, FText const& _text)
+{
+	PlayerMapUI_eventSetMinigameTextWinner_Parms Parms;
+	Parms._position=_position;
+	Parms._text=_text;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SetMinigameTextWinner);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp__text_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__position;
+	static const UECodeGen_Private::FTextPropertyParams NewProp__text;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetMinigameTextWinner_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FTextPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::NewProp__text = { "_text", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Text, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetMinigameTextWinner_Parms, _text), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp__text_MetaData), NewProp__text_MetaData) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::NewProp__position,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::NewProp__text,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetMinigameTextWinner", Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::PropPointers), sizeof(PlayerMapUI_eventSetMinigameTextWinner_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C420800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSetMinigameTextWinner_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SetMinigameTextWinner ********************************
+
 // ********** Begin Class UPlayerMapUI Function SetMinigameVisibleTime *****************************
 struct PlayerMapUI_eventSetMinigameVisibleTime_Parms
 {
@@ -249,6 +391,53 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime()
 	return ReturnFunction;
 }
 // ********** End Class UPlayerMapUI Function SetMinigameVisibleTime *******************************
+
+// ********** Begin Class UPlayerMapUI Function SetPlayerPositionScore *****************************
+struct PlayerMapUI_eventSetPlayerPositionScore_Parms
+{
+	int32 _team;
+	int32 _position;
+};
+static FName NAME_UPlayerMapUI_SetPlayerPositionScore = FName(TEXT("SetPlayerPositionScore"));
+void UPlayerMapUI::SetPlayerPositionScore(int32 _team, int32 _position)
+{
+	PlayerMapUI_eventSetPlayerPositionScore_Parms Parms;
+	Parms._team=_team;
+	Parms._position=_position;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SetPlayerPositionScore);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FIntPropertyParams NewProp__team;
+	static const UECodeGen_Private::FIntPropertyParams NewProp__position;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::NewProp__team = { "_team", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetPlayerPositionScore_Parms, _team), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::NewProp__position = { "_position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(PlayerMapUI_eventSetPlayerPositionScore_Parms, _position), METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::NewProp__team,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::NewProp__position,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SetPlayerPositionScore", Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::PropPointers), sizeof(PlayerMapUI_eventSetPlayerPositionScore_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSetPlayerPositionScore_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SetPlayerPositionScore *******************************
 
 // ********** Begin Class UPlayerMapUI Function SetSaveEnconomyText ********************************
 struct PlayerMapUI_eventSetSaveEnconomyText_Parms
@@ -542,6 +731,54 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent()
 	return ReturnFunction;
 }
 // ********** End Class UPlayerMapUI Function SpinWheelEvent ***************************************
+
+// ********** Begin Class UPlayerMapUI Function SwitchCannotAffordCrownVisibility ******************
+struct PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms
+{
+	bool IsVisible;
+};
+static FName NAME_UPlayerMapUI_SwitchCannotAffordCrownVisibility = FName(TEXT("SwitchCannotAffordCrownVisibility"));
+void UPlayerMapUI::SwitchCannotAffordCrownVisibility(bool IsVisible)
+{
+	PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms Parms;
+	Parms.IsVisible=IsVisible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchCannotAffordCrownVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "UI" },
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp_IsVisible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_IsVisible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible_SetBit(void* Obj)
+{
+	((PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms*)Obj)->IsVisible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible = { "IsVisible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::NewProp_IsVisible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchCannotAffordCrownVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSwitchCannotAffordCrownVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SwitchCannotAffordCrownVisibility ********************
 
 // ********** Begin Class UPlayerMapUI Function SwitchChallengePlayerUIVisibility ******************
 struct PlayerMapUI_eventSwitchChallengePlayerUIVisibility_Parms
@@ -1411,6 +1648,53 @@ UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchWheelValueSelected()
 }
 // ********** End Class UPlayerMapUI Function SwitchWheelValueSelected *****************************
 
+// ********** Begin Class UPlayerMapUI Function SwitchWinnersTextVisibility ************************
+struct PlayerMapUI_eventSwitchWinnersTextVisibility_Parms
+{
+	bool _visible;
+};
+static FName NAME_UPlayerMapUI_SwitchWinnersTextVisibility = FName(TEXT("SwitchWinnersTextVisibility"));
+void UPlayerMapUI::SwitchWinnersTextVisibility(bool _visible)
+{
+	PlayerMapUI_eventSwitchWinnersTextVisibility_Parms Parms;
+	Parms._visible=_visible ? true : false;
+	UFunction* Func = FindFunctionChecked(NAME_UPlayerMapUI_SwitchWinnersTextVisibility);
+	ProcessEvent(Func,&Parms);
+}
+struct Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Player/UI/PlayerMapUI.h" },
+	};
+#endif // WITH_METADATA
+	static void NewProp__visible_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp__visible;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+void Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::NewProp__visible_SetBit(void* Obj)
+{
+	((PlayerMapUI_eventSwitchWinnersTextVisibility_Parms*)Obj)->_visible = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::NewProp__visible = { "_visible", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(PlayerMapUI_eventSwitchWinnersTextVisibility_Parms), &Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::NewProp__visible_SetBit, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::NewProp__visible,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UPlayerMapUI, nullptr, "SwitchWinnersTextVisibility", Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::PropPointers), sizeof(PlayerMapUI_eventSwitchWinnersTextVisibility_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x0C020800, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(PlayerMapUI_eventSwitchWinnersTextVisibility_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+// ********** End Class UPlayerMapUI Function SwitchWinnersTextVisibility **************************
+
 // ********** Begin Class UPlayerMapUI Function UpdateCoins ****************************************
 struct Z_Construct_UFunction_UPlayerMapUI_UpdateCoins_Statics
 {
@@ -1696,6 +1980,7 @@ void UPlayerMapUI::StaticRegisterNativesUPlayerMapUI()
 {
 	UClass* Class = UPlayerMapUI::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "ResetMinigameWinners", &UPlayerMapUI::execResetMinigameWinners },
 		{ "SpinWheel", &UPlayerMapUI::execSpinWheel },
 		{ "UpdateCoins", &UPlayerMapUI::execUpdateCoins },
 		{ "UpdateCrowns", &UPlayerMapUI::execUpdateCrowns },
@@ -1757,13 +2042,18 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeRouletteElement, "InitializeRouletteElement" }, // 3072822697
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeUI, "InitializeUI" }, // 2712313346
 		{ &Z_Construct_UFunction_UPlayerMapUI_InitializeWheelValue, "InitializeWheelValue" }, // 1173492839
+		{ &Z_Construct_UFunction_UPlayerMapUI_ResetMinigameWinners, "ResetMinigameWinners" }, // 1995989001
+		{ &Z_Construct_UFunction_UPlayerMapUI_SetInScreenTextColor, "SetInScreenTextColor" }, // 2521976635
+		{ &Z_Construct_UFunction_UPlayerMapUI_SetMinigameTextWinner, "SetMinigameTextWinner" }, // 1320655209
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetMinigameVisibleTime, "SetMinigameVisibleTime" }, // 2620845466
+		{ &Z_Construct_UFunction_UPlayerMapUI_SetPlayerPositionScore, "SetPlayerPositionScore" }, // 1683241446
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetSaveEnconomyText, "SetSaveEnconomyText" }, // 666528646
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetScore, "SetScore" }, // 489454972
 		{ &Z_Construct_UFunction_UPlayerMapUI_SetupUIPots, "SetupUIPots" }, // 2685654397
 		{ &Z_Construct_UFunction_UPlayerMapUI_ShowTextInScreen, "ShowTextInScreen" }, // 3679402220
 		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheel, "SpinWheel" }, // 4232801093
 		{ &Z_Construct_UFunction_UPlayerMapUI_SpinWheelEvent, "SpinWheelEvent" }, // 2721343810
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchCannotAffordCrownVisibility, "SwitchCannotAffordCrownVisibility" }, // 1239165901
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePlayerUIVisibility, "SwitchChallengePlayerUIVisibility" }, // 336042933
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengePopupVisibility, "SwitchChallengePopupVisibility" }, // 256378770
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchChallengeVisibility, "SwitchChallengeVisibility" }, // 2851671446
@@ -1782,6 +2072,7 @@ struct Z_Construct_UClass_UPlayerMapUI_Statics
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchTurnUI, "SwitchTurnUI" }, // 1048608052
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchUITeamVisibility, "SwitchUITeamVisibility" }, // 2593174012
 		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchWheelValueSelected, "SwitchWheelValueSelected" }, // 1012997367
+		{ &Z_Construct_UFunction_UPlayerMapUI_SwitchWinnersTextVisibility, "SwitchWinnersTextVisibility" }, // 2940116994
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCoins, "UpdateCoins" }, // 2055757430
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateCrowns, "UpdateCrowns" }, // 865943901
 		{ &Z_Construct_UFunction_UPlayerMapUI_UpdateDuelScreenInfo, "UpdateDuelScreenInfo" }, // 4142834444
@@ -1839,10 +2130,10 @@ UPlayerMapUI::~UPlayerMapUI() {}
 struct Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 2407991511U) },
+		{ Z_Construct_UClass_UPlayerMapUI, UPlayerMapUI::StaticClass, TEXT("UPlayerMapUI"), &Z_Registration_Info_UClass_UPlayerMapUI, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMapUI), 1576430856U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_244047577(TEXT("/Script/PartyJungle"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_1437920109(TEXT("/Script/PartyJungle"),
 	Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_User_Desktop_Unreal_Projects_TFM_UT_HUB_PartyJungle_PartyJungle_Source_PartyJungle_Player_UI_PlayerMapUI_h__Script_PartyJungle_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
