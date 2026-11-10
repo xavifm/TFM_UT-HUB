@@ -9550,7 +9550,7 @@
     <Filter Include="Plugins\Fab\Config">
       <UniqueIdentifier>{0A774AA6-F671-3469-AF41-5EE7FF6C8FF2}</UniqueIdentifier>
     </Filter>
-    <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Config\BaseFab.ini">
+    <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Config\DefaultFab.ini">
       <Filter>Plugins\Fab\Config</Filter>
     </None>
     <Filter Include="Plugins\Fab\Resources">

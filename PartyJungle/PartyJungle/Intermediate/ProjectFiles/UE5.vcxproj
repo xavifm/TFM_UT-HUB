@@ -10526,7 +10526,7 @@
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Experimental\Workspace\Config\BaseWorkspace.ini"/>
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Experimental\XRCreativeFramework\XRCreativeFramework.uplugin"/>
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Fab.uplugin"/>
-    <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Config\BaseFab.ini"/>
+    <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Config\DefaultFab.ini"/>
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Resources\ButtonIcon_40x.png"/>
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Resources\FabLogo.svg"/>
     <None Include="..\..\..\..\..\..\..\..\..\Program Files\Epic Games\UE_5.6\Engine\Plugins\Fab\Resources\FabLogoAlternate.svg"/>

@@ -170,14 +170,14 @@ int AMinigameLogic::CaculateDuelWinner()
 	return WinningTeamIndex;
 }
 
-TArray<FText> AMinigameLogic::WinnersToText(const TArray<int32>& Winners) const
+TArray<FText> AMinigameLogic::WinnersToText(const TArray<int32>& _Winners) const
 {
 	TArray<FText> Result;
 
-	for (int32 i = 0; i < Winners.Num(); ++i)
+	for (int32 i = 0; i < _Winners.Num(); ++i)
 	{
 		if (MapMenuCamera)
-			Result.Add(FText::FromString(MapMenuCamera->SetTeamMessage(Winners[i], false, i)));
+			Result.Add(FText::FromString(MapMenuCamera->SetTeamMessage(_Winners[i], false, i)));
 	}
 
 	return Result;
